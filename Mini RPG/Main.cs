@@ -33,7 +33,7 @@ public partial class Main : Form
         _gameProcess.Hide();
         _gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
 
-        SetAllToolTips();
+        //SetAllToolTips();
     }
 
     private void OnGameProcess_SaveAndExitClicked()

@@ -1,16 +1,16 @@
-﻿namespace Mini_RPG.Screens
+﻿namespace Mini_RPG
 {
-    partial class CharacterCreationScreen
+    partial class CharacterProgress
     {
-        /// <summary> 
-        /// Обязательная переменная конструктора.
+        /// <summary>
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Освободить все используемые ресурсы.
+        /// <summary>
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,14 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором компонентов
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this._label_Race = new System.Windows.Forms.Label();
             this._panel_Abilities = new System.Windows.Forms.Panel();
             this._button_IncreaseCharisma = new System.Windows.Forms.Button();
@@ -53,23 +52,23 @@
             this._label_Strength = new System.Windows.Forms.Label();
             this._label_AbilityPointsCount = new System.Windows.Forms.Label();
             this._label_AbilityPoints = new System.Windows.Forms.Label();
-            this._comboBox_Race = new System.Windows.Forms.ComboBox();
-            this._textBox_Name = new System.Windows.Forms.TextBox();
-            this._button_SelectCharacterAvatar = new System.Windows.Forms.Button();
-            this._button_StartGame = new System.Windows.Forms.Button();
-            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this._panel_Abilities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // _label_Race
             // 
             this._label_Race.AutoSize = true;
             this._label_Race.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._label_Race.Location = new System.Drawing.Point(40, 64);
+            this._label_Race.Location = new System.Drawing.Point(35, 28);
             this._label_Race.Name = "_label_Race";
-            this._label_Race.Size = new System.Drawing.Size(136, 41);
-            this._label_Race.TabIndex = 14;
-            this._label_Race.Text = "%Раса:%";
+            this._label_Race.Size = new System.Drawing.Size(198, 41);
+            this._label_Race.TabIndex = 19;
+            this._label_Race.Text = "% человек %";
             // 
             // _panel_Abilities
             // 
@@ -94,10 +93,10 @@
             this._panel_Abilities.Controls.Add(this._button_DecreaseStrenth);
             this._panel_Abilities.Controls.Add(this._label_StrengthPoints);
             this._panel_Abilities.Controls.Add(this._label_Strength);
-            this._panel_Abilities.Location = new System.Drawing.Point(40, 174);
+            this._panel_Abilities.Location = new System.Drawing.Point(35, 247);
             this._panel_Abilities.Name = "_panel_Abilities";
-            this._panel_Abilities.Size = new System.Drawing.Size(556, 730);
-            this._panel_Abilities.TabIndex = 13;
+            this._panel_Abilities.Size = new System.Drawing.Size(554, 395);
+            this._panel_Abilities.TabIndex = 18;
             // 
             // _button_IncreaseCharisma
             // 
@@ -293,91 +292,82 @@
             // 
             this._label_AbilityPointsCount.AutoSize = true;
             this._label_AbilityPointsCount.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._label_AbilityPointsCount.Location = new System.Drawing.Point(388, 123);
+            this._label_AbilityPointsCount.Location = new System.Drawing.Point(383, 194);
             this._label_AbilityPointsCount.Name = "_label_AbilityPointsCount";
             this._label_AbilityPointsCount.Size = new System.Drawing.Size(66, 41);
-            this._label_AbilityPointsCount.TabIndex = 12;
+            this._label_AbilityPointsCount.TabIndex = 17;
             this._label_AbilityPointsCount.Text = "999";
             // 
             // _label_AbilityPoints
             // 
             this._label_AbilityPoints.AutoSize = true;
             this._label_AbilityPoints.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._label_AbilityPoints.Location = new System.Drawing.Point(40, 123);
+            this._label_AbilityPoints.Location = new System.Drawing.Point(35, 194);
             this._label_AbilityPoints.Name = "_label_AbilityPoints";
             this._label_AbilityPoints.Size = new System.Drawing.Size(353, 41);
-            this._label_AbilityPoints.TabIndex = 11;
+            this._label_AbilityPoints.TabIndex = 16;
             this._label_AbilityPoints.Text = "%Очки характеристик:%";
             // 
-            // _comboBox_Race
+            // label1
             // 
-            this._comboBox_Race.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._comboBox_Race.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._comboBox_Race.FormattingEnabled = true;
-            this._comboBox_Race.Items.AddRange(new object[] {
-            "орк",
-            "человек",
-            "эльф"});
-            this._comboBox_Race.Location = new System.Drawing.Point(182, 61);
-            this._comboBox_Race.Name = "_comboBox_Race";
-            this._comboBox_Race.Size = new System.Drawing.Size(250, 49);
-            this._comboBox_Race.TabIndex = 10;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(35, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(378, 41);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "% 1 уровень: 0000/0000 %";
             // 
-            // _textBox_Name
+            // button1
             // 
-            this._textBox_Name.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._textBox_Name.Location = new System.Drawing.Point(1416, 475);
-            this._textBox_Name.Name = "_textBox_Name";
-            this._textBox_Name.Size = new System.Drawing.Size(324, 47);
-            this._textBox_Name.TabIndex = 21;
-            this._textBox_Name.Text = "% Введите имя %";
-            this._textBox_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textBox_Name.TextChanged += new System.EventHandler(this.TextBox_Name_TextChanged);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(1196, 603);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 57);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // _button_SelectCharacterAvatar
+            // pictureBox1
             // 
-            this._button_SelectCharacterAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._button_SelectCharacterAvatar.BackgroundImage = global::Mini_RPG.Properties.Resources.Аватар_персонажа_1;
-            this._button_SelectCharacterAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._button_SelectCharacterAvatar.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._button_SelectCharacterAvatar.ForeColor = System.Drawing.SystemColors.Control;
-            this._button_SelectCharacterAvatar.Location = new System.Drawing.Point(1454, 174);
-            this._button_SelectCharacterAvatar.Name = "_button_SelectCharacterAvatar";
-            this._button_SelectCharacterAvatar.Size = new System.Drawing.Size(241, 295);
-            this._button_SelectCharacterAvatar.TabIndex = 20;
-            this._button_SelectCharacterAvatar.UseVisualStyleBackColor = false;
-            this._button_SelectCharacterAvatar.Click += new System.EventHandler(this.Button_SelectCharacterAvatar_Click);
+            this.pictureBox1.Location = new System.Drawing.Point(735, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 300);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
-            // _button_StartGame
+            // label2
             // 
-            this._button_StartGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._button_StartGame.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._button_StartGame.ForeColor = System.Drawing.SystemColors.Control;
-            this._button_StartGame.Location = new System.Drawing.Point(1312, 867);
-            this._button_StartGame.Name = "_button_StartGame";
-            this._button_StartGame.Size = new System.Drawing.Size(540, 115);
-            this._button_StartGame.TabIndex = 22;
-            this._button_StartGame.Text = "% начать %";
-            this._button_StartGame.UseVisualStyleBackColor = false;
-            this._button_StartGame.Click += new System.EventHandler(this.Button_StartGame_Click);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(627, 373);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(454, 41);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "% имя персонажа %";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CharacterCreationScreen
+            // CharacterProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Controls.Add(this._button_StartGame);
-            this.Controls.Add(this._textBox_Name);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(1381, 672);
+            this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this._label_Race);
-            this.Controls.Add(this._button_SelectCharacterAvatar);
             this.Controls.Add(this._panel_Abilities);
             this.Controls.Add(this._label_AbilityPointsCount);
             this.Controls.Add(this._label_AbilityPoints);
-            this.Controls.Add(this._comboBox_Race);
-            this.Name = "CharacterCreationScreen";
-            this.Size = new System.Drawing.Size(1898, 1024);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "CharacterProgress";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this._panel_Abilities.ResumeLayout(false);
             this._panel_Abilities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,10 +399,9 @@
         private Label _label_Strength;
         private Label _label_AbilityPointsCount;
         private Label _label_AbilityPoints;
-        private ComboBox _comboBox_Race;
-        private TextBox _textBox_Name;
-        private Button _button_SelectCharacterAvatar;
-        private Button _button_StartGame;
-        private ToolTip _toolTip;
+        private Label label1;
+        private Button button1;
+        private PictureBox pictureBox1;
+        private Label label2;
     }
 }

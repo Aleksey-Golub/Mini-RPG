@@ -11,6 +11,7 @@ public partial class GameProcessScreen : UserControl
         InitializeComponent();
 
         FillLog();
+        SetAllToolTips();
     }
 
     public event Action? SaveAndExitClicked;
@@ -55,6 +56,42 @@ public partial class GameProcessScreen : UserControl
             _flowLayoutPanel_GameLog.Controls.Add(label);
             
             label.Visible = i >= _logMessageCountInMinimizeState ? !_isLogMinimize : _isLogMinimize;
+        }
+    }
+
+    private void Button_CharacterProgress_Click(object sender, EventArgs e)
+    {
+        using var characterProgressForm = new CharacterProgress();
+        if (characterProgressForm.ShowDialog() == DialogResult.OK)
+        {
+
+        }
+    }
+
+    private void SetAllToolTips()
+    {
+        _label_Strength.ToolTipText = "% Описание СИЛ и за что она отвечает %";
+        _label_Dexterity.ToolTipText = "% Описание ЛОВ и за что она отвечает %";
+        _label_Constitution.ToolTipText = "% Описание ВЫН и за что она отвечает %";
+        _label_Perception.ToolTipText = "% Описание ВОС и за что она отвечает %";
+        _label_Charisma.ToolTipText = "% Описание ХАР и за что она отвечает %";
+    }
+
+    private void Button_Inventory_Click(object sender, EventArgs e)
+    {
+        using var inventoryForm = new Inventory();
+        if (inventoryForm.ShowDialog() == DialogResult.OK)
+        {
+
+        }
+    }
+
+    private void Button_Trader_Click(object sender, EventArgs e)
+    {
+        using var traderForm = new Trader();
+        if (traderForm.ShowDialog() == DialogResult.OK)
+        {
+
         }
     }
 }

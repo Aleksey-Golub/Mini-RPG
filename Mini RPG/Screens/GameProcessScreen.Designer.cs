@@ -38,9 +38,10 @@
             this._panel_MiniMap = new System.Windows.Forms.Panel();
             this._label_Map = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this._pictureBox_HasFreeAbilityActions = new System.Windows.Forms.PictureBox();
+            this._panel_CharacterHealthBarBG = new System.Windows.Forms.Panel();
+            this._panel_CharacterHealthBarFG = new System.Windows.Forms.Panel();
+            this._button_CharacterProgress = new System.Windows.Forms.Button();
             this._statusStrip = new System.Windows.Forms.StatusStrip();
             this._label_Strength = new System.Windows.Forms.ToolStripStatusLabel();
             this._label_StrengthPoints = new System.Windows.Forms.ToolStripStatusLabel();
@@ -63,14 +64,16 @@
             this._pictureBox_Enemy = new System.Windows.Forms.PictureBox();
             this._flowLayoutPanel_GameLog = new System.Windows.Forms.FlowLayoutPanel();
             this._panel_Town = new System.Windows.Forms.Panel();
-            this._button_RestInTown = new System.Windows.Forms.Button();
+            this._button_LeaveTown = new System.Windows.Forms.Button();
             this._button_Trader = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this._button_RestInTown = new System.Windows.Forms.Button();
             this._panel_Navigation.SuspendLayout();
             this._panel_MiniMap.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).BeginInit();
+            this._panel_CharacterHealthBarBG.SuspendLayout();
             this._statusStrip.SuspendLayout();
             this._menuStrip.SuspendLayout();
             this._panel_Location.SuspendLayout();
@@ -185,38 +188,51 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this._pictureBox_HasFreeAbilityActions);
+            this.panel1.Controls.Add(this._panel_CharacterHealthBarBG);
+            this.panel1.Controls.Add(this._button_CharacterProgress);
             this.panel1.Location = new System.Drawing.Point(1562, 369);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 208);
             this.panel1.TabIndex = 2;
             // 
-            // panel2
+            // _pictureBox_HasFreeAbilityActions
             // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(162, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(33, 180);
-            this.panel2.TabIndex = 1;
+            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.Аватар_персонажа_4;
+            this._pictureBox_HasFreeAbilityActions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._pictureBox_HasFreeAbilityActions.Location = new System.Drawing.Point(115, 151);
+            this._pictureBox_HasFreeAbilityActions.Name = "_pictureBox_HasFreeAbilityActions";
+            this._pictureBox_HasFreeAbilityActions.Size = new System.Drawing.Size(40, 40);
+            this._pictureBox_HasFreeAbilityActions.TabIndex = 2;
+            this._pictureBox_HasFreeAbilityActions.TabStop = false;
+            this._pictureBox_HasFreeAbilityActions.Visible = false;
             // 
-            // panel3
+            // _panel_CharacterHealthBarBG
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(33, 180);
-            this.panel3.TabIndex = 2;
+            this._panel_CharacterHealthBarBG.BackColor = System.Drawing.Color.Red;
+            this._panel_CharacterHealthBarBG.Controls.Add(this._panel_CharacterHealthBarFG);
+            this._panel_CharacterHealthBarBG.Location = new System.Drawing.Point(162, 12);
+            this._panel_CharacterHealthBarBG.Name = "_panel_CharacterHealthBarBG";
+            this._panel_CharacterHealthBarBG.Size = new System.Drawing.Size(33, 180);
+            this._panel_CharacterHealthBarBG.TabIndex = 1;
             // 
-            // button1
+            // _panel_CharacterHealthBarFG
             // 
-            this.button1.Location = new System.Drawing.Point(14, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 180);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this._panel_CharacterHealthBarFG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this._panel_CharacterHealthBarFG.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._panel_CharacterHealthBarFG.Location = new System.Drawing.Point(0, 0);
+            this._panel_CharacterHealthBarFG.Name = "_panel_CharacterHealthBarFG";
+            this._panel_CharacterHealthBarFG.Size = new System.Drawing.Size(33, 180);
+            this._panel_CharacterHealthBarFG.TabIndex = 2;
+            // 
+            // _button_CharacterProgress
+            // 
+            this._button_CharacterProgress.Location = new System.Drawing.Point(14, 12);
+            this._button_CharacterProgress.Name = "_button_CharacterProgress";
+            this._button_CharacterProgress.Size = new System.Drawing.Size(142, 180);
+            this._button_CharacterProgress.TabIndex = 0;
+            this._button_CharacterProgress.UseVisualStyleBackColor = true;
+            this._button_CharacterProgress.Click += new System.EventHandler(this.Button_CharacterProgress_Click);
             // 
             // _statusStrip
             // 
@@ -321,7 +337,6 @@
             this._label_Health.Name = "_label_Health";
             this._label_Health.Size = new System.Drawing.Size(87, 29);
             this._label_Health.Text = "00/00";
-            this._label_Health.ToolTipText = "1323214";
             // 
             // _button_Inventory
             // 
@@ -330,6 +345,7 @@
             this._button_Inventory.Size = new System.Drawing.Size(112, 34);
             this._button_Inventory.TabIndex = 5;
             this._button_Inventory.UseVisualStyleBackColor = true;
+            this._button_Inventory.Click += new System.EventHandler(this.Button_Inventory_Click);
             // 
             // _menuStrip
             // 
@@ -387,55 +403,65 @@
             // _panel_Town
             // 
             this._panel_Town.Controls.Add(this._button_RestInTown);
+            this._panel_Town.Controls.Add(this._button_LeaveTown);
             this._panel_Town.Controls.Add(this._button_Trader);
             this._panel_Town.Location = new System.Drawing.Point(1081, 835);
             this._panel_Town.Name = "_panel_Town";
             this._panel_Town.Size = new System.Drawing.Size(346, 131);
             this._panel_Town.TabIndex = 8;
             // 
-            // _button_RestInTown
+            // _button_LeaveTown
             // 
-            this._button_RestInTown.Location = new System.Drawing.Point(62, 78);
-            this._button_RestInTown.Name = "_button_RestInTown";
-            this._button_RestInTown.Size = new System.Drawing.Size(229, 34);
-            this._button_RestInTown.TabIndex = 1;
-            this._button_RestInTown.Text = "% отдыхать в городе %";
-            this._button_RestInTown.UseVisualStyleBackColor = true;
+            this._button_LeaveTown.Location = new System.Drawing.Point(62, 92);
+            this._button_LeaveTown.Name = "_button_LeaveTown";
+            this._button_LeaveTown.Size = new System.Drawing.Size(229, 34);
+            this._button_LeaveTown.TabIndex = 1;
+            this._button_LeaveTown.Text = "% покинуть город %";
+            this._button_LeaveTown.UseVisualStyleBackColor = true;
             // 
             // _button_Trader
             // 
-            this._button_Trader.Location = new System.Drawing.Point(62, 21);
+            this._button_Trader.Location = new System.Drawing.Point(62, 5);
             this._button_Trader.Name = "_button_Trader";
             this._button_Trader.Size = new System.Drawing.Size(229, 34);
             this._button_Trader.TabIndex = 0;
             this._button_Trader.Text = "% торговец %";
             this._button_Trader.UseVisualStyleBackColor = true;
+            this._button_Trader.Click += new System.EventHandler(this.Button_Trader_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(93, 827);
+            this.button2.Location = new System.Drawing.Point(278, 824);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 34);
+            this.button2.Size = new System.Drawing.Size(159, 34);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Add log";
+            this.button2.Text = "TEST Add log";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.AddLogTest);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(226, 827);
+            this.button3.Location = new System.Drawing.Point(96, 824);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(176, 34);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Switch log size";
+            this.button3.Text = "% Switch log size %";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.SwitchLogState);
+            // 
+            // _button_RestInTown
+            // 
+            this._button_RestInTown.Location = new System.Drawing.Point(62, 49);
+            this._button_RestInTown.Name = "_button_RestInTown";
+            this._button_RestInTown.Size = new System.Drawing.Size(229, 34);
+            this._button_RestInTown.TabIndex = 2;
+            this._button_RestInTown.Text = "% отдыхать в городе %";
+            this._button_RestInTown.UseVisualStyleBackColor = true;
             // 
             // GameProcessScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Mini_RPG.Properties.Resources.Макет_локация_вне_города;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -453,7 +479,8 @@
             this._panel_Navigation.ResumeLayout(false);
             this._panel_MiniMap.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).EndInit();
+            this._panel_CharacterHealthBarBG.ResumeLayout(false);
             this._statusStrip.ResumeLayout(false);
             this._statusStrip.PerformLayout();
             this._menuStrip.ResumeLayout(false);
@@ -477,9 +504,9 @@
         private Panel _panel_MiniMap;
         private Label _label_Map;
         private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Button button1;
+        private Panel _panel_CharacterHealthBarBG;
+        private Panel _panel_CharacterHealthBarFG;
+        private Button _button_CharacterProgress;
         private StatusStrip _statusStrip;
         private ToolStripStatusLabel _label_Strength;
         private ToolStripStatusLabel _label_StrengthPoints;
@@ -501,10 +528,12 @@
         private Panel _panel_Location;
         private PictureBox _pictureBox_Enemy;
         private Panel _panel_Town;
-        private Button _button_RestInTown;
+        private Button _button_LeaveTown;
         private Button _button_Trader;
         private FlowLayoutPanel _flowLayoutPanel_GameLog;
         private Button button2;
         private Button button3;
+        private PictureBox _pictureBox_HasFreeAbilityActions;
+        private Button _button_RestInTown;
     }
 }
