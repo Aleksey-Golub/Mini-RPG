@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\Not Unity Projects\\Mini RPG\\Mini RPG\\Mini RPG.csproj": {}
+    "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG\\Mini RPG.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\Not Unity Projects\\Mini RPG\\Mini RPG\\Mini RPG.csproj": {
+    "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG\\Mini RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\Not Unity Projects\\Mini RPG\\Mini RPG\\Mini RPG.csproj",
+        "projectUniqueName": "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG\\Mini RPG.csproj",
         "projectName": "Mini RPG",
-        "projectPath": "D:\\Programming\\Not Unity Projects\\Mini RPG\\Mini RPG\\Mini RPG.csproj",
+        "projectPath": "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG\\Mini RPG.csproj",
         "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\Not Unity Projects\\Mini RPG\\Mini RPG\\obj\\",
+        "outputPath": "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",

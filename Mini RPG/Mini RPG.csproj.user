@@ -4,8 +4,20 @@
     <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Screens\CharacterCreationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Screens\GameProcessScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Screens\IntroScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="SelectingCharacterAvatar.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Screens\StartScreen.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

@@ -1,74 +1,84 @@
-﻿namespace Mini_RPG;
+﻿using Mini_RPG.Screens;
+
+namespace Mini_RPG;
 
 public partial class Main : Form
 {
-    // ability points
-    // Dexterity Constitution Perception Charisma
+    private readonly StartScreen _startScreen;
+    private readonly CharacterCreationScreen _characterCreationScreen;
+    private readonly IntroScreen _introScreen;
+    private readonly GameProcessScreen _gameProcess;
+
     public Main()
     {
         InitializeComponent();
 
+        _startScreen = new StartScreen();
+        Controls.Add(_startScreen);
+        _startScreen.NewGameButtonClicked += OnStartScreen_NewGameButtonClicked;
+        _startScreen.LoadGameButtonClicked += OnStartScreen_LoadGameButtonClicked;
+
+        _characterCreationScreen = new CharacterCreationScreen();
+        Controls.Add(_characterCreationScreen);
+        _characterCreationScreen.Hide();
+        _characterCreationScreen.StartGameButtonClicked += OnCharacterCreationScreen_StartGameButtonClicked;
+
+        _introScreen = new IntroScreen();
+        Controls.Add(_introScreen);
+        _introScreen.Hide();
+        _introScreen.GoToGameButtonClicled += OnIntroScreen_GoToGameButtonClicled;
+
+        _gameProcess = new GameProcessScreen();
+        Controls.Add(_gameProcess);
+        _gameProcess.Hide();
+        _gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
+
         SetAllToolTips();
     }
 
-    #region Start Screen
-    private void Button_Exit_Click(object sender, EventArgs e)
+    private void OnGameProcess_SaveAndExitClicked()
     {
-        Application.Exit();
+
+        // сохранить игру
+
+        // выйти в главное меню
+        _gameProcess.Hide();
+        _startScreen.Show();
     }
 
-    private void Button_NewGame_Click(object sender, EventArgs e)
+    private void OnIntroScreen_GoToGameButtonClicled()
     {
-        _panel_StartScreen.Hide();
-        _panel_CharacterCreation.Show();
+        _introScreen.Hide();
+        _gameProcess.Show();
     }
 
-    private void Button_LoadGame_Click(object sender, EventArgs e)
+    private void OnCharacterCreationScreen_StartGameButtonClicked()
     {
-        // загрузка сохранения
-    }
-    #endregion
-
-    #region Character creation screen
-    private void Button_StartGame_Click(object sender, EventArgs e)
-    {
-        // считать данные
-        // создать модель персонажа
-
-        _panel_CharacterCreation.Hide();
-        _panel_Intro.Show();
-        // подписать view на модель
+        // получить данные созданного персонажа и отдать в контроллер
+        _characterCreationScreen.Hide();
+        _introScreen.Show();
     }
 
-    private void Button_SelectCharacterAvatar_Click(object sender, EventArgs e)
+    private void OnStartScreen_LoadGameButtonClicked()
     {
-        using SelectingCharacterAvatar selectAvatarForm = new SelectingCharacterAvatar();
-        if (selectAvatarForm.ShowDialog() == DialogResult.OK)
-            _button_SelectCharacterAvatar.Image = selectAvatarForm.Avatar;
+        // организовать загрузку сохраненных игр
     }
-    #endregion
 
-    #region Intro
-    private void Button_GoToGame_Click(object sender, EventArgs e)
+    private void OnStartScreen_NewGameButtonClicked()
     {
-        _panel_Intro.Hide();
-        _panel_GameProcess.Show();
+        _startScreen.Hide();
+        _characterCreationScreen.Show();
     }
-    #endregion
-    
-    #region Game Process
-
-    #endregion
 
     private void SetAllToolTips()
     {
-        _toolTip.SetToolTip(_label_Race, "Описание всех рас и их бонусов");
-        _toolTip.SetToolTip(_label_AbilityPoints, "Доступные для распределения очки характеристик");
-        _toolTip.SetToolTip(_label_Strength, "Описание СИЛ и за что она отвечает");
-        _toolTip.SetToolTip(_label_Dexterity, "Описание ЛОВ и за что она отвечает");
-        _toolTip.SetToolTip(_label_Constitution, "Описание ВЫН и за что она отвечает");
-        _toolTip.SetToolTip(_label_Perception, "Описание ВЫН и за что она отвечает");
-        _toolTip.SetToolTip(_label_Charisma, "Описание ХАР и за что она отвечает");
+        //_toolTip.SetToolTip(_label_Race, "Описание всех рас и их бонусов");
+        //_toolTip.SetToolTip(_label_AbilityPoints, "Доступные для распределения очки характеристик");
+        //_toolTip.SetToolTip(_label_Strength, "Описание СИЛ и за что она отвечает");
+        //_toolTip.SetToolTip(_label_Dexterity, "Описание ЛОВ и за что она отвечает");
+        //_toolTip.SetToolTip(_label_Constitution, "Описание ВЫН и за что она отвечает");
+        //_toolTip.SetToolTip(_label_Perception, "Описание ВЫН и за что она отвечает");
+        //_toolTip.SetToolTip(_label_Charisma, "Описание ХАР и за что она отвечает");
     }
 
 }

@@ -17,3 +17,26 @@ D:\Programming\Not Unity Projects\Mini RPG\Mini RPG\obj\Debug\net6.0-windows\Min
 D:\Programming\Not Unity Projects\Mini RPG\Mini RPG\obj\Debug\net6.0-windows\ref\Mini RPG.dll
 D:\Programming\Not Unity Projects\Mini RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Properties.Resources.resources
 D:\Programming\Not Unity Projects\Mini RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.SelectingCharacterAvatar.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG.exe
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG.deps.json
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG.runtimeconfig.json
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.csproj.AssemblyReference.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Main.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Properties.Resources.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.SelectingCharacterAvatar.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.csproj.GenerateResource.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.AssemblyInfoInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.AssemblyInfo.cs
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.csproj.CoreCompileInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\refint\Mini RPG.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.genruntimeconfig.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\ref\Mini RPG.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Screens.CharacterCreationScreen.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Screens.StartScreen.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Screens.IntroScreen.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Screens.GameProcessScreen.resources

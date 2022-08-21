@@ -57,7 +57,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>81</value>
-  </metadata>
+  <data name="_label_Intro.Text" xml:space="preserve">
+    <value>% вступительный текст-заставка, поясняющий кто такой ГГ, где происходит Действие игры И т.Д.%
+
+label1sd gfas dgsdgsagsaghsasdgs adhgsahdsahsad hsahdsahsahsahs aasdhsadhsa hdsadhsahd shdshdhdsahds ahdsahdsahsad hdsahd sahdsahds hdsahds ahasdhasdh sahs hdsahd sahsda hah d adshgh</value>
+  </data>
 </root>
