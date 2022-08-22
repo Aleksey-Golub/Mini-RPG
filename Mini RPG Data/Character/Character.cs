@@ -1,10 +1,10 @@
-﻿namespace Mini_RPG_Data;
+﻿namespace Mini_RPG_Data.Character;
 
-public class Character
+public class CharacterData
 {
     private readonly Abilities _abilities;
 
-    public Character(string name, string avatarFilePath, Race race, Abilities baseAbilities)
+    public CharacterData(string name, string avatarFilePath, Race race, Abilities baseAbilities)
     {
         Name = name;
         AvatarFilePath = avatarFilePath;
@@ -22,3 +22,4 @@ public class Character
     public IAbilities Abilities => _abilities;
     public Health Health { get; }
 }
+

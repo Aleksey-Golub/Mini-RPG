@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data;
+﻿namespace Mini_RPG_Data.Character;
 
 public class Abilities : IAbilities
 {
@@ -9,6 +9,8 @@ public class Abilities : IAbilities
         Constitution = new Ability(constitution);
         Perception = new Ability(perception);
         Charisma = new Ability(charisma);
+
+        AbilityPoints = 0;
     }
 
     public Ability Strength { get; set; }
@@ -16,6 +18,7 @@ public class Abilities : IAbilities
     public Ability Constitution { get; set; }
     public Ability Perception { get; set; }
     public Ability Charisma { get; set; }
+    public int AbilityPoints { get; set; }
 
     IAbility IAbilities.Strength => Strength;
     IAbility IAbilities.Dexterity => Dexterity;
@@ -27,7 +30,7 @@ public class Abilities : IAbilities
     {
         //int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
         //var defaultAbilities = new Abilities(strength: defaultAbilityValue, dexterity: defaultAbilityValue, constitution: defaultAbilityValue, perception: defaultAbilityValue, charisma: defaultAbilityValue);
-        
+
         var humanAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);
         var elfAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);
         var dwarfAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);

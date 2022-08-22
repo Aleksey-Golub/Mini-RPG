@@ -1,11 +1,11 @@
-﻿namespace Mini_RPG_Data;
+﻿namespace Mini_RPG_Data.Character;
 
 public class Health
 {
     private readonly IAbility _constitution;
-    private readonly Character _character;
+    private readonly CharacterData _character;
 
-    public Health(Character character)
+    public Health(CharacterData character)
     {
         _constitution = character.Abilities.Constitution;
         _character = character;

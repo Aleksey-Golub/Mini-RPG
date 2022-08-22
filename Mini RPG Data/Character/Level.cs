@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data;
+﻿namespace Mini_RPG_Data.Character;
 
 public class Level
 {
