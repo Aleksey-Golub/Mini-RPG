@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG_Data;
+﻿using Mini_RPG_Data.Map;
+
+namespace Mini_RPG_Data;
 
 public static class Settings
 {
@@ -6,6 +8,7 @@ public static class Settings
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 2;
+    public const int CELL_SPAWN_CHANCE = 30;
 
     public static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {
@@ -20,5 +23,36 @@ public static class Settings
         float res = (float)level / 2;
         res = MathF.Ceiling(res);
         return (int)res;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="value">from 1 to 100</param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    internal static CellType GetCellTypeByRandomValue(int value)
+    {
+        if (value < 1 || value > 100)
+            throw new ArgumentOutOfRangeException("The value have be within 1 to 100");
+
+        switch (value)
+        {
+            case <= 100:
+                return CellType.Empty;
+            case 101:
+                return CellType.Enemy;
+            case 102:
+                return CellType.HiddedLoot;
+            case 103:
+                return CellType.LockedChest;
+            case 104:
+                return CellType.Loot;
+            case 105:
+                return CellType.Trap;
+
+            default:
+                throw new NotImplementedException($"Not inplement CellType for {value}");
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data.Services;
+﻿namespace Mini_RPG_Data.Services.Random_;
 
 public interface IRandomService : IService
 {
