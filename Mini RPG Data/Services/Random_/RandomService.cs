@@ -1,6 +1,6 @@
 ﻿namespace Mini_RPG_Data.Services.Random_;
 
-internal class RandomService : IRandomService
+public class RandomService : IRandomService
 {
     private readonly Random _random;
 

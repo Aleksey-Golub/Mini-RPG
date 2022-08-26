@@ -1,0 +1,12 @@
+   o oo o 
+ ooooooooo
+ ooooooooo
+ ooootooo 
+ooooooooo 
+ oooooooo 
+   o ooo  
+
+
+
+Empty =>'o', Town => 't', Enemy => 'e', Loot => 'l', LockedChest => 'c', HiddedLoot => 'h', Trap => 'r',
+mapSize = 10 x 7, cellsCount = 50

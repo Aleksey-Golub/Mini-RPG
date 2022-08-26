@@ -1,0 +1,18 @@
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleMapTest.exe
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleMapTest.deps.json
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleMapTest.runtimeconfig.json
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleMapTest.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleMapTest.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.csproj.AssemblyReference.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.AssemblyInfoInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.AssemblyInfo.cs
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.csproj.CoreCompileInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.csproj.CopyComplete
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\refint\ConsoleMapTest.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleMapTest.genruntimeconfig.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ref\ConsoleMapTest.dll

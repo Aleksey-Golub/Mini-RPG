@@ -1,8 +1,8 @@
-﻿using Mini_RPG_Data.Services.Random;
+﻿using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Map;
 
-internal class MapData
+public class MapData : IMapData
 {
     private readonly Dictionary<Vector2Int, MapCell> _cells;
 
@@ -28,11 +28,18 @@ internal class MapData
 
         MapData map = new MapData();
 
+        List<MapCell> lastCells = new List<MapCell>();
+        lastCells = map._cells.Values.ToList();
         while (cellsCount > 0)
         {
             // get a collection of cell neighbors with unique elements to avoid duplication
             List<Vector2Int> neighborsPositions = new List<Vector2Int>(50);
-            foreach (var cell in map._cells.Values)
+
+            // get all cells
+            //foreach (var cell in map._cells.Values)
+
+            // get last cells
+            foreach (var cell in lastCells)
             {
                 Vector2Int[] cellNs = cell.GetNeighborsPositions();
                 foreach (var n in cellNs)
@@ -49,14 +56,19 @@ internal class MapData
 
             foreach (var nP in neighborsPositions)
             {
+                if (map._cells.ContainsKey(nP))
+                    continue;
+
                 int cellSpawnValue = randomService.GetIntInclusive(1, 100);
                 if (cellSpawnValue <= Settings.CELL_SPAWN_CHANCE)
                 {
                     int value = randomService.GetIntInclusive(1, 100);
 
-                    CellType cellType = Settings.GetCellTypeByRandomValue(value);
+                    CellType cellType = Settings.GetCellTypeBasedOnRandomValue(value);
 
-                    map._cells[nP] = new MapCell(nP, cellType);
+                    MapCell newCell = new MapCell(nP, cellType);
+                    lastCells.Add(newCell);
+                    map._cells[nP] = newCell;
                     cellsCount--;
 
                     if (cellsCount <= 0)
@@ -66,40 +78,6 @@ internal class MapData
         }
 
         return map;
-    }
-}
-
-public interface IMapCell
-{
-    Vector2Int Position { get; }
-    CellType CellType { get; }
-    CellState CellState { get; }
-}
-
-internal class MapCell : IMapCell
-{
-    public MapCell(Vector2Int position, CellType cellType = CellType.Empty, CellState cellState = CellState.Unexplored)
-    {
-        Position = position;
-        CellType = cellType;
-        CellState = cellState;
-    }
-
-    public Vector2Int Position { get; }
-    public CellType CellType { get; set; }
-    public CellState CellState { get; set; }
-
-    internal Vector2Int[] GetNeighborsPositions()
-    {
-        int neighborsCount = 4;
-        Vector2Int[] result = new Vector2Int[neighborsCount];
-
-        result[0] = new Vector2Int(Position.X - 1, Position.Y);
-        result[1] = new Vector2Int(Position.X + 1, Position.Y);
-        result[2] = new Vector2Int(Position.X, Position.Y - 1);
-        result[3] = new Vector2Int(Position.X, Position.Y + 1);
-
-        return result;
     }
 }
 

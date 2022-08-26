@@ -8,7 +8,7 @@ public static class Settings
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 2;
-    public const int CELL_SPAWN_CHANCE = 30;
+    public const int CELL_SPAWN_CHANCE = 10;
 
     public static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {
@@ -26,12 +26,13 @@ public static class Settings
     }
 
     /// <summary>
-    /// 
+    /// Get CellType Based On Random Value within [1, 100] or throw Exception
     /// </summary>
-    /// <param name="value">from 1 to 100</param>
+    /// <param name="value">within [1, 100]</param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    internal static CellType GetCellTypeByRandomValue(int value)
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    internal static CellType GetCellTypeBasedOnRandomValue(int value)
     {
         if (value < 1 || value > 100)
             throw new ArgumentOutOfRangeException("The value have be within 1 to 100");
