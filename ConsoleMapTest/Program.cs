@@ -8,7 +8,7 @@ public class Program
 
     public static void Main()
     {
-        int cellsCount = 50;
+        int cellsCount = 500;
         //string mapString = String.Empty;
         StringBuilder mapSB = new StringBuilder();
         MapData map = MapData.Generate(new RandomService(), cellsCount);
@@ -50,7 +50,7 @@ public class Program
 
         try
         {
-            File.WriteAllText($"{DateTime.Now.Ticks}_chanse_{Settings.CELL_SPAWN_CHANCE}_thin.txt", mapSB.ToString());
+            File.WriteAllText($"{DateTime.Now.Ticks}_chanse_{Settings.CELL_SPAWN_CHANCE}_new.txt", mapSB.ToString());
             //using StreamWriter file = new($"{DateTime.Now}.txt");
             //file.Write(mapSB.ToString());
 

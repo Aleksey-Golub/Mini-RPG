@@ -27,11 +27,36 @@ public class MapData : IMapData
             throw new ArgumentOutOfRangeException(nameof(cellsCount), "CellsCount have to be greate then 0");
 
         MapData map = new MapData();
+        int counter = cellsCount;
 
-        List<MapCell> lastCells = new List<MapCell>();
-        lastCells = map._cells.Values.ToList();
-        while (cellsCount > 0)
+        List<MapCell> lastCells;
+        while (counter > 0)
         {
+            int minFreeNCount = 2;
+            do
+            {
+                lastCells = map._cells.Values.ToList();
+            
+                for (int i = 0; i < lastCells.Count; i++)
+                {
+                    MapCell? c = lastCells[i];
+                    int freeN = 0;
+                    var cNs = c.GetNeighborsPositions();
+
+                    foreach (var cN in cNs)
+                        if (map._cells.ContainsKey(cN) == false)
+                            freeN++;
+
+                    if (freeN <= minFreeNCount)
+                    {
+                        lastCells.Remove(c);
+                        i--;
+                    }
+                }
+                minFreeNCount--;
+            }
+            while (lastCells.Count == 0);
+
             // get a collection of cell neighbors with unique elements to avoid duplication
             List<Vector2Int> neighborsPositions = new List<Vector2Int>(50);
 
@@ -51,7 +76,7 @@ public class MapData : IMapData
 
             // try generate new cells
             // revers for diversity
-            if (cellsCount % 2 == 0)
+            if (counter % 2 == 0)
                 neighborsPositions.Reverse();
 
             foreach (var nP in neighborsPositions)
@@ -69,9 +94,9 @@ public class MapData : IMapData
                     MapCell newCell = new MapCell(nP, cellType);
                     lastCells.Add(newCell);
                     map._cells[nP] = newCell;
-                    cellsCount--;
+                    counter--;
 
-                    if (cellsCount <= 0)
+                    if (counter <= 0)
                         break;
                 }
             }
