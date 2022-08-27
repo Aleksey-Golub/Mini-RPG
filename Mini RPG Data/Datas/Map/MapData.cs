@@ -2,11 +2,17 @@
 
 namespace Mini_RPG_Data.Map;
 
-public class MapData : IMapData
+internal class MapData : IMapData
 {
     private readonly Dictionary<Vector2Int, MapCell> _cells;
 
     public IReadOnlyDictionary<Vector2Int, IMapCell> Cells => _cells.ToDictionary(x => x.Key, x => x.Value as IMapCell);
+
+    public int EnemyCount { get; private set; }
+    public int LootCount { get; private set; }
+    public int LockedChestCount { get; private set; }
+    public int HiddenLootCount { get; private set; }
+    public int TrapCount { get; private set; }
 
     private MapData()
     {
@@ -21,8 +27,10 @@ public class MapData : IMapData
     /// </summary>
     /// <param name="cellsCount">Size of map without town cell. Have to be greate then 0</param>
     /// <returns></returns>
-    public static MapData Generate(IRandomService randomService, int cellsCount)
+    internal static MapData Generate(IRandomService randomService)
     {
+        int cellsCount = randomService.GetIntInclusive(Settings.MIN_MAP_CELL_COUNT, Settings.MAX_MAP_CELL_COUNT);
+
         if (cellsCount <= 0)
             throw new ArgumentOutOfRangeException(nameof(cellsCount), "CellsCount have to be greate then 0");
 
@@ -92,8 +100,8 @@ public class MapData : IMapData
                     CellType cellType = Settings.GetCellTypeBasedOnRandomValue(value);
 
                     MapCell newCell = new MapCell(nP, cellType);
-                    lastCells.Add(newCell);
                     map._cells[nP] = newCell;
+                    map.IncrementCounters(cellType);
                     counter--;
 
                     if (counter <= 0)
@@ -104,6 +112,37 @@ public class MapData : IMapData
 
         return map;
     }
+
+    private void IncrementCounters(CellType cellType)
+    {
+        switch (cellType)
+        {
+            case CellType.None:
+                return;
+            case CellType.Empty:
+                return;
+            case CellType.Town:
+                return;
+            case CellType.Enemy:
+                EnemyCount++;
+                return;
+            case CellType.Loot:
+                LootCount++;
+                return;
+            case CellType.LockedChest:
+                LockedChestCount++;
+                return;
+            case CellType.HiddedLoot:
+                HiddenLootCount++;
+                return;
+            case CellType.Trap:
+                TrapCount++;
+                return;
+            default:
+                throw new NotImplementedException($"unnoun {cellType}");
+        }
+    }
+
 }
 
 public enum CellState

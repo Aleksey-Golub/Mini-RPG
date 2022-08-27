@@ -4,7 +4,7 @@ public class CharacterData
 {
     private readonly Abilities _abilities;
 
-    public CharacterData(string name, string avatarFilePath, Race race, Abilities baseAbilities)
+    internal CharacterData(string name, string avatarFilePath, Race race, Abilities baseAbilities)
     {
         Name = name;
         AvatarFilePath = avatarFilePath;

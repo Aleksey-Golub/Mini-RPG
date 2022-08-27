@@ -2,7 +2,7 @@
 
 namespace Mini_RPG_Data.Player;
 
-public class PlayerData
+internal class PlayerData
 {
     public PlayerData(CharacterData characterData)
     {

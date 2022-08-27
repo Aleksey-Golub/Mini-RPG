@@ -5,7 +5,7 @@ public class Health
     private readonly IAbility _constitution;
     private readonly CharacterData _character;
 
-    public Health(CharacterData character)
+    internal Health(CharacterData character)
     {
         _constitution = character.Abilities.Constitution;
         _character = character;

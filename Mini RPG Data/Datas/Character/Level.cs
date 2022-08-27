@@ -2,7 +2,7 @@
 
 public class Level
 {
-    public Level()
+    internal Level()
     {
         Value = 1;
         CurrentExperience = 0;

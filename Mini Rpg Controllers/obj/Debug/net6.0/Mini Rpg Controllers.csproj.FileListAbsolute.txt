@@ -1,0 +1,15 @@
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\bin\Debug\net6.0\Mini Rpg Controllers.deps.json
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\bin\Debug\net6.0\Mini Rpg Controllers.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\bin\Debug\net6.0\Mini Rpg Controllers.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\bin\Debug\net6.0\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\bin\Debug\net6.0\Mini RPG Data.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.csproj.AssemblyReference.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.AssemblyInfoInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.AssemblyInfo.cs
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.csproj.CoreCompileInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.csproj.CopyComplete
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\refint\Mini Rpg Controllers.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\Mini Rpg Controllers.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini Rpg Controllers\obj\Debug\net6.0\ref\Mini Rpg Controllers.dll

@@ -1,0 +1,50 @@
+                 oo                
+                oooco              
+                 o co              
+                   e               
+                   o               
+                   o               
+                o  h               
+                hooo               
+                ooo                
+                 oo                
+                ooo                
+                ooo  oooeo   oo    
+               oooooooroeo   ooo   
+               ooroooo o     o o   
+               ooo o o ooo ooooe   
+               ooooo o ooooo oo    
+               olo ooooo ooo       
+               ooooooooo ooo       
+            ooooooooo oohooo       
+            ooo oo  ooo oo         
+            l o oooocoo ooooooo    
+            o o oooo  ooeoooooo    
+          oeooooerooocoo    ohh    
+         ooooooooooooooo  ooooo    
+      o  ooooo oroooo  eooooo      
+      o  o  oeoooooto  ooool     oo
+oo    ohoooo    oooooooo oo  eoo o 
+ooooeo oooooo   oo coooero   ooooo 
+oooooo oloooooo oo oohl oo    o  oo
+  ooo lo  oohooooooo  ohooo  ool oo
+   o  oooooco  ooolooooooeoooooo   
+   r  o     oh oo oooo oo  ooooo oo
+   oooo oo  ooooo ooooooo     oo oo
+        oo  ooooo rooeooo      hco 
+        oo oooooo     oo           
+      oorooo oo       oo           
+      oo oo oho       oo           
+          oohoo                    
+        oooo o                     
+        oooooo                     
+           o                       
+           ooo                     
+            oo                     
+            oo                     
+            oe                     
+
+
+
+Empty =>'o', Town => 't', Enemy => 'e' 15, Loot => 'l' 8, LockedChest => 'c' 7, HiddedLoot => 'h' 13, Trap => 'r' 8,
+mapSize = 35 x 45, cellsCount = 475, not empty = 51

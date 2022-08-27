@@ -8,7 +8,10 @@ public static class Settings
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 2;
+
     public const int CELL_SPAWN_CHANCE = 10;
+    public const int MIN_MAP_CELL_COUNT = 50;
+    public const int MAX_MAP_CELL_COUNT = 500;
 
     public static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {
@@ -39,17 +42,17 @@ public static class Settings
 
         switch (value)
         {
-            case <= 100:
+            case <= 89:
                 return CellType.Empty;
-            case 101:
+            case <= 93:
                 return CellType.Enemy;
-            case 102:
+            case <= 95:
                 return CellType.HiddedLoot;
-            case 103:
+            case <= 96:
                 return CellType.LockedChest;
-            case 104:
+            case <= 98:
                 return CellType.Loot;
-            case 105:
+            case <= 100:
                 return CellType.Trap;
 
             default:
