@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "Mini RPG Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Mini RPG Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mini RPG Data.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Mini RPG Data/1.0.0": {
+      "type": "project",
+      "path": "../Mini RPG Data/Mini RPG Data.csproj",
+      "msbuildProject": "../Mini RPG Data/Mini RPG Data.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "Mini RPG Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Алексей\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG Data\\Mini RPG Data.csproj": {
+              "projectPath": "D:\\Programming\\Not Unity Projects\\Mini-RPG\\Mini RPG Data\\Mini RPG Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

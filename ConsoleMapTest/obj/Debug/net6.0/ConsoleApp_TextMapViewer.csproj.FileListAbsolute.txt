@@ -1,0 +1,18 @@
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.AssemblyReference.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.AssemblyInfoInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.AssemblyInfo.cs
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.CoreCompileInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.exe
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.deps.json
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.runtimeconfig.json
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.CopyComplete
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\refint\ConsoleApp_TextMapViewer.dll
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.genruntimeconfig.cache
+D:\Programming\Not Unity Projects\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ref\ConsoleApp_TextMapViewer.dll

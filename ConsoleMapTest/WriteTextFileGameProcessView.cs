@@ -1,25 +1,31 @@
 ﻿using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Map;
+using Mini_RPG_Data.Viewes;
 using System.Text;
 
 internal class WriteTextFileGameProcessView : IGameProcessView
 {
     private GameProcessController _gameProcessController = null!;
 
+    private bool _isActive;
+
+    public void SetActiveState(bool newState) => _isActive = newState;
+
     public void SetGameProcessController(GameProcessController gameProcessController)
     {
         _gameProcessController = gameProcessController;
     }
 
-    public void ShowMap(MapDTO mapDTO)
+    public void ShowMap(IMapData mapData)
     {
         StringBuilder mapSB = new StringBuilder();
-        IMapData map = mapDTO.MapData;
+        IMapData map = mapData;
 
-        int minX = mapDTO.MinX;
-        int minY = mapDTO.MinY;
-        int maxX = mapDTO.MaxX;
-        int maxY = mapDTO.MaxY;
+        int minX = mapData.MinX;
+        int minY = mapData.MinY;
+        int maxX = mapData.MaxX;
+        int maxY = mapData.MaxY;
 
         for (int y = maxY; y >= minY; y--)
         {

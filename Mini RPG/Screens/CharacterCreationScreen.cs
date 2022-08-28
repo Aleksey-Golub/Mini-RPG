@@ -1,6 +1,8 @@
-﻿namespace Mini_RPG.Screens
+﻿using Mini_RPG_Data.Viewes;
+
+namespace Mini_RPG.Screens
 {
-    public partial class CharacterCreationScreen : UserControl
+    public partial class CharacterCreationScreen : UserControl, ICharacterCreationScreenView
     {
         private readonly int _maxNameLength = 15;
 
@@ -51,5 +53,7 @@
                 _textBox_Name.SelectionStart = _textBox_Name.Text.Length;
             }
         }
+
+        public void SetActiveState(bool newState) => Visible = newState;
     }
 }

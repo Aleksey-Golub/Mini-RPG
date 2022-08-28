@@ -1,6 +1,10 @@
-﻿namespace Mini_RPG.Screens;
+﻿using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Map;
+using Mini_RPG_Data.Viewes;
 
-public partial class GameProcessScreen : UserControl
+namespace Mini_RPG.Screens;
+
+public partial class GameProcessScreen : UserControl, IGameProcessView
 {
     private readonly int _logMessageCount = 10;
     private readonly int _logMessageCountInMinimizeState = 3;
@@ -94,4 +98,16 @@ public partial class GameProcessScreen : UserControl
 
         }
     }
+
+    public void SetGameProcessController(GameProcessController gameProcessController)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowMap(IMapData mapData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetActiveState(bool newState) => Visible = newState;
 }

@@ -13,6 +13,10 @@ internal class MapData : IMapData
     public int LockedChestCount { get; private set; }
     public int HiddenLootCount { get; private set; }
     public int TrapCount { get; private set; }
+    public int MinX { get; private set; }
+    public int MaxX { get; private set; }
+    public int MinY { get; private set; }
+    public int MaxY { get; private set; }
 
     private MapData()
     {
@@ -110,6 +114,7 @@ internal class MapData : IMapData
             }
         }
 
+        map.CalculateSize();
         return map;
     }
 
@@ -143,6 +148,25 @@ internal class MapData : IMapData
         }
     }
 
+    private void CalculateSize()
+    {
+        MinX = int.MaxValue;
+        MinY = int.MaxValue;
+        MaxX = int.MinValue;
+        MaxY = int.MinValue;
+
+        foreach (Vector2Int key in _cells.Keys)
+        {
+            if (key.X < MinX)
+                MinX = key.X;
+            if (key.Y < MinY)
+                MinY = key.Y;
+            if (key.X > MaxX)
+                MaxX = key.X;
+            if (key.Y > MaxY)
+                MaxY = key.Y;
+        }
+    }
 }
 
 public enum CellState

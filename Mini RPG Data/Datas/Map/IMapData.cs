@@ -8,4 +8,8 @@ public interface IMapData
     int LockedChestCount { get; }
     int HiddenLootCount { get; }
     int TrapCount { get; }
+    int MinX { get; }
+    int MaxX { get; }
+    int MinY { get; }
+    int MaxY { get; }
 }

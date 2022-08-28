@@ -64,11 +64,14 @@
             this._pictureBox_Enemy = new System.Windows.Forms.PictureBox();
             this._flowLayoutPanel_GameLog = new System.Windows.Forms.FlowLayoutPanel();
             this._panel_Town = new System.Windows.Forms.Panel();
+            this._button_RestInTown = new System.Windows.Forms.Button();
             this._button_LeaveTown = new System.Windows.Forms.Button();
             this._button_Trader = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this._button_RestInTown = new System.Windows.Forms.Button();
+            this._panel_Battle = new System.Windows.Forms.Panel();
+            this._panel_BattleActions = new System.Windows.Forms.Panel();
+            this._button_Attack = new System.Windows.Forms.Button();
             this._panel_Navigation.SuspendLayout();
             this._panel_MiniMap.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,6 +82,8 @@
             this._panel_Location.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).BeginInit();
             this._panel_Town.SuspendLayout();
+            this._panel_Battle.SuspendLayout();
+            this._panel_BattleActions.SuspendLayout();
             this.SuspendLayout();
             // 
             // _panel_Navigation
@@ -376,7 +381,7 @@
             // _panel_Location
             // 
             this._panel_Location.BackColor = System.Drawing.SystemColors.ControlDark;
-            this._panel_Location.Controls.Add(this._pictureBox_Enemy);
+            this._panel_Location.Controls.Add(this._panel_Battle);
             this._panel_Location.Controls.Add(this._flowLayoutPanel_GameLog);
             this._panel_Location.Location = new System.Drawing.Point(93, 55);
             this._panel_Location.Name = "_panel_Location";
@@ -385,7 +390,7 @@
             // 
             // _pictureBox_Enemy
             // 
-            this._pictureBox_Enemy.Location = new System.Drawing.Point(455, 174);
+            this._pictureBox_Enemy.Location = new System.Drawing.Point(31, 51);
             this._pictureBox_Enemy.Name = "_pictureBox_Enemy";
             this._pictureBox_Enemy.Size = new System.Drawing.Size(312, 398);
             this._pictureBox_Enemy.TabIndex = 0;
@@ -409,6 +414,15 @@
             this._panel_Town.Name = "_panel_Town";
             this._panel_Town.Size = new System.Drawing.Size(346, 131);
             this._panel_Town.TabIndex = 8;
+            // 
+            // _button_RestInTown
+            // 
+            this._button_RestInTown.Location = new System.Drawing.Point(62, 49);
+            this._button_RestInTown.Name = "_button_RestInTown";
+            this._button_RestInTown.Size = new System.Drawing.Size(229, 34);
+            this._button_RestInTown.TabIndex = 2;
+            this._button_RestInTown.Text = "% отдыхать в городе %";
+            this._button_RestInTown.UseVisualStyleBackColor = true;
             // 
             // _button_LeaveTown
             // 
@@ -449,23 +463,40 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.SwitchLogState);
             // 
-            // _button_RestInTown
+            // _panel_Battle
             // 
-            this._button_RestInTown.Location = new System.Drawing.Point(62, 49);
-            this._button_RestInTown.Name = "_button_RestInTown";
-            this._button_RestInTown.Size = new System.Drawing.Size(229, 34);
-            this._button_RestInTown.TabIndex = 2;
-            this._button_RestInTown.Text = "% отдыхать в городе %";
-            this._button_RestInTown.UseVisualStyleBackColor = true;
+            this._panel_Battle.Controls.Add(this._pictureBox_Enemy);
+            this._panel_Battle.Location = new System.Drawing.Point(444, 134);
+            this._panel_Battle.Name = "_panel_Battle";
+            this._panel_Battle.Size = new System.Drawing.Size(750, 502);
+            this._panel_Battle.TabIndex = 2;
+            // 
+            // _panel_BattleActions
+            // 
+            this._panel_BattleActions.Controls.Add(this._button_Attack);
+            this._panel_BattleActions.Location = new System.Drawing.Point(1074, 835);
+            this._panel_BattleActions.Name = "_panel_BattleActions";
+            this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
+            this._panel_BattleActions.TabIndex = 9;
+            // 
+            // _button_Attack
+            // 
+            this._button_Attack.Location = new System.Drawing.Point(62, 49);
+            this._button_Attack.Name = "_button_Attack";
+            this._button_Attack.Size = new System.Drawing.Size(229, 34);
+            this._button_Attack.TabIndex = 2;
+            this._button_Attack.Text = "% атаковать %";
+            this._button_Attack.UseVisualStyleBackColor = true;
             // 
             // GameProcessScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this._panel_BattleActions);
+            this.Controls.Add(this._panel_Town);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this._panel_Town);
             this.Controls.Add(this._panel_Location);
             this.Controls.Add(this._button_Inventory);
             this.Controls.Add(this._statusStrip);
@@ -488,6 +519,8 @@
             this._panel_Location.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).EndInit();
             this._panel_Town.ResumeLayout(false);
+            this._panel_Battle.ResumeLayout(false);
+            this._panel_BattleActions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,5 +568,8 @@
         private Button button3;
         private PictureBox _pictureBox_HasFreeAbilityActions;
         private Button _button_RestInTown;
+        private Panel _panel_Battle;
+        private Panel _panel_BattleActions;
+        private Button _button_Attack;
     }
 }

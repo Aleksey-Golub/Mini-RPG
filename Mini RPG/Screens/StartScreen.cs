@@ -1,6 +1,8 @@
-﻿namespace Mini_RPG.Screens;
+﻿using Mini_RPG_Data.Viewes;
 
-public partial class StartScreen : UserControl
+namespace Mini_RPG.Screens;
+
+public partial class StartScreen : UserControl, IStartScreenView
 {
     public StartScreen()
     {
@@ -9,6 +11,7 @@ public partial class StartScreen : UserControl
 
     public event Action? NewGameButtonClicked;
     public event Action? LoadGameButtonClicked;
+    public event Action? ExitButtonClicked;
 
     private void Button_NewGame_Click(object sender, EventArgs e)
     {
@@ -17,11 +20,13 @@ public partial class StartScreen : UserControl
 
     private void Button_Exit_Click(object sender, EventArgs e)
     {
-        Application.Exit();
+        ExitButtonClicked?.Invoke();//Application.Exit();
     }
     
     private void Button_LoadGame_Click(object sender, EventArgs e)
     {
         LoadGameButtonClicked?.Invoke();
     }
+
+    public void SetActiveState(bool newState) => Visible = newState;
 }

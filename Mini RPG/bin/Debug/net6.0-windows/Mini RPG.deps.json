@@ -10,11 +10,21 @@
         "runtime": {
           "Mini RPG.dll": {}
         }
+      },
+      "Mini RPG Data/1.0.0": {
+        "runtime": {
+          "Mini RPG Data.dll": {}
+        }
       }
     }
   },
   "libraries": {
     "Mini RPG/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mini RPG Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
