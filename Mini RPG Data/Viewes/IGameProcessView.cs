@@ -5,7 +5,7 @@ namespace Mini_RPG_Data.Viewes;
 
 public interface IGameProcessView : IView
 {
-    void SetGameProcessController(GameProcessController gameProcessController);
+    void SetGameProcessController(GameProcessController controller);
     void ShowMap(IMapData mapData);
     void SetActiveState(bool newState);
 }

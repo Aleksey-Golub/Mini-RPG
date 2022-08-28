@@ -1,50 +1,47 @@
 ﻿using Mini_RPG.Screens;
 using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 
 namespace Mini_RPG;
 
-public partial class Main : Form, IStartScreenView, ICharacterCreationScreenView
+public partial class Main : Form
 {
     private readonly StartScreen _startScreen;
     private readonly CharacterCreationScreen _characterCreationScreen;
     private readonly IntroScreen _introScreen;
     private readonly GameProcessScreen _gameProcess;
+    
+    private readonly SimpleLocalizationService _localizationService;
 
-    private StartScreenController _startScreenController = null!;
+    //private StartScreenController _startScreenController = null!;
 
     public Main()
     {
         InitializeComponent();
 
-        _startScreen = new StartScreen();
-        Controls.Add(_startScreen);
-        _startScreen.NewGameButtonClicked += OnStartScreen_NewGameButtonClicked;
-        _startScreen.LoadGameButtonClicked += OnStartScreen_LoadGameButtonClicked;
-        _startScreen.ExitButtonClicked += OnStartScreen_ExitButtonClicked;
+        _localizationService = new SimpleLocalizationService();
 
-        _characterCreationScreen = new CharacterCreationScreen();
+        _startScreen = new StartScreen(_localizationService);
+        Controls.Add(_startScreen);
+
+        _characterCreationScreen = new CharacterCreationScreen(_localizationService);
         Controls.Add(_characterCreationScreen);
         _characterCreationScreen.SetActiveState(false);
-        _characterCreationScreen.StartGameButtonClicked += OnCharacterCreationScreen_StartGameButtonClicked;
 
         _introScreen = new IntroScreen();
         Controls.Add(_introScreen);
         _introScreen.SetActiveState(false);
-        _introScreen.GoToGameButtonClicled += OnIntroScreen_GoToGameButtonClicled;
 
         _gameProcess = new GameProcessScreen();
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
-        _gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
+        //_gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
 
-        SetControllers(new StartScreenController(this, this));
-    }
-
-    private void SetControllers(StartScreenController startScreenController)
-    {
-        _startScreenController = startScreenController;
-
+        _startScreen.SetController(new StartScreenController(_startScreen, _characterCreationScreen));
+        var characterCreationScreenController= new CharacterCreationScreenController(_characterCreationScreen, _introScreen);
+        _characterCreationScreen.SetController(characterCreationScreenController);
+        _introScreen.SetController(characterCreationScreenController);
     }
 
     private void OnGameProcess_SaveAndExitClicked()
@@ -56,28 +53,9 @@ public partial class Main : Form, IStartScreenView, ICharacterCreationScreenView
         _startScreen.Show();
     }
 
-    private void OnIntroScreen_GoToGameButtonClicled()
+    private void OnIntroScreen_GoToGameButtonClicked()
     {
         _introScreen.Hide();
         _gameProcess.Show();
     }
-
-    private void OnCharacterCreationScreen_StartGameButtonClicked()
-    {
-        // получить данные созданного персонажа и отдать в контроллер
-        _characterCreationScreen.Hide();
-        _introScreen.Show();
-    }
-
-    #region StartScrenn
-    private void OnStartScreen_ExitButtonClicked() => Application.Exit();
-
-    private void OnStartScreen_LoadGameButtonClicked() => _startScreenController.LoadSavedGame();
-
-    private void OnStartScreen_NewGameButtonClicked() => _startScreenController.StartNewGame();
-    #endregion
-
-    void ICharacterCreationScreenView.SetActiveState(bool newState) => _characterCreationScreen.SetActiveState(newState);
-
-    void IStartScreenView.SetActiveState(bool newState) => _startScreen.SetActiveState(newState);
 }

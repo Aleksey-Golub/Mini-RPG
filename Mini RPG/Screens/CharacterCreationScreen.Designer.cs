@@ -314,10 +314,6 @@
             this._comboBox_Race.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._comboBox_Race.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._comboBox_Race.FormattingEnabled = true;
-            this._comboBox_Race.Items.AddRange(new object[] {
-            "орк",
-            "человек",
-            "эльф"});
             this._comboBox_Race.Location = new System.Drawing.Point(182, 61);
             this._comboBox_Race.Name = "_comboBox_Race";
             this._comboBox_Race.Size = new System.Drawing.Size(250, 49);
@@ -337,7 +333,7 @@
             // _button_SelectCharacterAvatar
             // 
             this._button_SelectCharacterAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._button_SelectCharacterAvatar.BackgroundImage = global::Mini_RPG.Properties.Resources.Аватар_персонажа_1;
+            this._button_SelectCharacterAvatar.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_1;
             this._button_SelectCharacterAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_SelectCharacterAvatar.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._button_SelectCharacterAvatar.ForeColor = System.Drawing.SystemColors.Control;

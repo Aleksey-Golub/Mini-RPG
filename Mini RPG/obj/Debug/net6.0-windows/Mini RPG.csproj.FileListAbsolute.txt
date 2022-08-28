@@ -46,4 +46,4 @@ D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Min
 D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG Data.dll
 D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\bin\Debug\net6.0-windows\Mini RPG Data.pdb
 D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.csproj.CopyComplete
-D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Resources.Program.resources
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.Resources.Strings.resources

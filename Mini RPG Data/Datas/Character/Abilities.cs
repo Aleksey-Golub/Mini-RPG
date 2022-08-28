@@ -31,9 +31,9 @@ public class Abilities : IAbilities
         //int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
         //var defaultAbilities = new Abilities(strength: defaultAbilityValue, dexterity: defaultAbilityValue, constitution: defaultAbilityValue, perception: defaultAbilityValue, charisma: defaultAbilityValue);
 
-        var humanAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);
-        var elfAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);
-        var dwarfAbilities = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 0);
+        var humanAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 2);
+        var elfAbilities    = new Abilities(strength: 0, dexterity: 1, constitution: 0, perception: 1, charisma: 0);
+        var dwarfAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 2, perception: 0, charisma: 0);
 
         return race switch
         {

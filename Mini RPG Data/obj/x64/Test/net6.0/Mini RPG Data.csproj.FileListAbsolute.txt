@@ -1,0 +1,12 @@
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\bin\x64\Test\net6.0\Mini RPG Data.deps.json
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\bin\x64\Test\net6.0\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\bin\x64\Test\net6.0\Mini RPG Data.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.csproj.AssemblyReference.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.AssemblyInfoInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.AssemblyInfo.cs
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.csproj.CoreCompileInputs.cache
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\refint\Mini RPG Data.dll
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\Mini RPG Data.pdb
+D:\Programming\Not Unity Projects\Mini-RPG\Mini RPG Data\obj\x64\Test\net6.0\ref\Mini RPG Data.dll

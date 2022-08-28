@@ -63,9 +63,9 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Аватар_персонажа_1 {
+        internal static System.Drawing.Bitmap Avatar_1 {
             get {
-                object obj = ResourceManager.GetObject("Аватар персонажа_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Avatar_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Аватар_персонажа_2 {
+        internal static System.Drawing.Bitmap Avatar_2 {
             get {
-                object obj = ResourceManager.GetObject("Аватар персонажа_2", resourceCulture);
+                object obj = ResourceManager.GetObject("Avatar_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Аватар_персонажа_3 {
+        internal static System.Drawing.Bitmap Avatar_3 {
             get {
-                object obj = ResourceManager.GetObject("Аватар персонажа_3", resourceCulture);
+                object obj = ResourceManager.GetObject("Avatar_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Аватар_персонажа_4 {
+        internal static System.Drawing.Bitmap Avatar_4 {
             get {
-                object obj = ResourceManager.GetObject("Аватар персонажа_4", resourceCulture);
+                object obj = ResourceManager.GetObject("Avatar_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

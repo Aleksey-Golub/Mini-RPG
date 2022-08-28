@@ -113,7 +113,7 @@
             // _statusLabel_CharacterMoney
             // 
             this._statusLabel_CharacterMoney.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this._statusLabel_CharacterMoney.Image = global::Mini_RPG.Properties.Resources.Аватар_персонажа_1;
+            this._statusLabel_CharacterMoney.Image = global::Mini_RPG.Properties.Resources.Avatar_1;
             this._statusLabel_CharacterMoney.Name = "_statusLabel_CharacterMoney";
             this._statusLabel_CharacterMoney.Size = new System.Drawing.Size(80, 29);
             this._statusLabel_CharacterMoney.Text = "1234";
@@ -127,7 +127,7 @@
             // _statusLabel_TraderMoney
             // 
             this._statusLabel_TraderMoney.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this._statusLabel_TraderMoney.Image = global::Mini_RPG.Properties.Resources.Аватар_персонажа_1;
+            this._statusLabel_TraderMoney.Image = global::Mini_RPG.Properties.Resources.Avatar_1;
             this._statusLabel_TraderMoney.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._statusLabel_TraderMoney.Name = "_statusLabel_TraderMoney";
             this._statusLabel_TraderMoney.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

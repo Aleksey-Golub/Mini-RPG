@@ -203,7 +203,7 @@
             // 
             // _pictureBox_HasFreeAbilityActions
             // 
-            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.Аватар_персонажа_4;
+            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_4;
             this._pictureBox_HasFreeAbilityActions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._pictureBox_HasFreeAbilityActions.Location = new System.Drawing.Point(115, 151);
             this._pictureBox_HasFreeAbilityActions.Name = "_pictureBox_HasFreeAbilityActions";
@@ -330,7 +330,7 @@
             // _label_Money
             // 
             this._label_Money.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this._label_Money.Image = global::Mini_RPG.Properties.Resources.Аватар_персонажа_1;
+            this._label_Money.Image = global::Mini_RPG.Properties.Resources.Avatar_1;
             this._label_Money.Name = "_label_Money";
             this._label_Money.Size = new System.Drawing.Size(90, 29);
             this._label_Money.Text = "00000";
@@ -338,7 +338,7 @@
             // _label_Health
             // 
             this._label_Health.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this._label_Health.Image = global::Mini_RPG.Properties.Resources.Аватар_персонажа_4;
+            this._label_Health.Image = global::Mini_RPG.Properties.Resources.Avatar_4;
             this._label_Health.Name = "_label_Health";
             this._label_Health.Size = new System.Drawing.Size(87, 29);
             this._label_Health.Text = "00/00";
