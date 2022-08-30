@@ -2,11 +2,12 @@
 
 namespace Mini_RPG_Data.Player;
 
-internal class PlayerData
+[Serializable]
+public class PlayerData
 {
-    public PlayerData(CharacterData characterData)
+    public PlayerData()
     {
-        CharacterData = characterData;
+        CharacterData = new CharacterData();
         Wallet = new Wallet();
     }
 

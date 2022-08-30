@@ -1,6 +1,6 @@
 ﻿namespace Mini_RPG_Data.Player;
 
-internal class Wallet : IWallet
+public class Wallet : IWallet
 {
     public int Money { get; private set; }
 

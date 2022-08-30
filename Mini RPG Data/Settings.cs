@@ -12,6 +12,7 @@ public static class Settings
     public const int CELL_SPAWN_CHANCE = 10;
     public const int MIN_MAP_CELL_COUNT = 50;
     public const int MAX_MAP_CELL_COUNT = 500;
+    public const int DEFAULT_ABILITYPOINTS_COUNT = 2;
 
     public static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {

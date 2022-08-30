@@ -2,7 +2,7 @@
 
 public class Abilities : IAbilities
 {
-    public Abilities(int strength, int dexterity, int constitution, int perception, int charisma)
+    private Abilities(int strength, int dexterity, int constitution, int perception, int charisma, int abilityPoints)
     {
         Strength = new Ability(strength);
         Dexterity = new Ability(dexterity);
@@ -10,8 +10,18 @@ public class Abilities : IAbilities
         Perception = new Ability(perception);
         Charisma = new Ability(charisma);
 
-        AbilityPoints = 0;
+        AbilityPoints = abilityPoints;
+
+        Strength.ValueChanged += SomeAbilityValueChanged;
+        Dexterity.ValueChanged += SomeAbilityValueChanged;
+        Constitution.ValueChanged += SomeAbilityValueChanged;
+        Perception.ValueChanged += SomeAbilityValueChanged;
+        Charisma.ValueChanged += SomeAbilityValueChanged;
     }
+
+    public event Action? Changed;
+
+    private void SomeAbilityValueChanged() => Changed?.Invoke();
 
     public Ability Strength { get; set; }
     public Ability Dexterity { get; set; }
@@ -26,21 +36,28 @@ public class Abilities : IAbilities
     IAbility IAbilities.Perception => Perception;
     IAbility IAbilities.Charisma => Charisma;
 
-    public Abilities Get(Abilities baseAbilities, Race race)
+    public static Abilities GetFor(CharacterRace race)
     {
-        //int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
-        //var defaultAbilities = new Abilities(strength: defaultAbilityValue, dexterity: defaultAbilityValue, constitution: defaultAbilityValue, perception: defaultAbilityValue, charisma: defaultAbilityValue);
+        int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
+        int defaultAbilityPoints = Settings.DEFAULT_ABILITYPOINTS_COUNT;
+        var baseAbilities = new Abilities(
+            strength: defaultAbilityValue, 
+            dexterity: defaultAbilityValue, 
+            constitution: defaultAbilityValue, 
+            perception: defaultAbilityValue, 
+            charisma: defaultAbilityValue, 
+            abilityPoints: defaultAbilityPoints);
 
-        var humanAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 2);
-        var elfAbilities    = new Abilities(strength: 0, dexterity: 1, constitution: 0, perception: 1, charisma: 0);
-        var dwarfAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 2, perception: 0, charisma: 0);
+        var humanAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 2, abilityPoints: 0);
+        var elfAbilities    = new Abilities(strength: 0, dexterity: 1, constitution: 0, perception: 1, charisma: 0, abilityPoints: 0);
+        var dwarfAbilities  = new Abilities(strength: 0, dexterity: 0, constitution: 2, perception: 0, charisma: 0, abilityPoints: 0);
 
         return race switch
         {
-            Race.None => baseAbilities,
-            Race.Human => baseAbilities + humanAbilities,
-            Race.Elf => baseAbilities + elfAbilities,
-            Race.Dwarf => baseAbilities + dwarfAbilities,
+            CharacterRace.Human => baseAbilities + humanAbilities,
+            CharacterRace.Elf => baseAbilities + elfAbilities,
+            CharacterRace.Dwarf => baseAbilities + dwarfAbilities,
+            CharacterRace.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
     }
@@ -52,7 +69,8 @@ public class Abilities : IAbilities
         int newConstitution = a.Constitution.Value + b.Constitution.Value;
         int newPerception = a.Perception.Value + b.Perception.Value;
         int newCharisma = a.Charisma.Value + b.Charisma.Value;
+        int newAbilityPoints = a.AbilityPoints + b.AbilityPoints;
 
-        return new Abilities(newStrength, newDexterity, newConstitution, newPerception, newCharisma);
+        return new Abilities(newStrength, newDexterity, newConstitution, newPerception, newCharisma, newAbilityPoints);
     }
 }

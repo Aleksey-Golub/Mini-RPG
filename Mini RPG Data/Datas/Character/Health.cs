@@ -13,5 +13,5 @@ public class Health
 
     public int CurrentHealth { get; }
     public int MaxHealth => _constitution.Value + _constitution.Bonus * Settings.CalculateLevelModifier(_character.Level.Value);
-    public event Action<int, int>? HealthChanged;
+    public event Action<int, int>? Changed;
 }

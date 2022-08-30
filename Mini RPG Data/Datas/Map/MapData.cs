@@ -2,7 +2,8 @@
 
 namespace Mini_RPG_Data.Map;
 
-internal class MapData : IMapData
+[Serializable]
+public class MapData : IMapData
 {
     private readonly Dictionary<Vector2Int, MapCell> _cells;
 

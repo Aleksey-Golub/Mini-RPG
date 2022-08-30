@@ -9,5 +9,7 @@ public interface IAbilities
     IAbility Charisma { get; }
     int AbilityPoints { get; }
 
-    Abilities Get(Abilities baseAbilities, Race race);
+    event Action? Changed;
+
+    //Abilities Get(CharacterRace race);
 }

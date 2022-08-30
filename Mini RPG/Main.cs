@@ -1,7 +1,8 @@
 ﻿using Mini_RPG.Screens;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Services.Localization;
-using Mini_RPG_Data.Viewes;
+using Mini_RPG_Data.Services.PersistentProgress;
+using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG;
 
@@ -13,14 +14,16 @@ public partial class Main : Form
     private readonly GameProcessScreen _gameProcess;
     
     private readonly SimpleLocalizationService _localizationService;
-
-    //private StartScreenController _startScreenController = null!;
+    private readonly PersistentProgressService _persistentProgressService;
+    private readonly RandomService _randomService;
 
     public Main()
     {
         InitializeComponent();
 
         _localizationService = new SimpleLocalizationService();
+        _persistentProgressService = new PersistentProgressService();
+        _randomService = new RandomService();
 
         _startScreen = new StartScreen(_localizationService);
         Controls.Add(_startScreen);
@@ -39,7 +42,7 @@ public partial class Main : Form
         //_gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
 
         _startScreen.SetController(new StartScreenController(_startScreen, _characterCreationScreen));
-        var characterCreationScreenController= new CharacterCreationScreenController(_characterCreationScreen, _introScreen);
+        var characterCreationScreenController= new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _persistentProgressService, _randomService);
         _characterCreationScreen.SetController(characterCreationScreenController);
         _introScreen.SetController(characterCreationScreenController);
     }

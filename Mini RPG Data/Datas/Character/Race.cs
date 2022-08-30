@@ -1,6 +1,6 @@
 ﻿namespace Mini_RPG_Data.Character;
 
-public enum Race
+public enum CharacterRace
 {
     None,
     Human,
