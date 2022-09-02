@@ -47,8 +47,8 @@
             this._button_DecreaseDexterity = new System.Windows.Forms.Button();
             this._label_DexterityPoints = new System.Windows.Forms.Label();
             this._label_Dexterity = new System.Windows.Forms.Label();
-            this._button_IncreaseStrenth = new System.Windows.Forms.Button();
-            this._button_DecreaseStrenth = new System.Windows.Forms.Button();
+            this._button_IncreaseStrength = new System.Windows.Forms.Button();
+            this._button_DecreaseStrength = new System.Windows.Forms.Button();
             this._label_StrengthPoints = new System.Windows.Forms.Label();
             this._label_Strength = new System.Windows.Forms.Label();
             this._label_AbilityPointsCount = new System.Windows.Forms.Label();
@@ -90,8 +90,8 @@
             this._panel_Abilities.Controls.Add(this._button_DecreaseDexterity);
             this._panel_Abilities.Controls.Add(this._label_DexterityPoints);
             this._panel_Abilities.Controls.Add(this._label_Dexterity);
-            this._panel_Abilities.Controls.Add(this._button_IncreaseStrenth);
-            this._panel_Abilities.Controls.Add(this._button_DecreaseStrenth);
+            this._panel_Abilities.Controls.Add(this._button_IncreaseStrength);
+            this._panel_Abilities.Controls.Add(this._button_DecreaseStrength);
             this._panel_Abilities.Controls.Add(this._label_StrengthPoints);
             this._panel_Abilities.Controls.Add(this._label_Strength);
             this._panel_Abilities.Location = new System.Drawing.Point(40, 174);
@@ -107,6 +107,7 @@
             this._button_IncreaseCharisma.TabIndex = 19;
             this._button_IncreaseCharisma.Text = "+";
             this._button_IncreaseCharisma.UseVisualStyleBackColor = true;
+            this._button_IncreaseCharisma.Click += new System.EventHandler(this.Button_IncreaseCharisma_Click);
             // 
             // _button_DecreaseCharisma
             // 
@@ -116,6 +117,7 @@
             this._button_DecreaseCharisma.TabIndex = 18;
             this._button_DecreaseCharisma.Text = "-";
             this._button_DecreaseCharisma.UseVisualStyleBackColor = true;
+            this._button_DecreaseCharisma.Click += new System.EventHandler(this.Button_DecreaseCharisma_Click);
             // 
             // _label_CharismaPoints
             // 
@@ -145,6 +147,7 @@
             this._button_IncreasePerception.TabIndex = 15;
             this._button_IncreasePerception.Text = "+";
             this._button_IncreasePerception.UseVisualStyleBackColor = true;
+            this._button_IncreasePerception.Click += new System.EventHandler(this.Button_IncreasePerception_Click);
             // 
             // _button_DecreasePerception
             // 
@@ -154,6 +157,7 @@
             this._button_DecreasePerception.TabIndex = 14;
             this._button_DecreasePerception.Text = "-";
             this._button_DecreasePerception.UseVisualStyleBackColor = true;
+            this._button_DecreasePerception.Click += new System.EventHandler(this.Button_DecreasePerception_Click);
             // 
             // _label_PerceptionPoints
             // 
@@ -183,6 +187,7 @@
             this._button_IncreaseConstitution.TabIndex = 11;
             this._button_IncreaseConstitution.Text = "+";
             this._button_IncreaseConstitution.UseVisualStyleBackColor = true;
+            this._button_IncreaseConstitution.Click += new System.EventHandler(this.Button_IncreaseConstitution_Click);
             // 
             // _button_DecreaseConstitution
             // 
@@ -192,6 +197,7 @@
             this._button_DecreaseConstitution.TabIndex = 10;
             this._button_DecreaseConstitution.Text = "-";
             this._button_DecreaseConstitution.UseVisualStyleBackColor = true;
+            this._button_DecreaseConstitution.Click += new System.EventHandler(this.Button_DecreaseConstitution_Click);
             // 
             // _label_ConstitutionPoints
             // 
@@ -221,6 +227,7 @@
             this._button_IncreaseDexterity.TabIndex = 7;
             this._button_IncreaseDexterity.Text = "+";
             this._button_IncreaseDexterity.UseVisualStyleBackColor = true;
+            this._button_IncreaseDexterity.Click += new System.EventHandler(this.Button_IncreaseDexterity_Click);
             // 
             // _button_DecreaseDexterity
             // 
@@ -230,6 +237,7 @@
             this._button_DecreaseDexterity.TabIndex = 6;
             this._button_DecreaseDexterity.Text = "-";
             this._button_DecreaseDexterity.UseVisualStyleBackColor = true;
+            this._button_DecreaseDexterity.Click += new System.EventHandler(this.Button_DecreaseDexterity_Click);
             // 
             // _label_DexterityPoints
             // 
@@ -251,23 +259,25 @@
             this._label_Dexterity.TabIndex = 4;
             this._label_Dexterity.Text = "%Ловкость%";
             // 
-            // _button_IncreaseStrenth
+            // _button_IncreaseStrength
             // 
-            this._button_IncreaseStrenth.Location = new System.Drawing.Point(485, 26);
-            this._button_IncreaseStrenth.Name = "_button_IncreaseStrenth";
-            this._button_IncreaseStrenth.Size = new System.Drawing.Size(40, 40);
-            this._button_IncreaseStrenth.TabIndex = 3;
-            this._button_IncreaseStrenth.Text = "+";
-            this._button_IncreaseStrenth.UseVisualStyleBackColor = true;
+            this._button_IncreaseStrength.Location = new System.Drawing.Point(485, 26);
+            this._button_IncreaseStrength.Name = "_button_IncreaseStrength";
+            this._button_IncreaseStrength.Size = new System.Drawing.Size(40, 40);
+            this._button_IncreaseStrength.TabIndex = 3;
+            this._button_IncreaseStrength.Text = "+";
+            this._button_IncreaseStrength.UseVisualStyleBackColor = true;
+            this._button_IncreaseStrength.Click += new System.EventHandler(this.Button_IncreaseStrength_Click);
             // 
-            // _button_DecreaseStrenth
+            // _button_DecreaseStrength
             // 
-            this._button_DecreaseStrenth.Location = new System.Drawing.Point(423, 26);
-            this._button_DecreaseStrenth.Name = "_button_DecreaseStrenth";
-            this._button_DecreaseStrenth.Size = new System.Drawing.Size(40, 40);
-            this._button_DecreaseStrenth.TabIndex = 2;
-            this._button_DecreaseStrenth.Text = "-";
-            this._button_DecreaseStrenth.UseVisualStyleBackColor = true;
+            this._button_DecreaseStrength.Location = new System.Drawing.Point(423, 26);
+            this._button_DecreaseStrength.Name = "_button_DecreaseStrength";
+            this._button_DecreaseStrength.Size = new System.Drawing.Size(40, 40);
+            this._button_DecreaseStrength.TabIndex = 2;
+            this._button_DecreaseStrength.Text = "-";
+            this._button_DecreaseStrength.UseVisualStyleBackColor = true;
+            this._button_DecreaseStrength.Click += new System.EventHandler(this.Button_DecreaseStrength_Click);
             // 
             // _label_StrengthPoints
             // 
@@ -318,6 +328,7 @@
             this._comboBox_Race.Name = "_comboBox_Race";
             this._comboBox_Race.Size = new System.Drawing.Size(250, 49);
             this._comboBox_Race.TabIndex = 10;
+            this._comboBox_Race.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Race_SelectedIndexChanged);
             // 
             // _textBox_Name
             // 
@@ -399,8 +410,8 @@
         private Button _button_DecreaseDexterity;
         private Label _label_DexterityPoints;
         private Label _label_Dexterity;
-        private Button _button_IncreaseStrenth;
-        private Button _button_DecreaseStrenth;
+        private Button _button_IncreaseStrength;
+        private Button _button_DecreaseStrength;
         private Label _label_StrengthPoints;
         private Label _label_Strength;
         private Label _label_AbilityPointsCount;

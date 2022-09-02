@@ -1,6 +1,9 @@
-﻿namespace Mini_RPG_Data.Services.SaveLoad;
+﻿using Mini_RPG_Data.Datas;
 
-internal interface ISaveLoadService : IService
+namespace Mini_RPG_Data.Services.SaveLoad;
+
+public interface ISaveLoadService : IService
 {
-
+    void SaveProgress();
+    PlayerProgress? LoadProgressOrNull();
 }
