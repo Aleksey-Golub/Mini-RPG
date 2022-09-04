@@ -7,5 +7,5 @@ public interface ICharacterCreationScreenView : IView
 {
     void SetActiveState(bool newState);
     void SetController(CharacterCreationScreenController controller);
-    void SetModel(ICharacterData characterData);
+    void SetCharacter(ICharacter characterData);
 }

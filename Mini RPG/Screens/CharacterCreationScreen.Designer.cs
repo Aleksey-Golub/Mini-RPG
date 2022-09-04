@@ -55,10 +55,11 @@
             this._label_AbilityPoints = new System.Windows.Forms.Label();
             this._comboBox_Race = new System.Windows.Forms.ComboBox();
             this._textBox_Name = new System.Windows.Forms.TextBox();
-            this._button_SelectCharacterAvatar = new System.Windows.Forms.Button();
             this._button_StartGame = new System.Windows.Forms.Button();
             this._toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this._pictureBox_SelectCharacterAvatar = new System.Windows.Forms.PictureBox();
             this._panel_Abilities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_SelectCharacterAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // _label_Race
@@ -341,20 +342,6 @@
             this._textBox_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this._textBox_Name.TextChanged += new System.EventHandler(this.TextBox_Name_TextChanged);
             // 
-            // _button_SelectCharacterAvatar
-            // 
-            this._button_SelectCharacterAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this._button_SelectCharacterAvatar.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_1;
-            this._button_SelectCharacterAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._button_SelectCharacterAvatar.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._button_SelectCharacterAvatar.ForeColor = System.Drawing.SystemColors.Control;
-            this._button_SelectCharacterAvatar.Location = new System.Drawing.Point(1454, 174);
-            this._button_SelectCharacterAvatar.Name = "_button_SelectCharacterAvatar";
-            this._button_SelectCharacterAvatar.Size = new System.Drawing.Size(241, 295);
-            this._button_SelectCharacterAvatar.TabIndex = 20;
-            this._button_SelectCharacterAvatar.UseVisualStyleBackColor = false;
-            this._button_SelectCharacterAvatar.Click += new System.EventHandler(this.Button_SelectCharacterAvatar_Click);
-            // 
             // _button_StartGame
             // 
             this._button_StartGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -368,15 +355,24 @@
             this._button_StartGame.UseVisualStyleBackColor = false;
             this._button_StartGame.Click += new System.EventHandler(this.Button_StartGame_Click);
             // 
+            // _pictureBox_SelectCharacterAvatar
+            // 
+            this._pictureBox_SelectCharacterAvatar.Location = new System.Drawing.Point(1458, 174);
+            this._pictureBox_SelectCharacterAvatar.Name = "_pictureBox_SelectCharacterAvatar";
+            this._pictureBox_SelectCharacterAvatar.Size = new System.Drawing.Size(241, 295);
+            this._pictureBox_SelectCharacterAvatar.TabIndex = 23;
+            this._pictureBox_SelectCharacterAvatar.TabStop = false;
+            this._pictureBox_SelectCharacterAvatar.Click += new System.EventHandler(this.PictureBox_SelectCharacterAvatar_Click);
+            // 
             // CharacterCreationScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Controls.Add(this._pictureBox_SelectCharacterAvatar);
             this.Controls.Add(this._button_StartGame);
             this.Controls.Add(this._textBox_Name);
             this.Controls.Add(this._label_Race);
-            this.Controls.Add(this._button_SelectCharacterAvatar);
             this.Controls.Add(this._panel_Abilities);
             this.Controls.Add(this._label_AbilityPointsCount);
             this.Controls.Add(this._label_AbilityPoints);
@@ -385,6 +381,7 @@
             this.Size = new System.Drawing.Size(1898, 1024);
             this._panel_Abilities.ResumeLayout(false);
             this._panel_Abilities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_SelectCharacterAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,8 +415,8 @@
         private Label _label_AbilityPoints;
         private ComboBox _comboBox_Race;
         private TextBox _textBox_Name;
-        private Button _button_SelectCharacterAvatar;
         private Button _button_StartGame;
         private ToolTip _toolTip;
+        private PictureBox _pictureBox_SelectCharacterAvatar;
     }
 }

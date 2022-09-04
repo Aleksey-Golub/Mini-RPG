@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Services.Random_;
+﻿using Mini_RPG_Data.Datas;
+using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Map;
 

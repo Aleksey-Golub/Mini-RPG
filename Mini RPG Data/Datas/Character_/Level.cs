@@ -2,22 +2,38 @@
 
 public class Level
 {
-    internal Level()
+    private readonly LevelData _data;
+
+    internal Level(LevelData data)
     {
-        Value = 1;
-        CurrentExperience = 0;
+        _data = data;
     }
 
-    public int Value { get; private set; }
-    public int CurrentExperience { get; private set; }
+    internal void Init()
+    {
+        Value = 1;
+    }
+
+    public int Value 
+    { 
+        get => _data.Value;
+        private set
+        {
+            _data.Value = value;
+            Changed?.Invoke();
+        }
+    }
+
+    public int CurrentExperience => _data.CurrentExperience;
     public int RequiredForNextLevelExperience => Settings.CalculateRequiredForNextLevelExperience(Value);
 
-    internal event Action? Changed;
+    public event Action? Changed;
 
     internal void TakeExperience(int value)
     {
-        CurrentExperience += value;
+        _data.CurrentExperience += value;
         if (CurrentExperience > RequiredForNextLevelExperience)
             Value++;
     }
 }
+

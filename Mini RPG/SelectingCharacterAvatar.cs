@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG;
+﻿using Mini_RPG_Data;
+
+namespace Mini_RPG;
 
 public partial class SelectingCharacterAvatar : Form
 {
@@ -6,43 +8,33 @@ public partial class SelectingCharacterAvatar : Form
     {
         InitializeComponent();
 
-        Avatar = Properties.Resources.Avatar_1;//Image.FromFile(@"D:\Programming\Ресурсы для игр\мини РПГ_макеты\Аватар персонажа_1.png");
+        AvatarPath = Settings.DefaultAvatarPath;
         int startWidth = 20;
-        int btnWidth = 260;
+        int pictureWidth = 260;
         // ширина 280 + 260 для каждой новой картинки
         // 2шт 280 + 260 = 540
 
-        startWidth = SpawnAvatars(startWidth, btnWidth);
+        startWidth = SpawnAvatars(startWidth, pictureWidth);
         Size = new Size(startWidth, Size.Height);
     }
 
-    public Image Avatar { get; internal set; }
+    public string AvatarPath { get; internal set; } = null!;
 
-    private int SpawnAvatars(int startWidth, int btnWidth)
+    private int SpawnAvatars(int startWidth, int pictureWidth)
     {
-        //string[] avatarPath =
-        //{
-        //    @"D:\Programming\Ресурсы для игр\мини РПГ_макеты\Аватар персонажа_3.png",
-        //    @"D:\Programming\Ресурсы для игр\мини РПГ_макеты\Аватар персонажа_2.png"
-        //};
-        Image[] avatars =
+        var avatarsPaths = new List<string>();
+        foreach (var path in Directory.GetFiles(Settings.AvatarsDirectory))
+            avatarsPaths.Add(path);
+        
+        for (int i = 0; i < avatarsPaths.Count; i++)
         {
-            Properties.Resources.Avatar_1,
-            Properties.Resources.Avatar_2,
-            Properties.Resources.Avatar_3,
-            Properties.Resources.Avatar_4,
-        };
-        for (int i = 0; i < avatars.Length; i++)
-        {
-            Button btn = new Button();
-            btn.Size = new Size(250, 300);
-            //btn.Image = Image.FromFile(avatarPath[i]);
-            btn.Image = avatars[i];
-            btn.DialogResult = DialogResult.OK;
-            _flowLayoutPanel_Avatars.Controls.Add(btn);
-            startWidth += btnWidth;
+            var picture = new PictureBox();
+            picture.Size = new Size(250, 300);
+            picture.ImageLocation = avatarsPaths[i];
+            _flowLayoutPanel_Avatars.Controls.Add(picture);
+            startWidth += pictureWidth;
 
-            btn.Click += OnNewAvaratButtolClick;
+            picture.Click += OnNewAvaratButtolClick;
         }
 
         return startWidth;
@@ -50,8 +42,10 @@ public partial class SelectingCharacterAvatar : Form
 
     private void OnNewAvaratButtolClick(object? sender, EventArgs e)
     {
-        var btn = sender as Button;
-        btn.Click -= OnNewAvaratButtolClick;
-        Avatar = btn.Image;
+        var picture = sender as PictureBox;
+        picture.Click -= OnNewAvaratButtolClick;
+        AvatarPath = picture.ImageLocation;
+
+        DialogResult = DialogResult.OK;
     }
 }

@@ -1,5 +1,6 @@
-﻿namespace Mini_RPG_Data;
+﻿namespace Mini_RPG_Data.Datas;
 
+[Serializable]
 public struct Vector2Int
 {
     public readonly int X;

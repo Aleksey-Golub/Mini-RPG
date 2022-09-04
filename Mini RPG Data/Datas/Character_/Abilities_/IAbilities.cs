@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data.Character_;
+﻿namespace Mini_RPG_Data.Datas.Character_.Abilities_;
 
 public interface IAbilities
 {
@@ -10,6 +10,4 @@ public interface IAbilities
     int AbilityPoints { get; }
 
     event Action? Changed;
-
-    //Abilities Get(CharacterRace race);
 }

@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG_Data.Map;
+﻿using Mini_RPG_Data.Datas;
+
+namespace Mini_RPG_Data.Map;
 
 public interface IMapData
 {

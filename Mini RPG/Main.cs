@@ -68,6 +68,5 @@ public partial class Main : Form
         _progressService = new PersistentProgressService();
         _randomService = new RandomService();
         _saveLoadService = new JsonFileSaveLoadService(_progressService);
-
     }
 }

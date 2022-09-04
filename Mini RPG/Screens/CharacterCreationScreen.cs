@@ -2,13 +2,15 @@
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Character_;
+using Mini_RPG_Data;
+using Mini_RPG_Data.Datas.Character_.Abilities_;
 
 namespace Mini_RPG.Screens
 {
     public partial class CharacterCreationScreen : UserControl, ICharacterCreationScreenView
     {
         private CharacterCreationScreenController _controller = null!;
-        private ICharacterData _characterData;
+        private ICharacter _characterData;
 
         private readonly ILocalizationService _localizationService;
         private readonly int _maxNameLength = 15;
@@ -21,8 +23,7 @@ namespace Mini_RPG.Screens
             _localizationService.LanguageChanged += SetTexts;
             SetTexts();
 
-            _button_SelectCharacterAvatar.Image = Properties.Resources.Avatar_1;
-
+            _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
             string[] races = new string[]
             {
                 _localizationService.Human(),   // 0
@@ -30,7 +31,6 @@ namespace Mini_RPG.Screens
                 _localizationService.Dwarf()    // 2
             };
             _comboBox_Race.Items.AddRange(races);
-            //_comboBox_Race.SelectedIndex = 0;
         }
 
         public void SetActiveState(bool newState) => Visible = newState;
@@ -41,23 +41,22 @@ namespace Mini_RPG.Screens
             _comboBox_Race.SelectedIndex = 0;
         }
 
-        public void SetModel(ICharacterData characterData)
+        public void SetCharacter(ICharacter characterData)
         {
             _characterData = characterData;
             _characterData.Changed += OnCharacterDataChanged;
         }
 
-        private void OnCharacterDataChanged(ICharacterData data)
+        private void OnCharacterDataChanged(ICharacter data)
         {
-            _label_StrengthPoints.Text = data.Abilities.Strength.Value.ToString();
-            _label_DexterityPoints.Text = data.Abilities.Dexterity.Value.ToString();
-            _label_ConstitutionPoints.Text = data.Abilities.Constitution.Value.ToString();
-            _label_PerceptionPoints.Text = data.Abilities.Perception.Value.ToString();
-            _label_CharismaPoints.Text = data.Abilities.Charisma.Value.ToString();
-            _label_AbilityPointsCount.Text = data.Abilities.AbilityPoints.ToString();
+            _label_StrengthPoints.Text = data.AllAbilities.Strength.Value.ToString();
+            _label_DexterityPoints.Text = data.AllAbilities.Dexterity.Value.ToString();
+            _label_ConstitutionPoints.Text = data.AllAbilities.Constitution.Value.ToString();
+            _label_PerceptionPoints.Text = data.AllAbilities.Perception.Value.ToString();
+            _label_CharismaPoints.Text = data.AllAbilities.Charisma.Value.ToString();
+            _label_AbilityPointsCount.Text = data.AllAbilities.AbilityPoints.ToString();
 
             // TO DO activate/deactivate buttons
-
         }
 
         private void ValidateName()
@@ -116,13 +115,13 @@ namespace Mini_RPG.Screens
         }
 
         private void Button_StartGame_Click(object sender, EventArgs e) =>
-            _controller.StartGame(_button_SelectCharacterAvatar.Image.ToByteArray(), _textBox_Name.Text);
+            _controller.StartGame(_pictureBox_SelectCharacterAvatar.ImageLocation, _textBox_Name.Text);
 
-        private void Button_SelectCharacterAvatar_Click(object sender, EventArgs e)
+        private void PictureBox_SelectCharacterAvatar_Click(object sender, EventArgs e)
         {
             using SelectingCharacterAvatar selectAvatarForm = new SelectingCharacterAvatar();
             if (selectAvatarForm.ShowDialog() == DialogResult.OK)
-                _button_SelectCharacterAvatar.Image = selectAvatarForm.Avatar;
+                _pictureBox_SelectCharacterAvatar.ImageLocation = selectAvatarForm.AvatarPath;
         }
 
         private void TextBox_Name_TextChanged(object sender, EventArgs e) => ValidateName();

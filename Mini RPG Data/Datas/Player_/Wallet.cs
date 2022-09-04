@@ -1,21 +1,28 @@
-﻿namespace Mini_RPG_Data.Player;
+﻿namespace Mini_RPG_Data.Player_;
 
 public class Wallet : IWallet
 {
-    public int Money { get; private set; }
+    private readonly WalletData _data;
+
+    internal Wallet(WalletData data)
+    {
+        _data = data;
+    }
+
+    public int Money => _data.Money;
 
     public event Action<int>? MoneyChanged;
 
-    public void AddMoney(int count)
+    internal void AddMoney(int count)
     {
         if (count < 0)
             throw new ArgumentOutOfRangeException(nameof(count));
 
-        Money += count;
+        _data.Money += count;
         MoneyChanged?.Invoke(Money);
     }
 
-    public void RemoveMoney(int count)
+    internal void RemoveMoney(int count)
     {
         if (count < 0)
             throw new ArgumentOutOfRangeException(nameof(count));
@@ -23,8 +30,7 @@ public class Wallet : IWallet
         if (Money < count)
             throw new InvalidOperationException("Money count less then you try to remove");
 
-        Money -= count;
+        _data.Money -= count;
         MoneyChanged?.Invoke(Money);
     }
 }
-

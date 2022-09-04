@@ -1,5 +1,5 @@
 ﻿using Mini_RPG_Data.Map;
-using Mini_RPG_Data.Player;
+using Mini_RPG_Data.Player_;
 
 namespace Mini_RPG_Data.Datas
 {
@@ -12,7 +12,7 @@ namespace Mini_RPG_Data.Datas
             PlayerData = new PlayerData();
         }
 
-        public PlayerData PlayerData { get; private set; } = null!;
-        public MapData MapData { get; private set; } = null!;
+        public PlayerData PlayerData { get; set; }
+        public MapData MapData { get; set; }
     }
 }

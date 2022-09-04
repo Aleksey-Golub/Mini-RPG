@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data.Character_;
+﻿namespace Mini_RPG_Data.Datas.Character_.Abilities_;
 
 public enum AbilityType
 {
