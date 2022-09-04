@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG_Data.Player_;
+﻿using Mini_RPG_Data.Player_;
+
+namespace Mini_RPG_Data.Controllers;
 
 public class Wallet : IWallet
 {

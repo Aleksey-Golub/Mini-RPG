@@ -1,4 +1,4 @@
-﻿namespace Mini_RPG_Data.Player_;
+﻿namespace Mini_RPG_Data.Controllers;
 
 public interface IWallet
 {

@@ -1,6 +1,7 @@
-﻿using Mini_RPG_Data.Character_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Player_;
 
-namespace Mini_RPG_Data.Player_;
+namespace Mini_RPG_Data.Controllers;
 
 public class Player
 {

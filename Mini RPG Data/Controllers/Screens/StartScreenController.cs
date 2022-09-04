@@ -1,6 +1,6 @@
 ﻿using Mini_RPG_Data.Viewes;
 
-namespace Mini_RPG_Data.Controllers;
+namespace Mini_RPG_Data.Controllers.Screens;
 
 public class StartScreenController
 {
@@ -8,8 +8,8 @@ public class StartScreenController
     private readonly ICharacterCreationScreenView _characterCreationScreenView;
 
     public StartScreenController(
-        IStartScreenView startScreenView, 
-        ICharacterCreationScreenView characterCreationScreenView) 
+        IStartScreenView startScreenView,
+        ICharacterCreationScreenView characterCreationScreenView)
     {
         _startScreenView = startScreenView;
         _characterCreationScreenView = characterCreationScreenView;

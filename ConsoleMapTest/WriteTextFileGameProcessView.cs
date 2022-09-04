@@ -1,5 +1,5 @@
 ﻿using Mini_RPG_Data;
-using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Map;
 using Mini_RPG_Data.Viewes;

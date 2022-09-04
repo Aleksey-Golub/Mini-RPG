@@ -1,5 +1,5 @@
-﻿using Mini_RPG_Data.Character_;
-using Mini_RPG_Data.Controllers;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Screens;
 
 namespace Mini_RPG_Data.Viewes;
 

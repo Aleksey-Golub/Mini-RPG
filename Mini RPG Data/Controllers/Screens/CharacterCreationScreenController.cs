@@ -5,10 +5,9 @@ using Mini_RPG_Data.Map;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;
-using Mini_RPG_Data.Datas.Character_.Abilities_;
-using Mini_RPG_Data.Player_;
+using Mini_RPG_Data.Controllers.Character_.Abilities_;
 
-namespace Mini_RPG_Data.Controllers;
+namespace Mini_RPG_Data.Controllers.Screens;
 
 public class CharacterCreationScreenController
 {
@@ -17,7 +16,7 @@ public class CharacterCreationScreenController
     private readonly IPersistentProgressService _progressService;
     private readonly IRandomService _randomService;
     private readonly ISaveLoadService _saveLoadService;
-    
+
     private readonly Player _player;
 
     public CharacterCreationScreenController(

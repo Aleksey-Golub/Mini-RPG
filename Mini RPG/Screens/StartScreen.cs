@@ -1,6 +1,6 @@
-﻿using Mini_RPG_Data.Controllers;
-using Mini_RPG_Data.Viewes;
+﻿using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
+using Mini_RPG_Data.Controllers.Screens;
 
 namespace Mini_RPG.Screens;
 

@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG_Data.Character_;
+﻿using Mini_RPG_Data.Character_;
+
+namespace Mini_RPG_Data.Controllers.Character_;
 
 public class Level
 {
@@ -14,8 +16,8 @@ public class Level
         Value = 1;
     }
 
-    public int Value 
-    { 
+    public int Value
+    {
         get => _data.Value;
         private set
         {

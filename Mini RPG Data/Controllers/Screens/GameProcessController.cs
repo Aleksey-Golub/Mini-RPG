@@ -2,7 +2,7 @@
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Viewes;
 
-namespace Mini_RPG_Data.Controllers;
+namespace Mini_RPG_Data.Controllers.Screens;
 
 public class GameProcessController
 {

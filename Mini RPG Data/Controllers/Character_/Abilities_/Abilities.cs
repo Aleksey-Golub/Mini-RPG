@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Datas.Character_.Abilities_;
 
-namespace Mini_RPG_Data.Datas.Character_.Abilities_;
+namespace Mini_RPG_Data.Controllers.Character_.Abilities_;
 
 public class Abilities : IAbilities
 {
