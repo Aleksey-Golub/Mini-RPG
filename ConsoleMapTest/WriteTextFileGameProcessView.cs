@@ -1,7 +1,7 @@
 ﻿using Mini_RPG_Data;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map;
+using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using System.Text;
 
@@ -18,10 +18,10 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         _gameProcessController = gameProcessController;
     }
 
-    public void ShowMap(IMapData mapData)
+    public void ShowMap(IMap mapData)
     {
         StringBuilder mapSB = new StringBuilder();
-        IMapData map = mapData;
+        IMap map = mapData;
 
         int minX = mapData.MinX;
         int minY = mapData.MinY;

@@ -1,4 +1,4 @@
-﻿using Mini_RPG_Data.Controllers;
+﻿using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Viewes;
 

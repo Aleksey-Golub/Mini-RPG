@@ -33,7 +33,7 @@ public partial class Main : Form
         Controls.Add(_characterCreationScreen);
         _characterCreationScreen.SetActiveState(false);
 
-        _introScreen = new IntroScreen();
+        _introScreen = new IntroScreen(_localizationService);
         Controls.Add(_introScreen);
         _introScreen.SetActiveState(false);
 

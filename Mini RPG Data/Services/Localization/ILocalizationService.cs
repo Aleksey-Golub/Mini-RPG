@@ -26,4 +26,6 @@ public interface ILocalizationService
     string Human();
     string Elf();
     string Dwarf();
+    string Label_Intro();
+    string Button_GoToGame();
 }

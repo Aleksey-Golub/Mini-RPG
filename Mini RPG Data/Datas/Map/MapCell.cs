@@ -1,8 +1,8 @@
 ﻿using Mini_RPG_Data.Datas;
 
-namespace Mini_RPG_Data.Map;
+namespace Mini_RPG_Data.Map_;
 
-internal class MapCell : IMapCell
+public class MapCell : IMapCell
 {
     public MapCell(Vector2Int position, CellType cellType = CellType.Empty, CellState cellState = CellState.Unexplored)
     {
@@ -11,7 +11,7 @@ internal class MapCell : IMapCell
         CellState = cellState;
     }
 
-    public Vector2Int Position { get; }
+    public Vector2Int Position { get; set; }
     public CellType CellType { get; set; }
     public CellState CellState { get; set; }
 

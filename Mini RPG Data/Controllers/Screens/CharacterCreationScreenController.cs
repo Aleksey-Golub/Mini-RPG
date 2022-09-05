@@ -1,7 +1,7 @@
 ﻿using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map;
+using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;
@@ -38,13 +38,7 @@ public class CharacterCreationScreenController
         _introScreen = introScreen;
     }
 
-    private PlayerProgress NewProgress()
-    {
-        var progress = new PlayerProgress(MapData.Generate(_randomService));
-
-        progress.PlayerData.WalletData.Money = 10;
-        return progress;
-    }
+    public event Action<Player> GameStarted;
 
     public void SetRace(CharacterRace newRace) => _player.Character.Race = newRace;
 
@@ -57,9 +51,23 @@ public class CharacterCreationScreenController
         _progressService.Progress.PlayerData.CharacterData.AvatarPath = avatarPath;
         _progressService.Progress.PlayerData.CharacterData.Name = name;
 
+        _characterCreationScreen.SetActiveState(false);
+        _introScreen.SetActiveState(true);
+    }
+
+    public void GoToGame()
+    {
         _saveLoadService.SaveProgress();
 
-        //_progressService.Progress = _saveLoadService.LoadProgressOrNull();
-        var data = _saveLoadService.LoadPlayerDataOrNull();
+        _introScreen.SetActiveState(false);
+        GameStarted?.Invoke(_player);
+    }
+
+    private PlayerProgress NewProgress()
+    {
+        var progress = new PlayerProgress(Map.Generate(_randomService));
+
+        progress.PlayerData.WalletData.Money = 10;
+        return progress;
     }
 }

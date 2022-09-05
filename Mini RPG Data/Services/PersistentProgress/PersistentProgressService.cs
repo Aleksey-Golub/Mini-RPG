@@ -5,4 +5,7 @@ namespace Mini_RPG_Data.Services.PersistentProgress;
 public class PersistentProgressService : IPersistentProgressService
 {
     public PlayerProgress Progress { get; set; } = null!;
+
+    public void PrepareForSerialize() => Progress.PrepareForSerialize();
+    public void PrepareForDeserialize() => Progress.PrepareForDeserialize();
 }

@@ -1,5 +1,4 @@
-﻿using Mini_RPG_Data.Map;
-using Mini_RPG_Data.Player_;
+﻿using Mini_RPG_Data.Player_;
 
 namespace Mini_RPG_Data.Datas
 {
@@ -14,5 +13,8 @@ namespace Mini_RPG_Data.Datas
 
         public PlayerData PlayerData { get; set; }
         public MapData MapData { get; set; }
+
+        internal void PrepareForSerialize() => MapData.PrepareForSerialize();
+        internal void PrepareForDeserialize() => MapData.PrepareForDeserialize();
     }
 }

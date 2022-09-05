@@ -3,8 +3,8 @@
 [Serializable]
 public struct Vector2Int
 {
-    public readonly int X;
-    public readonly int Y;
+    public int X;
+    public int Y;
 
     public Vector2Int(int x, int y)
     {

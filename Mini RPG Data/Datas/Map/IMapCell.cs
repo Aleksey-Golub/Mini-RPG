@@ -1,6 +1,6 @@
 ﻿using Mini_RPG_Data.Datas;
 
-namespace Mini_RPG_Data.Map;
+namespace Mini_RPG_Data.Map_;
 
 public interface IMapCell
 {

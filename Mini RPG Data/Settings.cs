@@ -1,4 +1,4 @@
-﻿using Mini_RPG_Data.Map;
+﻿using Mini_RPG_Data.Map_;
 
 namespace Mini_RPG_Data;
 

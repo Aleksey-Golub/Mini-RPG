@@ -1,4 +1,4 @@
-﻿using Mini_RPG_Data.Map;
+﻿using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Viewes;
 
@@ -8,7 +8,7 @@ public class GameProcessController
 {
     private readonly IRandomService _randomService;
     private readonly IGameProcessView _gameProcessView;
-    private MapData _mapData = null!;
+    private Map _map = null!;
 
     public GameProcessController(IRandomService randomService, IGameProcessView gameProcessView)
     {
@@ -16,9 +16,9 @@ public class GameProcessController
         _gameProcessView = gameProcessView;
         _gameProcessView.SetGameProcessController(this);
 
-        GenerateNewMap();
-        _gameProcessView.ShowMap(_mapData);
+        //GenerateNewMap();
+        _gameProcessView.ShowMap(_map);
     }
 
-    private void GenerateNewMap() => _mapData = MapData.Generate(_randomService);
+    //private void GenerateNewMap() => _map = Map.Generate(_randomService);
 }

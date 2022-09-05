@@ -1,5 +1,5 @@
 ﻿using Mini_RPG_Data.Controllers.Screens;
-using Mini_RPG_Data.Map;
+using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 
 namespace Mini_RPG.Screens;
@@ -104,7 +104,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowMap(IMapData mapData)
+    public void ShowMap(IMap mapData)
     {
         throw new NotImplementedException();
     }

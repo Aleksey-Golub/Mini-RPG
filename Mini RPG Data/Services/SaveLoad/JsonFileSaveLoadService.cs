@@ -1,6 +1,4 @@
 ﻿using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map;
-using Mini_RPG_Data.Player_;
 using Mini_RPG_Data.Services.PersistentProgress;
 using System.Text.Json;
 
@@ -25,9 +23,9 @@ public class JsonFileSaveLoadService : ISaveLoadService
     {
         try
         {
-            //string jsonString = JsonSerializer.Serialize(_progressService.Progress);
-            //string jsonString = JsonSerializer.Serialize(new Vector2Int(10,5));
-            string jsonString = JsonSerializer.Serialize(_progressService.Progress.PlayerData, _options);
+            _progressService.PrepareForSerialize();
+            string jsonString = JsonSerializer.Serialize(_progressService.Progress, _options);
+
             File.WriteAllText(FILEPATH_KEY, jsonString);
         }
         catch (Exception e)
@@ -40,33 +38,9 @@ public class JsonFileSaveLoadService : ISaveLoadService
         try
         {
             string text = File.ReadAllText(FILEPATH_KEY);
-            return JsonSerializer.Deserialize<PlayerProgress>(text, _options);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
-   
-    public PlayerData? LoadPlayerDataOrNull()
-    {
-        try
-        {
-            string text = File.ReadAllText(FILEPATH_KEY);
-            return JsonSerializer.Deserialize<PlayerData>(text, _options);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
-
-    public MapData? LoadMapDataOrNull()
-    {
-        try
-        {
-            string text = File.ReadAllText(FILEPATH_KEY);
-            return JsonSerializer.Deserialize<MapData>(text, _options);
+            var progress = JsonSerializer.Deserialize<PlayerProgress>(text, _options);
+            progress.PrepareForDeserialize();
+            return progress;
         }
         catch (Exception e)
         {
