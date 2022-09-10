@@ -118,11 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Gold-Coin 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gold-Coin 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Макет_локация вне города" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Макет_локация вне города.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Макет_Заставка начала новой игры" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Макет_Заставка начала новой игры.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Avatar_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Макет_стартовый экран" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Макет_стартовый экран.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,13 +139,16 @@
   <data name="Avatar_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avatar_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avatar_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Макет_экран создания персонажа" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Макет_экран создания персонажа.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avatar_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Health 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Health 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avatar_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="level-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

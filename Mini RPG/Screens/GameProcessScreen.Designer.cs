@@ -61,6 +61,7 @@
             this._menuItem_Menu = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItem_SaveAndExit = new System.Windows.Forms.ToolStripMenuItem();
             this._panel_Location = new System.Windows.Forms.Panel();
+            this._panel_Battle = new System.Windows.Forms.Panel();
             this._pictureBox_Enemy = new System.Windows.Forms.PictureBox();
             this._flowLayoutPanel_GameLog = new System.Windows.Forms.FlowLayoutPanel();
             this._panel_Town = new System.Windows.Forms.Panel();
@@ -69,7 +70,6 @@
             this._button_Trader = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this._panel_Battle = new System.Windows.Forms.Panel();
             this._panel_BattleActions = new System.Windows.Forms.Panel();
             this._button_Attack = new System.Windows.Forms.Button();
             this._panel_Navigation.SuspendLayout();
@@ -80,9 +80,9 @@
             this._statusStrip.SuspendLayout();
             this._menuStrip.SuspendLayout();
             this._panel_Location.SuspendLayout();
+            this._panel_Battle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).BeginInit();
             this._panel_Town.SuspendLayout();
-            this._panel_Battle.SuspendLayout();
             this._panel_BattleActions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,9 +203,9 @@
             // 
             // _pictureBox_HasFreeAbilityActions
             // 
-            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_4;
+            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.level_up;
             this._pictureBox_HasFreeAbilityActions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._pictureBox_HasFreeAbilityActions.Location = new System.Drawing.Point(115, 151);
+            this._pictureBox_HasFreeAbilityActions.Location = new System.Drawing.Point(111, 147);
             this._pictureBox_HasFreeAbilityActions.Name = "_pictureBox_HasFreeAbilityActions";
             this._pictureBox_HasFreeAbilityActions.Size = new System.Drawing.Size(40, 40);
             this._pictureBox_HasFreeAbilityActions.TabIndex = 2;
@@ -330,7 +330,7 @@
             // _label_Money
             // 
             this._label_Money.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this._label_Money.Image = global::Mini_RPG.Properties.Resources.Avatar_1;
+            this._label_Money.Image = global::Mini_RPG.Properties.Resources.Gold_Coin_64x64;
             this._label_Money.Name = "_label_Money";
             this._label_Money.Size = new System.Drawing.Size(90, 29);
             this._label_Money.Text = "00000";
@@ -338,7 +338,7 @@
             // _label_Health
             // 
             this._label_Health.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this._label_Health.Image = global::Mini_RPG.Properties.Resources.Avatar_4;
+            this._label_Health.Image = global::Mini_RPG.Properties.Resources.Health_64x64;
             this._label_Health.Name = "_label_Health";
             this._label_Health.Size = new System.Drawing.Size(87, 29);
             this._label_Health.Text = "00/00";
@@ -387,6 +387,14 @@
             this._panel_Location.Name = "_panel_Location";
             this._panel_Location.Size = new System.Drawing.Size(1334, 766);
             this._panel_Location.TabIndex = 7;
+            // 
+            // _panel_Battle
+            // 
+            this._panel_Battle.Controls.Add(this._pictureBox_Enemy);
+            this._panel_Battle.Location = new System.Drawing.Point(444, 134);
+            this._panel_Battle.Name = "_panel_Battle";
+            this._panel_Battle.Size = new System.Drawing.Size(750, 502);
+            this._panel_Battle.TabIndex = 2;
             // 
             // _pictureBox_Enemy
             // 
@@ -463,14 +471,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.SwitchLogState);
             // 
-            // _panel_Battle
-            // 
-            this._panel_Battle.Controls.Add(this._pictureBox_Enemy);
-            this._panel_Battle.Location = new System.Drawing.Point(444, 134);
-            this._panel_Battle.Name = "_panel_Battle";
-            this._panel_Battle.Size = new System.Drawing.Size(750, 502);
-            this._panel_Battle.TabIndex = 2;
-            // 
             // _panel_BattleActions
             // 
             this._panel_BattleActions.Controls.Add(this._button_Attack);
@@ -517,9 +517,9 @@
             this._menuStrip.ResumeLayout(false);
             this._menuStrip.PerformLayout();
             this._panel_Location.ResumeLayout(false);
+            this._panel_Battle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).EndInit();
             this._panel_Town.ResumeLayout(false);
-            this._panel_Battle.ResumeLayout(false);
             this._panel_BattleActions.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

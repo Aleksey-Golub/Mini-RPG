@@ -103,6 +103,36 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gold_Coin_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("Gold-Coin 64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Health_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("Health 64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level_up {
+            get {
+                object obj = ResourceManager.GetObject("level-up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Макет_Заставка_начала_новой_игры {
             get {
                 object obj = ResourceManager.GetObject("Макет_Заставка начала новой игры", resourceCulture);
