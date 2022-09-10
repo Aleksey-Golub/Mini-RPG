@@ -40,27 +40,18 @@ public partial class Main : Form
         _gameProcess = new GameProcessScreen();
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
-        //_gameProcess.SaveAndExitClicked += OnGameProcess_SaveAndExitClicked;
 
         _startScreen.SetController(new StartScreenController(_startScreen, _characterCreationScreen));
         var characterCreationScreenController= new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _progressService, _randomService, _saveLoadService);
+        characterCreationScreenController.GameStarted += OnGameStarted;
         _characterCreationScreen.SetController(characterCreationScreenController);
         _introScreen.SetController(characterCreationScreenController);
     }
 
-    private void OnGameProcess_SaveAndExitClicked()
+    private void OnGameStarted(CharacterCreationScreenController controller, Player createdPlayer)
     {
-        // сохранить игру
-
-        // выйти в главное меню
-        _gameProcess.Hide();
-        _startScreen.Show();
-    }
-
-    private void OnIntroScreen_GoToGameButtonClicked()
-    {
-        _introScreen.Hide();
-        _gameProcess.Show();
+        controller.GameStarted -= OnGameStarted;
+        _gameProcess.SetGameProcessController(new GameProcessController(_randomService, _gameProcess));
     }
 
     private void RegisterServices()
