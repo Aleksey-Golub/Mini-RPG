@@ -2,6 +2,8 @@
 using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
+using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers;
 
 namespace Mini_RPG.Screens;
 
@@ -10,6 +12,10 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly ILocalizationService _localizationService;
     private readonly Log _log;
     private GameProcessController _controller = null!;
+
+    private ICharacter _character;
+    private IWallet _wallet;
+    //private IMap _map;
 
     public GameProcessScreen(ILocalizationService localizationService)
     {
@@ -25,13 +31,49 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public event Action? SaveAndExitClicked;
 
+    public void Init(ICharacter character, IWallet wallet, IMap map)
+    {
+        _character = character;
+        _wallet = wallet;
+        //_map = map;
+
+        _character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
+        _character.Health.Changed += OnCharacterHealthChanged;
+        _wallet.MoneyChanged += OnMoneyChanged;
+
+        OnCharacterAbilitiesChanged();
+        OnCharacterHealthChanged();
+        OnMoneyChanged(_wallet.Money);
+    }
+
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
     public void SetActiveState(bool newState) => Visible = newState;
+    public void AddLog(string message) => _log.AddLog(message);
 
     public void ShowMap(IMap mapData)
     {
         throw new NotImplementedException();
     }
+
+    private void OnCharacterAbilitiesChanged()
+    {
+        var allAbilities = _character.AllAbilities;
+
+        _label_StrengthPoints.Text = allAbilities.Strength.Value.ToString();
+        _label_DexterityPoints.Text = allAbilities.Dexterity.Value.ToString();
+        _label_ConstitutionPoints.Text = allAbilities.Constitution.Value.ToString();
+        _label_PerceptionPoints.Text = allAbilities.Perception.Value.ToString();
+        _label_CharismaPoints.Text = allAbilities.Charisma.Value.ToString();
+
+        _label_StrengthPoints.ToolTipText = allAbilities.Strength.Bonus.ToString();
+        _label_DexterityPoints.ToolTipText = allAbilities.Dexterity.Bonus.ToString();
+        _label_ConstitutionPoints.ToolTipText = allAbilities.Constitution.Bonus.ToString();
+        _label_PerceptionPoints.ToolTipText = allAbilities.Perception.Bonus.ToString();
+        _label_CharismaPoints.ToolTipText = allAbilities.Charisma.Bonus.ToString();
+    }
+
+    private void OnCharacterHealthChanged() => _label_Health.Text = $"{_character.Health.CurrentHealth}/{_character.Health.MaxHealth}";
+    private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 
     private void SetTexts()
     {
@@ -63,8 +105,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_Perception.ToolTipText = _localizationService.ToolTip_Perception();
         _label_Charisma.ToolTipText = _localizationService.ToolTip_Charisma();
     }
-
-    public void AddLog(string message) => _log.AddLog(message);
 
     #region Controls Handlers
     private void Button_CharacterProgress_Click(object sender, EventArgs e)

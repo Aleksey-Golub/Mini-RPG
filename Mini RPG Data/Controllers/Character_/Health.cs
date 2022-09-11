@@ -22,7 +22,7 @@ public class Health
     public int MaxHealth => _character.AllAbilities.Constitution.Value + _character.AllAbilities.Constitution.Bonus * Settings.CalculateLevelModifier(_character.Level.Value);
     public event Action? Changed;
 
-    public void TakeDamage(int damage)
+    internal void TakeDamage(int damage)
     {
         _data.CurrentHealth -= damage;
         if (_data.CurrentHealth < 0)
