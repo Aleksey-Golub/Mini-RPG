@@ -68,8 +68,7 @@
             this._button_RestInTown = new System.Windows.Forms.Button();
             this._button_LeaveTown = new System.Windows.Forms.Button();
             this._button_Trader = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this._button_SwitchLogSize = new System.Windows.Forms.Button();
             this._panel_BattleActions = new System.Windows.Forms.Panel();
             this._button_Attack = new System.Windows.Forms.Button();
             this._panel_Navigation.SuspendLayout();
@@ -451,30 +450,19 @@
             this._button_Trader.UseVisualStyleBackColor = true;
             this._button_Trader.Click += new System.EventHandler(this.Button_Trader_Click);
             // 
-            // button2
+            // _button_SwitchLogSize
             // 
-            this.button2.Location = new System.Drawing.Point(278, 824);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "TEST Add log";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.AddLogTest);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(96, 824);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(176, 34);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "% Switch log size %";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.SwitchLogState);
+            this._button_SwitchLogSize.Location = new System.Drawing.Point(96, 824);
+            this._button_SwitchLogSize.Name = "_button_SwitchLogSize";
+            this._button_SwitchLogSize.Size = new System.Drawing.Size(176, 34);
+            this._button_SwitchLogSize.TabIndex = 9;
+            this._button_SwitchLogSize.Text = "% Switch log size %";
+            this._button_SwitchLogSize.UseVisualStyleBackColor = true;
             // 
             // _panel_BattleActions
             // 
             this._panel_BattleActions.Controls.Add(this._button_Attack);
-            this._panel_BattleActions.Location = new System.Drawing.Point(1074, 835);
+            this._panel_BattleActions.Location = new System.Drawing.Point(715, 835);
             this._panel_BattleActions.Name = "_panel_BattleActions";
             this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
             this._panel_BattleActions.TabIndex = 9;
@@ -495,8 +483,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this._panel_BattleActions);
             this.Controls.Add(this._panel_Town);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this._button_SwitchLogSize);
             this.Controls.Add(this._panel_Location);
             this.Controls.Add(this._button_Inventory);
             this.Controls.Add(this._statusStrip);
@@ -564,8 +551,7 @@
         private Button _button_LeaveTown;
         private Button _button_Trader;
         private FlowLayoutPanel _flowLayoutPanel_GameLog;
-        private Button button2;
-        private Button button3;
+        private Button _button_SwitchLogSize;
         private PictureBox _pictureBox_HasFreeAbilityActions;
         private Button _button_RestInTown;
         private Panel _panel_Battle;

@@ -1,79 +1,72 @@
 ﻿using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
+using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG.Screens;
 
-public partial class GameProcessScreen : UserControl, IGameProcessView
+public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
-    private readonly int _logMessageCount = 10;
-    private readonly int _logMessageCountInMinimizeState = 3;
-    
-    private bool _isLogMinimize = true;
+    private readonly ILocalizationService _localizationService;
+    private readonly Log _log;
+    private GameProcessController _controller = null!;
 
-    private GameProcessController _controller;
-
-    public GameProcessScreen()
+    public GameProcessScreen(ILocalizationService localizationService)
     {
         InitializeComponent();
 
-        FillLog();
-        SetAllToolTips();
+        _localizationService = localizationService;
+        _localizationService.LanguageChanged += SetTexts;
+        SetTexts();
+
+        _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
+        _log.FillLog();
     }
 
     public event Action? SaveAndExitClicked;
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
+    public void SetActiveState(bool newState) => Visible = newState;
 
     public void ShowMap(IMap mapData)
     {
         throw new NotImplementedException();
     }
 
-    private void MenuItem_SaveAndExit_Click(object sender, EventArgs e)
+    private void SetTexts()
     {
-        SaveAndExitClicked?.Invoke();
+        _label_Strength.Text = _localizationService.Label_Strength();
+        _label_Dexterity.Text = _localizationService.Label_Dexterity();
+        _label_Constitution.Text = _localizationService.Label_Constitution();
+        _label_Perception.Text = _localizationService.Label_Perception();
+        _label_Charisma.Text = _localizationService.Label_Charisma();
+
+        _button_Rest.Text = _localizationService.Button_Rest();
+        _button_Attack.Text = _localizationService.Button_Attack();
+        _button_Trader.Text = _localizationService.Button_Trader();
+        _button_RestInTown.Text = _localizationService.Button_RestInTown();
+        _button_LeaveTown.Text = _localizationService.Button_LeaveTown();
+
+        _menuItem_Menu.Text = _localizationService.Menu();
+        _menuItem_SaveAndExit.Text = _localizationService.SaveAndExit();
+
+        _button_SwitchLogSize.Text = _localizationService.Button_Log();
+
+        SetAllToolTips();
     }
 
-    int counter = 0;
-
-    private void AddLogTest(object sender, EventArgs e)
+    private void SetAllToolTips()
     {
-        AddLog("some log");
+        _label_Strength.ToolTipText = _localizationService.ToolTip_Strength();
+        _label_Dexterity.ToolTipText = _localizationService.ToolTip_Dexterity();
+        _label_Constitution.ToolTipText = _localizationService.ToolTip_Constitution();
+        _label_Perception.ToolTipText = _localizationService.ToolTip_Perception();
+        _label_Charisma.ToolTipText = _localizationService.ToolTip_Charisma();
     }
 
-    private void AddLog(string message)
-    {
-        message = $"asqwew erwet rewqt qewqe   qwrq    wrdaf {counter++}";
+    public void AddLog(string message) => _log.AddLog(message);
 
-        for (int i = _flowLayoutPanel_GameLog.Controls.Count - 1; i > 0; i--)
-            _flowLayoutPanel_GameLog.Controls[i].Text = _flowLayoutPanel_GameLog.Controls[i - 1].Text;
-
-        _flowLayoutPanel_GameLog.Controls[0].Text = message;
-    }
-
-    private void SwitchLogState(object sender, EventArgs e)
-    {
-        _isLogMinimize = !_isLogMinimize;
-
-        for (int i = 0; i < _flowLayoutPanel_GameLog.Controls.Count; i++)
-            if (i >= _logMessageCountInMinimizeState)
-                _flowLayoutPanel_GameLog.Controls[i].Visible = !_isLogMinimize;
-    }
-
-    private void FillLog()
-    {
-        for (int i = 0; i < _logMessageCount; i++)
-        {
-            Label label = new Label();
-            label.AutoSize = true;
-            label.Text = $"{i}";//String.Empty;
-            _flowLayoutPanel_GameLog.Controls.Add(label);
-            
-            label.Visible = i >= _logMessageCountInMinimizeState ? !_isLogMinimize : _isLogMinimize;
-        }
-    }
-
+    #region Controls Handlers
     private void Button_CharacterProgress_Click(object sender, EventArgs e)
     {
         using var characterProgressForm = new CharacterProgress();
@@ -81,15 +74,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
         {
 
         }
-    }
-
-    private void SetAllToolTips()
-    {
-        _label_Strength.ToolTipText = "% Описание СИЛ и за что она отвечает %";
-        _label_Dexterity.ToolTipText = "% Описание ЛОВ и за что она отвечает %";
-        _label_Constitution.ToolTipText = "% Описание ВЫН и за что она отвечает %";
-        _label_Perception.ToolTipText = "% Описание ВОС и за что она отвечает %";
-        _label_Charisma.ToolTipText = "% Описание ХАР и за что она отвечает %";
     }
 
     private void Button_Inventory_Click(object sender, EventArgs e)
@@ -110,5 +94,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
         }
     }
 
-    public void SetActiveState(bool newState) => Visible = newState;
+    private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => SaveAndExitClicked?.Invoke();
+
+    #endregion
 }

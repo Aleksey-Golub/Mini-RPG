@@ -36,4 +36,12 @@ public class SimpleLocalizationService : ILocalizationService
         "Крестьяне всегда были склонны к суевериям и излишнему драматизму, что с них взять.";
 
     public string Level() => "Уровень";
+    public string Button_Rest() => "Отдыхать";
+    public string Button_Attack() => "Атаковать";
+    public string Button_Trader() => "Торговец";
+    public string Button_RestInTown() => "Отдыхать в городе";
+    public string Button_LeaveTown() => "Покинуть город";
+    public string Menu() => "Меню";
+    public string SaveAndExit() => "Сохранить и выйти";
+    public string Button_Log() => "Лог";
 }

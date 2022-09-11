@@ -29,4 +29,12 @@ public interface ILocalizationService
     string Label_Intro();
     string Button_GoToGame();
     string Level();
+    string Button_Rest();
+    string Button_Attack();
+    string Button_Trader();
+    string Button_RestInTown();
+    string Button_LeaveTown();
+    string Menu();
+    string SaveAndExit();
+    string Button_Log();
 }

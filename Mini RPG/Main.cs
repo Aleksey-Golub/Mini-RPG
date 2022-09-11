@@ -36,7 +36,7 @@ public partial class Main : Form
         Controls.Add(_introScreen);
         _introScreen.SetActiveState(false);
 
-        _gameProcess = new GameProcessScreen();
+        _gameProcess = new GameProcessScreen(_localizationService);
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
 
@@ -53,7 +53,7 @@ public partial class Main : Form
 
     private void StartGameProcess()
     {
-        var gameProcessController = new GameProcessController(_randomService, _gameProcess);
+        var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService);
         gameProcessController.Run();
     }
 
