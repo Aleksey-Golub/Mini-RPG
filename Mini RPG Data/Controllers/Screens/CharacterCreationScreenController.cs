@@ -38,7 +38,7 @@ public class CharacterCreationScreenController
         _introScreen = introScreen;
     }
 
-    public event Action<CharacterCreationScreenController, Player> GameStarted;
+    public event Action GameStarted;
 
     public void SetRace(CharacterRace newRace) => _player.Character.Race = newRace;
 
@@ -60,7 +60,7 @@ public class CharacterCreationScreenController
         _saveLoadService.SaveProgress();
 
         _introScreen.SetActiveState(false);
-        GameStarted?.Invoke(this, _player);
+        GameStarted?.Invoke();
     }
 
     private PlayerProgress NewProgress()

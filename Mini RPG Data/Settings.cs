@@ -17,6 +17,8 @@ public static class Settings
     public static string AvatarsDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_1.png";
 
+    public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
+
     public static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {
         if (currentLevel == 1)

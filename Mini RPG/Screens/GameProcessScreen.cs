@@ -8,7 +8,10 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
 {
     private readonly int _logMessageCount = 10;
     private readonly int _logMessageCountInMinimizeState = 3;
+    
     private bool _isLogMinimize = true;
+
+    private GameProcessController _controller;
 
     public GameProcessScreen()
     {
@@ -20,12 +23,20 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
 
     public event Action? SaveAndExitClicked;
 
+    public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
+
+    public void ShowMap(IMap mapData)
+    {
+        throw new NotImplementedException();
+    }
+
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e)
     {
         SaveAndExitClicked?.Invoke();
     }
 
     int counter = 0;
+
     private void AddLogTest(object sender, EventArgs e)
     {
         AddLog("some log");
@@ -97,16 +108,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView
         {
 
         }
-    }
-
-    public void SetGameProcessController(GameProcessController gameProcessController)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ShowMap(IMap mapData)
-    {
-        throw new NotImplementedException();
     }
 
     public void SetActiveState(bool newState) => Visible = newState;

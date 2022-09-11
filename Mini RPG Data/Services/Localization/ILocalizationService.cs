@@ -28,4 +28,5 @@ public interface ILocalizationService
     string Dwarf();
     string Label_Intro();
     string Button_GoToGame();
+    string Level();
 }

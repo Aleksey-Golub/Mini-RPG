@@ -25,6 +25,9 @@
     <Compile Update="Screens\StartScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="SelectingLoadGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Trader.cs">
       <SubType>Form</SubType>
     </Compile>

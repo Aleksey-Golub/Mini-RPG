@@ -25,7 +25,6 @@ public partial class Main : Form
         InitializeComponent();
         RegisterServices();
 
-        
         _startScreen = new StartScreen(_localizationService);
         Controls.Add(_startScreen);
 
@@ -41,17 +40,21 @@ public partial class Main : Form
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
 
-        _startScreen.SetController(new StartScreenController(_startScreen, _characterCreationScreen));
-        var characterCreationScreenController= new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _progressService, _randomService, _saveLoadService);
-        characterCreationScreenController.GameStarted += OnGameStarted;
+        var startScrenncontroller = new StartScreenController(_startScreen, _characterCreationScreen, _saveLoadService, _progressService);
+        startScrenncontroller.Init();
+        startScrenncontroller.GameLoaded += StartGameProcess;
+        _startScreen.SetController(startScrenncontroller);
+
+        var characterCreationScreenController = new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _progressService, _randomService, _saveLoadService);
+        characterCreationScreenController.GameStarted += StartGameProcess;
         _characterCreationScreen.SetController(characterCreationScreenController);
         _introScreen.SetController(characterCreationScreenController);
     }
 
-    private void OnGameStarted(CharacterCreationScreenController controller, Player createdPlayer)
+    private void StartGameProcess()
     {
-        controller.GameStarted -= OnGameStarted;
-        _gameProcess.SetGameProcessController(new GameProcessController(_randomService, _gameProcess));
+        var gameProcessController = new GameProcessController(_randomService, _gameProcess);
+        gameProcessController.Run();
     }
 
     private void RegisterServices()
