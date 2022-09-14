@@ -162,6 +162,7 @@
             this.Controls.Add(this._flowLayoutPanel_Inventory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Trader";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

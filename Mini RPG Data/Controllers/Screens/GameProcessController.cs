@@ -59,6 +59,9 @@ public partial class GameProcessController
         SaveAndExit?.Invoke(this);
     }
 
+    public void EnterTown() => TransitionTo<InTownGameProcessState>();
+    public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
+
     private void TransitionTo<TState>() where TState : GameProcessStateBase
     {
         _state?.Exit();
@@ -83,9 +86,7 @@ public partial class GameProcessController
         }
 
         internal override void Exit()
-        {
-            throw new NotImplementedException();
-        }
+        {}
 
         protected override bool CheckNeedAndDoTransition()
         {

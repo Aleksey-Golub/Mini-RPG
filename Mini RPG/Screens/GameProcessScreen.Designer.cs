@@ -447,6 +447,7 @@
             this._button_LeaveTown.TabIndex = 1;
             this._button_LeaveTown.Text = "% покинуть город %";
             this._button_LeaveTown.UseVisualStyleBackColor = true;
+            this._button_LeaveTown.Click += new System.EventHandler(this.Button_LeaveTown_Click);
             // 
             // _button_Trader
             // 
@@ -510,6 +511,7 @@
             this._button_EnterTown.TabIndex = 2;
             this._button_EnterTown.Text = "% войти в город %";
             this._button_EnterTown.UseVisualStyleBackColor = true;
+            this._button_EnterTown.Click += new System.EventHandler(this.Button_EnterTown_Click);
             // 
             // GameProcessScreen
             // 
