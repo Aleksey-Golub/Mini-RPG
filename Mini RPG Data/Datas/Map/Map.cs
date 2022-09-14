@@ -11,14 +11,20 @@ public class Map : IMap
     public IReadOnlyDictionary<Vector2Int, IMapCell> Cells => _data.Cells.ToDictionary(x => x.Key, x => x.Value as IMapCell);
 
     public int EnemyCount { get => _data.EnemyCount; private set => _data.EnemyCount = value; }
-    public int LootCount { get; private set; }
-    public int LockedChestCount { get; private set; }
-    public int HiddenLootCount { get; private set; }
-    public int TrapCount { get; private set; }
-    public int MinX { get; private set; }
-    public int MaxX { get; private set; }
-    public int MinY { get; private set; }
-    public int MaxY { get; private set; }
+    public int LootCount { get => _data.LootCount; private set => _data.LootCount = value; }
+    public int LockedChestCount { get => _data.LockedChestCount; private set => _data.LockedChestCount = value; }
+    public int HiddenLootCount { get => _data.HiddenLootCount; private set => _data.HiddenLootCount = value; }
+    public int TrapCount { get => _data.TrapCount; private set => _data.TrapCount = value; }
+    public int MinX { get => _data.MinX; }
+    public int MaxX { get => _data.MaxX; }
+    public int MinY { get => _data.MinY; }
+    public int MaxY { get => _data.MaxY; }
+    public Vector2Int PlayerPosition { get => _data.PlayerPosition; private set => _data.PlayerPosition = value; }
+    public Vector2Int TownPosition => _data.TownPosition;
+    public bool IsPlayerOnTownCell => PlayerPosition == TownPosition;
+
+    Vector2Int IMap.PlayerPosition => PlayerPosition;
+    Vector2Int IMap.TownPosition => TownPosition;
 
     public Map(MapData data)
     {
@@ -39,8 +45,11 @@ public class Map : IMap
 
         var mapData = new MapData();
         mapData.Cells = new Dictionary<Vector2Int, MapCell>();
-        Vector2Int townCell = new Vector2Int(0, 0);
-        mapData.Cells[townCell] = new MapCell(townCell, CellType.Town, CellState.Explored);
+        Vector2Int townCellPos = new Vector2Int(0, 0);
+        MapCell townCell = new MapCell(townCellPos, CellType.Town, CellState.Explored);
+        mapData.Cells[townCellPos] = townCell;
+        mapData.TownPosition = townCellPos;
+        mapData.PlayerPosition = townCellPos;
 
         int counter = cellsCount;
 
@@ -51,7 +60,7 @@ public class Map : IMap
             do
             {
                 lastCells = mapData.Cells.Values.ToList();
-            
+
                 for (int i = 0; i < lastCells.Count; i++)
                 {
                     MapCell? c = lastCells[i];

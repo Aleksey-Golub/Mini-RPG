@@ -9,9 +9,11 @@ namespace Mini_RPG.Screens;
 
 public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
+    private readonly ImageManager _imageManager;
     private readonly ILocalizationService _localizationService;
-    private readonly Log _log;
     private GameProcessController _controller = null!;
+    private readonly Log _log;
+    private readonly MapView _mapView;
 
     private ICharacter _character;
     private IWallet _wallet;
@@ -20,6 +22,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     public GameProcessScreen(ILocalizationService localizationService)
     {
         InitializeComponent();
+
+        _imageManager = new ImageManager();
+        _mapView = new MapView(_label_Map);
 
         _localizationService = localizationService;
         _localizationService.LanguageChanged += SetTexts;
@@ -48,12 +53,36 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
     public void SetActiveState(bool newState) => Visible = newState;
-    public void AddLog(string message) => _log.AddLog(message);
-
-    public void ShowMap(IMap mapData)
+    
+    public void ShowTownEntrance()
     {
-        throw new NotImplementedException();
+        _panel_Location.BackgroundImage = _imageManager.GetTownEntrance();
+
+        _panel_Battle.Hide();
+        _panel_BattleActions.Hide();
+        _panel_Town.Hide();
+
+        _menuStrip.Show();
+        _panel_TownEntrance.Show();
+        _panel_Navigation.Show();
     }
+
+    public void ShowTown()
+    {
+        _panel_Location.BackgroundImage = _imageManager.GetTown();
+
+        _panel_Battle.Hide();
+        _panel_BattleActions.Hide();
+        _panel_Town.Show();
+
+        _menuStrip.Show();
+        _panel_TownEntrance.Hide();
+        _panel_Navigation.Hide();
+    }
+
+    public void ShowMap(IMap map) => _mapView.DrawMap(map);
+
+    public void AddLog(string message) => _log.AddLog(message);
 
     private void OnCharacterAbilitiesChanged()
     {
@@ -84,7 +113,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_Charisma.Text = _localizationService.Label_Charisma();
 
         _button_Rest.Text = _localizationService.Button_Rest();
+
+        _button_EnterTown.Text = _localizationService.Button_EnterTown();
+
         _button_Attack.Text = _localizationService.Button_Attack();
+        _button_TryLeaveBattle.Text = _localizationService.Button_TryLeaveBattle();
+
         _button_Trader.Text = _localizationService.Button_Trader();
         _button_RestInTown.Text = _localizationService.Button_RestInTown();
         _button_LeaveTown.Text = _localizationService.Button_LeaveTown();

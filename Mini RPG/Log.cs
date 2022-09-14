@@ -31,7 +31,9 @@ public class Log : ILogView
         {
             Label label = new Label();
             label.AutoSize = true;
-            label.Text = String.Empty; // $"{i}";
+            label.Text = $"{i}"; // String.Empty; // 
+            label.BackColor = Color.Black;
+            label.ForeColor = Color.White;
             _flowLayoutPanel_GameLog.Controls.Add(label);
 
             label.Visible = i >= _logMessageCountInMinimizeState ? !_isLogMinimize : _isLogMinimize;

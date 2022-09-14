@@ -26,6 +26,8 @@ public class MapData
     public int MaxX { get; set; }
     public int MinY { get; set; }
     public int MaxY { get; set; }
+    public Vector2Int PlayerPosition { get; set; }
+    public Vector2Int TownPosition { get; set; }
 
     public void PrepareForSerialize()
     {

@@ -15,7 +15,7 @@ public partial class SelectingCharacterAvatar : Form
         // 2шт 280 + 260 = 540
 
         startWidth = SpawnAvatars(startWidth, pictureWidth);
-        Size = new Size(startWidth, Size.Height);
+        Size = new Size(6 * 260 + 30, 300 * 2 + 40);
     }
 
     public string AvatarPath { get; internal set; } = null!;

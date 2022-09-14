@@ -37,7 +37,7 @@
             this._button_N = new System.Windows.Forms.Button();
             this._panel_MiniMap = new System.Windows.Forms.Panel();
             this._label_Map = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this._panel_Character = new System.Windows.Forms.Panel();
             this._pictureBox_HasFreeAbilityActions = new System.Windows.Forms.PictureBox();
             this._panel_CharacterHealthBarBG = new System.Windows.Forms.Panel();
             this._panel_CharacterHealthBarFG = new System.Windows.Forms.Panel();
@@ -70,10 +70,13 @@
             this._button_Trader = new System.Windows.Forms.Button();
             this._button_SwitchLogSize = new System.Windows.Forms.Button();
             this._panel_BattleActions = new System.Windows.Forms.Panel();
+            this._button_TryLeaveBattle = new System.Windows.Forms.Button();
             this._button_Attack = new System.Windows.Forms.Button();
+            this._panel_TownEntrance = new System.Windows.Forms.Panel();
+            this._button_EnterTown = new System.Windows.Forms.Button();
             this._panel_Navigation.SuspendLayout();
             this._panel_MiniMap.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this._panel_Character.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).BeginInit();
             this._panel_CharacterHealthBarBG.SuspendLayout();
             this._statusStrip.SuspendLayout();
@@ -83,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).BeginInit();
             this._panel_Town.SuspendLayout();
             this._panel_BattleActions.SuspendLayout();
+            this._panel_TownEntrance.SuspendLayout();
             this.SuspendLayout();
             // 
             // _panel_Navigation
@@ -190,15 +194,15 @@
             this._label_Map.Text = "OOOOO\r\n      O      \r\nQQQQQ\r\nOO@OO\r\nOOMOO";
             this._label_Map.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // _panel_Character
             // 
-            this.panel1.Controls.Add(this._pictureBox_HasFreeAbilityActions);
-            this.panel1.Controls.Add(this._panel_CharacterHealthBarBG);
-            this.panel1.Controls.Add(this._button_CharacterProgress);
-            this.panel1.Location = new System.Drawing.Point(1562, 369);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(203, 208);
-            this.panel1.TabIndex = 2;
+            this._panel_Character.Controls.Add(this._pictureBox_HasFreeAbilityActions);
+            this._panel_Character.Controls.Add(this._panel_CharacterHealthBarBG);
+            this._panel_Character.Controls.Add(this._button_CharacterProgress);
+            this._panel_Character.Location = new System.Drawing.Point(1562, 369);
+            this._panel_Character.Name = "_panel_Character";
+            this._panel_Character.Size = new System.Drawing.Size(203, 208);
+            this._panel_Character.TabIndex = 2;
             // 
             // _pictureBox_HasFreeAbilityActions
             // 
@@ -379,7 +383,8 @@
             // 
             // _panel_Location
             // 
-            this._panel_Location.BackColor = System.Drawing.SystemColors.ControlDark;
+            this._panel_Location.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_1;
+            this._panel_Location.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._panel_Location.Controls.Add(this._panel_Battle);
             this._panel_Location.Controls.Add(this._flowLayoutPanel_GameLog);
             this._panel_Location.Location = new System.Drawing.Point(93, 55);
@@ -406,6 +411,9 @@
             // 
             // _flowLayoutPanel_GameLog
             // 
+            this._flowLayoutPanel_GameLog.AutoScroll = true;
+            this._flowLayoutPanel_GameLog.BackColor = System.Drawing.Color.Transparent;
+            this._flowLayoutPanel_GameLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._flowLayoutPanel_GameLog.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this._flowLayoutPanel_GameLog.Location = new System.Drawing.Point(3, 28);
             this._flowLayoutPanel_GameLog.Name = "_flowLayoutPanel_GameLog";
@@ -417,14 +425,14 @@
             this._panel_Town.Controls.Add(this._button_RestInTown);
             this._panel_Town.Controls.Add(this._button_LeaveTown);
             this._panel_Town.Controls.Add(this._button_Trader);
-            this._panel_Town.Location = new System.Drawing.Point(1081, 835);
+            this._panel_Town.Location = new System.Drawing.Point(1477, 650);
             this._panel_Town.Name = "_panel_Town";
-            this._panel_Town.Size = new System.Drawing.Size(346, 131);
+            this._panel_Town.Size = new System.Drawing.Size(379, 335);
             this._panel_Town.TabIndex = 8;
             // 
             // _button_RestInTown
             // 
-            this._button_RestInTown.Location = new System.Drawing.Point(62, 49);
+            this._button_RestInTown.Location = new System.Drawing.Point(74, 154);
             this._button_RestInTown.Name = "_button_RestInTown";
             this._button_RestInTown.Size = new System.Drawing.Size(229, 34);
             this._button_RestInTown.TabIndex = 2;
@@ -433,7 +441,7 @@
             // 
             // _button_LeaveTown
             // 
-            this._button_LeaveTown.Location = new System.Drawing.Point(62, 92);
+            this._button_LeaveTown.Location = new System.Drawing.Point(74, 197);
             this._button_LeaveTown.Name = "_button_LeaveTown";
             this._button_LeaveTown.Size = new System.Drawing.Size(229, 34);
             this._button_LeaveTown.TabIndex = 1;
@@ -442,7 +450,7 @@
             // 
             // _button_Trader
             // 
-            this._button_Trader.Location = new System.Drawing.Point(62, 5);
+            this._button_Trader.Location = new System.Drawing.Point(74, 110);
             this._button_Trader.Name = "_button_Trader";
             this._button_Trader.Size = new System.Drawing.Size(229, 34);
             this._button_Trader.TabIndex = 0;
@@ -461,26 +469,54 @@
             // 
             // _panel_BattleActions
             // 
+            this._panel_BattleActions.Controls.Add(this._button_TryLeaveBattle);
             this._panel_BattleActions.Controls.Add(this._button_Attack);
-            this._panel_BattleActions.Location = new System.Drawing.Point(715, 835);
+            this._panel_BattleActions.Location = new System.Drawing.Point(1079, 835);
             this._panel_BattleActions.Name = "_panel_BattleActions";
             this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
             this._panel_BattleActions.TabIndex = 9;
             // 
+            // _button_TryLeaveBattle
+            // 
+            this._button_TryLeaveBattle.Location = new System.Drawing.Point(62, 77);
+            this._button_TryLeaveBattle.Name = "_button_TryLeaveBattle";
+            this._button_TryLeaveBattle.Size = new System.Drawing.Size(229, 34);
+            this._button_TryLeaveBattle.TabIndex = 3;
+            this._button_TryLeaveBattle.Text = "% попытаться сбежать %";
+            this._button_TryLeaveBattle.UseVisualStyleBackColor = true;
+            // 
             // _button_Attack
             // 
-            this._button_Attack.Location = new System.Drawing.Point(62, 49);
+            this._button_Attack.Location = new System.Drawing.Point(62, 20);
             this._button_Attack.Name = "_button_Attack";
             this._button_Attack.Size = new System.Drawing.Size(229, 34);
             this._button_Attack.TabIndex = 2;
             this._button_Attack.Text = "% атаковать %";
             this._button_Attack.UseVisualStyleBackColor = true;
             // 
+            // _panel_TownEntrance
+            // 
+            this._panel_TownEntrance.Controls.Add(this._button_EnterTown);
+            this._panel_TownEntrance.Location = new System.Drawing.Point(1093, 827);
+            this._panel_TownEntrance.Name = "_panel_TownEntrance";
+            this._panel_TownEntrance.Size = new System.Drawing.Size(346, 131);
+            this._panel_TownEntrance.TabIndex = 10;
+            // 
+            // _button_EnterTown
+            // 
+            this._button_EnterTown.Location = new System.Drawing.Point(62, 53);
+            this._button_EnterTown.Name = "_button_EnterTown";
+            this._button_EnterTown.Size = new System.Drawing.Size(229, 34);
+            this._button_EnterTown.TabIndex = 2;
+            this._button_EnterTown.Text = "% войти в город %";
+            this._button_EnterTown.UseVisualStyleBackColor = true;
+            // 
             // GameProcessScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this._panel_TownEntrance);
             this.Controls.Add(this._panel_BattleActions);
             this.Controls.Add(this._panel_Town);
             this.Controls.Add(this._button_SwitchLogSize);
@@ -488,7 +524,7 @@
             this.Controls.Add(this._button_Inventory);
             this.Controls.Add(this._statusStrip);
             this.Controls.Add(this._menuStrip);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this._panel_Character);
             this.Controls.Add(this._panel_MiniMap);
             this.Controls.Add(this._panel_Navigation);
             this.DoubleBuffered = true;
@@ -496,7 +532,7 @@
             this.Size = new System.Drawing.Size(1898, 1024);
             this._panel_Navigation.ResumeLayout(false);
             this._panel_MiniMap.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this._panel_Character.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).EndInit();
             this._panel_CharacterHealthBarBG.ResumeLayout(false);
             this._statusStrip.ResumeLayout(false);
@@ -508,6 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox_Enemy)).EndInit();
             this._panel_Town.ResumeLayout(false);
             this._panel_BattleActions.ResumeLayout(false);
+            this._panel_TownEntrance.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,7 +560,7 @@
         private Button _button_N;
         private Panel _panel_MiniMap;
         private Label _label_Map;
-        private Panel panel1;
+        private Panel _panel_Character;
         private Panel _panel_CharacterHealthBarBG;
         private Panel _panel_CharacterHealthBarFG;
         private Button _button_CharacterProgress;
@@ -557,5 +594,8 @@
         private Panel _panel_Battle;
         private Panel _panel_BattleActions;
         private Button _button_Attack;
+        private Button _button_TryLeaveBattle;
+        private Panel _panel_TownEntrance;
+        private Button _button_EnterTown;
     }
 }

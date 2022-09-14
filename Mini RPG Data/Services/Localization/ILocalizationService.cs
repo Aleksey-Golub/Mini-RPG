@@ -31,10 +31,12 @@ public interface ILocalizationService
     string Level();
     string Button_Rest();
     string Button_Attack();
+    string Button_TryLeaveBattle();
     string Button_Trader();
     string Button_RestInTown();
     string Button_LeaveTown();
     string Menu();
     string SaveAndExit();
     string Button_Log();
+    string Button_EnterTown();
 }

@@ -15,7 +15,7 @@ public static class Settings
     public const int DEFAULT_ABILITYPOINTS_COUNT = 2;
 
     public static string AvatarsDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Avatars";
-    public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_1.png";
+    public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 
     public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
 

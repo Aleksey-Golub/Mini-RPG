@@ -1,4 +1,6 @@
 ﻿using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Map_;
@@ -11,12 +13,20 @@ internal class WriteTextFileGameProcessView : IGameProcessView
 
     private bool _isActive;
 
+    public void Init(ICharacter character, IWallet wallet, IMap map)
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetActiveState(bool newState) => _isActive = newState;
 
     public void SetGameProcessController(GameProcessController gameProcessController)
     {
         _gameProcessController = gameProcessController;
     }
+
+    public void ShowTownEntrance() => throw new NotImplementedException();
+    public void ShowTown() => throw new NotImplementedException();
 
     public void ShowMap(IMap mapData)
     {

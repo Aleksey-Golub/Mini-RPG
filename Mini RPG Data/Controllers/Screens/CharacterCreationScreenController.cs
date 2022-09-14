@@ -38,7 +38,7 @@ public class CharacterCreationScreenController
         _introScreen = introScreen;
     }
 
-    public event Action GameStarted;
+    public event Action? GameStarted;
 
     public void SetRace(CharacterRace newRace) => _player.Character.Race = newRace;
 
