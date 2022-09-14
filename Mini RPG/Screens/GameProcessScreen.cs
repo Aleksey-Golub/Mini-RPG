@@ -17,7 +17,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private ICharacter _character;
     private IWallet _wallet;
-    //private IMap _map;
 
     public GameProcessScreen(ILocalizationService localizationService)
     {
@@ -34,13 +33,10 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _log.FillLog();
     }
 
-    public event Action? SaveAndExitClicked;
-
-    public void Init(ICharacter character, IWallet wallet, IMap map)
+    public void Init(ICharacter character, IWallet wallet)
     {
         _character = character;
         _wallet = wallet;
-        //_map = map;
 
         _character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
         _character.Health.Changed += OnCharacterHealthChanged;
@@ -49,6 +45,17 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         OnCharacterAbilitiesChanged();
         OnCharacterHealthChanged();
         OnMoneyChanged(_wallet.Money);
+    }
+
+    public void DeInit()
+    {
+        _character.AllAbilities.Changed -= OnCharacterAbilitiesChanged;
+        _character.Health.Changed -= OnCharacterHealthChanged;
+        _wallet.MoneyChanged -= OnMoneyChanged;
+
+        _controller = null!;
+        _character = null;
+        _wallet = null;
     }
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
@@ -168,7 +175,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         }
     }
 
-    private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => SaveAndExitClicked?.Invoke();
+    private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
 
     #endregion
 }

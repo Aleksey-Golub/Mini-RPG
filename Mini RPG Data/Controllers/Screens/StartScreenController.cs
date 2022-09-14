@@ -26,7 +26,11 @@ public class StartScreenController
         _progressService = progressService;
     }
 
-    public void Init() => _startScreenView.SetLoadButtonState(_saveLoadService.GetAllSaves().Length > 0);
+    public void Init()
+    {
+        _startScreenView.SetActiveState(true);
+        _startScreenView.SetLoadButtonState(_saveLoadService.GetAllSaves().Length > 0);
+    }
 
     public void StartNewGame()
     {

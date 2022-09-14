@@ -19,6 +19,8 @@ public partial class GameProcessController
     private GameProcessStateBase _state;
     private readonly Dictionary<Type, GameProcessStateBase> _states;
 
+    public event Action<GameProcessController>? SaveAndExit;
+
     public GameProcessController(IGameProcessView gameProcessView, ILogView logView, IRandomService randomService, IPersistentProgressService progressService)
     {
         _gameProcessView = gameProcessView;
@@ -41,13 +43,20 @@ public partial class GameProcessController
         _player = new Player(_progressService.Progress.PlayerData);
         _map = new Map(_progressService.Progress.MapData);
 
-        _gameProcessView.Init(_player.Character, _player.Wallet, _map);
+        _gameProcessView.Init(_player.Character, _player.Wallet);
         _gameProcessView.SetActiveState(true);
 
         if (_map.IsPlayerOnTownCell)
             TransitionTo<TownEntranceGameProcessState>();
         else
             TransitionTo<AdventureGameProcessState>();
+    }
+
+    public void SaveGameAndExitMainMenu()
+    {
+        _gameProcessView.DeInit();
+        _gameProcessView.SetActiveState(false);
+        SaveAndExit?.Invoke(this);
     }
 
     private void TransitionTo<TState>() where TState : GameProcessStateBase

@@ -46,8 +46,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(208, 428);
-            this.ControlBox = false;
             this.Controls.Add(this._flowLayoutPanel_Saves);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SelectingLoadGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);

@@ -17,7 +17,7 @@ public class CharacterCreationScreenController
     private readonly IRandomService _randomService;
     private readonly ISaveLoadService _saveLoadService;
 
-    private readonly Player _player;
+    private Player _player;
 
     public CharacterCreationScreenController(
         ICharacterCreationScreenView characterCreationScreen,
@@ -29,13 +29,16 @@ public class CharacterCreationScreenController
         _randomService = randomService;
         _saveLoadService = saveLoadService;
         _progressService = progressService;
+        _introScreen = introScreen;
+        _characterCreationScreen = characterCreationScreen;
+    }
+
+    public void Init()
+    {
         _progressService.Progress = NewProgress();
         _player = new Player(_progressService.Progress.PlayerData);
         _player.Init();
-
-        _characterCreationScreen = characterCreationScreen;
         _characterCreationScreen.SetCharacter(_player.Character);
-        _introScreen = introScreen;
     }
 
     public event Action? GameStarted;

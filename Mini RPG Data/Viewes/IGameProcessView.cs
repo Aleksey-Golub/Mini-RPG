@@ -7,7 +7,8 @@ namespace Mini_RPG_Data.Viewes;
 
 public interface IGameProcessView : IView
 {
-    void Init(ICharacter character, IWallet wallet, IMap map);
+    void Init(ICharacter character, IWallet wallet);
+    void DeInit();
     void SetGameProcessController(GameProcessController controller);
     void SetActiveState(bool newState);
     void ShowMap(IMap map);

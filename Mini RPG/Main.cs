@@ -15,6 +15,9 @@ public partial class Main : Form
     private readonly IntroScreen _introScreen;
     private readonly GameProcessScreen _gameProcess;
 
+    private readonly StartScreenController _startScreenController;
+    private readonly CharacterCreationScreenController _characterCreationScreenController;
+
     private ILocalizationService _localizationService = null!;
     private IPersistentProgressService _progressService = null!;
     private IRandomService _randomService = null!;
@@ -27,6 +30,7 @@ public partial class Main : Form
 
         _startScreen = new StartScreen(_localizationService);
         Controls.Add(_startScreen);
+        _startScreen.SetActiveState(false);
 
         _characterCreationScreen = new CharacterCreationScreen(_localizationService);
         Controls.Add(_characterCreationScreen);
@@ -40,21 +44,31 @@ public partial class Main : Form
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
 
-        var startScrenncontroller = new StartScreenController(_startScreen, _characterCreationScreen, _saveLoadService, _progressService);
-        startScrenncontroller.Init();
-        startScrenncontroller.GameLoaded += StartGameProcess;
-        _startScreen.SetController(startScrenncontroller);
+        _startScreenController = new StartScreenController(_startScreen, _characterCreationScreen, _saveLoadService, _progressService);
+        _startScreenController.Init();
+        _startScreenController.GameLoaded += StartGameProcess;
+        _startScreen.SetController(_startScreenController);
 
-        var characterCreationScreenController = new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _progressService, _randomService, _saveLoadService);
-        characterCreationScreenController.GameStarted += StartGameProcess;
-        _characterCreationScreen.SetController(characterCreationScreenController);
-        _introScreen.SetController(characterCreationScreenController);
+        _characterCreationScreenController = new CharacterCreationScreenController(_characterCreationScreen, _introScreen, _progressService, _randomService, _saveLoadService);
+        _characterCreationScreenController.GameStarted += StartGameProcess;
+        _characterCreationScreenController.Init();
+        _characterCreationScreen.SetController(_characterCreationScreenController);
+        _introScreen.SetController(_characterCreationScreenController);
     }
 
     private void StartGameProcess()
     {
         var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService);
+        gameProcessController.SaveAndExit += OnSaveAndExit;
         gameProcessController.Run();
+    }
+
+    private void OnSaveAndExit(GameProcessController oldController)
+    {
+        oldController.SaveAndExit -= OnSaveAndExit;
+
+        _startScreenController.Init();
+        _characterCreationScreenController.Init();
     }
 
     private void RegisterServices()

@@ -13,7 +13,12 @@ internal class WriteTextFileGameProcessView : IGameProcessView
 
     private bool _isActive;
 
-    public void Init(ICharacter character, IWallet wallet, IMap map)
+    public void Init(ICharacter character, IWallet wallet)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeInit()
     {
         throw new NotImplementedException();
     }
