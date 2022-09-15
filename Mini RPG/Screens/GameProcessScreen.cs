@@ -3,7 +3,6 @@ using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Services.PersistentProgress;
-using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers;
 
 namespace Mini_RPG.Screens;
@@ -15,10 +14,10 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly ImageManager _imageManager;
     private readonly Log _log;
     private readonly MapView _mapView;
+    private readonly HealthView _healthView;
 
-    private GameProcessController? _controller;
-    private ICharacter? _character;
-    private IWallet? _wallet;
+    private GameProcessController _controller = null!;
+    private IPlayer _player;
 
     public GameProcessScreen(ILocalizationService localizationService, IPersistentProgressService progressService)
     {
@@ -31,23 +30,23 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _imageManager = new ImageManager();
         _mapView = new MapView(_label_Map, _toolTip, _localizationService, _progressService);
+        _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
 
         _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
         _log.FillLog();
     }
 
-    public void Init(ICharacter character, IWallet wallet)
+    public void Init(IPlayer player)
     {
-        _character = character;
-        _wallet = wallet;
+        _player = player;
 
-        _character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
-        _character.Health.Changed += OnCharacterHealthChanged;
-        _wallet.MoneyChanged += OnMoneyChanged;
+        _player.Character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
+        _player.Character.Health.Changed += OnCharacterHealthChanged;
+        _player.Wallet.MoneyChanged += OnMoneyChanged;
 
         OnCharacterAbilitiesChanged();
         OnCharacterHealthChanged();
-        OnMoneyChanged(_wallet.Money);
+        OnMoneyChanged(_player.Wallet.Money);
 
         _mapView.Init();
         _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_progressService.Progress.PlayerData.CharacterData.AvatarPath);
@@ -55,13 +54,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void DeInit()
     {
-        _character.AllAbilities.Changed -= OnCharacterAbilitiesChanged;
-        _character.Health.Changed -= OnCharacterHealthChanged;
-        _wallet.MoneyChanged -= OnMoneyChanged;
+        _player.Character.AllAbilities.Changed -= OnCharacterAbilitiesChanged;
+        _player.Character.Health.Changed -= OnCharacterHealthChanged;
+        _player.Wallet.MoneyChanged -= OnMoneyChanged;
 
         _controller = null;
-        _character = null;
-        _wallet = null;
+        _player = null;
     }
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
@@ -99,7 +97,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void OnCharacterAbilitiesChanged()
     {
-        var allAbilities = _character.AllAbilities;
+        var allAbilities = _player.Character.AllAbilities;
 
         _label_StrengthPoints.Text = allAbilities.Strength.Value.ToString();
         _label_DexterityPoints.Text = allAbilities.Dexterity.Value.ToString();
@@ -114,7 +112,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_CharismaPoints.ToolTipText = allAbilities.Charisma.Bonus.ToString();
     }
 
-    private void OnCharacterHealthChanged() => _label_Health.Text = $"{_character.Health.CurrentHealth}/{_character.Health.MaxHealth}";
+    private void OnCharacterHealthChanged() => _healthView.View(_player.Character.Health.CurrentHealth, _player.Character.Health.MaxHealth);
+
     private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 
     private void SetTexts()

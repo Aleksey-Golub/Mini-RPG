@@ -43,7 +43,7 @@ public partial class GameProcessController
         _player = new Player(_progressService.Progress.PlayerData);
         _map = new Map(_progressService.Progress.MapData);
 
-        _gameProcessView.Init(_player.Character, _player.Wallet);
+        _gameProcessView.Init(_player);
         _gameProcessView.SetActiveState(true);
 
         if (_map.IsPlayerOnTownCell)
