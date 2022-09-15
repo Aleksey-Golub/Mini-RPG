@@ -46,4 +46,8 @@ public class SimpleLocalizationService : ILocalizationService
     public string SaveAndExit() => "Сохранить и выйти";
     public string Button_Log() => "Лог";
     public string Button_EnterTown() => "Войти в город";
+    public string UnexploredLocation() => "Неисследованная локация";
+    public string EmptyExploredLocation() => "Пустая исследованная локация";
+    public string Town() => "Город";
+    public string Enemy() => "Противник";
 }

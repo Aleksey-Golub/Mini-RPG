@@ -40,7 +40,7 @@ public partial class Main : Form
         Controls.Add(_introScreen);
         _introScreen.SetActiveState(false);
 
-        _gameProcess = new GameProcessScreen(_localizationService);
+        _gameProcess = new GameProcessScreen(_localizationService, _progressService);
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
 

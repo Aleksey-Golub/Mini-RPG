@@ -2,6 +2,7 @@
 using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
+using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers;
 
@@ -9,25 +10,27 @@ namespace Mini_RPG.Screens;
 
 public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
-    private readonly ImageManager _imageManager;
     private readonly ILocalizationService _localizationService;
-    private GameProcessController _controller = null!;
+    private readonly IPersistentProgressService _progressService;
+    private readonly ImageManager _imageManager;
     private readonly Log _log;
     private readonly MapView _mapView;
 
-    private ICharacter _character;
-    private IWallet _wallet;
+    private GameProcessController? _controller;
+    private ICharacter? _character;
+    private IWallet? _wallet;
 
-    public GameProcessScreen(ILocalizationService localizationService)
+    public GameProcessScreen(ILocalizationService localizationService, IPersistentProgressService progressService)
     {
         InitializeComponent();
 
-        _imageManager = new ImageManager();
-        _mapView = new MapView(_label_Map);
-
+        _progressService = progressService;
         _localizationService = localizationService;
         _localizationService.LanguageChanged += SetTexts;
         SetTexts();
+
+        _imageManager = new ImageManager();
+        _mapView = new MapView(_label_Map, _toolTip, _localizationService, _progressService);
 
         _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
         _log.FillLog();
@@ -45,6 +48,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         OnCharacterAbilitiesChanged();
         OnCharacterHealthChanged();
         OnMoneyChanged(_wallet.Money);
+
+        _mapView.Init();
     }
 
     public void DeInit()
@@ -53,14 +58,14 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _character.Health.Changed -= OnCharacterHealthChanged;
         _wallet.MoneyChanged -= OnMoneyChanged;
 
-        _controller = null!;
+        _controller = null;
         _character = null;
         _wallet = null;
     }
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
     public void SetActiveState(bool newState) => Visible = newState;
-    
+
     public void ShowTownEntrance()
     {
         _panel_Location.BackgroundImage = _imageManager.GetTownEntrance();
@@ -134,7 +139,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _menuItem_SaveAndExit.Text = _localizationService.SaveAndExit();
 
         _button_SwitchLogSize.Text = _localizationService.Button_Log();
-
+        
         SetAllToolTips();
     }
 
@@ -176,9 +181,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
-
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
-
     private void Button_LeaveTown_Click(object sender, EventArgs e) => _controller.ExitTown();
     #endregion
 }

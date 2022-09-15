@@ -39,4 +39,8 @@ public interface ILocalizationService
     string SaveAndExit();
     string Button_Log();
     string Button_EnterTown();
+    string UnexploredLocation();
+    string EmptyExploredLocation();
+    string Town();
+    string Enemy();
 }
