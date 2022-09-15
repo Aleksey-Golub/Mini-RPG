@@ -1,7 +1,6 @@
 ﻿using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Services.Localization;
-using Mini_RPG_Data.Services.PersistentProgress;
 using System.Text;
 
 namespace Mini_RPG;
@@ -19,11 +18,13 @@ internal class MapView
     private const string HIDDENLOOT_SYMBOL = "H";
     private const string TRAP_SYMBOL = "W";
     private const string NOMAPCELL_SYMBOL = "   ";
+    private const string BOARDER_SYMBOL = "N";
+
     private readonly Label _label_Map;
     private readonly ToolTip _toolTip;
 
     private readonly ILocalizationService _localizationService;
-    private string _characterName;
+    private string? _characterName;
 
     public MapView(Label label_Map, ToolTip toolTip, ILocalizationService localizationService)
     {
@@ -82,7 +83,10 @@ internal class MapView
         }
         else
         {
-            return NOMAPCELL_SYMBOL;
+            if (map.AnyCellContactWith(cellCoord))
+                return BOARDER_SYMBOL;
+            else
+                return NOMAPCELL_SYMBOL;
         }
     }
 
@@ -104,8 +108,8 @@ internal class MapView
 
     private void SetToolTip()
     {
-        _toolTip.SetToolTip(_label_Map, 
-            $"{PLAYER_SYMBOL} - {_characterName}, {UNEXPLORED_SYMBOL} - {_localizationService.UnexploredLocation()}  \n" +
-            $"{EMPTY_SYMBOL} - {_localizationService.EmptyExploredLocation()}, {TOWN_SYMBOL} - {_localizationService.Town()}, {ENEMY_SYMBOL} - {_localizationService.Enemy()}");
+        _toolTip.SetToolTip(_label_Map,
+            $"{PLAYER_SYMBOL} - {_characterName}, {UNEXPLORED_SYMBOL} - {_localizationService.UnexploredLocation()}, {TOWN_SYMBOL} - {_localizationService.Town()}\n" +
+            $"{EMPTY_SYMBOL} - {_localizationService.EmptyExploredLocation()}, {ENEMY_SYMBOL} - {_localizationService.Enemy()}, {BOARDER_SYMBOL} - {_localizationService.LevelBoarder()}");
     }
 }

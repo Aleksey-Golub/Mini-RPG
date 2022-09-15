@@ -17,7 +17,7 @@ public class CharacterCreationScreenController
     private readonly IRandomService _randomService;
     private readonly ISaveLoadService _saveLoadService;
 
-    private Player _player;
+    private Player _player = null!;
 
     public CharacterCreationScreenController(
         ICharacterCreationScreenView characterCreationScreen,

@@ -44,4 +44,5 @@ public interface ILocalizationService
     string Town();
     string Enemy();
     string Button_Close();
+    string LevelBoarder();
 }

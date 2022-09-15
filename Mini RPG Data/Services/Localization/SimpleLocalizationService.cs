@@ -60,4 +60,5 @@ public class SimpleLocalizationService : ILocalizationService
         };
     }
     public string Button_Close() => "Закрыть";
+    public string LevelBoarder() => "Граница уровня";
 }

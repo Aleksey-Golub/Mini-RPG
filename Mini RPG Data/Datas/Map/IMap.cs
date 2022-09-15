@@ -16,4 +16,6 @@ public interface IMap
     int MaxY { get; }
     public Vector2Int PlayerPosition { get; }
     public Vector2Int TownPosition { get; }
+
+    bool AnyCellContactWith(Vector2Int cellCoord);
 }

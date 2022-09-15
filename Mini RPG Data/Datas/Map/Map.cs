@@ -31,6 +31,26 @@ public class Map : IMap
         _data = data;
     }
 
+    public bool AnyCellContactWith(Vector2Int cellCoord)
+    {
+        List<Vector2Int> neighborsCoords = new List<Vector2Int>(8);
+
+        neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y + 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X,     cellCoord.Y + 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y + 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y - 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X,     cellCoord.Y - 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y - 1));
+
+        foreach (var neighbor in neighborsCoords)
+            if (Cells.ContainsKey(neighbor))
+                return true;
+        
+        return false;
+    }
+
     /// <summary>
     /// 0,0 cell is always a town
     /// </summary>
