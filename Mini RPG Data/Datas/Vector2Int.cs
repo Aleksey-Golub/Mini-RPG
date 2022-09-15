@@ -14,4 +14,10 @@ public struct Vector2Int
 
     public static bool operator ==(Vector2Int v1, Vector2Int v2) => v1.X == v2.X && v1.Y == v2.Y;
     public static bool operator !=(Vector2Int v1, Vector2Int v2) => !(v1 == v2);
+
+    public override bool Equals(object? obj)
+    {
+        if (obj == null) return false;
+        return obj is Vector2Int v && this == v;
+    }
 }

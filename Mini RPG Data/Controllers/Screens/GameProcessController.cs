@@ -13,10 +13,10 @@ public partial class GameProcessController
     private readonly IRandomService _randomService;
     private readonly IPersistentProgressService _progressService;
 
-    private Player _player;
-    private Map _map;
+    private Player _player = null!;
+    private Map _map = null!;
 
-    private GameProcessStateBase _state;
+    private GameProcessStateBase _state = null!;
     private readonly Dictionary<Type, GameProcessStateBase> _states;
 
     public event Action<GameProcessController>? SaveAndExit;

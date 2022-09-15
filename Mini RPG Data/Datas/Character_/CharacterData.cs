@@ -7,7 +7,7 @@ namespace Mini_RPG_Data.Character_;
 public class CharacterData
 {
     public CharacterRace Race = CharacterRace.Human;
-    public string Name;
+    public string Name = null!;
     public string AvatarPath = null!;
     public LevelData LevelData;
     public HealthData HealthData;

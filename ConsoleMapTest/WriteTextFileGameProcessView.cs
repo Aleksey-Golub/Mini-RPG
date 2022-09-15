@@ -94,4 +94,9 @@ internal class WriteTextFileGameProcessView : IGameProcessView
             _ => throw new NotImplementedException($"unnoun {cellType}"),
         };
     }
+
+    public void Init(IPlayer player)
+    {
+        throw new NotImplementedException();
+    }
 }

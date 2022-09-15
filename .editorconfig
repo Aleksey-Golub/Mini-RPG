@@ -2,3 +2,18 @@
 
 # IDE0072: Добавить отсутствующие варианты
 dotnet_diagnostic.IDE0072.severity = warning
+
+# CS0659: Тип переопределяет Object.Equals(object o), но не переопределяет Object.GetHashCode()
+dotnet_diagnostic.CS0659.severity = suggestion
+
+# CS0661: Тип определяет оператор == или оператор !=, но не переопределяет Object.GetHashCode()
+dotnet_diagnostic.CS0661.severity = suggestion
+
+# IDE0022: Использовать тело блока для методов
+dotnet_diagnostic.IDE0022.severity = suggestion
+
+# CS8602: Разыменование вероятной пустой ссылки.
+dotnet_diagnostic.CS8602.severity = suggestion
+
+# CS8604: Возможно, аргумент-ссылка, допускающий значение NULL.
+dotnet_diagnostic.CS8604.severity = suggestion

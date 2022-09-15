@@ -11,7 +11,7 @@ namespace Mini_RPG.Screens
     public partial class CharacterCreationScreen : UserControl, ICharacterCreationScreenView
     {
         private CharacterCreationScreenController _controller = null!;
-        private ICharacter _characterData;
+        private ICharacter _characterData = null!;
 
         private readonly ILocalizationService _localizationService;
         private readonly int _maxNameLength = 15;

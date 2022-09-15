@@ -20,7 +20,7 @@ public partial class CharacterProgress : Form
         _character = character;
         _character.Changed += OnCharacterDataChanged;
 
-        _controller = new CharacterProgressController(character as Character);
+        _controller = new CharacterProgressController(_character as Character);
 
         ShowCharacterStats();
 

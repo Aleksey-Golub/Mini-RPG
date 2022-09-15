@@ -38,7 +38,7 @@ public class JsonFileSaveLoadService : ISaveLoadService
 
             File.WriteAllText($"{_savesDirectory}{fileName}", jsonString);
         }
-        catch (Exception e)
+        catch
         {
         }
     }
@@ -53,7 +53,7 @@ public class JsonFileSaveLoadService : ISaveLoadService
             progress?.PrepareForDeserialize();
             return progress;
         }
-        catch (Exception e)
+        catch
         {
             return null;
         }

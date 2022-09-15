@@ -14,8 +14,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly MapView _mapView;
     private readonly HealthView _healthView;
 
-    private GameProcessController _controller = null!;
-    private IPlayer _player;
+    private GameProcessController? _controller;
+    private IPlayer? _player;
 
     public GameProcessScreen(ILocalizationService localizationService)
     {

@@ -18,7 +18,7 @@ public partial class SelectingLoadGame : Form
         SpawnSaveViewes();
     }
 
-    public string SelectedSave { get; private set; }
+    public string? SelectedSave { get; private set; }
 
     private void SpawnSaveViewes()
     {
