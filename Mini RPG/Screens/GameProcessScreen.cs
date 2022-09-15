@@ -50,6 +50,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         OnMoneyChanged(_wallet.Money);
 
         _mapView.Init();
+        _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_progressService.Progress.PlayerData.CharacterData.AvatarPath);
     }
 
     public void DeInit()

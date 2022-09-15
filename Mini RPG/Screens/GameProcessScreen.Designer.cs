@@ -235,9 +235,10 @@
             // 
             // _button_CharacterProgress
             // 
-            this._button_CharacterProgress.Location = new System.Drawing.Point(14, 12);
+            this._button_CharacterProgress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._button_CharacterProgress.Location = new System.Drawing.Point(14, 14);
             this._button_CharacterProgress.Name = "_button_CharacterProgress";
-            this._button_CharacterProgress.Size = new System.Drawing.Size(142, 180);
+            this._button_CharacterProgress.Size = new System.Drawing.Size(142, 175);
             this._button_CharacterProgress.TabIndex = 0;
             this._button_CharacterProgress.UseVisualStyleBackColor = true;
             this._button_CharacterProgress.Click += new System.EventHandler(this.Button_CharacterProgress_Click);
