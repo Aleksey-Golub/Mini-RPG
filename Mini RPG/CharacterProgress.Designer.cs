@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this._label_Race = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this._label_CharacterRace = new System.Windows.Forms.Label();
             this._panel_Abilities = new System.Windows.Forms.Panel();
             this._button_IncreaseCharisma = new System.Windows.Forms.Button();
             this._button_DecreaseCharisma = new System.Windows.Forms.Button();
@@ -52,23 +53,24 @@
             this._label_Strength = new System.Windows.Forms.Label();
             this._label_AbilityPointsCount = new System.Windows.Forms.Label();
             this._label_AbilityPoints = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this._label_LevelAndExperience = new System.Windows.Forms.Label();
+            this._button_CloseCharacterProgress = new System.Windows.Forms.Button();
+            this._pictureBox_CharacterAvatar = new System.Windows.Forms.PictureBox();
+            this._label_CharacterName = new System.Windows.Forms.Label();
+            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this._panel_Abilities.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_CharacterAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // _label_Race
+            // _label_CharacterRace
             // 
-            this._label_Race.AutoSize = true;
-            this._label_Race.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._label_Race.Location = new System.Drawing.Point(35, 28);
-            this._label_Race.Name = "_label_Race";
-            this._label_Race.Size = new System.Drawing.Size(198, 41);
-            this._label_Race.TabIndex = 19;
-            this._label_Race.Text = "% человек %";
+            this._label_CharacterRace.AutoSize = true;
+            this._label_CharacterRace.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._label_CharacterRace.Location = new System.Drawing.Point(35, 28);
+            this._label_CharacterRace.Name = "_label_CharacterRace";
+            this._label_CharacterRace.Size = new System.Drawing.Size(198, 41);
+            this._label_CharacterRace.TabIndex = 19;
+            this._label_CharacterRace.Text = "% человек %";
             // 
             // _panel_Abilities
             // 
@@ -106,6 +108,7 @@
             this._button_IncreaseCharisma.TabIndex = 19;
             this._button_IncreaseCharisma.Text = "+";
             this._button_IncreaseCharisma.UseVisualStyleBackColor = true;
+            this._button_IncreaseCharisma.Click += new System.EventHandler(this.Button_IncreaseCharisma_Click);
             // 
             // _button_DecreaseCharisma
             // 
@@ -115,6 +118,7 @@
             this._button_DecreaseCharisma.TabIndex = 18;
             this._button_DecreaseCharisma.Text = "-";
             this._button_DecreaseCharisma.UseVisualStyleBackColor = true;
+            this._button_DecreaseCharisma.Click += new System.EventHandler(this.Button_DecreaseCharisma_Click);
             // 
             // _label_CharismaPoints
             // 
@@ -144,6 +148,7 @@
             this._button_IncreasePerception.TabIndex = 15;
             this._button_IncreasePerception.Text = "+";
             this._button_IncreasePerception.UseVisualStyleBackColor = true;
+            this._button_IncreasePerception.Click += new System.EventHandler(this.Button_IncreasePerception_Click);
             // 
             // _button_DecreasePerception
             // 
@@ -153,6 +158,7 @@
             this._button_DecreasePerception.TabIndex = 14;
             this._button_DecreasePerception.Text = "-";
             this._button_DecreasePerception.UseVisualStyleBackColor = true;
+            this._button_DecreasePerception.Click += new System.EventHandler(this.Button_DecreasePerception_Click);
             // 
             // _label_PerceptionPoints
             // 
@@ -182,6 +188,7 @@
             this._button_IncreaseConstitution.TabIndex = 11;
             this._button_IncreaseConstitution.Text = "+";
             this._button_IncreaseConstitution.UseVisualStyleBackColor = true;
+            this._button_IncreaseConstitution.Click += new System.EventHandler(this.Button_IncreaseConstitution_Click);
             // 
             // _button_DecreaseConstitution
             // 
@@ -191,6 +198,7 @@
             this._button_DecreaseConstitution.TabIndex = 10;
             this._button_DecreaseConstitution.Text = "-";
             this._button_DecreaseConstitution.UseVisualStyleBackColor = true;
+            this._button_DecreaseConstitution.Click += new System.EventHandler(this.Button_DecreaseConstitution_Click);
             // 
             // _label_ConstitutionPoints
             // 
@@ -220,6 +228,7 @@
             this._button_IncreaseDexterity.TabIndex = 7;
             this._button_IncreaseDexterity.Text = "+";
             this._button_IncreaseDexterity.UseVisualStyleBackColor = true;
+            this._button_IncreaseDexterity.Click += new System.EventHandler(this.Button_IncreaseDexterity_Click);
             // 
             // _button_DecreaseDexterity
             // 
@@ -229,6 +238,7 @@
             this._button_DecreaseDexterity.TabIndex = 6;
             this._button_DecreaseDexterity.Text = "-";
             this._button_DecreaseDexterity.UseVisualStyleBackColor = true;
+            this._button_DecreaseDexterity.Click += new System.EventHandler(this.Button_DecreaseDexterity_Click);
             // 
             // _label_DexterityPoints
             // 
@@ -258,6 +268,7 @@
             this._button_IncreaseStrenth.TabIndex = 3;
             this._button_IncreaseStrenth.Text = "+";
             this._button_IncreaseStrenth.UseVisualStyleBackColor = true;
+            this._button_IncreaseStrenth.Click += new System.EventHandler(this.Button_IncreaseStrength_Click);
             // 
             // _button_DecreaseStrenth
             // 
@@ -267,6 +278,7 @@
             this._button_DecreaseStrenth.TabIndex = 2;
             this._button_DecreaseStrenth.Text = "-";
             this._button_DecreaseStrenth.UseVisualStyleBackColor = true;
+            this._button_DecreaseStrenth.Click += new System.EventHandler(this.Button_DecreaseStrength_Click);
             // 
             // _label_StrengthPoints
             // 
@@ -308,44 +320,45 @@
             this._label_AbilityPoints.TabIndex = 16;
             this._label_AbilityPoints.Text = "%Очки характеристик:%";
             // 
-            // label1
+            // _label_LevelAndExperience
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(35, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(378, 41);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "% 1 уровень: 0000/0000 %";
+            this._label_LevelAndExperience.AutoSize = true;
+            this._label_LevelAndExperience.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._label_LevelAndExperience.Location = new System.Drawing.Point(35, 85);
+            this._label_LevelAndExperience.Name = "_label_LevelAndExperience";
+            this._label_LevelAndExperience.Size = new System.Drawing.Size(378, 41);
+            this._label_LevelAndExperience.TabIndex = 20;
+            this._label_LevelAndExperience.Text = "% 1 уровень: 0000/0000 %";
             // 
-            // button1
+            // _button_CloseCharacterProgress
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(1196, 603);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 57);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this._button_CloseCharacterProgress.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._button_CloseCharacterProgress.Location = new System.Drawing.Point(1150, 603);
+            this._button_CloseCharacterProgress.Name = "_button_CloseCharacterProgress";
+            this._button_CloseCharacterProgress.Size = new System.Drawing.Size(219, 57);
+            this._button_CloseCharacterProgress.TabIndex = 21;
+            this._button_CloseCharacterProgress.Text = "% закрыть %";
+            this._button_CloseCharacterProgress.UseVisualStyleBackColor = true;
+            this._button_CloseCharacterProgress.Click += new System.EventHandler(this.Button_CloseCharacterProgress_Click);
             // 
-            // pictureBox1
+            // _pictureBox_CharacterAvatar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(735, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 300);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this._pictureBox_CharacterAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._pictureBox_CharacterAvatar.Location = new System.Drawing.Point(735, 42);
+            this._pictureBox_CharacterAvatar.Name = "_pictureBox_CharacterAvatar";
+            this._pictureBox_CharacterAvatar.Size = new System.Drawing.Size(240, 300);
+            this._pictureBox_CharacterAvatar.TabIndex = 22;
+            this._pictureBox_CharacterAvatar.TabStop = false;
             // 
-            // label2
+            // _label_CharacterName
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(627, 373);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(454, 41);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "% имя персонажа %";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._label_CharacterName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._label_CharacterName.Location = new System.Drawing.Point(627, 373);
+            this._label_CharacterName.Name = "_label_CharacterName";
+            this._label_CharacterName.Size = new System.Drawing.Size(454, 41);
+            this._label_CharacterName.TabIndex = 23;
+            this._label_CharacterName.Text = "% имя персонажа %";
+            this._label_CharacterName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CharacterProgress
             // 
@@ -354,11 +367,11 @@
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1381, 672);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this._label_Race);
+            this.Controls.Add(this._label_CharacterName);
+            this.Controls.Add(this._pictureBox_CharacterAvatar);
+            this.Controls.Add(this._button_CloseCharacterProgress);
+            this.Controls.Add(this._label_LevelAndExperience);
+            this.Controls.Add(this._label_CharacterRace);
             this.Controls.Add(this._panel_Abilities);
             this.Controls.Add(this._label_AbilityPointsCount);
             this.Controls.Add(this._label_AbilityPoints);
@@ -367,7 +380,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this._panel_Abilities.ResumeLayout(false);
             this._panel_Abilities.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_CharacterAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,7 +388,7 @@
 
         #endregion
 
-        private Label _label_Race;
+        private Label _label_CharacterRace;
         private Panel _panel_Abilities;
         private Button _button_IncreaseCharisma;
         private Button _button_DecreaseCharisma;
@@ -399,9 +412,10 @@
         private Label _label_Strength;
         private Label _label_AbilityPointsCount;
         private Label _label_AbilityPoints;
-        private Label label1;
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Label label2;
+        private Label _label_LevelAndExperience;
+        private Button _button_CloseCharacterProgress;
+        private PictureBox _pictureBox_CharacterAvatar;
+        private Label _label_CharacterName;
+        private ToolTip _toolTip;
     }
 }

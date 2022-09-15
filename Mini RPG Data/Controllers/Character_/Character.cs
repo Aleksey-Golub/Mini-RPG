@@ -75,7 +75,7 @@ public class Character : ICharacter
 
     private void OnAbilitiesChanged()
     {
-        Health.Init();
+        //Health.Init();
         Changed?.Invoke(this);
     }
 }

@@ -23,19 +23,22 @@ internal class MapView
     private readonly ToolTip _toolTip;
 
     private readonly ILocalizationService _localizationService;
-    private readonly IPersistentProgressService _progressService;
+    private string _characterName;
 
-    public MapView(Label label_Map, ToolTip toolTip, ILocalizationService localizationService, IPersistentProgressService progressService)
+    public MapView(Label label_Map, ToolTip toolTip, ILocalizationService localizationService)
     {
         _label_Map = label_Map;
         _toolTip = toolTip;
 
-        _progressService = progressService;
         _localizationService = localizationService;
         _localizationService.LanguageChanged += SetToolTip;
     }
 
-    public void Init() => SetToolTip();
+    public void Init(string characterName)
+    {
+        _characterName = characterName;
+        SetToolTip();
+    }
 
     internal void DrawMap(IMap map) => _label_Map.Text = CalculateString(map);
 
@@ -102,7 +105,7 @@ internal class MapView
     private void SetToolTip()
     {
         _toolTip.SetToolTip(_label_Map, 
-            $"{PLAYER_SYMBOL} - {_progressService.Progress.PlayerData.CharacterData.Name}, {UNEXPLORED_SYMBOL} - {_localizationService.UnexploredLocation()}  \n" +
+            $"{PLAYER_SYMBOL} - {_characterName}, {UNEXPLORED_SYMBOL} - {_localizationService.UnexploredLocation()}  \n" +
             $"{EMPTY_SYMBOL} - {_localizationService.EmptyExploredLocation()}, {TOWN_SYMBOL} - {_localizationService.Town()}, {ENEMY_SYMBOL} - {_localizationService.Enemy()}");
     }
 }

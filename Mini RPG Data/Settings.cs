@@ -8,11 +8,12 @@ public static class Settings
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 2;
+    public const int MAX_ABILITY_VALUE = 12;
 
     public const int CELL_SPAWN_CHANCE = 10;
     public const int MIN_MAP_CELL_COUNT = 50;
     public const int MAX_MAP_CELL_COUNT = 500;
-    public const int DEFAULT_ABILITYPOINTS_COUNT = 2;
+    public const int DEFAULT_ABILITYPOINTS_COUNT = 2; // 2
 
     public static string AvatarsDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";

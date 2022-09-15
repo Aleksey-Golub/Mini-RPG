@@ -27,9 +27,10 @@ namespace Mini_RPG.Screens
             _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
             string[] races = new string[]
             {
-                _localizationService.Human(),   // 0
-                _localizationService.Elf(),     // 1
-                _localizationService.Dwarf()    // 2
+                // order is very important
+                _localizationService.RaceName(CharacterRace.Human),   // 0
+                _localizationService.RaceName(CharacterRace.Elf),     // 1
+                _localizationService.RaceName(CharacterRace.Dwarf)    // 2
             };
             _comboBox_Race.Items.AddRange(races);
         }
@@ -48,14 +49,14 @@ namespace Mini_RPG.Screens
             _characterData.Changed += OnCharacterDataChanged;
         }
 
-        private void OnCharacterDataChanged(ICharacter data)
+        private void OnCharacterDataChanged(ICharacter character)
         {
-            _label_StrengthPoints.Text = data.AllAbilities.Strength.Value.ToString();
-            _label_DexterityPoints.Text = data.AllAbilities.Dexterity.Value.ToString();
-            _label_ConstitutionPoints.Text = data.AllAbilities.Constitution.Value.ToString();
-            _label_PerceptionPoints.Text = data.AllAbilities.Perception.Value.ToString();
-            _label_CharismaPoints.Text = data.AllAbilities.Charisma.Value.ToString();
-            _label_AbilityPointsCount.Text = data.AllAbilities.AbilityPoints.ToString();
+            _label_StrengthPoints.Text = character.AllAbilities.Strength.Value.ToString();
+            _label_DexterityPoints.Text = character.AllAbilities.Dexterity.Value.ToString();
+            _label_ConstitutionPoints.Text = character.AllAbilities.Constitution.Value.ToString();
+            _label_PerceptionPoints.Text = character.AllAbilities.Perception.Value.ToString();
+            _label_CharismaPoints.Text = character.AllAbilities.Charisma.Value.ToString();
+            _label_AbilityPointsCount.Text = character.AllAbilities.AbilityPoints.ToString();
 
             // TO DO activate/deactivate buttons
         }

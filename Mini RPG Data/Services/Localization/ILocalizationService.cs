@@ -1,4 +1,6 @@
-﻿namespace Mini_RPG_Data.Services.Localization;
+﻿using Mini_RPG_Data.Character_;
+
+namespace Mini_RPG_Data.Services.Localization;
 
 public interface ILocalizationService
 {
@@ -21,11 +23,9 @@ public interface ILocalizationService
     string ToolTip_Strength();
     string ToolTip_Dexterity();
     string ToolTip_Constitution();
+    string RaceName(CharacterRace race);
     string ToolTip_Perception();
     string TextBox_Name();
-    string Human();
-    string Elf();
-    string Dwarf();
     string Label_Intro();
     string Button_GoToGame();
     string Level();
@@ -43,4 +43,5 @@ public interface ILocalizationService
     string EmptyExploredLocation();
     string Town();
     string Enemy();
+    string Button_Close();
 }

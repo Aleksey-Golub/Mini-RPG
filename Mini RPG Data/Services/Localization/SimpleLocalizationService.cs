@@ -1,12 +1,10 @@
-﻿namespace Mini_RPG_Data.Services.Localization;
+﻿using Mini_RPG_Data.Character_;
+
+namespace Mini_RPG_Data.Services.Localization;
 
 public class SimpleLocalizationService : ILocalizationService
 {
     public event Action? LanguageChanged;
-
-    public string Dwarf() => "Дварф";
-    public string Elf() => "Эльф";
-    public string Human() => "Человек";
     public string Button_Exit() => "ВЫХОД";
     public string Button_LoadGame() => "ЗАГРУЗИТЬ";
     public string Button_NewGame() => "НОВАЯ ИГРА";
@@ -50,4 +48,16 @@ public class SimpleLocalizationService : ILocalizationService
     public string EmptyExploredLocation() => "Пустая исследованная локация";
     public string Town() => "Город";
     public string Enemy() => "Противник";
+    public string RaceName(CharacterRace race)
+    {
+        return race switch
+        {
+            CharacterRace.Dwarf => "Дварф",
+            CharacterRace.Elf   => "Эльф",
+            CharacterRace.Human => "Человек",
+            CharacterRace.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+    public string Button_Close() => "Закрыть";
 }

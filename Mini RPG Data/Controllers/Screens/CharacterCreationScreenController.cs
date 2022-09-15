@@ -51,6 +51,7 @@ public class CharacterCreationScreenController
 
     public void StartGame(string avatarPath, string name)
     {
+        _player.Character.Health.Init();
         _progressService.Progress.PlayerData.CharacterData.AvatarPath = avatarPath;
         _progressService.Progress.PlayerData.CharacterData.Name = name;
 

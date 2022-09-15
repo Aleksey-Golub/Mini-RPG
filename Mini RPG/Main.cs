@@ -40,7 +40,7 @@ public partial class Main : Form
         Controls.Add(_introScreen);
         _introScreen.SetActiveState(false);
 
-        _gameProcess = new GameProcessScreen(_localizationService, _progressService);
+        _gameProcess = new GameProcessScreen(_localizationService);
         Controls.Add(_gameProcess);
         _gameProcess.SetActiveState(false);
 
@@ -66,6 +66,8 @@ public partial class Main : Form
     private void OnSaveAndExit(GameProcessController oldController)
     {
         oldController.SaveAndExit -= OnSaveAndExit;
+
+        _saveLoadService.SaveProgress();
 
         _startScreenController.Init();
         _characterCreationScreenController.Init();

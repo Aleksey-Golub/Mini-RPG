@@ -5,20 +5,20 @@ namespace Mini_RPG_Data.Controllers.Character_.Abilities_;
 
 public class Abilities : IAbilities
 {
-    private readonly Dictionary<AbilityType, Ability> _abilities;
+    public Dictionary<AbilityType, Ability> AllAbilities { get; private set; }
     private AbilitiesDatas _data;
 
     internal Abilities(AbilitiesDatas data)
     {
         _data = data;
 
-        _abilities = new Dictionary<AbilityType, Ability>();
+        AllAbilities = new Dictionary<AbilityType, Ability>();
 
-        _abilities[AbilityType.Strength] = new Ability(_data.StrengthData);
-        _abilities[AbilityType.Dexterity] = new Ability(_data.DexterityData);
-        _abilities[AbilityType.Constitution] = new Ability(_data.ConstitutionData);
-        _abilities[AbilityType.Perception] = new Ability(_data.PerceptionData);
-        _abilities[AbilityType.Charisma] = new Ability(_data.CharismaData);
+        AllAbilities[AbilityType.Strength] = new Ability(_data.StrengthData);
+        AllAbilities[AbilityType.Dexterity] = new Ability(_data.DexterityData);
+        AllAbilities[AbilityType.Constitution] = new Ability(_data.ConstitutionData);
+        AllAbilities[AbilityType.Perception] = new Ability(_data.PerceptionData);
+        AllAbilities[AbilityType.Charisma] = new Ability(_data.CharismaData);
 
         Strength.ValueChanged += SomeAbilityValueChanged;
         Dexterity.ValueChanged += SomeAbilityValueChanged;
@@ -58,11 +58,11 @@ public class Abilities : IAbilities
 
     public event Action? Changed;
 
-    public Ability Strength => _abilities[AbilityType.Strength];
-    public Ability Dexterity => _abilities[AbilityType.Dexterity];
-    public Ability Constitution => _abilities[AbilityType.Constitution];
-    public Ability Perception => _abilities[AbilityType.Perception];
-    public Ability Charisma => _abilities[AbilityType.Charisma];
+    public Ability Strength => AllAbilities[AbilityType.Strength];
+    public Ability Dexterity => AllAbilities[AbilityType.Dexterity];
+    public Ability Constitution => AllAbilities[AbilityType.Constitution];
+    public Ability Perception => AllAbilities[AbilityType.Perception];
+    public Ability Charisma => AllAbilities[AbilityType.Charisma];
 
     internal static AbilitiesDatas GetFor(CharacterRace race)
     {
@@ -92,9 +92,9 @@ public class Abilities : IAbilities
 
     internal void Decrease(AbilityType type)
     {
-        if (_abilities.ContainsKey(type))
+        if (AllAbilities.ContainsKey(type))
         {
-            Ability ability = _abilities[type];
+            Ability ability = AllAbilities[type];
             if (ability.Value > Settings.MIN_ABILITY_VALUE)
             {
                 AbilityPoints++;
@@ -105,10 +105,10 @@ public class Abilities : IAbilities
 
     internal void Increase(AbilityType type)
     {
-        if (_abilities.ContainsKey(type))
+        if (AllAbilities.ContainsKey(type))
         {
-            Ability ability = _abilities[type];
-            if (AbilityPoints > 0)
+            Ability ability = AllAbilities[type];
+            if (AbilityPoints > 0 && ability.Value < Settings.MAX_ABILITY_VALUE)
             {
                 ability.Value++;
                 AbilityPoints--;

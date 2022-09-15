@@ -2,7 +2,6 @@
 using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
-using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Controllers;
 
 namespace Mini_RPG.Screens;
@@ -10,7 +9,6 @@ namespace Mini_RPG.Screens;
 public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
     private readonly ILocalizationService _localizationService;
-    private readonly IPersistentProgressService _progressService;
     private readonly ImageManager _imageManager;
     private readonly Log _log;
     private readonly MapView _mapView;
@@ -19,17 +17,16 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private GameProcessController _controller = null!;
     private IPlayer _player;
 
-    public GameProcessScreen(ILocalizationService localizationService, IPersistentProgressService progressService)
+    public GameProcessScreen(ILocalizationService localizationService)
     {
         InitializeComponent();
 
-        _progressService = progressService;
         _localizationService = localizationService;
         _localizationService.LanguageChanged += SetTexts;
         SetTexts();
 
         _imageManager = new ImageManager();
-        _mapView = new MapView(_label_Map, _toolTip, _localizationService, _progressService);
+        _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
 
         _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
@@ -48,8 +45,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         OnCharacterHealthChanged();
         OnMoneyChanged(_player.Wallet.Money);
 
-        _mapView.Init();
-        _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_progressService.Progress.PlayerData.CharacterData.AvatarPath);
+        _mapView.Init(_player.Character.Name);
+        _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_player.Character.AvatarPath);
     }
 
     public void DeInit()
@@ -155,7 +152,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     #region Controls Handlers
     private void Button_CharacterProgress_Click(object sender, EventArgs e)
     {
-        using var characterProgressForm = new CharacterProgress();
+        using var characterProgressForm = new CharacterProgress(_localizationService, _player.Character);
         if (characterProgressForm.ShowDialog() == DialogResult.OK)
         {
 
