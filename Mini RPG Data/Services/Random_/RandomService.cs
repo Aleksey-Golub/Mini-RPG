@@ -9,7 +9,23 @@ public class RandomService : IRandomService
         _random = new Random();
     }
 
-    public int Get1D6() => GetIntInclusive(1, 6);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="throwCount">Have to be greate then 0</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
+    public int Get1D6(int throwCount = 1)
+    {
+        if (throwCount < 1)
+            throw new ArgumentException($"{throwCount} have to be greate then 0");
+
+        int sum = 0;
+        for (int i = 0; i < throwCount; i++)
+            sum += GetIntInclusive(1, 6);
+        
+        return sum;
+    }
 
     public float GetFloatExclusive(float from, float to)
     {

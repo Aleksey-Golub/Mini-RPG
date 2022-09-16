@@ -11,12 +11,14 @@ public class CharacterData
     public string AvatarPath = null!;
     public LevelData LevelData;
     public HealthData HealthData;
+    public SatiationData SatiationData;
     public AbilitiesDatas AbilitiesDatas;
 
     public CharacterData()
     {
         LevelData = new LevelData();
         HealthData = new HealthData();
+        SatiationData = new SatiationData();
         AbilitiesDatas = Abilities.GetFor(Race);
     }
 }

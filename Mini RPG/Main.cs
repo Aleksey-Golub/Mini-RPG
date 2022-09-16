@@ -58,7 +58,7 @@ public partial class Main : Form
 
     private void StartGameProcess()
     {
-        var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService);
+        var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService, _saveLoadService);
         gameProcessController.SaveAndExit += OnSaveAndExit;
         gameProcessController.Run();
     }
@@ -67,7 +67,7 @@ public partial class Main : Form
     {
         oldController.SaveAndExit -= OnSaveAndExit;
 
-        _saveLoadService.SaveProgress();
+       // _saveLoadService.SaveProgress();
 
         _startScreenController.Init();
         _characterCreationScreenController.Init();

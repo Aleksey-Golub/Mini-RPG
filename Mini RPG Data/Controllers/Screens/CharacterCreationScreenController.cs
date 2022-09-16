@@ -71,7 +71,9 @@ public class CharacterCreationScreenController
     {
         var progress = new PlayerProgress(Map.Generate(_randomService));
 
-        progress.PlayerData.WalletData.Money = 10;
+        progress.PlayerData.WalletData.Money = Settings.START_MONEY;
+        progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
+        progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
         return progress;
     }
 }

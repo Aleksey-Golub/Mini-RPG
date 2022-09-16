@@ -1,5 +1,6 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
+using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Controllers.Character_;
 
@@ -18,6 +19,7 @@ public class Character : ICharacter
         Level.Changed += () => LevelChanged?.Invoke(this);
         Health = new Health(data.HealthData, this);
         Health.Changed += () => HealthChanged?.Invoke(this);
+        Satiation = new Satiation(data.SatiationData, this);
     }
 
     internal void Init()
@@ -68,14 +70,20 @@ public class Character : ICharacter
     public Abilities AllAbilities { get; private set; }
     public Level Level { get; }
     public Health Health { get; }
+    public Satiation Satiation { get; }
 
     public event Action<Character>? Changed;
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
 
-    private void OnAbilitiesChanged()
+    internal void Rest(IRandomService randomService)
     {
-        //Health.Init();
-        Changed?.Invoke(this);
+        Satiation.Starve();
+        Satiation.Thirst();
+
+        if (Settings.CheckHealthRecoveryAfterRest(randomService, this))
+            Health.Restore();
     }
+
+    private void OnAbilitiesChanged() => Changed?.Invoke(this);
 }

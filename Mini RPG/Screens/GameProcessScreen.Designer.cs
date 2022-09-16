@@ -55,6 +55,8 @@
             this._label_CharismaPoints = new System.Windows.Forms.ToolStripStatusLabel();
             this._label_Money = new System.Windows.Forms.ToolStripStatusLabel();
             this._label_Health = new System.Windows.Forms.ToolStripStatusLabel();
+            this._label_HungerLevel = new System.Windows.Forms.ToolStripStatusLabel();
+            this._label_ThirstLevel = new System.Windows.Forms.ToolStripStatusLabel();
             this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this._button_Inventory = new System.Windows.Forms.Button();
             this._menuStrip = new System.Windows.Forms.MenuStrip();
@@ -115,6 +117,7 @@
             this._button_Rest.TabIndex = 4;
             this._button_Rest.Text = "% отдых %";
             this._button_Rest.UseVisualStyleBackColor = true;
+            this._button_Rest.Click += new System.EventHandler(this.Button_Rest_Click);
             // 
             // _button_E
             // 
@@ -258,7 +261,9 @@
             this._label_Charisma,
             this._label_CharismaPoints,
             this._label_Money,
-            this._label_Health});
+            this._label_Health,
+            this._label_HungerLevel,
+            this._label_ThirstLevel});
             this._statusStrip.Location = new System.Drawing.Point(0, 988);
             this._statusStrip.Name = "_statusStrip";
             this._statusStrip.ShowItemToolTips = true;
@@ -346,6 +351,22 @@
             this._label_Health.Name = "_label_Health";
             this._label_Health.Size = new System.Drawing.Size(87, 29);
             this._label_Health.Text = "00/00";
+            // 
+            // _label_HungerLevel
+            // 
+            this._label_HungerLevel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this._label_HungerLevel.Image = global::Mini_RPG.Properties.Resources.HungerLevel_64x64;
+            this._label_HungerLevel.Name = "_label_HungerLevel";
+            this._label_HungerLevel.Size = new System.Drawing.Size(128, 29);
+            this._label_HungerLevel.Text = "% голод %";
+            // 
+            // _label_ThirstLevel
+            // 
+            this._label_ThirstLevel.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this._label_ThirstLevel.Image = global::Mini_RPG.Properties.Resources.ThirstLevel_64x64;
+            this._label_ThirstLevel.Name = "_label_ThirstLevel";
+            this._label_ThirstLevel.Size = new System.Drawing.Size(134, 29);
+            this._label_ThirstLevel.Text = "% жажда %";
             // 
             // _button_Inventory
             // 
@@ -600,5 +621,7 @@
         private Button _button_TryLeaveBattle;
         private Panel _panel_TownEntrance;
         private Button _button_EnterTown;
+        private ToolStripStatusLabel _label_HungerLevel;
+        private ToolStripStatusLabel _label_ThirstLevel;
     }
 }

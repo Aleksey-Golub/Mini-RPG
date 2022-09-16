@@ -13,6 +13,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly Log _log;
     private readonly MapView _mapView;
     private readonly HealthView _healthView;
+    private readonly SatiationView _satiationView;
 
     private GameProcessController? _controller;
     private IPlayer? _player;
@@ -28,6 +29,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _imageManager = new ImageManager();
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
+        _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
 
         _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
         _log.FillLog();
@@ -39,10 +41,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _player.Character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
         _player.Character.Health.Changed += OnCharacterHealthChanged;
+        _player.Character.Satiation.Changed += OnCharacterSatiationChanging;
         _player.Wallet.MoneyChanged += OnMoneyChanged;
 
         OnCharacterAbilitiesChanged();
         OnCharacterHealthChanged();
+        OnCharacterSatiationChanging();
         OnMoneyChanged(_player.Wallet.Money);
 
         _mapView.Init(_player.Character.Name);
@@ -53,6 +57,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         _player.Character.AllAbilities.Changed -= OnCharacterAbilitiesChanged;
         _player.Character.Health.Changed -= OnCharacterHealthChanged;
+        _player.Character.Satiation.Changed -= OnCharacterSatiationChanging;
         _player.Wallet.MoneyChanged -= OnMoneyChanged;
 
         _controller = null;
@@ -110,7 +115,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     private void OnCharacterHealthChanged() => _healthView.View(_player.Character.Health.CurrentHealth, _player.Character.Health.MaxHealth);
-
+    private void OnCharacterSatiationChanging() => _satiationView.View(_player.Character.Satiation.HungerLevel, _player.Character.Satiation.ThirstLevel);
     private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 
     private void SetTexts()
@@ -154,9 +159,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         using var characterProgressForm = new CharacterProgress(_localizationService, _player.Character);
         if (characterProgressForm.ShowDialog() == DialogResult.OK)
-        {
-
-        }
+        {}
     }
 
     private void Button_Inventory_Click(object sender, EventArgs e)
@@ -180,5 +183,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
     private void Button_LeaveTown_Click(object sender, EventArgs e) => _controller.ExitTown();
+    private void Button_Rest_Click(object sender, EventArgs e) => _controller.Rest();
+
     #endregion
 }

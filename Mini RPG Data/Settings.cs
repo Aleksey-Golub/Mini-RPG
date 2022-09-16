@@ -1,4 +1,6 @@
-﻿using Mini_RPG_Data.Map_;
+﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Map_;
 
 namespace Mini_RPG_Data;
 
@@ -7,20 +9,47 @@ public static class Settings
     public const int EXPERIENCE_DEFAULT_VALUE = 50;
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
-    public const int MIN_ABILITY_VALUE = 2;
+    public const int MIN_ABILITY_VALUE = 6;
     public const int MAX_ABILITY_VALUE = 12;
+    public const int DEFAULT_ABILITYPOINTS_COUNT = 2; // 2
+
+    public const int HEALTH_RESTORE_VALUE = 1;
 
     public const int CELL_SPAWN_CHANCE = 10;
     public const int MIN_MAP_CELL_COUNT = 50;
     public const int MAX_MAP_CELL_COUNT = 500;
-    public const int DEFAULT_ABILITYPOINTS_COUNT = 2; // 2
+
+    public const int START_MONEY = 10;
+    public const int START_SATIATION = 500;
 
     public static string AvatarsDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 
     public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
 
-    public static int CalculateRequiredForNextLevelExperience(int currentLevel)
+    internal static void Starve(Character character, SatiationData data) => data.FoodSatiation -= 2;
+    internal static HungerLevel CalculateHungerLevel(Character character, SatiationData data)
+    {
+        return data.FoodSatiation switch
+        {
+            >= 300 => HungerLevel.Satiated,
+            >= 100 => HungerLevel.Neutral,
+            _ => HungerLevel.Hungry,
+        };
+    }
+
+    internal static void Thirst(Character character, SatiationData data) => data.WaterSatiation -= 2;
+    internal static ThirstLevel CalculateThirstLevel(Character character, SatiationData data)
+    {
+        return data.WaterSatiation switch
+        {
+            >= 300 => ThirstLevel.Satiated,
+            >= 100 => ThirstLevel.Neutral,
+            _ => ThirstLevel.Thirsty,
+        };
+    }
+
+    internal static int CalculateRequiredForNextLevelExperience(int currentLevel)
     {
         if (currentLevel == 1)
             return EXPERIENCE_DEFAULT_VALUE;
@@ -28,7 +57,10 @@ public static class Settings
         return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 1.5f);
     }
 
-    public static int CalculateLevelModifier(int level)
+    internal static int CalculateMaxHealth(Character character) => 
+        character.AllAbilities.Constitution.Value + character.AllAbilities.Constitution.Bonus * Settings.CalculateLevelModifier(character.Level.Value);
+
+    internal static int CalculateLevelModifier(int level)
     {
         float res = (float)level / 2;
         res = MathF.Ceiling(res);
@@ -65,5 +97,27 @@ public static class Settings
             default:
                 throw new NotImplementedException($"Not inplement CellType for {value}");
         }
+    }
+
+    internal static bool CheckHealthRecoveryAfterRest(Services.Random_.IRandomService randomService, Character character)
+    {
+        // Если голода и жажды нет, а второй показатель - насыщен, то возможна регенерация:
+        // 2D6 + бонус ВЫН >= 12(или 10, если оба "насыщен")
+
+        HungerLevel hungerLevel = character.Satiation.HungerLevel;
+        ThirstLevel thirstLevel = character.Satiation.ThirstLevel;
+
+        if (hungerLevel == HungerLevel.Hungry || thirstLevel == ThirstLevel.Thirsty)
+            return false;
+
+        if (hungerLevel == HungerLevel.Neutral && thirstLevel == ThirstLevel.Neutral)
+            return false;
+
+        int value =
+            hungerLevel == HungerLevel.Satiated && thirstLevel == ThirstLevel.Satiated
+            ? 10
+            : 12;
+
+        return randomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
     }
 }

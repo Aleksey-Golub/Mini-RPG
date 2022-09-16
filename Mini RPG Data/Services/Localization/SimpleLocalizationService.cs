@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
@@ -61,4 +62,27 @@ public class SimpleLocalizationService : ILocalizationService
     }
     public string Button_Close() => "Закрыть";
     public string LevelBoarder() => "Граница уровня";
+    public string HungerLevelName(HungerLevel hungerLevel)
+    {
+        return hungerLevel switch
+        {
+            HungerLevel.Hungry => "Голод",
+            HungerLevel.Neutral => "Норма",
+            HungerLevel.Satiated => "Сыт",
+            HungerLevel.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string ThirstLevelName(ThirstLevel thirstLevel)
+    {
+        return thirstLevel switch
+        {
+            ThirstLevel.Thirsty => "Жажда",
+            ThirstLevel.Neutral => "Норма",
+            ThirstLevel.Satiated => "Сыт",
+            ThirstLevel.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
 }

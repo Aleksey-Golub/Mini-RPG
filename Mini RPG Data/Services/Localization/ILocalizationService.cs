@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
@@ -26,6 +27,8 @@ public interface ILocalizationService
     string RaceName(CharacterRace race);
     string ToolTip_Perception();
     string TextBox_Name();
+    string HungerLevelName(HungerLevel hungerLevel);
+    string ThirstLevelName(ThirstLevel thirstLevel);
     string Label_Intro();
     string Button_GoToGame();
     string Level();

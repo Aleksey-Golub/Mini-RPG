@@ -11,6 +11,7 @@ namespace Mini_RPG_Data.Controllers.Character_
         IAbilities AllAbilities { get; }
         Level Level { get; }
         Health Health { get; }
+        Satiation Satiation { get; }
 
         event Action<Character>? Changed;
         event Action<Character>? LevelChanged;

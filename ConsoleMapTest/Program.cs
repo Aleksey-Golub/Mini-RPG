@@ -10,6 +10,6 @@ internal class Program
     {
         IRandomService randomService = new RandomService();
         IGameProcessView gameProcessView = new WriteTextFileGameProcessView();
-        var gameProcessController = new GameProcessController(gameProcessView, randomService);
+        //var gameProcessController = new GameProcessController(gameProcessView, randomService);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.PersistentProgress;
+using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Map_;
 
@@ -12,7 +13,7 @@ public partial class GameProcessController
 
     private readonly IRandomService _randomService;
     private readonly IPersistentProgressService _progressService;
-
+    private readonly ISaveLoadService _saveLoadService;
     private Player _player = null!;
     private Map _map = null!;
 
@@ -21,13 +22,13 @@ public partial class GameProcessController
 
     public event Action<GameProcessController>? SaveAndExit;
 
-    public GameProcessController(IGameProcessView gameProcessView, ILogView logView, IRandomService randomService, IPersistentProgressService progressService)
+    public GameProcessController(IGameProcessView gameProcessView, ILogView logView, IRandomService randomService, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
     {
         _gameProcessView = gameProcessView;
         _logView = logView;
         _randomService = randomService;
         _progressService = progressService;
-
+        _saveLoadService = saveLoadService;
         _states = new Dictionary<Type, GameProcessStateBase>()
         {
             [typeof(InTownGameProcessState)] = new InTownGameProcessState(this),
@@ -56,11 +57,14 @@ public partial class GameProcessController
     {
         _gameProcessView.DeInit();
         _gameProcessView.SetActiveState(false);
+
+        _saveLoadService.SaveProgress();
         SaveAndExit?.Invoke(this);
     }
 
     public void EnterTown() => TransitionTo<InTownGameProcessState>();
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
+    public void Rest() => _player.Character.Rest(_randomService);
 
     private void TransitionTo<TState>() where TState : GameProcessStateBase
     {

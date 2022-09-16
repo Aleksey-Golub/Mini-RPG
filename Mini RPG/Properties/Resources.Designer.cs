@@ -183,9 +183,29 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HungerLevel_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("HungerLevel 64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap level_up {
             get {
                 object obj = ResourceManager.GetObject("level-up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThirstLevel_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("ThirstLevel 64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
