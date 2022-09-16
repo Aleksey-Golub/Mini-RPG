@@ -193,6 +193,15 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
+        if (keyData == Keys.Enter)
+        {
+            if (_panel_Town.Visible)
+                _controller.ExitTown();
+            else if (_panel_TownEntrance.Visible)
+                _controller.EnterTown();
+
+            return true;
+        }
         if (_panel_Navigation.Visible == false)
             return false;
 
