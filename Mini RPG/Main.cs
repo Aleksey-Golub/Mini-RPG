@@ -58,7 +58,7 @@ public partial class Main : Form
 
     private void StartGameProcess()
     {
-        var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService, _saveLoadService);
+        var gameProcessController = new GameProcessController(_gameProcess, _gameProcess, _randomService, _progressService, _saveLoadService, _localizationService);
         gameProcessController.SaveAndExit += OnSaveAndExit;
         gameProcessController.Run();
     }

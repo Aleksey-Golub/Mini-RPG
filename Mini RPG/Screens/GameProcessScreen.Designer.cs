@@ -133,6 +133,7 @@
             this._button_E.TabIndex = 3;
             this._button_E.Text = "E";
             this._button_E.UseVisualStyleBackColor = true;
+            this._button_E.Click += new System.EventHandler(this.Button_E_Click);
             // 
             // _button_W
             // 
@@ -148,6 +149,7 @@
             this._button_W.TabIndex = 2;
             this._button_W.Text = "W";
             this._button_W.UseVisualStyleBackColor = true;
+            this._button_W.Click += new System.EventHandler(this.Button_W_Click);
             // 
             // _button_S
             // 
@@ -163,6 +165,7 @@
             this._button_S.TabIndex = 1;
             this._button_S.Text = "S";
             this._button_S.UseVisualStyleBackColor = true;
+            this._button_S.Click += new System.EventHandler(this.Button_S_Click);
             // 
             // _button_N
             // 
@@ -178,6 +181,7 @@
             this._button_N.TabIndex = 0;
             this._button_N.Text = "N";
             this._button_N.UseVisualStyleBackColor = true;
+            this._button_N.Click += new System.EventHandler(this.Button_N_Click);
             // 
             // _panel_MiniMap
             // 

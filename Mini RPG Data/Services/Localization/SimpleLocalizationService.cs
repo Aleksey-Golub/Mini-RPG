@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Services.Localization;
@@ -82,6 +83,32 @@ public class SimpleLocalizationService : ILocalizationService
             ThirstLevel.Neutral => "Норма",
             ThirstLevel.Satiated => "Сыт",
             ThirstLevel.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string PlayerMoveSuccessfully(Direction direction)
+    {
+        return direction switch
+        {
+            Direction.N => "Вы пошли на Север",
+            Direction.S => "Вы пошли на Юг",
+            Direction.W => "Вы пошли на Запад",
+            Direction.E => "Вы пошли на Восток",
+            Direction.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string PlayerMoveUnsuccessfully(Direction direction)
+    {
+        return direction switch
+        {
+            Direction.N => "Вы не можете пойти на Север",
+            Direction.S => "Вы не можете пойти на Юг",
+            Direction.W => "Вы не можете пойти на Запад",
+            Direction.E => "Вы не можете пойти на Восток",
+            Direction.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
     }

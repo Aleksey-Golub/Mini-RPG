@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Services.Localization;
@@ -48,4 +49,6 @@ public interface ILocalizationService
     string Enemy();
     string Button_Close();
     string LevelBoarder();
+    string PlayerMoveSuccessfully(Direction direction);
+    string PlayerMoveUnsuccessfully(Direction direction);
 }

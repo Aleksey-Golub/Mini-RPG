@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Datas;
+﻿using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Map_;
@@ -36,18 +37,18 @@ public class Map : IMap
         List<Vector2Int> neighborsCoords = new List<Vector2Int>(8);
 
         neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y + 1));
-        neighborsCoords.Add(new Vector2Int(cellCoord.X,     cellCoord.Y + 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X, cellCoord.Y + 1));
         neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y + 1));
         neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y));
         neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y));
         neighborsCoords.Add(new Vector2Int(cellCoord.X - 1, cellCoord.Y - 1));
-        neighborsCoords.Add(new Vector2Int(cellCoord.X,     cellCoord.Y - 1));
+        neighborsCoords.Add(new Vector2Int(cellCoord.X, cellCoord.Y - 1));
         neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y - 1));
 
         foreach (var neighbor in neighborsCoords)
             if (Cells.ContainsKey(neighbor))
                 return true;
-        
+
         return false;
     }
 
@@ -148,6 +149,28 @@ public class Map : IMap
 
         mapData.CalculateSize();
         return mapData;
+    }
+
+    internal bool TryMovePlayer(Direction direction)
+    {
+        var newPos = PlayerPosition;
+        newPos = direction switch
+        {
+            Direction.N => new Vector2Int(newPos.X, newPos.Y + 1),
+            Direction.S => new Vector2Int(newPos.X, newPos.Y - 1),
+            Direction.W => new Vector2Int(newPos.X - 1, newPos.Y),
+            Direction.E => new Vector2Int(newPos.X + 1, newPos.Y),
+            Direction.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+
+        if (_data.Cells.ContainsKey(newPos))
+        {
+            PlayerPosition = newPos;
+            return true;
+        }
+
+        return false;
     }
 }
 

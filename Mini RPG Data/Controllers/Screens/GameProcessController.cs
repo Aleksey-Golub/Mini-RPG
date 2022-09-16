@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Services.SaveLoad;
+using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Map_;
 
@@ -14,6 +15,7 @@ public partial class GameProcessController
     private readonly IRandomService _randomService;
     private readonly IPersistentProgressService _progressService;
     private readonly ISaveLoadService _saveLoadService;
+    private readonly ILocalizationService _localizationService;
     private Player _player = null!;
     private Map _map = null!;
 
@@ -22,13 +24,20 @@ public partial class GameProcessController
 
     public event Action<GameProcessController>? SaveAndExit;
 
-    public GameProcessController(IGameProcessView gameProcessView, ILogView logView, IRandomService randomService, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+    public GameProcessController(
+        IGameProcessView gameProcessView, 
+        ILogView logView, 
+        IRandomService randomService, 
+        IPersistentProgressService progressService, 
+        ISaveLoadService saveLoadService,
+        ILocalizationService localizationService)
     {
         _gameProcessView = gameProcessView;
         _logView = logView;
         _randomService = randomService;
         _progressService = progressService;
         _saveLoadService = saveLoadService;
+        _localizationService = localizationService;
         _states = new Dictionary<Type, GameProcessStateBase>()
         {
             [typeof(InTownGameProcessState)] = new InTownGameProcessState(this),
@@ -65,6 +74,21 @@ public partial class GameProcessController
     public void EnterTown() => TransitionTo<InTownGameProcessState>();
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
     public void Rest() => _player.Character.Rest(_randomService);
+    public bool TryMove(Direction direction)
+    {
+        var res = _map.TryMovePlayer(direction);
+        if (res)
+        {
+            _gameProcessView.ShowMap(_map);
+            _logView.AddLog(_localizationService.PlayerMoveSuccessfully(direction));
+        }
+        else
+        {
+            _logView.AddLog(_localizationService.PlayerMoveUnsuccessfully(direction));
+        }
+
+        return res;
+    }
 
     private void TransitionTo<TState>() where TState : GameProcessStateBase
     {

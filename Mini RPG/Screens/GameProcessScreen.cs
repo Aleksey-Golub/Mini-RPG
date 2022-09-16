@@ -141,7 +141,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _menuItem_SaveAndExit.Text = _localizationService.SaveAndExit();
 
         _button_SwitchLogSize.Text = _localizationService.Button_Log();
-        
+
         SetAllToolTips();
     }
 
@@ -159,7 +159,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         using var characterProgressForm = new CharacterProgress(_localizationService, _player.Character);
         if (characterProgressForm.ShowDialog() == DialogResult.OK)
-        {}
+        { }
     }
 
     private void Button_Inventory_Click(object sender, EventArgs e)
@@ -183,7 +183,31 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
     private void Button_LeaveTown_Click(object sender, EventArgs e) => _controller.ExitTown();
-    private void Button_Rest_Click(object sender, EventArgs e) => _controller.Rest();
 
+    private void Button_Rest_Click(object sender, EventArgs e) => _controller.Rest();
+    private void Button_N_Click(object sender, EventArgs e) => _controller.TryMove(Direction.N);
+    private void Button_S_Click(object sender, EventArgs e) => _controller.TryMove(Direction.S);
+    private void Button_W_Click(object sender, EventArgs e) => _controller.TryMove(Direction.W);
+    private void Button_E_Click(object sender, EventArgs e) => _controller.TryMove(Direction.E);
     #endregion
+
+    protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+    {
+        switch (keyData)
+        {
+            case Keys.NumPad8:
+                _controller.TryMove(Direction.N);
+                break;
+            case Keys.NumPad2:
+                _controller.TryMove(Direction.S);
+                break;
+            case Keys.NumPad4:
+                _controller.TryMove(Direction.W);
+                break;
+            case Keys.NumPad6:
+                _controller.TryMove(Direction.E);
+                break;
+        }
+        return base.ProcessCmdKey(ref msg, keyData);
+    }
 }
