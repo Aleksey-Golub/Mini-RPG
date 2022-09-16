@@ -51,4 +51,5 @@ public interface ILocalizationService
     string LevelBoarder();
     string PlayerMoveSuccessfully(Direction direction);
     string PlayerMoveUnsuccessfully(Direction direction);
+    string PlayerRest();
 }

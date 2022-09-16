@@ -73,7 +73,12 @@ public partial class GameProcessController
 
     public void EnterTown() => TransitionTo<InTownGameProcessState>();
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
-    public void Rest() => _player.Character.Rest(_randomService);
+    public void Rest()
+    {
+        _player.Character.Rest(_randomService);
+        _logView.AddLog(_localizationService.PlayerRest());
+    }
+
     public bool TryMove(Direction direction)
     {
         var res = _map.TryMovePlayer(direction);

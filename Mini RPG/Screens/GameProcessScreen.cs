@@ -193,6 +193,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
+        if (_panel_Navigation.Visible == false)
+            return false;
+
         switch (keyData)
         {
             case Keys.NumPad8:
@@ -206,6 +209,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
                 break;
             case Keys.NumPad6:
                 _controller.TryMove(Direction.E);
+                break;
+            case Keys.NumPad5:
+                _controller.Rest();
                 break;
         }
         return base.ProcessCmdKey(ref msg, keyData);

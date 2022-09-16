@@ -112,4 +112,6 @@ public class SimpleLocalizationService : ILocalizationService
             _ => throw new NotImplementedException(),
         };
     }
+
+    public string PlayerRest() => "Вы остановились на привал";
 }
