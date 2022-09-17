@@ -25,10 +25,10 @@ public partial class GameProcessController
     public event Action<GameProcessController>? SaveAndExit;
 
     public GameProcessController(
-        IGameProcessView gameProcessView, 
-        ILogView logView, 
-        IRandomService randomService, 
-        IPersistentProgressService progressService, 
+        IGameProcessView gameProcessView,
+        ILogView logView,
+        IRandomService randomService,
+        IPersistentProgressService progressService,
         ISaveLoadService saveLoadService,
         ILocalizationService localizationService)
     {
@@ -75,7 +75,8 @@ public partial class GameProcessController
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
     public void Rest()
     {
-        _player.Character.Rest(_randomService);
+        _player.TryRestoreHealth(_randomService);
+        _player.UpdateEffects();
         _logView.AddLog(_localizationService.PlayerRest());
     }
 
@@ -92,6 +93,7 @@ public partial class GameProcessController
             _logView.AddLog(_localizationService.PlayerMoveUnsuccessfully(direction));
         }
 
+        _player.UpdateEffects();
         return res;
     }
 
@@ -105,7 +107,7 @@ public partial class GameProcessController
     private class InTownGameProcessState : GameProcessStateBase
     {
         public InTownGameProcessState(GameProcessController controller) : base(controller)
-        {}
+        { }
 
         internal override void Enter()
         {
@@ -119,7 +121,7 @@ public partial class GameProcessController
         }
 
         internal override void Exit()
-        {}
+        { }
 
         protected override bool CheckNeedAndDoTransition()
         {
@@ -130,7 +132,7 @@ public partial class GameProcessController
     private class TownEntranceGameProcessState : GameProcessStateBase
     {
         public TownEntranceGameProcessState(GameProcessController controller) : base(controller)
-        {}
+        { }
 
         internal override void Enter()
         {
@@ -156,7 +158,7 @@ public partial class GameProcessController
     private class AdventureGameProcessState : GameProcessStateBase
     {
         public AdventureGameProcessState(GameProcessController controller) : base(controller)
-        {}
+        { }
 
         protected override bool CheckNeedAndDoTransition()
         {

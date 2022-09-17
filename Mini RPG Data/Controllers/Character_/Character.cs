@@ -76,13 +76,21 @@ public class Character : ICharacter
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
 
-    internal void Rest(IRandomService randomService)
+    internal bool TryRestoreHealth(IRandomService randomService)
+    {
+        bool res = Settings.CheckHealthRecoveryAfterRest(randomService, this);
+        if (res)
+        {
+            Health.Restore();
+            return true;
+        }
+        return false;
+    }
+
+    internal void UpdateEffects()
     {
         Satiation.Starve();
         Satiation.Thirst();
-
-        if (Settings.CheckHealthRecoveryAfterRest(randomService, this))
-            Health.Restore();
     }
 
     private void OnAbilitiesChanged() => Changed?.Invoke(this);
