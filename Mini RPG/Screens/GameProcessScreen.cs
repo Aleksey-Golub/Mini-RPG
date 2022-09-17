@@ -73,10 +73,11 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
+
         _panel_Town.Hide();
+        _panel_TownEntrance.Show();
 
         _menuStrip.Show();
-        _panel_TownEntrance.Show();
         _panel_Navigation.Show();
     }
 
@@ -86,11 +87,26 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
+
         _panel_Town.Show();
+        _panel_TownEntrance.Hide();
 
         _menuStrip.Show();
-        _panel_TownEntrance.Hide();
         _panel_Navigation.Hide();
+    }
+
+    public void ShowLocation(IMapCell cell)
+    {
+        _panel_Location.BackgroundImage = _imageManager.GetLocation(cell.ImageIndex);
+
+        _panel_Battle.Hide();
+        _panel_BattleActions.Hide();
+
+        _panel_Town.Hide();
+        _panel_TownEntrance.Hide();
+
+        _menuStrip.Show();
+        _panel_Navigation.Show();
     }
 
     public void ShowMap(IMap map) => _mapView.DrawMap(map);

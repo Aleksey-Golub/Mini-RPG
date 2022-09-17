@@ -12,8 +12,7 @@ public partial class GameProcessController
         }
 
         internal abstract void Exit();
-        internal abstract void Execute();
+        internal abstract bool TryMove(Direction direction);
         internal abstract void Enter();
-        protected abstract bool CheckNeedAndDoTransition();
     }
 }

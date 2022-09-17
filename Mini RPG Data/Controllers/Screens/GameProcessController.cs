@@ -60,6 +60,8 @@ public partial class GameProcessController
             TransitionTo<TownEntranceGameProcessState>();
         else
             TransitionTo<AdventureGameProcessState>();
+
+        _gameProcessView.ShowMap(_map);
     }
 
     public void SaveGameAndExitMainMenu()
@@ -80,22 +82,7 @@ public partial class GameProcessController
         _logView.AddLog(_localizationService.PlayerRest());
     }
 
-    public bool TryMove(Direction direction)
-    {
-        var res = _map.TryMovePlayer(direction);
-        if (res)
-        {
-            _gameProcessView.ShowMap(_map);
-            _logView.AddLog(_localizationService.PlayerMoveSuccessfully(direction));
-        }
-        else
-        {
-            _logView.AddLog(_localizationService.PlayerMoveUnsuccessfully(direction));
-        }
-
-        _player.UpdateEffects();
-        return res;
-    }
+    public bool TryMove(Direction direction) => _state.TryMove(direction);
 
     private void TransitionTo<TState>() where TState : GameProcessStateBase
     {
@@ -112,21 +99,16 @@ public partial class GameProcessController
         internal override void Enter()
         {
             Controller._gameProcessView.ShowTown();
-            Controller._gameProcessView.ShowMap(Controller._map);
+            //Controller._gameProcessView.ShowMap(Controller._map);
         }
 
-        internal override void Execute()
+        internal override bool TryMove(Direction direction)
         {
             throw new NotImplementedException();
         }
 
         internal override void Exit()
         { }
-
-        protected override bool CheckNeedAndDoTransition()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     private class TownEntranceGameProcessState : GameProcessStateBase
@@ -137,21 +119,32 @@ public partial class GameProcessController
         internal override void Enter()
         {
             Controller._gameProcessView.ShowTownEntrance();
-            Controller._gameProcessView.ShowMap(Controller._map);
+            //Controller._gameProcessView.ShowMap(Controller._map);
         }
 
-        internal override void Execute()
+        internal override bool TryMove(Direction direction)
         {
-            throw new NotImplementedException();
+            var res = Controller._map.TryMovePlayer(direction);
+            if (res)
+            {
+                Controller._gameProcessView.ShowMap(Controller._map);
+                Controller._logView.AddLog(Controller._localizationService.PlayerMoveSuccessfully(direction));
+            }
+            else
+            {
+                Controller._logView.AddLog(Controller._localizationService.PlayerMoveUnsuccessfully(direction));
+            }
+
+            Controller._player.UpdateEffects();
+
+            if (res)
+                Controller.TransitionTo<AdventureGameProcessState>();
+
+            return res;
         }
 
         internal override void Exit()
         {
-        }
-
-        protected override bool CheckNeedAndDoTransition()
-        {
-            throw new NotImplementedException();
         }
     }
 
@@ -160,24 +153,39 @@ public partial class GameProcessController
         public AdventureGameProcessState(GameProcessController controller) : base(controller)
         { }
 
-        protected override bool CheckNeedAndDoTransition()
-        {
-            throw new NotImplementedException();
-        }
-
         internal override void Enter()
         {
-            throw new NotImplementedException();
+            Controller._gameProcessView.ShowLocation(Controller._map.PlayerCell);
+            //Controller._gameProcessView.ShowMap(Controller._map);
+
+            // detect cellType and handle this
+            // loot, enemy, trap etc
         }
 
-        internal override void Execute()
+        internal override bool TryMove(Direction direction)
         {
-            throw new NotImplementedException();
+            var res = Controller._map.TryMovePlayer(direction);
+            if (res)
+            {
+                Controller._gameProcessView.ShowMap(Controller._map);
+                Controller._logView.AddLog(Controller._localizationService.PlayerMoveSuccessfully(direction));
+
+                if (Controller._map.IsPlayerOnTownCell)
+                    Controller.TransitionTo<TownEntranceGameProcessState>();
+                else
+                    Enter();
+            }
+            else
+            {
+                Controller._logView.AddLog(Controller._localizationService.PlayerMoveUnsuccessfully(direction));
+            }
+
+            Controller._player.UpdateEffects();
+
+            return res;
         }
 
         internal override void Exit()
-        {
-            throw new NotImplementedException();
-        }
+        { }
     }
 }

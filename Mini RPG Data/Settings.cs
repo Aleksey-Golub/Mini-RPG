@@ -22,6 +22,8 @@ public static class Settings
     public const int START_MONEY = 10;
     public const int START_SATIATION = 500;
 
+    public const int FOREST_IMAGE_COUNT = 14;
+
     public static string AvatarsDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 

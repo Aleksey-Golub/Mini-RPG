@@ -21,11 +21,13 @@ public class Map : IMap
     public int MinY { get => _data.MinY; }
     public int MaxY { get => _data.MaxY; }
     public Vector2Int PlayerPosition { get => _data.PlayerPosition; private set => _data.PlayerPosition = value; }
+
     public Vector2Int TownPosition => _data.TownPosition;
     public bool IsPlayerOnTownCell => PlayerPosition == TownPosition;
 
     Vector2Int IMap.PlayerPosition => PlayerPosition;
     Vector2Int IMap.TownPosition => TownPosition;
+    public IMapCell PlayerCell => _data.Cells[_data.PlayerPosition];
 
     public Map(MapData data)
     {
@@ -67,7 +69,7 @@ public class Map : IMap
         var mapData = new MapData();
         mapData.Cells = new Dictionary<Vector2Int, MapCell>();
         Vector2Int townCellPos = new Vector2Int(0, 0);
-        MapCell townCell = new MapCell(townCellPos, CellType.Town, CellState.Explored);
+        MapCell townCell = new MapCell(townCellPos, 0, CellType.Town, CellState.Explored);
         mapData.Cells[townCellPos] = townCell;
         mapData.TownPosition = townCellPos;
         mapData.PlayerPosition = townCellPos;
@@ -136,7 +138,8 @@ public class Map : IMap
 
                     CellType cellType = Settings.GetCellTypeBasedOnRandomValue(value);
 
-                    MapCell newCell = new MapCell(nP, cellType);
+                    int imageIndex = randomService.GetIntInclusive(0, Settings.FOREST_IMAGE_COUNT - 1);
+                    MapCell newCell = new MapCell(nP, imageIndex, cellType);
                     mapData.Cells[nP] = newCell;
                     mapData.IncrementCounters(cellType);
                     counter--;

@@ -14,6 +14,7 @@ public interface IMap
     int MaxX { get; }
     int MinY { get; }
     int MaxY { get; }
+    public IMapCell PlayerCell { get; }
     public Vector2Int PlayerPosition { get; }
     public Vector2Int TownPosition { get; }
 

@@ -99,4 +99,9 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowLocation(IMapCell cell)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -4,9 +4,10 @@ namespace Mini_RPG_Data.Map_;
 
 public class MapCell : IMapCell
 {
-    public MapCell(Vector2Int position, CellType cellType = CellType.Empty, CellState cellState = CellState.Unexplored)
+    public MapCell(Vector2Int position, int imageIndex, CellType cellType = CellType.Empty, CellState cellState = CellState.Unexplored)
     {
         Position = position;
+        ImageIndex = imageIndex;
         CellType = cellType;
         CellState = cellState;
     }
@@ -14,6 +15,7 @@ public class MapCell : IMapCell
     public Vector2Int Position { get; set; }
     public CellType CellType { get; set; }
     public CellState CellState { get; set; }
+    public int ImageIndex { get; set; }
 
     internal Vector2Int[] GetNeighborsPositions()
     {

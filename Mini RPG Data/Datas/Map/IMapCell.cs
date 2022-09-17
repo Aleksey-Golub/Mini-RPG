@@ -7,4 +7,5 @@ public interface IMapCell
     Vector2Int Position { get; }
     CellType CellType { get; }
     CellState CellState { get; }
+    int ImageIndex { get; }
 }

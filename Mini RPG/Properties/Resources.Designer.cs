@@ -113,6 +113,56 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Forest_10 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_11 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_12 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_13 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_14 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Forest_2 {
             get {
                 object obj = ResourceManager.GetObject("Forest_2", resourceCulture);
@@ -156,6 +206,36 @@ namespace Mini_RPG.Properties {
         internal static System.Drawing.Bitmap Forest_6 {
             get {
                 object obj = ResourceManager.GetObject("Forest_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_7 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_8 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Forest_9 {
+            get {
+                object obj = ResourceManager.GetObject("Forest_9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
