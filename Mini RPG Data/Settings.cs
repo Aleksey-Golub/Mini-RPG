@@ -1,11 +1,15 @@
 ﻿using Mini_RPG_Data.Character_;
+using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data;
 
 public static class Settings
 {
+    public static IRandomService RandomService;
+
     public const int EXPERIENCE_DEFAULT_VALUE = 50;
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
@@ -101,7 +105,7 @@ public static class Settings
         }
     }
 
-    internal static bool CheckHealthRecoveryAfterRest(Services.Random_.IRandomService randomService, Character character)
+    internal static bool CheckHealthRecoveryAfterRest(Character character)
     {
         // Если голода и жажды нет, а второй показатель - насыщен, то возможна регенерация:
         // 2D6 + бонус ВЫН >= 12(или 10, если оба "насыщен")
@@ -120,6 +124,15 @@ public static class Settings
             ? 10
             : 12;
 
-        return randomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
+        return RandomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
+    }
+
+    internal static int CalculateFoundedMoney(Player player)
+    {
+        int min = 0;
+        int max = 10;
+        int playerLevel = player.Character.Level.Value;
+
+        return RandomService.GetIntInclusive(min, max * playerLevel);
     }
 }

@@ -77,7 +77,7 @@ public partial class GameProcessController
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
     public void Rest()
     {
-        _player.TryRestoreHealth(_randomService);
+        _player.TryRestoreHealth();
         _player.UpdateEffects();
         _logView.AddLog(_localizationService.PlayerRest());
     }
@@ -153,7 +153,7 @@ public partial class GameProcessController
 
         public AdventureGameProcessState(GameProcessController controller) : base(controller)
         {
-            _cellEventHandler = new CellEventHandler();
+            _cellEventHandler = new CellEventHandler(controller);
         }
 
         internal override void Enter()
@@ -164,7 +164,7 @@ public partial class GameProcessController
             // detect cellType and handle this
             // loot, enemy, trap etc
 
-            _cellEventHandler.HandlePlayerCell(Controller._map);
+            _cellEventHandler.HandlePlayerCell();
             
         }
 
@@ -197,5 +197,58 @@ public partial class GameProcessController
 
         internal override void Exit()
         { }
+
+        private class CellEventHandler
+        {
+            private readonly GameProcessController _controller;
+
+            public CellEventHandler(GameProcessController controller)
+            {
+                _controller = controller;
+            }
+
+            internal void HandlePlayerCell()
+            {
+                _controller._map.Explore(_controller._map.PlayerPosition);
+                switch (_controller._map.PlayerCell.CellType)
+                {
+                    case CellType.Empty:
+                        break;
+                    case CellType.Town:
+                        break;
+                    case CellType.Enemy:
+                        // battle
+                        break;
+                    case CellType.Loot:
+                        HandleLootCell();
+                        _controller._map.MakeEmpty(_controller._map.PlayerPosition);
+                        break;
+                    case CellType.LockedChest:
+
+                        break;
+                    case CellType.HiddedLoot:
+
+                        break;
+                    case CellType.Trap:
+
+                        break;
+                    case CellType.None:
+                    default:
+                        break;
+                }
+            }
+
+            private void HandleLootCell()
+            {
+                // generate random loot
+                int money = Settings.CalculateFoundedMoney(_controller._player);
+
+                // show message
+                _controller._gameProcessView.ShowLootCellMessage(money);
+                
+                // pick up loot
+                _controller._player.Wallet.AddMoney(money);
+            }
+        }
     }
 }

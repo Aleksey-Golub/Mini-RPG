@@ -154,7 +154,8 @@ public class Map : IMap
         return mapData;
     }
 
-    internal void Explore(Vector2Int playerPosition) => _data.Cells[playerPosition].CellState = CellState.Explored;
+    internal void Explore(Vector2Int cellPosition) => _data.Cells[cellPosition].CellState = CellState.Explored;
+    internal void MakeEmpty(Vector2Int cellPosition) => _data.Cells[cellPosition].CellType = CellType.Empty;
 
     internal bool TryMovePlayer(Direction direction)
     {

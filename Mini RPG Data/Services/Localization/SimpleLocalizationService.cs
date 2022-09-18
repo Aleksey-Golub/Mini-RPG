@@ -114,4 +114,6 @@ public class SimpleLocalizationService : ILocalizationService
     }
 
     public string PlayerRest() => "Вы остановились на привал";
+    public string Message_YouFindLoot() => "На пути вам попадается сверток с вещами. Осмотрев их вы забираетет все ценное.\n\nВы нашли";
+    public string Message_Coins() => "Монеты";
 }

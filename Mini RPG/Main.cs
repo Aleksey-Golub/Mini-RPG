@@ -1,4 +1,5 @@
 ﻿using Mini_RPG.Screens;
+using Mini_RPG_Data;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Localization;
@@ -79,5 +80,7 @@ public partial class Main : Form
         _progressService = new PersistentProgressService();
         _randomService = new RandomService();
         _saveLoadService = new JsonFileSaveLoadService(_progressService);
+
+        Settings.RandomService = _randomService;
     }
 }

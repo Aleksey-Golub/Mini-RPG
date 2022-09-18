@@ -116,6 +116,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void AddLog(string message) => _log.AddLog(message);
 
+    public void ShowLootCellMessage(int money) => 
+        MessageBox.Show(
+            $"{_localizationService.Message_YouFindLoot()}:\n" +
+            $"{_localizationService.Message_Coins()}: {money}\n" +
+            $"another loot");
+    
     private void OnCharacterAbilitiesChanged()
     {
         var allAbilities = _player.Character.AllAbilities;

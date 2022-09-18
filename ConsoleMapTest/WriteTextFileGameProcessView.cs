@@ -104,4 +104,9 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowLootCellMessage(int money)
+    {
+        throw new NotImplementedException();
+    }
 }

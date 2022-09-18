@@ -27,7 +27,7 @@ public class Player : IPlayer
         Character.Init();
     }
 
-    internal bool TryRestoreHealth(IRandomService randomService) => Character.TryRestoreHealth(randomService);
+    internal bool TryRestoreHealth() => Character.TryRestoreHealth();
     internal void UpdateEffects() => Character.UpdateEffects();
 }
 

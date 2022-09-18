@@ -14,4 +14,5 @@ public interface IGameProcessView : IView
     void ShowTownEntrance();
     void ShowTown();
     void ShowLocation(IMapCell cell);
+    void ShowLootCellMessage(int money);
 }

@@ -52,4 +52,6 @@ public interface ILocalizationService
     string PlayerMoveSuccessfully(Direction direction);
     string PlayerMoveUnsuccessfully(Direction direction);
     string PlayerRest();
+    string Message_YouFindLoot();
+    string Message_Coins();
 }

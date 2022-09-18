@@ -76,9 +76,9 @@ public class Character : ICharacter
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
 
-    internal bool TryRestoreHealth(IRandomService randomService)
+    internal bool TryRestoreHealth()
     {
-        bool res = Settings.CheckHealthRecoveryAfterRest(randomService, this);
+        bool res = Settings.CheckHealthRecoveryAfterRest(this);
         if (res)
         {
             Health.Restore();
