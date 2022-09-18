@@ -149,8 +149,12 @@ public partial class GameProcessController
 
     private class AdventureGameProcessState : GameProcessStateBase
     {
+        private readonly CellEventHandler _cellEventHandler;
+
         public AdventureGameProcessState(GameProcessController controller) : base(controller)
-        { }
+        {
+            _cellEventHandler = new CellEventHandler();
+        }
 
         internal override void Enter()
         {
@@ -159,6 +163,9 @@ public partial class GameProcessController
 
             // detect cellType and handle this
             // loot, enemy, trap etc
+
+            _cellEventHandler.HandlePlayerCell(Controller._map);
+            
         }
 
         internal override bool TryMove(Direction direction)

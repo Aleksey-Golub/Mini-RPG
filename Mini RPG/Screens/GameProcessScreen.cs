@@ -10,12 +10,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
     private readonly ILocalizationService _localizationService;
     private readonly ImageManager _imageManager;
-    private readonly Log _log;
     private readonly MapView _mapView;
     private readonly HealthView _healthView;
     private readonly SatiationView _satiationView;
 
     private GameProcessController? _controller;
+    private Log _log;
     private IPlayer? _player;
 
     public GameProcessScreen(ILocalizationService localizationService)
@@ -31,8 +31,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
 
-        _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
-        _log.FillLog();
     }
 
     public void Init(IPlayer player)
@@ -49,6 +47,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         OnCharacterSatiationChanging();
         OnMoneyChanged(_player.Wallet.Money);
 
+        _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
+        _log.FillLog();
         _mapView.Init(_player.Character.Name);
         _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_player.Character.AvatarPath);
     }
@@ -62,6 +62,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _controller = null;
         _player = null;
+
+        _log.ClearLogs();
+        _log = null;
     }
 
     public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;

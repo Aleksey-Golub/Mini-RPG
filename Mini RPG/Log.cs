@@ -40,6 +40,8 @@ public class Log : ILogView
         }
     }
 
+    public void ClearLogs() => _flowLayoutPanel_GameLog.Controls.Clear();
+
     private void SwitchLogState(object? sender, EventArgs e)
     {
         _isLogMinimize = !_isLogMinimize;
