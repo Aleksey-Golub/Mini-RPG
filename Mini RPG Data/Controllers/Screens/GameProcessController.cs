@@ -228,14 +228,44 @@ public partial class GameProcessController
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.HiddedLoot:
-
+                        HandleHiddedLootCell();
+                        _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.Trap:
-
+                        HandleTrapCell();
+                        _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.None:
                     default:
                         break;
+                }
+            }
+
+            private void HandleTrapCell()
+            {
+                var trapType = Settings.GetTrapType();
+                if (Settings.TryFindTrap(_controller._player))
+                {
+                    _controller._gameProcessView.ShowSuccessFindTrapMessage(trapType);
+                }
+                else
+                {
+                    _controller._gameProcessView.ShowFailFindTrapMessage(trapType);
+                    int damage = Settings.CalculateTrapDamage(trapType, _controller._player);
+                    _controller._player.Character.Health.TakeDamage(damage);
+                }
+            }
+
+            private void HandleHiddedLootCell()
+            {
+                // generate random loot
+                int money = Settings.CalculateFoundedInHiddenLootMoney(_controller._player);
+
+                if (Settings.TryFindHiddenLoot(_controller._player))
+                {
+                    _controller._gameProcessView.ShowSuccessFindHiddenLootMessage(money); // and loot
+                    _controller._player.Wallet.AddMoney(money);
+                    // add loot
                 }
             }
 

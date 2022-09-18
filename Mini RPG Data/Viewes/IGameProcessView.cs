@@ -20,4 +20,7 @@ public interface IGameProcessView : IView
     void ShowFailPickLockedChestMessage();
     void ShowSuccessBreakChestMessage(int money);
     void ShowFailBreakChestMessage();
+    void ShowSuccessFindHiddenLootMessage(int money);
+    void ShowSuccessFindTrapMessage(TrapType trapType);
+    void ShowFailFindTrapMessage(TrapType trapType);
 }

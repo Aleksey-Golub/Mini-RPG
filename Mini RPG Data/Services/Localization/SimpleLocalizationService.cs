@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Map_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
@@ -114,7 +115,7 @@ public class SimpleLocalizationService : ILocalizationService
     }
 
     public string PlayerRest() => "Вы остановились на привал";
-    public string Message_YouFindLoot() => "На пути вам попадается сверток с вещами. Осмотрев их вы забираетет все ценное.\n\nВы нашли";
+    public string Message_YouFindLoot() => "На пути вам попадается сверток с вещами. Осмотрев их вы забираете все ценное.\n\nВы нашли";
     public string Message_Coins() => "Монеты";
     public string Message_YouFindLockedChest() => "Вы нашли запертый сундук";
     public string Message_PickLockedChestSuccess() => "Попытка вскыть замок оказалась успешной.\n\nВнутри вы нашли";
@@ -125,4 +126,31 @@ public class SimpleLocalizationService : ILocalizationService
         "Спустя продолжительное времени, вы без сил садитесь на землю, чтобы немного отдохнуть и попробовать снова.\n\n" +
         "Вы закрыли глаза буквально на минуту, а когда открыли, сундука уже не было. Вы заметили только размытый силуэт в тенях.\n\n" +
         "Понимая, что вора уже не догнать, вы собираете свои вещи и продолжаете путешествие.";
+
+    public string Message_YouFindHiddenLoot() =>
+        "Вы останавливаетесь, чтобы перевести дух и поправить снаряжение. Вдруг ваше внимание привлекают еле заметные следы на земле.\n" +
+        "Пройдя по ним несколько десятков шагов, вы натыкаетесь на тайник.\n" +
+        "Внимательно осмотрев его содержимое, вы забираете с собой все ценное.\n\nВы нашли";
+
+    public string Message_FindTrapSuccess(TrapType trapType)
+    {
+        return trapType switch
+        {
+            TrapType.SpikeTrap => "Ваша внимательность вас не подвела. На земле вы замечаете замаскированную нажимную пластину.\nАккуратно обойдя ее, вы продолжаете свой путь.",
+            TrapType.BearTrap => "В нескольких метрах перед собой вы замечаете медвежий капкан.\nАккуратно обойдя его, вы продолжаете свой путь.",
+            TrapType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string Message_FindTrapFail(TrapType trapType)
+    {
+        return trapType switch
+        {
+            TrapType.SpikeTrap => "Тихий щелчек, и несколько металлических шипов впиются вам в ногу.",
+            TrapType.BearTrap => "Тугая нажимная пластина поддается под вашим весом. Запоздало вы понимаете, что угодили в медвежий капкан.",
+            TrapType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
 }

@@ -146,6 +146,20 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         MessageBox.Show(
             $"{_localizationService.Message_BreakChestFail()}");
 
+    public void ShowSuccessFindHiddenLootMessage(int money) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_YouFindHiddenLoot()}:\n" +
+            $"{_localizationService.Message_Coins()}: {money}\n" +
+            $"another loot");
+
+    public void ShowSuccessFindTrapMessage(TrapType trapType) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_FindTrapSuccess(trapType)}");
+
+    public void ShowFailFindTrapMessage(TrapType trapType) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_FindTrapFail(trapType)}");
+
     private void OnCharacterAbilitiesChanged()
     {
         var allAbilities = _player.Character.AllAbilities;

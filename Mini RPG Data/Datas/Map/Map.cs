@@ -198,3 +198,10 @@ public enum CellType
     HiddedLoot,
     Trap,
 }
+
+public enum TrapType
+{
+    None,
+    SpikeTrap,
+    BearTrap,
+}

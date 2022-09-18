@@ -129,11 +129,11 @@ public static class Settings
 
     internal static int CalculateFoundedInLootMoney(Player player)
     {
-        int min = 0;
-        int max = 10;
         int playerLevel = player.Character.Level.Value;
+        int min = 0;
+        int max = 10 * playerLevel;
 
-        return RandomService.GetIntInclusive(min, max * playerLevel);
+        return RandomService.GetIntInclusive(min, max);
     }
 
     internal static bool TryPickLock(Player player)
@@ -157,6 +157,7 @@ public static class Settings
     }
 
     internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+    internal static int CalculateFoundedInHiddenLootMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
 
     internal static bool TryBreakChest(Player player)
     {
@@ -168,6 +169,52 @@ public static class Settings
             return true;
 
         return _2D6 + player.Character.AllAbilities.Strength.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+    }
+
+    internal static bool TryFindHiddenLoot(Player player)
+    {
+        int _2D6 = RandomService.Get1D6(2);
+
+        if (IsCriticalFail(_2D6))
+            return false;
+        if (IsCriticalSuccess(_2D6))
+            return true;
+
+        return _2D6 + player.Character.AllAbilities.Perception.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+    }
+
+    internal static bool TryFindTrap(Player player)
+    {
+        int _2D6 = RandomService.Get1D6(2);
+
+        if (IsCriticalFail(_2D6))
+            return false;
+        if (IsCriticalSuccess(_2D6))
+            return true;
+
+        return _2D6 + player.Character.AllAbilities.Perception.Bonus * 2 >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+
+    }
+
+    internal static TrapType GetTrapType()
+    {
+        Array values = Enum.GetValues(typeof(TrapType));
+        return (TrapType)values.GetValue(RandomService.GetIntInclusive(1, values.Length - 1));
+    }
+
+    internal static int CalculateTrapDamage(TrapType trapType, Player player)
+    {
+        float v = (float)player.Character.Level.Value / 3;
+        v = MathF.Ceiling(v);
+        int multiplier = (int)v;
+
+        return trapType switch
+        {
+            TrapType.SpikeTrap => RandomService.Get1D3(multiplier),
+            TrapType.BearTrap => RandomService.Get1D6(multiplier),
+            TrapType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
     }
 
     private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
