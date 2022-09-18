@@ -61,7 +61,7 @@ public partial class GameProcessController
         else
             TransitionTo<AdventureGameProcessState>();
 
-        _gameProcessView.ShowMap(_map);
+        _gameProcessView.ShowMap(_map, _player.Character.FieldOfView);
     }
 
     public void SaveGameAndExitMainMenu()
@@ -129,7 +129,7 @@ public partial class GameProcessController
             var res = Controller._map.TryMovePlayer(direction);
             if (res)
             {
-                Controller._gameProcessView.ShowMap(Controller._map);
+                Controller._gameProcessView.ShowMap(Controller._map, Controller._player.Character.FieldOfView);
                 Controller._logView.AddLog(Controller._localizationService.PlayerMoveSuccessfully(direction));
             }
             else
@@ -175,7 +175,7 @@ public partial class GameProcessController
             var res = Controller._map.TryMovePlayer(direction);
             if (res)
             {
-                Controller._gameProcessView.ShowMap(Controller._map);
+                Controller._gameProcessView.ShowMap(Controller._map, Controller._player.Character.FieldOfView);
                 Controller._logView.AddLog(Controller._localizationService.PlayerMoveSuccessfully(direction));
 
             }

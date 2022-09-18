@@ -7,7 +7,6 @@ namespace Mini_RPG;
 
 internal class MapView
 {
-    private const int FIELD_OF_VIEW = 2;
     private const string PLAYER_SYMBOL = "@";
     private const string UNEXPLORED_SYMBOL = "Q";
     private const string EMPTY_SYMBOL = "O";
@@ -41,16 +40,16 @@ internal class MapView
         SetToolTip();
     }
 
-    internal void DrawMap(IMap map) => _label_Map.Text = CalculateString(map);
+    internal void DrawMap(IMap map, int fieldOfView) => _label_Map.Text = CalculateString(map, fieldOfView);
 
-    private string CalculateString(IMap map)
+    private string CalculateString(IMap map, int fieldOfView)
     {
         StringBuilder mapSB = new StringBuilder();
         var playerPosition = map.PlayerPosition;
-        int minX = playerPosition.X - FIELD_OF_VIEW;
-        int minY = playerPosition.Y - FIELD_OF_VIEW;
-        int maxX = playerPosition.X + FIELD_OF_VIEW;
-        int maxY = playerPosition.Y + FIELD_OF_VIEW;
+        int minX = playerPosition.X - fieldOfView;
+        int minY = playerPosition.Y - fieldOfView;
+        int maxX = playerPosition.X + fieldOfView;
+        int maxY = playerPosition.Y + fieldOfView;
 
         for (int y = maxY; y >= minY; y--)
         {

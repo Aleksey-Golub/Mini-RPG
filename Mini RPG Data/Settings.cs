@@ -10,6 +10,7 @@ public static class Settings
 {
     public static IRandomService RandomService;
 
+    public const int DEFAULT_FIELD_OF_VIEW = 2;
     public const int EXPERIENCE_DEFAULT_VALUE = 50;
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
@@ -62,6 +63,9 @@ public static class Settings
 
         return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 1.5f);
     }
+
+    internal static int CalculateFieldOfView(Character character) => 
+        DEFAULT_FIELD_OF_VIEW + character.AllAbilities.Perception.Bonus.DividedByAndCeiling(divider: 2);
 
     internal static int CalculateMaxHealth(Character character) =>
         character.AllAbilities.Constitution.Value + character.AllAbilities.Constitution.Bonus * Settings.CalculateLevelModifier(character.Level.Value);

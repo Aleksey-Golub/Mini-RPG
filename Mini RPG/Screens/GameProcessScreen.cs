@@ -112,7 +112,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_Navigation.Show();
     }
 
-    public void ShowMap(IMap map) => _mapView.DrawMap(map);
+    public void ShowMap(IMap map, int fieldOfView) => _mapView.DrawMap(map, fieldOfView);
 
     public void AddLog(string message) => _log.AddLog(message);
 

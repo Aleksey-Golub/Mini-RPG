@@ -10,7 +10,7 @@ public interface IGameProcessView : IView
     void DeInit();
     void SetGameProcessController(GameProcessController controller);
     void SetActiveState(bool newState);
-    void ShowMap(IMap map);
+    void ShowMap(IMap map, int fieldOfView);
     void ShowTownEntrance();
     void ShowTown();
     void ShowLocation(IMapCell cell);

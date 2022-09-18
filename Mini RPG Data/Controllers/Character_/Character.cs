@@ -71,6 +71,7 @@ public class Character : ICharacter
     public Level Level { get; }
     public Health Health { get; }
     public Satiation Satiation { get; }
+    public int FieldOfView => Settings.CalculateFieldOfView(this);
 
     public event Action<Character>? Changed;
     public event Action<Character>? LevelChanged;

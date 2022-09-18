@@ -10,4 +10,14 @@ public static class Extensions
 
         return list[v];
     }
+
+    public static int DividedByAndCeiling(this int num, int divider)
+    {
+        if (divider <= 0)
+            throw new ArgumentOutOfRangeException($"{divider} <= 0");
+
+        float res = (float)num / divider;
+        res = MathF.Ceiling(res);
+        return (int)res;
+    }
 }
