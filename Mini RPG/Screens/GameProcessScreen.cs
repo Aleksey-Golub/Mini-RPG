@@ -121,7 +121,31 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
             $"{_localizationService.Message_YouFindLoot()}:\n" +
             $"{_localizationService.Message_Coins()}: {money}\n" +
             $"another loot");
-    
+
+    public void ShowFindChestMessage() =>
+        MessageBox.Show(
+            $"{_localizationService.Message_YouFindLockedChest()}");
+
+    public void ShowSuccessPickLockedChestMessage(int money) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_PickLockedChestSuccess()}:\n" +
+            $"{_localizationService.Message_Coins()}: {money}\n" +
+            $"another loot");
+
+    public void ShowFailPickLockedChestMessage() =>
+        MessageBox.Show(
+            $"{_localizationService.Message_PickLockedChestFail()}");
+
+    public void ShowSuccessBreakChestMessage(int money) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_BreakChestSuccess()}:\n" +
+            $"{_localizationService.Message_Coins()}: {money}\n" +
+            $"another loot");
+
+    public void ShowFailBreakChestMessage() =>
+        MessageBox.Show(
+            $"{_localizationService.Message_BreakChestFail()}");
+
     private void OnCharacterAbilitiesChanged()
     {
         var allAbilities = _player.Character.AllAbilities;

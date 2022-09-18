@@ -15,4 +15,9 @@ public interface IGameProcessView : IView
     void ShowTown();
     void ShowLocation(IMapCell cell);
     void ShowLootCellMessage(int money);
+    void ShowFindChestMessage();
+    void ShowSuccessPickLockedChestMessage(int money);
+    void ShowFailPickLockedChestMessage();
+    void ShowSuccessBreakChestMessage(int money);
+    void ShowFailBreakChestMessage();
 }

@@ -165,7 +165,7 @@ public partial class GameProcessController
             // loot, enemy, trap etc
 
             _cellEventHandler.HandlePlayerCell();
-            
+
         }
 
         internal override bool TryMove(Direction direction)
@@ -224,7 +224,8 @@ public partial class GameProcessController
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.LockedChest:
-
+                        HandleLockedChestCell();
+                        _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.HiddedLoot:
 
@@ -241,13 +242,40 @@ public partial class GameProcessController
             private void HandleLootCell()
             {
                 // generate random loot
-                int money = Settings.CalculateFoundedMoney(_controller._player);
+                int money = Settings.CalculateFoundedInLootMoney(_controller._player);
 
-                // show message
-                _controller._gameProcessView.ShowLootCellMessage(money);
-                
+                _controller._gameProcessView.ShowLootCellMessage(money); // and loot
+
                 // pick up loot
                 _controller._player.Wallet.AddMoney(money);
+            }
+
+            private void HandleLockedChestCell()
+            {
+                // generate chest loot
+                int money = Settings.CalculateFoundedInChestMoney(_controller._player);
+
+                _controller._gameProcessView.ShowFindChestMessage();
+                if (Settings.TryPickLock(_controller._player))
+                {
+                    _controller._gameProcessView.ShowSuccessPickLockedChestMessage(money); // and loot
+                    _controller._player.Wallet.AddMoney(money);
+                    // add loot
+                }
+                else
+                {
+                    _controller._gameProcessView.ShowFailPickLockedChestMessage();
+                    if (Settings.TryBreakChest(_controller._player))
+                    {
+                        _controller._gameProcessView.ShowSuccessBreakChestMessage(money); // and loot
+                        _controller._player.Wallet.AddMoney(money);
+                        // add loot
+                    }
+                    else
+                    {
+                        _controller._gameProcessView.ShowFailBreakChestMessage();
+                    }
+                }
             }
         }
     }

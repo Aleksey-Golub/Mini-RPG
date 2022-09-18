@@ -54,4 +54,9 @@ public interface ILocalizationService
     string PlayerRest();
     string Message_YouFindLoot();
     string Message_Coins();
+    string Message_YouFindLockedChest();
+    string Message_PickLockedChestSuccess();
+    string Message_PickLockedChestFail();
+    string Message_BreakChestSuccess();
+    string Message_BreakChestFail();
 }

@@ -63,7 +63,7 @@ public static class Settings
         return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 1.5f);
     }
 
-    internal static int CalculateMaxHealth(Character character) => 
+    internal static int CalculateMaxHealth(Character character) =>
         character.AllAbilities.Constitution.Value + character.AllAbilities.Constitution.Bonus * Settings.CalculateLevelModifier(character.Level.Value);
 
     internal static int CalculateLevelModifier(int level)
@@ -127,7 +127,7 @@ public static class Settings
         return RandomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
     }
 
-    internal static int CalculateFoundedMoney(Player player)
+    internal static int CalculateFoundedInLootMoney(Player player)
     {
         int min = 0;
         int max = 10;
@@ -135,4 +135,41 @@ public static class Settings
 
         return RandomService.GetIntInclusive(min, max * playerLevel);
     }
+
+    internal static bool TryPickLock(Player player)
+    {
+        // 2D6 + 5(bonus) >= 7 + (12 - 7) * (10 lvl - 1/10-1) // lerp 0 - 1 // if lvl == 10 and maxLvl == 10
+        // lvl 1 - 0
+        // lvl 2 - 1
+        // lvl 3,4 - 2
+        // lvl 5,6 - 3
+        // lvl 7,8 - 4
+        // lvl 9,10 - 5 if maxLvl == 10
+
+        int _2D6 = RandomService.Get1D6(2);
+
+        if (IsCriticalFail(_2D6))
+            return false;
+        if (IsCriticalSuccess(_2D6))
+            return true;
+
+        return _2D6 + player.Character.AllAbilities.Dexterity.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+    }
+
+    internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+
+    internal static bool TryBreakChest(Player player)
+    {
+        int _2D6 = RandomService.Get1D6(2);
+
+        if (IsCriticalFail(_2D6))
+            return false;
+        if (IsCriticalSuccess(_2D6))
+            return true;
+
+        return _2D6 + player.Character.AllAbilities.Strength.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+    }
+
+    private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
+    private static bool IsCriticalSuccess(int _2D6) => _2D6 == 12;
 }
