@@ -197,6 +197,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
+
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
     private void Button_LeaveTown_Click(object sender, EventArgs e) => _controller.ExitTown();
 
@@ -218,6 +219,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
             return true;
         }
+
         if (_panel_Navigation.Visible == false)
             return false;
 

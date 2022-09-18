@@ -124,6 +124,8 @@ public partial class GameProcessController
 
         internal override bool TryMove(Direction direction)
         {
+            Controller._player.UpdateEffects();
+
             var res = Controller._map.TryMovePlayer(direction);
             if (res)
             {
@@ -135,8 +137,6 @@ public partial class GameProcessController
                 Controller._logView.AddLog(Controller._localizationService.PlayerMoveUnsuccessfully(direction));
             }
 
-            Controller._player.UpdateEffects();
-
             if (res)
                 Controller.TransitionTo<AdventureGameProcessState>();
 
@@ -144,8 +144,7 @@ public partial class GameProcessController
         }
 
         internal override void Exit()
-        {
-        }
+        { }
     }
 
     private class AdventureGameProcessState : GameProcessStateBase
@@ -164,23 +163,27 @@ public partial class GameProcessController
 
         internal override bool TryMove(Direction direction)
         {
+            Controller._player.UpdateEffects();
+
             var res = Controller._map.TryMovePlayer(direction);
             if (res)
             {
                 Controller._gameProcessView.ShowMap(Controller._map);
                 Controller._logView.AddLog(Controller._localizationService.PlayerMoveSuccessfully(direction));
 
-                if (Controller._map.IsPlayerOnTownCell)
-                    Controller.TransitionTo<TownEntranceGameProcessState>();
-                else
-                    Enter();
             }
             else
             {
                 Controller._logView.AddLog(Controller._localizationService.PlayerMoveUnsuccessfully(direction));
             }
 
-            Controller._player.UpdateEffects();
+            if (res)
+            {
+                if (Controller._map.IsPlayerOnTownCell)
+                    Controller.TransitionTo<TownEntranceGameProcessState>();
+                else
+                    Enter();
+            }
 
             return res;
         }
