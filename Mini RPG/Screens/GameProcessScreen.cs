@@ -112,7 +112,13 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_Navigation.Show();
     }
 
-    public void ShowMap(IMap map, int fieldOfView) => _mapView.DrawMap(map, fieldOfView);
+    public void ShowMiniMap(IMap map, int fieldOfView) => _mapView.DrawMap(map, fieldOfView);
+    public void ShowMap(IMap map)
+    {
+        using var mapForm = new OpenedMap(map, _localizationService, _player.Character.Name);
+        if (mapForm.ShowDialog() == DialogResult.OK)
+        { }
+    }
 
     public void AddLog(string message) => _log.AddLog(message);
 
@@ -243,6 +249,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         }
     }
 
+    private void Label_Map_Click(object sender, EventArgs e) => _controller.ShowMap();
+
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
 
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
@@ -264,6 +272,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
             else if (_panel_TownEntrance.Visible)
                 _controller.EnterTown();
 
+            return true;
+        }
+
+        if(keyData == Keys.M)
+        {
+            _controller.ShowMap();
             return true;
         }
 

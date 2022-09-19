@@ -109,4 +109,49 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowMiniMap(IMap map, int fieldOfView)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowFindChestMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowSuccessPickLockedChestMessage(int money)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowFailPickLockedChestMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowSuccessBreakChestMessage(int money)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowFailBreakChestMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowSuccessFindHiddenLootMessage(int money)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowSuccessFindTrapMessage(TrapType trapType)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowFailFindTrapMessage(TrapType trapType)
+    {
+        throw new NotImplementedException();
+    }
 }

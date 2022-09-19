@@ -13,6 +13,7 @@ internal class MapView
     private const string TOWN_SYMBOL = "M";
     private const string ENEMY_SYMBOL = "D";
     private const string LOOT_SYMBOL = "U";
+
     private const string LOCKEDCHEST_SYMBOL = "G";
     private const string HIDDENLOOT_SYMBOL = "H";
     private const string TRAP_SYMBOL = "W";
@@ -25,7 +26,7 @@ internal class MapView
     private readonly ILocalizationService _localizationService;
     private string? _characterName;
 
-    public MapView(Label label_Map, ToolTip toolTip, ILocalizationService localizationService)
+    internal MapView(Label label_Map, ToolTip toolTip, ILocalizationService localizationService)
     {
         _label_Map = label_Map;
         _toolTip = toolTip;
@@ -34,15 +35,61 @@ internal class MapView
         _localizationService.LanguageChanged += SetToolTip;
     }
 
-    public void Init(string characterName)
+    internal void Init(string characterName)
     {
         _characterName = characterName;
         SetToolTip();
     }
 
-    internal void DrawMap(IMap map, int fieldOfView) => _label_Map.Text = CalculateString(map, fieldOfView);
+    internal void DrawMap(IMap map, int fieldOfView) => _label_Map.Text = CalculateStringMiniMap(map, fieldOfView);
+    internal void DrawOpenedMap(IMap map) => _label_Map.Text = CalculateStringForOpenedMap(map);
 
-    private string CalculateString(IMap map, int fieldOfView)
+    private string CalculateStringForOpenedMap(IMap map)
+    {
+        StringBuilder mapSB = new StringBuilder();
+        int minX = map.MinX - 1;
+        int minY = map.MinY - 1;
+        int maxX = map.MaxX + 1;
+        int maxY = map.MaxY + 1;
+
+        for (int y = maxY; y >= minY; y--)
+        {
+            for (int x = minX; x <= maxX; x++)
+            {
+                Vector2Int cellCoord = new Vector2Int(x, y);
+                string simbol = GetStringForOpenedMap(cellCoord, map);
+                mapSB.Append(simbol);
+            }
+            mapSB.Append("\n");
+        }
+        
+        return mapSB.ToString();
+    }
+    private string GetStringForOpenedMap(Vector2Int cellCoord, IMap map)
+    {
+        if (map.Cells.ContainsKey(cellCoord))
+        {
+            if (map.Cells[cellCoord].Position == map.PlayerPosition)
+                return PLAYER_SYMBOL;
+            else
+                return map.Cells[cellCoord].CellState switch
+                {
+                    CellState.Unexplored => NOMAPCELL_SYMBOL,
+                    CellState.Explored => GetStringForCellType(map.Cells[cellCoord].CellType),
+                    CellState.None => throw new NotImplementedException(),
+                    _ => throw new NotImplementedException(),
+                };
+        }
+        else
+        {
+            if (map.AnyCellContactWith(cellCoord, CellState.Explored))
+                return BOARDER_SYMBOL;
+            else
+                return NOMAPCELL_SYMBOL;
+        }
+    }
+
+    private string CalculateStringMiniMap(IMap map, int fieldOfView)
     {
         StringBuilder mapSB = new StringBuilder();
         var playerPosition = map.PlayerPosition;
@@ -56,7 +103,7 @@ internal class MapView
             for (int x = minX; x <= maxX; x++)
             {
                 Vector2Int cellCoord = new Vector2Int(x, y);
-                string simbol = GetStringFor(cellCoord, map);
+                string simbol = GetStringForMiniMap(cellCoord, map);
                 mapSB.Append(simbol);
             }
             mapSB.Append("\n");
@@ -65,7 +112,7 @@ internal class MapView
         return mapSB.ToString();
     }
 
-    private string GetStringFor(Vector2Int cellCoord, IMap map)
+    private string GetStringForMiniMap(Vector2Int cellCoord, IMap map)
     {
         if (map.Cells.ContainsKey(cellCoord))
         {

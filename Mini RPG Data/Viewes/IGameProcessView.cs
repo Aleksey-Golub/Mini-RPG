@@ -10,7 +10,7 @@ public interface IGameProcessView : IView
     void DeInit();
     void SetGameProcessController(GameProcessController controller);
     void SetActiveState(bool newState);
-    void ShowMap(IMap map, int fieldOfView);
+    void ShowMiniMap(IMap map, int fieldOfView);
     void ShowTownEntrance();
     void ShowTown();
     void ShowLocation(IMapCell cell);
@@ -23,4 +23,5 @@ public interface IGameProcessView : IView
     void ShowSuccessFindHiddenLootMessage(int money);
     void ShowSuccessFindTrapMessage(TrapType trapType);
     void ShowFailFindTrapMessage(TrapType trapType);
+    void ShowMap(IMap map);
 }

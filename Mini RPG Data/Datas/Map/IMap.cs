@@ -18,5 +18,5 @@ public interface IMap
     public Vector2Int PlayerPosition { get; }
     public Vector2Int TownPosition { get; }
 
-    bool AnyCellContactWith(Vector2Int cellCoord);
+    bool AnyCellContactWith(Vector2Int cellCoord, CellState cellState = CellState.None);
 }

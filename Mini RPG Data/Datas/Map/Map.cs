@@ -34,7 +34,7 @@ public class Map : IMap
         _data = data;
     }
 
-    public bool AnyCellContactWith(Vector2Int cellCoord)
+    public bool AnyCellContactWith(Vector2Int cellCoord, CellState cellState = CellState.None)
     {
         List<Vector2Int> neighborsCoords = new List<Vector2Int>(8);
 
@@ -48,9 +48,11 @@ public class Map : IMap
         neighborsCoords.Add(new Vector2Int(cellCoord.X + 1, cellCoord.Y - 1));
 
         foreach (var neighbor in neighborsCoords)
+        {
             if (Cells.ContainsKey(neighbor))
-                return true;
-
+                if (cellState == CellState.None ? true : Cells[neighbor].CellState == cellState)
+                    return true;
+        }
         return false;
     }
 

@@ -198,8 +198,10 @@
             this._label_Map.Name = "_label_Map";
             this._label_Map.Size = new System.Drawing.Size(250, 250);
             this._label_Map.TabIndex = 0;
-            this._label_Map.Text = "NOOOOON\r\nN      O      N\r\nNQQQQQN\r\nNOO@OON\r\nNOOMOON\r\nNOOOOON\r\nNNNNNNN";
+            this._label_Map.Text = "QQQQQQQQQQQ\r\nQQQQQQQQQQQ\r\nOONOOOOONQQ\r\nOON      O      NQQ\r\nOONQQ@QQNQQ\r\nOONOOQOO" +
+    "NOO\r\nOONOOMOONQQ\r\nOONOOOOONQQ\r\nOOOOOOOOOQQ";
             this._label_Map.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._label_Map.Click += new System.EventHandler(this.Label_Map_Click);
             // 
             // _panel_Character
             // 
