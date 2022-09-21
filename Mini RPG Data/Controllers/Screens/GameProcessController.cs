@@ -1,9 +1,9 @@
-﻿using Mini_RPG_Data.Services.Random_;
-using Mini_RPG_Data.Services.PersistentProgress;
+﻿using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -11,8 +11,7 @@ public partial class GameProcessController
 {
     private readonly IGameProcessView _gameProcessView;
     private readonly ILogView _logView;
-
-    private readonly IRandomService _randomService;
+    private readonly IPlayerDeathView _playerDeathView;
     private readonly IPersistentProgressService _progressService;
     private readonly ISaveLoadService _saveLoadService;
     private readonly ILocalizationService _localizationService;
@@ -23,18 +22,19 @@ public partial class GameProcessController
     private readonly Dictionary<Type, GameProcessStateBase> _states;
 
     public event Action<GameProcessController>? SaveAndExit;
+    public event Action<GameProcessController>? PlayerDied;
 
     public GameProcessController(
         IGameProcessView gameProcessView,
         ILogView logView,
-        IRandomService randomService,
+        IPlayerDeathView playerDeathView,
         IPersistentProgressService progressService,
         ISaveLoadService saveLoadService,
         ILocalizationService localizationService)
     {
         _gameProcessView = gameProcessView;
         _logView = logView;
-        _randomService = randomService;
+        _playerDeathView = playerDeathView;
         _progressService = progressService;
         _saveLoadService = saveLoadService;
         _localizationService = localizationService;
@@ -46,11 +46,13 @@ public partial class GameProcessController
         };
 
         _gameProcessView.SetGameProcessController(this);
+        _playerDeathView.SetController(this);
     }
 
     public void Run()
     {
         _player = new Player(_progressService.Progress.PlayerData);
+        _player.Character.Died += OnPlayerCharacterDied;
         _map = new Map(_progressService.Progress.MapData);
 
         _gameProcessView.Init(_player);
@@ -66,11 +68,19 @@ public partial class GameProcessController
 
     public void SaveGameAndExitMainMenu()
     {
+        _player.Character.Died -= OnPlayerCharacterDied;
         _gameProcessView.DeInit();
         _gameProcessView.SetActiveState(false);
 
         _saveLoadService.SaveProgress();
         SaveAndExit?.Invoke(this);
+    }
+
+    public void GoToMainMenuAfterDeath()
+    {
+        _playerDeathView.DeInit();
+        _playerDeathView.SetActiveState(false);
+        PlayerDied?.Invoke(this);
     }
 
     public void EnterTown() => TransitionTo<InTownGameProcessState>();
@@ -89,6 +99,17 @@ public partial class GameProcessController
         _state?.Exit();
         _state = _states[typeof(TState)];
         _state.Enter();
+    }
+
+    private void OnPlayerCharacterDied(Character character)
+    {
+        _player.Character.Died -= OnPlayerCharacterDied;
+        _gameProcessView.DeInit();
+        _gameProcessView.SetActiveState(false);
+
+        _playerDeathView.SetActiveState(true);
+        _playerDeathView.ShowPlayerResult(_player);
+        _saveLoadService.DeleteCurrentPlayerSave();
     }
 
     private class InTownGameProcessState : GameProcessStateBase
@@ -252,7 +273,7 @@ public partial class GameProcessController
                 {
                     _controller._gameProcessView.ShowFailFindTrapMessage(trapType);
                     int damage = Settings.CalculateTrapDamage(trapType, _controller._player);
-                    _controller._player.Character.Health.TakeDamage(damage);
+                    _controller._player.Character.TakeDamage(5);//(damage);
                 }
             }
 

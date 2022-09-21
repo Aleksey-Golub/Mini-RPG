@@ -15,5 +15,7 @@ public partial class OpenedMap : Form
         _mapView.Init(playerName);
 
         _mapView.DrawOpenedMap(map);
+
+        WindowState = FormWindowState.Maximized;
     }
 }

@@ -22,6 +22,9 @@
     <Compile Update="Screens\IntroScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Screens\PlayerDeathScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="SelectingCharacterAvatar.cs">
       <SubType>Form</SubType>
     </Compile>

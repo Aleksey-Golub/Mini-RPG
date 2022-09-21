@@ -1,6 +1,5 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
-using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Controllers.Character_;
 
@@ -18,7 +17,7 @@ public class Character : ICharacter
         Level = new Level(data.LevelData);
         Level.Changed += () => LevelChanged?.Invoke(this);
         Health = new Health(data.HealthData, this);
-        Health.Changed += () => HealthChanged?.Invoke(this);
+        Health.Changed += OnHealthChanged;
         Satiation = new Satiation(data.SatiationData, this);
     }
 
@@ -76,6 +75,12 @@ public class Character : ICharacter
     public event Action<Character>? Changed;
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
+    public event Action<Character>? Died;
+    
+    internal void TakeDamage(int damage)
+    {
+        Health.TakeDamage(damage);
+    }
 
     internal bool TryRestoreHealth()
     {
@@ -95,4 +100,11 @@ public class Character : ICharacter
     }
 
     private void OnAbilitiesChanged() => Changed?.Invoke(this);
+    private void OnHealthChanged()
+    {
+        HealthChanged?.Invoke(this);
+        
+        if (Health.CurrentHealth <= 0)
+            Died?.Invoke(this);
+    }
 }

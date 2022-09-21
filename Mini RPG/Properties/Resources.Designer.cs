@@ -253,6 +253,16 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Graveyard {
+            get {
+                object obj = ResourceManager.GetObject("Graveyard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Health_64x64 {
             get {
                 object obj = ResourceManager.GetObject("Health 64x64", resourceCulture);

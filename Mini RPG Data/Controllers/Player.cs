@@ -1,6 +1,5 @@
 ﻿using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Player_;
-using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Controllers;
 

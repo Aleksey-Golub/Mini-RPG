@@ -31,7 +31,9 @@ public interface ILocalizationService
     string TextBox_Name();
     string HungerLevelName(HungerLevel hungerLevel);
     string ThirstLevelName(ThirstLevel thirstLevel);
+    string Bitton_MainMenu();
     string Label_Intro();
+    string Label_Abilities();
     string Button_GoToGame();
     string Level();
     string Button_Rest();
@@ -52,6 +54,7 @@ public interface ILocalizationService
     string LevelBoarder();
     string PlayerMoveSuccessfully(Direction direction);
     string PlayerMoveUnsuccessfully(Direction direction);
+    string Label_Equipment();
     string PlayerRest();
     string Message_YouFindLoot();
     string Message_Coins();

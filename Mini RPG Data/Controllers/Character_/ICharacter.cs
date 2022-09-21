@@ -16,5 +16,6 @@ namespace Mini_RPG_Data.Controllers.Character_
         event Action<Character>? Changed;
         event Action<Character>? LevelChanged;
         event Action<Character>? HealthChanged;
+        event Action<Character>? Died;
     }
 }

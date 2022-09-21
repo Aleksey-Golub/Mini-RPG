@@ -3,6 +3,7 @@ using Mini_RPG_Data.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG.Screens;
 
@@ -30,7 +31,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
-
     }
 
     public void Init(IPlayer player)
@@ -38,12 +38,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _player = player;
 
         _player.Character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
-        _player.Character.Health.Changed += OnCharacterHealthChanged;
+        _player.Character.HealthChanged += OnCharacterHealthChanged;
         _player.Character.Satiation.Changed += OnCharacterSatiationChanging;
         _player.Wallet.MoneyChanged += OnMoneyChanged;
 
         OnCharacterAbilitiesChanged();
-        OnCharacterHealthChanged();
+        OnCharacterHealthChanged(_player.Character);
         OnCharacterSatiationChanging();
         OnMoneyChanged(_player.Wallet.Money);
 
@@ -56,7 +56,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     public void DeInit()
     {
         _player.Character.AllAbilities.Changed -= OnCharacterAbilitiesChanged;
-        _player.Character.Health.Changed -= OnCharacterHealthChanged;
+        _player.Character.Changed -= OnCharacterHealthChanged;
         _player.Character.Satiation.Changed -= OnCharacterSatiationChanging;
         _player.Wallet.MoneyChanged -= OnMoneyChanged;
 
@@ -183,7 +183,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_CharismaPoints.ToolTipText = allAbilities.Charisma.Bonus.ToString();
     }
 
-    private void OnCharacterHealthChanged() => _healthView.View(_player.Character.Health.CurrentHealth, _player.Character.Health.MaxHealth);
+    private void OnCharacterHealthChanged(ICharacter character) => _healthView.View(character.Health.CurrentHealth, character.Health.MaxHealth);
     private void OnCharacterSatiationChanging() => _satiationView.View(_player.Character.Satiation.HungerLevel, _player.Character.Satiation.ThirstLevel);
     private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 

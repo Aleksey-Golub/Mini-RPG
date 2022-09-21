@@ -6,9 +6,6 @@ namespace Mini_RPG_Data.Services.SaveLoad;
 
 public class JsonFileSaveLoadService : ISaveLoadService
 {
-    //private const string FILEPATH_KEY = @"C:\Users\Алексей\Desktop\save.json";
-    //private const string FILEPATH_KEY = @"save.json";
-
     private readonly IPersistentProgressService _progressService;
     private readonly JsonSerializerOptions _options;
     private readonly string _savesDirectory;
@@ -60,4 +57,23 @@ public class JsonFileSaveLoadService : ISaveLoadService
     }
 
     public string[] GetAllSaves() => Directory.GetFiles(_savesDirectory);
+
+    public void DeleteCurrentPlayerSave()
+    {
+        string[]? strings = GetAllSaves();
+
+        string currentSave = null;
+        foreach(string s in strings)
+            if (s.Contains(_progressService.Progress.PlayerData.CharacterData.Name))
+            {
+                currentSave = s;
+                break;
+            }
+
+        try
+        {
+            File.Delete(currentSave);
+        }
+        catch { }
+    }
 }

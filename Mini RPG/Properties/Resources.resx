@@ -118,35 +118,41 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Макет_Заставка начала новой игры" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Макет_Заставка начала новой игры.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forest_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avatar_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Avatar_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Avatar_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Town Entrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Town Entrance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forest_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gold-Coin 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold-Coin 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Макет_стартовый экран" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Макет_стартовый экран.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forest_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forest_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Avatar_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Avatar_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forest_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forest_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Forest_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forest_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Avatar_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forest_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forest_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Town" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Town.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,14 +160,17 @@
   <data name="Макет_экран создания персонажа" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Макет_экран создания персонажа.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avatar_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avatar_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Макет_Заставка начала новой игры" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Макет_Заставка начала новой игры.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forest_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Health 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Health 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Без имени-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Без имени-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Макет_стартовый экран" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Макет_стартовый экран.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forest_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,43 +178,37 @@
   <data name="ThirstLevel 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ThirstLevel 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="level-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\level-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Без имени-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Без имени-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Макет_локация вне города" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Макет_локация вне города.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HungerLevel 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HungerLevel 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Forest_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forest_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forest_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Forest_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avatar_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avatar_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HungerLevel 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HungerLevel 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Макет_локация вне города" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Макет_локация вне города.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Health 64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Health 64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="level-up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\level-up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Forest_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forest_14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forest_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forest_6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Town Entrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Town Entrance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graveyard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graveyard.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

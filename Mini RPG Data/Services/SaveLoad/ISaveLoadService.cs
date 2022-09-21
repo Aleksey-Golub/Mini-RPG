@@ -7,4 +7,5 @@ public interface ISaveLoadService : IService
     void SaveProgress();
     PlayerProgress? LoadProgressOrNull(string fullFilePath);
     string[] GetAllSaves();
+    void DeleteCurrentPlayerSave();
 }

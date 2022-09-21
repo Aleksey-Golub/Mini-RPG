@@ -12,7 +12,9 @@ public class SimpleLocalizationService : ILocalizationService
     public string Button_LoadGame() => "ЗАГРУЗИТЬ";
     public string Button_NewGame() => "НОВАЯ ИГРА";
     public string Button_StartGame() => "НАЧАТЬ";
+    public string Bitton_MainMenu() => "В ГЛАВНОЕ МЕНЮ";
     public string Label_AbilityPoints() => "Очки характеристик";
+    public string Label_Abilities() => "Характеристики";
     public string Label_Charisma() => "Харизма";
     public string Label_Constitution() => "Выносливость";
     public string Label_Dexterity() => "Ловкость";
@@ -153,4 +155,6 @@ public class SimpleLocalizationService : ILocalizationService
             _ => throw new NotImplementedException(),
         };
     }
+
+    public string Label_Equipment() => "Экипировка";
 }
