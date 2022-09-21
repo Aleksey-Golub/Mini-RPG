@@ -273,7 +273,7 @@ public partial class GameProcessController
                 {
                     _controller._gameProcessView.ShowFailFindTrapMessage(trapType);
                     int damage = Settings.CalculateTrapDamage(trapType, _controller._player);
-                    _controller._player.Character.TakeDamage(5);//(damage);
+                    _controller._player.Character.TakeDamage(damage);
                 }
             }
 

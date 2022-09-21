@@ -46,5 +46,6 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
     }
 
     private void SetTexts() => _button_GoToMainMenu.Text = _localizationService.Bitton_MainMenu();
+
     private void Button_GoToMainMenu_Click(object sender, EventArgs e) => _controller.GoToMainMenuAfterDeath();
 }

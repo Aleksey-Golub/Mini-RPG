@@ -36,7 +36,6 @@
             // _label_Map
             // 
             this._label_Map.AutoSize = true;
-            this._label_Map.Dock = System.Windows.Forms.DockStyle.Fill;
             this._label_Map.Location = new System.Drawing.Point(0, 0);
             this._label_Map.Name = "_label_Map";
             this._label_Map.Size = new System.Drawing.Size(90, 25);

@@ -31,6 +31,7 @@
             this._label_PlayerResult = new System.Windows.Forms.Label();
             this._button_GoToMainMenu = new System.Windows.Forms.Button();
             this._panel_PlayerDeath = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _label_PlayerResult
@@ -66,11 +67,23 @@
             this._panel_PlayerDeath.Size = new System.Drawing.Size(1205, 766);
             this._panel_PlayerDeath.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(1265, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(575, 62);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "GAME OVER";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PlayerDeathScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this._panel_PlayerDeath);
             this.Controls.Add(this._button_GoToMainMenu);
             this.Controls.Add(this._label_PlayerResult);
@@ -85,5 +98,6 @@
         private Label _label_PlayerResult;
         private Button _button_GoToMainMenu;
         private Panel _panel_PlayerDeath;
+        private Label label1;
     }
 }
