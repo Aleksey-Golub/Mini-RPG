@@ -1,5 +1,5 @@
 ﻿using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Services.Localization;
 using System.Text;
 

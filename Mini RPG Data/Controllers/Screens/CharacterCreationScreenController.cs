@@ -1,7 +1,7 @@
 ﻿using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.PersistentProgress;
 using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;

@@ -1,4 +1,4 @@
-﻿using Mini_RPG_Data.Map_;
+﻿using Mini_RPG_Data.Controllers.Map_;
 using System.Text.Json.Serialization;
 
 namespace Mini_RPG_Data.Datas;

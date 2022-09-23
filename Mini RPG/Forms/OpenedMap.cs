@@ -1,5 +1,5 @@
 ﻿using Mini_RPG.Screens.CharacterCreationScreen_;
-using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG;

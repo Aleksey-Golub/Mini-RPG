@@ -1,5 +1,5 @@
 ﻿using Mini_RPG_Data.Controllers.Screens;
-using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Controllers;

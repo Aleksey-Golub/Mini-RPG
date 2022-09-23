@@ -3,7 +3,7 @@ using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Datas;
-using Mini_RPG_Data.Map_;
+using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Viewes;
 using System.Text;
 
