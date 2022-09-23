@@ -33,7 +33,6 @@ public interface ILocalizationService
     string ThirstLevelName(ThirstLevel thirstLevel);
     string Bitton_MainMenu();
     string Label_Intro();
-    object GameOver();
     string Label_Abilities();
     string Button_GoToGame();
     string Level();
