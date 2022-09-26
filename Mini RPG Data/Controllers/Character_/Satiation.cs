@@ -7,7 +7,7 @@ public class Satiation
     public readonly SatiationData _data;
     private readonly Character _character;
 
-    public Satiation(SatiationData data, Character character)
+    internal Satiation(SatiationData data, Character character)
     {
         _data = data;
         _character = character;

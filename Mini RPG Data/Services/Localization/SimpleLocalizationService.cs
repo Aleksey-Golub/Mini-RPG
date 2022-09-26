@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
 
 namespace Mini_RPG_Data.Services.Localization;
@@ -157,4 +158,98 @@ public class SimpleLocalizationService : ILocalizationService
     }
 
     public string Label_Equipment() => "Экипировка";
+    public string Cost() => "Стоимость";
+    public string DamageType() => "Тип урона";
+    public string Grip() => "Хват";
+    public string Damage() => "Урон";
+    public string ArmorType() => "Тип брони";
+    public string Armor() => "Броня";
+    public string DodgePenalty() => "Штраф уворота";
+    public string MinBlockBonus() => "МинБлокБонус";
+    public string MaxBlockBonus() => "МаксБлокБонус";
+    public string DamageTypeName(DamageType damageType) => damageType switch
+    {
+        Controllers.Inventory_.Items.DamageType.Slashing => "Рубящий",
+        Controllers.Inventory_.Items.DamageType.Piercing => "Колющий",
+        Controllers.Inventory_.Items.DamageType.Bludgeoning => "Дробящий",
+        Controllers.Inventory_.Items.DamageType.None => throw new NotImplementedException(),
+        _ => throw new NotImplementedException(),
+    };
+
+    public string GripName(Grip grip)
+    {
+        return grip switch
+        {
+            Controllers.Inventory_.Items.Grip.SingleHanded => "Одноручное",
+            Controllers.Inventory_.Items.Grip.TwoHanded => "Двуручное",
+            Controllers.Inventory_.Items.Grip.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string ArmorTypeName(ArmorType armorType)
+    {
+        return armorType switch
+        {
+            Controllers.Inventory_.Items.ArmorType.Light => "Легкая",
+            Controllers.Inventory_.Items.ArmorType.Medium => "Средняя",
+            Controllers.Inventory_.Items.ArmorType.Heavy => "Тяжелая",
+            Controllers.Inventory_.Items.ArmorType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
+    public string ItemName(string name)
+    {
+        return name switch
+        {
+            "WolfPelt" => "Волчья шкура",
+
+            "BronzeSword" => "Бронзовый меч",
+            "IronSword" => "Железный меч",
+            "SteelSword" => "Стальной меч",
+            "BronzeTwoHandedAxe" => "Бронзовый двуручный топор",
+            "IronTwoHandedAxe" => "Железный двуручный топор",
+            "SteelTwoHandedAxe" => "Стальной двуручный топор",
+
+            "ThinLeatherHelmet" => "Шлем из тонкой кожи",
+            "ThinLeatherGloves" => "Перчатки из тонкой кожи",
+            "ThinLeatherJacket" => "Куртка из тонкой кожи",
+            "ThinLeatherBoots" => "Сапоги из тонкой кожи",
+            "LeatherHelmet" => "Кожаный Шлем",
+            "LeatherGloves" => "Кожаные Перчатки",
+            "LeatherJacket" => "Кожаная Куртка",
+            "LeatherBoots" => "Кожаные Сапоги",
+            "ThickLeatherHelmet" => "Шлем из толстой кожи",
+            "ThickLeatherGloves" => "Перчатки из толстой кожи",
+            "ThickLeatherJacket" => "Куртка из толстой кожи",
+            "ThickLeatherBoots" => "Сапоги из толстой кожи",
+
+            "BronzeChainHelmet" => "Бронзовый кольчужный Шлем",
+            "BronzeChainGloves" => "Бронзовые кольчужные Перчатки",
+            "BronzeChainArmor" => "Бронзовая Кольчуга",
+            "BronzeChainLegs" => "Бронзовые кольчужные Поножи",
+            "IronChainHelmet" => "Железный кольчужный Шлем",
+            "IronChainGloves" => "Железные кольчужные Перчатки",
+            "IronChainArmor" => "Железная Кольчуга",
+            "IronChainLegs" => "Железные кольчужные Поножи",
+            "SteelChainHelmet" => "Стальной кольчужный Шлем",
+            "SteelChainGloves" => "Стальные кольчужные Перчатки",
+            "SteelChainArmor" => "Стальная Кольчуга",
+            "SteelChainLegs" => "Стальные кольчужные Поножи",
+
+            "SmallHealthPotion" => "Малое Зелье здоровья",
+            "HealthPotion" => "Зелье здоровья",
+            "BigHealthPotion" => "Большое Зелье здоровья",
+
+            "Bread" => "Хлеб",
+            "WaterFlask" => "Фляга с водой",
+
+            "SmallShield" => "Малый Щит",
+            "MediumShield" => "Средний Щит",
+            "BigShield" => "Большой Щит",
+
+            _ => "Не переведено",
+        };
+    }
 }

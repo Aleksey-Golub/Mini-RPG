@@ -1,0 +1,404 @@
+{
+	"CommonItems": [
+		{
+			"PictureName": "WolfPelt",
+			"Cost": 10,
+			"Name": "WolfPelt",
+			"Id": 0
+		}
+	],
+	"WeaponItems": [
+		{
+			"MinDamage": 5,
+			"MaxDamage": 7,
+			"DamageType": 1,
+			"Grip": 1,
+			"PictureName": "BronzeSword",
+			"Cost": 50,
+			"Name": "BronzeSword",
+			"Id": 0
+		},
+		{
+			"MinDamage": 8,
+			"MaxDamage": 10,
+			"DamageType": 1,
+			"Grip": 1,
+			"PictureName": "IronSword",
+			"Cost": 150,
+			"Name": "IronSword",
+			"Id": 1
+		},
+		{
+			"MinDamage": 11,
+			"MaxDamage": 13,
+			"DamageType": 1,
+			"Grip": 1,
+			"PictureName": "SteelSword",
+			"Cost": 250,
+			"Name": "SteelSword",
+			"Id": 2
+		},
+		{
+			"MinDamage": 6,
+			"MaxDamage": 10,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "BronzeTwoHandedAxe",
+			"Cost": 150,
+			"Name": "BronzeTwoHandedAxe",
+			"Id": 3
+		},
+		{
+			"MinDamage": 10,
+			"MaxDamage": 14,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "IronTwoHandedAxe",
+			"Cost": 250,
+			"Name": "IronTwoHandedAxe",
+			"Id": 4
+		},
+		{
+			"MinDamage": 14,
+			"MaxDamage": 18,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "SteelTwoHandedAxe",
+			"Cost": 350,
+			"Name": "SteelTwoHandedAxe",
+			"Id": 5
+		}
+	],
+	"ArmorItems": [
+		{
+			"ArmorValue": 1,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 1,
+			"PictureName": "ThinLeatherHelmet",
+			"Cost": 100,
+			"Name": "ThinLeatherHelmet",
+			"Id": 0
+		},
+		{
+			"ArmorValue": 1,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 2,
+			"PictureName": "ThinLeatherGloves",
+			"Cost": 50,
+			"Name": "ThinLeatherGloves",
+			"Id": 1
+		},
+		{
+			"ArmorValue": 1,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 3,
+			"PictureName": "ThinLeatherJacket",
+			"Cost": 100,
+			"Name": "ThinLeatherJacket",
+			"Id": 2
+		},
+		{
+			"ArmorValue": 1,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 4,
+			"PictureName": "ThinLeatherBoots",
+			"Cost": 50,
+			"Name": "ThinLeatherBoots",
+			"Id": 3
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 1,
+			"PictureName": "LeatherHelmet",
+			"Cost": 200,
+			"Name": "LeatherHelmet",
+			"Id": 4
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 2,
+			"PictureName": "LeatherGloves",
+			"Cost": 150,
+			"Name": "LeatherGloves",
+			"Id": 5
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 3,
+			"PictureName": "LeatherJacket",
+			"Cost": 200,
+			"Name": "LeatherJacket",
+			"Id": 6
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 4,
+			"PictureName": "LeatherBoots",
+			"Cost": 150,
+			"Name": "LeatherBoots",
+			"Id": 7
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 1,
+			"PictureName": "ThickLeatherHelmet",
+			"Cost": 300,
+			"Name": "ThickLeatherHelmet",
+			"Id": 8
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 2,
+			"PictureName": "ThickLeatherGloves",
+			"Cost": 250,
+			"Name": "ThickLeatherGloves",
+			"Id": 9
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 3,
+			"PictureName": "ThickLeatherJacket",
+			"Cost": 300,
+			"Name": "ThickLeatherJacket",
+			"Id": 10
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": 0,
+			"ArmorType": 1,
+			"EquipmentSlot": 4,
+			"PictureName": "ThickLeatherBoots",
+			"Cost": 250,
+			"Name": "ThickLeatherBoots",
+			"Id": 11
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 1,
+			"PictureName": "BronzeChainHelmet",
+			"Cost": 150,
+			"Name": "BronzeChainHelmet",
+			"Id": 12
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 2,
+			"PictureName": "BronzeChainGloves",
+			"Cost": 100,
+			"Name": "BronzeChainGloves",
+			"Id": 13
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 3,
+			"PictureName": "BronzeChainArmor",
+			"Cost": 150,
+			"Name": "BronzeChainArmor",
+			"Id": 14
+		},
+		{
+			"ArmorValue": 2,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 4,
+			"PictureName": "BronzeChainLegs",
+			"Cost": 100,
+			"Name": "BronzeChainLegs",
+			"Id": 15
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 1,
+			"PictureName": "IronChainHelmet",
+			"Cost": 250,
+			"Name": "IronChainHelmet",
+			"Id": 16
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 2,
+			"PictureName": "IronChainGloves",
+			"Cost": 200,
+			"Name": "IronChainGloves",
+			"Id": 17
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 3,
+			"PictureName": "IronChainArmor",
+			"Cost": 250,
+			"Name": "IronChainArmor",
+			"Id": 18
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 4,
+			"PictureName": "IronChainLegs",
+			"Cost": 200,
+			"Name": "IronChainLegs",
+			"Id": 19
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 1,
+			"PictureName": "SteelChainHelmet",
+			"Cost": 350,
+			"Name": "SteelChainHelmet",
+			"Id": 20
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 2,
+			"PictureName": "SteelChainGloves",
+			"Cost": 300,
+			"Name": "SteelChainGloves",
+			"Id": 21
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 3,
+			"PictureName": "SteelChainArmor",
+			"Cost": 350,
+			"Name": "SteelChainArmor",
+			"Id": 22
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -1,
+			"ArmorType": 2,
+			"EquipmentSlot": 4,
+			"PictureName": "SteelChainLegs",
+			"Cost": 300,
+			"Name": "SteelChainLegs",
+			"Id": 23
+		}
+	],
+	"PotionItems": [
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 10
+				}
+			],
+			"PictureName": "SmallHealthPotion",
+			"Cost": 100,
+			"Name": "SmallHealthPotion",
+			"Id": 0
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 20
+				}
+			],
+			"PictureName": "HealthPotion",
+			"Cost": 200,
+			"Name": "HealthPotion",
+			"Id": 1
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 30
+				}
+			],
+			"PictureName": "BigHealthPotion",
+			"Cost": 300,
+			"Name": "BigHealthPotion",
+			"Id": 2
+		}
+	],
+	"FoodItems": [
+		{
+			"Effects": [
+				{
+					"EffectType": 2,
+					"Value": 100
+				}
+			],
+			"PictureName": "Bread",
+			"Cost": 10,
+			"Name": "Bread",
+			"Id": 0
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 3,
+					"Value": 100
+				}
+			],
+			"PictureName": "WaterFlask",
+			"Cost": 10,
+			"Name": "WaterFlask",
+			"Id": 1
+		}
+	],
+	"ShieldItems": [
+		{
+			"MinBlockBonus": 1,
+			"MaxBlockBonus": 2,
+			"PictureName": "SmallShield",
+			"Cost": 100,
+			"Name": "SmallShield",
+			"Id": 0
+		},
+		{
+			"MinBlockBonus": 2,
+			"MaxBlockBonus": 3,
+			"PictureName": "MediumShield",
+			"Cost": 200,
+			"Name": "MediumShield",
+			"Id": 1
+		},
+		{
+			"MinBlockBonus": 2,
+			"MaxBlockBonus": 5,
+			"PictureName": "BigShield",
+			"Cost": 300,
+			"Name": "BigShield",
+			"Id": 2
+		}
+	]
+}

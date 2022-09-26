@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this._flowLayoutPanel_Inventory = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this._panel_CharacterDoll = new System.Windows.Forms.Panel();
+            this._button_OffHandEquippedItem = new System.Windows.Forms.Button();
+            this._button_MainHandEquippedItem = new System.Windows.Forms.Button();
             this._button_LegsEquippedItem = new System.Windows.Forms.Button();
             this._button_BodyEquippedItem = new System.Windows.Forms.Button();
             this._button_HandsEquippedItem = new System.Windows.Forms.Button();
@@ -48,18 +49,10 @@
             this._flowLayoutPanel_Inventory.Size = new System.Drawing.Size(320, 665);
             this._flowLayoutPanel_Inventory.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(468, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Item TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.AddItemButton1_Click_TEST);
-            // 
             // _panel_CharacterDoll
             // 
+            this._panel_CharacterDoll.Controls.Add(this._button_OffHandEquippedItem);
+            this._panel_CharacterDoll.Controls.Add(this._button_MainHandEquippedItem);
             this._panel_CharacterDoll.Controls.Add(this._button_LegsEquippedItem);
             this._panel_CharacterDoll.Controls.Add(this._button_BodyEquippedItem);
             this._panel_CharacterDoll.Controls.Add(this._button_HandsEquippedItem);
@@ -68,6 +61,22 @@
             this._panel_CharacterDoll.Name = "_panel_CharacterDoll";
             this._panel_CharacterDoll.Size = new System.Drawing.Size(473, 608);
             this._panel_CharacterDoll.TabIndex = 2;
+            // 
+            // _button_OffHandEquippedItem
+            // 
+            this._button_OffHandEquippedItem.Location = new System.Drawing.Point(331, 200);
+            this._button_OffHandEquippedItem.Name = "_button_OffHandEquippedItem";
+            this._button_OffHandEquippedItem.Size = new System.Drawing.Size(100, 100);
+            this._button_OffHandEquippedItem.TabIndex = 5;
+            this._button_OffHandEquippedItem.UseVisualStyleBackColor = true;
+            // 
+            // _button_MainHandEquippedItem
+            // 
+            this._button_MainHandEquippedItem.Location = new System.Drawing.Point(36, 170);
+            this._button_MainHandEquippedItem.Name = "_button_MainHandEquippedItem";
+            this._button_MainHandEquippedItem.Size = new System.Drawing.Size(100, 100);
+            this._button_MainHandEquippedItem.TabIndex = 4;
+            this._button_MainHandEquippedItem.UseVisualStyleBackColor = true;
             // 
             // _button_LegsEquippedItem
             // 
@@ -79,7 +88,7 @@
             // 
             // _button_BodyEquippedItem
             // 
-            this._button_BodyEquippedItem.Location = new System.Drawing.Point(220, 262);
+            this._button_BodyEquippedItem.Location = new System.Drawing.Point(190, 266);
             this._button_BodyEquippedItem.Name = "_button_BodyEquippedItem";
             this._button_BodyEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_BodyEquippedItem.TabIndex = 2;
@@ -87,7 +96,7 @@
             // 
             // _button_HandsEquippedItem
             // 
-            this._button_HandsEquippedItem.Location = new System.Drawing.Point(59, 210);
+            this._button_HandsEquippedItem.Location = new System.Drawing.Point(47, 320);
             this._button_HandsEquippedItem.Name = "_button_HandsEquippedItem";
             this._button_HandsEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_HandsEquippedItem.TabIndex = 1;
@@ -120,7 +129,6 @@
             this.ControlBox = false;
             this.Controls.Add(this._button_Close);
             this.Controls.Add(this._panel_CharacterDoll);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this._flowLayoutPanel_Inventory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Inventory";
@@ -133,12 +141,13 @@
         #endregion
 
         private FlowLayoutPanel _flowLayoutPanel_Inventory;
-        private Button button1;
         private Panel _panel_CharacterDoll;
         private Button _button_LegsEquippedItem;
         private Button _button_BodyEquippedItem;
         private Button _button_HandsEquippedItem;
         private Button _button_HeadEquippedItem;
         private Button _button_Close;
+        private Button _button_OffHandEquippedItem;
+        private Button _button_MainHandEquippedItem;
     }
 }

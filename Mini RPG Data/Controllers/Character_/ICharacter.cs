@@ -1,5 +1,6 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
+using Mini_RPG_Data.Controllers.Inventory_;
 
 namespace Mini_RPG_Data.Controllers.Character_
 {
@@ -12,6 +13,7 @@ namespace Mini_RPG_Data.Controllers.Character_
         Level Level { get; }
         Health Health { get; }
         Satiation Satiation { get; }
+        Inventory Inventory { get; }
 
         event Action<Character>? Changed;
         event Action<Character>? LevelChanged;

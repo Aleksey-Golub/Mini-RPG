@@ -1,7 +1,7 @@
 ﻿[*.cs]
 
 # IDE0072: Добавить отсутствующие варианты
-dotnet_diagnostic.IDE0072.severity = warning
+dotnet_diagnostic.IDE0072.severity = error
 
 # CS0659: Тип переопределяет Object.Equals(object o), но не переопределяет Object.GetHashCode()
 dotnet_diagnostic.CS0659.severity = suggestion

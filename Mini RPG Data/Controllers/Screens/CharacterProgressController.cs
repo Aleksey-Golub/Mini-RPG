@@ -8,9 +8,9 @@ public class CharacterProgressController
     private readonly Character _character;
     private readonly Dictionary<AbilityType, int> _abilitiesStartValues;
 
-    public CharacterProgressController(Character character)
+    public CharacterProgressController(ICharacter character)
     {
-        _character = character;
+        _character = character as Character;
 
         _abilitiesStartValues = new Dictionary<AbilityType, int>()
         {

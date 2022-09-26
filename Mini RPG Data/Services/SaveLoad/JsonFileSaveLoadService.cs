@@ -28,7 +28,6 @@ public class JsonFileSaveLoadService : ISaveLoadService
             string name = _progressService.Progress.PlayerData.CharacterData.Name;
             string fileName = $"\\save_{name}.json";
 
-            //File.WriteAllText(FILEPATH_KEY, jsonString);
             bool exists = Directory.Exists(_savesDirectory);
             if (!exists)
                 Directory.CreateDirectory(_savesDirectory);
@@ -44,7 +43,6 @@ public class JsonFileSaveLoadService : ISaveLoadService
     {
         try
         {
-            //string text = File.ReadAllText(FILEPATH_KEY);
             string text = File.ReadAllText(fullFilePath);
             var progress = JsonSerializer.Deserialize<PlayerProgress>(text, _options);
             progress?.PrepareForDeserialize();

@@ -1,5 +1,6 @@
 ﻿using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Datas.Character_.Abilities_;
+using Mini_RPG_Data.Datas.Inventory_;
 
 namespace Mini_RPG_Data.Character_;
 
@@ -13,6 +14,7 @@ public class CharacterData
     public HealthData HealthData;
     public SatiationData SatiationData;
     public AbilitiesDatas AbilitiesDatas;
+    public InventoryData InventoryData;
 
     public CharacterData()
     {
@@ -20,5 +22,6 @@ public class CharacterData
         HealthData = new HealthData();
         SatiationData = new SatiationData();
         AbilitiesDatas = Abilities.GetFor(Race);
+        InventoryData = new InventoryData();
     }
 }

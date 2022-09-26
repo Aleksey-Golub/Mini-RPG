@@ -1,5 +1,8 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
+using Mini_RPG_Data.Controllers.Inventory_;
+using Mini_RPG_Data.Services;
+using Mini_RPG_Data.Services.Items;
 
 namespace Mini_RPG_Data.Controllers.Character_;
 
@@ -19,6 +22,7 @@ public class Character : ICharacter
         Health = new Health(data.HealthData, this);
         Health.Changed += OnHealthChanged;
         Satiation = new Satiation(data.SatiationData, this);
+        Inventory = new Inventory(AllServices.Container.Single<IItemFactory>(), data.InventoryData);
     }
 
     internal void Init()
@@ -70,6 +74,8 @@ public class Character : ICharacter
     public Level Level { get; }
     public Health Health { get; }
     public Satiation Satiation { get; }
+    public Inventory Inventory { get; }
+
     public int FieldOfView => Settings.CalculateFieldOfView(this);
 
     public event Action<Character>? Changed;

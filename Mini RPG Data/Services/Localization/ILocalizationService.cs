@@ -1,11 +1,12 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
-public interface ILocalizationService
+public interface ILocalizationService : IService
 {
     event Action? LanguageChanged;
 
@@ -16,6 +17,7 @@ public interface ILocalizationService
     string Label_AbilityPoints();
     string Label_Charisma();
     string Label_Constitution();
+    string ItemName(string name);
     string Label_Dexterity();
     string Label_Perception();
     string Label_Race();
@@ -23,6 +25,7 @@ public interface ILocalizationService
     string ToolTip_Race();
     string ToolTip_AbilityPoints();
     string ToolTip_Charisma();
+    string Cost();
     string ToolTip_Strength();
     string ToolTip_Dexterity();
     string ToolTip_Constitution();
@@ -52,7 +55,12 @@ public interface ILocalizationService
     string Enemy();
     string Button_Close();
     string LevelBoarder();
+    string DamageType();
     string PlayerMoveSuccessfully(Direction direction);
+    string DamageTypeName(DamageType damageType);
+    string GripName(Grip grip);
+    string Grip();
+    string Damage();
     string PlayerMoveUnsuccessfully(Direction direction);
     string Label_Equipment();
     string PlayerRest();
@@ -66,4 +74,10 @@ public interface ILocalizationService
     string Message_YouFindHiddenLoot();
     string Message_FindTrapSuccess(TrapType trapType);
     string Message_FindTrapFail(TrapType trapType);
+    string ArmorType();
+    string Armor();
+    string ArmorTypeName(ArmorType armorType);
+    string DodgePenalty();
+    string MinBlockBonus();
+    string MaxBlockBonus();
 }

@@ -234,11 +234,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void Button_Inventory_Click(object sender, EventArgs e)
     {
-        using var inventoryForm = new Inventory();
+        using var inventoryForm = new Inventory(_localizationService, _player.Character);
         if (inventoryForm.ShowDialog() == DialogResult.OK)
-        {
-
-        }
+        {}
     }
 
     private void Button_Trader_Click(object sender, EventArgs e)

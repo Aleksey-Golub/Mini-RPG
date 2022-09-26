@@ -74,6 +74,12 @@ public class CharacterCreationScreenController
         progress.PlayerData.WalletData.Money = Settings.START_MONEY;
         progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
         progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
+
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Potion, 0));  // small health potion
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 0));    // bread
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 1));    // water flask
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Weapon, 0));  // bronze sword
+
         return progress;
     }
 }
