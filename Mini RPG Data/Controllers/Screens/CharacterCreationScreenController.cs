@@ -79,6 +79,7 @@ public class CharacterCreationScreenController
         progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 0));    // bread
         progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 1));    // water flask
         progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Weapon, 0));  // bronze sword
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Armor, 2));   // Thin Leather Jacket
 
         return progress;
     }

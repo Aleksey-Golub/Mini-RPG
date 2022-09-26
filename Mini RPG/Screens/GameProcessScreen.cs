@@ -11,7 +11,6 @@ namespace Mini_RPG.Screens;
 public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 {
     private readonly ILocalizationService _localizationService;
-    private readonly ImageManager _imageManager;
     private readonly MapView _mapView;
     private readonly HealthView _healthView;
     private readonly SatiationView _satiationView;
@@ -28,7 +27,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _localizationService.LanguageChanged += SetTexts;
         SetTexts();
 
-        _imageManager = new ImageManager();
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
@@ -51,7 +49,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _log = new Log(_flowLayoutPanel_GameLog, _button_SwitchLogSize);
         _log.FillLog();
         _mapView.Init(_player.Character.Name);
-        _button_CharacterProgress.BackgroundImage = _imageManager.GetImageFromFile(_player.Character.AvatarPath);
+        _button_CharacterProgress.BackgroundImage = ImageManager.GetImageFromFile(_player.Character.AvatarPath);
     }
 
     public void DeInit()
@@ -73,7 +71,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowTownEntrance()
     {
-        _panel_Location.BackgroundImage = _imageManager.GetTownEntrance();
+        _panel_Location.BackgroundImage = ImageManager.GetTownEntrance();
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
@@ -87,7 +85,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowTown()
     {
-        _panel_Location.BackgroundImage = _imageManager.GetTown();
+        _panel_Location.BackgroundImage = ImageManager.GetTown();
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
@@ -101,7 +99,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowLocation(IMapCell cell)
     {
-        _panel_Location.BackgroundImage = _imageManager.GetLocation(cell.ImageIndex);
+        _panel_Location.BackgroundImage = ImageManager.GetLocation(cell.ImageIndex);
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();

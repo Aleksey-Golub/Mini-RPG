@@ -103,6 +103,16 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CharacterSilhouette {
+            get {
+                object obj = ResourceManager.GetObject("CharacterSilhouette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Forest_1 {
             get {
                 object obj = ResourceManager.GetObject("Forest_1", resourceCulture);

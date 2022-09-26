@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._flowLayoutPanel_Inventory = new System.Windows.Forms.FlowLayoutPanel();
             this._panel_CharacterDoll = new System.Windows.Forms.Panel();
             this._button_OffHandEquippedItem = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this._button_HandsEquippedItem = new System.Windows.Forms.Button();
             this._button_HeadEquippedItem = new System.Windows.Forms.Button();
             this._button_Close = new System.Windows.Forms.Button();
+            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this._panel_CharacterDoll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,11 +48,13 @@
             this._flowLayoutPanel_Inventory.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this._flowLayoutPanel_Inventory.Location = new System.Drawing.Point(39, 58);
             this._flowLayoutPanel_Inventory.Name = "_flowLayoutPanel_Inventory";
-            this._flowLayoutPanel_Inventory.Size = new System.Drawing.Size(320, 665);
+            this._flowLayoutPanel_Inventory.Size = new System.Drawing.Size(417, 646);
             this._flowLayoutPanel_Inventory.TabIndex = 0;
             // 
             // _panel_CharacterDoll
             // 
+            this._panel_CharacterDoll.BackgroundImage = global::Mini_RPG.Properties.Resources.CharacterSilhouette;
+            this._panel_CharacterDoll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._panel_CharacterDoll.Controls.Add(this._button_OffHandEquippedItem);
             this._panel_CharacterDoll.Controls.Add(this._button_MainHandEquippedItem);
             this._panel_CharacterDoll.Controls.Add(this._button_LegsEquippedItem);
@@ -59,12 +63,12 @@
             this._panel_CharacterDoll.Controls.Add(this._button_HeadEquippedItem);
             this._panel_CharacterDoll.Location = new System.Drawing.Point(835, 58);
             this._panel_CharacterDoll.Name = "_panel_CharacterDoll";
-            this._panel_CharacterDoll.Size = new System.Drawing.Size(473, 608);
+            this._panel_CharacterDoll.Size = new System.Drawing.Size(470, 610);
             this._panel_CharacterDoll.TabIndex = 2;
             // 
             // _button_OffHandEquippedItem
             // 
-            this._button_OffHandEquippedItem.Location = new System.Drawing.Point(331, 200);
+            this._button_OffHandEquippedItem.Location = new System.Drawing.Point(337, 170);
             this._button_OffHandEquippedItem.Name = "_button_OffHandEquippedItem";
             this._button_OffHandEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_OffHandEquippedItem.TabIndex = 5;
@@ -80,7 +84,7 @@
             // 
             // _button_LegsEquippedItem
             // 
-            this._button_LegsEquippedItem.Location = new System.Drawing.Point(175, 444);
+            this._button_LegsEquippedItem.Location = new System.Drawing.Point(175, 460);
             this._button_LegsEquippedItem.Name = "_button_LegsEquippedItem";
             this._button_LegsEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_LegsEquippedItem.TabIndex = 3;
@@ -88,7 +92,7 @@
             // 
             // _button_BodyEquippedItem
             // 
-            this._button_BodyEquippedItem.Location = new System.Drawing.Point(190, 266);
+            this._button_BodyEquippedItem.Location = new System.Drawing.Point(175, 170);
             this._button_BodyEquippedItem.Name = "_button_BodyEquippedItem";
             this._button_BodyEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_BodyEquippedItem.TabIndex = 2;
@@ -96,7 +100,7 @@
             // 
             // _button_HandsEquippedItem
             // 
-            this._button_HandsEquippedItem.Location = new System.Drawing.Point(47, 320);
+            this._button_HandsEquippedItem.Location = new System.Drawing.Point(289, 298);
             this._button_HandsEquippedItem.Name = "_button_HandsEquippedItem";
             this._button_HandsEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_HandsEquippedItem.TabIndex = 1;
@@ -149,5 +153,6 @@
         private Button _button_Close;
         private Button _button_OffHandEquippedItem;
         private Button _button_MainHandEquippedItem;
+        private ToolTip _toolTip;
     }
 }

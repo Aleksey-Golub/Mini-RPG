@@ -1,12 +1,14 @@
-﻿using Mini_RPG_Data;
+﻿namespace Mini_RPG;
 
-namespace Mini_RPG;
-
-internal class ImageManager
+internal static class ImageManager
 {
-    private readonly List<Image> _locations;
+    private const string ITEMS_PICTURE_DIRECTIRY = "Items";
+    private const string ITEMS_PICTURE_SUFFIX = ".jpg";
+    private static readonly List<Image> _locations;
 
-    public ImageManager()
+    private static readonly Dictionary<string, Image> _images = new Dictionary<string, Image>();
+
+    static ImageManager()
     {
         _locations = new List<Image>();
         _locations.Add(Properties.Resources.Forest_1);
@@ -25,11 +27,21 @@ internal class ImageManager
         _locations.Add(Properties.Resources.Forest_14);
     }
 
-    internal Image GetTownEntrance() => Properties.Resources.Town_Entrance;
+    internal static Image GetTownEntrance() => Properties.Resources.Town_Entrance;
 
-    internal Image GetTown() => Properties.Resources.Town;
+    internal static Image GetTown() => Properties.Resources.Town;
 
-    internal Image GetImageFromFile(string imagePath) => Image.FromFile(imagePath);
+    internal static Image GetImageFromFile(string imagePath) => Image.FromFile(imagePath);
 
-    internal Image GetLocation(int imageIndex) => _locations[imageIndex];
+    internal static Image GetLocation(int imageIndex) => _locations[imageIndex];
+
+    internal static Image GetItem(string pictureName)
+    {
+        if (_images.ContainsKey(pictureName))
+            return _images[pictureName];
+
+        Image image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{pictureName}{ITEMS_PICTURE_SUFFIX}");
+        _images[pictureName] = image;
+        return image;
+    }
 }

@@ -29,6 +29,7 @@ public partial class Inventory : Form
     private void ShowInventory()
     {
         _flowLayoutPanel_Inventory.Controls.Clear();
+        _toolTip.RemoveAll();
 
         foreach (var item in _character.Inventory.Items)
             ShowItem(item);
@@ -37,10 +38,16 @@ public partial class Inventory : Form
     private void ShowItem(ItemBase item)
     {
         var btn = new Button();
-        btn.Size = new Size(100, 100);
-        btn.Text = item.Description;
+        btn.Size = new Size(200, 200);
+        btn.Font = new Font(btn.Font.FontFamily, 8f);
+        btn.TextAlign = ContentAlignment.BottomCenter;
+        btn.BackgroundImage = ImageManager.GetItem(item.PictureName);
+        btn.BackgroundImageLayout = ImageLayout.Zoom;
+        btn.Text = item.Name;
 
         _flowLayoutPanel_Inventory.Controls.Add(btn);
+
+        _toolTip.SetToolTip(btn, item.Description);
     }
 
     private void SetTexts() => _button_Close.Text = _localizationService.Button_Close();
