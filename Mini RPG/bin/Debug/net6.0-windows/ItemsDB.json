@@ -44,7 +44,7 @@
 			"DamageType": 3,
 			"Grip": 2,
 			"PictureName": "BronzeTwoHandedAxe",
-			"Cost": 150,
+			"Cost": 250,
 			"Name": "BronzeTwoHandedAxe",
 			"Id": 3
 		},
@@ -54,7 +54,7 @@
 			"DamageType": 3,
 			"Grip": 2,
 			"PictureName": "IronTwoHandedAxe",
-			"Cost": 250,
+			"Cost": 350,
 			"Name": "IronTwoHandedAxe",
 			"Id": 4
 		},
@@ -64,9 +64,129 @@
 			"DamageType": 3,
 			"Grip": 2,
 			"PictureName": "SteelTwoHandedAxe",
-			"Cost": 350,
+			"Cost": 450,
 			"Name": "SteelTwoHandedAxe",
 			"Id": 5
+		},
+		{
+			"MinDamage": 7,
+			"MaxDamage": 9,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "BronzeHummer",
+			"Cost": 250,
+			"Name": "BronzeHummer",
+			"Id": 6
+		},
+		{
+			"MinDamage": 11,
+			"MaxDamage": 13,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "IronHummer",
+			"Cost": 350,
+			"Name": "IronHummer",
+			"Id": 7
+		},
+		{
+			"MinDamage": 15,
+			"MaxDamage": 17,
+			"DamageType": 3,
+			"Grip": 2,
+			"PictureName": "SteelHummer",
+			"Cost": 450,
+			"Name": "SteelHummer",
+			"Id": 8
+		},
+		{
+			"MinDamage": 3,
+			"MaxDamage": 10,
+			"DamageType": 2,
+			"Grip": 2,
+			"PictureName": "ShortBow",
+			"Cost": 150,
+			"Name": "ShortBow",
+			"Id": 9
+		},
+		{
+			"MinDamage": 6,
+			"MaxDamage": 13,
+			"DamageType": 2,
+			"Grip": 2,
+			"PictureName": "LongBow",
+			"Cost": 250,
+			"Name": "LongBow",
+			"Id": 10
+		},
+		{
+			"MinDamage": 9,
+			"MaxDamage": 16,
+			"DamageType": 2,
+			"Grip": 2,
+			"PictureName": "CompositeBow",
+			"Cost": 350,
+			"Name": "CompositeBow",
+			"Id": 11
+		},
+		{
+			"MinDamage": 4,
+			"MaxDamage": 8,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "BronzeAxe",
+			"Cost": 50,
+			"Name": "BronzeAxe",
+			"Id": 12
+		},
+		{
+			"MinDamage": 7,
+			"MaxDamage": 11,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "IronAxe",
+			"Cost": 150,
+			"Name": "IronAxe",
+			"Id": 13
+		},
+		{
+			"MinDamage": 10,
+			"MaxDamage": 14,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "SteelAxe",
+			"Cost": 250,
+			"Name": "SteelAxe",
+			"Id": 14
+		},
+		{
+			"MinDamage": 5,
+			"MaxDamage": 7,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "BronzeMace",
+			"Cost": 50,
+			"Name": "BronzeMace",
+			"Id": 15
+		},
+		{
+			"MinDamage": 8,
+			"MaxDamage": 10,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "IronMace",
+			"Cost": 150,
+			"Name": "IronMace",
+			"Id": 16
+		},
+		{
+			"MinDamage": 11,
+			"MaxDamage": 13,
+			"DamageType": 3,
+			"Grip": 1,
+			"PictureName": "SteelMace",
+			"Cost": 250,
+			"Name": "SteelMace",
+			"Id": 17
 		}
 	],
 	"ArmorItems": [

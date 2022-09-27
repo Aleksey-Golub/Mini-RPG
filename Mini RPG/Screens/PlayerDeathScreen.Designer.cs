@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerDeathScreen));
             this._label_PlayerResult = new System.Windows.Forms.Label();
             this._button_GoToMainMenu = new System.Windows.Forms.Button();
             this._panel_PlayerDeath = new System.Windows.Forms.Panel();
@@ -37,12 +38,12 @@
             // _label_PlayerResult
             // 
             this._label_PlayerResult.AutoEllipsis = true;
-            this._label_PlayerResult.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._label_PlayerResult.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._label_PlayerResult.Location = new System.Drawing.Point(1265, 115);
             this._label_PlayerResult.Name = "_label_PlayerResult";
             this._label_PlayerResult.Size = new System.Drawing.Size(575, 706);
             this._label_PlayerResult.TabIndex = 5;
-            this._label_PlayerResult.Text = "% результаты игрока.%\r\n\r\nуровень\r\nстаты\r\nпромдеты";
+            this._label_PlayerResult.Text = resources.GetString("_label_PlayerResult.Text");
             this._label_PlayerResult.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _button_GoToMainMenu

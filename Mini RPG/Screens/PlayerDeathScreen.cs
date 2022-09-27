@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Controllers.Screens;
+﻿using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 using System.Text;
@@ -23,7 +24,7 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
     public void SetActiveState(bool newState) => Visible = newState;
     public void SetController(GameProcessScreenController controller) => _controller = controller;
     public void DeInit() => _controller = null;
-    public void ShowPlayerResult(Mini_RPG_Data.Controllers.Player player)
+    public void ShowPlayerResult(IPlayer player)
     {
         var character = player.Character;
         StringBuilder playerRes = new StringBuilder();
@@ -39,8 +40,10 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
             $"{_localizationService.Label_Perception()}: {character.AllAbilities.Perception.Value}\n" +
             $"{_localizationService.Label_Charisma()}: {character.AllAbilities.Charisma.Value}\n\n");
         playerRes.Append($"{_localizationService.Label_Equipment()}\n");
-        // 1
-        // 2
+        foreach (var item in character.Inventory.EquipmentSlots.Values)
+            if (item != null)
+                playerRes.Append($"{item.LocalizedName}\n");
+        playerRes.Append($"\n{_localizationService.Message_Coins()}: {player.Wallet.Money}");
 
         _label_PlayerResult.Text = playerRes.ToString();
     }

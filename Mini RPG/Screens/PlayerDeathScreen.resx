@@ -57,4 +57,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="_label_PlayerResult.Text" xml:space="preserve">
+    <value>123
+
+Уровень:1
+0 / 50
+
+Характеристики
+Сила:7
+Ловкость: 7
+Выносливость: 6
+Восприятие:6
+Харизма:9
+
+Экипировка
+Куртка из тонкой кожи
+Бронзовый меч
+Куртка из тонкой кожи
+Бронзовый меч
+Куртка из тонкой кожи
+Бронзовый меч
+
+52</value>
+  </data>
 </root>
