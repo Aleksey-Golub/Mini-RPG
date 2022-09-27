@@ -9,10 +9,12 @@ namespace Mini_RPG_Data.Datas
         {
             MapData = mapData;
             PlayerData = new PlayerData();
+            TownTraderData = new TownTraderData();
         }
 
         public PlayerData PlayerData { get; set; }
         public MapData MapData { get; set; }
+        public TownTraderData TownTraderData { get; set; }
 
         internal void PrepareForSerialize()
         {

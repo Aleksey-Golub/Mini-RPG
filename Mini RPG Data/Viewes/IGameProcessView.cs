@@ -8,7 +8,7 @@ public interface IGameProcessView : IView
 {
     void Init(IPlayer player);
     void DeInit();
-    void SetGameProcessController(GameProcessController controller);
+    void SetGameProcessController(GameProcessScreenController controller);
     void SetActiveState(bool newState);
     void ShowMiniMap(IMap map, int fieldOfView);
     void ShowTownEntrance();

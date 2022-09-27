@@ -1,34 +1,100 @@
-﻿namespace Mini_RPG;
+﻿using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
+using Mini_RPG_Data.Controllers.Screens;
+using Mini_RPG_Data.Services.Localization;
+using Mini_RPG_Data.Viewes;
 
-public partial class Trader : Form
+namespace Mini_RPG;
+
+public partial class Trader : Form, ITradeView
 {
-    public Trader()
+    private readonly ILocalizationService _localizationService;
+    private readonly IPlayer _player;
+    private readonly ICharacter _character;
+
+    private readonly TraderScreenController _controller;
+
+    public Trader(ILocalizationService localizationService, IPlayer player)
     {
         InitializeComponent();
 
-        FillInventory();
-        FillShop();
+        _localizationService = localizationService;
+        _player = player;
+        _character = _player.Character;
+        _controller = new TraderScreenController(_player, this);
+
+        SetTexts();
+
+        ShowInventory();
+        ShowTraderInventory();
     }
 
-    int counter = 0;
-    private void button1_ClickTEST(object sender, EventArgs e)
+    public void ShowInventory()
     {
-        string itemDescription = $"item description {counter++}";
+        _statusLabel_CharacterMoney.Text = _player.Wallet.Money.ToString();
 
-        var btn = new Button();
+        _flowLayoutPanel_Inventory.Controls.Clear();
+        _toolTip_Inventory.RemoveAll();
+
+        foreach (var item in _character.Inventory.Items)
+        {
+            ItemButton btn = CreateItemButton(item);
+            btn.Click += OnInventoryButtonClicked;
+            _flowLayoutPanel_Inventory.Controls.Add(btn);
+            _toolTip_Inventory.SetToolTip(btn, item.Description);
+        }
+    }
+
+    public void ShowTraderInventory()
+    {
+        _statusLabel_TraderMoney.Text = _controller.TraderWallet.Money.ToString();
+
+        _flowLayoutPanel_Trader.Controls.Clear();
+        _toolTip_Trader.RemoveAll();
+
+        foreach (var item in _controller.TraderInventory.Items)
+        {
+            ItemButton btn = CreateItemButton(item);
+            btn.Click += OnTraderInventoryButtonClicked;
+            _flowLayoutPanel_Trader.Controls.Add(btn);
+            _toolTip_Trader.SetToolTip(btn, item.Description);
+        }
+    }
+
+    private ItemButton CreateItemButton(ItemBase item)
+    {
+        var btn = new ItemButton(item);
         btn.Size = new Size(100, 100);
-        btn.Text = itemDescription;
+        btn.Font = new Font(btn.Font.FontFamily, 8f);
+        btn.TextAlign = ContentAlignment.BottomCenter;
+        btn.BackgroundImage = ImageManager.GetItemImage(item);
+        btn.BackgroundImageLayout = ImageLayout.Zoom;
+        btn.Text = item.LocalizedName;
 
-        _flowLayoutPanel_Inventory.Controls.Add(btn);
+        return btn;
     }
 
-    private void FillInventory()
+    private void OnInventoryButtonClicked(object? sender, EventArgs e)
     {
-        // создать кнопки под предметы инвентаря
+        var inventoryButton = (sender as ItemButton);
+        inventoryButton.Click -= OnInventoryButtonClicked;
+
+        _controller.TrySell(inventoryButton.Item);
+    }
+    
+    private void OnTraderInventoryButtonClicked(object? sender, EventArgs e)
+    {
+        var inventoryButton = (sender as ItemButton);
+        inventoryButton.Click -= OnTraderInventoryButtonClicked;
+
+        _controller.TryBuy(inventoryButton.Item);
     }
 
-    private void FillShop()
+    private void SetTexts()
     {
-        // создать кнопки под предметы магазина
+        _button_Close.Text = _localizationService.Button_Close();
+        _label_Inventory.Text = _character.Name;
+        _label_Trader.Text = _localizationService.Shop();
     }
 }

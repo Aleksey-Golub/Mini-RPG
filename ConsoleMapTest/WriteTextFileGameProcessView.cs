@@ -9,7 +9,7 @@ using System.Text;
 
 internal class WriteTextFileGameProcessView : IGameProcessView
 {
-    private GameProcessController _gameProcessController = null!;
+    private GameProcessScreenController _gameProcessController = null!;
 
     private bool _isActive;
 
@@ -25,7 +25,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
 
     public void SetActiveState(bool newState) => _isActive = newState;
 
-    public void SetGameProcessController(GameProcessController gameProcessController)
+    public void SetGameProcessController(GameProcessScreenController gameProcessController)
     {
         _gameProcessController = gameProcessController;
     }

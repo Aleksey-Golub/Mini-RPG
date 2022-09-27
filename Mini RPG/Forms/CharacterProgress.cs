@@ -10,7 +10,7 @@ public partial class CharacterProgress : Form
     private readonly ILocalizationService _localizationService;
     private readonly ICharacter _character;
 
-    private readonly CharacterProgressController _controller;
+    private readonly CharacterProgressScreenController _controller;
 
     public CharacterProgress(ILocalizationService localizationService, ICharacter character)
     {
@@ -20,7 +20,7 @@ public partial class CharacterProgress : Form
         _character = character;
         _character.Changed += OnCharacterDataChanged;
 
-        _controller = new CharacterProgressController(_character);
+        _controller = new CharacterProgressScreenController(_character);
 
         ShowCharacterStats();
 

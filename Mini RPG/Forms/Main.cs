@@ -71,7 +71,7 @@ public partial class Main : Form
 
     private void StartGameProcess()
     {
-        var gameProcessController = new GameProcessController(
+        var gameProcessController = new GameProcessScreenController(
             _gameProcessScreen, 
             _gameProcessScreen, 
             _playerDeathScreen, 
@@ -83,7 +83,7 @@ public partial class Main : Form
         gameProcessController.Run();
     }
 
-    private void GoToMainMenu(GameProcessController oldController)
+    private void GoToMainMenu(GameProcessScreenController oldController)
     {
         oldController.SaveAndExit -= GoToMainMenu;
         oldController.PlayerDied += GoToMainMenu;

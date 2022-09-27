@@ -6,6 +6,7 @@ using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
+using Mini_RPG_Data.Datas.Inventory_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -75,12 +76,20 @@ public class CharacterCreationScreenController
         progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
         progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
 
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Potion, 0));  // small health potion
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 0));    // bread
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Food, 1));    // water flask
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
 
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Armor, 2);   // Thin Leather Jacket
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new Datas.Inventory_.ItemSaveData(Datas.Inventory_.ItemType.Weapon, 0);  // bronze sword
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor, 2);   // Thin Leather Jacket
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 0);  // bronze sword
+
+        progress.TownTraderData.WalletData.Money = 1000;
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
+        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
 
         return progress;
     }

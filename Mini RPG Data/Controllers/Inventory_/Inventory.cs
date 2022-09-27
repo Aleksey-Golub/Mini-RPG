@@ -17,7 +17,7 @@ public class Inventory
     {
         _itemsFactory = itemFactory;
         _data = inventoryData;
-        _data.SaveStarting += OnSaveStarting;
+        _data.SaveStarting += UpdateData;
 
         _items = new List<ItemBase>();
         _equipmentSlots = new Dictionary<EquipmentSlot, ItemBase>()
@@ -73,16 +73,6 @@ public class Inventory
         return false;
     }
 
-    internal void Drink(PotionItem potionItem)
-    {
-        RemoveItem(potionItem);
-    }
-
-    internal void Eat(FoodItem foodItem)
-    {
-        RemoveItem(foodItem);
-    }
-
     internal void Equip(ArmorItem armorItem)
     {
         EquipmentSlot slot = armorItem.EquipmentSlot;
@@ -106,9 +96,43 @@ public class Inventory
         RemoveItem(weaponItem);
     }
 
-    private void RemoveItem(ItemBase item) => _items.Remove(item);
-    private void AddItem(ItemBase item) => _items.Add(item);
+    internal void RemoveItem(ItemBase item)
+    {
+        _items.Remove(item);
+        UpdateData();
+    }
 
+    internal void AddItem(ItemBase item)
+    {
+        _items.Add(item);
+        UpdateData();
+    }
+
+    private void UpdateData()
+    {
+        PrepareItems();
+        PrepareEquipment();
+    }
+
+    private void PrepareEquipment()
+    {
+        int i = 0;
+        foreach (var equipedItem in _equipmentSlots.Values)
+        {
+            _data.EquippedItems[i] =
+                equipedItem == null
+                ? null
+                : new ItemSaveData(equipedItem.Type, equipedItem.Id);
+            i++;
+        }
+    }
+
+    private void PrepareItems()
+    {
+        _data.Items.Clear();
+        foreach (var item in _items)
+            _data.Items.Add(new ItemSaveData(item.Type, item.Id));
+    }
     private bool TryUnequip(EquipmentSlot slot)
     {
         var unequippedItem = _equipmentSlots[slot];
@@ -151,32 +175,6 @@ public class Inventory
     private void InitItems()
     {
         foreach (var itemSaveData in _data.Items)
-            AddItem(_itemsFactory.CreateOrNull(itemSaveData));
-    }
-
-    private void OnSaveStarting()
-    {
-        PrepareItems();
-        PrepareEquipment();
-    }
-
-    private void PrepareEquipment()
-    {
-        int i = 0;
-        foreach (var equipedItem in _equipmentSlots.Values)
-        {
-            _data.EquippedItems[i] =
-                equipedItem == null
-                ? null 
-                : new ItemSaveData(equipedItem.Type, equipedItem.Id);
-            i++;
-        }
-    }
-
-    private void PrepareItems()
-    {
-        _data.Items.Clear();
-        foreach (var item in _items)
-            _data.Items.Add(new ItemSaveData(item.Type, item.Id));
+            _items.Add(_itemsFactory.CreateOrNull(itemSaveData));
     }
 }

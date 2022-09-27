@@ -88,8 +88,8 @@ public class Character : ICharacter
     internal void Equip(WeaponItem weaponItem) => Inventory.Equip(weaponItem);
     internal void Equip(ShieldItem shieldItem) => Inventory.Equip(shieldItem);
     internal void Equip(ArmorItem armorItem) => Inventory.Equip(armorItem);
-    internal void Eat(FoodItem foodItem) => Inventory.Eat(foodItem);
-    internal void Drink(PotionItem potionItem) => Inventory.Drink(potionItem);
+    internal void Eat(FoodItem foodItem) => Inventory.RemoveItem(foodItem);
+    internal void Drink(PotionItem potionItem) => Inventory.RemoveItem(potionItem);
 
     internal void Unequip(EquipmentSlot slot)
     {

@@ -5,6 +5,7 @@ using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG.Screens.CharacterCreationScreen_;
+using Mini_RPG_Data.Services;
 
 namespace Mini_RPG.Screens;
 
@@ -15,7 +16,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly HealthView _healthView;
     private readonly SatiationView _satiationView;
 
-    private GameProcessController? _controller;
+    private GameProcessScreenController? _controller;
     private Log _log;
     private IPlayer? _player;
 
@@ -66,7 +67,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _log = null;
     }
 
-    public void SetGameProcessController(GameProcessController gameProcessController) => _controller = gameProcessController;
+    public void SetGameProcessController(GameProcessScreenController gameProcessController) => _controller = gameProcessController;
     public void SetActiveState(bool newState) => Visible = newState;
 
     public void ShowTownEntrance()
@@ -121,7 +122,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void AddLog(string message) => _log.AddLog(message);
 
-    public void ShowLootCellMessage(int money) => 
+    public void ShowLootCellMessage(int money) =>
         MessageBox.Show(
             $"{_localizationService.Message_YouFindLoot()}:\n" +
             $"{_localizationService.Message_Coins()}: {money}\n" +
@@ -234,12 +235,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         using var inventoryForm = new Inventory(_localizationService, _player.Character, this);
         if (inventoryForm.ShowDialog() == DialogResult.OK)
-        {}
+        { }
     }
 
     private void Button_Trader_Click(object sender, EventArgs e)
     {
-        using var traderForm = new Trader();
+        using var traderForm = new Trader(_localizationService, _player);
         if (traderForm.ShowDialog() == DialogResult.OK)
         {
 
@@ -272,7 +273,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
             return true;
         }
 
-        if(keyData == Keys.M)
+        if (keyData == Keys.M)
         {
             _controller.ShowMap();
             return true;

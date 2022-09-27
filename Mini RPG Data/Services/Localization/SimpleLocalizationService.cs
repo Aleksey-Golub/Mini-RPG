@@ -253,4 +253,5 @@ public class SimpleLocalizationService : ILocalizationService
     }
 
     public string PlayerUse() => "Вы использовали";
+    public string Shop() => "Магазин";
 }

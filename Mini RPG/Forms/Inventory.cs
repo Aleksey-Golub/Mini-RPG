@@ -11,7 +11,7 @@ public partial class Inventory : Form, IInventoryView
     private readonly ILocalizationService _localizationService;
     private readonly ICharacter _character;
 
-    private readonly InventoryController _controller;
+    private readonly InventoryScreenController _controller;
 
     public Inventory(ILocalizationService localizationService, ICharacter character, ILogView logView)
     {
@@ -20,7 +20,7 @@ public partial class Inventory : Form, IInventoryView
         _localizationService = localizationService;
         _character = character;
 
-        _controller = new InventoryController(_character, this, logView);
+        _controller = new InventoryScreenController(_character, this, logView);
 
         SetTexts();
 
@@ -49,7 +49,7 @@ public partial class Inventory : Form, IInventoryView
 
     private void ShowItem(ItemBase item)
     {
-        var btn = new InventoryButton(item);
+        var btn = new ItemButton(item);
         btn.Size = new Size(200, 200);
         btn.Font = new Font(btn.Font.FontFamily, 8f);
         btn.TextAlign = ContentAlignment.BottomCenter;
@@ -65,22 +65,12 @@ public partial class Inventory : Form, IInventoryView
 
     private void OnInventoryButtonClicked(object? sender, EventArgs e)
     {
-        var inventoryButton = (sender as InventoryButton);
+        var inventoryButton = (sender as ItemButton);
         inventoryButton.Click -= OnInventoryButtonClicked;
 
         _controller.TryUse(inventoryButton.Item);
 
-        _flowLayoutPanel_Inventory.Controls.Remove(inventoryButton);
-    }
-
-    private class InventoryButton : Button
-    {
-        public ItemBase Item { get; private set; }
-
-        public InventoryButton(ItemBase item)
-        {
-            Item = item;
-        }
+        //_flowLayoutPanel_Inventory.Controls.Remove(inventoryButton);
     }
 
     private void SetTexts() => _button_Close.Text = _localizationService.Button_Close();

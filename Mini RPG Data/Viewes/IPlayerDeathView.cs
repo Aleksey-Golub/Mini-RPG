@@ -6,6 +6,6 @@ public interface IPlayerDeathView
 {
     void DeInit();
     void SetActiveState(bool newState);
-    void SetController(GameProcessController controller);
+    void SetController(GameProcessScreenController controller);
     void ShowPlayerResult(Controllers.Player player);
 }

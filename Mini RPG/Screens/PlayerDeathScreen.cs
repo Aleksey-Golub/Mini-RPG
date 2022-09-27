@@ -9,7 +9,7 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
 {
     private readonly ILocalizationService _localizationService;
 
-    private GameProcessController _controller = null!;
+    private GameProcessScreenController _controller = null!;
 
     public PlayerDeathScreen(ILocalizationService localizationService)
     {
@@ -21,7 +21,7 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
     }
 
     public void SetActiveState(bool newState) => Visible = newState;
-    public void SetController(GameProcessController controller) => _controller = controller;
+    public void SetController(GameProcessScreenController controller) => _controller = controller;
     public void DeInit() => _controller = null;
     public void ShowPlayerResult(Mini_RPG_Data.Controllers.Player player)
     {
