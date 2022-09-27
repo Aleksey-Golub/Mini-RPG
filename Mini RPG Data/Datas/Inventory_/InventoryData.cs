@@ -8,4 +8,8 @@ public class InventoryData
     /// 0 - Head, 1 - Hands, 2 - Body, 3 - Legs, 4 - MainHand, 5 - OffHand
     /// </summary>
     public ItemSaveData[] EquippedItems = new ItemSaveData[6];
+
+    public event Action? SaveStarting;
+
+    internal void PrepareForSerialize() => SaveStarting?.Invoke();
 }

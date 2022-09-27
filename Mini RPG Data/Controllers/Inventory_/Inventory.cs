@@ -10,16 +10,17 @@ public class Inventory
 
     private readonly InventoryData _data;
 
-    public List<ItemBase> Items { get; private set; }
-    public Dictionary<EquipmentSlot, ItemBase> EquipmentSlots { get; private set; }
+    private readonly List<ItemBase> _items;
+    private readonly Dictionary<EquipmentSlot, ItemBase> _equipmentSlots;
 
     public Inventory(IItemFactory itemFactory, InventoryData inventoryData)
     {
         _itemsFactory = itemFactory;
         _data = inventoryData;
+        _data.SaveStarting += OnSaveStarting;
 
-        Items = new List<ItemBase>();
-        EquipmentSlots = new Dictionary<EquipmentSlot, ItemBase>()
+        _items = new List<ItemBase>();
+        _equipmentSlots = new Dictionary<EquipmentSlot, ItemBase>()
         {
             [EquipmentSlot.Head] = null,
             [EquipmentSlot.Hands] = null,
@@ -32,21 +33,24 @@ public class Inventory
         Init();
     }
 
+    public IReadOnlyList<ItemBase> Items => _items;
+    public IReadOnlyDictionary<EquipmentSlot, ItemBase> EquipmentSlots => _equipmentSlots;
+
     internal bool TryUnequipHead() => TryUnequip(EquipmentSlot.Head);
     internal bool TryUnequipBody() => TryUnequip(EquipmentSlot.Body);
     internal bool TryUnequipHands() => TryUnequip(EquipmentSlot.Hands);
     internal bool TryUnequipLegs() => TryUnequip(EquipmentSlot.Legs);
     internal bool TryUnequipMainHand()
     {
-        var unequippedItem = EquipmentSlots[EquipmentSlot.MainHand];
+        var unequippedItem = _equipmentSlots[EquipmentSlot.MainHand];
         if (unequippedItem != null)
         {
             AddItem(unequippedItem);
-            EquipmentSlots[EquipmentSlot.MainHand] = null;
+            _equipmentSlots[EquipmentSlot.MainHand] = null;
 
             WeaponItem? weaponItem = unequippedItem as WeaponItem;
             if (weaponItem.Grip == Grip.TwoHanded)
-                EquipmentSlots[EquipmentSlot.OffHand] = null;
+                _equipmentSlots[EquipmentSlot.OffHand] = null;
             return true;
         }
 
@@ -54,15 +58,15 @@ public class Inventory
     }
     internal bool TryUnequipOffHand()
     {
-        var unequippedItem = EquipmentSlots[EquipmentSlot.OffHand];
+        var unequippedItem = _equipmentSlots[EquipmentSlot.OffHand];
         if (unequippedItem != null)
         {
             AddItem(unequippedItem);
-            EquipmentSlots[EquipmentSlot.OffHand] = null;
+            _equipmentSlots[EquipmentSlot.OffHand] = null;
 
             WeaponItem? weaponItem = unequippedItem as WeaponItem;
             if (weaponItem.Grip == Grip.TwoHanded)
-                EquipmentSlots[EquipmentSlot.MainHand] = null;
+                _equipmentSlots[EquipmentSlot.MainHand] = null;
             return true;
         }
 
@@ -84,34 +88,34 @@ public class Inventory
         EquipmentSlot slot = armorItem.EquipmentSlot;
 
         TryUnequip(slot);
-        EquipmentSlots[slot] = armorItem;
+        _equipmentSlots[slot] = armorItem;
         RemoveItem(armorItem);
     }
 
     internal void Equip(ShieldItem shieldItem)
     {
         TryUnequipOffHand();
-        EquipmentSlots[EquipmentSlot.OffHand] = shieldItem;
+        _equipmentSlots[EquipmentSlot.OffHand] = shieldItem;
         RemoveItem(shieldItem);
     }
 
     internal void Equip(WeaponItem weaponItem)
     {
         TryUnequipMainHand();
-        EquipmentSlots[EquipmentSlot.MainHand] = weaponItem;
+        _equipmentSlots[EquipmentSlot.MainHand] = weaponItem;
         RemoveItem(weaponItem);
     }
 
-    private void RemoveItem(ItemBase item) => Items.Remove(item);
-    private void AddItem(ItemBase item) => Items.Add(item);
+    private void RemoveItem(ItemBase item) => _items.Remove(item);
+    private void AddItem(ItemBase item) => _items.Add(item);
 
     private bool TryUnequip(EquipmentSlot slot)
     {
-        var unequippedItem = EquipmentSlots[slot];
+        var unequippedItem = _equipmentSlots[slot];
         if (unequippedItem != null)
         {
             AddItem(unequippedItem);
-            EquipmentSlots[slot] = null;
+            _equipmentSlots[slot] = null;
             return true;
         }
 
@@ -120,24 +124,59 @@ public class Inventory
 
     private void Init()
     {
-        foreach (var itemSaveData in _data.Items)
-            AddItem(_itemsFactory.CreateOrNull(itemSaveData));
+        InitItems();
+        InitEquipment();
+    }
 
-        EquipmentSlots[EquipmentSlot.Head] = _itemsFactory.CreateOrNull(_data.EquippedItems[0]);
-        EquipmentSlots[EquipmentSlot.Hands] = _itemsFactory.CreateOrNull(_data.EquippedItems[1]);
-        EquipmentSlots[EquipmentSlot.Body] = _itemsFactory.CreateOrNull(_data.EquippedItems[2]);
-        EquipmentSlots[EquipmentSlot.Legs] = _itemsFactory.CreateOrNull(_data.EquippedItems[3]);
+    private void InitEquipment()
+    {
+        _equipmentSlots[EquipmentSlot.Head] = _itemsFactory.CreateOrNull(_data.EquippedItems[0]);
+        _equipmentSlots[EquipmentSlot.Hands] = _itemsFactory.CreateOrNull(_data.EquippedItems[1]);
+        _equipmentSlots[EquipmentSlot.Body] = _itemsFactory.CreateOrNull(_data.EquippedItems[2]);
+        _equipmentSlots[EquipmentSlot.Legs] = _itemsFactory.CreateOrNull(_data.EquippedItems[3]);
 
         ItemSaveData MainHandItemSaveData = _data.EquippedItems[4];
         ItemSaveData OffHandItemSaveData = _data.EquippedItems[5];
         ItemBase MainHandItem = _itemsFactory.CreateOrNull(MainHandItemSaveData);
-        EquipmentSlots[EquipmentSlot.MainHand] = MainHandItem;
+        _equipmentSlots[EquipmentSlot.MainHand] = MainHandItem;
 
-        EquipmentSlots[EquipmentSlot.OffHand] =
+        _equipmentSlots[EquipmentSlot.OffHand] =
             MainHandItemSaveData == null || OffHandItemSaveData == null
             ? _itemsFactory.CreateOrNull(OffHandItemSaveData)
             : MainHandItemSaveData.Type == OffHandItemSaveData.Type && MainHandItemSaveData.Id == OffHandItemSaveData.Id
                 ? MainHandItem
                 : _itemsFactory.CreateOrNull(OffHandItemSaveData);
+    }
+
+    private void InitItems()
+    {
+        foreach (var itemSaveData in _data.Items)
+            AddItem(_itemsFactory.CreateOrNull(itemSaveData));
+    }
+
+    private void OnSaveStarting()
+    {
+        PrepareItems();
+        PrepareEquipment();
+    }
+
+    private void PrepareEquipment()
+    {
+        int i = 0;
+        foreach (var equipedItem in _equipmentSlots.Values)
+        {
+            _data.EquippedItems[i] =
+                equipedItem == null
+                ? null 
+                : new ItemSaveData(equipedItem.Type, equipedItem.Id);
+            i++;
+        }
+    }
+
+    private void PrepareItems()
+    {
+        _data.Items.Clear();
+        foreach (var item in _items)
+            _data.Items.Add(new ItemSaveData(item.Type, item.Id));
     }
 }

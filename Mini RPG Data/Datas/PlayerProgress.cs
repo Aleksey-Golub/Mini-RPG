@@ -14,7 +14,12 @@ namespace Mini_RPG_Data.Datas
         public PlayerData PlayerData { get; set; }
         public MapData MapData { get; set; }
 
-        internal void PrepareForSerialize() => MapData.PrepareForSerialize();
+        internal void PrepareForSerialize()
+        {
+            PlayerData.CharacterData.InventoryData.PrepareForSerialize();
+            MapData.PrepareForSerialize();
+        }
+
         internal void PrepareForDeserialize() => MapData.PrepareForDeserialize();
     }
 }
