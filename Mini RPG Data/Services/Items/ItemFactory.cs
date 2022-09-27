@@ -16,8 +16,11 @@ public class ItemFactory : IItemFactory
         _localizationService = localizationService;
     }
 
-    public ItemBase Create(ItemSaveData itemSaveData)
+    public ItemBase CreateOrNull(ItemSaveData itemSaveData)
     {
+        if (itemSaveData == null)
+            return null;
+
         ItemDataBase? itemData = itemSaveData.Type switch
         {
             ItemType.Common => _itemsService.GetCommonItemDataByIdOrNull(itemSaveData.Id),

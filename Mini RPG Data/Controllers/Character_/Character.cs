@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Controllers.Inventory_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Items;
 
@@ -82,11 +83,46 @@ public class Character : ICharacter
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
     public event Action<Character>? Died;
-    
-    internal void TakeDamage(int damage)
+
+    internal bool TryUse(ItemBase item) => item.TryUse(this);
+    internal void Equip(WeaponItem weaponItem) => Inventory.Equip(weaponItem);
+    internal void Equip(ShieldItem shieldItem) => Inventory.Equip(shieldItem);
+    internal void Equip(ArmorItem armorItem) => Inventory.Equip(armorItem);
+    internal void Eat(FoodItem foodItem) => Inventory.Eat(foodItem);
+    internal void Drink(PotionItem potionItem) => Inventory.Drink(potionItem);
+
+    internal void Unequip(EquipmentSlot slot)
     {
-        Health.TakeDamage(damage);
+        switch (slot)
+        {
+            case EquipmentSlot.Head:
+                Inventory.TryUnequipHead();
+                break;
+            case EquipmentSlot.Hands:
+                Inventory.TryUnequipHands();
+                break;
+            case EquipmentSlot.Body:
+                Inventory.TryUnequipBody();
+                break;
+            case EquipmentSlot.Legs:
+                Inventory.TryUnequipLegs();
+                break;
+            case EquipmentSlot.MainHand:
+                Inventory.TryUnequipMainHand();
+                break;
+            case EquipmentSlot.OffHand:
+                Inventory.TryUnequipOffHand();
+                break;
+            case EquipmentSlot.None:
+            default:
+                throw new NotImplementedException();
+        }
     }
+
+    internal void TakeDamage(int damage) => Health.TakeDamage(damage);
+    internal void RestoreHealth(int value) => Health.Restore(value);
+    internal void RestoreFood(int value) => Satiation.RestoreFood(value);
+    internal void RestoreWater(int value) => Satiation.RestoreWater(value);
 
     internal bool TryRestoreHealth()
     {
@@ -109,7 +145,7 @@ public class Character : ICharacter
     private void OnHealthChanged()
     {
         HealthChanged?.Invoke(this);
-        
+
         if (Health.CurrentHealth <= 0)
             Died?.Invoke(this);
     }

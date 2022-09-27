@@ -252,4 +252,6 @@ public class SimpleLocalizationService : ILocalizationService
             _ => "Не переведено",
         };
     }
+
+    public string PlayerUse() => "Вы использовали";
 }

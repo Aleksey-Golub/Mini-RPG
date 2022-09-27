@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Datas.Inventory_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using Mini_RPG_Data.Services.Localization;
 
@@ -14,4 +15,6 @@ public class CommonItem : ItemBase
     }
 
     public override ItemType Type => ItemType.Common;
+
+    internal override bool TryUse(Character character) => false;
 }

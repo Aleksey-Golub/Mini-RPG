@@ -5,5 +5,5 @@ namespace Mini_RPG_Data.Services.Items;
 
 public interface IItemFactory : IService
 {
-    ItemBase Create(ItemSaveData itemSaveData);
+    ItemBase CreateOrNull(ItemSaveData itemSaveData);
 }

@@ -1,6 +1,6 @@
-﻿using Mini_RPG_Data.Datas.Inventory_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
-using Mini_RPG_Data.Services.Items;
 using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG_Data.Controllers.Inventory_.Items;
@@ -25,4 +25,11 @@ public class ArmorItem : ItemBase
         $", {LocalizationService.ArmorType()}: {LocalizationService.ArmorTypeName(_data.ArmorType)}" +
         $", {LocalizationService.Armor()}: {_data.ArmorValue}" +
         $", {LocalizationService.DodgePenalty()}: {_data.DodgePenalty}";
+
+    internal override bool TryUse(Character character)
+    {
+        character.Equip(this);
+        //character.Inventory.RemoveItem(this);
+        return true;
+    }
 }

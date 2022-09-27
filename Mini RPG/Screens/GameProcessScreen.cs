@@ -232,7 +232,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void Button_Inventory_Click(object sender, EventArgs e)
     {
-        using var inventoryForm = new Inventory(_localizationService, _player.Character);
+        using var inventoryForm = new Inventory(_localizationService, _player.Character, this);
         if (inventoryForm.ShowDialog() == DialogResult.OK)
         {}
     }

@@ -92,7 +92,12 @@ public partial class GameProcessController
         _logView.AddLog(_localizationService.PlayerRest());
     }
 
-    public bool TryMove(Direction direction) => _state.TryMove(direction);
+    public bool TryMove(Direction direction)
+    {
+        //_logView.AddLog($"{_player.Character.Satiation.FoodSatiationValue} {_player.Character.Satiation.WaterSatiationValue}");
+        return _state.TryMove(direction);
+    }
+
     public void ShowMap() => _gameProcessView.ShowMap(_map);
     private void TransitionTo<TState>() where TState : GameProcessStateBase
     {

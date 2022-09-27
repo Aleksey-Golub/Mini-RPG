@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Datas.Inventory_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using Mini_RPG_Data.Services.Localization;
 
@@ -24,4 +25,11 @@ public class WeaponItem : ItemBase
         $", {LocalizationService.DamageType()}: {LocalizationService.DamageTypeName(_data.DamageType)}" +
         $", {LocalizationService.Grip()}: {LocalizationService.GripName(_data.Grip)}" +
         $", {LocalizationService.Damage()}: {_data.MinDamage}-{_data.MaxDamage}";
+
+    internal override bool TryUse(Character character)
+    {
+        character.Equip(this);
+        //character.Inventory.RemoveItem(this);
+        return true;
+    }
 }

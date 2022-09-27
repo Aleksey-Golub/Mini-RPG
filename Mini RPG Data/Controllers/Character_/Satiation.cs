@@ -18,18 +18,32 @@ public class Satiation
 
     public HungerLevel HungerLevel { get; private set; }
     public ThirstLevel ThirstLevel { get; private set; }
+    public int FoodSatiationValue => _data.FoodSatiation;
+    public int WaterSatiationValue => _data.WaterSatiation;
 
-    public Action? Changed;
+    public event Action? Changed;
 
     internal void Starve()
     {
-        Settings.Starve(_character, _data);
+        _data.FoodSatiation -= Settings.CalculateStarve(_character, _data);
         SetHungerLevel();
     }
 
     internal void Thirst()
     {
-        Settings.Thirst(_character, _data);
+        _data.WaterSatiation -= Settings.CalculateThirst(_character, _data);
+        SetThirstLevel();
+    }
+
+    internal void RestoreFood(int value)
+    {
+        _data.FoodSatiation += value;
+        SetHungerLevel();
+    }
+
+    internal void RestoreWater(int value)
+    {
+        _data.WaterSatiation += value;
         SetThirstLevel();
     }
 

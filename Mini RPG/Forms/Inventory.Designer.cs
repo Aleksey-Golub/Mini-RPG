@@ -68,51 +68,63 @@
             // 
             // _button_OffHandEquippedItem
             // 
+            this._button_OffHandEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_OffHandEquippedItem.Location = new System.Drawing.Point(337, 170);
             this._button_OffHandEquippedItem.Name = "_button_OffHandEquippedItem";
             this._button_OffHandEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_OffHandEquippedItem.TabIndex = 5;
             this._button_OffHandEquippedItem.UseVisualStyleBackColor = true;
+            this._button_OffHandEquippedItem.Click += new System.EventHandler(this.Button_OffHandEquippedItem_Click);
             // 
             // _button_MainHandEquippedItem
             // 
+            this._button_MainHandEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_MainHandEquippedItem.Location = new System.Drawing.Point(36, 170);
             this._button_MainHandEquippedItem.Name = "_button_MainHandEquippedItem";
             this._button_MainHandEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_MainHandEquippedItem.TabIndex = 4;
             this._button_MainHandEquippedItem.UseVisualStyleBackColor = true;
+            this._button_MainHandEquippedItem.Click += new System.EventHandler(this.Button_MainHandEquippedItem_Click);
             // 
             // _button_LegsEquippedItem
             // 
+            this._button_LegsEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_LegsEquippedItem.Location = new System.Drawing.Point(175, 460);
             this._button_LegsEquippedItem.Name = "_button_LegsEquippedItem";
             this._button_LegsEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_LegsEquippedItem.TabIndex = 3;
             this._button_LegsEquippedItem.UseVisualStyleBackColor = true;
+            this._button_LegsEquippedItem.Click += new System.EventHandler(this.Button_LegsEquippedItem_Click);
             // 
             // _button_BodyEquippedItem
             // 
+            this._button_BodyEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_BodyEquippedItem.Location = new System.Drawing.Point(175, 170);
             this._button_BodyEquippedItem.Name = "_button_BodyEquippedItem";
             this._button_BodyEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_BodyEquippedItem.TabIndex = 2;
             this._button_BodyEquippedItem.UseVisualStyleBackColor = true;
+            this._button_BodyEquippedItem.Click += new System.EventHandler(this.Button_BodyEquippedItem_Click);
             // 
             // _button_HandsEquippedItem
             // 
+            this._button_HandsEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_HandsEquippedItem.Location = new System.Drawing.Point(289, 298);
             this._button_HandsEquippedItem.Name = "_button_HandsEquippedItem";
             this._button_HandsEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_HandsEquippedItem.TabIndex = 1;
             this._button_HandsEquippedItem.UseVisualStyleBackColor = true;
+            this._button_HandsEquippedItem.Click += new System.EventHandler(this.Button_HandsEquippedItem_Click);
             // 
             // _button_HeadEquippedItem
             // 
+            this._button_HeadEquippedItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._button_HeadEquippedItem.Location = new System.Drawing.Point(175, 51);
             this._button_HeadEquippedItem.Name = "_button_HeadEquippedItem";
             this._button_HeadEquippedItem.Size = new System.Drawing.Size(100, 100);
             this._button_HeadEquippedItem.TabIndex = 0;
             this._button_HeadEquippedItem.UseVisualStyleBackColor = true;
+            this._button_HeadEquippedItem.Click += new System.EventHandler(this.Button_HeadEquippedItem_Click);
             // 
             // _button_Close
             // 

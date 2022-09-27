@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Datas.Inventory_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using Mini_RPG_Data.Services.Localization;
 
@@ -17,9 +18,12 @@ public abstract class ItemBase
     }
 
     public int Id => _data.Id;
-    public string Name => LocalizationService.ItemName(_data.Name);
+    public string Name => _data.Name;
+    public string LocalizedName => LocalizationService.ItemName(Name);
     public int Cost => _data.Cost;
     public string PictureName => _data.PictureName;
     public abstract ItemType Type { get; }
-    public virtual string Description => $"{Name}, {LocalizationService.Cost()}: {_data.Cost}";
+    public virtual string Description => $"{LocalizedName}, {LocalizationService.Cost()}: {Cost}";
+
+    internal abstract bool TryUse(Character character);
 }

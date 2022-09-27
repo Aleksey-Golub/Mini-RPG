@@ -34,7 +34,7 @@ public static class Settings
 
     public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
 
-    internal static void Starve(Character character, SatiationData data) => data.FoodSatiation -= 2;
+    internal static int CalculateStarve(Character character, SatiationData data) => 2;
     internal static HungerLevel CalculateHungerLevel(Character character, SatiationData data)
     {
         return data.FoodSatiation switch
@@ -45,7 +45,7 @@ public static class Settings
         };
     }
 
-    internal static void Thirst(Character character, SatiationData data) => data.WaterSatiation -= 2;
+    internal static int CalculateThirst(Character character, SatiationData data) => 2;
     internal static ThirstLevel CalculateThirstLevel(Character character, SatiationData data)
     {
         return data.WaterSatiation switch

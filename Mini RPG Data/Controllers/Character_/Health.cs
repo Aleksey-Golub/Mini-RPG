@@ -32,9 +32,9 @@ public class Health
         Changed?.Invoke();
     }
 
-    internal void Restore()
+    internal void Restore(int value = Settings.HEALTH_RESTORE_VALUE)
     {
-        _data.CurrentHealth += Settings.HEALTH_RESTORE_VALUE;
+        _data.CurrentHealth += value;
         if (_data.CurrentHealth > MaxHealth)
             _data.CurrentHealth = MaxHealth;
 

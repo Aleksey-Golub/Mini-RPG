@@ -1,9 +1,12 @@
-﻿namespace Mini_RPG;
+﻿using Mini_RPG_Data.Controllers.Inventory_.Items;
+
+namespace Mini_RPG;
 
 internal static class ImageManager
 {
     private const string ITEMS_PICTURE_DIRECTIRY = "Items";
     private const string ITEMS_PICTURE_SUFFIX = ".jpg";
+    private const string EMPTY = "Empty";
     private static readonly List<Image> _locations;
 
     private static readonly Dictionary<string, Image> _images = new Dictionary<string, Image>();
@@ -35,8 +38,10 @@ internal static class ImageManager
 
     internal static Image GetLocation(int imageIndex) => _locations[imageIndex];
 
-    internal static Image GetItem(string pictureName)
+    internal static Image GetItemImage(ItemBase item)
     {
+        string pictureName = item == null ? EMPTY : item.PictureName;
+
         if (_images.ContainsKey(pictureName))
             return _images[pictureName];
 

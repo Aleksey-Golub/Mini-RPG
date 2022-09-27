@@ -33,6 +33,7 @@ public interface ILocalizationService : IService
     string ToolTip_Perception();
     string TextBox_Name();
     string HungerLevelName(HungerLevel hungerLevel);
+    string PlayerUse();
     string ThirstLevelName(ThirstLevel thirstLevel);
     string Bitton_MainMenu();
     string Label_Intro();

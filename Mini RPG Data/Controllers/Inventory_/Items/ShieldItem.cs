@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Datas.Inventory_;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using Mini_RPG_Data.Services.Localization;
 
@@ -21,4 +22,11 @@ public class ShieldItem : ItemBase
         base.Description +
         $", {LocalizationService.MinBlockBonus()}: {_data.MinBlockBonus}" +
         $", {LocalizationService.MaxBlockBonus()}: {_data.MaxBlockBonus}";
+
+    internal override bool TryUse(Character character)
+    {
+        character.Equip(this);
+        //character.Inventory.RemoveItem(this);
+        return true;
+    }
 }
