@@ -55,7 +55,7 @@
             this._label_Intro.Size = new System.Drawing.Size(1579, 614);
             this._label_Intro.TabIndex = 4;
             this._label_Intro.Text = resources.GetString("_label_Intro.Text");
-            this._label_Intro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._label_Intro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IntroScreen
             // 
