@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectingLoadGame));
             this._flowLayoutPanel_Saves = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
@@ -37,7 +38,7 @@
             this._flowLayoutPanel_Saves.Dock = System.Windows.Forms.DockStyle.Fill;
             this._flowLayoutPanel_Saves.Location = new System.Drawing.Point(0, 0);
             this._flowLayoutPanel_Saves.Name = "_flowLayoutPanel_Saves";
-            this._flowLayoutPanel_Saves.Size = new System.Drawing.Size(208, 428);
+            this._flowLayoutPanel_Saves.Size = new System.Drawing.Size(214, 444);
             this._flowLayoutPanel_Saves.TabIndex = 0;
             // 
             // SelectingLoadGame
@@ -45,8 +46,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(208, 428);
+            this.ClientSize = new System.Drawing.Size(214, 444);
             this.Controls.Add(this._flowLayoutPanel_Saves);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SelectingLoadGame";

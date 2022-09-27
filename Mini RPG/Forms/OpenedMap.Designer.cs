@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenedMap));
             this._label_Map = new System.Windows.Forms.Label();
             this._toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._label_Map);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "OpenedMap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

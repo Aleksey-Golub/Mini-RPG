@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharacterProgress));
             this._label_CharacterRace = new System.Windows.Forms.Label();
             this._panel_Abilities = new System.Windows.Forms.Panel();
             this._button_IncreaseCharisma = new System.Windows.Forms.Button();
@@ -366,7 +367,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1381, 672);
-            this.ControlBox = false;
             this.Controls.Add(this._label_CharacterName);
             this.Controls.Add(this._pictureBox_CharacterAvatar);
             this.Controls.Add(this._button_CloseCharacterProgress);
@@ -376,6 +376,9 @@
             this.Controls.Add(this._label_AbilityPointsCount);
             this.Controls.Add(this._label_AbilityPoints);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CharacterProgress";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this._panel_Abilities.ResumeLayout(false);

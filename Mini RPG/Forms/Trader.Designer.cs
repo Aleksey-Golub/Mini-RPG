@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trader));
             this.button1 = new System.Windows.Forms.Button();
             this._flowLayoutPanel_Inventory = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -151,7 +152,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1401, 734);
-            this.ControlBox = false;
             this.Controls.Add(this._button_Close);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this._label_Inventory);
@@ -161,6 +161,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this._flowLayoutPanel_Inventory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Trader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.statusStrip1.ResumeLayout(false);

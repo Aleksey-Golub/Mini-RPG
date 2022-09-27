@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
             this._flowLayoutPanel_Inventory = new System.Windows.Forms.FlowLayoutPanel();
             this._panel_CharacterDoll = new System.Windows.Forms.Panel();
             this._button_OffHandEquippedItem = new System.Windows.Forms.Button();
@@ -142,11 +143,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1347, 759);
-            this.ControlBox = false;
             this.Controls.Add(this._button_Close);
             this.Controls.Add(this._panel_CharacterDoll);
             this.Controls.Add(this._flowLayoutPanel_Inventory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this._panel_CharacterDoll.ResumeLayout(false);
