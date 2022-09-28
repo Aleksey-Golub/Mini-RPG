@@ -39,7 +39,8 @@
             this._button_HandsEquippedItem = new System.Windows.Forms.Button();
             this._button_HeadEquippedItem = new System.Windows.Forms.Button();
             this._button_Close = new System.Windows.Forms.Button();
-            this._toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this._toolTip_Inventory = new System.Windows.Forms.ToolTip(this.components);
+            this._toolTip_Equipment = new System.Windows.Forms.ToolTip(this.components);
             this._panel_CharacterDoll.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,6 +169,7 @@
         private Button _button_Close;
         private Button _button_OffHandEquippedItem;
         private Button _button_MainHandEquippedItem;
-        private ToolTip _toolTip;
+        private ToolTip _toolTip_Inventory;
+        private ToolTip _toolTip_Equipment;
     }
 }

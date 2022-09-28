@@ -1,7 +1,10 @@
 ﻿using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
+using Mini_RPG_Data.Datas.Inventory_;
+using Mini_RPG_Data.Services.Items;
 using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data;
@@ -9,6 +12,7 @@ namespace Mini_RPG_Data;
 public static class Settings
 {
     public static IRandomService RandomService;
+    public static IItemFactory ItemFactory;
 
     public const int DEFAULT_FIELD_OF_VIEW = 2;
     public const int EXPERIENCE_DEFAULT_VALUE = 50;
@@ -64,7 +68,7 @@ public static class Settings
         return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 1.5f);
     }
 
-    internal static int CalculateFieldOfView(Character character) => 
+    internal static int CalculateFieldOfView(Character character) =>
         DEFAULT_FIELD_OF_VIEW + character.AllAbilities.Perception.Bonus.DividedByAndCeiling(divider: 2);
 
     internal static int CalculateMaxHealth(Character character) =>
@@ -140,6 +144,9 @@ public static class Settings
         return RandomService.GetIntInclusive(min, max);
     }
 
+    internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+    internal static int CalculateFoundedInHiddenLootMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+
     internal static bool TryPickLock(Player player)
     {
         // 2D6 + 5(bonus) >= 7 + (12 - 7) * (10 lvl - 1/10-1) // lerp 0 - 1 // if lvl == 10 and maxLvl == 10
@@ -160,8 +167,43 @@ public static class Settings
         return _2D6 + player.Character.AllAbilities.Dexterity.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
     }
 
-    internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
-    internal static int CalculateFoundedInHiddenLootMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+    internal static List<ItemBase> CalculateFoundedHiddenLoot(Player player)
+    {
+        List<ItemBase> list = new List<ItemBase>();
+
+        if (RandomService.Get1D100() > 50)
+            list.Add(ItemFactory.CreateRandom(ItemType.Food));
+
+        return list;
+    }
+
+    internal static List<ItemBase> CalculateFoundedLoot(Player player)
+    {
+        List<ItemBase> list = new List<ItemBase>();
+
+        if (RandomService.Get1D100() <= 50)
+            list.Add(ItemFactory.CreateRandom(ItemType.Food));
+        if (RandomService.Get1D100() <= 10)
+            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
+
+        return list;
+    }
+
+    internal static List<ItemBase> CalculateFoundedInChestLoot(Player player)
+    {
+        List<ItemBase> list = new List<ItemBase>();
+
+        if (RandomService.Get1D100() <= 50)
+            list.Add(ItemFactory.CreateRandom(ItemType.Food));
+        if (RandomService.Get1D100() <= 10)
+            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
+        if (RandomService.Get1D100() <= 5)
+            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
+        if (RandomService.Get1D100() <= 5)
+            list.Add(ItemFactory.CreateRandom(ItemType.Food));
+
+        return list;
+    }
 
     internal static bool TryBreakChest(Player player)
     {

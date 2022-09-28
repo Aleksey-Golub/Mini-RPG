@@ -1,5 +1,6 @@
 ﻿using Mini_RPG;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
+using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using System.Text.Json;
 
@@ -33,6 +34,21 @@ public class JsonItemsService : IItemsService
     public PotionItemData? GetPotionItemDataByIdOrNull(int id) => _itemsDB.PotionItems.FirstOrDefault(x => x.Id == id);
     public ShieldItemData? GetShieldItemDataByIdOrNull(int id) => _itemsDB.ShieldItems.FirstOrDefault(x => x.Id == id);
     public FoodItemData? GetFoodItemDataByIdOrNull(int id) => _itemsDB.FoodItems.FirstOrDefault(x => x.Id == id);
+
+    public ItemDataBase GetRandomItem(ItemType type)
+    {
+        return type switch
+        {
+            ItemType.Common => _itemsDB.CommonItems.GetRandomItem(),
+            ItemType.Weapon => _itemsDB.WeaponItems.GetRandomItem(),
+            ItemType.Armor => _itemsDB.ArmorItems.GetRandomItem(),
+            ItemType.Potion => _itemsDB.PotionItems.GetRandomItem(),
+            ItemType.Shield => _itemsDB.ShieldItems.GetRandomItem(),
+            ItemType.Food => _itemsDB.FoodItems.GetRandomItem(),
+            ItemType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
 
     private void WriteCommentsToFile(string localFilePath)
     {

@@ -376,9 +376,11 @@
             // 
             // _button_Inventory
             // 
-            this._button_Inventory.Location = new System.Drawing.Point(1606, 593);
+            this._button_Inventory.BackgroundImage = global::Mini_RPG.Properties.Resources.Inventory_button;
+            this._button_Inventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._button_Inventory.Location = new System.Drawing.Point(1606, 579);
             this._button_Inventory.Name = "_button_Inventory";
-            this._button_Inventory.Size = new System.Drawing.Size(112, 34);
+            this._button_Inventory.Size = new System.Drawing.Size(112, 69);
             this._button_Inventory.TabIndex = 5;
             this._button_Inventory.UseVisualStyleBackColor = true;
             this._button_Inventory.Click += new System.EventHandler(this.Button_Inventory_Click);

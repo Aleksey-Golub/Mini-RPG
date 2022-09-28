@@ -107,6 +107,12 @@ public class Inventory
         _items.Add(item);
         UpdateData();
     }
+    
+    internal void AddItems(List<ItemBase> items)
+    {
+        _items.AddRange(items);
+        UpdateData();
+    }
 
     private void UpdateData()
     {

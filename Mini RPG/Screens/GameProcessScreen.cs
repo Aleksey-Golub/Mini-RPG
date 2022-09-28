@@ -6,6 +6,8 @@ using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG.Screens.CharacterCreationScreen_;
 using Mini_RPG_Data.Services;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
+using System.Text;
 
 namespace Mini_RPG.Screens;
 
@@ -122,41 +124,37 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void AddLog(string message) => _log.AddLog(message);
 
-    public void ShowLootCellMessage(int money) =>
-        MessageBox.Show(
-            $"{_localizationService.Message_YouFindLoot()}:\n" +
-            $"{_localizationService.Message_Coins()}: {money}\n" +
-            $"another loot");
-
     public void ShowFindChestMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_YouFindLockedChest()}");
 
-    public void ShowSuccessPickLockedChestMessage(int money) =>
+    public void ShowLootCellMessage(int money, List<ItemBase> loot) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_YouFindLoot()}:\n" +
+            LootAndMoneyMessage(money, loot));
+
+    public void ShowSuccessPickLockedChestMessage(int money, List<ItemBase> loot) =>
         MessageBox.Show(
             $"{_localizationService.Message_PickLockedChestSuccess()}:\n" +
-            $"{_localizationService.Message_Coins()}: {money}\n" +
-            $"another loot");
+            LootAndMoneyMessage(money, loot));
 
     public void ShowFailPickLockedChestMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_PickLockedChestFail()}");
 
-    public void ShowSuccessBreakChestMessage(int money) =>
+    public void ShowSuccessBreakChestMessage(int money, List<ItemBase> loot) =>
         MessageBox.Show(
             $"{_localizationService.Message_BreakChestSuccess()}:\n" +
-            $"{_localizationService.Message_Coins()}: {money}\n" +
-            $"another loot");
+            LootAndMoneyMessage(money, loot));
 
     public void ShowFailBreakChestMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_BreakChestFail()}");
 
-    public void ShowSuccessFindHiddenLootMessage(int money) =>
+    public void ShowSuccessFindHiddenLootMessage(int money, List<ItemBase> loot) =>
         MessageBox.Show(
             $"{_localizationService.Message_YouFindHiddenLoot()}:\n" +
-            $"{_localizationService.Message_Coins()}: {money}\n" +
-            $"another loot");
+            LootAndMoneyMessage(money, loot));
 
     public void ShowSuccessFindTrapMessage(TrapType trapType) =>
         MessageBox.Show(
@@ -165,6 +163,16 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     public void ShowFailFindTrapMessage(TrapType trapType) =>
         MessageBox.Show(
             $"{_localizationService.Message_FindTrapFail(trapType)}");
+
+    private string LootAndMoneyMessage(int money, List<ItemBase> loot)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append($"{_localizationService.Message_Coins()}: {money}\n");
+        foreach (ItemBase item in loot)
+            sb.Append($"{item.LocalizedName}\n");
+
+        return sb.ToString();
+    }
 
     private void OnCharacterAbilitiesChanged()
     {

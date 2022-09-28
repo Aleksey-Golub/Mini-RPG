@@ -107,5 +107,6 @@ public partial class Main : Form
             _services.Single<ILocalizationService>()));
 
         Settings.RandomService = _services.Single<IRandomService>();
+        Settings.ItemFactory = _services.Single<IItemFactory>();
     }
 }

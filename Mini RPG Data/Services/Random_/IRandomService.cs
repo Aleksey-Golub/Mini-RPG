@@ -6,4 +6,5 @@ public interface IRandomService : IService
     float GetFloatExclusive(float from, float to);
     int Get1D3(int throwCount = 1);
     int Get1D6(int throwCount = 1);
+    int Get1D100(int throwCount = 1);
 }

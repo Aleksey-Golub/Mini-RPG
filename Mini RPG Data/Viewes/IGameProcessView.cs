@@ -14,13 +14,13 @@ public interface IGameProcessView : IView
     void ShowTownEntrance();
     void ShowTown();
     void ShowLocation(IMapCell cell);
-    void ShowLootCellMessage(int money);
+    void ShowLootCellMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
     void ShowFindChestMessage();
-    void ShowSuccessPickLockedChestMessage(int money);
+    void ShowSuccessPickLockedChestMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
     void ShowFailPickLockedChestMessage();
-    void ShowSuccessBreakChestMessage(int money);
+    void ShowSuccessBreakChestMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
     void ShowFailBreakChestMessage();
-    void ShowSuccessFindHiddenLootMessage(int money);
+    void ShowSuccessFindHiddenLootMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
     void ShowSuccessFindTrapMessage(TrapType trapType);
     void ShowFailFindTrapMessage(TrapType trapType);
     void ShowMap(IMap map);

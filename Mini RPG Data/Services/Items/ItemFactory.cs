@@ -33,7 +33,19 @@ public class ItemFactory : IItemFactory
             _ => throw new NotImplementedException(),
         };
 
-        return itemSaveData.Type switch
+        return CreateItem(itemSaveData.Type, itemData);
+    }
+
+    public ItemBase CreateRandom(ItemType type)
+    {
+        ItemDataBase itemData = _itemsService.GetRandomItem(type);
+
+        return CreateItem(type, itemData);
+    }
+
+    private ItemBase CreateItem(ItemType type, ItemDataBase? itemData)
+    {
+        return type switch
         {
             ItemType.Common => new CommonItem(_localizationService, itemData as CommonItemData),
             ItemType.Weapon => new WeaponItem(_localizationService, itemData as WeaponItemData),

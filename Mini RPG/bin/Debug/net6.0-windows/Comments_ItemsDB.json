@@ -1,7 +1,1 @@
-[
-	"DamageType: None = 0, Slashing = 1, Piercing = 2, Bludgeoning = 3, ",
-	"Grip: None = 0, SingleHanded = 1, TwoHanded = 2, ",
-	"ArmorType: None = 0, Light = 1, Medium = 2, Heavy = 3, ",
-	"EquipmentSlot: None = 0, Head = 1, Hands = 2, Body = 3, Legs = 4, MainHand = 5, OffHand = 6, ",
-	"EffectType: None = 0, RestoreHealth = 1, RestoreFoodSatiation = 2, RestoreWaterSatiation = 3, "
-]
+["DamageType: None = 0, Slashing = 1, Piercing = 2, Bludgeoning = 3, ","Grip: None = 0, SingleHanded = 1, TwoHanded = 2, ","ArmorType: None = 0, Light = 1, Medium = 2, Heavy = 3, ","EquipmentSlot: None = 0, Head = 1, Hands = 2, Body = 3, Legs = 4, MainHand = 5, OffHand = 6, ","EffectType: None = 0, RestoreHealth = 1, RestoreFoodSatiation = 2, RestoreWaterSatiation = 3, "]

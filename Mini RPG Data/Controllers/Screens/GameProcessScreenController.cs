@@ -4,6 +4,7 @@ using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -284,48 +285,48 @@ public partial class GameProcessScreenController
 
             private void HandleHiddedLootCell()
             {
-                // generate random loot
+                List<ItemBase> loot = Settings.CalculateFoundedHiddenLoot(_controller._player);
                 int money = Settings.CalculateFoundedInHiddenLootMoney(_controller._player);
 
                 if (Settings.TryFindHiddenLoot(_controller._player))
                 {
-                    _controller._gameProcessView.ShowSuccessFindHiddenLootMessage(money); // and loot
+                    _controller._gameProcessView.ShowSuccessFindHiddenLootMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
-                    // add loot
+                    _controller._player.Character.Inventory.AddItems(loot);
                 }
             }
 
             private void HandleLootCell()
             {
-                // generate random loot
+                List<ItemBase> loot = Settings.CalculateFoundedLoot(_controller._player);
                 int money = Settings.CalculateFoundedInLootMoney(_controller._player);
 
-                _controller._gameProcessView.ShowLootCellMessage(money); // and loot
+                _controller._gameProcessView.ShowLootCellMessage(money, loot);
 
-                // pick up loot
                 _controller._player.Wallet.AddMoney(money);
+                _controller._player.Character.Inventory.AddItems(loot);
             }
 
             private void HandleLockedChestCell()
             {
-                // generate chest loot
+                List<ItemBase> loot = Settings.CalculateFoundedInChestLoot(_controller._player);
                 int money = Settings.CalculateFoundedInChestMoney(_controller._player);
 
                 _controller._gameProcessView.ShowFindChestMessage();
                 if (Settings.TryPickLock(_controller._player))
                 {
-                    _controller._gameProcessView.ShowSuccessPickLockedChestMessage(money); // and loot
+                    _controller._gameProcessView.ShowSuccessPickLockedChestMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
-                    // add loot
+                    _controller._player.Character.Inventory.AddItems(loot);
                 }
                 else
                 {
                     _controller._gameProcessView.ShowFailPickLockedChestMessage();
                     if (Settings.TryBreakChest(_controller._player))
                     {
-                        _controller._gameProcessView.ShowSuccessBreakChestMessage(money); // and loot
+                        _controller._gameProcessView.ShowSuccessBreakChestMessage(money, loot);
                         _controller._player.Wallet.AddMoney(money);
-                        // add loot
+                        _controller._player.Character.Inventory.AddItems(loot);
                     }
                     else
                     {

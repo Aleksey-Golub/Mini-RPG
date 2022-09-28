@@ -105,7 +105,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowLootCellMessage(int money)
+    public void ShowLootCellMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -120,7 +120,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessPickLockedChestMessage(int money)
+    public void ShowSuccessPickLockedChestMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -130,7 +130,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessBreakChestMessage(int money)
+    public void ShowSuccessBreakChestMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -140,7 +140,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessFindHiddenLootMessage(int money)
+    public void ShowSuccessFindHiddenLootMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
     {
         throw new NotImplementedException();
     }

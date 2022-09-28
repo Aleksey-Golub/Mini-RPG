@@ -30,21 +30,28 @@ public partial class Inventory : Form, IInventoryView
 
     public void ShowEquipment()
     {
-        _button_HeadEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.Head]);
-        _button_HandsEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.Hands]);
-        _button_BodyEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.Body]);
-        _button_LegsEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.Legs]);
-        _button_MainHandEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.MainHand]);
-        _button_OffHandEquippedItem.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[EquipmentSlot.OffHand]);
+        _toolTip_Equipment.RemoveAll();
+        ShowSlot(_button_HeadEquippedItem, EquipmentSlot.Head);
+        ShowSlot(_button_HandsEquippedItem, EquipmentSlot.Hands);
+        ShowSlot(_button_BodyEquippedItem, EquipmentSlot.Body);
+        ShowSlot(_button_LegsEquippedItem, EquipmentSlot.Legs);
+        ShowSlot(_button_MainHandEquippedItem, EquipmentSlot.MainHand);
+        ShowSlot(_button_OffHandEquippedItem, EquipmentSlot.OffHand);
     }
 
     public void ShowInventory()
     {
         _flowLayoutPanel_Inventory.Controls.Clear();
-        _toolTip.RemoveAll();
+        _toolTip_Inventory.RemoveAll();
 
         foreach (var item in _character.Inventory.Items)
             ShowItem(item);
+    }
+
+    private void ShowSlot(Button slotButton, EquipmentSlot slot)
+    {
+        slotButton.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[slot]);
+        _toolTip_Equipment.SetToolTip(slotButton, _character.Inventory.EquipmentSlots[slot]?.Description);
     }
 
     private void ShowItem(ItemBase item)
@@ -60,7 +67,7 @@ public partial class Inventory : Form, IInventoryView
 
         _flowLayoutPanel_Inventory.Controls.Add(btn);
 
-        _toolTip.SetToolTip(btn, item.Description);
+        _toolTip_Inventory.SetToolTip(btn, item.Description);
     }
 
     private void OnInventoryButtonClicked(object? sender, EventArgs e)
@@ -69,8 +76,6 @@ public partial class Inventory : Form, IInventoryView
         inventoryButton.Click -= OnInventoryButtonClicked;
 
         _controller.TryUse(inventoryButton.Item);
-
-        //_flowLayoutPanel_Inventory.Controls.Remove(inventoryButton);
     }
 
     private void SetTexts() => _button_Close.Text = _localizationService.Button_Close();

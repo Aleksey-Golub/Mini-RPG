@@ -15,6 +15,24 @@ public class RandomService : IRandomService
     /// <param name="throwCount">Have to be greate then 0</param>
     /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
+    public int Get1D100(int throwCount = 1)
+    {
+        if (throwCount < 1)
+            throw new ArgumentException($"{throwCount} have to be greate then 0");
+
+        int sum = 0;
+        for (int i = 0; i < throwCount; i++)
+            sum += GetIntInclusive(1, 100);
+
+        return sum;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="throwCount">Have to be greate then 0</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
     public int Get1D3(int throwCount = 1)
     {
         if (throwCount < 1)
