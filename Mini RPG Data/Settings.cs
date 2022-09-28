@@ -262,7 +262,7 @@ public static class Settings
             _ => throw new NotImplementedException(),
         };
     }
-
+    public static int CalculateItemCostModifier(int itemCost, Player player) => (int)(itemCost * (0.5f + 0.1f * player.Character.AllAbilities.Charisma.Bonus));
     private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
     private static bool IsCriticalSuccess(int _2D6) => _2D6 == 12;
 }

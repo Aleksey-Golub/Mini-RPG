@@ -158,6 +158,7 @@ public class SimpleLocalizationService : ILocalizationService
 
     public string Label_Equipment() => "Экипировка";
     public string Cost() => "Стоимость";
+    public string SellCost() => "Стоимость продажи";
     public string DamageType() => "Тип урона";
     public string Grip() => "Хват";
     public string Damage() => "Урон";

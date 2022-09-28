@@ -45,6 +45,7 @@ public interface ILocalizationService : IService
     string Button_TryLeaveBattle();
     string Button_Trader();
     string Button_RestInTown();
+    string SellCost();
     string Button_LeaveTown();
     string Menu();
     string SaveAndExit();

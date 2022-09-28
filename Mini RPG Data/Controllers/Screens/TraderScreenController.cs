@@ -32,14 +32,15 @@ public class TraderScreenController
     public bool TrySell(ItemBase item)
     {
         int itemCost = item.Cost;
+        int finalItemCost = Settings.CalculateItemCostModifier(itemCost, _player);
 
-        if (TraderWallet.Money >= itemCost)
+        if (TraderWallet.Money >= finalItemCost)
         {
             _player.Character.Inventory.RemoveItem(item);
             TraderInventory.AddItem(item);
 
-            _player.Wallet.AddMoney(item.Cost);
-            _traderWallet.RemoveMoney(item.Cost);
+            _player.Wallet.AddMoney(finalItemCost);
+            _traderWallet.RemoveMoney(finalItemCost);
             _traderView.ShowTraderInventory();
             _traderView.ShowInventory();
             return true;

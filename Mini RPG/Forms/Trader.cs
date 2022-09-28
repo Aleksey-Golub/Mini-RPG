@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Controllers;
+﻿using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Screens;
@@ -42,7 +43,7 @@ public partial class Trader : Form, ITradeView
             ItemButton btn = CreateItemButton(item);
             btn.Click += OnInventoryButtonClicked;
             _flowLayoutPanel_Inventory.Controls.Add(btn);
-            _toolTip_Inventory.SetToolTip(btn, item.Description);
+            _toolTip_Inventory.SetToolTip(btn, $"{item.Description}, {_localizationService.SellCost()}: {Settings.CalculateItemCostModifier(item.Cost, _player as Player)}");
         }
     }
 
