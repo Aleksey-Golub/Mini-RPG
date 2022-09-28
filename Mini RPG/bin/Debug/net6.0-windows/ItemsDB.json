@@ -187,6 +187,66 @@
 			"Cost": 250,
 			"Name": "SteelMace",
 			"Id": 17
+		},
+		{
+			"MinDamage": 3,
+			"MaxDamage": 9,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "BronzeSpear",
+			"Cost": 50,
+			"Name": "BronzeSpear",
+			"Id": 18
+		},
+		{
+			"MinDamage": 6,
+			"MaxDamage": 12,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "IronSpear",
+			"Cost": 150,
+			"Name": "IronSpear",
+			"Id": 19
+		},
+		{
+			"MinDamage": 9,
+			"MaxDamage": 15,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "SteelSpear",
+			"Cost": 250,
+			"Name": "SteelSpear",
+			"Id": 20
+		},
+		{
+			"MinDamage": 4,
+			"MaxDamage": 6,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "BronzeDagger",
+			"Cost": 50,
+			"Name": "BronzeDagger",
+			"Id": 21
+		},
+		{
+			"MinDamage": 7,
+			"MaxDamage": 9,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "IronDagger",
+			"Cost": 150,
+			"Name": "IronDagger",
+			"Id": 22
+		},
+		{
+			"MinDamage": 10,
+			"MaxDamage": 12,
+			"DamageType": 2,
+			"Grip": 1,
+			"PictureName": "SteelDagger",
+			"Cost": 250,
+			"Name": "SteelDagger",
+			"Id": 23
 		}
 	],
 	"ArmorItems": [
@@ -429,6 +489,126 @@
 			"Cost": 300,
 			"Name": "SteelChainLegs",
 			"Id": 23
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 1,
+			"PictureName": "BronzePlateHelmet",
+			"Cost": 200,
+			"Name": "BronzePlateHelmet",
+			"Id": 24
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -1,
+			"ArmorType": 3,
+			"EquipmentSlot": 2,
+			"PictureName": "BronzePlateGloves",
+			"Cost": 150,
+			"Name": "BronzePlateGloves",
+			"Id": 25
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 3,
+			"PictureName": "BronzePlateArmor",
+			"Cost": 200,
+			"Name": "BronzePlateArmor",
+			"Id": 26
+		},
+		{
+			"ArmorValue": 3,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 4,
+			"PictureName": "BronzePlateLegs",
+			"Cost": 150,
+			"Name": "BronzePlateLegs",
+			"Id": 27
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 1,
+			"PictureName": "IronPlateHelmet",
+			"Cost": 300,
+			"Name": "IronPlateHelmet",
+			"Id": 28
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -1,
+			"ArmorType": 3,
+			"EquipmentSlot": 2,
+			"PictureName": "IronPlateGloves",
+			"Cost": 250,
+			"Name": "IronPlateGloves",
+			"Id": 29
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 3,
+			"PictureName": "IronPlateArmor",
+			"Cost": 300,
+			"Name": "IronPlateArmor",
+			"Id": 30
+		},
+		{
+			"ArmorValue": 4,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 4,
+			"PictureName": "IronPlateLegs",
+			"Cost": 250,
+			"Name": "IronPlateLegs",
+			"Id": 31
+		},
+		{
+			"ArmorValue": 5,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 1,
+			"PictureName": "SteelPlateHelmet",
+			"Cost": 400,
+			"Name": "SteelPlateHelmet",
+			"Id": 32
+		},
+		{
+			"ArmorValue": 5,
+			"DodgePenalty": -1,
+			"ArmorType": 3,
+			"EquipmentSlot": 2,
+			"PictureName": "SteelPlateGloves",
+			"Cost": 350,
+			"Name": "SteelPlateGloves",
+			"Id": 33
+		},
+		{
+			"ArmorValue": 5,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 3,
+			"PictureName": "SteelPlateArmor",
+			"Cost": 400,
+			"Name": "SteelPlateArmor",
+			"Id": 34
+		},
+		{
+			"ArmorValue": 5,
+			"DodgePenalty": -2,
+			"ArmorType": 3,
+			"EquipmentSlot": 4,
+			"PictureName": "SteelPlateLegs",
+			"Cost": 350,
+			"Name": "SteelPlateLegs",
+			"Id": 35
 		}
 	],
 	"PotionItems": [

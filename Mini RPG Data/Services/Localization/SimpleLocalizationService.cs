@@ -58,7 +58,7 @@ public class SimpleLocalizationService : ILocalizationService
         return race switch
         {
             CharacterRace.Dwarf => "Дварф",
-            CharacterRace.Elf   => "Эльф",
+            CharacterRace.Elf => "Эльф",
             CharacterRace.Human => "Человек",
             CharacterRace.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
@@ -123,7 +123,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string Message_PickLockedChestSuccess() => "Попытка вскыть замок оказалась успешной.\n\nВнутри вы нашли";
     public string Message_PickLockedChestFail() => "Попытка вскыть замок окончилась неудачей.\nМеханизм замка окончательно заклинило, теперь его не открыть даже ключем.";
     public string Message_BreakChestSuccess() => "Рассчитывая все-таки получить ценное содержимое, вы наносите несколько точных ударов и проламываете крышку.\n\nВнутри вы находите";
-    public string Message_BreakChestFail() => 
+    public string Message_BreakChestFail() =>
         "Рассчитывая все-таки получить ценное содержимое, вы решаетет взломать сундук силой. Однако вы явно переоценили свои возможности!\n\n" +
         "Спустя продолжительное времени, вы без сил садитесь на землю, чтобы немного отдохнуть и попробовать снова.\n\n" +
         "Вы закрыли глаза буквально на минуту, а когда открыли, сундука уже не было. Вы заметили только размытый силуэт в тенях.\n\n" +
@@ -210,6 +210,24 @@ public class SimpleLocalizationService : ILocalizationService
             "BronzeTwoHandedAxe" => "Бронзовый двуручный топор",
             "IronTwoHandedAxe" => "Железный двуручный топор",
             "SteelTwoHandedAxe" => "Стальной двуручный топор",
+            "BronzeHummer" => "Бронзовый молот",
+            "IronHummer" => "Железный молот",
+            "SteelHummer" => "Стальной молот",
+            "ShortBow" => "Короткий лук",
+            "LongBow" => "Длинный лук",
+            "CompositeBow" => "Композитный лук",
+            "BronzeAxe" => "Бронзовый топор",
+            "IronAxe" => "Железный топор",
+            "SteelAxe" => "Стальной топор",
+            "BronzeMace" => "Бронзовая булава",
+            "IronMace" => "Железная булава",
+            "SteelMace" => "Стальная булава",
+            "BronzeSpear" => "Бронзовое копье",
+            "IronSpear" => "Железное копье",
+            "SteelSpear" => "Стальное копье",
+            "BronzeDagger" => "Бронзовый кинжал",
+            "IronDagger" => "Железный кинжал",
+            "SteelDagger" => "Стальной кинжал",
 
             "ThinLeatherHelmet" => "Шлем из тонкой кожи",
             "ThinLeatherGloves" => "Перчатки из тонкой кожи",
@@ -236,6 +254,19 @@ public class SimpleLocalizationService : ILocalizationService
             "SteelChainGloves" => "Стальные кольчужные Перчатки",
             "SteelChainArmor" => "Стальная Кольчуга",
             "SteelChainLegs" => "Стальные кольчужные Поножи",
+
+            "BronzePlateHelmet" => "Бронзовый латный Шлем",
+            "BronzePlateGloves" => "Бронзовые латные Перчатки",
+            "BronzePlateArmor" => "Бронзовая латная Броня",
+            "BronzePlateLegs" => "Бронзовые латные Поножи",
+            "IronPlateHelmet" => "Железный латный Шлем",
+            "IronPlateGloves" => "Железные латные Перчатки",
+            "IronPlateArmor" => "Железная латная Броня",
+            "IronPlateLegs" => "Железные латные Поножи",
+            "SteelPlateHelmet" => "Стальной латный Шлем",
+            "SteelPlateGloves" => "Стальные латные Перчатки",
+            "SteelPlateArmor" => "Стальная латная Броня",
+            "SteelPlateLegs" => "Стальные латные Поножи",
 
             "SmallHealthPotion" => "Малое Зелье здоровья",
             "HealthPotion" => "Зелье здоровья",
