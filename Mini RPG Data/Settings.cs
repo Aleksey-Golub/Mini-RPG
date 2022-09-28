@@ -197,10 +197,22 @@ public static class Settings
             list.Add(ItemFactory.CreateRandom(ItemType.Food));
         if (RandomService.Get1D100() <= 10)
             list.Add(ItemFactory.CreateRandom(ItemType.Potion));
-        if (RandomService.Get1D100() <= 5)
-            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
-        if (RandomService.Get1D100() <= 5)
-            list.Add(ItemFactory.CreateRandom(ItemType.Food));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Shield));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
+        if (RandomService.Get1D100() <= 100)
+            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
 
         return list;
     }

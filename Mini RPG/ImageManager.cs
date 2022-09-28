@@ -7,6 +7,7 @@ internal static class ImageManager
     private const string ITEMS_PICTURE_DIRECTIRY = "Items";
     private const string ITEMS_PICTURE_SUFFIX = ".jpg";
     private const string EMPTY = "Empty";
+    private const string NO_IMAGE_ITEM = "NoImageItem";
     private static readonly List<Image> _locations;
 
     private static readonly Dictionary<string, Image> _images = new Dictionary<string, Image>();
@@ -45,8 +46,17 @@ internal static class ImageManager
         if (_images.ContainsKey(pictureName))
             return _images[pictureName];
 
-        Image image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{pictureName}{ITEMS_PICTURE_SUFFIX}");
+        Image image;
+        try
+        {
+            image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{pictureName}{ITEMS_PICTURE_SUFFIX}");
+        }
+        catch
+        {
+            image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{NO_IMAGE_ITEM}{ITEMS_PICTURE_SUFFIX}");
+        }
         _images[pictureName] = image;
+
         return image;
     }
 }

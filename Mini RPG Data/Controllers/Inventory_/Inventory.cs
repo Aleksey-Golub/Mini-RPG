@@ -65,8 +65,9 @@ public class Inventory
             _equipmentSlots[EquipmentSlot.OffHand] = null;
 
             WeaponItem? weaponItem = unequippedItem as WeaponItem;
-            if (weaponItem.Grip == Grip.TwoHanded)
-                _equipmentSlots[EquipmentSlot.MainHand] = null;
+            if (weaponItem != null)
+                if (weaponItem.Grip == Grip.TwoHanded)
+                    _equipmentSlots[EquipmentSlot.MainHand] = null;
             return true;
         }
 
@@ -92,7 +93,13 @@ public class Inventory
     internal void Equip(WeaponItem weaponItem)
     {
         TryUnequipMainHand();
+        if (weaponItem.Grip == Grip.TwoHanded)
+            TryUnequipOffHand();
+
         _equipmentSlots[EquipmentSlot.MainHand] = weaponItem;
+        if (weaponItem.Grip == Grip.TwoHanded)
+            _equipmentSlots[EquipmentSlot.OffHand] = weaponItem;
+
         RemoveItem(weaponItem);
     }
 
@@ -107,7 +114,7 @@ public class Inventory
         _items.Add(item);
         UpdateData();
     }
-    
+
     internal void AddItems(List<ItemBase> items)
     {
         _items.AddRange(items);
