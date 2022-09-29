@@ -275,9 +275,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
-			"PictureName": "ThinLeatherJacket",
+			"PictureName": "ThinLeatherArmor",
 			"Cost": 100,
-			"Name": "ThinLeatherJacket",
+			"Name": "ThinLeatherArmor",
 			"Id": 2
 		},
 		{
@@ -285,9 +285,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
-			"PictureName": "ThinLeatherBoots",
+			"PictureName": "ThinLeatherLegs",
 			"Cost": 50,
-			"Name": "ThinLeatherBoots",
+			"Name": "ThinLeatherLegs",
 			"Id": 3
 		},
 		{
@@ -315,9 +315,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
-			"PictureName": "LeatherJacket",
+			"PictureName": "LeatherArmor",
 			"Cost": 200,
-			"Name": "LeatherJacket",
+			"Name": "LeatherArmor",
 			"Id": 6
 		},
 		{
@@ -325,9 +325,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
-			"PictureName": "LeatherBoots",
+			"PictureName": "LeatherLegs",
 			"Cost": 150,
-			"Name": "LeatherBoots",
+			"Name": "LeatherLegs",
 			"Id": 7
 		},
 		{
@@ -355,9 +355,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
-			"PictureName": "ThickLeatherJacket",
+			"PictureName": "ThickLeatherArmor",
 			"Cost": 300,
-			"Name": "ThickLeatherJacket",
+			"Name": "ThickLeatherArmor",
 			"Id": 10
 		},
 		{
@@ -365,9 +365,9 @@
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
-			"PictureName": "ThickLeatherBoots",
+			"PictureName": "ThickLeatherLegs",
 			"Cost": 250,
-			"Name": "ThickLeatherBoots",
+			"Name": "ThickLeatherLegs",
 			"Id": 11
 		},
 		{
