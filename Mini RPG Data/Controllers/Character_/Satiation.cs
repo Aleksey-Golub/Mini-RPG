@@ -35,13 +35,13 @@ public class Satiation
         SetThirstLevel();
     }
 
-    internal void RestoreFood(int value)
+    internal void ChangeFoodSatiation(int value)
     {
         _data.FoodSatiation += value;
         SetHungerLevel();
     }
 
-    internal void RestoreWater(int value)
+    internal void ChangeWaterSatiation(int value)
     {
         _data.WaterSatiation += value;
         SetThirstLevel();

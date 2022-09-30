@@ -673,6 +673,130 @@
 			"Cost": 10,
 			"Name": "WaterFlask",
 			"Id": 1
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 1
+				},
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "BlackCurrant",
+			"Cost": 5,
+			"Name": "BlackCurrant",
+			"Id": 2
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 1
+				},
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "RedCurrant",
+			"Cost": 5,
+			"Name": "RedCurrant",
+			"Id": 3
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 1
+				},
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "Blackberry",
+			"Cost": 5,
+			"Name": "Blackberry",
+			"Id": 4
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": 1
+				},
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "Blueberry",
+			"Cost": 5,
+			"Name": "Blueberry",
+			"Id": 5
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "Boletus",
+			"Cost": 5,
+			"Name": "Boletus",
+			"Id": 6
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 2,
+					"Value": 50
+				},
+				{
+					"EffectType": 3,
+					"Value": 50
+				}
+			],
+			"PictureName": "RedCapBolete",
+			"Cost": 5,
+			"Name": "RedCapBolete",
+			"Id": 7
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 1,
+					"Value": -1000
+				}
+			],
+			"PictureName": "DeathCap",
+			"Cost": 5,
+			"Name": "DeathCap",
+			"Id": 8
 		}
 	],
 	"ShieldItems": [

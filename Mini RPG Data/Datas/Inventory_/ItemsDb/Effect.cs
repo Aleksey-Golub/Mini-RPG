@@ -1,5 +1,4 @@
 ﻿using Mini_RPG_Data.Controllers.Character_;
-using Mini_RPG_Data.Controllers.Inventory_.Items;
 
 namespace Mini_RPG_Data.Datas.Inventory_.Items
 {
@@ -13,19 +12,30 @@ namespace Mini_RPG_Data.Datas.Inventory_.Items
         {
             switch (EffectType)
             {
-                case EffectType.RestoreHealth:
-                    target.RestoreHealth(Value);
+                case EffectType.ChangeHealth:
+                    if (Value > 0)
+                        target.RestoreHealth(Value);
+                    else
+                        target.TakeDamage(Value);
                     break;
-                case EffectType.RestoreFoodSatiation:
-                    target.RestoreFood(Value);
+                case EffectType.ChangeFoodSatiation:
+                    target.ChangeFoodSatiation(Value);
                     break;
-                case EffectType.RestoreWaterSatiation:
-                    target.RestoreWater(Value);
+                case EffectType.ChangeWaterSatiation:
+                    target.ChangeWaterSatiation(Value);
                     break;
                 case EffectType.None:
                 default:
                     break;
             }
         }
+    }
+
+    public enum EffectType
+    {
+        None,
+        ChangeHealth,
+        ChangeFoodSatiation,
+        ChangeWaterSatiation,
     }
 }

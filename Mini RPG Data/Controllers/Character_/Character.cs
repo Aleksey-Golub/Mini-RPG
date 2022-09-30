@@ -121,8 +121,8 @@ public class Character : ICharacter
 
     internal void TakeDamage(int damage) => Health.TakeDamage(damage);
     internal void RestoreHealth(int value) => Health.Restore(value);
-    internal void RestoreFood(int value) => Satiation.RestoreFood(value);
-    internal void RestoreWater(int value) => Satiation.RestoreWater(value);
+    internal void ChangeFoodSatiation(int value) => Satiation.ChangeFoodSatiation(value);
+    internal void ChangeWaterSatiation(int value) => Satiation.ChangeWaterSatiation(value);
 
     internal bool TryRestoreHealth()
     {
