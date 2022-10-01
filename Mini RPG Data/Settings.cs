@@ -167,54 +167,51 @@ public static class Settings
         return _2D6 + player.Character.AllAbilities.Dexterity.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
     }
 
-    internal static List<ItemBase> CalculateFoundedHiddenLoot(Player player)
-    {
-        List<ItemBase> list = new List<ItemBase>();
-
-        if (RandomService.Get1D100() > 50)
-            list.Add(ItemFactory.CreateRandom(ItemType.Food));
-
-        return list;
-    }
-
     internal static List<ItemBase> CalculateFoundedLoot(Player player)
     {
-        List<ItemBase> list = new List<ItemBase>();
+        List<ItemBase> loot = new List<ItemBase>();
 
-        if (RandomService.Get1D100() <= 50)
-            list.Add(ItemFactory.CreateRandom(ItemType.Food));
-        if (RandomService.Get1D100() <= 10)
-            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
+        TryAddRandomItem(50, loot, ItemType.Food, 1);
 
-        return list;
+        return loot;
+    }
+
+    internal static List<ItemBase> CalculateFoundedHiddenLoot(Player player)
+    {
+        List<ItemBase> loot = new List<ItemBase>();
+
+        TryAddRandomItem(50, loot, ItemType.Food, 2);
+        TryAddRandomItem(10, loot, ItemType.Potion, 1);
+
+        return loot;
     }
 
     internal static List<ItemBase> CalculateFoundedInChestLoot(Player player)
     {
-        List<ItemBase> list = new List<ItemBase>();
+        List<ItemBase> loot = new List<ItemBase>();
 
-        if (RandomService.Get1D100() <= 50)
-            list.Add(ItemFactory.CreateRandom(ItemType.Food));
-        if (RandomService.Get1D100() <= 10)
-            list.Add(ItemFactory.CreateRandom(ItemType.Potion));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Weapon));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Shield));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
-        if (RandomService.Get1D100() <= 100)
-            list.Add(ItemFactory.CreateRandom(ItemType.Armor));
+        TryAddRandomItem(50, loot, ItemType.Food);
+        TryAddRandomItem(10, loot, ItemType.Potion, 2);
+        TryAddRandomItem(10, loot, ItemType.Weapon, 2);
+        TryAddRandomItem(10, loot, ItemType.Shield, 2);
+        TryAddRandomItem(10, loot, ItemType.Armor, 2);
 
-        return list;
+        return loot;
+    }
+
+    private static bool TryAddRandomItem(int chance, List<ItemBase> loot, ItemType itemType, int itemRating = -1)
+    {
+        if (RandomService.Get1D100() <= chance)
+        {
+            ItemBase? item = ItemFactory.CreateRandomOrNull(itemType, itemRating);
+            if (item != null)
+            {
+                loot.Add(item);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     internal static bool TryBreakChest(Player player)

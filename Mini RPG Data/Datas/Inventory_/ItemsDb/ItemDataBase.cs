@@ -7,5 +7,6 @@
         public int Cost { get; set; }
         public string Name { get; set; } = null!;
         public int Id { get; set; }
+        public int Rating { get; set; }
     }
 }

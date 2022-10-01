@@ -16,31 +16,24 @@ public class ItemFactory : IItemFactory
         _localizationService = localizationService;
     }
 
-    public ItemBase CreateOrNull(ItemSaveData itemSaveData)
+    public ItemBase? CreateOrNull(ItemSaveData itemSaveData)
     {
         if (itemSaveData == null)
             return null;
 
-        ItemDataBase? itemData = itemSaveData.Type switch
-        {
-            ItemType.Common => _itemsService.GetCommonItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.Weapon => _itemsService.GetWeaponItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.Armor => _itemsService.GetArmorItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.Potion => _itemsService.GetPotionItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.Shield => _itemsService.GetShieldItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.Food => _itemsService.GetFoodItemDataByIdOrNull(itemSaveData.Id),
-            ItemType.None => throw new NotImplementedException(),
-            _ => throw new NotImplementedException(),
-        };
+        ItemDataBase? itemData = _itemsService.GetItemDataByIdOrNull(itemSaveData);
 
         return CreateItem(itemSaveData.Type, itemData);
     }
 
-    public ItemBase CreateRandom(ItemType type)
+    public ItemBase? CreateRandomOrNull(ItemType type, int itemRating = -1)
     {
-        ItemDataBase itemData = _itemsService.GetRandomItem(type);
+        if (itemRating < -1)
+            return null;
 
-        return CreateItem(type, itemData);
+        ItemDataBase? itemData = _itemsService.GetRandomItemOrNull(type, itemRating);
+
+        return itemData == null ? null : CreateItem(type, itemData);
     }
 
     private ItemBase CreateItem(ItemType type, ItemDataBase? itemData)

@@ -28,26 +28,47 @@ public class JsonItemsService : IItemsService
         WriteExamplesToFile("ExampleItemsDB.json");
     }
 
-    public CommonItemData? GetCommonItemDataByIdOrNull(int id) => _itemsDB.CommonItems.FirstOrDefault(x => x.Id == id);
-    public WeaponItemData? GetWeaponItemDataByIdOrNull(int id) => _itemsDB.WeaponItems.FirstOrDefault(x => x.Id == id);
-    public ArmorItemData? GetArmorItemDataByIdOrNull(int id) => _itemsDB.ArmorItems.FirstOrDefault(x => x.Id == id);
-    public PotionItemData? GetPotionItemDataByIdOrNull(int id) => _itemsDB.PotionItems.FirstOrDefault(x => x.Id == id);
-    public ShieldItemData? GetShieldItemDataByIdOrNull(int id) => _itemsDB.ShieldItems.FirstOrDefault(x => x.Id == id);
-    public FoodItemData? GetFoodItemDataByIdOrNull(int id) => _itemsDB.FoodItems.FirstOrDefault(x => x.Id == id);
-
-    public ItemDataBase GetRandomItem(ItemType type)
+    public ItemDataBase? GetItemDataByIdOrNull(ItemSaveData itemSaveData)
     {
-        return type switch
+        return itemSaveData.Type switch
         {
-            ItemType.Common => _itemsDB.CommonItems.GetRandomItem(),
-            ItemType.Weapon => _itemsDB.WeaponItems.GetRandomItem(),
-            ItemType.Armor => _itemsDB.ArmorItems.GetRandomItem(),
-            ItemType.Potion => _itemsDB.PotionItems.GetRandomItem(),
-            ItemType.Shield => _itemsDB.ShieldItems.GetRandomItem(),
-            ItemType.Food => _itemsDB.FoodItems.GetRandomItem(),
+            ItemType.Common => _itemsDB.CommonItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
+            ItemType.Weapon => _itemsDB.WeaponItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
+            ItemType.Armor => _itemsDB.ArmorItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
+            ItemType.Potion => _itemsDB.PotionItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
+            ItemType.Shield => _itemsDB.ShieldItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
+            ItemType.Food => _itemsDB.FoodItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
             ItemType.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
+    }
+
+    public ItemDataBase GetRandomItemOrNull(ItemType type, int itemRating)
+    {
+        if (itemRating == -1)
+            return type switch
+            {
+                ItemType.Common => _itemsDB.CommonItems.GetRandomItem(),
+                ItemType.Weapon => _itemsDB.WeaponItems.GetRandomItem(),
+                ItemType.Armor => _itemsDB.ArmorItems.GetRandomItem(),
+                ItemType.Potion => _itemsDB.PotionItems.GetRandomItem(),
+                ItemType.Shield => _itemsDB.ShieldItems.GetRandomItem(),
+                ItemType.Food => _itemsDB.FoodItems.GetRandomItem(),
+                ItemType.None => throw new NotImplementedException(),
+                _ => throw new NotImplementedException(),
+            };
+        else
+            return type switch
+            {
+                ItemType.Common => _itemsDB.CommonItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.Weapon => _itemsDB.WeaponItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.Armor => _itemsDB.ArmorItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.Potion => _itemsDB.PotionItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.Shield => _itemsDB.ShieldItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.Food => _itemsDB.FoodItems.Where(x => x.Rating == itemRating).ToList().GetRandomItem(),
+                ItemType.None => throw new NotImplementedException(),
+                _ => throw new NotImplementedException(),
+            };
     }
 
     private void WriteCommentsToFile(string localFilePath)

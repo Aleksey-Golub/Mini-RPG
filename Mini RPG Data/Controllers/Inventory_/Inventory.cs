@@ -11,7 +11,7 @@ public class Inventory
     private readonly InventoryData _data;
 
     private readonly List<ItemBase> _items;
-    private readonly Dictionary<EquipmentSlot, ItemBase> _equipmentSlots;
+    private readonly Dictionary<EquipmentSlot, ItemBase?> _equipmentSlots;
 
     public Inventory(IItemFactory itemFactory, InventoryData inventoryData)
     {
@@ -20,7 +20,7 @@ public class Inventory
         _data.SaveStarting += UpdateData;
 
         _items = new List<ItemBase>();
-        _equipmentSlots = new Dictionary<EquipmentSlot, ItemBase>()
+        _equipmentSlots = new Dictionary<EquipmentSlot, ItemBase?>()
         {
             [EquipmentSlot.Head] = null,
             [EquipmentSlot.Hands] = null,
@@ -174,7 +174,7 @@ public class Inventory
 
         ItemSaveData MainHandItemSaveData = _data.EquippedItems[4];
         ItemSaveData OffHandItemSaveData = _data.EquippedItems[5];
-        ItemBase MainHandItem = _itemsFactory.CreateOrNull(MainHandItemSaveData);
+        ItemBase? MainHandItem = _itemsFactory.CreateOrNull(MainHandItemSaveData);
         _equipmentSlots[EquipmentSlot.MainHand] = MainHandItem;
 
         _equipmentSlots[EquipmentSlot.OffHand] =
