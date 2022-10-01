@@ -267,7 +267,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void Button_RestInTown_Click(object sender, EventArgs e)
     {
-        var dialogResult = MessageBox.Show($"{string.Format(_localizationService.Message_RestInTown(), Settings.REST_IN_TOWN_COST.ToString())}");
+        var dialogResult = MessageBox.Show($"{string.Format(_localizationService.Message_RestInTown(), Settings.REST_IN_TOWN_COST.ToString())}", string.Empty, MessageBoxButtons.YesNo);
         if (dialogResult == DialogResult.OK)
             _controller.TryRestInTown();
     }

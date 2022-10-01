@@ -1,6 +1,5 @@
 ﻿using Mini_RPG_Data;
 using Mini_RPG_Data.Controllers;
-using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Localization;
@@ -12,7 +11,6 @@ public partial class Trader : Form, ITradeView
 {
     private readonly ILocalizationService _localizationService;
     private readonly IPlayer _player;
-    //private readonly ICharacter _character;
 
     private readonly TraderScreenController _controller;
 
@@ -22,7 +20,6 @@ public partial class Trader : Form, ITradeView
 
         _localizationService = localizationService;
         _player = player;
-        //_character = _player.Character;
         _controller = new TraderScreenController(_player, this);
 
         SetTexts();
