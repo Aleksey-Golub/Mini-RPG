@@ -83,13 +83,7 @@ public class CharacterCreationScreenController
         progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor, 2);   // Thin Leather Jacket
         progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 0);  // bronze sword
 
-        progress.TownTraderData.WalletData.Money = 1000;
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
-        progress.TownTraderData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
+        progress.TownTraderData = Settings.GetRandomTownTraderData();
 
         return progress;
     }

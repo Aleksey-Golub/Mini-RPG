@@ -468,6 +468,7 @@
             this._button_RestInTown.TabIndex = 2;
             this._button_RestInTown.Text = "% отдыхать в городе %";
             this._button_RestInTown.UseVisualStyleBackColor = true;
+            this._button_RestInTown.Click += new System.EventHandler(this.Button_RestInTown_Click);
             // 
             // _button_LeaveTown
             // 

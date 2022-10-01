@@ -6,7 +6,7 @@ namespace Mini_RPG_Data.Controllers.Map_;
 
 public class Map : IMap
 {
-    private readonly MapData _data;
+    private MapData _data;
 
     public IReadOnlyDictionary<Vector2Int, IMapCell> Cells => _data.Cells.ToDictionary(x => x.Key, x => x.Value as IMapCell);
 
@@ -154,6 +154,8 @@ public class Map : IMap
         mapData.CalculateSize();
         return mapData;
     }
+
+    internal void Regenerate(IRandomService randomService) => _data = Map.Generate(randomService);
 
     internal void Explore(Vector2Int cellPosition) => _data.Cells[cellPosition].CellState = CellState.Explored;
     internal void MakeEmpty(Vector2Int cellPosition) => _data.Cells[cellPosition].CellType = CellType.Empty;

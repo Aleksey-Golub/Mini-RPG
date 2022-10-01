@@ -293,4 +293,21 @@ public class SimpleLocalizationService : ILocalizationService
 
     public string PlayerUse() => "Вы использовали";
     public string Shop() => "Магазин";
+
+    public string Message_RestInTown()
+    {
+        return "Вы находите хозяина постоялого двора.\n" +
+            "Он готов сдать вам комнату за {0} монет";
+    }
+
+    public string Message_YouRestInTown()
+    {
+        return "Вы снимаете комнату на несколько дней.\n" +
+            "За это время выши раны успеют затянуться, а торговец успеет обновить свои товары.";
+    }
+
+    public string Message_YouDoNotRestInTown()
+    {
+        return "Вы уходите, решив приберечь деньги до лучших времен.";
+    }
 }

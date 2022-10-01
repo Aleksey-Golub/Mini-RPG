@@ -40,4 +40,10 @@ public class Health
 
         Changed?.Invoke();
     }
+
+    internal void RestoreFullHealth()
+    {
+        _data.CurrentHealth = MaxHealth;
+        Changed?.Invoke();
+    }
 }

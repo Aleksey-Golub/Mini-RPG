@@ -1,5 +1,4 @@
-﻿using Mini_RPG;
-using Mini_RPG_Data.Controllers.Inventory_.Items;
+﻿using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using System.Text.Json;
@@ -43,7 +42,7 @@ public class JsonItemsService : IItemsService
         };
     }
 
-    public ItemDataBase GetRandomItemOrNull(ItemType type, int itemRating)
+    public ItemDataBase GetRandomItemDataOrNull(ItemType type, int itemRating)
     {
         if (itemRating == -1)
             return type switch

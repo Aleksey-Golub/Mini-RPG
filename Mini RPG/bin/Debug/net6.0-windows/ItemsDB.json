@@ -718,11 +718,11 @@
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 200
 				}
 			],
 			"PictureName": "Bread",
-			"Cost": 10,
+			"Cost": 15,
 			"Name": "Bread",
 			"Id": 0,
 			"Rating": 2
@@ -731,11 +731,11 @@
 			"Effects": [
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 200
 				}
 			],
 			"PictureName": "WaterFlask",
-			"Cost": 10,
+			"Cost": 15,
 			"Name": "WaterFlask",
 			"Id": 1,
 			"Rating": 2
@@ -748,11 +748,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "BlackCurrant",
@@ -769,11 +769,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "RedCurrant",
@@ -790,11 +790,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "Blackberry",
@@ -811,11 +811,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "Blueberry",
@@ -828,11 +828,11 @@
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "Boletus",
@@ -845,11 +845,11 @@
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 50
+					"Value": 100
 				},
 				{
 					"EffectType": 3,
-					"Value": 50
+					"Value": 100
 				}
 			],
 			"PictureName": "RedCapBolete",

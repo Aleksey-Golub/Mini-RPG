@@ -3,6 +3,7 @@ using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
+using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Services.Items;
 using Mini_RPG_Data.Services.Random_;
@@ -32,6 +33,8 @@ public static class Settings
     public const int START_SATIATION = 500;
 
     public const int FOREST_IMAGE_COUNT = 14;
+
+    public const int REST_IN_TOWN_COST = 20;
 
     public static string AvatarsDirectory => $"Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
@@ -111,6 +114,33 @@ public static class Settings
             default:
                 throw new NotImplementedException($"Not inplement CellType for {value}");
         }
+    }
+
+    internal static TownTraderData GetRandomTownTraderData()
+    {
+        var townTraderData = new TownTraderData();
+        townTraderData.WalletData.Money = 1000;
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Armor);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Armor);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Shield);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Shield);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Weapon);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Weapon);
+
+        return townTraderData;
+    }
+
+    private static void TryAddRandomItemSaveData(TownTraderData townTraderData, ItemType itemType = ItemType.None, int itemRating = -1)
+    {
+        var item = ItemFactory.CreateRandomOrNull(itemType, itemRating);
+        if (item != null)
+            townTraderData.InventoryData.Items.Add(new ItemSaveData(item.Type, item.Id));
     }
 
     internal static bool CheckHealthRecoveryAfterRest(Character character)
@@ -251,11 +281,7 @@ public static class Settings
 
     }
 
-    internal static TrapType GetTrapType()
-    {
-        Array values = Enum.GetValues(typeof(TrapType));
-        return (TrapType)values.GetValue(RandomService.GetIntInclusive(1, values.Length - 1));
-    }
+    internal static TrapType GetTrapType() => Utils.GetRandomEnumValueExcludeFirst<TrapType>();
 
     internal static int CalculateTrapDamage(TrapType trapType, Player player)
     {

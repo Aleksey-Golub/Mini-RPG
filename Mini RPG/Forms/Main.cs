@@ -77,7 +77,9 @@ public partial class Main : Form
             _playerDeathScreen, 
             _services.Single<IPersistentProgressService>(),
             _services.Single<ISaveLoadService>(), 
-            _services.Single<ILocalizationService>());
+            _services.Single<ILocalizationService>(),
+            _services.Single<IRandomService>()
+            );
         gameProcessController.SaveAndExit += GoToMainMenu;
         gameProcessController.PlayerDied += GoToMainMenu;
         gameProcessController.Run();

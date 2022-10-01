@@ -19,6 +19,7 @@ public partial class Inventory : Form, IInventoryView
 
         _localizationService = localizationService;
         _character = character;
+        _character.Died += OnCharacterDied;
 
         _controller = new InventoryScreenController(_character, this, logView);
 
@@ -37,6 +38,13 @@ public partial class Inventory : Form, IInventoryView
         ShowSlot(_button_LegsEquippedItem, EquipmentSlot.Legs);
         ShowSlot(_button_MainHandEquippedItem, EquipmentSlot.MainHand);
         ShowSlot(_button_OffHandEquippedItem, EquipmentSlot.OffHand);
+    }
+
+    private void OnCharacterDied(Character character)
+    {
+        character.Died -= OnCharacterDied;
+
+        DialogResult = DialogResult.OK;
     }
 
     public void ShowInventory()

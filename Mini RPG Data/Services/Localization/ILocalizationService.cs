@@ -83,4 +83,7 @@ public interface ILocalizationService : IService
     string DodgePenalty();
     string MinBlockBonus();
     string MaxBlockBonus();
+    string Message_RestInTown();
+    string Message_YouRestInTown();
+    string Message_YouDoNotRestInTown();
 }

@@ -5,9 +5,9 @@ using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG.Screens.CharacterCreationScreen_;
-using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using System.Text;
+using Mini_RPG_Data;
 
 namespace Mini_RPG.Screens;
 
@@ -114,6 +114,18 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_Navigation.Show();
     }
 
+    public void ShowSuccessRestInTownMessage()
+    {
+        MessageBox.Show(
+            $"{_localizationService.Message_YouRestInTown()}");
+    }
+
+    public void ShowFailRestInTownMessage()
+    {
+        MessageBox.Show(
+            $"{_localizationService.Message_YouDoNotRestInTown()}");
+    }
+
     public void ShowMiniMap(IMap map, int fieldOfView) => _mapView.DrawMap(map, fieldOfView);
     public void ShowMap(IMap map)
     {
@@ -122,7 +134,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         { }
     }
 
-    public void AddLog(string message) => _log.AddLog(message);
+    public void AddLog(string message) => _log?.AddLog(message);
 
     public void ShowFindChestMessage() =>
         MessageBox.Show(
@@ -250,9 +262,14 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         using var traderForm = new Trader(_localizationService, _player);
         if (traderForm.ShowDialog() == DialogResult.OK)
-        {
+        { }
+    }
 
-        }
+    private void Button_RestInTown_Click(object sender, EventArgs e)
+    {
+        var dialogResult = MessageBox.Show($"{string.Format(_localizationService.Message_RestInTown(), Settings.REST_IN_TOWN_COST.ToString())}");
+        if (dialogResult == DialogResult.OK)
+            _controller.TryRestInTown();
     }
 
     private void Label_Map_Click(object sender, EventArgs e) => _controller.ShowMap();
@@ -290,6 +307,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         if (_panel_Navigation.Visible == false)
             return false;
 
+#pragma warning disable IDE0010 // Добавить отсутствующие варианты
         switch (keyData)
         {
             case Keys.NumPad8:
@@ -308,6 +326,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
                 _controller.Rest();
                 break;
         }
+#pragma warning restore IDE0010 // Добавить отсутствующие варианты
         return base.ProcessCmdKey(ref msg, keyData);
     }
 }

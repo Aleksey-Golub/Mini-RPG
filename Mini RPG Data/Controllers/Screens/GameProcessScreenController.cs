@@ -5,6 +5,8 @@ using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
+using Mini_RPG_Data.Services;
+using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -16,6 +18,7 @@ public partial class GameProcessScreenController
     private readonly IPersistentProgressService _progressService;
     private readonly ISaveLoadService _saveLoadService;
     private readonly ILocalizationService _localizationService;
+    private readonly IRandomService _randomService;
     private Player _player = null!;
     private Map _map = null!;
 
@@ -31,7 +34,8 @@ public partial class GameProcessScreenController
         IPlayerDeathView playerDeathView,
         IPersistentProgressService progressService,
         ISaveLoadService saveLoadService,
-        ILocalizationService localizationService)
+        ILocalizationService localizationService,
+        IRandomService randomService)
     {
         _gameProcessView = gameProcessView;
         _logView = logView;
@@ -39,6 +43,7 @@ public partial class GameProcessScreenController
         _progressService = progressService;
         _saveLoadService = saveLoadService;
         _localizationService = localizationService;
+        _randomService = randomService;
         _states = new Dictionary<Type, GameProcessStateBase>()
         {
             [typeof(InTownGameProcessState)] = new InTownGameProcessState(this),
@@ -93,6 +98,29 @@ public partial class GameProcessScreenController
         _logView.AddLog(_localizationService.PlayerRest());
     }
 
+    public bool TryRestInTown()
+    {
+        int restCost = Settings.REST_IN_TOWN_COST;
+        if (_player.Wallet.Money >= restCost)
+        {
+            _progressService.Progress.TownTraderData = Settings.GetRandomTownTraderData();
+            
+            _map.Regenerate(_randomService);
+            _gameProcessView.ShowMiniMap(_map, _player.Character.FieldOfView);
+
+            _player.Character.RestoreFullHealth();
+            _player.Wallet.RemoveMoney(restCost);
+
+            _gameProcessView.ShowSuccessRestInTownMessage();
+            return true;
+        }
+        else 
+        {
+            _gameProcessView.ShowFailRestInTownMessage();
+            return false; 
+        }
+    }
+
     public bool TryMove(Direction direction)
     {
         //_logView.AddLog($"{_player.Character.Satiation.FoodSatiationValue} {_player.Character.Satiation.WaterSatiationValue}");
@@ -126,7 +154,6 @@ public partial class GameProcessScreenController
         internal override void Enter()
         {
             Controller._gameProcessView.ShowTown();
-            //Controller._gameProcessView.ShowMap(Controller._map);
         }
 
         internal override bool TryMove(Direction direction)
@@ -146,7 +173,6 @@ public partial class GameProcessScreenController
         internal override void Enter()
         {
             Controller._gameProcessView.ShowTownEntrance();
-            //Controller._gameProcessView.ShowMap(Controller._map);
         }
 
         internal override bool TryMove(Direction direction)
@@ -186,7 +212,6 @@ public partial class GameProcessScreenController
         internal override void Enter()
         {
             Controller._gameProcessView.ShowLocation(Controller._map.PlayerCell);
-            //Controller._gameProcessView.ShowMap(Controller._map);
 
             // detect cellType and handle this
             // loot, enemy, trap etc

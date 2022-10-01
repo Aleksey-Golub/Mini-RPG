@@ -12,7 +12,7 @@ public partial class Trader : Form, ITradeView
 {
     private readonly ILocalizationService _localizationService;
     private readonly IPlayer _player;
-    private readonly ICharacter _character;
+    //private readonly ICharacter _character;
 
     private readonly TraderScreenController _controller;
 
@@ -22,7 +22,7 @@ public partial class Trader : Form, ITradeView
 
         _localizationService = localizationService;
         _player = player;
-        _character = _player.Character;
+        //_character = _player.Character;
         _controller = new TraderScreenController(_player, this);
 
         SetTexts();
@@ -38,7 +38,7 @@ public partial class Trader : Form, ITradeView
         _flowLayoutPanel_Inventory.Controls.Clear();
         _toolTip_Inventory.RemoveAll();
 
-        foreach (var item in _character.Inventory.Items)
+        foreach (var item in _player.Character.Inventory.Items)
         {
             ItemButton btn = CreateItemButton(item);
             btn.Click += OnInventoryButtonClicked;
@@ -95,7 +95,7 @@ public partial class Trader : Form, ITradeView
     private void SetTexts()
     {
         _button_Close.Text = _localizationService.Button_Close();
-        _label_Inventory.Text = _character.Name;
+        _label_Inventory.Text = _player.Character.Name;
         _label_Trader.Text = _localizationService.Shop();
     }
 }

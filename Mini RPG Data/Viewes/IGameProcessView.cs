@@ -24,4 +24,6 @@ public interface IGameProcessView : IView
     void ShowSuccessFindTrapMessage(TrapType trapType);
     void ShowFailFindTrapMessage(TrapType trapType);
     void ShowMap(IMap map);
+    void ShowSuccessRestInTownMessage();
+    void ShowFailRestInTownMessage();
 }

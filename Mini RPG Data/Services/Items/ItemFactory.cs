@@ -26,12 +26,13 @@ public class ItemFactory : IItemFactory
         return CreateItem(itemSaveData.Type, itemData);
     }
 
-    public ItemBase? CreateRandomOrNull(ItemType type, int itemRating = -1)
+    public ItemBase? CreateRandomOrNull(ItemType type = ItemType.None, int itemRating = -1)
     {
         if (itemRating < -1)
             return null;
 
-        ItemDataBase? itemData = _itemsService.GetRandomItemOrNull(type, itemRating);
+        type = type == ItemType.None ? Utils.GetRandomEnumValueExcludeFirst<ItemType>() : type;
+        ItemDataBase? itemData = _itemsService.GetRandomItemDataOrNull(type, itemRating);
 
         return itemData == null ? null : CreateItem(type, itemData);
     }

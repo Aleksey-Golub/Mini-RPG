@@ -16,7 +16,7 @@ namespace Mini_RPG_Data.Datas.Inventory_.Items
                     if (Value > 0)
                         target.RestoreHealth(Value);
                     else
-                        target.TakeDamage(Value);
+                        target.TakeDamage(-Value);
                     break;
                 case EffectType.ChangeFoodSatiation:
                     target.ChangeFoodSatiation(Value);

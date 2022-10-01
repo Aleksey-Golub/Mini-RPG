@@ -6,5 +6,5 @@ namespace Mini_RPG_Data.Services.Items;
 public interface IItemFactory : IService
 {
     ItemBase? CreateOrNull(ItemSaveData itemSaveData);
-    ItemBase? CreateRandomOrNull(ItemType type, int itemRating = -1);
+    ItemBase? CreateRandomOrNull(ItemType type = ItemType.None, int itemRating = -1);
 }
