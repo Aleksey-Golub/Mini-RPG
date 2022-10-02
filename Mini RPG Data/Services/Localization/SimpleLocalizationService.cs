@@ -293,6 +293,8 @@ public class SimpleLocalizationService : ILocalizationService
             "Blackberry" => "Ежевика",
             "RedCurrant" => "Красная смородина",
             "BlackCurrant" => "Черная смородина",
+            "Cheese" => "Сыр",
+            "BigWaterFlask" => "Большая фляга с водой",
 
             "SmallShield" => "Малый Щит",
             "MediumShield" => "Средний Щит",

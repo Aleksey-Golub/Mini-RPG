@@ -122,8 +122,10 @@ public static class Settings
         townTraderData.WalletData.Money = 1000;
         TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
         TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
-        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
-        TryAddRandomItemSaveData(townTraderData, ItemType.Food, 2);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Food);
         TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
         TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
         TryAddRandomItemSaveData(townTraderData, ItemType.Armor);

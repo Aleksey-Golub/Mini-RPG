@@ -943,6 +943,34 @@
 			"Id": 8,
 			"Rating": 1,
 			"Weight": 0.1
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 2,
+					"Value": 300
+				}
+			],
+			"PictureName": "Cheese",
+			"Cost": 30,
+			"Name": "Cheese",
+			"Id": 9,
+			"Rating": 3,
+			"Weight": 0.1
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": 3,
+					"Value": 300
+				}
+			],
+			"PictureName": "BigWaterFlask",
+			"Cost": 30,
+			"Name": "BigWaterFlask",
+			"Id": 10,
+			"Rating": 3,
+			"Weight": 0.1
 		}
 	],
 	"ShieldItems": [
