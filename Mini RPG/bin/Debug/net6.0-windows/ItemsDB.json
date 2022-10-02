@@ -5,7 +5,8 @@
 			"Cost": 10,
 			"Name": "WolfPelt",
 			"Id": 0,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		}
 	],
 	"WeaponItems": [
@@ -18,7 +19,8 @@
 			"Cost": 50,
 			"Name": "BronzeSword",
 			"Id": 0,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 8,
@@ -29,7 +31,8 @@
 			"Cost": 150,
 			"Name": "IronSword",
 			"Id": 1,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 11,
@@ -40,7 +43,8 @@
 			"Cost": 250,
 			"Name": "SteelSword",
 			"Id": 2,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 6,
@@ -51,7 +55,8 @@
 			"Cost": 250,
 			"Name": "BronzeTwoHandedAxe",
 			"Id": 3,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 10,
@@ -62,7 +67,8 @@
 			"Cost": 350,
 			"Name": "IronTwoHandedAxe",
 			"Id": 4,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 14,
@@ -73,7 +79,8 @@
 			"Cost": 450,
 			"Name": "SteelTwoHandedAxe",
 			"Id": 5,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 7,
@@ -84,7 +91,8 @@
 			"Cost": 250,
 			"Name": "BronzeHummer",
 			"Id": 6,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 11,
@@ -95,7 +103,8 @@
 			"Cost": 350,
 			"Name": "IronHummer",
 			"Id": 7,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 15,
@@ -106,7 +115,8 @@
 			"Cost": 450,
 			"Name": "SteelHummer",
 			"Id": 8,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 3,
@@ -117,7 +127,8 @@
 			"Cost": 150,
 			"Name": "ShortBow",
 			"Id": 9,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 6,
@@ -128,7 +139,8 @@
 			"Cost": 250,
 			"Name": "LongBow",
 			"Id": 10,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 9,
@@ -139,7 +151,8 @@
 			"Cost": 350,
 			"Name": "CompositeBow",
 			"Id": 11,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 4,
@@ -150,7 +163,8 @@
 			"Cost": 50,
 			"Name": "BronzeAxe",
 			"Id": 12,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 7,
@@ -161,7 +175,8 @@
 			"Cost": 150,
 			"Name": "IronAxe",
 			"Id": 13,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 10,
@@ -172,7 +187,8 @@
 			"Cost": 250,
 			"Name": "SteelAxe",
 			"Id": 14,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 5,
@@ -183,7 +199,8 @@
 			"Cost": 50,
 			"Name": "BronzeMace",
 			"Id": 15,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 8,
@@ -194,7 +211,8 @@
 			"Cost": 150,
 			"Name": "IronMace",
 			"Id": 16,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 11,
@@ -205,7 +223,8 @@
 			"Cost": 250,
 			"Name": "SteelMace",
 			"Id": 17,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 3,
@@ -216,7 +235,8 @@
 			"Cost": 50,
 			"Name": "BronzeSpear",
 			"Id": 18,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 6,
@@ -227,7 +247,8 @@
 			"Cost": 150,
 			"Name": "IronSpear",
 			"Id": 19,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 9,
@@ -238,7 +259,8 @@
 			"Cost": 250,
 			"Name": "SteelSpear",
 			"Id": 20,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 4,
@@ -249,7 +271,8 @@
 			"Cost": 50,
 			"Name": "BronzeDagger",
 			"Id": 21,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 7,
@@ -260,7 +283,8 @@
 			"Cost": 150,
 			"Name": "IronDagger",
 			"Id": 22,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinDamage": 10,
@@ -271,7 +295,8 @@
 			"Cost": 250,
 			"Name": "SteelDagger",
 			"Id": 23,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		}
 	],
 	"ArmorItems": [
@@ -284,7 +309,8 @@
 			"Cost": 100,
 			"Name": "ThinLeatherHelmet",
 			"Id": 0,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 1,
@@ -295,7 +321,8 @@
 			"Cost": 50,
 			"Name": "ThinLeatherGloves",
 			"Id": 1,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 1,
@@ -306,7 +333,8 @@
 			"Cost": 100,
 			"Name": "ThinLeatherArmor",
 			"Id": 2,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 1,
@@ -317,7 +345,8 @@
 			"Cost": 50,
 			"Name": "ThinLeatherLegs",
 			"Id": 3,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -328,7 +357,8 @@
 			"Cost": 200,
 			"Name": "LeatherHelmet",
 			"Id": 4,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -339,7 +369,8 @@
 			"Cost": 150,
 			"Name": "LeatherGloves",
 			"Id": 5,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -350,7 +381,8 @@
 			"Cost": 200,
 			"Name": "LeatherArmor",
 			"Id": 6,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -361,7 +393,8 @@
 			"Cost": 150,
 			"Name": "LeatherLegs",
 			"Id": 7,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -372,7 +405,8 @@
 			"Cost": 300,
 			"Name": "ThickLeatherHelmet",
 			"Id": 8,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -383,7 +417,8 @@
 			"Cost": 250,
 			"Name": "ThickLeatherGloves",
 			"Id": 9,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -394,7 +429,8 @@
 			"Cost": 300,
 			"Name": "ThickLeatherArmor",
 			"Id": 10,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -405,7 +441,8 @@
 			"Cost": 250,
 			"Name": "ThickLeatherLegs",
 			"Id": 11,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -416,7 +453,8 @@
 			"Cost": 150,
 			"Name": "BronzeChainHelmet",
 			"Id": 12,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -427,7 +465,8 @@
 			"Cost": 100,
 			"Name": "BronzeChainGloves",
 			"Id": 13,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -438,7 +477,8 @@
 			"Cost": 150,
 			"Name": "BronzeChainArmor",
 			"Id": 14,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 2,
@@ -449,7 +489,8 @@
 			"Cost": 100,
 			"Name": "BronzeChainLegs",
 			"Id": 15,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -460,7 +501,8 @@
 			"Cost": 250,
 			"Name": "IronChainHelmet",
 			"Id": 16,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -471,7 +513,8 @@
 			"Cost": 200,
 			"Name": "IronChainGloves",
 			"Id": 17,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -482,7 +525,8 @@
 			"Cost": 250,
 			"Name": "IronChainArmor",
 			"Id": 18,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -493,7 +537,8 @@
 			"Cost": 200,
 			"Name": "IronChainLegs",
 			"Id": 19,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -504,7 +549,8 @@
 			"Cost": 350,
 			"Name": "SteelChainHelmet",
 			"Id": 20,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -515,7 +561,8 @@
 			"Cost": 300,
 			"Name": "SteelChainGloves",
 			"Id": 21,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -526,7 +573,8 @@
 			"Cost": 350,
 			"Name": "SteelChainArmor",
 			"Id": 22,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -537,7 +585,8 @@
 			"Cost": 300,
 			"Name": "SteelChainLegs",
 			"Id": 23,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -548,7 +597,8 @@
 			"Cost": 200,
 			"Name": "BronzePlateHelmet",
 			"Id": 24,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -559,7 +609,8 @@
 			"Cost": 150,
 			"Name": "BronzePlateGloves",
 			"Id": 25,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -570,7 +621,8 @@
 			"Cost": 200,
 			"Name": "BronzePlateArmor",
 			"Id": 26,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 3,
@@ -581,7 +633,8 @@
 			"Cost": 150,
 			"Name": "BronzePlateLegs",
 			"Id": 27,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -592,7 +645,8 @@
 			"Cost": 300,
 			"Name": "IronPlateHelmet",
 			"Id": 28,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -603,7 +657,8 @@
 			"Cost": 250,
 			"Name": "IronPlateGloves",
 			"Id": 29,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -614,7 +669,8 @@
 			"Cost": 300,
 			"Name": "IronPlateArmor",
 			"Id": 30,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 4,
@@ -625,7 +681,8 @@
 			"Cost": 250,
 			"Name": "IronPlateLegs",
 			"Id": 31,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 5,
@@ -636,7 +693,8 @@
 			"Cost": 400,
 			"Name": "SteelPlateHelmet",
 			"Id": 32,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 5,
@@ -647,7 +705,8 @@
 			"Cost": 350,
 			"Name": "SteelPlateGloves",
 			"Id": 33,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 5,
@@ -658,7 +717,8 @@
 			"Cost": 400,
 			"Name": "SteelPlateArmor",
 			"Id": 34,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		},
 		{
 			"ArmorValue": 5,
@@ -669,7 +729,8 @@
 			"Cost": 350,
 			"Name": "SteelPlateLegs",
 			"Id": 35,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		}
 	],
 	"PotionItems": [
@@ -684,7 +745,8 @@
 			"Cost": 100,
 			"Name": "SmallHealthPotion",
 			"Id": 0,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -697,7 +759,8 @@
 			"Cost": 200,
 			"Name": "HealthPotion",
 			"Id": 1,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -710,7 +773,8 @@
 			"Cost": 300,
 			"Name": "BigHealthPotion",
 			"Id": 2,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		}
 	],
 	"FoodItems": [
@@ -725,7 +789,8 @@
 			"Cost": 15,
 			"Name": "Bread",
 			"Id": 0,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -738,7 +803,8 @@
 			"Cost": 15,
 			"Name": "WaterFlask",
 			"Id": 1,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -759,7 +825,8 @@
 			"Cost": 5,
 			"Name": "BlackCurrant",
 			"Id": 2,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -780,7 +847,8 @@
 			"Cost": 5,
 			"Name": "RedCurrant",
 			"Id": 3,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -801,7 +869,8 @@
 			"Cost": 5,
 			"Name": "Blackberry",
 			"Id": 4,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -822,7 +891,8 @@
 			"Cost": 5,
 			"Name": "Blueberry",
 			"Id": 5,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -839,7 +909,8 @@
 			"Cost": 5,
 			"Name": "Boletus",
 			"Id": 6,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -856,7 +927,8 @@
 			"Cost": 5,
 			"Name": "RedCapBolete",
 			"Id": 7,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"Effects": [
@@ -869,7 +941,8 @@
 			"Cost": 5,
 			"Name": "DeathCap",
 			"Id": 8,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		}
 	],
 	"ShieldItems": [
@@ -880,7 +953,8 @@
 			"Cost": 100,
 			"Name": "SmallShield",
 			"Id": 0,
-			"Rating": 1
+			"Rating": 1,
+			"Weight": 0.1
 		},
 		{
 			"MinBlockBonus": 2,
@@ -889,7 +963,8 @@
 			"Cost": 200,
 			"Name": "MediumShield",
 			"Id": 1,
-			"Rating": 2
+			"Rating": 2,
+			"Weight": 0.1
 		},
 		{
 			"MinBlockBonus": 2,
@@ -898,7 +973,8 @@
 			"Cost": 300,
 			"Name": "BigShield",
 			"Id": 2,
-			"Rating": 3
+			"Rating": 3,
+			"Weight": 0.1
 		}
 	]
 }

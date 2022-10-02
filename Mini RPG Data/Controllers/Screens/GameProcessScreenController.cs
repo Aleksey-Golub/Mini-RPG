@@ -5,7 +5,6 @@ using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
-using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Random_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
@@ -123,7 +122,7 @@ public partial class GameProcessScreenController
 
     public bool TryMove(Direction direction)
     {
-        //_logView.AddLog($"{_player.Character.Satiation.FoodSatiationValue} {_player.Character.Satiation.WaterSatiationValue}");
+        _logView.AddLog($"{_player.Character.Satiation.FoodSatiationValue} {_player.Character.Satiation.WaterSatiationValue}");
         return _state.TryMove(direction);
     }
 

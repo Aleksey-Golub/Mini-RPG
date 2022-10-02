@@ -23,27 +23,22 @@ public class Satiation
 
     public event Action? Changed;
 
-    internal void Starve()
-    {
-        _data.FoodSatiation -= Settings.CalculateStarve(_character, _data);
-        SetHungerLevel();
-    }
+    internal void Starve() => ChangeFoodSatiation(-Settings.CalculateStarve(_character, _data));
 
-    internal void Thirst()
-    {
-        _data.WaterSatiation -= Settings.CalculateThirst(_character, _data);
-        SetThirstLevel();
-    }
+    internal void Thirst() => ChangeWaterSatiation(-Settings.CalculateThirst(_character, _data));
 
     internal void ChangeFoodSatiation(int value)
     {
+
         _data.FoodSatiation += value;
+        _data.FoodSatiation = Math.Clamp(_data.FoodSatiation, 0, int.MaxValue);
         SetHungerLevel();
     }
 
     internal void ChangeWaterSatiation(int value)
     {
         _data.WaterSatiation += value;
+        _data.WaterSatiation = Math.Clamp(_data.WaterSatiation, 0, int.MaxValue);
         SetThirstLevel();
     }
 

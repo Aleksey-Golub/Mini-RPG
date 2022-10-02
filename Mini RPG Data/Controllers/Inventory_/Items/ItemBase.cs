@@ -19,6 +19,7 @@ public abstract class ItemBase
 
     public int Id => _data.Id;
     public int Rating => _data.Rating;
+    public float Weight => _data.Weight;
     public string Name => _data.Name;
     public string LocalizedName => LocalizationService.ItemName(Name);
     public int Cost => _data.Cost;
