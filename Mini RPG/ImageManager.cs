@@ -1,11 +1,14 @@
-﻿using Mini_RPG_Data.Controllers.Inventory_.Items;
+﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 
 namespace Mini_RPG;
 
 internal static class ImageManager
 {
     private const string ITEMS_PICTURE_DIRECTIRY = "Items";
+    private const string ENEMY_PICTURE_DIRECTIRY = "Enemies";
     private const string ITEMS_PICTURE_SUFFIX = ".jpg";
+    //private const string ENEMY_PICTURE_SUFFIX = ".png";
     private const string EMPTY = "Empty";
     private const string NO_IMAGE_ITEM = "NoImageItem";
     private static readonly List<Image> _locations;
@@ -39,7 +42,7 @@ internal static class ImageManager
 
     internal static Image GetLocation(int imageIndex) => _locations[imageIndex];
 
-    internal static Image GetItemImage(ItemBase item)
+    internal static Image GetItemImageOrEmpty(ItemBase item)
     {
         string pictureName = item == null ? EMPTY : item.PictureName;
 
@@ -56,6 +59,27 @@ internal static class ImageManager
             image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{NO_IMAGE_ITEM}{ITEMS_PICTURE_SUFFIX}");
         }
         _images[pictureName] = image;
+
+        return image;
+    }
+
+    internal static Image GetEnemyImage(ICharacter enemy)
+    {
+        string pictureNameWithExtension = enemy.AvatarPath;
+
+        if (_images.ContainsKey(pictureNameWithExtension))
+            return _images[pictureNameWithExtension];
+
+        Image image;
+        try
+        {
+            image = Image.FromFile($"{ENEMY_PICTURE_DIRECTIRY}\\{pictureNameWithExtension}");
+        }
+        catch
+        {
+            image = Image.FromFile($"{ITEMS_PICTURE_DIRECTIRY}\\{NO_IMAGE_ITEM}{ITEMS_PICTURE_SUFFIX}");
+        }
+        _images[pictureNameWithExtension] = image;
 
         return image;
     }

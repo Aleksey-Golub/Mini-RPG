@@ -1,11 +1,51 @@
 {
 	"CommonItems": [
 		{
-			"PictureName": "WolfPelt",
+			"PictureName": "ThinWolfPelt",
 			"Cost": 10,
-			"Name": "WolfPelt",
+			"Name": "ThinWolfPelt",
 			"Id": 0,
 			"Rating": 1,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "WolfPelt",
+			"Cost": 15,
+			"Name": "WolfPelt",
+			"Id": 1,
+			"Rating": 2,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "ThickWolfPelt",
+			"Cost": 20,
+			"Name": "ThickWolfPelt",
+			"Id": 2,
+			"Rating": 3,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "ThinBoarPelt",
+			"Cost": 10,
+			"Name": "ThinBoarPelt",
+			"Id": 3,
+			"Rating": 1,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "BoarPelt",
+			"Cost": 15,
+			"Name": "BoarPelt",
+			"Id": 4,
+			"Rating": 2,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "ThickBoarPelt",
+			"Cost": 20,
+			"Name": "ThickBoarPelt",
+			"Id": 5,
+			"Rating": 3,
 			"Weight": 0.1
 		}
 	],
@@ -446,7 +486,7 @@
 		},
 		{
 			"ArmorValue": 2,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
 			"PictureName": "BronzeChainHelmet",
@@ -458,7 +498,7 @@
 		},
 		{
 			"ArmorValue": 2,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "BronzeChainGloves",
@@ -470,7 +510,7 @@
 		},
 		{
 			"ArmorValue": 2,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
 			"PictureName": "BronzeChainArmor",
@@ -482,7 +522,7 @@
 		},
 		{
 			"ArmorValue": 2,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "BronzeChainLegs",
@@ -494,7 +534,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
 			"PictureName": "IronChainHelmet",
@@ -506,7 +546,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "IronChainGloves",
@@ -518,7 +558,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
 			"PictureName": "IronChainArmor",
@@ -530,7 +570,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "IronChainLegs",
@@ -542,7 +582,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
 			"PictureName": "SteelChainHelmet",
@@ -554,7 +594,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "SteelChainGloves",
@@ -566,7 +606,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
 			"PictureName": "SteelChainArmor",
@@ -578,7 +618,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -1,
+			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "SteelChainLegs",
@@ -590,7 +630,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
 			"PictureName": "BronzePlateHelmet",
@@ -602,7 +642,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -1,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "BronzePlateGloves",
@@ -614,7 +654,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
 			"PictureName": "BronzePlateArmor",
@@ -626,7 +666,7 @@
 		},
 		{
 			"ArmorValue": 3,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "BronzePlateLegs",
@@ -638,7 +678,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
 			"PictureName": "IronPlateHelmet",
@@ -650,7 +690,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -1,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "IronPlateGloves",
@@ -662,7 +702,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
 			"PictureName": "IronPlateArmor",
@@ -674,7 +714,7 @@
 		},
 		{
 			"ArmorValue": 4,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "IronPlateLegs",
@@ -686,7 +726,7 @@
 		},
 		{
 			"ArmorValue": 5,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
 			"PictureName": "SteelPlateHelmet",
@@ -698,7 +738,7 @@
 		},
 		{
 			"ArmorValue": 5,
-			"DodgePenalty": -1,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "SteelPlateGloves",
@@ -710,7 +750,7 @@
 		},
 		{
 			"ArmorValue": 5,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
 			"PictureName": "SteelPlateArmor",
@@ -722,7 +762,7 @@
 		},
 		{
 			"ArmorValue": 5,
-			"DodgePenalty": -2,
+			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "SteelPlateLegs",

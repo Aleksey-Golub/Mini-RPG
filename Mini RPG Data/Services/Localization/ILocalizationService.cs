@@ -29,7 +29,7 @@ public interface ILocalizationService : IService
     string ToolTip_Strength();
     string ToolTip_Dexterity();
     string ToolTip_Constitution();
-    string RaceName(CharacterRace race);
+    string RaceName(Race race);
     string ToolTip_Perception();
     string TextBox_Name();
     string HungerLevelName(HungerLevel hungerLevel);
@@ -86,4 +86,5 @@ public interface ILocalizationService : IService
     string Message_RestInTown();
     string Message_YouRestInTown();
     string Message_YouDoNotRestInTown();
+    string Message_BattleStart();
 }

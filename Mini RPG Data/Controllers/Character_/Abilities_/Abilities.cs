@@ -64,7 +64,7 @@ public class Abilities : IAbilities
     public Ability Perception => AllAbilities[AbilityType.Perception];
     public Ability Charisma => AllAbilities[AbilityType.Charisma];
 
-    internal static AbilitiesDatas GetFor(CharacterRace race)
+    internal static AbilitiesDatas GetFor(Race race)
     {
         int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
         int defaultAbilityPoints = Settings.DEFAULT_ABILITYPOINTS_COUNT;
@@ -82,10 +82,13 @@ public class Abilities : IAbilities
 
         return race switch
         {
-            CharacterRace.Human => baseAbilitiesDatas + humanAbilitiesDatas,
-            CharacterRace.Elf => baseAbilitiesDatas + elfAbilitiesDatas,
-            CharacterRace.Dwarf => baseAbilitiesDatas + dwarfAbilitiesDatas,
-            CharacterRace.None => throw new NotImplementedException(),
+            Race.Human => baseAbilitiesDatas + humanAbilitiesDatas,
+            Race.Elf => baseAbilitiesDatas + elfAbilitiesDatas,
+            Race.Dwarf => baseAbilitiesDatas + dwarfAbilitiesDatas,
+            Race.Goblin => baseAbilitiesDatas,
+            Race.Orc => baseAbilitiesDatas,
+            Race.Beast => baseAbilitiesDatas,
+            Race.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
     }

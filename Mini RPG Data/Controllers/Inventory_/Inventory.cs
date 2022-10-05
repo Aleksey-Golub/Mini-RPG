@@ -12,6 +12,7 @@ public class Inventory
 
     private readonly List<ItemBase> _items;
     private readonly Dictionary<EquipmentSlot, ItemBase?> _equipmentSlots;
+    internal readonly int DodgePenalty;
 
     public Inventory(IItemFactory itemFactory, InventoryData inventoryData)
     {
@@ -180,7 +181,7 @@ public class Inventory
         _equipmentSlots[EquipmentSlot.OffHand] =
             MainHandItemSaveData == null || OffHandItemSaveData == null
             ? _itemsFactory.CreateOrNull(OffHandItemSaveData)
-            : MainHandItemSaveData.Type == OffHandItemSaveData.Type && MainHandItemSaveData.Id == OffHandItemSaveData.Id
+            : MainHandItemSaveData.ItemType == OffHandItemSaveData.ItemType && MainHandItemSaveData.Id == OffHandItemSaveData.Id
                 ? MainHandItem
                 : _itemsFactory.CreateOrNull(OffHandItemSaveData);
     }

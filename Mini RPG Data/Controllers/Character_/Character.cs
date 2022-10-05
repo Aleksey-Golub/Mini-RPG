@@ -28,7 +28,7 @@ public class Character : ICharacter
 
     internal void Init()
     {
-        Race = CharacterRace.Human;
+        Race = Race.Human;
         Name = "default name";
         AvatarPath = Settings.DefaultAvatarPath;
 
@@ -55,7 +55,7 @@ public class Character : ICharacter
             Changed?.Invoke(this);
         }
     }
-    public CharacterRace Race
+    public Race Race
     {
         get => _data.Race;
         set
@@ -74,15 +74,80 @@ public class Character : ICharacter
     public Abilities AllAbilities { get; private set; }
     public Level Level { get; }
     public Health Health { get; }
+    public int MaxHealth => Settings.CalculateMaxHealth(this);
+    public bool IsAlive => Health.CurrentHealth > 0;
     public Satiation Satiation { get; }
     public Inventory Inventory { get; }
-
     public int FieldOfView => Settings.CalculateFieldOfView(this);
+    public int Experience => Settings.CalculateExperience(this);
+    public int MinDamage
+    {
+        get
+        {
+            var weapon = Inventory.EquipmentSlots[EquipmentSlot.MainHand] as WeaponItem;
+            if (weapon != null)
+                return weapon.MinDamage;
+            else
+                return Settings.MinHandToHandDamage(this);
+        }
+    }
+
+    public int MaxDamage
+    {
+        get
+        {
+            var weapon = Inventory.EquipmentSlots[EquipmentSlot.MainHand] as WeaponItem;
+            if (weapon != null)
+                return weapon.MaxDamage;
+            else
+                return Settings.MaxHandToHandDamage(this);
+        }
+    }
+
+    public DamageType DamageType
+    {
+        get
+        {
+            var weapon = Inventory.EquipmentSlots[EquipmentSlot.MainHand] as WeaponItem;
+            if (weapon != null)
+                return weapon.DamageType;
+            else
+                return Settings.HandToHandDamageType(this);
+        }
+    }
+
+    public int AttackModifier => Settings.CalculateAttackModifier(this);
+    public int DefenseModifier => Settings.CalculateDefenseModifier(this);
 
     public event Action<Character>? Changed;
     public event Action<Character>? LevelChanged;
     public event Action<Character>? HealthChanged;
     public event Action<Character>? Died;
+
+    public void TakeDamage(int damage) => Health.TakeDamage(damage);
+    public bool IsAttackCritical(BodyPart bodyPart) => bodyPart == BodyPart.Head;
+
+    public Armor GetArmor(BodyPart bodyPart)
+    {
+        EquipmentSlot slot = bodyPart switch
+        {
+            BodyPart.Head => EquipmentSlot.Head,
+            BodyPart.RightHand => EquipmentSlot.Hands,
+            BodyPart.LeftHand => EquipmentSlot.Hands,
+            BodyPart.Body => EquipmentSlot.Body,
+            BodyPart.RightLeg => EquipmentSlot.Legs,
+            BodyPart.LeftLeg => EquipmentSlot.Legs,
+            BodyPart.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+
+        ArmorItem armor = Inventory.EquipmentSlots[slot] as ArmorItem;
+
+        if (armor != null)
+            return new Armor(armor.ArmorValue, armor.ArmorType);
+        else
+            return Settings.ArmorForNoArmorSlot(this);
+    }
 
     internal bool TryUse(ItemBase item) => item.TryUse(this);
     internal void Equip(WeaponItem weaponItem) => Inventory.Equip(weaponItem);
@@ -119,7 +184,6 @@ public class Character : ICharacter
         }
     }
 
-    internal void TakeDamage(int damage) => Health.TakeDamage(damage);
     internal void RestoreHealth(int value) => Health.Restore(value);
     internal void RestoreFullHealth() => Health.RestoreFullHealth();
     internal void ChangeFoodSatiation(int value) => Satiation.ChangeFoodSatiation(value);

@@ -5,9 +5,9 @@ namespace Mini_RPG_Data.Controllers.Character_;
 public class Health
 {
     private readonly HealthData _data;
-    private readonly Character _character;
+    private readonly ICharacter _character;
 
-    internal Health(HealthData data, Character character)
+    internal Health(HealthData data, ICharacter character)
     {
         _character = character;
         _character.AllAbilities.Constitution.ValueChanged += () => Changed?.Invoke();
@@ -15,7 +15,7 @@ public class Health
     }
 
     public int CurrentHealth => _data.CurrentHealth;
-    public int MaxHealth => Settings.CalculateMaxHealth(_character);
+    public int MaxHealth => _character.MaxHealth;//Settings.CalculateMaxHealth(_character);
     public event Action? Changed;
 
     internal void Init()

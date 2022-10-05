@@ -13,7 +13,7 @@ public partial class Inventory : Form, IInventoryView
 
     private readonly InventoryScreenController _controller;
 
-    public Inventory(ILocalizationService localizationService, ICharacter character, ILogView logView)
+    public Inventory(ILocalizationService localizationService, ICharacter character, GameProcessScreenController gameController, ILogView logView)
     {
         InitializeComponent();
 
@@ -21,7 +21,7 @@ public partial class Inventory : Form, IInventoryView
         _character = character;
         _character.Died += OnCharacterDied;
 
-        _controller = new InventoryScreenController(_character, this, logView);
+        _controller = new InventoryScreenController(_character, gameController, this, logView);
 
         SetTexts();
 
@@ -40,13 +40,6 @@ public partial class Inventory : Form, IInventoryView
         ShowSlot(_button_OffHandEquippedItem, EquipmentSlot.OffHand);
     }
 
-    private void OnCharacterDied(Character character)
-    {
-        character.Died -= OnCharacterDied;
-
-        DialogResult = DialogResult.OK;
-    }
-
     public void ShowInventory()
     {
         _flowLayoutPanel_Inventory.Controls.Clear();
@@ -56,9 +49,16 @@ public partial class Inventory : Form, IInventoryView
             ShowItem(item);
     }
 
+    private void OnCharacterDied(Character character)
+    {
+        character.Died -= OnCharacterDied;
+
+        DialogResult = DialogResult.OK;
+    }
+
     private void ShowSlot(Button slotButton, EquipmentSlot slot)
     {
-        slotButton.BackgroundImage = ImageManager.GetItemImage(_character.Inventory.EquipmentSlots[slot]);
+        slotButton.BackgroundImage = ImageManager.GetItemImageOrEmpty(_character.Inventory.EquipmentSlots[slot]);
         _toolTip_Equipment.SetToolTip(slotButton, _character.Inventory.EquipmentSlots[slot]?.Description);
     }
 
@@ -68,7 +68,7 @@ public partial class Inventory : Form, IInventoryView
         btn.Size = new Size(200, 200);
         btn.Font = new Font(btn.Font.FontFamily, 8f);
         btn.TextAlign = ContentAlignment.BottomCenter;
-        btn.BackgroundImage = ImageManager.GetItemImage(item);
+        btn.BackgroundImage = ImageManager.GetItemImageOrEmpty(item);
         btn.BackgroundImageLayout = ImageLayout.Zoom;
         btn.Text = item.LocalizedName;
         btn.Click += OnInventoryButtonClicked;

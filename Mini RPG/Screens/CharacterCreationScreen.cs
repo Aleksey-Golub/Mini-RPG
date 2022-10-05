@@ -28,9 +28,9 @@ namespace Mini_RPG.Screens
             string[] races = new string[]
             {
                 // order is very important
-                _localizationService.RaceName(CharacterRace.Human),   // 0
-                _localizationService.RaceName(CharacterRace.Elf),     // 1
-                _localizationService.RaceName(CharacterRace.Dwarf)    // 2
+                _localizationService.RaceName(Race.Human),   // 0
+                _localizationService.RaceName(Race.Elf),     // 1
+                _localizationService.RaceName(Race.Dwarf)    // 2
             };
             _comboBox_Race.Items.AddRange(races);
         }
@@ -104,13 +104,13 @@ namespace Mini_RPG.Screens
             var newRace = Get();
             _controller.SetRace(newRace);
 
-            CharacterRace Get()
+            Race Get()
             {
                 return selectedIndex switch
                 {
-                    0 => CharacterRace.Human,
-                    1 => CharacterRace.Elf,
-                    2 => CharacterRace.Dwarf,
+                    0 => Race.Human,
+                    1 => Race.Elf,
+                    2 => Race.Dwarf,
                     _ => throw new NotImplementedException($"CharacterRace not implemented for {selectedIndex}"),
                 };
             }

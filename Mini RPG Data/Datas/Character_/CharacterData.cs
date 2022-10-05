@@ -7,7 +7,7 @@ namespace Mini_RPG_Data.Character_;
 [Serializable]
 public class CharacterData
 {
-    public CharacterRace Race = CharacterRace.Human;
+    public Race Race = Race.Human;
     public string Name = null!;
     public string AvatarPath = null!;
     public LevelData LevelData;

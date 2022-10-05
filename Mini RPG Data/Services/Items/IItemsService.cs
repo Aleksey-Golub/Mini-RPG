@@ -6,5 +6,5 @@ namespace Mini_RPG_Data.Services.Items;
 public interface IItemsService : IService
 {
     ItemDataBase? GetRandomItemDataOrNull(ItemType type, int itemRating);
-    ItemDataBase? GetItemDataByIdOrNull(ItemSaveData itemSaveData);
+    ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData);
 }

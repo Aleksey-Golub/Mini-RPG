@@ -1,0 +1,34 @@
+{
+	"Characters": [
+		
+	],
+	"Beasts": [
+		{
+			
+			"MaxHealth": 5,
+			"FieldOfView": 2,
+			"Experience": 5,
+			"AttackModifier": -1,
+			"DefenseModifier": -1,
+			"MinDamage": 2,
+			"MaxDamage": 4,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		}
+	]
+}

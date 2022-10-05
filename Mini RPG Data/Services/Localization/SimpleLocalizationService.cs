@@ -37,7 +37,7 @@ public class SimpleLocalizationService : ILocalizationService
         "рассчета очков здоровья.";//"Описание ВЫН и за что она отвечает";
     public string ToolTip_Perception() => 
         "Восприятие (ВОС) - бонус ВОС применяется к броскам на проверки поиска скрытых предметов (тайники, ловушки и т.д.),\n" +
-        "определение инициативы в начале боя, дальности обзора.";//"Описание ВОС и за что она отвечает";
+        "определение инициативы в начале боя, дальности обзора, шанс сбежать из битвы";//"Описание ВОС и за что она отвечает";
     public string ToolTip_Charisma() => 
         "Харизма (ХАР) - бонус ХАР применяется к броскам на проверки убеждения и цены у торговцев.";//"Описание ХАР и за что она отвечает";
     public string ToolTip_Race() => "Описание всех рас и их бонусов";
@@ -64,14 +64,17 @@ public class SimpleLocalizationService : ILocalizationService
     public string EmptyExploredLocation() => "Пустая исследованная локация";
     public string Town() => "Город";
     public string Enemy() => "Противник";
-    public string RaceName(CharacterRace race)
+    public string RaceName(Race race)
     {
         return race switch
         {
-            CharacterRace.Dwarf => "Дварф",
-            CharacterRace.Elf => "Эльф",
-            CharacterRace.Human => "Человек",
-            CharacterRace.None => throw new NotImplementedException(),
+            Race.Dwarf => "Дварф",
+            Race.Elf => "Эльф",
+            Race.Human => "Человек",
+            Race.Goblin => "Гоблин",
+            Race.Orc => "Орк",
+            Race.Beast => "Животное",
+            Race.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
     }
@@ -167,6 +170,21 @@ public class SimpleLocalizationService : ILocalizationService
         };
     }
 
+    public string Message_RestInTown()
+    {
+        return "Вы находите хозяина постоялого двора.\n" +
+            "Он готов сдать вам комнату за {0} монет";
+    }
+
+    public string Message_YouRestInTown()
+    {
+        return "Вы снимаете комнату на несколько дней.\n" +
+            "За это время выши раны успеют затянуться, а торговец успеет обновить свои товары.";
+    }
+
+    public string Message_YouDoNotRestInTown() => "Вы уходите, решив приберечь деньги до лучших времен.";
+    public string Message_BattleStart() => "Впереди противник. К бою!";
+
     public string Label_Equipment() => "Экипировка";
     public string Cost() => "Стоимость";
     public string SellCost() => "Стоимость продажи";
@@ -214,7 +232,12 @@ public class SimpleLocalizationService : ILocalizationService
     {
         return name switch
         {
+            "ThinWolfPelt" => "Тонкая Волчья шкура",
             "WolfPelt" => "Волчья шкура",
+            "ThickWolfPelt" => "Толстая Волчья шкура",
+            "ThinBoarPelt" => "Тонкая Шкура кабана",
+            "BoarPelt" => "Шкура кабана",
+            "ThickBoarPelt" => "Толстая Шкура кабана",
 
             "BronzeSword" => "Бронзовый меч",
             "IronSword" => "Железный меч",
@@ -306,21 +329,4 @@ public class SimpleLocalizationService : ILocalizationService
 
     public string PlayerUse() => "Вы использовали";
     public string Shop() => "Магазин";
-
-    public string Message_RestInTown()
-    {
-        return "Вы находите хозяина постоялого двора.\n" +
-            "Он готов сдать вам комнату за {0} монет";
-    }
-
-    public string Message_YouRestInTown()
-    {
-        return "Вы снимаете комнату на несколько дней.\n" +
-            "За это время выши раны успеют затянуться, а торговец успеет обновить свои товары.";
-    }
-
-    public string Message_YouDoNotRestInTown()
-    {
-        return "Вы уходите, решив приберечь деньги до лучших времен.";
-    }
 }

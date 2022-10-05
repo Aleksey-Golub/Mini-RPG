@@ -18,8 +18,9 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private readonly HealthView _healthView;
     private readonly SatiationView _satiationView;
 
-    private GameProcessScreenController? _controller;
+    private GameProcessScreenController _controller;
     private Log _log;
+    //private BattleView _battleView;
     private IPlayer? _player;
 
     public GameProcessScreen(ILocalizationService localizationService)
@@ -33,6 +34,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
+        //_battleView = new BattleView(_panel_Battle, _panel_BattleActions, _button_Attack, _button_TryLeaveBattle, this);
     }
 
     public void Init(IPlayer player)
@@ -67,6 +69,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _log.ClearLogs();
         _log = null;
+
+        //_panel_Battle.Hide();
+        //_panel_BattleActions.Hide();
+
+        //_battleView.Hide();
+        //_battleView = null;
     }
 
     public void SetGameProcessController(GameProcessScreenController gameProcessController) => _controller = gameProcessController;
@@ -114,19 +122,42 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_Navigation.Show();
     }
 
-    public void ShowSuccessRestInTownMessage()
+    public void ShowBattle(ICharacter enemy)
     {
+        _pictureBox_Enemy.BackgroundImage = ImageManager.GetEnemyImage(enemy);
+
+        _panel_Battle.Show();
+        _panel_BattleActions.Show();
+
+        _panel_Town.Hide();
+        _panel_TownEntrance.Hide();
+
+        _menuStrip.Hide();
+        _panel_Navigation.Hide();
+
+        //_battleView = new BattleView(_panel_Battle, _panel_BattleActions, _button_Attack, _button_TryLeaveBattle, _pictureBox_Enemy, _controller, this);
+        //_battleView.View(_player, enemy);
+    }
+
+    public void HideBattle()
+    {
+
+
+        //_battleView.Hide();
+        //_battleView = null;
+    }
+
+    public void ShowSuccessRestInTownMessage() => 
         MessageBox.Show(
             $"{_localizationService.Message_YouRestInTown()}");
-    }
 
-    public void ShowFailRestInTownMessage()
-    {
+    public void ShowFailRestInTownMessage() => 
         MessageBox.Show(
             $"{_localizationService.Message_YouDoNotRestInTown()}");
-    }
 
-    public void ShowMiniMap(IMap map, int fieldOfView) => _mapView.DrawMap(map, fieldOfView);
+    public void ShowMiniMap(IMap map, int fieldOfView) => 
+        _mapView.DrawMap(map, fieldOfView);
+
     public void ShowMap(IMap map)
     {
         using var mapForm = new OpenedMap(map, _localizationService, _player.Character.Name);
@@ -135,6 +166,10 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     public void AddLog(string message) => _log?.AddLog(message);
+
+    public void ShowBattleStartMessage() => 
+        MessageBox.Show(
+            $"{_localizationService.Message_BattleStart()}");
 
     public void ShowFindChestMessage() =>
         MessageBox.Show(
@@ -253,7 +288,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void Button_Inventory_Click(object sender, EventArgs e)
     {
-        using var inventoryForm = new Inventory(_localizationService, _player.Character, this);
+        using var inventoryForm = new Inventory(_localizationService, _player.Character, _controller, this);
         if (inventoryForm.ShowDialog() == DialogResult.OK)
         { }
     }
@@ -284,6 +319,16 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private void Button_S_Click(object sender, EventArgs e) => _controller.TryMove(Direction.S);
     private void Button_W_Click(object sender, EventArgs e) => _controller.TryMove(Direction.W);
     private void Button_E_Click(object sender, EventArgs e) => _controller.TryMove(Direction.E);
+
+    private void Button_Attack_Click(object sender, EventArgs e)
+    {
+        _controller.Tick(PlayerAction.AttackEnemy);
+    }
+
+    private void Button_TryLeaveBattle_Click(object sender, EventArgs e)
+    {
+        _controller.Tick(PlayerAction.TryLeaveBattle);
+    }
     #endregion
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

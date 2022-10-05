@@ -413,7 +413,7 @@
             // 
             // _panel_Location
             // 
-            this._panel_Location.BackgroundImage = global::Mini_RPG.Properties.Resources.Avatar_1;
+            this._panel_Location.BackgroundImage = global::Mini_RPG.Properties.Resources.локация_1;
             this._panel_Location.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._panel_Location.Controls.Add(this._panel_Battle);
             this._panel_Location.Controls.Add(this._flowLayoutPanel_GameLog);
@@ -424,17 +424,22 @@
             // 
             // _panel_Battle
             // 
+            this._panel_Battle.BackColor = System.Drawing.Color.Transparent;
             this._panel_Battle.Controls.Add(this._pictureBox_Enemy);
             this._panel_Battle.Location = new System.Drawing.Point(444, 134);
             this._panel_Battle.Name = "_panel_Battle";
             this._panel_Battle.Size = new System.Drawing.Size(750, 502);
             this._panel_Battle.TabIndex = 2;
+            this._panel_Battle.Visible = false;
             // 
             // _pictureBox_Enemy
             // 
-            this._pictureBox_Enemy.Location = new System.Drawing.Point(31, 51);
+            this._pictureBox_Enemy.BackColor = System.Drawing.Color.Transparent;
+            this._pictureBox_Enemy.BackgroundImage = global::Mini_RPG.Properties.Resources.Wolf;
+            this._pictureBox_Enemy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._pictureBox_Enemy.Location = new System.Drawing.Point(96, 238);
             this._pictureBox_Enemy.Name = "_pictureBox_Enemy";
-            this._pictureBox_Enemy.Size = new System.Drawing.Size(312, 398);
+            this._pictureBox_Enemy.Size = new System.Drawing.Size(256, 256);
             this._pictureBox_Enemy.TabIndex = 0;
             this._pictureBox_Enemy.TabStop = false;
             this._pictureBox_Enemy.Visible = false;
@@ -507,6 +512,7 @@
             this._panel_BattleActions.Name = "_panel_BattleActions";
             this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
             this._panel_BattleActions.TabIndex = 9;
+            this._panel_BattleActions.Visible = false;
             // 
             // _button_TryLeaveBattle
             // 
@@ -516,6 +522,7 @@
             this._button_TryLeaveBattle.TabIndex = 3;
             this._button_TryLeaveBattle.Text = "% попытаться сбежать %";
             this._button_TryLeaveBattle.UseVisualStyleBackColor = true;
+            this._button_TryLeaveBattle.Click += new System.EventHandler(this.Button_TryLeaveBattle_Click);
             // 
             // _button_Attack
             // 
@@ -525,6 +532,7 @@
             this._button_Attack.TabIndex = 2;
             this._button_Attack.Text = "% атаковать %";
             this._button_Attack.UseVisualStyleBackColor = true;
+            this._button_Attack.Click += new System.EventHandler(this.Button_Attack_Click);
             // 
             // _panel_TownEntrance
             // 

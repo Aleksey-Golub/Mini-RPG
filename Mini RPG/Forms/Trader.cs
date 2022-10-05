@@ -66,7 +66,7 @@ public partial class Trader : Form, ITradeView
         btn.Size = new Size(100, 100);
         btn.Font = new Font(btn.Font.FontFamily, 8f);
         btn.TextAlign = ContentAlignment.BottomCenter;
-        btn.BackgroundImage = ImageManager.GetItemImage(item);
+        btn.BackgroundImage = ImageManager.GetItemImageOrEmpty(item);
         btn.BackgroundImageLayout = ImageLayout.Zoom;
         btn.Text = item.LocalizedName;
 

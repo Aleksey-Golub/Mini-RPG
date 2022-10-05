@@ -11,8 +11,9 @@ public partial class GameProcessScreenController
             Controller = controller;
         }
 
-        internal abstract void Exit();
-        internal abstract bool TryMove(Direction direction);
         internal abstract void Enter();
+        internal abstract bool TryMove(Direction direction);
+        internal abstract void Tick(PlayerAction playerAction);
+        internal abstract void Exit();
     }
 }

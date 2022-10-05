@@ -353,9 +353,29 @@ namespace Mini_RPG.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Wolf {
+            get {
+                object obj = ResourceManager.GetObject("Wolf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Без_имени_1 {
             get {
                 object obj = ResourceManager.GetObject("Без имени-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap локация_1 {
+            get {
+                object obj = ResourceManager.GetObject("локация_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -5,9 +5,9 @@ namespace Mini_RPG_Data.Controllers.Character_;
 public class Satiation
 {
     public readonly SatiationData _data;
-    private readonly Character _character;
+    private readonly ICharacter _character;
 
-    internal Satiation(SatiationData data, Character character)
+    internal Satiation(SatiationData data, ICharacter character)
     {
         _data = data;
         _character = character;

@@ -44,7 +44,7 @@ public class CharacterCreationScreenController
 
     public event Action? GameStarted;
 
-    public void SetRace(CharacterRace newRace) => _player.Character.Race = newRace;
+    public void SetRace(Race newRace) => _player.Character.Race = newRace;
 
     public void DecreaseAbility(AbilityType abilityType) => _player.Character.AllAbilities.Decrease(abilityType);
 

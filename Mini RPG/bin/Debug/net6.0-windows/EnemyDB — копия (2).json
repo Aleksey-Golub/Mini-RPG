@@ -1,0 +1,127 @@
+{
+	"Characters": [
+		{
+			"Race": 6,
+			"Name": null,
+			"AvatarPath": null,
+			"LevelData": {
+				"Value": 0,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 0,
+				"WaterSatiation": 0
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 2,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 7
+				},
+				"PerceptionData": {
+					"Value": 7
+				},
+				"CharismaData": {
+					"Value": 9
+				}
+			},
+			"InventoryData": {
+				"Items": [],
+				"EquippedItems": [
+					null,
+					null,
+					null,
+					null,
+					null,
+					null
+				]
+			}
+		}
+	],
+	"Beasts": [
+		{
+			"CharacterData": {
+				"Race": 6,
+				"Name": "YoungBoar",
+				"AvatarPath": "Enemies\\Boar_1.png",
+				"LevelData": {
+					"Value": 1,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 5
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 6
+					},
+					"DexterityData": {
+						"Value": 6
+					},
+					"ConstitutionData": {
+						"Value": 6
+					},
+					"PerceptionData": {
+						"Value": 6
+					},
+					"CharismaData": {
+						"Value": 6
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"ItemType": 1,
+							"Id": 3
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 5,
+			"FieldOfView": 2,
+			"Experience": 5,
+			"AttackModifier": -1,
+			"DefenseModifier": -1,
+			"MinDamage": 2,
+			"MaxDamage": 4,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		}
+	]
+}

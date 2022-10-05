@@ -154,4 +154,29 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowSuccessRestInTownMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowFailRestInTownMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowBattleStartMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void HideBattle()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowBattle(ICharacter enemy)
+    {
+        throw new NotImplementedException();
+    }
 }

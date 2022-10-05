@@ -9,16 +9,17 @@ namespace Mini_RPG_Data.Controllers.Screens;
 public class InventoryScreenController
 {
     private readonly ILocalizationService _localizationService;
-
     private readonly IInventoryView _invetoryView;
     private readonly ILogView _logView;
+    private readonly GameProcessScreenController _gameProcessScreenController;
     private readonly Character _character;
 
-    public InventoryScreenController(ICharacter character, IInventoryView invetoryView, ILogView logView)
+    public InventoryScreenController(ICharacter character, GameProcessScreenController gameProcessScreenController, IInventoryView invetoryView, ILogView logView)
     {
         _localizationService = AllServices.Container.Single<ILocalizationService>();
 
         _character = character as Character;
+        _gameProcessScreenController = gameProcessScreenController;
         _invetoryView = invetoryView;
         _logView = logView;
     }
@@ -30,8 +31,10 @@ public class InventoryScreenController
         {
             _invetoryView.ShowInventory();
             _invetoryView.ShowEquipment();
+            _logView.AddLog($"{_localizationService.PlayerUse()}: {item.LocalizedName}");
+
+            _gameProcessScreenController.Tick(PlayerAction.UseItemSuccessfully);
         }
-        _logView.AddLog($"{_localizationService.PlayerUse()}: {item.LocalizedName}");
         return res;
     }
 
@@ -50,5 +53,7 @@ public class InventoryScreenController
         _character.Unequip(slot);
         _invetoryView.ShowInventory();
         _invetoryView.ShowEquipment();
+            
+        _gameProcessScreenController.Tick(PlayerAction.UnEquipItem);
     }
 }

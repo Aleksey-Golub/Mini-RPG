@@ -21,9 +21,9 @@ public class ItemFactory : IItemFactory
         if (itemSaveData == null)
             return null;
 
-        ItemDataBase? itemData = _itemsService.GetItemDataByIdOrNull(itemSaveData);
+        ItemDataBase? itemData = _itemsService.GetItemDataOrNull(itemSaveData);
 
-        return CreateItem(itemSaveData.Type, itemData);
+        return CreateItem(itemSaveData.ItemType, itemData);
     }
 
     public ItemBase? CreateRandomOrNull(ItemType type = ItemType.None, int itemRating = -1)

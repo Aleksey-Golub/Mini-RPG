@@ -1,6 +1,7 @@
 ﻿using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Controllers.Map_;
+using Mini_RPG_Data.Controllers.Character_;
 
 namespace Mini_RPG_Data.Viewes;
 
@@ -26,4 +27,7 @@ public interface IGameProcessView : IView
     void ShowMap(IMap map);
     void ShowSuccessRestInTownMessage();
     void ShowFailRestInTownMessage();
+    void ShowBattle(ICharacter enemy);
+    void ShowBattleStartMessage();
+    void HideBattle();
 }

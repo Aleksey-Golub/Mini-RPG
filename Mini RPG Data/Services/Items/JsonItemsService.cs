@@ -27,9 +27,9 @@ public class JsonItemsService : IItemsService
         WriteExamplesToFile("ExampleItemsDB.json");
     }
 
-    public ItemDataBase? GetItemDataByIdOrNull(ItemSaveData itemSaveData)
+    public ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData)
     {
-        return itemSaveData.Type switch
+        return itemSaveData.ItemType switch
         {
             ItemType.Common => _itemsDB.CommonItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
             ItemType.Weapon => _itemsDB.WeaponItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
@@ -79,6 +79,7 @@ public class JsonItemsService : IItemsService
         comments.Add(Utils.EnumToString<ArmorType>());
         comments.Add(Utils.EnumToString<EquipmentSlot>());
         comments.Add(Utils.EnumToString<EffectType>());
+        comments.Add(Utils.EnumToString<ItemType>());
 
         try
         {
