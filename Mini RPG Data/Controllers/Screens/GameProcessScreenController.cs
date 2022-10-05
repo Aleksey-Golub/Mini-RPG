@@ -273,7 +273,8 @@ public partial class GameProcessScreenController
             switch (playerAction)
             {
                 case PlayerAction.AttackEnemy:
-                    Settings.HandleAttack(Controller._player.Character, _enemy);
+                    var res = Settings.HandleAttack(Controller._player.Character, _enemy);
+                    Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
                     break;
                 case PlayerAction.TryLeaveBattle:
                     _playerEscaped = Settings.HandlePlayerBattleEscape(Controller._player.Character);
@@ -292,7 +293,8 @@ public partial class GameProcessScreenController
 
         private void HandleEnemyAction()
         {
-            Settings.HandleAttack(_enemy, Controller._player.Character);
+            var res = Settings.HandleAttack(_enemy, Controller._player.Character);
+            Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
         }
 
         private bool NeedEndBattle()
@@ -300,6 +302,9 @@ public partial class GameProcessScreenController
             if (_enemy.IsAlive == false)
             {
                 Controller._player.Character.Level.TakeExperience(_enemy.Experience);
+                Controller._player.Character.Inventory.AddItems(_enemy.Inventory.Items.ToList());
+                Controller._gameProcessView.HideBattle(_enemy.Inventory.Items, _enemy.Experience);
+                Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
             }
 

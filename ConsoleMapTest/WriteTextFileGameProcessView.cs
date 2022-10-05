@@ -170,7 +170,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void HideBattle()
+    public void HideBattle(IReadOnlyList<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> items, int experience)
     {
         throw new NotImplementedException();
     }

@@ -110,7 +110,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowLocation(IMapCell cell)
     {
-        _panel_Location.BackgroundImage = ImageManager.GetLocation(cell.ImageIndex);
+        //_panel_Location.BackgroundImage = ImageManager.GetLocation(cell.ImageIndex);
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
@@ -124,7 +124,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowBattle(ICharacter enemy)
     {
-        _pictureBox_Enemy.BackgroundImage = ImageManager.GetEnemyImage(enemy);
+        //_pictureBox_Enemy.BackgroundImage = ImageManager.GetEnemyImage(enemy);
 
         _panel_Battle.Show();
         _panel_BattleActions.Show();
@@ -139,10 +139,14 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         //_battleView.View(_player, enemy);
     }
 
-    public void HideBattle()
+    public void HideBattle(IReadOnlyList<ItemBase> loot, int experience)
     {
+        StringBuilder sb = new StringBuilder();
+        sb.Append($"Gained {experience} EX\n");
+        foreach (ItemBase item in loot)
+            sb.Append($"{item.LocalizedName}\n");
 
-
+        MessageBox.Show(sb.ToString());
         //_battleView.Hide();
         //_battleView = null;
     }

@@ -29,5 +29,5 @@ public interface IGameProcessView : IView
     void ShowFailRestInTownMessage();
     void ShowBattle(ICharacter enemy);
     void ShowBattleStartMessage();
-    void HideBattle();
+    void HideBattle(IReadOnlyList<Controllers.Inventory_.Items.ItemBase> items, int experience);
 }
