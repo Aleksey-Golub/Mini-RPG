@@ -181,7 +181,7 @@ public class Inventory
         _equipmentSlots[EquipmentSlot.OffHand] =
             MainHandItemSaveData == null || OffHandItemSaveData == null
             ? _itemsFactory.CreateOrNull(OffHandItemSaveData)
-            : MainHandItemSaveData.ItemType == OffHandItemSaveData.ItemType && MainHandItemSaveData.Id == OffHandItemSaveData.Id
+            : MainHandItemSaveData.Type == OffHandItemSaveData.Type && MainHandItemSaveData.Id == OffHandItemSaveData.Id
                 ? MainHandItem
                 : _itemsFactory.CreateOrNull(OffHandItemSaveData);
     }

@@ -8,7 +8,10 @@ public static class Extensions
     {
         int v = _rnd.Next(0, list.Count);
 
-        return list[v];
+        if (list.Count > 0)
+            return list[v];
+        else
+            return default;
     }
 
     public static int DividedByAndCeiling(this int num, int divider)

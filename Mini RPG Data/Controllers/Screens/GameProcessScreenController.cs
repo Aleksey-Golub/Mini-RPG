@@ -231,7 +231,7 @@ public partial class GameProcessScreenController
 
         internal override void Enter()
         {
-            var enemy = Controller._enemyFactory.CreateRandom(Controller._player);
+            _enemy = Controller._enemyFactory.CreateRandom(Controller._player);
             Controller._gameProcessView.ShowBattle(_enemy);
 
             //_enemy.Died += OnEnemyDied;

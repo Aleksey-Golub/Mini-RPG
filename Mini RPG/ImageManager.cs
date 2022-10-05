@@ -73,7 +73,7 @@ internal static class ImageManager
         Image image;
         try
         {
-            image = Image.FromFile($"{ENEMY_PICTURE_DIRECTIRY}\\{pictureNameWithExtension}");
+            image = Image.FromFile($"{pictureNameWithExtension}");
         }
         catch
         {
