@@ -34,7 +34,7 @@ public class Level
     internal void TakeExperience(int value)
     {
         _data.CurrentExperience += value;
-        if (CurrentExperience > RequiredForNextLevelExperience)
+        if (CurrentExperience >= RequiredForNextLevelExperience)
             Value++;
     }
 }

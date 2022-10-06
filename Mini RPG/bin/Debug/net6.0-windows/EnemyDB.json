@@ -36,12 +36,12 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 1,
-						"Id": 0
+						"Type": 3,
+						"Id": 2
 					},
 					{
-						"Type": 1,
-						"Id": 1
+						"Type": 2,
+						"Id": 9
 					}
 				],
 				"EquippedItems": [

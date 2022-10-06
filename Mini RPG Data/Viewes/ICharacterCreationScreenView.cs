@@ -3,7 +3,7 @@ using Mini_RPG_Data.Controllers.Screens;
 
 namespace Mini_RPG_Data.Viewes;
 
-public interface ICharacterCreationScreenView : IView
+public interface ICharacterCreationScreenView
 {
     void SetActiveState(bool newState);
     void SetController(CharacterCreationScreenController controller);

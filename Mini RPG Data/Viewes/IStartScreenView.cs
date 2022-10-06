@@ -2,7 +2,7 @@
 
 namespace Mini_RPG_Data.Viewes;
 
-public interface IStartScreenView : IView
+public interface IStartScreenView
 {
     void SetActiveState(bool newState);
     void SetController(StartScreenController controller);

@@ -430,6 +430,7 @@
             this._panel_Battle.Name = "_panel_Battle";
             this._panel_Battle.Size = new System.Drawing.Size(750, 502);
             this._panel_Battle.TabIndex = 2;
+            this._panel_Battle.Visible = false;
             // 
             // _pictureBox_Enemy
             // 
@@ -441,7 +442,6 @@
             this._pictureBox_Enemy.Size = new System.Drawing.Size(256, 256);
             this._pictureBox_Enemy.TabIndex = 0;
             this._pictureBox_Enemy.TabStop = false;
-            this._pictureBox_Enemy.Visible = false;
             // 
             // _flowLayoutPanel_GameLog
             // 
@@ -511,6 +511,7 @@
             this._panel_BattleActions.Name = "_panel_BattleActions";
             this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
             this._panel_BattleActions.TabIndex = 9;
+            this._panel_BattleActions.Visible = false;
             // 
             // _button_TryLeaveBattle
             // 

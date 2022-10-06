@@ -2,10 +2,11 @@
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 
 namespace Mini_RPG_Data.Viewes;
 
-public interface IGameProcessView : IView
+public interface IGameProcessView
 {
     void Init(IPlayer player);
     void DeInit();
@@ -15,13 +16,13 @@ public interface IGameProcessView : IView
     void ShowTownEntrance();
     void ShowTown();
     void ShowLocation(IMapCell cell);
-    void ShowLootCellMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
+    void ShowLootCellMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowFindChestMessage();
-    void ShowSuccessPickLockedChestMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
+    void ShowSuccessPickLockedChestMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowFailPickLockedChestMessage();
-    void ShowSuccessBreakChestMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
+    void ShowSuccessBreakChestMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowFailBreakChestMessage();
-    void ShowSuccessFindHiddenLootMessage(int money, List<Controllers.Inventory_.Items.ItemBase> loot);
+    void ShowSuccessFindHiddenLootMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowSuccessFindTrapMessage(TrapType trapType);
     void ShowFailFindTrapMessage(TrapType trapType);
     void ShowMap(IMap map);
@@ -29,5 +30,5 @@ public interface IGameProcessView : IView
     void ShowFailRestInTownMessage();
     void ShowBattle(ICharacter enemy);
     void ShowBattleStartMessage();
-    void HideBattle(IReadOnlyList<Controllers.Inventory_.Items.ItemBase> items, int experience);
+    void HideBattle(BattleResult playerWon, IReadOnlyList<ItemBase> items, int experience);
 }

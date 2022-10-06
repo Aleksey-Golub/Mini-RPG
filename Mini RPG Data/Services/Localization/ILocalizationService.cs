@@ -87,4 +87,9 @@ public interface ILocalizationService : IService
     string Message_YouRestInTown();
     string Message_YouDoNotRestInTown();
     string Message_BattleStart();
+    string Message_YouAreEscaped();
+    string Message_YouAreNotEscaped();
+    string FirstHitsSecondWithDamage();
+    string Message_Experience();
+    string YouGained();
 }

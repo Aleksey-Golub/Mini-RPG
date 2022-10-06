@@ -6,6 +6,7 @@ using Mini_RPG_Data.Datas;
 using Mini_RPG_Data.Controllers.Map_;
 using Mini_RPG_Data.Viewes;
 using System.Text;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 
 internal class WriteTextFileGameProcessView : IGameProcessView
 {
@@ -105,7 +106,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowLootCellMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
+    public void ShowLootCellMessage(int money, IReadOnlyList<ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -120,7 +121,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessPickLockedChestMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
+    public void ShowSuccessPickLockedChestMessage(int money, IReadOnlyList<ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -130,7 +131,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessBreakChestMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
+    public void ShowSuccessBreakChestMessage(int money, IReadOnlyList<ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -140,7 +141,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowSuccessFindHiddenLootMessage(int money, List<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> loot)
+    public void ShowSuccessFindHiddenLootMessage(int money, IReadOnlyList<ItemBase> loot)
     {
         throw new NotImplementedException();
     }
@@ -170,7 +171,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void HideBattle(IReadOnlyList<Mini_RPG_Data.Controllers.Inventory_.Items.ItemBase> items, int experience)
+    public void HideBattle(BattleResult battleResult, IReadOnlyList<ItemBase> items, int experience)
     {
         throw new NotImplementedException();
     }

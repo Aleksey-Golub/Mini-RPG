@@ -49,7 +49,7 @@ public partial class Inventory : Form, IInventoryView
             ShowItem(item);
     }
 
-    private void OnCharacterDied(Character character)
+    private void OnCharacterDied(ICharacter character)
     {
         character.Died -= OnCharacterDied;
 

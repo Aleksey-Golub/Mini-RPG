@@ -6,7 +6,6 @@ namespace Mini_RPG_Data.Datas;
 [Serializable]
 public class MapData
 {
-    //public Vector2Int[] Keys { get; set; }
     public MapCell[] Values { get; set; }
 
     public MapData()

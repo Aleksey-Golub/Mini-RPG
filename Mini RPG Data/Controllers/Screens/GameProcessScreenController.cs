@@ -233,8 +233,6 @@ public partial class GameProcessScreenController
         {
             _enemy = Controller._enemyFactory.CreateRandom(Controller._player);
             Controller._gameProcessView.ShowBattle(_enemy);
-
-            //_enemy.Died += OnEnemyDied;
         }
 
         internal override bool TryMove(Direction direction)
@@ -250,16 +248,19 @@ public partial class GameProcessScreenController
             if (playerInitiative >= enemyInitiative)
             {
                 HandlePlayerAction(playerAction);
-                NeedEndBattle();
+                if (NeedEndBattle())
+                    return;
                 HandleEnemyAction();
             }
             else
             {
                 HandleEnemyAction();
-                NeedEndBattle();
+                if (NeedEndBattle())
+                    return;
                 HandlePlayerAction(playerAction);
             }
-            NeedEndBattle();
+            if (NeedEndBattle())
+                return;
         }
 
         internal override void Exit()
@@ -274,10 +275,13 @@ public partial class GameProcessScreenController
             {
                 case PlayerAction.AttackEnemy:
                     var res = Settings.HandleAttack(Controller._player.Character, _enemy);
-                    Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
+                    //Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
+                    Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
                     break;
                 case PlayerAction.TryLeaveBattle:
                     _playerEscaped = Settings.HandlePlayerBattleEscape(Controller._player.Character);
+                    if (_playerEscaped == false)
+                        Controller._logView.AddLog($"{Controller._localizationService.Message_YouAreNotEscaped()}");
                     break;
                 case PlayerAction.Rest:
                     break;
@@ -294,7 +298,8 @@ public partial class GameProcessScreenController
         private void HandleEnemyAction()
         {
             var res = Settings.HandleAttack(_enemy, Controller._player.Character);
-            Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
+            //Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
+            Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
         }
 
         private bool NeedEndBattle()
@@ -303,13 +308,18 @@ public partial class GameProcessScreenController
             {
                 Controller._player.Character.Level.TakeExperience(_enemy.Experience);
                 Controller._player.Character.Inventory.AddItems(_enemy.Inventory.Items.ToList());
-                Controller._gameProcessView.HideBattle(_enemy.Inventory.Items, _enemy.Experience);
+                Controller._gameProcessView.HideBattle(BattleResult.PlayerWon, _enemy.Inventory.Items, _enemy.Experience);
                 Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
             }
 
             if (_playerEscaped)
+            {
+                Controller._logView.AddLog($"{Controller._localizationService.Message_YouAreEscaped()}");
+                Controller._gameProcessView.HideBattle(BattleResult.PlayerEscaped, _enemy.Inventory.Items, _enemy.Experience);
+                Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
+            }
 
             return false;
         }

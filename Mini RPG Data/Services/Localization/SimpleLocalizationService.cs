@@ -131,10 +131,10 @@ public class SimpleLocalizationService : ILocalizationService
     }
 
     public string PlayerRest() => "Вы остановились на привал";
-    public string Message_YouFindLoot() => "На пути вам попадается сверток с вещами. Осмотрев их вы забираете все ценное.\n\nВы нашли";
+    public string Message_YouFindLoot() => "На пути вам попадается сверток с вещами. Осмотрев их вы забираете все ценное.\n\n";
     public string Message_Coins() => "Монеты";
     public string Message_YouFindLockedChest() => "Вы нашли запертый сундук";
-    public string Message_PickLockedChestSuccess() => "Попытка вскыть замок оказалась успешной.\n\nВнутри вы нашли";
+    public string Message_PickLockedChestSuccess() => "Попытка вскыть замок оказалась успешной.\n\n";
     public string Message_PickLockedChestFail() => "Попытка вскыть замок окончилась неудачей.\nМеханизм замка окончательно заклинило, теперь его не открыть даже ключем.";
     public string Message_BreakChestSuccess() => "Рассчитывая все-таки получить ценное содержимое, вы наносите несколько точных ударов и проламываете крышку.\n\nВнутри вы находите";
     public string Message_BreakChestFail() =>
@@ -146,7 +146,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string Message_YouFindHiddenLoot() =>
         "Вы останавливаетесь, чтобы перевести дух и поправить снаряжение. Вдруг ваше внимание привлекают еле заметные следы на земле.\n" +
         "Пройдя по ним несколько десятков шагов, вы натыкаетесь на тайник.\n" +
-        "Внимательно осмотрев его содержимое, вы забираете с собой все ценное.\n\nВы нашли";
+        "Внимательно осмотрев его содержимое, вы забираете с собой все ценное.\n\n";
 
     public string Message_FindTrapSuccess(TrapType trapType)
     {
@@ -329,4 +329,9 @@ public class SimpleLocalizationService : ILocalizationService
 
     public string PlayerUse() => "Вы использовали";
     public string Shop() => "Магазин";
+    public string Message_YouAreEscaped() => "Вам удалось сбежать";
+    public string Message_YouAreNotEscaped() => "Вам не удалось сбежать";
+    public string FirstHitsSecondWithDamage() => "{0} нанес {1} {2} урона";
+    public string Message_Experience() => "Опыт";
+    public string YouGained() => "Вы получили:";
 }

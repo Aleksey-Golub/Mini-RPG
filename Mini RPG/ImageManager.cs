@@ -65,7 +65,6 @@ internal static class ImageManager
 
     internal static Image GetEnemyImage(ICharacter enemy)
     {
-        //string pictureNameWithExtension = enemy.AvatarPath;
         string pictureNameWithExtension = enemy.AvatarPath;
 
         if (_images.ContainsKey(pictureNameWithExtension))

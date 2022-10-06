@@ -20,7 +20,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private GameProcessScreenController _controller;
     private Log _log;
-    //private BattleView _battleView;
     private IPlayer? _player;
 
     public GameProcessScreen(ILocalizationService localizationService)
@@ -34,7 +33,6 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
-        //_battleView = new BattleView(_panel_Battle, _panel_BattleActions, _button_Attack, _button_TryLeaveBattle, this);
     }
 
     public void Init(IPlayer player)
@@ -70,11 +68,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _log.ClearLogs();
         _log = null;
 
-        //_panel_Battle.Hide();
-        //_panel_BattleActions.Hide();
-
-        //_battleView.Hide();
-        //_battleView = null;
+        _panel_Battle.Hide();
+        _panel_BattleActions.Hide();
     }
 
     public void SetGameProcessController(GameProcessScreenController gameProcessController) => _controller = gameProcessController;
@@ -110,7 +105,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowLocation(IMapCell cell)
     {
-        //_panel_Location.BackgroundImage = ImageManager.GetLocation(cell.ImageIndex);
+        _panel_Location.BackgroundImage = ImageManager.GetLocation(cell.ImageIndex);
 
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
@@ -124,7 +119,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowBattle(ICharacter enemy)
     {
-        //_pictureBox_Enemy.BackgroundImage = ImageManager.GetEnemyImage(enemy);
+        _pictureBox_Enemy.BackgroundImage = ImageManager.GetEnemyImage(enemy);
 
         _panel_Battle.Show();
         _panel_BattleActions.Show();
@@ -134,32 +129,43 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _menuStrip.Hide();
         _panel_Navigation.Hide();
-
-        //_battleView = new BattleView(_panel_Battle, _panel_BattleActions, _button_Attack, _button_TryLeaveBattle, _pictureBox_Enemy, _controller, this);
-        //_battleView.View(_player, enemy);
     }
 
-    public void HideBattle(IReadOnlyList<ItemBase> loot, int experience)
+    public void HideBattle(BattleResult result, IReadOnlyList<ItemBase> loot, int experience)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"Gained {experience} EX\n");
         foreach (ItemBase item in loot)
             sb.Append($"{item.LocalizedName}\n");
 
-        MessageBox.Show(sb.ToString());
-        //_battleView.Hide();
-        //_battleView = null;
+        switch (result)
+        {
+            case BattleResult.PlayerWon:
+                MessageBox.Show(LootAndMoneyAndExperienceMessage(0, loot, experience));
+                break;
+            case BattleResult.PlayerEscaped:
+                MessageBox.Show(_localizationService.Message_YouAreEscaped());
+                break;
+            case BattleResult.PlayerDied:
+                break;
+            case BattleResult.None:
+            default:
+                throw new NotImplementedException();
+        }
+
+        _panel_Battle.Hide();
+        _panel_BattleActions.Hide();
     }
 
-    public void ShowSuccessRestInTownMessage() => 
+    public void ShowSuccessRestInTownMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_YouRestInTown()}");
 
-    public void ShowFailRestInTownMessage() => 
+    public void ShowFailRestInTownMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_YouDoNotRestInTown()}");
 
-    public void ShowMiniMap(IMap map, int fieldOfView) => 
+    public void ShowMiniMap(IMap map, int fieldOfView) =>
         _mapView.DrawMap(map, fieldOfView);
 
     public void ShowMap(IMap map)
@@ -171,7 +177,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void AddLog(string message) => _log?.AddLog(message);
 
-    public void ShowBattleStartMessage() => 
+    public void ShowBattleStartMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_BattleStart()}");
 
@@ -179,33 +185,33 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         MessageBox.Show(
             $"{_localizationService.Message_YouFindLockedChest()}");
 
-    public void ShowLootCellMessage(int money, List<ItemBase> loot) =>
+    public void ShowLootCellMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindLoot()}:\n" +
-            LootAndMoneyMessage(money, loot));
+            $"{_localizationService.Message_YouFindLoot()}\n" +
+            LootAndMoneyAndExperienceMessage(money, loot, 0));
 
-    public void ShowSuccessPickLockedChestMessage(int money, List<ItemBase> loot) =>
+    public void ShowSuccessPickLockedChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_PickLockedChestSuccess()}:\n" +
-            LootAndMoneyMessage(money, loot));
+            $"{_localizationService.Message_PickLockedChestSuccess()}\n" +
+            LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowFailPickLockedChestMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_PickLockedChestFail()}");
 
-    public void ShowSuccessBreakChestMessage(int money, List<ItemBase> loot) =>
+    public void ShowSuccessBreakChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_BreakChestSuccess()}:\n" +
-            LootAndMoneyMessage(money, loot));
+            $"{_localizationService.Message_BreakChestSuccess()}\n" +
+            LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowFailBreakChestMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_BreakChestFail()}");
 
-    public void ShowSuccessFindHiddenLootMessage(int money, List<ItemBase> loot) =>
+    public void ShowSuccessFindHiddenLootMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindHiddenLoot()}:\n" +
-            LootAndMoneyMessage(money, loot));
+            $"{_localizationService.Message_YouFindHiddenLoot()}\n" +
+            LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowSuccessFindTrapMessage(TrapType trapType) =>
         MessageBox.Show(
@@ -215,12 +221,22 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         MessageBox.Show(
             $"{_localizationService.Message_FindTrapFail(trapType)}");
 
-    private string LootAndMoneyMessage(int money, List<ItemBase> loot)
+    private string LootAndMoneyAndExperienceMessage(int money, IReadOnlyList<ItemBase> loot, int experience)
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append($"{_localizationService.Message_Coins()}: {money}\n");
-        foreach (ItemBase item in loot)
-            sb.Append($"{item.LocalizedName}\n");
+        if (money > 0 || loot.Count > 0 || experience > 0)
+        {
+            sb.AppendLine(_localizationService.YouGained());
+
+            if (money > 0)
+                sb.Append($"{_localizationService.Message_Coins()}: {money}\n");
+
+            foreach (ItemBase item in loot)
+                sb.Append($"{item.LocalizedName}\n");
+
+            if (experience > 0)
+                sb.AppendLine($"{_localizationService.Message_Experience()}: {experience}\n");
+        }
 
         return sb.ToString();
     }

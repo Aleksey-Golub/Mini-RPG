@@ -46,8 +46,6 @@ public partial class CharacterProgress : Form
         _label_ConstitutionPoints.Text = character.AllAbilities.Constitution.Value.ToString();
         _label_PerceptionPoints.Text = character.AllAbilities.Perception.Value.ToString();
         _label_CharismaPoints.Text = character.AllAbilities.Charisma.Value.ToString();
-
-        // TO DO activate/deactivate buttons
     }
 
     private void SetTexts()

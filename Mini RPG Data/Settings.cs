@@ -36,7 +36,7 @@ public static class Settings
 
     public const int REST_IN_TOWN_COST = 20;
 
-    public const int RANDOM_ENEMY_LEVEL_RANGE = 2;
+    public const int RANDOM_ENEMY_LEVEL_RANGE = 1;
 
     public static string AvatarsDirectory => $"Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";

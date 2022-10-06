@@ -19,7 +19,7 @@ public class Character : ICharacter
         AllAbilities.Changed += OnAbilitiesChanged;
 
         Level = new Level(data.LevelData);
-        Level.Changed += () => LevelChanged?.Invoke(this);
+        Level.Changed += OnLevelChanged;
         Health = new Health(data.HealthData, this);
         Health.Changed += OnHealthChanged;
         Satiation = new Satiation(data.SatiationData, this);
@@ -213,5 +213,11 @@ public class Character : ICharacter
 
         if (Health.CurrentHealth <= 0)
             Died?.Invoke(this);
+    }
+
+    private void OnLevelChanged()
+    {
+        AllAbilities.AddAbilityPoints(1);
+        LevelChanged?.Invoke(this);
     }
 }
