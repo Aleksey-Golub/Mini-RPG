@@ -408,7 +408,7 @@ public static class Settings
 
     internal static int CalculateExperience(Character character)
     {
-        return character.Level.Value * 20;
+        return character.Level.Value * 5;
     }
 
     internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 2;

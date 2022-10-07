@@ -54,7 +54,14 @@ public class JsonFileSaveLoadService : ISaveLoadService
         }
     }
 
-    public string[] GetAllSaves() => Directory.GetFiles(_savesDirectory);
+    public string[] GetAllSaves()
+    {
+        bool exists = Directory.Exists(_savesDirectory);
+        if (!exists)
+            Directory.CreateDirectory(_savesDirectory);
+
+        return Directory.GetFiles(_savesDirectory);
+    }
 
     public void DeleteCurrentPlayerSave()
     {
