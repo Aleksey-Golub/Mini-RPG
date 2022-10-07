@@ -29,7 +29,7 @@ public class JsonItemsService : IItemsService
 
     public ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData)
     {
-        return itemSaveData.ItemType switch
+        return itemSaveData.Type switch
         {
             ItemType.Common => _itemsDB.CommonItems.FirstOrDefault(x => x.Id == itemSaveData.Id),
             ItemType.Weapon => _itemsDB.WeaponItems.FirstOrDefault(x => x.Id == itemSaveData.Id),

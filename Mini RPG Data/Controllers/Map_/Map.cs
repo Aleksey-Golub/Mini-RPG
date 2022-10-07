@@ -155,7 +155,7 @@ public class Map : IMap
         return mapData;
     }
 
-    internal void Regenerate(IRandomService randomService) => _data = Map.Generate(randomService);
+    internal void Regenerate(IRandomService randomService) => _data.SetNewDatas(Generate(randomService));
 
     internal void Explore(Vector2Int cellPosition) => _data.Cells[cellPosition].CellState = CellState.Explored;
     internal void MakeEmpty(Vector2Int cellPosition) => _data.Cells[cellPosition].CellType = CellType.Empty;

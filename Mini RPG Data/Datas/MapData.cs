@@ -28,9 +28,12 @@ public class MapData
     public Vector2Int PlayerPosition { get; set; }
     public Vector2Int TownPosition { get; set; }
 
+    //public event Action? SaveStarting;
+
+    //internal void PrepareForSerialize() => SaveStarting?.Invoke();
     public void PrepareForSerialize()
     {
-        Values = new MapCell[0];
+        //Values = new MapCell[0];
         Values = Cells.Values.ToArray();
     }
 
@@ -88,5 +91,21 @@ public class MapData
             if (key.Y > MaxY)
                 MaxY = key.Y;
         }
+    }
+
+    internal void SetNewDatas(MapData newData)
+    {
+        Cells = newData.Cells;
+        EnemyCount = newData.EnemyCount;
+        LootCount = newData.LootCount;
+        LockedChestCount = newData.LockedChestCount;
+        HiddenLootCount = newData.HiddenLootCount;
+        TrapCount = newData.TrapCount;
+        MinX = newData.MinX;
+        MaxX = newData.MaxX;
+        MinY = newData.MinY;
+        MaxY = newData.MaxY;
+        PlayerPosition = newData.PlayerPosition;
+        TownPosition = newData.TownPosition;
     }
 }

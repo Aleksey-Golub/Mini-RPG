@@ -5,11 +5,11 @@ public class ItemSaveData
 {
     public ItemSaveData(ItemType type, int id)
     {
-        ItemType = type;
+        Type = type;
         Id = id;
     }
 
-    public ItemType ItemType { get; set; }
+    public ItemType Type { get; set; }
     /// <summary>
     /// id in Type group
     /// </summary>
