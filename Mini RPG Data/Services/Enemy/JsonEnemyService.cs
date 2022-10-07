@@ -28,8 +28,8 @@ public class JsonEnemyService : IEnemyService
         WriteExamplesToFile("ExampleEnemyDB.json");
     }
 
-    public BeastEnemyDataBase? GetRandomBeastEnemyDataOrNull(int enemyLevel) => _enemyDB.Beasts.Where(x => x.CharacterData.LevelData.Value == enemyLevel).ToList().GetRandomItem();
-    public CharacterData? GetRandomCharacterEnemyDataOrNull(int enemyLevel) => _enemyDB.Characters.Where(x => x.LevelData.Value == enemyLevel).ToList().GetRandomItem();
+    public BeastEnemyDataBase? GetRandomBeastEnemyDataOrNull(int enemyLevel) => _enemyDB.Beasts.Where(x => x.CharacterData.LevelData.Value == enemyLevel).ToList().GetRandomItem()?.Copy();
+    public CharacterData? GetRandomCharacterEnemyDataOrNull(int enemyLevel) => _enemyDB.Characters.Where(x => x.LevelData.Value == enemyLevel).ToList().GetRandomItem()?.Copy();
 
     private void WriteCommentsToFile(string localFilePath)
     {

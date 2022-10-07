@@ -5,4 +5,9 @@ public class SatiationData
 {
     public int FoodSatiation;
     public int WaterSatiation;
+
+    internal SatiationData Copy()
+    {
+        return (SatiationData)MemberwiseClone();
+    }
 }

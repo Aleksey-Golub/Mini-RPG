@@ -38,7 +38,7 @@
             this._panel_MiniMap = new System.Windows.Forms.Panel();
             this._label_Map = new System.Windows.Forms.Label();
             this._panel_Character = new System.Windows.Forms.Panel();
-            this._pictureBox_HasFreeAbilityActions = new System.Windows.Forms.PictureBox();
+            this._pictureBox_HasFreeAbilityPoints = new System.Windows.Forms.PictureBox();
             this._panel_CharacterHealthBarBG = new System.Windows.Forms.Panel();
             this._panel_CharacterHealthBarFG = new System.Windows.Forms.Panel();
             this._button_CharacterProgress = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             this._panel_Navigation.SuspendLayout();
             this._panel_MiniMap.SuspendLayout();
             this._panel_Character.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityPoints)).BeginInit();
             this._panel_CharacterHealthBarBG.SuspendLayout();
             this._statusStrip.SuspendLayout();
             this._menuStrip.SuspendLayout();
@@ -205,7 +205,7 @@
             // 
             // _panel_Character
             // 
-            this._panel_Character.Controls.Add(this._pictureBox_HasFreeAbilityActions);
+            this._panel_Character.Controls.Add(this._pictureBox_HasFreeAbilityPoints);
             this._panel_Character.Controls.Add(this._panel_CharacterHealthBarBG);
             this._panel_Character.Controls.Add(this._button_CharacterProgress);
             this._panel_Character.Location = new System.Drawing.Point(1562, 369);
@@ -213,16 +213,16 @@
             this._panel_Character.Size = new System.Drawing.Size(203, 208);
             this._panel_Character.TabIndex = 2;
             // 
-            // _pictureBox_HasFreeAbilityActions
+            // _pictureBox_HasFreeAbilityPoints
             // 
-            this._pictureBox_HasFreeAbilityActions.BackgroundImage = global::Mini_RPG.Properties.Resources.level_up;
-            this._pictureBox_HasFreeAbilityActions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._pictureBox_HasFreeAbilityActions.Location = new System.Drawing.Point(111, 147);
-            this._pictureBox_HasFreeAbilityActions.Name = "_pictureBox_HasFreeAbilityActions";
-            this._pictureBox_HasFreeAbilityActions.Size = new System.Drawing.Size(40, 40);
-            this._pictureBox_HasFreeAbilityActions.TabIndex = 2;
-            this._pictureBox_HasFreeAbilityActions.TabStop = false;
-            this._pictureBox_HasFreeAbilityActions.Visible = false;
+            this._pictureBox_HasFreeAbilityPoints.BackgroundImage = global::Mini_RPG.Properties.Resources.level_up;
+            this._pictureBox_HasFreeAbilityPoints.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._pictureBox_HasFreeAbilityPoints.Location = new System.Drawing.Point(111, 147);
+            this._pictureBox_HasFreeAbilityPoints.Name = "_pictureBox_HasFreeAbilityPoints";
+            this._pictureBox_HasFreeAbilityPoints.Size = new System.Drawing.Size(40, 40);
+            this._pictureBox_HasFreeAbilityPoints.TabIndex = 2;
+            this._pictureBox_HasFreeAbilityPoints.TabStop = false;
+            this._pictureBox_HasFreeAbilityPoints.Visible = false;
             // 
             // _panel_CharacterHealthBarBG
             // 
@@ -573,7 +573,7 @@
             this._panel_Navigation.ResumeLayout(false);
             this._panel_MiniMap.ResumeLayout(false);
             this._panel_Character.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityActions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox_HasFreeAbilityPoints)).EndInit();
             this._panel_CharacterHealthBarBG.ResumeLayout(false);
             this._statusStrip.ResumeLayout(false);
             this._statusStrip.PerformLayout();
@@ -629,7 +629,7 @@
         private Button _button_Trader;
         private FlowLayoutPanel _flowLayoutPanel_GameLog;
         private Button _button_SwitchLogSize;
-        private PictureBox _pictureBox_HasFreeAbilityActions;
+        private PictureBox _pictureBox_HasFreeAbilityPoints;
         private Button _button_RestInTown;
         private Panel _panel_Battle;
         private Panel _panel_BattleActions;

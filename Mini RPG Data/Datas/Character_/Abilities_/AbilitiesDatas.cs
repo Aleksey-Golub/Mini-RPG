@@ -37,6 +37,19 @@ public class AbilitiesDatas
         AbilityPoints = abilityPoints;
     }
 
+    internal AbilitiesDatas Copy()
+    {
+        return new AbilitiesDatas()
+        {
+            AbilityPoints = this.AbilityPoints,
+            StrengthData = StrengthData.Copy(),
+            DexterityData = DexterityData.Copy(),
+            ConstitutionData = ConstitutionData.Copy(),
+            PerceptionData = PerceptionData.Copy(),
+            CharismaData = CharismaData.Copy()
+        };
+    }
+
     public static AbilitiesDatas operator +(AbilitiesDatas a, AbilitiesDatas b)
     {
         int newStrength = a.StrengthData.Value + b.StrengthData.Value;

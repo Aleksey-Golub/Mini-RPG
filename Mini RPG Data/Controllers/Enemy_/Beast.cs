@@ -42,10 +42,10 @@ internal class Beast : ICharacter
     public int MaxDamage => _data.MaxDamage;
     public DamageType DamageType => _data.DamageType;
 
-    public event Action<Character>? Changed;
-    public event Action<Character>? LevelChanged;
-    public event Action<Character>? HealthChanged;
-    public event Action<Character>? Died;
+    public event Action<ICharacter>? Changed;
+    public event Action<ICharacter>? LevelChanged;
+    public event Action<ICharacter>? HealthChanged;
+    public event Action<ICharacter>? Died;
 
     public Armor GetArmor(BodyPart bodyPart)
     {

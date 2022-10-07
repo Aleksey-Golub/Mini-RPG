@@ -41,6 +41,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _player.Character.AllAbilities.Changed += OnCharacterAbilitiesChanged;
         _player.Character.HealthChanged += OnCharacterHealthChanged;
+        _player.Character.LevelChanged += OnCharacterLevelChanged;
         _player.Character.Satiation.Changed += OnCharacterSatiationChanging;
         _player.Wallet.MoneyChanged += OnMoneyChanged;
 
@@ -256,9 +257,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_ConstitutionPoints.ToolTipText = allAbilities.Constitution.Bonus.ToString();
         _label_PerceptionPoints.ToolTipText = allAbilities.Perception.Bonus.ToString();
         _label_CharismaPoints.ToolTipText = allAbilities.Charisma.Bonus.ToString();
+
+        _pictureBox_HasFreeAbilityPoints.Visible = allAbilities.AbilityPoints > 0;
     }
 
     private void OnCharacterHealthChanged(ICharacter character) => _healthView.View(character.Health.CurrentHealth, character.Health.MaxHealth);
+    private void OnCharacterLevelChanged(ICharacter character) => MessageBox.Show(_localizationService.CharacterGainedNewLevel(_player.Character.Name));
     private void OnCharacterSatiationChanging() => _satiationView.View(_player.Character.Satiation.HungerLevel, _player.Character.Satiation.ThirstLevel);
     private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 

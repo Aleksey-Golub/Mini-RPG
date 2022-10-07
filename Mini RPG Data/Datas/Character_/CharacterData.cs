@@ -24,4 +24,16 @@ public class CharacterData
         AbilitiesDatas = Abilities.GetFor(Race);
         InventoryData = new InventoryData();
     }
+
+    internal CharacterData Copy()
+    {
+        CharacterData copy = (CharacterData)MemberwiseClone();
+        copy.LevelData = LevelData.Copy();
+        copy.HealthData = HealthData.Copy();
+        copy.SatiationData = SatiationData.Copy();
+        copy.AbilitiesDatas = AbilitiesDatas.Copy();
+        copy.InventoryData = InventoryData.Copy();
+
+        return copy;
+    }
 }

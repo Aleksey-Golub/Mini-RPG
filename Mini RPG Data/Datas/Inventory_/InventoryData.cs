@@ -12,4 +12,13 @@ public class InventoryData
     public event Action? SaveStarting;
 
     internal void PrepareForSerialize() => SaveStarting?.Invoke();
+
+    internal InventoryData Copy()
+    {
+        return new InventoryData()
+        {
+            Items = new List<ItemSaveData>(this.Items),
+            EquippedItems = this.EquippedItems.ToArray()
+        };
+    }
 }

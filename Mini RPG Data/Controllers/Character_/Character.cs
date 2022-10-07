@@ -119,10 +119,10 @@ public class Character : ICharacter
     public int AttackModifier => Settings.CalculateAttackModifier(this);
     public int DefenseModifier => Settings.CalculateDefenseModifier(this);
 
-    public event Action<Character>? Changed;
-    public event Action<Character>? LevelChanged;
-    public event Action<Character>? HealthChanged;
-    public event Action<Character>? Died;
+    public event Action<ICharacter>? Changed;
+    public event Action<ICharacter>? LevelChanged;
+    public event Action<ICharacter>? HealthChanged;
+    public event Action<ICharacter>? Died;
 
     public void TakeDamage(int damage) => Health.TakeDamage(damage);
     public bool IsAttackCritical(BodyPart bodyPart) => bodyPart == BodyPart.Head;

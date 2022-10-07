@@ -25,10 +25,10 @@ public interface ICharacter
     DamageType DamageType { get; }
     int FieldOfView { get; }
 
-    event Action<Character>? Changed;
-    event Action<Character>? LevelChanged;
-    event Action<Character>? HealthChanged;
-    event Action<Character>? Died;
+    event Action<ICharacter>? Changed;
+    event Action<ICharacter>? LevelChanged;
+    event Action<ICharacter>? HealthChanged;
+    event Action<ICharacter>? Died;
 
     internal void TakeDamage(int damage);
     internal Armor GetArmor(BodyPart bodyPart);

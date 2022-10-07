@@ -92,4 +92,5 @@ public interface ILocalizationService : IService
     string FirstHitsSecondWithDamage();
     string Message_Experience();
     string YouGained();
+    string CharacterGainedNewLevel(string name);
 }

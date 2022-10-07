@@ -11,6 +11,11 @@ public class Armor
         Type = type;
     }
 
+    public Armor Copy()
+    {
+        return new Armor(Value, Type);
+    }
+
     public int Value { get; set; }
     public ArmorType Type { get; set; }
 }

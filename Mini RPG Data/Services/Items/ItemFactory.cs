@@ -23,7 +23,7 @@ public class ItemFactory : IItemFactory
 
         ItemDataBase? itemData = _itemsService.GetItemDataOrNull(itemSaveData);
 
-        return CreateItem(itemSaveData.Type, itemData);
+        return CreateItem(itemSaveData.ItemType, itemData);
     }
 
     public ItemBase? CreateRandomOrNull(ItemType type = ItemType.None, int itemRating = -1)

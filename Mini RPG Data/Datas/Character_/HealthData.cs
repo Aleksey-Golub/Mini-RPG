@@ -4,4 +4,9 @@
 public class HealthData
 {
     public int CurrentHealth;
+
+    internal HealthData Copy()
+    {
+        return (HealthData)MemberwiseClone();
+    }
 }

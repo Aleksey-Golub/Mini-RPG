@@ -136,7 +136,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string Message_YouFindLockedChest() => "Вы нашли запертый сундук";
     public string Message_PickLockedChestSuccess() => "Попытка вскыть замок оказалась успешной.\n\n";
     public string Message_PickLockedChestFail() => "Попытка вскыть замок окончилась неудачей.\nМеханизм замка окончательно заклинило, теперь его не открыть даже ключем.";
-    public string Message_BreakChestSuccess() => "Рассчитывая все-таки получить ценное содержимое, вы наносите несколько точных ударов и проламываете крышку.\n\nВнутри вы находите";
+    public string Message_BreakChestSuccess() => "Рассчитывая все-таки получить ценное содержимое, вы наносите несколько точных ударов и проламываете крышку.\n\n";
     public string Message_BreakChestFail() =>
         "Рассчитывая все-таки получить ценное содержимое, вы решаетет взломать сундук силой. Однако вы явно переоценили свои возможности!\n\n" +
         "Спустя продолжительное времени, вы без сил садитесь на землю, чтобы немного отдохнуть и попробовать снова.\n\n" +
@@ -334,4 +334,5 @@ public class SimpleLocalizationService : ILocalizationService
     public string FirstHitsSecondWithDamage() => "{0} нанес {1} {2} урона";
     public string Message_Experience() => "Опыт";
     public string YouGained() => "Вы получили:";
+    public string CharacterGainedNewLevel(string name) => $"{name} получил новый уровень!";
 }

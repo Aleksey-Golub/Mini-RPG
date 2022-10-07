@@ -4,4 +4,9 @@
 public class AbilityData
 {
     public int Value;
+
+    internal AbilityData Copy()
+    {
+        return (AbilityData)MemberwiseClone();
+    }
 }

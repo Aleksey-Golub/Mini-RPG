@@ -147,7 +147,7 @@ public partial class GameProcessScreenController
         _state.Enter();
     }
 
-    private void OnPlayerCharacterDied(Character character)
+    private void OnPlayerCharacterDied(ICharacter character)
     {
         _player.Character.Died -= OnPlayerCharacterDied;
         _gameProcessView.DeInit();
@@ -275,7 +275,6 @@ public partial class GameProcessScreenController
             {
                 case PlayerAction.AttackEnemy:
                     var res = Settings.HandleAttack(Controller._player.Character, _enemy);
-                    //Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
                     Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
                     break;
                 case PlayerAction.TryLeaveBattle:
@@ -298,7 +297,6 @@ public partial class GameProcessScreenController
         private void HandleEnemyAction()
         {
             var res = Settings.HandleAttack(_enemy, Controller._player.Character);
-            //Controller._logView.AddLog($"{res.attackerName} hits {res.defenderName} with {res.damage} hits");
             Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
         }
 
@@ -306,9 +304,9 @@ public partial class GameProcessScreenController
         {
             if (_enemy.IsAlive == false)
             {
+                Controller._gameProcessView.HideBattle(BattleResult.PlayerWon, _enemy.Inventory.Items, _enemy.Experience);
                 Controller._player.Character.Level.TakeExperience(_enemy.Experience);
                 Controller._player.Character.Inventory.AddItems(_enemy.Inventory.Items.ToList());
-                Controller._gameProcessView.HideBattle(BattleResult.PlayerWon, _enemy.Inventory.Items, _enemy.Experience);
                 Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
             }

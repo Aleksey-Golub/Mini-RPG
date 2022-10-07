@@ -29,4 +29,16 @@ public class BeastEnemyDataBase
     public Armor HandsArmor { get; set; }
     public Armor BodyArmor { get; set; }
     public Armor LegsArmor { get; set; }
+
+    internal BeastEnemyDataBase Copy()
+    {
+        BeastEnemyDataBase newBeast = (BeastEnemyDataBase)MemberwiseClone();
+        newBeast.CharacterData = CharacterData.Copy();
+        newBeast.HeadArmor = HeadArmor.Copy();
+        newBeast.HandsArmor = HandsArmor.Copy();
+        newBeast.BodyArmor = BodyArmor.Copy();
+        newBeast.LegsArmor = LegsArmor.Copy();
+
+        return newBeast;
+    }
 }
