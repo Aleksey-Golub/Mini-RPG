@@ -93,4 +93,5 @@ public interface ILocalizationService : IService
     string Message_Experience();
     string YouGained();
     string CharacterGainedNewLevel(string name);
+    string Bonus();
 }

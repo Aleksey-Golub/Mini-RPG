@@ -185,6 +185,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string Message_YouDoNotRestInTown() => "Вы уходите, решив приберечь деньги до лучших времен.";
     public string Message_BattleStart() => "Впереди противник. К бою!";
 
+    public string Bonus() => "Бонус";
     public string Label_Equipment() => "Экипировка";
     public string Cost() => "Стоимость";
     public string SellCost() => "Стоимость продажи";

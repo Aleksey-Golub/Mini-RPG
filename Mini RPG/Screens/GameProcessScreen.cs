@@ -252,11 +252,11 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_PerceptionPoints.Text = allAbilities.Perception.Value.ToString();
         _label_CharismaPoints.Text = allAbilities.Charisma.Value.ToString();
 
-        _label_StrengthPoints.ToolTipText = allAbilities.Strength.Bonus.ToString();
-        _label_DexterityPoints.ToolTipText = allAbilities.Dexterity.Bonus.ToString();
-        _label_ConstitutionPoints.ToolTipText = allAbilities.Constitution.Bonus.ToString();
-        _label_PerceptionPoints.ToolTipText = allAbilities.Perception.Bonus.ToString();
-        _label_CharismaPoints.ToolTipText = allAbilities.Charisma.Bonus.ToString();
+        _label_StrengthPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Strength.Bonus}";
+        _label_DexterityPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Dexterity.Bonus}";
+        _label_ConstitutionPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Constitution.Bonus}";
+        _label_PerceptionPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Perception.Bonus}";
+        _label_CharismaPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Charisma.Bonus}";
 
         _pictureBox_HasFreeAbilityPoints.Visible = allAbilities.AbilityPoints > 0;
     }

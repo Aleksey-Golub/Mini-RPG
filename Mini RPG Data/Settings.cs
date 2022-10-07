@@ -74,7 +74,7 @@ public static class Settings
         if (currentLevel == 1)
             return EXPERIENCE_DEFAULT_VALUE;
 
-        return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 1.5f);
+        return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 2.5f);
     }
 
     internal static int CalculateFieldOfView(Character character) =>
