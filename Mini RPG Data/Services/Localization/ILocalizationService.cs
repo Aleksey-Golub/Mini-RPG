@@ -18,6 +18,7 @@ public interface ILocalizationService : IService
     string Label_Charisma();
     string Label_Constitution();
     string ItemName(string name);
+    string CharacterName(string name);
     string Label_Dexterity();
     string Label_Perception();
     string Label_Race();

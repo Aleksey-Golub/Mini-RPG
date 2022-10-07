@@ -2,7 +2,7 @@
 	"Characters": [
 		{
 			"Race": 1,
-			"Name": "YoungGoblin",
+			"Name": "YoungGoblinArcher",
 			"AvatarPath": "Enemies\\GoblinArcher_1.png",
 			"LevelData": {
 				"Value": 3,
@@ -148,7 +148,7 @@
 					"CurrentExperience": 0
 				},
 				"HealthData": {
-					"CurrentHealth": 10
+					"CurrentHealth": 8
 				},
 				"SatiationData": {
 					"FoodSatiation": 500,
@@ -189,9 +189,9 @@
 					]
 				}
 			},
-			"MaxHealth": 10,
+			"MaxHealth": 8,
 			"FieldOfView": 2,
-			"Experience": 20,
+			"Experience": 10,
 			"AttackModifier": 1,
 			"DefenseModifier": 1,
 			"MinDamage": 4,
@@ -267,7 +267,7 @@
 			},
 			"MaxHealth": 15,
 			"FieldOfView": 2,
-			"Experience": 40,
+			"Experience": 25,
 			"AttackModifier": 2,
 			"DefenseModifier": 2,
 			"MinDamage": 6,
@@ -371,7 +371,7 @@
 					"CurrentExperience": 0
 				},
 				"HealthData": {
-					"CurrentHealth": 6
+					"CurrentHealth": 7
 				},
 				"SatiationData": {
 					"FoodSatiation": 500,
@@ -407,9 +407,9 @@
 					]
 				}
 			},
-			"MaxHealth": 6,
+			"MaxHealth": 7,
 			"FieldOfView": 2,
-			"Experience": 15,
+			"Experience": 10,
 			"AttackModifier": 0,
 			"DefenseModifier": 2,
 			"MinDamage": 4,
@@ -480,7 +480,7 @@
 			},
 			"MaxHealth": 10,
 			"FieldOfView": 2,
-			"Experience": 35,
+			"Experience": 25,
 			"AttackModifier": 1,
 			"DefenseModifier": 2,
 			"MinDamage": 6,
@@ -556,7 +556,7 @@
 			},
 			"MaxHealth": 7,
 			"FieldOfView": 2,
-			"Experience": 15,
+			"Experience": 6,
 			"AttackModifier": 0,
 			"DefenseModifier": 0,
 			"MinDamage": 4,
@@ -632,7 +632,7 @@
 			},
 			"MaxHealth": 10,
 			"FieldOfView": 2,
-			"Experience": 30,
+			"Experience": 18,
 			"AttackModifier": 2,
 			"DefenseModifier": 1,
 			"MinDamage": 6,
@@ -708,7 +708,7 @@
 			},
 			"MaxHealth": 13,
 			"FieldOfView": 2,
-			"Experience": 45,
+			"Experience": 30,
 			"AttackModifier": 2,
 			"DefenseModifier": 2,
 			"MinDamage": 8,

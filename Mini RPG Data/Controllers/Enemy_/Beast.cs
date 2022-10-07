@@ -6,15 +6,19 @@ using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Datas.Enemy_.EnemiesDB;
 using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Items;
+using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG_Data.Controllers.Enemy_;
 
 internal class Beast : ICharacter
 {
+    private readonly ILocalizationService _localizationService;
     private readonly BeastEnemyDataBase _data;
 
     public Beast(BeastEnemyDataBase beastData)
     {
+        _localizationService = AllServices.Container.Single<ILocalizationService>();
+
         _data = beastData;
 
         AllAbilities = new Abilities(_data.CharacterData.AbilitiesDatas);
@@ -24,7 +28,7 @@ internal class Beast : ICharacter
         Inventory = new Inventory(AllServices.Container.Single<IItemFactory>(), _data.CharacterData.InventoryData);
     }
 
-    public string Name => _data.CharacterData.Name;
+    public string Name => _localizationService.CharacterName(_data.CharacterData.Name);
     public string AvatarPath => _data.CharacterData.AvatarPath;
     public Race Race => _data.CharacterData.Race;
     public IAbilities AllAbilities { get; }

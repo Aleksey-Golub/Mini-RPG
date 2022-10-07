@@ -4,15 +4,19 @@ using Mini_RPG_Data.Controllers.Inventory_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Items;
+using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG_Data.Controllers.Character_;
 
 public class Character : ICharacter
 {
+    private readonly ILocalizationService _localizationService;
     private readonly CharacterData _data;
 
     internal Character(CharacterData data)
     {
+        _localizationService = AllServices.Container.Single<ILocalizationService>();
+
         _data = data;
 
         AllAbilities = new Abilities(data.AbilitiesDatas);
@@ -38,8 +42,8 @@ public class Character : ICharacter
 
     public string Name
     {
-        get => _data.Name;
-        set
+        get => _localizationService.CharacterName(_data.Name);
+        private set
         {
             _data.Name = value;
             Changed?.Invoke(this);

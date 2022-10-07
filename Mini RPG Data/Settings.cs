@@ -174,8 +174,8 @@ public static class Settings
     internal static int CalculateFoundedInLootMoney(Player player)
     {
         int playerLevel = player.Character.Level.Value;
-        int min = 0;
-        int max = 10 * playerLevel;
+        int min = 1;
+        int max = 20;
 
         return RandomService.GetIntInclusive(min, max);
     }
