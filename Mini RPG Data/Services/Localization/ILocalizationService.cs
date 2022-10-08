@@ -84,17 +84,19 @@ public interface ILocalizationService : IService
     string DodgePenalty();
     string MinBlockBonus();
     string MaxBlockBonus();
-    string Message_StartRestInTown();
+    string Message_StartRestInTown(int restCost);
     string Message_YouRestInTown();
     string Message_YouHaveNoMoneyToRestInTown();
     string Message_BattleStart();
     string Message_YouAreEscaped();
     string Message_YouAreNotEscaped();
     string Message_MapExplored();
-    string Message_FirstHitsSecondWithDamage();
     string Experience();
     string YouGained();
     string CharacterGainedNewLevel(string name);
     string Bonus();
     string Message_StartRestInTownFree();
+    string Message_FirstMissedSecond(string attackerName, string defenderName);
+    string Message_FirstHitsSecondWithDamage(string attackerName, string defenderName, int damage);
+    string Message_FirstHitsSecondWithCriticalDamage(string attackerName, string defenderName, int damage);
 }

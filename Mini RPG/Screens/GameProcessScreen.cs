@@ -161,7 +161,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     public void ShowRestInTownDialog(int restCost)
     {
         string message = (restCost > 0) 
-            ? string.Format(_localizationService.Message_StartRestInTown(), restCost.ToString()) 
+            ? _localizationService.Message_StartRestInTown(restCost) 
             : _localizationService.Message_StartRestInTownFree();
 
         var dialogResult = MessageBox.Show($"{message}", string.Empty, MessageBoxButtons.YesNo);
@@ -188,6 +188,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     public void AddLog(string message) => _log?.AddLog(message);
+    public void AddLogImportant(string message) => _log?.AddLogImportant(message);
     public void ShowMapExploredMessage() => MessageBox.Show(
             $"{_localizationService.Message_MapExplored()}");
 

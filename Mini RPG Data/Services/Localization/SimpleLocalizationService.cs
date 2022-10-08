@@ -170,10 +170,9 @@ public class SimpleLocalizationService : ILocalizationService
         };
     }
 
-    public string Message_StartRestInTown()
+    public string Message_StartRestInTown(int restCost)
     {
-        return "Вы находите хозяина постоялого двора.\n" +
-            "Он готов сдать вам комнату за {0} монет";
+        return String.Format("Вы находите хозяина постоялого двора.\n Он готов сдать вам комнату за {0} монет", restCost);
     }
 
     public string Message_StartRestInTownFree()
@@ -359,7 +358,9 @@ public class SimpleLocalizationService : ILocalizationService
     public string Shop() => "Магазин";
     public string Message_YouAreEscaped() => "Вам удалось сбежать";
     public string Message_YouAreNotEscaped() => "Вам не удалось сбежать";
-    public string Message_FirstHitsSecondWithDamage() => "{0} нанес {1} {2} урона";
+    public string Message_FirstHitsSecondWithDamage(string attackerName, string defenderName, int damage) => String.Format("{0} нанес {1} {2} урона", attackerName, defenderName, damage);
+    public string Message_FirstHitsSecondWithCriticalDamage(string attackerName, string defenderName, int damage) => String.Format("Крит! {0} нанес {1} {2} урона", attackerName, defenderName, damage);
+    public string Message_FirstMissedSecond(string attackerName, string defenderName) => String.Format("{0} не попадает по {1}", attackerName, defenderName);
     public string Message_MapExplored() => "Вы закончили исследовать эту местность. Можно вернуться в город и отдохнуть";
     public string YouGained() => "Вы получили:";
     public string CharacterGainedNewLevel(string name) => $"{name} получил новый уровень!";

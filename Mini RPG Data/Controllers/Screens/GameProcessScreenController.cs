@@ -99,8 +99,6 @@ public partial class GameProcessScreenController
     public void ExitTown() => TransitionTo<TownEntranceGameProcessState>();
     public void Rest()
     {
-        //_player.TryRestoreHealth();
-        //_player.UpdateEffects();
         _state.Tick(PlayerAction.Rest);
         _logView.AddLog(_localizationService.PlayerRest());
     }
@@ -111,7 +109,7 @@ public partial class GameProcessScreenController
         _gameProcessView.ShowRestInTownDialog(restCost);
     }
 
-    public bool TryRestInTown(int restCost) 
+    public bool TryRestInTown(int restCost)
     {
         if (_player.Wallet.Money >= restCost)
         {
@@ -283,7 +281,7 @@ public partial class GameProcessScreenController
             {
                 case PlayerAction.AttackEnemy:
                     var res = Settings.HandleAttack(Controller._player.Character, _enemy);
-                    Controller._logView.AddLog($"{string.Format(Controller._localizationService.Message_FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
+                    LogAttackResult(res);
                     break;
                 case PlayerAction.TryLeaveBattle:
                     _playerEscaped = Settings.HandlePlayerBattleEscape(Controller._player.Character);
@@ -305,7 +303,17 @@ public partial class GameProcessScreenController
         private void HandleEnemyAction()
         {
             var res = Settings.HandleAttack(_enemy, Controller._player.Character);
-            Controller._logView.AddLog($"{string.Format(Controller._localizationService.Message_FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
+            LogAttackResult(res);
+        }
+
+        private void LogAttackResult((string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit) res)
+        {
+            if (res.isSuccess && res.isCrit == false)
+                Controller._logView.AddLog(Controller._localizationService.Message_FirstHitsSecondWithDamage(res.attackerName, res.defenderName, res.damage));
+            else if (res.isSuccess && res.isCrit)
+                Controller._logView.AddLogImportant(Controller._localizationService.Message_FirstHitsSecondWithCriticalDamage(res.attackerName, res.defenderName, res.damage));
+            else if (res.isSuccess == false)
+                Controller._logView.AddLog(Controller._localizationService.Message_FirstMissedSecond(res.attackerName, res.defenderName));
         }
 
         private bool NeedEndBattle()

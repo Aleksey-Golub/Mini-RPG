@@ -4,6 +4,9 @@ namespace Mini_RPG.Screens.CharacterCreationScreen_;
 
 public class Log : ILogView
 {
+    private readonly Color _defaultBgColor = Color.Black;
+    private readonly Color _defaultFgColor = Color.White;
+
     private readonly FlowLayoutPanel _flowLayoutPanel_GameLog;
     private readonly Button _button_SwitchLogSize;
     private readonly int _logMessageCount = 10;
@@ -17,12 +20,24 @@ public class Log : ILogView
         _button_SwitchLogSize.Click += SwitchLogState;
     }
 
-    public void AddLog(string message)
+    public void AddLog(string message) => AddLogInternal(message);
+    public void AddLogImportant(string message) => AddLogInternal(message, Color.DarkRed, Color.White);
+
+    public void AddLogInternal(string message, Color? bgColor = null, Color? fgColor = null)
     {
+        bgColor = bgColor ?? _defaultBgColor;
+        fgColor = fgColor ?? _defaultFgColor;
+
         for (int i = _flowLayoutPanel_GameLog.Controls.Count - 1; i > 0; i--)
+        {
             _flowLayoutPanel_GameLog.Controls[i].Text = _flowLayoutPanel_GameLog.Controls[i - 1].Text;
+            _flowLayoutPanel_GameLog.Controls[i].BackColor = _flowLayoutPanel_GameLog.Controls[i - 1].BackColor;
+            _flowLayoutPanel_GameLog.Controls[i].ForeColor = _flowLayoutPanel_GameLog.Controls[i - 1].ForeColor;
+        }
 
         _flowLayoutPanel_GameLog.Controls[0].Text = message;
+        _flowLayoutPanel_GameLog.Controls[0].BackColor = bgColor.Value;
+        _flowLayoutPanel_GameLog.Controls[0].ForeColor = fgColor.Value;
     }
 
     public void FillLog()
@@ -32,8 +47,8 @@ public class Log : ILogView
             Label label = new Label();
             label.AutoSize = true;
             label.Text = string.Empty; //$"{i}"; //  
-            label.BackColor = Color.Black;
-            label.ForeColor = Color.White;
+            label.BackColor = _defaultBgColor;
+            label.ForeColor = _defaultFgColor;
             _flowLayoutPanel_GameLog.Controls.Add(label);
 
             label.Visible = i >= _logMessageCountInMinimizeState ? !_isLogMinimize : _isLogMinimize;

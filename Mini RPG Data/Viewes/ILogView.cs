@@ -3,4 +3,5 @@
 public interface ILogView
 {
     void AddLog(string message);
+    void AddLogImportant(string message);
 }
