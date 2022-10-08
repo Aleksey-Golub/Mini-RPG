@@ -48,7 +48,7 @@ public class EnemyFactory : IEnemyFactory
 
         if (enemy == null)
             enemy = new Beast(_enemyService.GetRandomBeastEnemyDataOrNull(1));
-
+        enemy.Health.Init();
         return enemy;
     }
 }

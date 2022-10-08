@@ -24,6 +24,7 @@ public interface ICharacter
     int MaxDamage { get; }
     DamageType DamageType { get; }
     int FieldOfView { get; }
+    int InitiativeModifier { get; }
 
     event Action<ICharacter>? Changed;
     event Action<ICharacter>? LevelChanged;

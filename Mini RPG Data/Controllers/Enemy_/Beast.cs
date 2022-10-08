@@ -45,6 +45,7 @@ internal class Beast : ICharacter
     public int MinDamage => _data.MinDamage;
     public int MaxDamage => _data.MaxDamage;
     public DamageType DamageType => _data.DamageType;
+    public int InitiativeModifier => _data.InitiativeModifier;
 
     public event Action<ICharacter>? Changed;
     public event Action<ICharacter>? LevelChanged;

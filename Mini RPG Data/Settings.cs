@@ -21,7 +21,7 @@ public static class Settings
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 6;
     public const int MAX_ABILITY_VALUE = 12;
-    public const int DEFAULT_ABILITYPOINTS_COUNT = 2; // 2
+    public const int DEFAULT_ABILITYPOINTS_COUNT = 0;
 
     public const int HEALTH_RESTORE_VALUE = 1;
 
@@ -38,12 +38,14 @@ public static class Settings
 
     public const int RANDOM_ENEMY_LEVEL_RANGE = 1;
 
+    public const float CRIT_DAMAGE_MULTIPLIER = 1.5f;
+
     public static string AvatarsDirectory => $"Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 
     public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
 
-    internal static int CalculateInitiative(ICharacter character) => RandomService.Get1D6() + character.AllAbilities.Perception.Bonus;
+    internal static int CalculateInitiative(ICharacter character) => RandomService.Get1D6() + character.InitiativeModifier;
     internal static int CalculateStarve(ICharacter character, SatiationData data) => 2;
     internal static HungerLevel CalculateHungerLevel(ICharacter character, SatiationData data)
     {
@@ -348,23 +350,26 @@ public static class Settings
         if (attackSuccess == false)
             return (attacker.Name, defender.Name, 0, false, false);
 
-        int rawDamage = RandomService.GetIntInclusive(attacker.MinDamage, attacker.MaxDamage);
-        var hittedBodyPart = GetHittedBodyPart();
-        (int damage, bool isCrit) res = CalculateDamage(rawDamage, attacker.DamageType, hittedBodyPart, defender);
+        
+        (int damage, bool isCrit) res = CalculateDamage(attacker, defender);
         defender.TakeDamage(res.damage);
 
         return (attacker.Name, defender.Name, res.damage, true, res.isCrit);
     }
 
     private static BodyPart GetHittedBodyPart() => Utils.GetRandomEnumValueExcludeFirst<BodyPart>();
-    private static (int damage, bool isCrit) CalculateDamage(int rawDamage, DamageType damageType, BodyPart bodyPart, ICharacter target)
+    private static (int damage, bool isCrit) CalculateDamage(ICharacter attacker, ICharacter target)
     {
+        DamageType damageType = attacker.DamageType;
+        int rawDamage = RandomService.GetIntInclusive(attacker.MinDamage, attacker.MaxDamage) + attacker.AttackModifier;
+        BodyPart bodyPart = GetHittedBodyPart();
+
         Armor armor = target.GetArmor(bodyPart);
         float vulnerabilityСoefficient = CalculateVulnerabilityСoefficientFor(armor.Type, damageType);
         bool isCrit = target.IsAttackCritical(bodyPart);
-        int critModifier = isCrit ? 2 : 1;
+        float critModifier = isCrit ? CRIT_DAMAGE_MULTIPLIER : 1f;
 
-        int damage = rawDamage * critModifier - (int)(armor.Value * vulnerabilityСoefficient);
+        int damage = (int)((rawDamage * critModifier) - (armor.Value * vulnerabilityСoefficient));
         damage = Math.Clamp(damage, 0, int.MaxValue);
         return (damage, isCrit);
 

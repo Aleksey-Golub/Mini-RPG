@@ -122,6 +122,7 @@ public class Character : ICharacter
 
     public int AttackModifier => Settings.CalculateAttackModifier(this);
     public int DefenseModifier => Settings.CalculateDefenseModifier(this);
+    public int InitiativeModifier => AllAbilities.Perception.Bonus;
 
     public event Action<ICharacter>? Changed;
     public event Action<ICharacter>? LevelChanged;

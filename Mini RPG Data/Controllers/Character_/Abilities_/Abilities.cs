@@ -76,17 +76,19 @@ public class Abilities : IAbilities
             charisma: defaultAbilityValue,
             abilityPoints: defaultAbilityPoints);
 
-        var humanAbilitiesDatas = new AbilitiesDatas(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 2, abilityPoints: 0);
-        var elfAbilitiesDatas = new AbilitiesDatas(strength: 0, dexterity: 1, constitution: 0, perception: 1, charisma: 0, abilityPoints: 0);
-        var dwarfAbilitiesDatas = new AbilitiesDatas(strength: 0, dexterity: 0, constitution: 2, perception: 0, charisma: 0, abilityPoints: 0);
+        var humanAbilitiesDatas =   new AbilitiesDatas(strength: 0, dexterity: 0, constitution: 0, perception: 0, charisma: 1, abilityPoints: 0);
+        var elfAbilitiesDatas =     new AbilitiesDatas(strength: 0, dexterity: 1, constitution: 0, perception: 0, charisma: 0, abilityPoints: 0);
+        var dwarfAbilitiesDatas =   new AbilitiesDatas(strength: 0, dexterity: 0, constitution: 1, perception: 0, charisma: 0, abilityPoints: 0);
+        var goblinAbilitiesDatas =  new AbilitiesDatas(strength: 0, dexterity: 0, constitution: 0, perception: 1, charisma: 0, abilityPoints: 0);
+        var orcAbilitiesDatas =     new AbilitiesDatas(strength: 1, dexterity: 0, constitution: 0, perception: 0, charisma: 0, abilityPoints: 0);
 
         return race switch
         {
             Race.Human => baseAbilitiesDatas + humanAbilitiesDatas,
             Race.Elf => baseAbilitiesDatas + elfAbilitiesDatas,
             Race.Dwarf => baseAbilitiesDatas + dwarfAbilitiesDatas,
-            Race.Goblin => baseAbilitiesDatas,
-            Race.Orc => baseAbilitiesDatas,
+            Race.Goblin => baseAbilitiesDatas + goblinAbilitiesDatas,
+            Race.Orc => baseAbilitiesDatas + orcAbilitiesDatas,
             Race.Beast => baseAbilitiesDatas,
             Race.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),

@@ -22,6 +22,7 @@ public class BeastEnemyDataBase
     public int Experience { get; set; }
     public int AttackModifier { get; set; }
     public int DefenseModifier { get; set; }
+    public int InitiativeModifier { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
     public DamageType DamageType { get; set; }

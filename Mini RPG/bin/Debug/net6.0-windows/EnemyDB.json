@@ -1,7 +1,7 @@
 {
 	"Characters": [
 		{
-			"Race": 1,
+			"Race": 4,
 			"Name": "YoungGoblin",
 			"AvatarPath": "Enemies\\GoblinArcher_1.png",
 			"LevelData": {
@@ -18,16 +18,16 @@
 			"AbilitiesDatas": {
 				"AbilityPoints": 0,
 				"StrengthData": {
-					"Value": 6
+					"Value": 7
 				},
 				"DexterityData": {
-					"Value": 6
+					"Value": 8
 				},
 				"ConstitutionData": {
-					"Value": 6
+					"Value": 7
 				},
 				"PerceptionData": {
-					"Value": 7
+					"Value": 9
 				},
 				"CharismaData": {
 					"Value": 7
@@ -81,19 +81,19 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 6
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 6
+						"Value": 7
 					},
 					"ConstitutionData": {
-						"Value": 6
+						"Value": 7
 					},
 					"PerceptionData": {
-						"Value": 6
+						"Value": 7
 					},
 					"CharismaData": {
-						"Value": 6
+						"Value": 7
 					}
 				},
 				"InventoryData": {
@@ -118,6 +118,7 @@
 			"Experience": 5,
 			"AttackModifier": -1,
 			"DefenseModifier": -1,
+			"InitiativeModifier": 0,
 			"MinDamage": 2,
 			"MaxDamage": 4,
 			"DamageType": 2,
@@ -157,19 +158,19 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 8
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 8
+						"Value": 7
 					},
 					"ConstitutionData": {
-						"Value": 8
+						"Value": 7
 					},
 					"PerceptionData": {
-						"Value": 8
+						"Value": 7
 					},
 					"CharismaData": {
-						"Value": 8
+						"Value": 7
 					}
 				},
 				"InventoryData": {
@@ -194,6 +195,7 @@
 			"Experience": 20,
 			"AttackModifier": 1,
 			"DefenseModifier": 1,
+			"InitiativeModifier": 1,
 			"MinDamage": 4,
 			"MaxDamage": 6,
 			"DamageType": 2,
@@ -233,19 +235,19 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 9
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 9
+						"Value": 7
 					},
 					"ConstitutionData": {
-						"Value": 9
+						"Value": 7
 					},
 					"PerceptionData": {
-						"Value": 9
+						"Value": 7
 					},
 					"CharismaData": {
-						"Value": 9
+						"Value": 7
 					}
 				},
 				"InventoryData": {
@@ -270,6 +272,7 @@
 			"Experience": 40,
 			"AttackModifier": 2,
 			"DefenseModifier": 2,
+			"InitiativeModifier": 2,
 			"MinDamage": 6,
 			"MaxDamage": 8,
 			"DamageType": 2,
@@ -309,19 +312,19 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 6
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 6
+						"Value": 7
 					},
 					"ConstitutionData": {
-						"Value": 6
+						"Value": 7
 					},
 					"PerceptionData": {
-						"Value": 6
+						"Value": 7
 					},
 					"CharismaData": {
-						"Value": 6
+						"Value": 7
 					}
 				},
 				"InventoryData": {
@@ -341,6 +344,7 @@
 			"Experience": 5,
 			"AttackModifier": -1,
 			"DefenseModifier": 1,
+			"InitiativeModifier": -1,
 			"MinDamage": 2,
 			"MaxDamage": 3,
 			"DamageType": 1,
@@ -412,6 +416,7 @@
 			"Experience": 15,
 			"AttackModifier": 0,
 			"DefenseModifier": 2,
+			"InitiativeModifier": 0,
 			"MinDamage": 4,
 			"MaxDamage": 5,
 			"DamageType": 1,
@@ -451,10 +456,10 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 8
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 9
+						"Value": 7
 					},
 					"ConstitutionData": {
 						"Value": 7
@@ -483,6 +488,7 @@
 			"Experience": 35,
 			"AttackModifier": 1,
 			"DefenseModifier": 2,
+			"InitiativeModifier": 1,
 			"MinDamage": 6,
 			"MaxDamage": 7,
 			"DamageType": 1,
@@ -559,6 +565,7 @@
 			"Experience": 15,
 			"AttackModifier": 0,
 			"DefenseModifier": 0,
+			"InitiativeModifier": 0,
 			"MinDamage": 4,
 			"MaxDamage": 6,
 			"DamageType": 2,
@@ -598,10 +605,10 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 8
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 8
+						"Value": 7
 					},
 					"ConstitutionData": {
 						"Value": 7
@@ -635,6 +642,7 @@
 			"Experience": 30,
 			"AttackModifier": 2,
 			"DefenseModifier": 1,
+			"InitiativeModifier": 1,
 			"MinDamage": 6,
 			"MaxDamage": 8,
 			"DamageType": 2,
@@ -674,16 +682,16 @@
 				"AbilitiesDatas": {
 					"AbilityPoints": 0,
 					"StrengthData": {
-						"Value": 9
+						"Value": 7
 					},
 					"DexterityData": {
-						"Value": 9
+						"Value": 7
 					},
 					"ConstitutionData": {
-						"Value": 8
+						"Value": 7
 					},
 					"PerceptionData": {
-						"Value": 9
+						"Value": 7
 					},
 					"CharismaData": {
 						"Value": 7
@@ -711,6 +719,7 @@
 			"Experience": 45,
 			"AttackModifier": 2,
 			"DefenseModifier": 2,
+			"InitiativeModifier": 2,
 			"MinDamage": 8,
 			"MaxDamage": 10,
 			"DamageType": 2,

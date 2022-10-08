@@ -10,7 +10,7 @@
 		},
 		{
 			"PictureName": "WolfPelt",
-			"Cost": 15,
+			"Cost": 20,
 			"Name": "WolfPelt",
 			"Id": 1,
 			"Rating": 2,
@@ -18,7 +18,7 @@
 		},
 		{
 			"PictureName": "ThickWolfPelt",
-			"Cost": 20,
+			"Cost": 40,
 			"Name": "ThickWolfPelt",
 			"Id": 2,
 			"Rating": 3,
@@ -34,7 +34,7 @@
 		},
 		{
 			"PictureName": "BoarPelt",
-			"Cost": 15,
+			"Cost": 20,
 			"Name": "BoarPelt",
 			"Id": 4,
 			"Rating": 2,
@@ -42,7 +42,7 @@
 		},
 		{
 			"PictureName": "ThickBoarPelt",
-			"Cost": 20,
+			"Cost": 40,
 			"Name": "ThickBoarPelt",
 			"Id": 5,
 			"Rating": 3,
@@ -341,7 +341,7 @@
 	],
 	"ArmorItems": [
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
@@ -353,7 +353,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
@@ -365,7 +365,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
@@ -377,7 +377,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
@@ -389,7 +389,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
@@ -401,7 +401,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
@@ -413,7 +413,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
@@ -425,7 +425,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
@@ -437,7 +437,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
@@ -449,7 +449,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
@@ -461,7 +461,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
@@ -473,7 +473,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
@@ -485,7 +485,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
@@ -497,7 +497,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
@@ -509,7 +509,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
@@ -521,7 +521,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
@@ -533,7 +533,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
@@ -545,7 +545,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
@@ -557,7 +557,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
@@ -569,7 +569,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
@@ -581,7 +581,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
@@ -593,7 +593,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
@@ -605,7 +605,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
@@ -617,7 +617,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
@@ -629,7 +629,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
@@ -641,7 +641,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
@@ -653,7 +653,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
@@ -665,7 +665,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
@@ -677,7 +677,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
@@ -689,7 +689,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
@@ -701,7 +701,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
@@ -713,7 +713,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
@@ -725,7 +725,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
@@ -737,7 +737,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
@@ -749,7 +749,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
@@ -761,7 +761,7 @@
 			"Weight": 0.1
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
@@ -822,7 +822,7 @@
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 200
+					"Value": 150
 				}
 			],
 			"PictureName": "Bread",
@@ -836,7 +836,7 @@
 			"Effects": [
 				{
 					"EffectType": 3,
-					"Value": 200
+					"Value": 150
 				}
 			],
 			"PictureName": "WaterFlask",
@@ -974,7 +974,7 @@
 			"Effects": [
 				{
 					"EffectType": 1,
-					"Value": -1000
+					"Value": -10000
 				}
 			],
 			"PictureName": "DeathCap",
