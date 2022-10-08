@@ -31,4 +31,6 @@ public interface IGameProcessView
     void ShowBattle(ICharacter enemy);
     void ShowBattleStartMessage();
     void HideBattle(BattleResult playerWon, IReadOnlyList<ItemBase> items, int experience);
+    void ShowMapExploredMessage();
+    void ShowRestInTownDialog(int restCost);
 }

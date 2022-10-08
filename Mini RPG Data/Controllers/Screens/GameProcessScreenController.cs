@@ -65,6 +65,7 @@ public partial class GameProcessScreenController
         _player = new Player(_progressService.Progress.PlayerData);
         _player.Character.Died += OnPlayerCharacterDied;
         _map = new Map(_progressService.Progress.MapData);
+        _map.Explored += OnMapExplored;
 
         _gameProcessView.Init(_player);
         _gameProcessView.SetActiveState(true);
@@ -104,9 +105,14 @@ public partial class GameProcessScreenController
         _logView.AddLog(_localizationService.PlayerRest());
     }
 
-    public bool TryRestInTown()
+    public void StartRestInTown()
     {
-        int restCost = Settings.REST_IN_TOWN_COST;
+        int restCost = _map.IsExplored ? 0 : Settings.REST_IN_TOWN_COST;
+        _gameProcessView.ShowRestInTownDialog(restCost);
+    }
+
+    public bool TryRestInTown(int restCost) 
+    {
         if (_player.Wallet.Money >= restCost)
         {
             _progressService.Progress.TownTraderData = Settings.GetRandomTownTraderData();
@@ -157,6 +163,8 @@ public partial class GameProcessScreenController
         _playerDeathView.ShowPlayerResult(_player);
         _saveLoadService.DeleteCurrentPlayerSave();
     }
+
+    private void OnMapExplored() => _gameProcessView.ShowMapExploredMessage();
 
     private class InTownGameProcessState : GameProcessStateBase
     {
@@ -275,7 +283,7 @@ public partial class GameProcessScreenController
             {
                 case PlayerAction.AttackEnemy:
                     var res = Settings.HandleAttack(Controller._player.Character, _enemy);
-                    Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
+                    Controller._logView.AddLog($"{string.Format(Controller._localizationService.Message_FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
                     break;
                 case PlayerAction.TryLeaveBattle:
                     _playerEscaped = Settings.HandlePlayerBattleEscape(Controller._player.Character);
@@ -297,7 +305,7 @@ public partial class GameProcessScreenController
         private void HandleEnemyAction()
         {
             var res = Settings.HandleAttack(_enemy, Controller._player.Character);
-            Controller._logView.AddLog($"{string.Format(Controller._localizationService.FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
+            Controller._logView.AddLog($"{string.Format(Controller._localizationService.Message_FirstHitsSecondWithDamage(), res.attackerName, res.defenderName, res.damage)}");
         }
 
         private bool NeedEndBattle()

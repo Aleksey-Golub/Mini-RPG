@@ -6,7 +6,7 @@ namespace Mini_RPG_Data.Controllers.Map_;
 
 public class Map : IMap
 {
-    private MapData _data;
+    private readonly MapData _data;
 
     public IReadOnlyDictionary<Vector2Int, IMapCell> Cells => _data.Cells.ToDictionary(x => x.Key, x => x.Value as IMapCell);
 
@@ -27,6 +27,9 @@ public class Map : IMap
     Vector2Int IMap.PlayerPosition => PlayerPosition;
     Vector2Int IMap.TownPosition => TownPosition;
     public IMapCell PlayerCell => _data.Cells[_data.PlayerPosition];
+    public bool IsExplored => _data.IsExplored;
+
+    public event Action? Explored;
 
     public Map(MapData data)
     {
@@ -157,8 +160,22 @@ public class Map : IMap
 
     internal void Regenerate(IRandomService randomService) => _data.SetNewDatas(Generate(randomService));
 
-    internal void Explore(Vector2Int cellPosition) => _data.Cells[cellPosition].CellState = CellState.Explored;
     internal void MakeEmpty(Vector2Int cellPosition) => _data.Cells[cellPosition].CellType = CellType.Empty;
+    internal void Explore(Vector2Int cellPosition)
+    {
+        MapCell mapCell = _data.Cells[cellPosition];
+        if (mapCell.CellState == CellState.Explored)
+            return;
+
+        mapCell.CellState = CellState.Explored;
+
+        foreach (var cell in _data.Cells.Values)
+            if (cell.CellState != CellState.Explored)
+                return;
+
+        _data.IsExplored = true;
+        Explored?.Invoke();
+    }
 
     internal bool TryMovePlayer(Direction direction)
     {

@@ -170,10 +170,16 @@ public class SimpleLocalizationService : ILocalizationService
         };
     }
 
-    public string Message_RestInTown()
+    public string Message_StartRestInTown()
     {
         return "Вы находите хозяина постоялого двора.\n" +
             "Он готов сдать вам комнату за {0} монет";
+    }
+
+    public string Message_StartRestInTownFree()
+    {
+        return "Вы находите хозяина постоялого двора.\n" +
+            "Учитывая вашу помощь местным жителям, в этот раз он готов пустить вас бесплатно";
     }
 
     public string Message_YouRestInTown()
@@ -182,12 +188,13 @@ public class SimpleLocalizationService : ILocalizationService
             "За это время выши раны успеют затянуться, а торговец успеет обновить свои товары.";
     }
 
-    public string Message_YouDoNotRestInTown() => "Вы уходите, решив приберечь деньги до лучших времен.";
+    public string Message_YouHaveNoMoneyToRestInTown() => "Вы уходите, понимая что у вас недостаточно денег";
     public string Message_BattleStart() => "Впереди противник. К бою!";
 
     public string Bonus() => "Бонус";
     public string Label_Equipment() => "Экипировка";
     public string Cost() => "Стоимость";
+    public string Experience() => "Опыт";
     public string SellCost() => "Стоимость продажи";
     public string DamageType() => "Тип урона";
     public string Grip() => "Хват";
@@ -268,15 +275,15 @@ public class SimpleLocalizationService : ILocalizationService
             "ThinLeatherHelmet" => "Шлем из тонкой кожи",
             "ThinLeatherGloves" => "Перчатки из тонкой кожи",
             "ThinLeatherArmor" => "Куртка из тонкой кожи",
-            "ThinLeatherLegs" => "Сапоги из тонкой кожи",
+            "ThinLeatherLegs" => "Поножи из тонкой кожи",
             "LeatherHelmet" => "Кожаный Шлем",
             "LeatherGloves" => "Кожаные Перчатки",
             "LeatherArmor" => "Кожаная Куртка",
-            "LeatherLegs" => "Кожаные Сапоги",
+            "LeatherLegs" => "Кожаные Поножи",
             "ThickLeatherHelmet" => "Шлем из толстой кожи",
             "ThickLeatherGloves" => "Перчатки из толстой кожи",
             "ThickLeatherArmor" => "Куртка из толстой кожи",
-            "ThickLeatherLegs" => "Сапоги из толстой кожи",
+            "ThickLeatherLegs" => "Поножи из толстой кожи",
 
             "BronzeChainHelmet" => "Бронзовый кольчужный Шлем",
             "BronzeChainGloves" => "Бронзовые кольчужные Перчатки",
@@ -352,8 +359,8 @@ public class SimpleLocalizationService : ILocalizationService
     public string Shop() => "Магазин";
     public string Message_YouAreEscaped() => "Вам удалось сбежать";
     public string Message_YouAreNotEscaped() => "Вам не удалось сбежать";
-    public string FirstHitsSecondWithDamage() => "{0} нанес {1} {2} урона";
-    public string Message_Experience() => "Опыт";
+    public string Message_FirstHitsSecondWithDamage() => "{0} нанес {1} {2} урона";
+    public string Message_MapExplored() => "Вы закончили исследовать эту местность. Можно вернуться в город и отдохнуть";
     public string YouGained() => "Вы получили:";
     public string CharacterGainedNewLevel(string name) => $"{name} получил новый уровень!";
 }

@@ -27,13 +27,9 @@ public class MapData
     public int MaxY { get; set; }
     public Vector2Int PlayerPosition { get; set; }
     public Vector2Int TownPosition { get; set; }
-
-    //public event Action? SaveStarting;
-
-    //internal void PrepareForSerialize() => SaveStarting?.Invoke();
+    public bool IsExplored { get; set; }
     public void PrepareForSerialize()
     {
-        //Values = new MapCell[0];
         Values = Cells.Values.ToArray();
     }
 
@@ -107,5 +103,6 @@ public class MapData
         MaxY = newData.MaxY;
         PlayerPosition = newData.PlayerPosition;
         TownPosition = newData.TownPosition;
+        IsExplored = false;
     }
 }

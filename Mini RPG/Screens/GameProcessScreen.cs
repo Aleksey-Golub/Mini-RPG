@@ -158,13 +158,24 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_BattleActions.Hide();
     }
 
+    public void ShowRestInTownDialog(int restCost)
+    {
+        string message = (restCost > 0) 
+            ? string.Format(_localizationService.Message_StartRestInTown(), restCost.ToString()) 
+            : _localizationService.Message_StartRestInTownFree();
+
+        var dialogResult = MessageBox.Show($"{message}", string.Empty, MessageBoxButtons.YesNo);
+        if (dialogResult == DialogResult.Yes)
+            _controller.TryRestInTown(restCost);
+    }
+
     public void ShowSuccessRestInTownMessage() =>
         MessageBox.Show(
             $"{_localizationService.Message_YouRestInTown()}");
 
     public void ShowFailRestInTownMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouDoNotRestInTown()}");
+            $"{_localizationService.Message_YouHaveNoMoneyToRestInTown()}");
 
     public void ShowMiniMap(IMap map, int fieldOfView) =>
         _mapView.DrawMap(map, fieldOfView);
@@ -177,6 +188,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     public void AddLog(string message) => _log?.AddLog(message);
+    public void ShowMapExploredMessage() => MessageBox.Show(
+            $"{_localizationService.Message_MapExplored()}");
 
     public void ShowBattleStartMessage() =>
         MessageBox.Show(
@@ -236,7 +249,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
                 sb.Append($"{item.LocalizedName}\n");
 
             if (experience > 0)
-                sb.AppendLine($"{_localizationService.Message_Experience()}: {experience}\n");
+                sb.AppendLine($"{_localizationService.Experience()}: {experience}\n");
         }
 
         return sb.ToString();
@@ -324,15 +337,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         { }
     }
 
-    private void Button_RestInTown_Click(object sender, EventArgs e)
-    {
-        var dialogResult = MessageBox.Show($"{string.Format(_localizationService.Message_RestInTown(), Settings.REST_IN_TOWN_COST.ToString())}", string.Empty, MessageBoxButtons.YesNo);
-        if (dialogResult == DialogResult.Yes)
-            _controller.TryRestInTown();
-    }
-
+    private void Button_RestInTown_Click(object sender, EventArgs e) => _controller.StartRestInTown();
     private void Label_Map_Click(object sender, EventArgs e) => _controller.ShowMap();
-
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
 
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
