@@ -8,7 +8,7 @@ public class JsonFileSaveLoadService : ISaveLoadService
 {
     private readonly IPersistentProgressService _progressService;
     private readonly JsonSerializerOptions _options;
-    private readonly string _savesDirectory;
+    private readonly string _savesDirectory = $"Saves";
 
     public JsonFileSaveLoadService(IPersistentProgressService progressService)
     {
@@ -16,7 +16,7 @@ public class JsonFileSaveLoadService : ISaveLoadService
 
         _options = new JsonSerializerOptions { IncludeFields = true };
 
-        _savesDirectory = Settings.SavesDirectory;
+        //_savesDirectory = Settings.SavesDirectory;
     }
 
     public void SaveProgress()
@@ -26,13 +26,13 @@ public class JsonFileSaveLoadService : ISaveLoadService
             _progressService.PrepareForSerialize();
             string jsonString = JsonSerializer.Serialize(_progressService.Progress, _options);
             string name = _progressService.Progress.PlayerData.CharacterData.Name;
-            string fileName = $"\\save_{name}.json";
+            string fileName = $"save_{name}.json";
 
             bool exists = Directory.Exists(_savesDirectory);
             if (!exists)
                 Directory.CreateDirectory(_savesDirectory);
 
-            File.WriteAllText($"{_savesDirectory}{fileName}", jsonString);
+            File.WriteAllText($"{_savesDirectory}\\{fileName}", jsonString);
         }
         catch
         {

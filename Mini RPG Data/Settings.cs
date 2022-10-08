@@ -43,8 +43,6 @@ public static class Settings
     public static string AvatarsDirectory => $"Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 
-    public static string SavesDirectory => $"{AppDomain.CurrentDomain.BaseDirectory}Saves";
-
     internal static int CalculateInitiative(ICharacter character) => RandomService.Get1D6() + character.InitiativeModifier;
     internal static int CalculateStarve(ICharacter character, SatiationData data) => 2;
     internal static HungerLevel CalculateHungerLevel(ICharacter character, SatiationData data)

@@ -339,6 +339,20 @@ public class SimpleLocalizationService : ILocalizationService
         return name switch
         {
             "YoungGoblinArcher" => "Молодой Гоблин-лучник",
+            "GoblinArcher" => "Гоблин-лучник",
+            "OldGoblinArcher" => "Матерый Гоблин-лучник",
+            "YoungGoblinWarrior" => "Молодой Гоблин-воин",
+            "GoblinWarrior" => "Гоблин-воин",
+            "OldGoblinWarrior" => "Матерый Гоблин-воин",
+            "YoungOrcArcher" => "Молодой Орк-лучник",
+            "OrcArcher" => "Орк-лучник",
+            "OldOrcArcher" => "Матерый Орк-лучник",
+            "YoungOrcWarrior" => "Молодой Орк-воин",
+            "OrcWarrior" => "Орк-воин",
+            "OldOrcWarrior" => "Матерый Орк-воин",
+            "YoungOrcWarlord" => "Молодой Орк-капитан",
+            "OrcWarlord" => "Орк-капитан",
+            "OldOrcWarlord" => "Матерый Орк-капитан",
 
             "YoungBoar" => "Молодой Кабан",
             "Boar" => "Кабан",
@@ -349,6 +363,9 @@ public class SimpleLocalizationService : ILocalizationService
             "YoungWolf" => "Молодой Волк",
             "Wolf" => "Волк",
             "OldWolf" => "Матерый Волк",
+            "YoungBat" => "Молодая Летучая мышь",
+            "Bat" => "Летучая мышь",
+            "OldBat" => "Матерая Летучая мышь",
 
             _ => name,
         };
