@@ -74,6 +74,7 @@ public class JsonItemsService : IItemsService
     {
         var comments = new List<string>();
 
+        comments.Add(Utils.EnumToString<WeaponType>());
         comments.Add(Utils.EnumToString<DamageType>());
         comments.Add(Utils.EnumToString<Grip>());
         comments.Add(Utils.EnumToString<ArmorType>());

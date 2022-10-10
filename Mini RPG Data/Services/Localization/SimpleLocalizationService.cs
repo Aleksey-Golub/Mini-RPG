@@ -235,6 +235,17 @@ public class SimpleLocalizationService : ILocalizationService
         };
     }
 
+    public string TrapTypeName(TrapType trapType)
+    {
+        return trapType switch
+        {
+            TrapType.SpikeTrap => "Ловушка с шипами",
+            TrapType.BearTrap => "Медвежий капкан",
+            TrapType.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException(),
+        };
+    }
+
     public string ItemName(string name)
     {
         return name switch

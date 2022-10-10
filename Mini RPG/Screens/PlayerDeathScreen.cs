@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Controllers;
+using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
@@ -40,9 +41,28 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
             $"{_localizationService.Label_Perception()}: {character.AllAbilities.Perception.Value}\n" +
             $"{_localizationService.Label_Charisma()}: {character.AllAbilities.Charisma.Value}\n\n");
         playerRes.Append($"{_localizationService.Label_Equipment()}\n");
+
+        bool wasAdded = false;
         foreach (var item in character.Inventory.EquipmentSlots.Values)
             if (item != null)
-                playerRes.Append($"{item.LocalizedName}\n");
+            {
+
+                if (character.Inventory.EquipmentSlots[EquipmentSlot.OffHand] == item && character.Inventory.EquipmentSlots[EquipmentSlot.MainHand] == item && wasAdded)
+                {
+                    continue;
+                }
+                else if (character.Inventory.EquipmentSlots[EquipmentSlot.OffHand] == item && character.Inventory.EquipmentSlots[EquipmentSlot.MainHand] == item && wasAdded == false)
+                {
+                    wasAdded = true;
+                    playerRes.Append($"{item.LocalizedName}\n");
+
+                }
+                else
+                {
+                    playerRes.Append($"{item.LocalizedName}\n");
+                }
+            }
+
         playerRes.Append($"\n{_localizationService.Message_Coins()}: {player.Wallet.Money}");
 
         _label_PlayerResult.Text = playerRes.ToString();

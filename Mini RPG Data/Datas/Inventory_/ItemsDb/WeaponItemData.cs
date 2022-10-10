@@ -9,5 +9,6 @@ namespace Mini_RPG_Data.Datas.Inventory_.Items
         public int MaxDamage { get; set; }
         public DamageType DamageType { get; set; }
         public Grip Grip { get; set; }
+        public WeaponType WeaponType { get; set; }
     }
 }

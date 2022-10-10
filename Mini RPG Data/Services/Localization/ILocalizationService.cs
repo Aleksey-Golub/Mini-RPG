@@ -81,6 +81,7 @@ public interface ILocalizationService : IService
     string Armor();
     string Shop();
     string ArmorTypeName(ArmorType armorType);
+    string TrapTypeName(TrapType trapType);
     string DodgePenalty();
     string MinBlockBonus();
     string MaxBlockBonus();

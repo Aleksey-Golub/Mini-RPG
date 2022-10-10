@@ -14,6 +14,7 @@ public class WeaponItem : ItemBase
         _data = data as WeaponItemData;
     }
 
+    public WeaponType WeaponType => _data.WeaponType;
     public DamageType DamageType => _data.DamageType;
     public Grip Grip => _data.Grip;
     public int MinDamage => _data.MinDamage;

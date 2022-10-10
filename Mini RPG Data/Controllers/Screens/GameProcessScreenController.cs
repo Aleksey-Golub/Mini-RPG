@@ -453,7 +453,9 @@ public partial class GameProcessScreenController
                 {
                     _controller._gameProcessView.ShowFailFindTrapMessage(trapType);
                     int damage = Settings.CalculateTrapDamage(trapType, _controller._player);
-                    _controller._player.Character.TakeDamage(damage);
+                    Character character = _controller._player.Character;
+                    character.TakeDamage(damage);
+                    _controller._logView.AddLog(_controller._localizationService.Message_FirstHitsSecondWithDamage(_controller._localizationService.TrapTypeName(trapType), character.Name, damage));
                 }
             }
 

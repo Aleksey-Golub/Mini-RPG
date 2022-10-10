@@ -16,7 +16,7 @@ public static class Settings
     public static IItemFactory ItemFactory;
 
     public const int DEFAULT_FIELD_OF_VIEW = 2;
-    public const int EXPERIENCE_DEFAULT_VALUE = 50;
+    public const int EXPERIENCE_DEFAULT_VALUE = 30;
     public const int MAX_LEVEL = 10;
     public const int DEFAULT_ABILITY_VALUE = 7;
     public const int MIN_ABILITY_VALUE = 6;
@@ -34,7 +34,7 @@ public static class Settings
 
     public const int FOREST_IMAGE_COUNT = 14;
 
-    public const int REST_IN_TOWN_COST = 20;
+    public const int REST_IN_TOWN_COST = 50;
 
     public const int RANDOM_ENEMY_LEVEL_RANGE = 1;
 
@@ -74,7 +74,7 @@ public static class Settings
         if (currentLevel == 1)
             return EXPERIENCE_DEFAULT_VALUE;
 
-        return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 2.5f);
+        return (int)(CalculateRequiredForNextLevelExperience(currentLevel - 1) * 2.2f);
     }
 
     internal static int CalculateFieldOfView(Character character) =>
@@ -129,13 +129,14 @@ public static class Settings
         TryAddRandomItemSaveData(townTraderData, ItemType.Food);
         TryAddRandomItemSaveData(townTraderData, ItemType.Food);
         TryAddRandomItemSaveData(townTraderData, ItemType.Food);
-        TryAddRandomItemSaveData(townTraderData, ItemType.Food);
         TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
         TryAddRandomItemSaveData(townTraderData, ItemType.Potion);
         TryAddRandomItemSaveData(townTraderData, ItemType.Armor);
         TryAddRandomItemSaveData(townTraderData, ItemType.Armor);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Armor);
         TryAddRandomItemSaveData(townTraderData, ItemType.Shield);
         TryAddRandomItemSaveData(townTraderData, ItemType.Shield);
+        TryAddRandomItemSaveData(townTraderData, ItemType.Weapon);
         TryAddRandomItemSaveData(townTraderData, ItemType.Weapon);
         TryAddRandomItemSaveData(townTraderData, ItemType.Weapon);
 
@@ -303,14 +304,35 @@ public static class Settings
         };
     }
 
-    public static int CalculateItemCostModifier(int itemCost, Player player) => (int)(itemCost * (0.5f + 0.1f * player.Character.AllAbilities.Charisma.Bonus));
+    public static int CalculateItemCostModifier(int itemCost, Player player) => (int)(itemCost * (0.3f + 0.1f * player.Character.AllAbilities.Charisma.Bonus));
 
     internal static int CalculateAttackModifier(Character character)
     {
+        // дальнобойное - только ЛОВ
+        // мили 1руч - или СИЛ, или ЛОВ
+        // мили 1руч+щит или 2руч - СИЛ
         int strBonus = character.AllAbilities.Strength.Bonus;
         int dexBonus = character.AllAbilities.Dexterity.Bonus;
+        WeaponItem? mainWeapon = character.Inventory.EquipmentSlots[EquipmentSlot.MainHand] as WeaponItem;
+        ItemBase? offHandItem = character.Inventory.EquipmentSlots[EquipmentSlot.OffHand];
 
-        return strBonus > dexBonus ? strBonus : dexBonus;
+        // hand-to-hand
+        if (mainWeapon == null)
+            return strBonus > dexBonus ? strBonus : dexBonus;
+        // range
+        else if (mainWeapon.WeaponType == WeaponType.Range)
+            return dexBonus;
+        // 1-handed + free offHand
+        else if (mainWeapon.WeaponType == WeaponType.Melee && offHandItem == null)
+            return dexBonus;
+        // 1-handed + shield
+        else if (mainWeapon.WeaponType == WeaponType.Melee && offHandItem is ShieldItem)
+            return strBonus;
+        // 2-handed
+        else if (mainWeapon.WeaponType == WeaponType.Melee && mainWeapon == offHandItem)
+            return strBonus;
+        else
+            throw new NotImplementedException();
     }
 
     internal static int CalculateDefenseModifier(Character character)
@@ -367,7 +389,7 @@ public static class Settings
         bool isCrit = target.IsAttackCritical(bodyPart);
         float critModifier = isCrit ? CRIT_DAMAGE_MULTIPLIER : 1f;
 
-        int damage = (int)((rawDamage * critModifier) - (armor.Value * vulnerabilityСoefficient));
+        int damage = (int)((rawDamage - (armor.Value * vulnerabilityСoefficient)) * critModifier);
         damage = Math.Clamp(damage, 0, int.MaxValue);
         return (damage, isCrit);
 
@@ -411,10 +433,10 @@ public static class Settings
 
     internal static int CalculateExperience(Character character)
     {
-        return character.Level.Value * 5;
+        return character.Level.Value * 12;
     }
 
-    internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 2;
+    internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 4;
 
     private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
     private static bool IsCriticalSuccess(int _2D6) => _2D6 == 12;

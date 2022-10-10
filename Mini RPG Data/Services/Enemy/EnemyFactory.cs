@@ -24,30 +24,32 @@ public class EnemyFactory : IEnemyFactory
         int targetLevel = player.Character.Level.Value;
         int randomEnemyLevelRange = Settings.RANDOM_ENEMY_LEVEL_RANGE;
 
-        int enemyLevel = _randomService.GetIntInclusive(targetLevel - randomEnemyLevelRange, targetLevel + randomEnemyLevelRange);
-        enemyLevel = Math.Clamp(enemyLevel, 1, int.MaxValue);
-        EnemyType enemyType = Utils.GetRandomEnumValueExcludeFirst<EnemyType>();
-
         ICharacter enemy = null;
-        switch (enemyType)
+        do
         {
-            case EnemyType.Character:
-                CharacterData? characterData = _enemyService.GetRandomCharacterEnemyDataOrNull(enemyLevel);
-                if (characterData != null)
-                    enemy = new Character(characterData);
-                break;
-            case EnemyType.Beast:
-                BeastEnemyDataBase? beastData = _enemyService.GetRandomBeastEnemyDataOrNull(enemyLevel);
-                if (beastData != null)
-                    enemy = new Beast(beastData);
-                break;
-            case EnemyType.None:
-            default:
-                throw new NotImplementedException();
-        }
 
-        if (enemy == null)
-            enemy = new Beast(_enemyService.GetRandomBeastEnemyDataOrNull(1));
+            int enemyLevel = _randomService.GetIntInclusive(targetLevel - randomEnemyLevelRange, targetLevel + randomEnemyLevelRange);
+            enemyLevel = Math.Clamp(enemyLevel, 1, int.MaxValue);
+            EnemyType enemyType = Utils.GetRandomEnumValueExcludeFirst<EnemyType>();
+
+            switch (enemyType)
+            {
+                case EnemyType.Character:
+                    CharacterData? characterData = _enemyService.GetRandomCharacterEnemyDataOrNull(enemyLevel);
+                    if (characterData != null)
+                        enemy = new Character(characterData);
+                    break;
+                case EnemyType.Beast:
+                    BeastEnemyDataBase? beastData = _enemyService.GetRandomBeastEnemyDataOrNull(enemyLevel);
+                    if (beastData != null)
+                        enemy = new Beast(beastData);
+                    break;
+                case EnemyType.None:
+                default:
+                    throw new NotImplementedException();
+            }
+        } while (enemy == null);
+            //enemy = new Beast(_enemyService.GetRandomBeastEnemyDataOrNull(1));
         enemy.Health.Init();
         return enemy;
     }
