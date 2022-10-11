@@ -24,6 +24,7 @@ public abstract class ItemBase
     public string LocalizedName => LocalizationService.ItemName(Name);
     public int Cost => _data.Cost;
     public string PictureName => _data.PictureName;
+    public bool IsStackable => _data.IsStackable;
     public abstract ItemType Type { get; }
     public virtual string Description => $"{LocalizedName}, {LocalizationService.Cost()}: {Cost}";
 

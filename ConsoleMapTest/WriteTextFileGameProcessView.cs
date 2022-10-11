@@ -180,4 +180,14 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowMapExploredMessage()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowRestInTownDialog(int restCost)
+    {
+        throw new NotImplementedException();
+    }
 }
