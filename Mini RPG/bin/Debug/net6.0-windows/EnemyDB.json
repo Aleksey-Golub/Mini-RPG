@@ -36,8 +36,8 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 9
+						"Type": 1,
+						"Id": 7
 					}
 				],
 				"EquippedItems": [
@@ -92,8 +92,8 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 10
+						"Type": 1,
+						"Id": 7
 					}
 				],
 				"EquippedItems": [
@@ -154,8 +154,12 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 10
+						"Type": 1,
+						"Id": 7
+					},
+					{
+						"Type": 1,
+						"Id": 7
 					}
 				],
 				"EquippedItems": [
@@ -414,8 +418,8 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 9
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -479,8 +483,8 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 10
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -544,8 +548,12 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 2,
-						"Id": 11
+						"Type": 1,
+						"Id": 6
+					},
+					{
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -609,8 +617,8 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 5,
-						"Id": 0
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -677,8 +685,12 @@
 			"InventoryData": {
 				"Items": [
 					{
-						"Type": 5,
-						"Id": 1
+						"Type": 1,
+						"Id": 6
+					},
+					{
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -704,7 +716,7 @@
 					},
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 2
 					}
 				]
 			}
@@ -746,7 +758,11 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 2
+					},
+					{
+						"Type": 1,
+						"Id": 6
 					}
 				],
 				"EquippedItems": [
@@ -772,7 +788,7 @@
 					},
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 2
 					}
 				]
 			}
@@ -882,7 +898,7 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 1
 					}
 				],
 				"EquippedItems": [

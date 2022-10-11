@@ -324,7 +324,7 @@ public static class Settings
             return dexBonus;
         // 1-handed + free offHand
         else if (mainWeapon.WeaponType == WeaponType.Melee && offHandItem == null)
-            return dexBonus;
+            return strBonus > dexBonus ? strBonus : dexBonus;
         // 1-handed + shield
         else if (mainWeapon.WeaponType == WeaponType.Melee && offHandItem is ShieldItem)
             return strBonus;

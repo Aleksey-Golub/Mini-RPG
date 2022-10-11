@@ -256,6 +256,8 @@ public class SimpleLocalizationService : ILocalizationService
             "ThinBoarPelt" => "Тонкая Шкура кабана",
             "BoarPelt" => "Шкура кабана",
             "ThickBoarPelt" => "Толстая Шкура кабана",
+            "IronOre" => "Железная руда",
+            "LeatherScrap" => "Обрезки кожи",
 
             "BronzeSword" => "Бронзовый меч",
             "IronSword" => "Железный меч",

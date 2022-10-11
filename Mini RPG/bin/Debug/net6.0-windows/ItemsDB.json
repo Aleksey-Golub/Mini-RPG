@@ -47,6 +47,22 @@
 			"Id": 5,
 			"Rating": 3,
 			"Weight": 0.1
+		},
+		{
+			"PictureName": "IronOre",
+			"Cost": 100,
+			"Name": "IronOre",
+			"Id": 6,
+			"Rating": 2,
+			"Weight": 0.1
+		},
+		{
+			"PictureName": "LeatherScrap",
+			"Cost": 100,
+			"Name": "LeatherScrap",
+			"Id": 7,
+			"Rating": 2,
+			"Weight": 0.1
 		}
 	],
 	"WeaponItems": [
