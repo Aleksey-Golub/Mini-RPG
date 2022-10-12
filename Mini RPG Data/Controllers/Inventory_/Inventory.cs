@@ -12,7 +12,6 @@ public class Inventory
 
     private readonly List<ItemBase> _items;
     private readonly Dictionary<EquipmentSlot, ItemBase?> _equipmentSlots;
-    internal readonly int DodgePenalty;
 
     public Inventory(IItemFactory itemFactory, InventoryData inventoryData)
     {
@@ -32,6 +31,23 @@ public class Inventory
         };
 
         Init();
+    }
+
+    internal int DodgePenalty
+    {
+        get 
+        {
+            int penalty = 0;
+            foreach (var slot in _equipmentSlots.Values)
+            {
+                ArmorItem? armorItem = slot as ArmorItem;
+                if (armorItem != null)
+                    if(armorItem.DodgePenalty > penalty)
+                        penalty = armorItem.DodgePenalty;
+            }
+
+            return penalty; 
+        }
     }
 
     public IReadOnlyList<ItemBase> Items => _items;
