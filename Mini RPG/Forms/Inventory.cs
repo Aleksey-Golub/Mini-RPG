@@ -1,4 +1,5 @@
 ﻿using Mini_RPG_Data.Controllers.Character_;
+using Mini_RPG_Data.Controllers.Inventory_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Datas.Inventory_;
@@ -13,8 +14,6 @@ public partial class Inventory : Form, IInventoryView
     private readonly ICharacter _character;
 
     private readonly InventoryScreenController _controller;
-
-    private readonly bool _shawAsSrackable = true;
 
     public Inventory(ILocalizationService localizationService, ICharacter character, GameProcessScreenController gameController, ILogView logView)
     {
@@ -48,33 +47,13 @@ public partial class Inventory : Form, IInventoryView
         _flowLayoutPanel_Inventory.Controls.Clear();
         _toolTip_Inventory.RemoveAll();
 
-        if (_shawAsSrackable)
-            ShowItemsAsStackable();
-        else
-            ShowItemsAsNotStackable();
+        ShowItems();
     }
 
-    private void ShowItemsAsNotStackable()
+    private void ShowItems()
     {
-        foreach (var item in _character.Inventory.Items)
-            ShowItem(item);
-    }
-
-    private void ShowItemsAsStackable()
-    {
-        Dictionary<InventoryItemKey, InventoryItemValue> inventoryItems = new Dictionary<InventoryItemKey, InventoryItemValue>();
-        foreach (var item in _character.Inventory.Items)
-        {
-            InventoryItemKey key = new InventoryItemKey(item.Type, item.Id);
-
-            if (inventoryItems.ContainsKey(key))
-                inventoryItems[key].Count++;
-            else
-                inventoryItems[key] = new InventoryItemValue(item, 1);
-        }
-
-        foreach (var value in inventoryItems.Values)
-            ShowStackableItem(value.Item, value.Count);
+        foreach (var cell in _character.Inventory.InventoryCells)
+            ShowStackableItem(cell.Item, cell.Count);
     }
 
     private void OnCharacterDied(ICharacter character)
@@ -92,31 +71,17 @@ public partial class Inventory : Form, IInventoryView
 
     private void ShowStackableItem(ItemBase item, int count)
     {
+        string countStr = item.IsStackable ? $"\n{count}" : string.Empty;
+
         var btn = new ItemButton(item);
         btn.Size = new Size(200, 200);
         btn.Font = new Font(btn.Font.FontFamily, 8f);
         btn.TextAlign = ContentAlignment.BottomCenter;
         btn.BackgroundImage = ImageManager.GetItemImageOrEmpty(item);
         btn.BackgroundImageLayout = ImageLayout.Zoom;
-        btn.Text = $"{item.LocalizedName}\n{count}";
+        btn.Text = $"{item.LocalizedName}{countStr}";
         btn.ForeColor = Color.Red;
         btn.Click += OnInventoryButtonClicked;
-        _flowLayoutPanel_Inventory.Controls.Add(btn);
-
-        _toolTip_Inventory.SetToolTip(btn, item.Description);
-    }
-
-    private void ShowItem(ItemBase item)
-    {
-        var btn = new ItemButton(item);
-        btn.Size = new Size(200, 200);
-        btn.Font = new Font(btn.Font.FontFamily, 8f);
-        btn.TextAlign = ContentAlignment.BottomCenter;
-        btn.BackgroundImage = ImageManager.GetItemImageOrEmpty(item);
-        btn.BackgroundImageLayout = ImageLayout.Zoom;
-        btn.Text = item.LocalizedName;
-        btn.Click += OnInventoryButtonClicked;
-
         _flowLayoutPanel_Inventory.Controls.Add(btn);
 
         _toolTip_Inventory.SetToolTip(btn, item.Description);

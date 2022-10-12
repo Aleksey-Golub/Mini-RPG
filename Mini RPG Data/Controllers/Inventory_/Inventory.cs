@@ -50,8 +50,38 @@ public class Inventory
         }
     }
 
-    public IReadOnlyList<ItemBase> Items => _items;
     public IReadOnlyDictionary<EquipmentSlot, ItemBase> EquipmentSlots => _equipmentSlots;
+    public IReadOnlyList<InventoryCell> InventoryCells 
+    { 
+        get 
+        { 
+            List<InventoryCell> cells = new List<InventoryCell>();
+
+            foreach (var item in _items)
+            {
+                if (item.IsStackable)
+                {
+                    InventoryCell? inventoryCell = cells.Where(x => x.Item.Type == item.Type && x.Item.Id == item.Id).FirstOrDefault();
+                    if (inventoryCell != null)
+                    {
+                        inventoryCell.Item = item;
+                        inventoryCell.Count++;
+                    }
+                    else
+                    {
+                        cells.Add(new InventoryCell() { Item = item, Count = 1 });
+                    }
+                }
+                else
+                {
+                    cells.Add(new InventoryCell() { Item = item, Count = 1});
+                }
+            }
+
+            return cells;
+        } 
+    }
+    public IReadOnlyList<ItemBase> Items => _items;
 
     internal bool TryUnequipHead() => TryUnequip(EquipmentSlot.Head);
     internal bool TryUnequipBody() => TryUnequip(EquipmentSlot.Body);
@@ -207,4 +237,10 @@ public class Inventory
         foreach (var itemSaveData in _data.Items)
             _items.Add(_itemsFactory.CreateOrNull(itemSaveData));
     }
+}
+
+public class InventoryCell
+{
+    public ItemBase Item;
+    public int Count;
 }

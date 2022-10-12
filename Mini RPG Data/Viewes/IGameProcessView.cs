@@ -30,7 +30,7 @@ public interface IGameProcessView
     void ShowFailRestInTownMessage();
     void ShowBattle(ICharacter enemy);
     void ShowBattleStartMessage();
-    void HideBattle(BattleResult playerWon, IReadOnlyList<ItemBase> items, int experience);
+    void HideBattle(BattleResult playerWon, IReadOnlyList<ItemBase> loot, int experience);
     void ShowMapExploredMessage();
     void ShowRestInTownDialog(int restCost);
 }
