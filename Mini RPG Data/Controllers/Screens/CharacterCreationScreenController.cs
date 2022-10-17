@@ -7,6 +7,9 @@ using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Datas.Inventory_;
+using Mini_RPG_Data.Services.Quest;
+using Mini_RPG_Data.Datas.Quest_.QuestDB;
+using Mini_RPG_Data.Datas.Quest_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -17,7 +20,7 @@ public class CharacterCreationScreenController
     private readonly IPersistentProgressService _progressService;
     private readonly IRandomService _randomService;
     private readonly ISaveLoadService _saveLoadService;
-
+    private readonly IQuestService _questService;
     private Player _player = null!;
 
     public CharacterCreationScreenController(
@@ -25,10 +28,12 @@ public class CharacterCreationScreenController
         IIntroScreenView introScreen,
         IPersistentProgressService progressService,
         IRandomService randomService,
-        ISaveLoadService saveLoadService)
+        ISaveLoadService saveLoadService,
+        IQuestService questService)
     {
         _randomService = randomService;
         _saveLoadService = saveLoadService;
+        _questService = questService;
         _progressService = progressService;
         _introScreen = introScreen;
         _characterCreationScreen = characterCreationScreen;
@@ -82,6 +87,16 @@ public class CharacterCreationScreenController
 
         progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor, 2);   // Thin Leather Jacket
         progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 0);  // bronze sword
+
+        QuestData mainQuestData = _questService.GetByIdOrNull(0);
+        QuestPhaseData firstPhase = mainQuestData.Phases[0];
+        List<int> goalsProgresses = new int[firstPhase.Goals.Count].ToList();
+        progress.PlayerData.QuestsData.CurrentQuests.Add(
+            new QuestSavedData(
+                mainQuestData.Id, 
+                mainQuestData.Name, 
+                mainQuestData.Description, 
+                new QuestPhaseSavedData(firstPhase.Id, firstPhase.Description, goalsProgresses)));
 
         progress.TownTraderData = Settings.GetRandomTownTraderData();
 

@@ -15,8 +15,6 @@ public class JsonFileSaveLoadService : ISaveLoadService
         _progressService = progressService;
 
         _options = new JsonSerializerOptions { IncludeFields = true };
-
-        //_savesDirectory = Settings.SavesDirectory;
     }
 
     public void SaveProgress()

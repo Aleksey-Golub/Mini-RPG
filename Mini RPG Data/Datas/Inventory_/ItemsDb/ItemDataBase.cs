@@ -7,8 +7,10 @@
         public int Cost { get; set; }
         public string Name { get; set; } = null!;
         public int Id { get; set; }
+        public ItemType Type { get; set; }
         public int Rating { get; set; }
         public float Weight { get; set; } = 0.1f;
         public bool IsStackable { get; set; }
+        public int StackSize { get; set; } = 100;
     }
 }

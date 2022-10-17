@@ -29,7 +29,6 @@ public class ArmorItem : ItemBase
     internal override bool TryUse(Character character)
     {
         character.Equip(this);
-        //character.Inventory.RemoveItem(this);
         return true;
     }
 }

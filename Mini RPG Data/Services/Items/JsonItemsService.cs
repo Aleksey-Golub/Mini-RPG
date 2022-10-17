@@ -25,6 +25,7 @@ public class JsonItemsService : IItemsService
         WriteCommentsToFile("Comments_ItemsDB.json");
 
         WriteExamplesToFile("ExampleItemsDB.json");
+        //WriteExamplesToFile(DB_PATH);
     }
 
     public ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData)

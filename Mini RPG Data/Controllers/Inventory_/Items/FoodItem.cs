@@ -21,7 +21,6 @@ public class FoodItem : ItemBase
         foreach (var effect in _data.Effects)
             effect.ComeTo(target: character);
 
-        //character.Inventory.RemoveItem(this);
         character.Eat(this);
         return true;
     }

@@ -46,7 +46,7 @@ public class Log : ILogView
         {
             Label label = new Label();
             label.AutoSize = true;
-            label.Text = string.Empty; //$"{i}"; //  
+            label.Text = string.Empty;
             label.BackColor = _defaultBgColor;
             label.ForeColor = _defaultFgColor;
             _flowLayoutPanel_GameLog.Controls.Add(label);

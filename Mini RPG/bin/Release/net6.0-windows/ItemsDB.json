@@ -2,346 +2,418 @@
 	"CommonItems": [
 		{
 			"PictureName": "ThinWolfPelt",
-			"Cost": 10,
+			"Cost": 20,
 			"Name": "ThinWolfPelt",
 			"Id": 0,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"PictureName": "WolfPelt",
-			"Cost": 15,
+			"Cost": 40,
 			"Name": "WolfPelt",
 			"Id": 1,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"PictureName": "ThickWolfPelt",
-			"Cost": 20,
+			"Cost": 60,
 			"Name": "ThickWolfPelt",
 			"Id": 2,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"PictureName": "ThinBoarPelt",
-			"Cost": 10,
+			"Cost": 20,
 			"Name": "ThinBoarPelt",
 			"Id": 3,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"PictureName": "BoarPelt",
-			"Cost": 15,
+			"Cost": 40,
 			"Name": "BoarPelt",
 			"Id": 4,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"PictureName": "ThickBoarPelt",
-			"Cost": 20,
+			"Cost": 60,
 			"Name": "ThickBoarPelt",
 			"Id": 5,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
+		},
+		{
+			"PictureName": "IronOre",
+			"Cost": 100,
+			"Name": "IronOre",
+			"Id": 6,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": true
+		},
+		{
+			"PictureName": "LeatherScrap",
+			"Cost": 100,
+			"Name": "LeatherScrap",
+			"Id": 7,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": true
 		}
 	],
 	"WeaponItems": [
 		{
-			"MinDamage": 5,
-			"MaxDamage": 7,
+			"MinDamage": 3,
+			"MaxDamage": 5,
 			"DamageType": 1,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "BronzeSword",
 			"Cost": 50,
 			"Name": "BronzeSword",
 			"Id": 0,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 8,
-			"MaxDamage": 10,
+			"MinDamage": 6,
+			"MaxDamage": 8,
 			"DamageType": 1,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "IronSword",
-			"Cost": 150,
+			"Cost": 250,
 			"Name": "IronSword",
 			"Id": 1,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 11,
-			"MaxDamage": 13,
+			"MinDamage": 8,
+			"MaxDamage": 12,
 			"DamageType": 1,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "SteelSword",
-			"Cost": 250,
+			"Cost": 450,
 			"Name": "SteelSword",
 			"Id": 2,
 			"Rating": 3,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 6,
-			"MaxDamage": 10,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "BronzeTwoHandedAxe",
-			"Cost": 250,
-			"Name": "BronzeTwoHandedAxe",
-			"Id": 3,
-			"Rating": 1,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 10,
-			"MaxDamage": 14,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "IronTwoHandedAxe",
-			"Cost": 350,
-			"Name": "IronTwoHandedAxe",
-			"Id": 4,
-			"Rating": 2,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 14,
-			"MaxDamage": 18,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "SteelTwoHandedAxe",
-			"Cost": 450,
-			"Name": "SteelTwoHandedAxe",
-			"Id": 5,
-			"Rating": 3,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 7,
-			"MaxDamage": 9,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "BronzeHummer",
-			"Cost": 250,
-			"Name": "BronzeHummer",
-			"Id": 6,
-			"Rating": 1,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 11,
-			"MaxDamage": 13,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "IronHummer",
-			"Cost": 350,
-			"Name": "IronHummer",
-			"Id": 7,
-			"Rating": 2,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 15,
-			"MaxDamage": 17,
-			"DamageType": 3,
-			"Grip": 2,
-			"PictureName": "SteelHummer",
-			"Cost": 450,
-			"Name": "SteelHummer",
-			"Id": 8,
-			"Rating": 3,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 3,
-			"MaxDamage": 10,
-			"DamageType": 2,
-			"Grip": 2,
-			"PictureName": "ShortBow",
-			"Cost": 150,
-			"Name": "ShortBow",
-			"Id": 9,
-			"Rating": 1,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 6,
-			"MaxDamage": 13,
-			"DamageType": 2,
-			"Grip": 2,
-			"PictureName": "LongBow",
-			"Cost": 250,
-			"Name": "LongBow",
-			"Id": 10,
-			"Rating": 2,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 9,
-			"MaxDamage": 16,
-			"DamageType": 2,
-			"Grip": 2,
-			"PictureName": "CompositeBow",
-			"Cost": 350,
-			"Name": "CompositeBow",
-			"Id": 11,
-			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
 			"MinDamage": 4,
 			"MaxDamage": 8,
 			"DamageType": 3,
-			"Grip": 1,
-			"PictureName": "BronzeAxe",
-			"Cost": 50,
-			"Name": "BronzeAxe",
-			"Id": 12,
-			"Rating": 1,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 7,
-			"MaxDamage": 11,
-			"DamageType": 3,
-			"Grip": 1,
-			"PictureName": "IronAxe",
-			"Cost": 150,
-			"Name": "IronAxe",
-			"Id": 13,
-			"Rating": 2,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 10,
-			"MaxDamage": 14,
-			"DamageType": 3,
-			"Grip": 1,
-			"PictureName": "SteelAxe",
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "BronzeTwoHandedAxe",
 			"Cost": 250,
-			"Name": "SteelAxe",
-			"Id": 14,
+			"Name": "BronzeTwoHandedAxe",
+			"Id": 3,
+			"Rating": 1,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 8,
+			"MaxDamage": 12,
+			"DamageType": 3,
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "IronTwoHandedAxe",
+			"Cost": 450,
+			"Name": "IronTwoHandedAxe",
+			"Id": 4,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 12,
+			"MaxDamage": 16,
+			"DamageType": 3,
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "SteelTwoHandedAxe",
+			"Cost": 650,
+			"Name": "SteelTwoHandedAxe",
+			"Id": 5,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
 			"MinDamage": 5,
 			"MaxDamage": 7,
 			"DamageType": 3,
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "BronzeHummer",
+			"Cost": 250,
+			"Name": "BronzeHummer",
+			"Id": 6,
+			"Rating": 1,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 9,
+			"MaxDamage": 11,
+			"DamageType": 3,
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "IronHummer",
+			"Cost": 450,
+			"Name": "IronHummer",
+			"Id": 7,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 13,
+			"MaxDamage": 15,
+			"DamageType": 3,
+			"Grip": 2,
+			"WeaponType": 1,
+			"PictureName": "SteelHummer",
+			"Cost": 650,
+			"Name": "SteelHummer",
+			"Id": 8,
+			"Rating": 3,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 2,
+			"MaxDamage": 10,
+			"DamageType": 2,
+			"Grip": 2,
+			"WeaponType": 2,
+			"PictureName": "ShortBow",
+			"Cost": 250,
+			"Name": "ShortBow",
+			"Id": 9,
+			"Rating": 1,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 6,
+			"MaxDamage": 14,
+			"DamageType": 2,
+			"Grip": 2,
+			"WeaponType": 2,
+			"PictureName": "LongBow",
+			"Cost": 450,
+			"Name": "LongBow",
+			"Id": 10,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 10,
+			"MaxDamage": 18,
+			"DamageType": 2,
+			"Grip": 2,
+			"WeaponType": 2,
+			"PictureName": "CompositeBow",
+			"Cost": 650,
+			"Name": "CompositeBow",
+			"Id": 11,
+			"Rating": 3,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 2,
+			"MaxDamage": 6,
+			"DamageType": 3,
 			"Grip": 1,
+			"WeaponType": 1,
+			"PictureName": "BronzeAxe",
+			"Cost": 50,
+			"Name": "BronzeAxe",
+			"Id": 12,
+			"Rating": 1,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 5,
+			"MaxDamage": 9,
+			"DamageType": 3,
+			"Grip": 1,
+			"WeaponType": 1,
+			"PictureName": "IronAxe",
+			"Cost": 250,
+			"Name": "IronAxe",
+			"Id": 13,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 8,
+			"MaxDamage": 12,
+			"DamageType": 3,
+			"Grip": 1,
+			"WeaponType": 1,
+			"PictureName": "SteelAxe",
+			"Cost": 450,
+			"Name": "SteelAxe",
+			"Id": 14,
+			"Rating": 3,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 3,
+			"MaxDamage": 5,
+			"DamageType": 3,
+			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "BronzeMace",
 			"Cost": 50,
 			"Name": "BronzeMace",
 			"Id": 15,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 8,
-			"MaxDamage": 10,
+			"MinDamage": 6,
+			"MaxDamage": 8,
 			"DamageType": 3,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "IronMace",
-			"Cost": 150,
+			"Cost": 250,
 			"Name": "IronMace",
 			"Id": 16,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 11,
-			"MaxDamage": 13,
+			"MinDamage": 9,
+			"MaxDamage": 11,
 			"DamageType": 3,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "SteelMace",
-			"Cost": 250,
+			"Cost": 450,
 			"Name": "SteelMace",
 			"Id": 17,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 3,
-			"MaxDamage": 9,
+			"MinDamage": 1,
+			"MaxDamage": 7,
 			"DamageType": 2,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "BronzeSpear",
 			"Cost": 50,
 			"Name": "BronzeSpear",
 			"Id": 18,
 			"Rating": 1,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 6,
-			"MaxDamage": 12,
-			"DamageType": 2,
-			"Grip": 1,
-			"PictureName": "IronSpear",
-			"Cost": 150,
-			"Name": "IronSpear",
-			"Id": 19,
-			"Rating": 2,
-			"Weight": 0.1
-		},
-		{
-			"MinDamage": 9,
-			"MaxDamage": 15,
-			"DamageType": 2,
-			"Grip": 1,
-			"PictureName": "SteelSpear",
-			"Cost": 250,
-			"Name": "SteelSpear",
-			"Id": 20,
-			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
 			"MinDamage": 4,
-			"MaxDamage": 6,
+			"MaxDamage": 10,
 			"DamageType": 2,
 			"Grip": 1,
+			"WeaponType": 1,
+			"PictureName": "IronSpear",
+			"Cost": 250,
+			"Name": "IronSpear",
+			"Id": 19,
+			"Rating": 2,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 7,
+			"MaxDamage": 13,
+			"DamageType": 2,
+			"Grip": 1,
+			"WeaponType": 1,
+			"PictureName": "SteelSpear",
+			"Cost": 450,
+			"Name": "SteelSpear",
+			"Id": 20,
+			"Rating": 3,
+			"Weight": 0.1,
+			"IsStackable": false
+		},
+		{
+			"MinDamage": 2,
+			"MaxDamage": 4,
+			"DamageType": 2,
+			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "BronzeDagger",
 			"Cost": 50,
 			"Name": "BronzeDagger",
 			"Id": 21,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 7,
-			"MaxDamage": 9,
+			"MinDamage": 5,
+			"MaxDamage": 7,
 			"DamageType": 2,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "IronDagger",
-			"Cost": 150,
+			"Cost": 250,
 			"Name": "IronDagger",
 			"Id": 22,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"MinDamage": 10,
-			"MaxDamage": 12,
+			"MinDamage": 8,
+			"MaxDamage": 10,
 			"DamageType": 2,
 			"Grip": 1,
+			"WeaponType": 1,
 			"PictureName": "SteelDagger",
-			"Cost": 250,
+			"Cost": 450,
 			"Name": "SteelDagger",
 			"Id": 23,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		}
 	],
 	"ArmorItems": [
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
@@ -350,22 +422,24 @@
 			"Name": "ThinLeatherHelmet",
 			"Id": 0,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
 			"PictureName": "ThinLeatherGloves",
-			"Cost": 50,
+			"Cost": 100,
 			"Name": "ThinLeatherGloves",
 			"Id": 1,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
@@ -374,118 +448,128 @@
 			"Name": "ThinLeatherArmor",
 			"Id": 2,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 1,
+			"ArmorValue": 3,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
 			"PictureName": "ThinLeatherLegs",
-			"Cost": 50,
+			"Cost": 100,
 			"Name": "ThinLeatherLegs",
 			"Id": 3,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
 			"PictureName": "LeatherHelmet",
-			"Cost": 200,
+			"Cost": 300,
 			"Name": "LeatherHelmet",
 			"Id": 4,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
 			"PictureName": "LeatherGloves",
-			"Cost": 150,
+			"Cost": 300,
 			"Name": "LeatherGloves",
 			"Id": 5,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
 			"PictureName": "LeatherArmor",
-			"Cost": 200,
+			"Cost": 300,
 			"Name": "LeatherArmor",
 			"Id": 6,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
 			"PictureName": "LeatherLegs",
-			"Cost": 150,
+			"Cost": 300,
 			"Name": "LeatherLegs",
 			"Id": 7,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 1,
 			"PictureName": "ThickLeatherHelmet",
-			"Cost": 300,
+			"Cost": 500,
 			"Name": "ThickLeatherHelmet",
 			"Id": 8,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 2,
 			"PictureName": "ThickLeatherGloves",
-			"Cost": 250,
+			"Cost": 500,
 			"Name": "ThickLeatherGloves",
 			"Id": 9,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 3,
 			"PictureName": "ThickLeatherArmor",
-			"Cost": 300,
+			"Cost": 500,
 			"Name": "ThickLeatherArmor",
 			"Id": 10,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 0,
 			"ArmorType": 1,
 			"EquipmentSlot": 4,
 			"PictureName": "ThickLeatherLegs",
-			"Cost": 250,
+			"Cost": 500,
 			"Name": "ThickLeatherLegs",
 			"Id": 11,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
@@ -494,22 +578,24 @@
 			"Name": "BronzeChainHelmet",
 			"Id": 12,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "BronzeChainGloves",
-			"Cost": 100,
+			"Cost": 150,
 			"Name": "BronzeChainGloves",
 			"Id": 13,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
@@ -518,118 +604,128 @@
 			"Name": "BronzeChainArmor",
 			"Id": 14,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 2,
+			"ArmorValue": 4,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "BronzeChainLegs",
-			"Cost": 100,
+			"Cost": 150,
 			"Name": "BronzeChainLegs",
 			"Id": 15,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
 			"PictureName": "IronChainHelmet",
-			"Cost": 250,
+			"Cost": 350,
 			"Name": "IronChainHelmet",
 			"Id": 16,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "IronChainGloves",
-			"Cost": 200,
+			"Cost": 350,
 			"Name": "IronChainGloves",
 			"Id": 17,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
 			"PictureName": "IronChainArmor",
-			"Cost": 250,
+			"Cost": 350,
 			"Name": "IronChainArmor",
 			"Id": 18,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "IronChainLegs",
-			"Cost": 200,
+			"Cost": 350,
 			"Name": "IronChainLegs",
 			"Id": 19,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 1,
 			"PictureName": "SteelChainHelmet",
-			"Cost": 350,
+			"Cost": 550,
 			"Name": "SteelChainHelmet",
 			"Id": 20,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 2,
 			"PictureName": "SteelChainGloves",
-			"Cost": 300,
+			"Cost": 550,
 			"Name": "SteelChainGloves",
 			"Id": 21,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 3,
 			"PictureName": "SteelChainArmor",
-			"Cost": 350,
+			"Cost": 550,
 			"Name": "SteelChainArmor",
 			"Id": 22,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 1,
 			"ArmorType": 2,
 			"EquipmentSlot": 4,
 			"PictureName": "SteelChainLegs",
-			"Cost": 300,
+			"Cost": 550,
 			"Name": "SteelChainLegs",
 			"Id": 23,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
@@ -638,22 +734,24 @@
 			"Name": "BronzePlateHelmet",
 			"Id": 24,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "BronzePlateGloves",
-			"Cost": 150,
+			"Cost": 200,
 			"Name": "BronzePlateGloves",
 			"Id": 25,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
@@ -662,115 +760,125 @@
 			"Name": "BronzePlateArmor",
 			"Id": 26,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 3,
+			"ArmorValue": 5,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "BronzePlateLegs",
-			"Cost": 150,
+			"Cost": 200,
 			"Name": "BronzePlateLegs",
 			"Id": 27,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
 			"PictureName": "IronPlateHelmet",
-			"Cost": 300,
+			"Cost": 400,
 			"Name": "IronPlateHelmet",
 			"Id": 28,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "IronPlateGloves",
-			"Cost": 250,
+			"Cost": 400,
 			"Name": "IronPlateGloves",
 			"Id": 29,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
 			"PictureName": "IronPlateArmor",
-			"Cost": 300,
+			"Cost": 400,
 			"Name": "IronPlateArmor",
 			"Id": 30,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 4,
+			"ArmorValue": 6,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "IronPlateLegs",
-			"Cost": 250,
+			"Cost": 400,
 			"Name": "IronPlateLegs",
 			"Id": 31,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 1,
 			"PictureName": "SteelPlateHelmet",
-			"Cost": 400,
+			"Cost": 600,
 			"Name": "SteelPlateHelmet",
 			"Id": 32,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 2,
 			"PictureName": "SteelPlateGloves",
-			"Cost": 350,
+			"Cost": 600,
 			"Name": "SteelPlateGloves",
 			"Id": 33,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 3,
 			"PictureName": "SteelPlateArmor",
-			"Cost": 400,
+			"Cost": 600,
 			"Name": "SteelPlateArmor",
 			"Id": 34,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
-			"ArmorValue": 5,
+			"ArmorValue": 7,
 			"DodgePenalty": 2,
 			"ArmorType": 3,
 			"EquipmentSlot": 4,
 			"PictureName": "SteelPlateLegs",
-			"Cost": 350,
+			"Cost": 600,
 			"Name": "SteelPlateLegs",
 			"Id": 35,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		}
 	],
 	"PotionItems": [
@@ -786,7 +894,8 @@
 			"Name": "SmallHealthPotion",
 			"Id": 0,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -800,7 +909,8 @@
 			"Name": "HealthPotion",
 			"Id": 1,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -814,7 +924,8 @@
 			"Name": "BigHealthPotion",
 			"Id": 2,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		}
 	],
 	"FoodItems": [
@@ -822,29 +933,31 @@
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 200
+					"Value": 150
 				}
 			],
 			"PictureName": "Bread",
-			"Cost": 15,
+			"Cost": 25,
 			"Name": "Bread",
 			"Id": 0,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
 				{
 					"EffectType": 3,
-					"Value": 200
+					"Value": 150
 				}
 			],
 			"PictureName": "WaterFlask",
-			"Cost": 15,
+			"Cost": 25,
 			"Name": "WaterFlask",
 			"Id": 1,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -854,11 +967,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "BlackCurrant",
@@ -866,7 +979,8 @@
 			"Name": "BlackCurrant",
 			"Id": 2,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -876,11 +990,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "RedCurrant",
@@ -888,7 +1002,8 @@
 			"Name": "RedCurrant",
 			"Id": 3,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -898,11 +1013,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "Blackberry",
@@ -910,7 +1025,8 @@
 			"Name": "Blackberry",
 			"Id": 4,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -920,11 +1036,11 @@
 				},
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "Blueberry",
@@ -932,17 +1048,18 @@
 			"Name": "Blueberry",
 			"Id": 5,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "Boletus",
@@ -950,17 +1067,18 @@
 			"Name": "Boletus",
 			"Id": 6,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
 				{
 					"EffectType": 2,
-					"Value": 100
+					"Value": 50
 				},
 				{
 					"EffectType": 3,
-					"Value": 100
+					"Value": 50
 				}
 			],
 			"PictureName": "RedCapBolete",
@@ -968,13 +1086,14 @@
 			"Name": "RedCapBolete",
 			"Id": 7,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
 				{
 					"EffectType": 1,
-					"Value": -1000
+					"Value": -10000
 				}
 			],
 			"PictureName": "DeathCap",
@@ -982,7 +1101,8 @@
 			"Name": "DeathCap",
 			"Id": 8,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -992,11 +1112,12 @@
 				}
 			],
 			"PictureName": "Cheese",
-			"Cost": 30,
+			"Cost": 50,
 			"Name": "Cheese",
 			"Id": 9,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		},
 		{
 			"Effects": [
@@ -1006,11 +1127,12 @@
 				}
 			],
 			"PictureName": "BigWaterFlask",
-			"Cost": 30,
+			"Cost": 50,
 			"Name": "BigWaterFlask",
 			"Id": 10,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": true
 		}
 	],
 	"ShieldItems": [
@@ -1022,7 +1144,8 @@
 			"Name": "SmallShield",
 			"Id": 0,
 			"Rating": 1,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
 			"MinBlockBonus": 2,
@@ -1032,7 +1155,8 @@
 			"Name": "MediumShield",
 			"Id": 1,
 			"Rating": 2,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		},
 		{
 			"MinBlockBonus": 2,
@@ -1042,7 +1166,8 @@
 			"Name": "BigShield",
 			"Id": 2,
 			"Rating": 3,
-			"Weight": 0.1
+			"Weight": 0.1,
+			"IsStackable": false
 		}
 	]
 }

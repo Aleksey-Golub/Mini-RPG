@@ -21,7 +21,6 @@ public class PotionItem : ItemBase
         foreach(var effect in _data.Effects)
             effect.ComeTo(target: character);
 
-        //character.Inventory.RemoveItem(this);
         character.Drink(this);
         return true;
     }

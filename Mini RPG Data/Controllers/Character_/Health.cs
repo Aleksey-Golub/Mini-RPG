@@ -15,7 +15,7 @@ public class Health
     }
 
     public int CurrentHealth => _data.CurrentHealth;
-    public int MaxHealth => _character.MaxHealth;//Settings.CalculateMaxHealth(_character);
+    public int MaxHealth => _character.MaxHealth;
     public event Action? Changed;
 
     internal void Init()

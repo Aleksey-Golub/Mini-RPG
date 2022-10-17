@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Player_;
+﻿using Mini_RPG_Data.Datas.Quest_;
+using Mini_RPG_Data.Player_;
 
 namespace Mini_RPG_Data.Datas
 {

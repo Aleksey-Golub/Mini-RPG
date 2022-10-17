@@ -39,7 +39,6 @@ public class JsonEnemyService : IEnemyService
         comments.Add(Utils.EnumToString<DamageType>());
         comments.Add(Utils.EnumToString<ArmorType>());
         comments.Add(Utils.EnumToString<ItemType>());
-        //comments.Add(Utils.EnumToString<EffectType>());
 
         try
         {

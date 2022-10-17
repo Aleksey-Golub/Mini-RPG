@@ -7,6 +7,7 @@ namespace Mini_RPG_Data.Controllers.Character_;
 
 public interface ICharacter
 {
+    int Id { get; }
     string Name { get; }
     string AvatarPath { get; }
     Race Race { get; }

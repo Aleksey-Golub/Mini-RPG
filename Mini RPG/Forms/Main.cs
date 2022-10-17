@@ -8,6 +8,7 @@ using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Enemy;
+using Mini_RPG_Data.Services.Quest;
 
 namespace Mini_RPG;
 
@@ -59,7 +60,8 @@ public partial class Main : Form
             _introScreen,
             _services.Single<IPersistentProgressService>(), 
             _services.Single<IRandomService>(),
-            _services.Single<ISaveLoadService>());
+            _services.Single<ISaveLoadService>(),
+            _services.Single<IQuestService>());
         _characterCreationScreenController.GameStarted += StartGameProcess;
         _characterCreationScreenController.Init();
         _characterCreationScreen.SetController(_characterCreationScreenController);
@@ -113,6 +115,7 @@ public partial class Main : Form
         _services.RegisterSingle<IEnemyFactory>(new EnemyFactory(
             _services.Single<IEnemyService>(),
             _services.Single<IRandomService>()));
+        _services.RegisterSingle<IQuestService>(new JsonQuestService());
 
         Settings.RandomService = _services.Single<IRandomService>();
         Settings.ItemFactory = _services.Single<IItemFactory>();

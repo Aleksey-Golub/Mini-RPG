@@ -28,6 +28,7 @@ internal class Beast : ICharacter
         Inventory = new Inventory(AllServices.Container.Single<IItemFactory>(), _data.CharacterData.InventoryData);
     }
 
+    public int Id => _data.CharacterData.Id;
     public string Name => _localizationService.CharacterName(_data.CharacterData.Name);
     public string AvatarPath => _data.CharacterData.AvatarPath;
     public Race Race => _data.CharacterData.Race;

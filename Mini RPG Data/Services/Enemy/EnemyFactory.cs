@@ -49,7 +49,7 @@ public class EnemyFactory : IEnemyFactory
                     throw new NotImplementedException();
             }
         } while (enemy == null);
-            //enemy = new Beast(_enemyService.GetRandomBeastEnemyDataOrNull(1));
+
         enemy.Health.Init();
         return enemy;
     }

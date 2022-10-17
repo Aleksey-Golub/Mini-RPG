@@ -1,8 +1,6 @@
 ﻿using Mini_RPG_Data.Controllers.Character_;
-using Mini_RPG_Data.Controllers.Inventory_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Screens;
-using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Viewes;
 
@@ -105,28 +103,4 @@ public partial class Inventory : Form, IInventoryView
     private void Button_HandsEquippedItem_Click(object sender, EventArgs e) => _controller.UnequipHands();
     private void Button_LegsEquippedItem_Click(object sender, EventArgs e) => _controller.UnequipLegs();
     #endregion
-
-    private struct InventoryItemKey
-    {
-        public ItemType Type;
-        public int Id;
-
-        public InventoryItemKey(ItemType type, int Id)
-        {
-            Type = type;
-            this.Id = Id;
-        }
-    }
-
-    private class InventoryItemValue
-    {
-        public ItemBase Item;
-        public int Count;
-
-        public InventoryItemValue(ItemBase item, int count)
-        {
-            Item = item;
-            Count = count;
-        }
-    }
 }

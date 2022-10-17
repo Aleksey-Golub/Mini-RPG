@@ -6,8 +6,8 @@ namespace Mini_RPG;
 internal static class ImageManager
 {
     private const string ITEMS_PICTURE_DIRECTIRY = "Items";
-    private const string ENEMY_PICTURE_DIRECTIRY = "Enemies";
     private const string ITEMS_PICTURE_SUFFIX = ".jpg";
+    //private const string ENEMY_PICTURE_DIRECTIRY = "Enemies";
     //private const string ENEMY_PICTURE_SUFFIX = ".png";
     private const string EMPTY = "Empty";
     private const string NO_IMAGE_ITEM = "NoImageItem";
