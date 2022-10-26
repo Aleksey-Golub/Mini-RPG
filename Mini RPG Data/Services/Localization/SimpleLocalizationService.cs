@@ -31,8 +31,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string ToolTip_Dexterity() =>
         "Ловкость (ЛОВ) - Бонус ЛОВ применяется к броскам на попадание в цель из дальнобойного оружия,\n" +
         "броскам на урон из дальнобойного оружия, броскам на урон и попадание в ближнем бою одноручным\n" +
-        "оружием при свободной второй руке, бонусу уклонения, бонусу парирования,\n" +
-        "проверкам на обезвреживание ловушек и взлом замков.";
+        "оружием при свободной второй руке, бонусу уворота, проверкам на обезвреживание ловушек и взлом замков.";
     public string ToolTip_Constitution() => 
         "Выносливость (ВЫН) - бонус ВЫН применяется к броскам на проверку регенерации здоровья,\n" +
         "рассчета очков здоровья.";
@@ -389,12 +388,12 @@ public class SimpleLocalizationService : ILocalizationService
     public string Shop() => "Магазин";
     public string Message_YouAreEscaped() => "Вам удалось сбежать";
     public string Message_YouAreNotEscaped() => "Вам не удалось сбежать";
-    public string Message_FirstHitsSecondWithDamage(string attackerName, string defenderName, int damage) => String.Format("{0} нанес {1} {2} урона", attackerName, defenderName, damage);
-    public string Message_FirstHitsSecondWithCriticalDamage(string attackerName, string defenderName, int damage) => String.Format("Крит! {0} нанес {1} {2} урона", attackerName, defenderName, damage);
+    public string Message_FirstHitsSecondWithDamage(string attackerName, string defenderName, int damage) => String.Format("{0} наносит {1} {2} урона", attackerName, defenderName, damage);
+    public string Message_FirstHitsSecondWithCriticalDamage(string attackerName, string defenderName, int damage) => String.Format("Крит! {0} наносит {1} {2} урона", attackerName, defenderName, damage);
     public string Message_FirstMissedSecond(string attackerName, string defenderName) => String.Format("{0} не попадает по {1}", attackerName, defenderName);
     public string Message_MapExplored() => "Вы закончили исследовать эту местность. Можно вернуться в город и отдохнуть";
     public string YouGained() => "Вы получили:";
-    public string CharacterGainedNewLevel(string name) => $"{name} получил новый уровень!";
+    public string CharacterGainedNewLevel(string name) => $"{name} получает новый уровень!";
 
     public string Quest(string localizationKey)
     {
@@ -407,25 +406,27 @@ public class SimpleLocalizationService : ILocalizationService
             "Quest_0_0_PhaseComplitedMessage" => "Квест получен",
             "Quest_0_1_Description" => "Исследуйте окрестности",
             "Quest_0_1_0_GoalDescription" => "Найдите первые зацепки",
-            "Quest_0_1_PhaseComplitedMessage" => "Гоблины! " +
-                "Вот и причина беспокойства местных жителей. Однако гоблины довольно неорганизованы и трусливы, чтобы оказаться так долеко от привычных мест обитания." +
-                "Необходимо продолжить обследование окрестностей, чтобы найти, кто за ними стоит",
+            "Quest_0_1_PhaseComplitedMessage" => "Гоблины!\n" +
+                "Вот и причина беспокойства местных жителей. Однако гоблины довольно неорганизованы и трусливы, чтобы оказаться так долеко от привычных мест обитания.\n" +
+                "Необходимо продолжить обследование окрестностей, чтобы найти, кто за ними стоит.",
             "Quest_0_10_Description" => "Продолжайте исследовать окрестности",
             "Quest_0_10_0_GoalDescription" => "Найдите, кто стоит за гоблинами",
-            "Quest_0_10_PhaseComplitedMessage" => "Гоблины и орки действуют сообща?" +
-                "Зеленокожие дикари всегда были заняты войнами друг с другом и редко появлялись за пределами своих территорий." +
-                "Необходимо продолжить расследование",
+            "Quest_0_10_PhaseComplitedMessage" => "Гоблины и орки действуют сообща?\n" +
+                "Зеленокожие дикари всегда были заняты войнами друг с другом и редко появлялись за пределами своих территорий.\n" +
+                "Чтобы командующий фортом не счел это глупой шуткой, необходимо продолжить расследование и сбор доказательств.",
             "Quest_0_20_Description" => "Продолжайте исследовать местность в происках новых зацепок",
             "Quest_0_20_0_GoalDescription" => "Получите 8 уровень",
             "Quest_0_20_PhaseComplitedMessage" => "В вещах последнего убитого зеленокожего вы нашли записку.\n" +
-                "Хоть вы и не знакоми с орочьей грамотой, но записка явно написана кем-то важным, а внешний вид говорит о том, что написана она была совсем недавно.",
+                "Хоть вы и не знакоми с орочьей грамотой, но записка явно написана кем-то важным, а внешний вид говорит о том, что написана она была совсем недавно.\n" +
+                "Необходимо найти и уничтожить его, пока не поздно!",
             "Quest_0_30_Description" => "Найдите и убейте командира зеленокожих",
             "Quest_0_30_0_GoalDescription" => "Убейте Матерого Орка-капитана",
-            "Quest_0_30_PhaseComplitedMessage" => "Тяжело дыша вы убираете оружие и осматриваете поле боя." +
-                "Без жесткого управления командиром зеленокожие утратят свою прыть и прибывшим сюда после вас отрядам из ближайшего форта без труда удастся с ними раборбаться." +
-                "Из ближайших кустов вываливаются два стражника, которых вы видели на городской площади." +
-                "\"Из столицы прибыл гонец с ужасными новостями! Зеленокожие объединились, их орда движется сметая все на своем пути!" +
-                "Власти начали эвакуацию населения, а всех способных держать оружие призывают в Столицу.\"",
+            "Quest_0_30_PhaseComplitedMessage" => "Тяжело дыша вы убираете оружие и осматриваете поле боя.\n" +
+                "Без жесткого управления командиром зеленокожие утратят свою прыть и прибывшим сюда после вас отрядам из ближайшего форта без труда удастся с ними раборбаться.\n\n" +
+                "Из ближайших кустов вываливаются два стражника, которых вы видели на городской площади.\n" +
+                "\"Из столицы прибыл гонец с ужасными новостями! Зеленокожие объединились, их орда движется сметая все на своем пути! " +
+                "Власти начали эвакуацию населения, а всех способных держать оружие призывают в Столицу!\"\n\n" +
+                "(на этом сюжет заканчивается, но вы можете продолжать игру дальше)",
             "Quest_0_100_Description" => "Конец квеста",
             "Quest_0_100_0_GoalDescription" => "Завершите квест",
             "Quest_0_100_PhaseComplitedMessage" => "Квест завершен",

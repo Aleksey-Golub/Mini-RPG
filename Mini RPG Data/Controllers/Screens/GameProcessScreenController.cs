@@ -354,6 +354,9 @@ public partial class GameProcessScreenController
                 return true;
             }
 
+            if (Controller._player.Character.IsAlive == false)
+                return true;
+
             if (_playerEscaped)
             {
                 Controller._logView.AddLog($"{Controller._localizationService.Message_YouAreEscaped()}");
