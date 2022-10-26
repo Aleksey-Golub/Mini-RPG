@@ -14,7 +14,6 @@ public static class Settings
 {
     public static IRandomService RandomService;
     public static IItemFactory ItemFactory;
-
     public const int DEFAULT_FIELD_OF_VIEW = 2;
     public const int EXPERIENCE_DEFAULT_VALUE = 30;
     public const int MAX_LEVEL = 10;
@@ -22,6 +21,7 @@ public static class Settings
     public const int MIN_ABILITY_VALUE = 6;
     public const int MAX_ABILITY_VALUE = 12;
     public const int DEFAULT_ABILITYPOINTS_COUNT = 0;
+    public const int LEVEL_UP_ABILITY_POINTS = 1;
 
     public const int HEALTH_RESTORE_VALUE = 1;
 

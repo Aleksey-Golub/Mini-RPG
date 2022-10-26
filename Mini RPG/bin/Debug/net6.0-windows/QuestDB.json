@@ -8,22 +8,6 @@
 			"DescriptionLocalizationKey": "Quest_0_Description",
 			"Phases": [
 				{
-					"Id": 0,
-					"Description": "Quest started",
-					"DescriptionLocalizationKey": "Quest_0_0_Description",
-					"NextPhaseId": 1,
-					"Goals": [
-						{
-							"GoalType": 1,
-							"TargetId": 0,
-							"RequaredProgress": 0,
-							"Description": "AutoComplited Start Goal",
-							"DescriptionLocalizationKey": "Quest_0_0_0_GoalDescription"
-						}
-					],
-					"PhaseGoalsComplitedMessageKey": "Quest_0_0_PhaseComplitedMessage"
-				},
-				{
 					"Id": 1,
 					"Description": "Meeting with first goblin (Explore the neighborhood)",
 					"DescriptionLocalizationKey": "Quest_0_1_Description",
@@ -57,15 +41,15 @@
 				},
 				{
 					"Id": 20,
-					"Description": "Reache 10 lvl (repare to meet the main source of problems)",
+					"Description": "Reache 8 lvl (prepare to meet the main source of problems)",
 					"DescriptionLocalizationKey": "Quest_0_20_Description",
 					"NextPhaseId": 30,
 					"Goals": [
 						{
 							"GoalType": 8,
 							"TargetId": 0,
-							"RequaredProgress": 10,
-							"Description": "Reach level 10",
+							"RequaredProgress": 8,
+							"Description": "Reach level 8",
 							"DescriptionLocalizationKey": "Quest_0_20_0_GoalDescription"
 						}
 					],
@@ -73,15 +57,15 @@
 				},
 				{
 					"Id": 30,
-					"Description": "Find and Kill OldOrcWarlord",
+					"Description": "Find and Kill OrcWarlord",
 					"DescriptionLocalizationKey": "Quest_0_30_Description",
-					"NextPhaseId": 100,
+					"NextPhaseId": -1,
 					"Goals": [
 						{
 							"GoalType": 3,
-							"TargetId": 0,
+							"TargetId": 10013,
 							"RequaredProgress": 1,
-							"Description": "Find and Kill OldOrcWarlord",
+							"Description": "Find and Kill OrcWarlord",
 							"DescriptionLocalizationKey": "Quest_0_30_0_GoalDescription"
 						}
 					],
@@ -96,12 +80,28 @@
 						{
 							"GoalType": 2,
 							"TargetId": 0,
-							"RequaredProgress": 1,
+							"RequaredProgress": 0,
 							"Description": "AutoComplited End Goal",
 							"DescriptionLocalizationKey": "Quest_0_100_0_GoalDescription"
 						}
 					],
 					"PhaseGoalsComplitedMessageKey": "Quest_0_100_PhaseComplitedMessage"
+				},
+				{
+					"Id": 0,
+					"Description": "Quest started",
+					"DescriptionLocalizationKey": "Quest_0_0_Description",
+					"NextPhaseId": 1,
+					"Goals": [
+						{
+							"GoalType": 1,
+							"TargetId": 0,
+							"RequaredProgress": 0,
+							"Description": "AutoComplited Start Goal",
+							"DescriptionLocalizationKey": "Quest_0_0_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_0_PhaseComplitedMessage"
 				}
 			]
 		}

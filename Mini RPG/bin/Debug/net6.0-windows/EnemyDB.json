@@ -38,7 +38,7 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 7
+						"Id": 10007
 					}
 				],
 				"EquippedItems": [
@@ -46,12 +46,12 @@
 					null,
 					{
 						"Type": 3,
-						"Id": 2
+						"Id": 30002
 					},
 					null,
 					{
 						"Type": 2,
-						"Id": 9
+						"Id": 20009
 					},
 					null
 				]
@@ -95,26 +95,26 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 7
+						"Id": 10007
 					}
 				],
 				"EquippedItems": [
 					null,
 					{
 						"Type": 3,
-						"Id": 1
+						"Id": 30001
 					},
 					{
 						"Type": 3,
-						"Id": 6
+						"Id": 30006
 					},
 					{
 						"Type": 3,
-						"Id": 3
+						"Id": 30003
 					},
 					{
 						"Type": 2,
-						"Id": 10
+						"Id": 20010
 					},
 					null
 				]
@@ -158,33 +158,33 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 7
+						"Id": 10007
 					},
 					{
 						"Type": 1,
-						"Id": 7
+						"Id": 10007
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 4
+						"Id": 30004
 					},
 					{
 						"Type": 3,
-						"Id": 5
+						"Id": 30005
 					},
 					{
 						"Type": 3,
-						"Id": 6
+						"Id": 30006
 					},
 					{
 						"Type": 3,
-						"Id": 7
+						"Id": 30007
 					},
 					{
 						"Type": 2,
-						"Id": 10
+						"Id": 20010
 					},
 					null
 				]
@@ -228,29 +228,29 @@
 				"Items": [
 					{
 						"Type": 2,
-						"Id": 0
+						"Id": 20000
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 0
+						"Id": 30000
 					},
 					{
 						"Type": 3,
-						"Id": 1
+						"Id": 30001
 					},
 					{
 						"Type": 3,
-						"Id": 2
+						"Id": 30002
 					},
 					{
 						"Type": 3,
-						"Id": 3
+						"Id": 30003
 					},
 					{
 						"Type": 2,
-						"Id": 0
+						"Id": 20000
 					},
 					null
 				]
@@ -294,29 +294,29 @@
 				"Items": [
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 4
+						"Id": 30004
 					},
 					{
 						"Type": 3,
-						"Id": 5
+						"Id": 30005
 					},
 					{
 						"Type": 3,
-						"Id": 6
+						"Id": 30006
 					},
 					{
 						"Type": 3,
-						"Id": 7
+						"Id": 30007
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					null
 				]
@@ -360,29 +360,29 @@
 				"Items": [
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 8
+						"Id": 30008
 					},
 					{
 						"Type": 3,
-						"Id": 5
+						"Id": 30005
 					},
 					{
 						"Type": 3,
-						"Id": 10
+						"Id": 30010
 					},
 					{
 						"Type": 3,
-						"Id": 7
+						"Id": 30007
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					null
 				]
@@ -426,29 +426,29 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 12
+						"Id": 30012
 					},
 					{
 						"Type": 3,
-						"Id": 1
+						"Id": 30001
 					},
 					{
 						"Type": 3,
-						"Id": 14
+						"Id": 30014
 					},
 					{
 						"Type": 3,
-						"Id": 3
+						"Id": 30003
 					},
 					{
 						"Type": 2,
-						"Id": 9
+						"Id": 20009
 					},
 					null
 				]
@@ -492,29 +492,29 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 16
+						"Id": 30016
 					},
 					{
 						"Type": 3,
-						"Id": 5
+						"Id": 30005
 					},
 					{
 						"Type": 3,
-						"Id": 18
+						"Id": 30018
 					},
 					{
 						"Type": 3,
-						"Id": 7
+						"Id": 30007
 					},
 					{
 						"Type": 2,
-						"Id": 10
+						"Id": 20010
 					},
 					null
 				]
@@ -558,33 +558,33 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					},
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 16
+						"Id": 30016
 					},
 					{
 						"Type": 3,
-						"Id": 9
+						"Id": 30009
 					},
 					{
 						"Type": 3,
-						"Id": 18
+						"Id": 30018
 					},
 					{
 						"Type": 3,
-						"Id": 11
+						"Id": 30011
 					},
 					{
 						"Type": 2,
-						"Id": 10
+						"Id": 20010
 					},
 					null
 				]
@@ -628,33 +628,33 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 12
+						"Id": 30012
 					},
 					{
 						"Type": 3,
-						"Id": 1
+						"Id": 30001
 					},
 					{
 						"Type": 3,
-						"Id": 14
+						"Id": 30014
 					},
 					{
 						"Type": 3,
-						"Id": 3
+						"Id": 30003
 					},
 					{
 						"Type": 2,
-						"Id": 0
+						"Id": 20000
 					},
 					{
 						"Type": 5,
-						"Id": 0
+						"Id": 50000
 					}
 				]
 			}
@@ -707,27 +707,27 @@
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 16
+						"Id": 30016
 					},
 					{
 						"Type": 3,
-						"Id": 5
+						"Id": 30005
 					},
 					{
 						"Type": 3,
-						"Id": 18
+						"Id": 30018
 					},
 					{
 						"Type": 3,
-						"Id": 7
+						"Id": 30007
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 50002
 					}
 				]
 			}
@@ -770,37 +770,37 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 50002
 					},
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 16
+						"Id": 30016
 					},
 					{
 						"Type": 3,
-						"Id": 9
+						"Id": 30009
 					},
 					{
 						"Type": 3,
-						"Id": 18
+						"Id": 30018
 					},
 					{
 						"Type": 3,
-						"Id": 11
+						"Id": 30011
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 50002
 					}
 				]
 			}
@@ -843,33 +843,33 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 50001
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 24
+						"Id": 30024
 					},
 					{
 						"Type": 3,
-						"Id": 13
+						"Id": 30013
 					},
 					{
 						"Type": 3,
-						"Id": 26
+						"Id": 30026
 					},
 					{
 						"Type": 3,
-						"Id": 15
+						"Id": 30015
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 50001
 					}
 				]
 			}
@@ -912,33 +912,33 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 1
+						"Id": 50001
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 28
+						"Id": 30028
 					},
 					{
 						"Type": 3,
-						"Id": 13
+						"Id": 30013
 					},
 					{
 						"Type": 3,
-						"Id": 30
+						"Id": 30030
 					},
 					{
 						"Type": 3,
-						"Id": 15
+						"Id": 30015
 					},
 					{
 						"Type": 2,
-						"Id": 1
+						"Id": 20001
 					},
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 50002
 					}
 				]
 			}
@@ -981,33 +981,33 @@
 				"Items": [
 					{
 						"Type": 2,
-						"Id": 2
+						"Id": 20002
 					}
 				],
 				"EquippedItems": [
 					{
 						"Type": 3,
-						"Id": 28
+						"Id": 30028
 					},
 					{
 						"Type": 3,
-						"Id": 17
+						"Id": 30017
 					},
 					{
 						"Type": 3,
-						"Id": 30
+						"Id": 30030
 					},
 					{
 						"Type": 3,
-						"Id": 19
+						"Id": 30019
 					},
 					{
 						"Type": 2,
-						"Id": 2
+						"Id": 20002
 					},
 					{
 						"Type": 5,
-						"Id": 2
+						"Id": 50002
 					}
 				]
 			}
@@ -1053,7 +1053,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 3
+							"Id": 10003
 						}
 					],
 					"EquippedItems": [
@@ -1131,7 +1131,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 4
+							"Id": 10004
 						}
 					],
 					"EquippedItems": [
@@ -1209,7 +1209,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 5
+							"Id": 10005
 						}
 					],
 					"EquippedItems": [
@@ -1506,7 +1506,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 0
+							"Id": 10000
 						}
 					],
 					"EquippedItems": [
@@ -1584,7 +1584,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 1
+							"Id": 10001
 						}
 					],
 					"EquippedItems": [
@@ -1662,7 +1662,7 @@
 					"Items": [
 						{
 							"Type": 1,
-							"Id": 2
+							"Id": 10002
 						}
 					],
 					"EquippedItems": [

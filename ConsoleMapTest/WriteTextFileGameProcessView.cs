@@ -190,4 +190,9 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     {
         throw new NotImplementedException();
     }
+
+    public void ShowMessage(string message)
+    {
+        throw new NotImplementedException();
+    }
 }

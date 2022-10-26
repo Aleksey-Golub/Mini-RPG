@@ -4,18 +4,19 @@ using Mini_RPG_Data.Viewes;
 using Mini_RPG_Data.Services.Localization;
 using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
-using Mini_RPG.Screens.CharacterCreationScreen_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using System.Text;
-using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers.Quest_;
+using Mini_RPG.Screens.GameProcessScreen_;
 
 namespace Mini_RPG.Screens;
 
-public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
+public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView, IQuestsView
 {
     private readonly ILocalizationService _localizationService;
     private readonly MapView _mapView;
     private readonly HealthView _healthView;
+    private readonly QuestsView _questsView;
     private readonly SatiationView _satiationView;
 
     private GameProcessScreenController _controller;
@@ -33,6 +34,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _mapView = new MapView(_label_Map, _toolTip, _localizationService);
         _healthView = new HealthView(_label_Health, _panel_CharacterHealthBarFG);
         _satiationView = new SatiationView(_localizationService, _label_HungerLevel, _label_ThirstLevel);
+        _questsView = new QuestsView(_label_Quests);
     }
 
     public void Init(IPlayer player)
@@ -73,6 +75,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_BattleActions.Hide();
     }
 
+    public void ShowQuests(IReadOnlyList<Quest> quests) => _questsView.ShowQuests(quests);
     public void SetGameProcessController(GameProcessScreenController gameProcessController) => _controller = gameProcessController;
     public void SetActiveState(bool newState) => Visible = newState;
 
@@ -157,6 +160,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_Battle.Hide();
         _panel_BattleActions.Hide();
     }
+
+    public void ShowMessage(string message) => MessageBox.Show(message);
 
     public void ShowRestInTownDialog(int restCost)
     {

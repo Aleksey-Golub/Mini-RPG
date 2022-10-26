@@ -33,4 +33,5 @@ public interface IGameProcessView
     void HideBattle(BattleResult playerWon, IReadOnlyList<ItemBase> loot, int experience);
     void ShowMapExploredMessage();
     void ShowRestInTownDialog(int restCost);
+    void ShowMessage(string message);
 }

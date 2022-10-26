@@ -8,6 +8,9 @@ using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.Enemy;
 using Mini_RPG_Data.Controllers.Quest_;
+using Mini_RPG_Data.Services;
+using Mini_RPG_Data.Services.Quest_;
+using Mini_RPG_Data.Services.EventBus;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -22,9 +25,11 @@ public partial class GameProcessScreenController
     private readonly ILocalizationService _localizationService;
     private readonly IRandomService _randomService;
     private readonly IEnemyFactory _enemyFactory;
+    private readonly IEventService _eventService;
+
     private Player _player = null!;
     private Map _map = null!;
-    private QuestSystem _questSystem = null!;
+    private QuestController _questSystem = null!;
 
     private GameProcessStateBase _state = null!;
     private readonly Dictionary<Type, GameProcessStateBase> _states;
@@ -35,12 +40,15 @@ public partial class GameProcessScreenController
     public GameProcessScreenController(
         IGameProcessView gameProcessView,
         ILogView logView,
+        IQuestsView questView,
         IPlayerDeathView playerDeathView,
         IPersistentProgressService progressService,
         ISaveLoadService saveLoadService,
         ILocalizationService localizationService,
         IRandomService randomService,
-        IEnemyFactory enemyFactory)
+        IEnemyFactory enemyFactory,
+        IQuestService questService,
+        IEventService eventService)
     {
         _gameProcessView = gameProcessView;
         _logView = logView;
@@ -50,6 +58,8 @@ public partial class GameProcessScreenController
         _localizationService = localizationService;
         _randomService = randomService;
         _enemyFactory = enemyFactory;
+        _eventService = eventService;
+
         _states = new Dictionary<Type, GameProcessStateBase>()
         {
             [typeof(InTownGameProcessState)] = new InTownGameProcessState(this),
@@ -60,8 +70,8 @@ public partial class GameProcessScreenController
 
         _gameProcessView.SetGameProcessController(this);
         _playerDeathView.SetController(this);
-        
-        _questSystem = new QuestSystem();
+
+        _questSystem = new QuestController(_progressService, questService, _localizationService, _eventService, _gameProcessView, questView);
     }
 
     public void Run()
@@ -70,7 +80,7 @@ public partial class GameProcessScreenController
         _player.Character.Died += OnPlayerCharacterDied;
         _map = new Map(_progressService.Progress.MapData);
         _map.Explored += OnMapExplored;
-        _questSystem.Init();
+        _questSystem.Init(_player);
 
         _gameProcessView.Init(_player);
         _gameProcessView.SetActiveState(true);
@@ -85,13 +95,14 @@ public partial class GameProcessScreenController
 
     public void SaveGameAndExitMainMenu()
     {
+        _saveLoadService.SaveProgress();
+
         _gameProcessView.DeInit();
         _gameProcessView.SetActiveState(false);
         _questSystem.DeInit();
 
         _player.Character.Died -= OnPlayerCharacterDied;
 
-        _saveLoadService.SaveProgress();
         SaveAndExit?.Invoke(this);
     }
 
@@ -246,6 +257,10 @@ public partial class GameProcessScreenController
         internal override void Enter()
         {
             _enemy = Controller._enemyFactory.CreateRandom(Controller._player);
+
+            Controller._eventService.Publish(EventType.MeetEnemyWithId, _enemy.Id);
+            Controller._eventService.Publish(EventType.MeetEnemyWithRace, (int)_enemy.Race);
+
             Controller._gameProcessView.ShowBattle(_enemy);
         }
 
@@ -331,6 +346,10 @@ public partial class GameProcessScreenController
                 Controller._gameProcessView.HideBattle(BattleResult.PlayerWon, _enemy.Inventory.Items, _enemy.Experience);
                 Controller._player.Character.Level.TakeExperience(_enemy.Experience);
                 Controller._player.Character.Inventory.AddItems(_enemy.Inventory.Items.ToList());
+
+                Controller._eventService.Publish(EventType.KilledEnemyWithId, _enemy.Id);
+                Controller._eventService.Publish(EventType.KilledEnemyWithRace, (int)_enemy.Race);
+
                 Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
             }

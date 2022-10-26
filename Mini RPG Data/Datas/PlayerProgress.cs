@@ -20,6 +20,7 @@ namespace Mini_RPG_Data.Datas
         internal void PrepareForSerialize()
         {
             PlayerData.CharacterData.InventoryData.PrepareForSerialize();
+            PlayerData.QuestsData.PrepareForSerialize();
             MapData.PrepareForSerialize();
         }
 

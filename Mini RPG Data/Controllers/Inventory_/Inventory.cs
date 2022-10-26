@@ -82,6 +82,7 @@ public class Inventory
         } 
     }
     public IReadOnlyList<ItemBase> Items => _items;
+    public event Action<Inventory> Changed;
 
     internal bool TryUnequipHead() => TryUnequip(EquipmentSlot.Head);
     internal bool TryUnequipBody() => TryUnequip(EquipmentSlot.Body);
@@ -154,18 +155,21 @@ public class Inventory
     {
         _items.Remove(item);
         UpdateData();
+        Changed?.Invoke(this);
     }
 
     internal void AddItem(ItemBase item)
     {
         _items.Add(item);
         UpdateData();
+        Changed?.Invoke(this);
     }
 
     internal void AddItems(List<ItemBase> items)
     {
         _items.AddRange(items);
         UpdateData();
+        Changed?.Invoke(this);
     }
 
     private void UpdateData()

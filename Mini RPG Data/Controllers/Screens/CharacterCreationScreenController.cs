@@ -7,9 +7,9 @@ using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Datas.Inventory_;
-using Mini_RPG_Data.Services.Quest;
 using Mini_RPG_Data.Datas.Quest_.QuestDB;
 using Mini_RPG_Data.Datas.Quest_;
+using Mini_RPG_Data.Services.Quest_;
 
 namespace Mini_RPG_Data.Controllers.Screens;
 
@@ -76,30 +76,38 @@ public class CharacterCreationScreenController
     private PlayerProgress NewProgress()
     {
         var progress = new PlayerProgress(Map.Generate(_randomService));
+        SetStartCharacterStaff(progress);
+        SetMainQuest(progress);
 
-        progress.PlayerData.WalletData.Money = Settings.START_MONEY;
-        progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
-        progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
+        progress.TownTraderData = Settings.GetRandomTownTraderData();
 
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 0));  // small health potion
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 0));    // bread
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food, 1));    // water flask
+        return progress;
+    }
 
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor, 2);   // Thin Leather Jacket
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 0);  // bronze sword
-
+    private void SetMainQuest(PlayerProgress progress)
+    {
         QuestData mainQuestData = _questService.GetByIdOrNull(0);
         QuestPhaseData firstPhase = mainQuestData.Phases[0];
         List<int> goalsProgresses = new int[firstPhase.Goals.Count].ToList();
         progress.PlayerData.QuestsData.CurrentQuests.Add(
             new QuestSavedData(
-                mainQuestData.Id, 
-                mainQuestData.Name, 
-                mainQuestData.Description, 
+                mainQuestData.Id,
+                mainQuestData.Name,
+                mainQuestData.Description,
                 new QuestPhaseSavedData(firstPhase.Id, firstPhase.Description, goalsProgresses)));
+    }
 
-        progress.TownTraderData = Settings.GetRandomTownTraderData();
+    private static void SetStartCharacterStaff(PlayerProgress progress)
+    {
+        progress.PlayerData.WalletData.Money = Settings.START_MONEY;
+        progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
+        progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
 
-        return progress;
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 40000));  // small health potion
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   60000));    // bread
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   60001));    // water flask
+
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor,  30002);   // Thin Leather Jacket
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 20000);  // bronze sword
     }
 }

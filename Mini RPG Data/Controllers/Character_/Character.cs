@@ -3,6 +3,7 @@ using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Controllers.Inventory_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Services;
+using Mini_RPG_Data.Services.EventBus;
 using Mini_RPG_Data.Services.Items;
 using Mini_RPG_Data.Services.Localization;
 
@@ -11,11 +12,14 @@ namespace Mini_RPG_Data.Controllers.Character_;
 public class Character : ICharacter
 {
     private readonly ILocalizationService _localizationService;
+    private readonly IEventService _eventService;
     private readonly CharacterData _data;
 
     internal Character(CharacterData data)
     {
-        _localizationService = AllServices.Container.Single<ILocalizationService>();
+        AllServices services = AllServices.Container;
+        _localizationService = services.Single<ILocalizationService>();
+        _eventService = services.Single<IEventService>();
 
         _data = data;
 
@@ -223,7 +227,7 @@ public class Character : ICharacter
 
     private void OnLevelChanged()
     {
-        AllAbilities.AddAbilityPoints(1);
+        AllAbilities.AddAbilityPoints(Settings.LEVEL_UP_ABILITY_POINTS);
         LevelChanged?.Invoke(this);
     }
 }

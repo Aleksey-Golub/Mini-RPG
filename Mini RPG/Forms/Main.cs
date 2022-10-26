@@ -8,7 +8,8 @@ using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.SaveLoad;
 using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Enemy;
-using Mini_RPG_Data.Services.Quest;
+using Mini_RPG_Data.Services.Quest_;
+using Mini_RPG_Data.Services.EventBus;
 
 namespace Mini_RPG;
 
@@ -77,12 +78,15 @@ public partial class Main : Form
         var gameProcessController = new GameProcessScreenController(
             _gameProcessScreen, 
             _gameProcessScreen, 
+            _gameProcessScreen, 
             _playerDeathScreen, 
             _services.Single<IPersistentProgressService>(),
             _services.Single<ISaveLoadService>(), 
             _services.Single<ILocalizationService>(),
             _services.Single<IRandomService>(),
-            _services.Single<IEnemyFactory>()
+            _services.Single<IEnemyFactory>(),
+            _services.Single<IQuestService>(),
+            _services.Single<IEventService>()
             );
         gameProcessController.SaveAndExit += GoToMainMenu;
         gameProcessController.PlayerDied += GoToMainMenu;
@@ -116,6 +120,7 @@ public partial class Main : Form
             _services.Single<IEnemyService>(),
             _services.Single<IRandomService>()));
         _services.RegisterSingle<IQuestService>(new JsonQuestService());
+        _services.RegisterSingle<IEventService>(new EventService());
 
         Settings.RandomService = _services.Single<IRandomService>();
         Settings.ItemFactory = _services.Single<IItemFactory>();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameProcessScreen));
             this._panel_Navigation = new System.Windows.Forms.Panel();
             this._button_Rest = new System.Windows.Forms.Button();
             this._button_E = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@
             this._button_Attack = new System.Windows.Forms.Button();
             this._panel_TownEntrance = new System.Windows.Forms.Panel();
             this._button_EnterTown = new System.Windows.Forms.Button();
+            this._label_Quests = new System.Windows.Forms.Label();
             this._panel_Navigation.SuspendLayout();
             this._panel_MiniMap.SuspendLayout();
             this._panel_Character.SuspendLayout();
@@ -507,7 +509,7 @@
             // 
             this._panel_BattleActions.Controls.Add(this._button_TryLeaveBattle);
             this._panel_BattleActions.Controls.Add(this._button_Attack);
-            this._panel_BattleActions.Location = new System.Drawing.Point(1079, 835);
+            this._panel_BattleActions.Location = new System.Drawing.Point(1091, 835);
             this._panel_BattleActions.Name = "_panel_BattleActions";
             this._panel_BattleActions.Size = new System.Drawing.Size(346, 131);
             this._panel_BattleActions.TabIndex = 9;
@@ -551,11 +553,21 @@
             this._button_EnterTown.UseVisualStyleBackColor = true;
             this._button_EnterTown.Click += new System.EventHandler(this.Button_EnterTown_Click);
             // 
+            // _label_Quests
+            // 
+            this._label_Quests.Location = new System.Drawing.Point(296, 835);
+            this._label_Quests.Name = "_label_Quests";
+            this._label_Quests.Size = new System.Drawing.Size(773, 142);
+            this._label_Quests.TabIndex = 11;
+            this._label_Quests.Text = resources.GetString("_label_Quests.Text");
+            this._label_Quests.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // GameProcessScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this._label_Quests);
             this.Controls.Add(this._panel_TownEntrance);
             this.Controls.Add(this._panel_BattleActions);
             this.Controls.Add(this._panel_Town);
@@ -639,5 +651,6 @@
         private Button _button_EnterTown;
         private ToolStripStatusLabel _label_HungerLevel;
         private ToolStripStatusLabel _label_ThirstLevel;
+        private Label _label_Quests;
     }
 }

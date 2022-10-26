@@ -3,6 +3,7 @@ using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
+using Mini_RPG_Data.Controllers.Quest_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
@@ -394,4 +395,44 @@ public class SimpleLocalizationService : ILocalizationService
     public string Message_MapExplored() => "Вы закончили исследовать эту местность. Можно вернуться в город и отдохнуть";
     public string YouGained() => "Вы получили:";
     public string CharacterGainedNewLevel(string name) => $"{name} получил новый уровень!";
+
+    public string Quest(string localizationKey)
+    {
+        return localizationKey switch
+        {
+            "Quest_0_Name" => "Главный квест",
+            "Quest_0_Description" => "Найдите и устраните причину беспокойства местных жителей",
+            "Quest_0_0_Description" => "Старт квеста",
+            "Quest_0_0_0_GoalDescription" => "Получите квест",
+            "Quest_0_0_PhaseComplitedMessage" => "Квест получен",
+            "Quest_0_1_Description" => "Исследуйте окрестности",
+            "Quest_0_1_0_GoalDescription" => "Найдите первые зацепки",
+            "Quest_0_1_PhaseComplitedMessage" => "Гоблины! " +
+                "Вот и причина беспокойства местных жителей. Однако гоблины довольно неорганизованы и трусливы, чтобы оказаться так долеко от привычных мест обитания." +
+                "Необходимо продолжить обследование окрестностей, чтобы найти, кто за ними стоит",
+            "Quest_0_10_Description" => "Продолжайте исследовать окрестности",
+            "Quest_0_10_0_GoalDescription" => "Найдите, кто стоит за гоблинами",
+            "Quest_0_10_PhaseComplitedMessage" => "Гоблины и орки действуют сообща?" +
+                "Зеленокожие дикари всегда были заняты войнами друг с другом и редко появлялись за пределами своих территорий." +
+                "Необходимо продолжить расследование",
+            "Quest_0_20_Description" => "Продолжайте исследовать местность в происках новых зацепок",
+            "Quest_0_20_0_GoalDescription" => "Получите 8 уровень",
+            "Quest_0_20_PhaseComplitedMessage" => "В вещах последнего убитого зеленокожего вы нашли записку.\n" +
+                "Хоть вы и не знакоми с орочьей грамотой, но записка явно написана кем-то важным, а внешний вид говорит о том, что написана она была совсем недавно.",
+            "Quest_0_30_Description" => "Найдите и убейте командира зеленокожих",
+            "Quest_0_30_0_GoalDescription" => "Убейте Матерого Орка-капитана",
+            "Quest_0_30_PhaseComplitedMessage" => "Тяжело дыша вы убираете оружие и осматриваете поле боя." +
+                "Без жесткого управления командиром зеленокожие утратят свою прыть и прибывшим сюда после вас отрядам из ближайшего форта без труда удастся с ними раборбаться." +
+                "Из ближайших кустов вываливаются два стражника, которых вы видели на городской площади." +
+                "\"Из столицы прибыл гонец с ужасными новостями! Зеленокожие объединились, их орда движется сметая все на своем пути!" +
+                "Власти начали эвакуацию населения, а всех способных держать оружие призывают в Столицу.\"",
+            "Quest_0_100_Description" => "Конец квеста",
+            "Quest_0_100_0_GoalDescription" => "Завершите квест",
+            "Quest_0_100_PhaseComplitedMessage" => "Квест завершен",
+
+            _ => localizationKey,
+        };
+    }
+
+    public string Message_QuestComplited(Quest quest) => String.Format("Квест \"{0}\" завершен", quest.LocalizedName);
 }

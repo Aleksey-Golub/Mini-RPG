@@ -3,6 +3,7 @@ using Mini_RPG_Data.Controllers;
 using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Controllers.Map_;
+using Mini_RPG_Data.Controllers.Quest_;
 
 namespace Mini_RPG_Data.Services.Localization;
 
@@ -60,6 +61,7 @@ public interface ILocalizationService : IService
     string LevelBoarder();
     string DamageType();
     string PlayerMoveSuccessfully(Direction direction);
+    string Quest(string localizationKey);
     string DamageTypeName(DamageType damageType);
     string GripName(Grip grip);
     string Grip();
@@ -100,4 +102,5 @@ public interface ILocalizationService : IService
     string Message_FirstMissedSecond(string attackerName, string defenderName);
     string Message_FirstHitsSecondWithDamage(string attackerName, string defenderName, int damage);
     string Message_FirstHitsSecondWithCriticalDamage(string attackerName, string defenderName, int damage);
+    string Message_QuestComplited(Quest quest);
 }
