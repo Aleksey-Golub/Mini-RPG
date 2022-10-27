@@ -41,4 +41,5 @@ public enum EventType
     KilledEnemyWithRace,
     MeetEnemyWithId,
     MeetEnemyWithRace,
+    SpecialEventType,
 }

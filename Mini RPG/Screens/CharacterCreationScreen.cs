@@ -11,7 +11,7 @@ namespace Mini_RPG.Screens
     public partial class CharacterCreationScreen : UserControl, ICharacterCreationScreenView
     {
         private CharacterCreationScreenController _controller = null!;
-        private ICharacter _characterData = null!;
+        private ICharacter _character = null!;
 
         private readonly ILocalizationService _localizationService;
         private readonly int _maxNameLength = 15;
@@ -23,6 +23,23 @@ namespace Mini_RPG.Screens
             _localizationService = localizationService;
             _localizationService.LanguageChanged += SetTexts;
             SetTexts();
+        }
+
+        public void SetActiveState(bool newState) => Visible = newState;
+
+        public void SetController(CharacterCreationScreenController controller)
+        {
+            _controller = controller;
+        }
+
+        public void Init(ICharacter character)
+        {
+            _character = character;
+            _character.Changed += OnCharacterChanged;
+
+            _controller.SetRace(character.Race);
+            _pictureBox_SelectCharacterAvatar.ImageLocation = character.AvatarPath;
+            _textBox_Name.Text = character.Name;
 
             _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
             string[] races = new string[]
@@ -33,29 +50,17 @@ namespace Mini_RPG.Screens
                 _localizationService.RaceName(Race.Dwarf)    // 2
             };
             _comboBox_Race.Items.AddRange(races);
-        }
-
-        public void SetActiveState(bool newState) => Visible = newState;
-
-        public void SetController(CharacterCreationScreenController controller)
-        {
-            _controller = controller;
             _comboBox_Race.SelectedIndex = 0;
         }
 
-        public void SetCharacter(ICharacter characterData)
-        {
-            _characterData = characterData;
-            _characterData.Changed += OnCharacterDataChanged;
-        }
-
-        private void OnCharacterDataChanged(ICharacter character)
+        private void OnCharacterChanged(ICharacter character)
         {
             _label_StrengthPoints.Text = character.AllAbilities.Strength.Value.ToString();
             _label_DexterityPoints.Text = character.AllAbilities.Dexterity.Value.ToString();
             _label_ConstitutionPoints.Text = character.AllAbilities.Constitution.Value.ToString();
             _label_PerceptionPoints.Text = character.AllAbilities.Perception.Value.ToString();
             _label_CharismaPoints.Text = character.AllAbilities.Charisma.Value.ToString();
+
             _label_AbilityPointsCount.Text = character.AllAbilities.AbilityPoints.ToString();
 
             // TO DO activate/deactivate buttons
@@ -81,8 +86,7 @@ namespace Mini_RPG.Screens
             _label_Perception.Text = _localizationService.Label_Perception();
             _label_Race.Text = _localizationService.Label_Race();
             _label_Strength.Text = _localizationService.Label_Strength();
-            _textBox_Name.Text = _localizationService.TextBox_Name();
-
+            
             SetAllToolTips();
         }
 

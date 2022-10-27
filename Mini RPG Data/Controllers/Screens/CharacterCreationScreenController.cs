@@ -44,7 +44,8 @@ public class CharacterCreationScreenController
         _progressService.Progress = NewProgress();
         _player = new Player(_progressService.Progress.PlayerData);
         _player.Init();
-        _characterCreationScreen.SetCharacter(_player.Character);
+
+        _characterCreationScreen.Init(_player.Character);
     }
 
     public event Action? GameStarted;

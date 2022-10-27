@@ -10,6 +10,7 @@ namespace Mini_RPG_Data.Services.Localization;
 public class SimpleLocalizationService : ILocalizationService
 {
     public event Action? LanguageChanged;
+
     public string Button_Exit() => "ВЫХОД";
     public string Button_LoadGame() => "ЗАГРУЗИТЬ";
     public string Button_NewGame() => "НОВАЯ ИГРА";
@@ -23,7 +24,7 @@ public class SimpleLocalizationService : ILocalizationService
     public string Label_Perception() => "Восприятие";
     public string Label_Race() => "Раса";
     public string Label_Strength() => "Сила";
-    public string TextBox_Name() => "% Введите имя %";
+    public string DefaultCharacterName() => "% Введите имя %";
     public string ToolTip_AbilityPoints() => "Доступные для распределения очки характеристик";
     public string ToolTip_Strength() => 
         "Сили (СИЛ) - бонус СИЛ применяется к броскам на попадание в цель в ближнем бою,\n" +

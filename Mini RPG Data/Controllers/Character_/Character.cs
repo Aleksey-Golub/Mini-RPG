@@ -12,14 +12,12 @@ namespace Mini_RPG_Data.Controllers.Character_;
 public class Character : ICharacter
 {
     private readonly ILocalizationService _localizationService;
-    private readonly IEventService _eventService;
     private readonly CharacterData _data;
 
     internal Character(CharacterData data)
     {
         AllServices services = AllServices.Container;
         _localizationService = services.Single<ILocalizationService>();
-        _eventService = services.Single<IEventService>();
 
         _data = data;
 
@@ -37,7 +35,7 @@ public class Character : ICharacter
     internal void Init()
     {
         Race = Race.Human;
-        Name = "default name";
+        Name = _localizationService.DefaultCharacterName();
         AvatarPath = Settings.DefaultAvatarPath;
 
         Level.Init();

@@ -50,20 +50,7 @@ internal class QuestController
         _eventService.Subscribe(EventType.KilledEnemyWithRace, OnEventHappened);
         _eventService.Subscribe(EventType.MeetEnemyWithId, OnEventHappened);
         _eventService.Subscribe(EventType.MeetEnemyWithRace, OnEventHappened);
-
-        foreach (var questSavedData in _progressService.Progress.PlayerData.QuestsData.CurrentQuests)
-        {
-            var questData = _questService.GetByIdOrNull(questSavedData.Id);
-            if (questData == null)
-                continue;
-
-            Quest quest = new Quest(questData, questSavedData.CurrentPhaseSavedData, _localizationService);
-            _currentQuests.Add(quest);
-            quest.QuestComplited += OnQuestComplited;
-            quest.CurrentPhaseChanged += OnQuestCurrentPhaseChanged;
-            quest.PhaseComplited += OnQuestPhaseComplited;
-            quest.CurrentPhaseSwitched += OnQuestCurrentPhaseSwitched;
-        }
+        FillCurrentQuests();
 
         _progressService.Progress.PlayerData.QuestsData.SaveStarting += UpdateData;
 
@@ -86,6 +73,35 @@ internal class QuestController
         _eventService.Unsubscribe(EventType.MeetEnemyWithRace, OnEventHappened);
     }
 
+    private void FillCurrentQuests()
+    {
+        foreach (var questSavedData in _progressService.Progress.PlayerData.QuestsData.CurrentQuests)
+        {
+            var questData = _questService.GetByIdOrNull(questSavedData.Id);
+            if (questData == null)
+                continue;
+
+            Quest quest = new Quest(questData, questSavedData.CurrentPhaseSavedData, _localizationService);
+            _currentQuests.Add(quest);
+            quest.QuestComplited += OnQuestComplited;
+            quest.CurrentPhaseChanged += OnQuestCurrentPhaseChanged;
+            quest.PhaseComplited += OnQuestPhaseComplited;
+            quest.CurrentPhaseSwitched += OnQuestCurrentPhaseSwitched;
+        }
+    }
+
+    private void ClearCurrentQuests()
+    {
+        foreach (var quest in _currentQuests)
+        {
+            quest.QuestComplited -= OnQuestComplited;
+            quest.CurrentPhaseChanged -= OnQuestCurrentPhaseChanged;
+            quest.PhaseComplited -= OnQuestPhaseComplited;
+            quest.CurrentPhaseSwitched -= OnQuestCurrentPhaseSwitched;
+        }
+        _currentQuests.Clear();
+    }
+
     private void UpdateData()
     {
         List<QuestSavedData> currentQuestsData = _progressService.Progress.PlayerData.QuestsData.CurrentQuests;
@@ -105,19 +121,7 @@ internal class QuestController
         }
     }
 
-    private void ClearCurrentQuests()
-    {
-        foreach (var quest in _currentQuests)
-        {
-            quest.QuestComplited -= OnQuestComplited;
-            quest.CurrentPhaseChanged -= OnQuestCurrentPhaseChanged;
-            quest.PhaseComplited -= OnQuestPhaseComplited;
-            quest.CurrentPhaseSwitched -= OnQuestCurrentPhaseSwitched;
-        }
-        _currentQuests.Clear();
-    }
-
-    private void OnQuestCurrentPhaseSwitched(Quest obj)
+    private void OnQuestCurrentPhaseSwitched(Quest quest)
     {
         OnPlayerCharacterInventoryChanged(_player.Character.Inventory);
         OnPlayerCharacterLevelChanged(_player.Character);
@@ -344,9 +348,9 @@ internal class Goal
             QuestPhaseGoalType.KillEnemyWithRace => EventType.KilledEnemyWithRace,
             QuestPhaseGoalType.MeetEnemyWithId => EventType.MeetEnemyWithId,
             QuestPhaseGoalType.MeetEnemyWithRace => EventType.MeetEnemyWithRace,
-            QuestPhaseGoalType.ReacheLevel => EventType.None, // TO DO
+            QuestPhaseGoalType.ReacheLevel => EventType.SpecialEventType,
+            QuestPhaseGoalType.CollectItem => EventType.SpecialEventType,
 
-            QuestPhaseGoalType.CollectItem => throw new NotImplementedException(),
             QuestPhaseGoalType.QuestStarted => throw new NotImplementedException(),
             QuestPhaseGoalType.QuestEnded => throw new NotImplementedException(),
             QuestPhaseGoalType.None => throw new NotImplementedException(),

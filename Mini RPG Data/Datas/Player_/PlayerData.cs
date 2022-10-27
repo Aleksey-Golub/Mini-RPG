@@ -10,12 +10,12 @@ public class PlayerData
     {
         CharacterData = new CharacterData();
         WalletData = new WalletData();
-        QuestsData = new QuestsData();
+        QuestsData = new QuestsProgressData();
     }
 
     public CharacterData CharacterData { get; set; }
     public WalletData WalletData { get; set; }
 
-    public QuestsData QuestsData { get; set; }
+    public QuestsProgressData QuestsData { get; set; }
 }
 

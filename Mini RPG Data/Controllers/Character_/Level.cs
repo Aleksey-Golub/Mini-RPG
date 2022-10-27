@@ -22,7 +22,6 @@ public class Level
         private set
         {
             _data.Value = value;
-            Changed?.Invoke();
         }
     }
 
@@ -35,7 +34,10 @@ public class Level
     {
         _data.CurrentExperience += value;
         if (CurrentExperience >= RequiredForNextLevelExperience)
+        {
             Value++;
+            Changed?.Invoke();
+        }
     }
 }
 

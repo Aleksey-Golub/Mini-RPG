@@ -33,13 +33,13 @@ public interface ILocalizationService : IService
     string ToolTip_Constitution();
     string RaceName(Race race);
     string ToolTip_Perception();
-    string TextBox_Name();
     string HungerLevelName(HungerLevel hungerLevel);
     string PlayerUse();
     string ThirstLevelName(ThirstLevel thirstLevel);
     string Bitton_MainMenu();
     string Label_Intro();
     string Label_Abilities();
+    string DefaultCharacterName();
     string Button_GoToGame();
     string Level();
     string Button_Rest();

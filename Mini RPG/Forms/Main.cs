@@ -64,8 +64,8 @@ public partial class Main : Form
             _services.Single<ISaveLoadService>(),
             _services.Single<IQuestService>());
         _characterCreationScreenController.GameStarted += StartGameProcess;
-        _characterCreationScreenController.Init();
         _characterCreationScreen.SetController(_characterCreationScreenController);
+        _characterCreationScreenController.Init();
         _introScreen.SetController(_characterCreationScreenController);
 
         _playerDeathScreen = new PlayerDeathScreen(_services.Single<ILocalizationService>());
