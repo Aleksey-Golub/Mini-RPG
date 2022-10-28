@@ -436,7 +436,7 @@ public static class Settings
         return character.Level.Value * 12;
     }
 
-    internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 4;
+    internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 9;
 
     private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
     private static bool IsCriticalSuccess(int _2D6) => _2D6 == 12;

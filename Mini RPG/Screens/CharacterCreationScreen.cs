@@ -22,6 +22,16 @@ namespace Mini_RPG.Screens
 
             _localizationService = localizationService;
             _localizationService.LanguageChanged += SetTexts;
+
+            string[] races = new string[]
+            {
+                // order is very important
+                _localizationService.RaceName(Race.Human),   // 0
+                _localizationService.RaceName(Race.Elf),     // 1
+                _localizationService.RaceName(Race.Dwarf)    // 2
+            };
+            _comboBox_Race.Items.AddRange(races);
+
             SetTexts();
         }
 
@@ -42,14 +52,14 @@ namespace Mini_RPG.Screens
             _textBox_Name.Text = character.Name;
 
             _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
-            string[] races = new string[]
-            {
-                // order is very important
-                _localizationService.RaceName(Race.Human),   // 0
-                _localizationService.RaceName(Race.Elf),     // 1
-                _localizationService.RaceName(Race.Dwarf)    // 2
-            };
-            _comboBox_Race.Items.AddRange(races);
+            //string[] races = new string[]
+            //{
+            //    // order is very important
+            //    _localizationService.RaceName(Race.Human),   // 0
+            //    _localizationService.RaceName(Race.Elf),     // 1
+            //    _localizationService.RaceName(Race.Dwarf)    // 2
+            //};
+            //_comboBox_Race.Items.AddRange(races);
             _comboBox_Race.SelectedIndex = 0;
         }
 
