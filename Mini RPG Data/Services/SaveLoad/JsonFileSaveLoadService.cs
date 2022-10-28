@@ -23,8 +23,7 @@ public class JsonFileSaveLoadService : ISaveLoadService
         {
             _progressService.PrepareForSerialize();
             string jsonString = JsonSerializer.Serialize(_progressService.Progress, _options);
-            string name = _progressService.Progress.PlayerData.CharacterData.Name;
-            string fileName = $"save_{name}.json";
+            string fileName = $"save_{_progressService.Progress.UniqueId}.json";
 
             bool exists = Directory.Exists(_savesDirectory);
             if (!exists)
@@ -66,12 +65,14 @@ public class JsonFileSaveLoadService : ISaveLoadService
         string[]? strings = GetAllSaves();
 
         string currentSave = null;
-        foreach(string s in strings)
-            if (s.Contains(_progressService.Progress.PlayerData.CharacterData.Name))
+        foreach (string s in strings)
+        {
+            if (s.Contains(_progressService.Progress.UniqueId))
             {
                 currentSave = s;
                 break;
             }
+        }
 
         try
         {

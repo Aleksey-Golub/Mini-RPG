@@ -14,7 +14,7 @@ namespace Mini_RPG.Screens
         private ICharacter _character = null!;
 
         private readonly ILocalizationService _localizationService;
-        private readonly int _maxNameLength = 15;
+        private readonly int _maxNameLength = Settings.MAX_CHARACTER_NAME_LENGTH;
 
         public CharacterCreationScreen(ILocalizationService localizationService)
         {
@@ -52,14 +52,7 @@ namespace Mini_RPG.Screens
             _textBox_Name.Text = character.Name;
 
             _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
-            //string[] races = new string[]
-            //{
-            //    // order is very important
-            //    _localizationService.RaceName(Race.Human),   // 0
-            //    _localizationService.RaceName(Race.Elf),     // 1
-            //    _localizationService.RaceName(Race.Dwarf)    // 2
-            //};
-            //_comboBox_Race.Items.AddRange(races);
+            
             _comboBox_Race.SelectedIndex = 0;
         }
 

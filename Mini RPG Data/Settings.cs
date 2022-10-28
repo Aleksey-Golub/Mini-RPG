@@ -14,6 +14,8 @@ public static class Settings
 {
     public static IRandomService RandomService;
     public static IItemFactory ItemFactory;
+
+    public const int MAX_CHARACTER_NAME_LENGTH = 18;
     public const int DEFAULT_FIELD_OF_VIEW = 2;
     public const int EXPERIENCE_DEFAULT_VALUE = 30;
     public const int MAX_LEVEL = 10;

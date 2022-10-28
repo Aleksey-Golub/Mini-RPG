@@ -11,8 +11,11 @@ namespace Mini_RPG_Data.Datas
             MapData = mapData;
             PlayerData = new PlayerData();
             TownTraderData = new TownTraderData();
+
+            UniqueId = DateTime.Now.GetHashCode().ToString();
         }
 
+        public string UniqueId { get; set; }
         public PlayerData PlayerData { get; set; }
         public MapData MapData { get; set; }
         public TownTraderData TownTraderData { get; set; }
