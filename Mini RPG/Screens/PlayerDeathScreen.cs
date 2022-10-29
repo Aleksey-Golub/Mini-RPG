@@ -40,7 +40,7 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
             $"{_localizationService.Label_Constitution()}: {character.AllAbilities.Constitution.Value}\n" +
             $"{_localizationService.Label_Perception()}: {character.AllAbilities.Perception.Value}\n" +
             $"{_localizationService.Label_Charisma()}: {character.AllAbilities.Charisma.Value}\n\n");
-        playerRes.Append($"{_localizationService.Label_Equipment()}\n");
+        playerRes.Append($"{_localizationService.Equipment()}\n");
 
         bool wasAdded = false;
         foreach (var item in character.Inventory.EquipmentSlots.Values)
@@ -68,7 +68,7 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
         _label_PlayerResult.Text = playerRes.ToString();
     }
 
-    private void SetTexts() => _button_GoToMainMenu.Text = _localizationService.Bitton_MainMenu();
+    private void SetTexts() => _button_GoToMainMenu.Text = _localizationService.Button_MainMenu();
 
     private void Button_GoToMainMenu_Click(object sender, EventArgs e) => _controller.GoToMainMenuAfterDeath();
 }

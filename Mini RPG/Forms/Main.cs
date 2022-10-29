@@ -106,7 +106,7 @@ public partial class Main : Form
     {
         _services = AllServices.Container;
 
-        _services.RegisterSingle<ILocalizationService>(new SimpleLocalizationService());
+        _services.RegisterSingle<ILocalizationService>(new JsonLocalizationService());
         _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
         _services.RegisterSingle<IRandomService>(new RandomService());
         _services.RegisterSingle<ISaveLoadService>(new JsonFileSaveLoadService(

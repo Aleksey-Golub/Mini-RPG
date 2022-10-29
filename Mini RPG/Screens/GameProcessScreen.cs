@@ -281,7 +281,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     }
 
     private void OnCharacterHealthChanged(ICharacter character) => _healthView.View(character.Health.CurrentHealth, character.Health.MaxHealth);
-    private void OnCharacterLevelChanged(ICharacter character) => MessageBox.Show(_localizationService.CharacterGainedNewLevel(_player.Character.Name));
+    private void OnCharacterLevelChanged(ICharacter character) => MessageBox.Show(_localizationService.CharacterGainNewLevel(_player.Character.Name));
     private void OnCharacterSatiationChanging() => _satiationView.View(_player.Character.Satiation.HungerLevel, _player.Character.Satiation.ThirstLevel);
     private void OnMoneyChanged(int money) => _label_Money.Text = money.ToString();
 

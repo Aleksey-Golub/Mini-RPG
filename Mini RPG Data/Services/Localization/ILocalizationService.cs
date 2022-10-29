@@ -34,9 +34,9 @@ public interface ILocalizationService : IService
     string RaceName(Race race);
     string ToolTip_Perception();
     string HungerLevelName(HungerLevel hungerLevel);
-    string PlayerUse();
+    string YouUse();
     string ThirstLevelName(ThirstLevel thirstLevel);
-    string Bitton_MainMenu();
+    string Button_MainMenu();
     string Label_Intro();
     string Label_Abilities();
     string DefaultCharacterName();
@@ -61,13 +61,13 @@ public interface ILocalizationService : IService
     string LevelBoarder();
     string DamageType();
     string PlayerMoveSuccessfully(Direction direction);
-    string Quest(string localizationKey);
+    string QuestTranslation(string localizationKey);
     string DamageTypeName(DamageType damageType);
     string GripName(Grip grip);
     string Grip();
     string Damage();
     string PlayerMoveUnsuccessfully(Direction direction);
-    string Label_Equipment();
+    string Equipment();
     string PlayerRest();
     string Message_YouFindLoot();
     string Message_Coins();
@@ -96,7 +96,7 @@ public interface ILocalizationService : IService
     string Message_MapExplored();
     string Experience();
     string YouGained();
-    string CharacterGainedNewLevel(string name);
+    string CharacterGainNewLevel(string name);
     string Bonus();
     string Message_StartRestInTownFree();
     string Message_FirstMissedSecond(string attackerName, string defenderName);
