@@ -10,8 +10,13 @@ namespace Mini_RPG_Data.Services.Localization;
 
 public class JsonLocalizationService : ILocalizationService
 {
-    private const string DIRECTORY_PATH = "Localization\\";
-    private const string LOCAL_PATH = "ru\\";
+    private const string DIRECTORY = "Localization\\";
+    private const string LANGUAGE = "ru\\";
+    private const string COMMON_PATH = "common.json";
+    private const string Items_PATH = "items.txt";
+    private const string CHARACTERS_PATH = "characters.txt";
+    private const string QUESTS_PATH = "quests.txt";
+
     private readonly JsonSerializerOptions _options;
     private readonly LocalizationContainer? _commonContainer;
     private readonly Dictionary<string, string> _itemNames = new Dictionary<string, string>();
@@ -26,19 +31,17 @@ public class JsonLocalizationService : ILocalizationService
 
         try
         {
-            string jsonString = JsonSerializer.Serialize(_commonContainer, _options);
-            File.WriteAllText(DIRECTORY_PATH + "ruExample.json", jsonString);
+            //string jsonString = JsonSerializer.Serialize(_commonContainer, _options);
+            //File.WriteAllText(DIRECTORY + "ruExample.json", jsonString);
 
-            string commonText = File.ReadAllText(DIRECTORY_PATH + LOCAL_PATH + "common.json");
+            string commonText = File.ReadAllText(DIRECTORY + LANGUAGE + COMMON_PATH);
             _commonContainer = JsonSerializer.Deserialize<LocalizationContainer>(commonText, _options) ?? new LocalizationContainer();
-
-            string itemsPath = DIRECTORY_PATH + LOCAL_PATH + "items.txt";
+            string itemsPath = DIRECTORY + LANGUAGE + Items_PATH;
             FillDictionaryFromFile(itemsPath, _itemNames);
-            string charactersPath = DIRECTORY_PATH + LOCAL_PATH + "characters.txt";
+            string charactersPath = DIRECTORY + LANGUAGE + CHARACTERS_PATH;
             FillDictionaryFromFile(charactersPath, _characterNames);
-            string questsPath = DIRECTORY_PATH + LOCAL_PATH + "quests.txt";
+            string questsPath = DIRECTORY + LANGUAGE + QUESTS_PATH;
             FillDictionaryFromFile(questsPath, _quests);
-            var assa = "ad\n";
         }
         catch { }
     }
