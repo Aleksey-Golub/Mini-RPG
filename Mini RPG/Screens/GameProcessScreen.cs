@@ -161,7 +161,8 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _panel_BattleActions.Hide();
     }
 
-    public void ShowMessage(string message) => MessageBox.Show(message);
+    public void ShowQuestMessage(string message) => 
+        MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
     public void ShowRestInTownDialog(int restCost)
     {

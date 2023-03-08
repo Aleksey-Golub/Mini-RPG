@@ -129,7 +129,7 @@ internal class QuestController
 
     private void OnQuestPhaseComplited(Phase phase)
     {
-        _gameProcessView.ShowMessage(_localizationService.QuestTranslation(phase.PhaseGoalsComplitedMessageKey));
+        _gameProcessView.ShowQuestMessage(_localizationService.QuestTranslation(phase.PhaseGoalsComplitedMessageKey));
     }
 
     private void OnQuestCurrentPhaseChanged(Phase phase)
@@ -142,7 +142,7 @@ internal class QuestController
         _currentQuests.Remove(quest);
         _questView.ShowQuests(_currentQuests);
 
-        _gameProcessView.ShowMessage(_localizationService.Message_QuestComplited(quest));
+        _gameProcessView.ShowQuestMessage(_localizationService.Message_QuestComplited(quest));
     }
 
     private void OnPlayerCharacterInventoryChanged(Inventory playerCharacterInventory)

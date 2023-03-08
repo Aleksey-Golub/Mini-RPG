@@ -191,7 +191,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         throw new NotImplementedException();
     }
 
-    public void ShowMessage(string message)
+    public void ShowQuestMessage(string message)
     {
         throw new NotImplementedException();
     }
