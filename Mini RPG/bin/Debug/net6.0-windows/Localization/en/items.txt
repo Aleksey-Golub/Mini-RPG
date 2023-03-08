@@ -74,6 +74,7 @@ SteelPlateLegs = Steel plate Greaves
 SmallHealthPotion = Small health potion
 HealthPotion = Health potion
 BigHealthPotion = Big health potion
+AbilityPotion = Ability Potion
 
 Bread = Bread
 WaterFlask = Water flask

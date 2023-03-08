@@ -74,6 +74,7 @@ SteelPlateLegs = Стальные латные Поножи
 SmallHealthPotion = Малое Зелье здоровья
 HealthPotion = Зелье здоровья
 BigHealthPotion = Большое Зелье здоровья
+AbilityPotion = Зелье характеристик
 
 Bread = Хлеб
 WaterFlask = Фляга с водой

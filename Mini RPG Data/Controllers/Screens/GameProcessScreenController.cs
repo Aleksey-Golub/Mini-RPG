@@ -457,7 +457,7 @@ public partial class GameProcessScreenController
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.HiddenChest:
-                        HandleHiddedChestCell();
+                        HandleHiddenChestCell();
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
                     case CellType.Trap:
@@ -506,7 +506,7 @@ public partial class GameProcessScreenController
                 }
             }
 
-            private void HandleHiddedChestCell()
+            private void HandleHiddenChestCell()
             {
                 if (Settings.TryFindHiddenChest(_controller._player))
                 {
