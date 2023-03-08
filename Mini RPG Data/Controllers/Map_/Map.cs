@@ -15,6 +15,7 @@ public class Map : IMap
     public int LockedChestCount { get => _data.LockedChestCount; private set => _data.LockedChestCount = value; }
     public int HiddenLootCount { get => _data.HiddenLootCount; private set => _data.HiddenLootCount = value; }
     public int TrapCount { get => _data.TrapCount; private set => _data.TrapCount = value; }
+    public int HiddenChestCount { get => _data.HiddenChestCount; private set => _data.HiddenChestCount = value; }
     public int MinX { get => _data.MinX; }
     public int MaxX { get => _data.MaxX; }
     public int MinY { get => _data.MinY; }
@@ -217,6 +218,7 @@ public enum CellType
     LockedChest,
     HiddedLoot,
     Trap,
+    HiddenChest,
 }
 
 public enum TrapType

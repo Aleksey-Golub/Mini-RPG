@@ -137,6 +137,8 @@ public class JsonLocalizationService : ILocalizationService
         //"Вы останавливаетесь, чтобы перевести дух и поправить снаряжение. Вдруг ваше внимание привлекают еле заметные следы на земле.\n" +
         //"Пройдя по ним несколько десятков шагов, вы натыкаетесь на тайник.\n" +
         //"Внимательно осмотрев его содержимое, вы забираете с собой все ценное.\n\n";
+    
+    public string Message_YouFindHiddenChest() => _commonContainer.Message_YouFindHiddenChest;
 
     public string Message_FindTrapSuccess(TrapType trapType)
     {
@@ -547,6 +549,7 @@ public class JsonLocalizationService : ILocalizationService
         public string Message_BreakChestSuccess { get; set; } = "qwer";
         public string Message_BreakChestFail { get; set; } = "qwer";
         public string Message_YouFindHiddenLoot { get; set; } = "qwer";
+        public string Message_YouFindHiddenChest { get; set; } = "qwer";
         public string Message_FindSpikeTrapSuccess { get; set; } = "qwer";
         public string Message_FindBearTrapSuccess { get; set; } = "qwer";
         public string Message_FindSpikeTrapFail { get; set; } = "qwer";

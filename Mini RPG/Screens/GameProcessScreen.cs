@@ -234,6 +234,11 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
             $"{_localizationService.Message_YouFindHiddenLoot()}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
+    public void ShowSuccessFindHiddenChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
+        MessageBox.Show(
+            $"{_localizationService.Message_YouFindHiddenChest()}\n" +
+            LootAndMoneyAndExperienceMessage(money, loot, 0));
+
     public void ShowSuccessFindTrapMessage(TrapType trapType) =>
         MessageBox.Show(
             $"{_localizationService.Message_FindTrapSuccess(trapType)}");

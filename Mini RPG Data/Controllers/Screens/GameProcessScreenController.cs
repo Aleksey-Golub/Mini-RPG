@@ -456,6 +456,10 @@ public partial class GameProcessScreenController
                         HandleHiddedLootCell();
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
                         break;
+                    case CellType.HiddenChest:
+                        HandleHiddedChestCell();
+                        _controller._map.MakeEmpty(_controller._map.PlayerPosition);
+                        break;
                     case CellType.Trap:
                         HandleTrapCell();
                         _controller._map.MakeEmpty(_controller._map.PlayerPosition);
@@ -491,12 +495,25 @@ public partial class GameProcessScreenController
 
             private void HandleHiddedLootCell()
             {
-                List<ItemBase> loot = Settings.CalculateFoundedHiddenLoot(_controller._player);
-                int money = Settings.CalculateFoundedInHiddenLootMoney(_controller._player);
-
                 if (Settings.TryFindHiddenLoot(_controller._player))
                 {
+                    List<ItemBase> loot = Settings.CalculateFoundedHiddenLoot(_controller._player);
+                    int money = Settings.CalculateFoundedInHiddenLootMoney(_controller._player);
+                    
                     _controller._gameProcessView.ShowSuccessFindHiddenLootMessage(money, loot);
+                    _controller._player.Wallet.AddMoney(money);
+                    _controller._player.Character.Inventory.AddItems(loot);
+                }
+            }
+
+            private void HandleHiddedChestCell()
+            {
+                if (Settings.TryFindHiddenChest(_controller._player))
+                {
+                    List<ItemBase> loot = Settings.CalculateFoundedHiddenChest(_controller._player);
+                    int money = Settings.CalculateFoundedInChestMoney(_controller._player);
+                    
+                    _controller._gameProcessView.ShowSuccessFindHiddenChestMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
                     _controller._player.Character.Inventory.AddItems(loot);
                 }

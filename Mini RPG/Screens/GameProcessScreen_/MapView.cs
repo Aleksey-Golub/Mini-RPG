@@ -14,8 +14,9 @@ internal class MapView
     private const string ENEMY_SYMBOL = "D";
     private const string LOOT_SYMBOL = "U";
 
-    private const string LOCKEDCHEST_SYMBOL = "G";
-    private const string HIDDENLOOT_SYMBOL = "H";
+    private const string LOCKED_CHEST_SYMBOL = "G";
+    private const string HIDDEN_LOOT_SYMBOL = "H";
+    private const string HIDDENCHEST_SYMBOL = "H";
     private const string TRAP_SYMBOL = "W";
     private const string NOMAPCELL_SYMBOL = "   ";
     private const string BOARDER_SYMBOL = "N";
@@ -144,8 +145,9 @@ internal class MapView
             CellType.Town => TOWN_SYMBOL,
             CellType.Enemy => ENEMY_SYMBOL,
             CellType.Loot => LOOT_SYMBOL,
-            CellType.LockedChest => LOCKEDCHEST_SYMBOL,
-            CellType.HiddedLoot => HIDDENLOOT_SYMBOL,
+            CellType.LockedChest => LOCKED_CHEST_SYMBOL,
+            CellType.HiddedLoot => HIDDEN_LOOT_SYMBOL,
+            CellType.HiddenChest => HIDDENCHEST_SYMBOL,
             CellType.Trap => TRAP_SYMBOL,
             CellType.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),

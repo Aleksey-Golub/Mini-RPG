@@ -77,6 +77,7 @@ public interface ILocalizationService : IService
     string Message_BreakChestSuccess();
     string Message_BreakChestFail();
     string Message_YouFindHiddenLoot();
+    string Message_YouFindHiddenChest();
     string Message_FindTrapSuccess(TrapType trapType);
     string Message_FindTrapFail(TrapType trapType);
     string ArmorType();

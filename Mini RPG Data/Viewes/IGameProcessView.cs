@@ -23,6 +23,7 @@ public interface IGameProcessView
     void ShowSuccessBreakChestMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowFailBreakChestMessage();
     void ShowSuccessFindHiddenLootMessage(int money, IReadOnlyList<ItemBase> loot);
+    void ShowSuccessFindHiddenChestMessage(int money, IReadOnlyList<ItemBase> loot);
     void ShowSuccessFindTrapMessage(TrapType trapType);
     void ShowFailFindTrapMessage(TrapType trapType);
     void ShowMap(IMap map);

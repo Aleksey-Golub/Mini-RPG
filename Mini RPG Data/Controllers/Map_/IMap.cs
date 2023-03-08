@@ -10,6 +10,7 @@ public interface IMap
     int LockedChestCount { get; }
     int HiddenLootCount { get; }
     int TrapCount { get; }
+    int HiddenChestCount { get; }
     int MinX { get; }
     int MaxX { get; }
     int MinY { get; }

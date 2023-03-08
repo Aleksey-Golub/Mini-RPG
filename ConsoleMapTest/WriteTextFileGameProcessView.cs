@@ -65,8 +65,8 @@ internal class WriteTextFileGameProcessView : IGameProcessView
         int width = Math.Abs(minX) + Math.Abs(maxX) + 1;
         int height = Math.Abs(minY) + Math.Abs(maxY) + 1;
         mapSB.Append($"Empty =>'o', Town => 't', Enemy => 'e' {map.EnemyCount}, Loot => 'l' {map.LootCount}, LockedChest => 'c' {map.LockedChestCount}, " +
-            $"HiddedLoot => 'h' {map.HiddenLootCount}, Trap => 'r' {map.TrapCount},\n" +
-            $"mapSize = {width} x {height}, cellsCount = {map.Cells.Count}, not empty = {map.EnemyCount + map.LootCount + map.LockedChestCount + map.HiddenLootCount + map.TrapCount}");
+            $"HiddedLoot => 'h' {map.HiddenLootCount}, Trap => 'r' {map.TrapCount}, HiddenChest => 'H' {map.HiddenChestCount}\n" +
+            $"mapSize = {width} x {height}, cellsCount = {map.Cells.Count}, not empty = {map.EnemyCount + map.LootCount + map.LockedChestCount + map.HiddenLootCount + map.TrapCount + map.HiddenChestCount}");
 
         try
         {
@@ -90,6 +90,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
             CellType.Loot => "l",
             CellType.LockedChest => "c",
             CellType.HiddedLoot => "h",
+            CellType.HiddenChest => "H",
             CellType.Trap => "r",
             CellType.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException($"unnoun {cellType}"),
@@ -192,6 +193,11 @@ internal class WriteTextFileGameProcessView : IGameProcessView
     }
 
     public void ShowQuestMessage(string message)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ShowSuccessFindHiddenChestMessage(int money, IReadOnlyList<ItemBase> loot)
     {
         throw new NotImplementedException();
     }

@@ -103,8 +103,10 @@ public static class Settings
 
         switch (value)
         {
-            case <= 89:
+            case <= 88:
                 return CellType.Empty;
+            case <= 89:
+                return CellType.HiddenChest;
             case <= 93:
                 return CellType.Enemy;
             case <= 95:
@@ -225,6 +227,19 @@ public static class Settings
         return loot;
     }
 
+    internal static List<ItemBase> CalculateFoundedHiddenChest(Player player)
+    {
+        List<ItemBase> loot = new List<ItemBase>();
+
+        TryAddRandomItem(50, loot, ItemType.Food);
+        TryAddRandomItem(2, loot, ItemType.Potion, 3);
+        TryAddRandomItem(2, loot, ItemType.Weapon, 3);
+        TryAddRandomItem(2, loot, ItemType.Shield, 3);
+        TryAddRandomItem(2, loot, ItemType.Armor, 3);
+
+        return loot;
+    }
+
     internal static List<ItemBase> CalculateFoundedInChestLoot(Player player)
     {
         List<ItemBase> loot = new List<ItemBase>();
@@ -275,6 +290,23 @@ public static class Settings
             return true;
 
         return _2D6 + player.Character.AllAbilities.Perception.Bonus >= 7 + (MAX_ABILITY_VALUE - DEFAULT_ABILITY_VALUE) * ((player.Character.Level.Value - 1) / (MAX_LEVEL - 1));
+    }
+
+    internal static bool TryFindHiddenChest(Player player)
+    {
+        int minNeededPerception = 10;
+
+        if (player.Character.AllAbilities.Perception.Bonus < minNeededPerception)
+            return false;
+
+        int _2D6 = RandomService.Get1D6(2);
+
+        if (IsCriticalFail(_2D6))
+            return false;
+        if (IsCriticalSuccess(_2D6))
+            return true;
+
+        return _2D6 + player.Character.AllAbilities.Perception.Bonus - (minNeededPerception - 7) >= 7;
     }
 
     internal static bool TryFindTrap(Player player)

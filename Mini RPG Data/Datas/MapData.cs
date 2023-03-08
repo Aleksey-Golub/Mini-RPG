@@ -21,6 +21,7 @@ public class MapData
     public int LockedChestCount { get; set; }
     public int HiddenLootCount { get; set; }
     public int TrapCount { get; set; }
+    public int HiddenChestCount { get; set; }
     public int MinX { get; set; }
     public int MaxX { get; set; }
     public int MinY { get; set; }
@@ -64,6 +65,9 @@ public class MapData
             case CellType.Trap:
                 TrapCount++;
                 return;
+            case CellType.HiddenChest:
+                HiddenChestCount++;
+                break;
             default:
                 throw new NotImplementedException($"unnoun {cellType}");
         }
@@ -97,6 +101,7 @@ public class MapData
         LockedChestCount = newData.LockedChestCount;
         HiddenLootCount = newData.HiddenLootCount;
         TrapCount = newData.TrapCount;
+        HiddenChestCount = newData.HiddenChestCount;
         MinX = newData.MinX;
         MaxX = newData.MaxX;
         MinY = newData.MinY;
