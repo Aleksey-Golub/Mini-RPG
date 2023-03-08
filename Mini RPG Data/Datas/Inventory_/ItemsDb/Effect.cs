@@ -24,6 +24,9 @@ namespace Mini_RPG_Data.Datas.Inventory_.Items
                 case EffectType.ChangeWaterSatiation:
                     target.ChangeWaterSatiation(Value);
                     break;
+                case EffectType.ChangeAbilityPoint:
+                    target.AllAbilities.AddAbilityPoints(Value);
+                    break;
                 case EffectType.None:
                 default:
                     break;
@@ -37,5 +40,6 @@ namespace Mini_RPG_Data.Datas.Inventory_.Items
         ChangeHealth,
         ChangeFoodSatiation,
         ChangeWaterSatiation,
+        ChangeAbilityPoint,
     }
 }

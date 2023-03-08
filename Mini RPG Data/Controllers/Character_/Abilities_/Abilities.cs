@@ -97,9 +97,6 @@ public class Abilities : IAbilities
 
     internal void AddAbilityPoints(int value)
     {
-        if (value < 1)
-            throw new ArgumentOutOfRangeException(nameof(value));
-
         AbilityPoints += value;
     }
 

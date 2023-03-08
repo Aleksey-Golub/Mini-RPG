@@ -232,7 +232,7 @@ public static class Settings
         List<ItemBase> loot = new List<ItemBase>();
 
         TryAddRandomItem(50, loot, ItemType.Food);
-        TryAddRandomItem(2, loot, ItemType.Potion, 3);
+        TryAddRandomItem(2, loot, ItemType.Potion, 4);
         TryAddRandomItem(2, loot, ItemType.Weapon, 3);
         TryAddRandomItem(2, loot, ItemType.Shield, 3);
         TryAddRandomItem(2, loot, ItemType.Armor, 3);
