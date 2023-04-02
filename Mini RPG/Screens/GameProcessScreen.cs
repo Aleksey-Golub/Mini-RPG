@@ -8,6 +8,7 @@ using Mini_RPG_Data.Controllers.Inventory_.Items;
 using System.Text;
 using Mini_RPG_Data.Controllers.Quest_;
 using Mini_RPG.Screens.GameProcessScreen_;
+using Mini_RPG_Data;
 
 namespace Mini_RPG.Screens;
 

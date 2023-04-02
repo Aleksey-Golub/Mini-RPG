@@ -24,7 +24,7 @@ GUI_Label_Dexterity = Dexterity
 GUI_Label_Perception = Perception
 GUI_Label_Race = Race
 GUI_Label_Strength = Strength
-GUI_Label_Intro = \"\"Chistovodie\" is a small provincial town, lost in the woods, located on an old trading road near the river. It is quiet and peaceful. It has lost its former appeal because of construction of new road and is gradually empties. Rare travelers and traders are now a big deal here in town. The local inhabitants are hunters, fishermen and peasants. There are some buildings - shop with all necessities, hostelry, town hall, and private households\"\n\nOnce again, you have finished re-reading the fact sheet you have received from the garrison clerk.\nAnd you were sent to this godsforsaken place by the garrison commander: \"To investigate the cause of the local residents' anxiety\".\nBut it's only a couple of hunters lost in the woods and a mushroom picker was killed by wolves. It's quite a common situation for such a backwoods location. The peasants have always been prone to excessive drama, what can you expect of them?
+GUI_Label_Intro = ""Chistovodie" is a small provincial town, lost in the woods, located on an old trading road near the river. It is quiet and peaceful. It has lost its former appeal because of construction of new road and is gradually empties. Rare travelers and traders are now a big deal here in town. The local inhabitants are hunters, fishermen and peasants. There are some buildings - shop with all necessities, hostelry, town hall, and private households."\n\nOnce again, you have finished re-reading the fact sheet you have received from the garrison clerk.\nAnd you were sent to this godsforsaken place by the garrison commander: "To investigate the cause of the local residents' anxiety".\nBut it's only a couple of hunters lost in the woods and a mushroom picker was killed by wolves. It's quite a common situation for such a backwoods location. The peasants have always been prone to excessive drama, what can you expect of them?
 	
 GUI_ToolTip_AbilityPoints = Ability points available for using
 GUI_ToolTip_Strength = Strength (STR) - Strength bonus applies to melee to-hit rolls,\nmelee damage rolls, block bonus, break checks.
@@ -58,7 +58,7 @@ GUI_Message_StartRestInTown = You find the owner of the hostelry.\n He is ready 
 GUI_Message_FirstHitsSecondWithDamage = {0} hits for {1} {2} damage
 GUI_Message_FirstHitsSecondWithCriticalDamage = Crit! {0} hits for {1} {2} damage
 GUI_Message_FirstMissedSecond = {0} doesn't hit {1}
-GUI_Message_QuestComplited = The quest \"{0}\" is completed
+GUI_Message_QuestComplited = The quest "{0}" is completed
 	
 CharacterGainNewLevel = {0} reaches a new level!
 YouUse = You used

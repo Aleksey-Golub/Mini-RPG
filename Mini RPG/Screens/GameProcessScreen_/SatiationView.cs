@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Controllers.Character_;
+﻿using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Services.Localization;
 
 namespace Mini_RPG.Screens.GameProcessScreen_;

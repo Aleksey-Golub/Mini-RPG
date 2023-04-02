@@ -142,7 +142,7 @@ internal class QuestController
         _currentQuests.Remove(quest);
         _questView.ShowQuests(_currentQuests);
 
-        _gameProcessView.ShowQuestMessage(_localizationService.Message_QuestComplited(quest));
+        _gameProcessView.ShowQuestMessage(_localizationService.Message_QuestComplited(quest.LocalizedName));
     }
 
     private void OnPlayerCharacterInventoryChanged(Inventory playerCharacterInventory)

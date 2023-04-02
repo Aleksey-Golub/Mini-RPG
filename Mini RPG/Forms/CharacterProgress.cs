@@ -1,4 +1,5 @@
-﻿using Mini_RPG_Data.Controllers.Character_;
+﻿using Mini_RPG_Data;
+using Mini_RPG_Data.Controllers.Character_;
 using Mini_RPG_Data.Controllers.Character_.Abilities_;
 using Mini_RPG_Data.Controllers.Screens;
 using Mini_RPG_Data.Services.Localization;
