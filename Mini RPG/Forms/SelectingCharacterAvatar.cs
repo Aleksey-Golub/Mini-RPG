@@ -8,7 +8,7 @@ public partial class SelectingCharacterAvatar : Form
     {
         InitializeComponent();
 
-        AvatarPath = Settings.DefaultAvatarPath;
+        AvatarPath = GameRules.DefaultAvatarPath;
         int startWidth = 20;
         int pictureWidth = 260;
         // ширина 280 + 260 для каждой новой картинки
@@ -23,7 +23,7 @@ public partial class SelectingCharacterAvatar : Form
     private int SpawnAvatars(int startWidth, int pictureWidth)
     {
         var avatarsPaths = new List<string>();
-        foreach (var path in Directory.GetFiles(Settings.AvatarsDirectory))
+        foreach (var path in Directory.GetFiles(GameRules.AvatarsDirectory))
             avatarsPaths.Add(path);
         
         for (int i = 0; i < avatarsPaths.Count; i++)

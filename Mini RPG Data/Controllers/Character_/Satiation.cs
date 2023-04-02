@@ -23,9 +23,9 @@ public class Satiation
 
     public event Action? Changed;
 
-    internal void Starve() => ChangeFoodSatiation(-Settings.CalculateStarve(_character, _data));
+    internal void Starve() => ChangeFoodSatiation(-GameRules.CalculateStarve(_character, _data));
 
-    internal void Thirst() => ChangeWaterSatiation(-Settings.CalculateThirst(_character, _data));
+    internal void Thirst() => ChangeWaterSatiation(-GameRules.CalculateThirst(_character, _data));
 
     internal void ChangeFoodSatiation(int value)
     {
@@ -45,7 +45,7 @@ public class Satiation
     private void SetHungerLevel()
     {
         var oldLevel = HungerLevel;
-        HungerLevel = Settings.CalculateHungerLevel(_character, _data);
+        HungerLevel = GameRules.CalculateHungerLevel(_character, _data);
 
         if (HungerLevel != oldLevel)
             Changed?.Invoke();
@@ -54,7 +54,7 @@ public class Satiation
     private void SetThirstLevel()
     {
         var oldLevel = ThirstLevel;
-        ThirstLevel = Settings.CalculateThirstLevel(_character, _data);
+        ThirstLevel = GameRules.CalculateThirstLevel(_character, _data);
 
         if (ThirstLevel != oldLevel)
             Changed?.Invoke();

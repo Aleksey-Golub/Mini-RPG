@@ -2,7 +2,7 @@
 
 public class EventService : IEventService
 {
-    private static readonly IDictionary<EventType, Action<EventType ,int>> _events = new Dictionary<EventType, Action<EventType, int>>();
+    private readonly IDictionary<EventType, Action<EventType ,int>> _events = new Dictionary<EventType, Action<EventType, int>>();
 
     public void Subscribe(EventType eventType, Action<EventType, int> callback)
     {

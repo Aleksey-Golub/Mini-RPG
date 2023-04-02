@@ -23,9 +23,9 @@ public class WeaponItem : ItemBase
     public override ItemType Type => ItemType.Weapon;
     public override string Description =>
         base.Description +
-        $", {LocalizationService.DamageType()}: {LocalizationService.DamageTypeName(_data.DamageType)}" +
-        $", {LocalizationService.Grip()}: {LocalizationService.GripName(_data.Grip)}" +
-        $", {LocalizationService.Damage()}: {_data.MinDamage}-{_data.MaxDamage}";
+        $", {LocalizationService.GetLocalization("DamageType")}: {LocalizationService.DamageTypeName(_data.DamageType)}" +
+        $", {LocalizationService.GetLocalization("Grip")}: {LocalizationService.GripName(_data.Grip)}" +
+        $", {LocalizationService.GetLocalization("Damage")}: {_data.MinDamage}-{_data.MaxDamage}";
 
     internal override bool TryUse(Character character)
     {

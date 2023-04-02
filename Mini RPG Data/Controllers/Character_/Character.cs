@@ -35,8 +35,8 @@ public class Character : ICharacter
     internal void Init()
     {
         Race = Race.Human;
-        Name = _localizationService.DefaultCharacterName();
-        AvatarPath = Settings.DefaultAvatarPath;
+        Name = _localizationService.GetLocalization("DefaultCharacterName");
+        AvatarPath = GameRules.DefaultAvatarPath;
 
         Level.Init();
         Health.Init();
@@ -45,7 +45,7 @@ public class Character : ICharacter
     public int Id => _data.Id;
     public string Name
     {
-        get => _localizationService.CharacterName(_data.Name);
+        get => _localizationService.GetLocalization(_data.Name);
         private set
         {
             _data.Name = value;
@@ -81,12 +81,12 @@ public class Character : ICharacter
     public Abilities AllAbilities { get; private set; }
     public Level Level { get; }
     public Health Health { get; }
-    public int MaxHealth => Settings.CalculateMaxHealth(this);
+    public int MaxHealth => GameRules.CalculateMaxHealth(this);
     public bool IsAlive => Health.CurrentHealth > 0;
     public Satiation Satiation { get; }
     public Inventory Inventory { get; }
-    public int FieldOfView => Settings.CalculateFieldOfView(this);
-    public int Experience => Settings.CalculateExperience(this);
+    public int FieldOfView => GameRules.CalculateFieldOfView(this);
+    public int Experience => GameRules.CalculateExperience(this);
     public int MinDamage
     {
         get
@@ -95,7 +95,7 @@ public class Character : ICharacter
             if (weapon != null)
                 return weapon.MinDamage;
             else
-                return Settings.MinHandToHandDamage(this);
+                return GameRules.MinHandToHandDamage(this);
         }
     }
 
@@ -107,7 +107,7 @@ public class Character : ICharacter
             if (weapon != null)
                 return weapon.MaxDamage;
             else
-                return Settings.MaxHandToHandDamage(this);
+                return GameRules.MaxHandToHandDamage(this);
         }
     }
 
@@ -119,12 +119,12 @@ public class Character : ICharacter
             if (weapon != null)
                 return weapon.DamageType;
             else
-                return Settings.HandToHandDamageType(this);
+                return GameRules.HandToHandDamageType(this);
         }
     }
 
-    public int AttackModifier => Settings.CalculateAttackModifier(this);
-    public int DefenseModifier => Settings.CalculateDefenseModifier(this);
+    public int AttackModifier => GameRules.CalculateAttackModifier(this);
+    public int DefenseModifier => GameRules.CalculateDefenseModifier(this);
     public int InitiativeModifier => AllAbilities.Perception.Bonus;
 
     public event Action<ICharacter>? Changed;
@@ -154,7 +154,7 @@ public class Character : ICharacter
         if (armor != null)
             return new Armor(armor.ArmorValue, armor.ArmorType);
         else
-            return Settings.ArmorForNoArmorSlot(this);
+            return GameRules.ArmorForNoArmorSlot(this);
     }
 
     internal bool TryUse(ItemBase item) => item.TryUse(this);
@@ -199,7 +199,7 @@ public class Character : ICharacter
 
     internal bool TryRestoreHealth()
     {
-        bool res = Settings.CheckHealthRecoveryAfterRest(this);
+        bool res = GameRules.CheckHealthRecoveryAfterRest(this);
         if (res)
         {
             Health.Restore();
@@ -225,7 +225,7 @@ public class Character : ICharacter
 
     private void OnLevelChanged()
     {
-        AllAbilities.AddAbilityPoints(Settings.LEVEL_UP_ABILITY_POINTS);
+        AllAbilities.AddAbilityPoints(GameRules.LEVEL_UP_ABILITY_POINTS);
         LevelChanged?.Invoke(this);
     }
 }

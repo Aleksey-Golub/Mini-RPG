@@ -28,7 +28,7 @@ public partial class SelectingLoadGame : Form
             newButton.Size = new Size(200, 100);
 
             StartScreenController.SaveDTO saveDTO = _savesDTO[i];
-            newButton.Text = $"{saveDTO.Name}, {_localizationService.Level()}: {saveDTO.Level}";
+            newButton.Text = $"{saveDTO.Name}, {_localizationService.GetLocalization("Level")}: {saveDTO.Level}";
 
             _flowLayoutPanel_Saves.Controls.Add(newButton);
             newButton.DialogResult = DialogResult.OK;

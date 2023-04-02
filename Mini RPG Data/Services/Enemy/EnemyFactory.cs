@@ -22,7 +22,7 @@ public class EnemyFactory : IEnemyFactory
     public ICharacter CreateRandom(IPlayer player)
     {
         int targetLevel = player.Character.Level.Value;
-        int randomEnemyLevelRange = Settings.RANDOM_ENEMY_LEVEL_RANGE;
+        int randomEnemyLevelRange = GameRules.RANDOM_ENEMY_LEVEL_RANGE;
 
         ICharacter enemy = null;
         do

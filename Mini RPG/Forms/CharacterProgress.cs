@@ -33,7 +33,7 @@ public partial class CharacterProgress : Form
         _label_CharacterName.Text = _character.Name;
         _pictureBox_CharacterAvatar.ImageLocation = _character.AvatarPath;
         _label_CharacterRace.Text = _localizationService.RaceName(_character.Race);
-        _label_LevelAndExperience.Text = $"{_character.Level.Value} {_localizationService.Level()}: {_character.Level.CurrentExperience} / {_character.Level.RequiredForNextLevelExperience}";
+        _label_LevelAndExperience.Text = $"{_character.Level.Value} {_localizationService.GetLocalization("Level")}: {_character.Level.CurrentExperience} / {_character.Level.RequiredForNextLevelExperience}";
 
         OnCharacterDataChanged(_character);
     }
@@ -50,26 +50,26 @@ public partial class CharacterProgress : Form
 
     private void SetTexts()
     {
-        _button_CloseCharacterProgress.Text = _localizationService.Button_Close();
+        _button_CloseCharacterProgress.Text = _localizationService.GetLocalization("GUI_Button_Close");
 
-        _label_AbilityPoints.Text = _localizationService.Label_AbilityPoints();
-        _label_Charisma.Text = _localizationService.Label_Charisma();
-        _label_Constitution.Text = _localizationService.Label_Constitution();
-        _label_Dexterity.Text = _localizationService.Label_Dexterity();
-        _label_Perception.Text = _localizationService.Label_Perception();
-        _label_Strength.Text = _localizationService.Label_Strength();
+        _label_AbilityPoints.Text = _localizationService.GetLocalization("GUI_Label_AbilityPoints");
+        _label_Charisma.Text = _localizationService.GetLocalization("GUI_Label_Charisma");
+        _label_Constitution.Text = _localizationService.GetLocalization("GUI_Label_Constitution");
+        _label_Dexterity.Text = _localizationService.GetLocalization("GUI_Label_Dexterity");
+        _label_Perception.Text = _localizationService.GetLocalization("GUI_Label_Perception");
+        _label_Strength.Text = _localizationService.GetLocalization("GUI_Label_Strength");
 
         SetAllToolTips();
     }
 
     private void SetAllToolTips()
     {
-        _toolTip.SetToolTip(_label_AbilityPoints, _localizationService.ToolTip_AbilityPoints());
-        _toolTip.SetToolTip(_label_Strength, _localizationService.ToolTip_Strength());
-        _toolTip.SetToolTip(_label_Dexterity, _localizationService.ToolTip_Dexterity());
-        _toolTip.SetToolTip(_label_Constitution, _localizationService.ToolTip_Constitution());
-        _toolTip.SetToolTip(_label_Perception, _localizationService.ToolTip_Perception());
-        _toolTip.SetToolTip(_label_Charisma, _localizationService.ToolTip_Charisma());
+        _toolTip.SetToolTip(_label_AbilityPoints, _localizationService.GetLocalization("GUI_ToolTip_AbilityPoints"));
+        _toolTip.SetToolTip(_label_Strength, _localizationService.GetLocalization("GUI_ToolTip_Strength"));
+        _toolTip.SetToolTip(_label_Dexterity, _localizationService.GetLocalization("GUI_ToolTip_Dexterity"));
+        _toolTip.SetToolTip(_label_Constitution, _localizationService.GetLocalization("GUI_ToolTip_Constitution"));
+        _toolTip.SetToolTip(_label_Perception, _localizationService.GetLocalization("GUI_ToolTip_Perception"));
+        _toolTip.SetToolTip(_label_Charisma, _localizationService.GetLocalization("GUI_ToolTip_Charisma"));
     }
 
     #region Controls Events Handlers

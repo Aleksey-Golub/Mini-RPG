@@ -26,7 +26,7 @@ public class Level
     }
 
     public int CurrentExperience => _data.CurrentExperience;
-    public int RequiredForNextLevelExperience => Settings.CalculateRequiredForNextLevelExperience(Value);
+    public int RequiredForNextLevelExperience => GameRules.CalculateRequiredForNextLevelExperience(Value);
 
     public event Action? Changed;
 

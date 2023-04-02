@@ -32,7 +32,7 @@ public class TraderScreenController
     public bool TrySell(ItemBase item)
     {
         int itemCost = item.Cost;
-        int finalItemCost = Settings.CalculateItemCostModifier(itemCost, _player);
+        int finalItemCost = GameRules.CalculateItemCostModifier(itemCost, _player);
 
         if (TraderWallet.Money >= finalItemCost)
         {

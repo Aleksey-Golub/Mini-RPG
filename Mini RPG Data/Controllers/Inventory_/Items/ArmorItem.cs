@@ -22,9 +22,9 @@ public class ArmorItem : ItemBase
     public override ItemType Type => ItemType.Armor;
     public override string Description =>
         base.Description +
-        $", {LocalizationService.ArmorType()}: {LocalizationService.ArmorTypeName(_data.ArmorType)}" +
-        $", {LocalizationService.Armor()}: {_data.ArmorValue}" +
-        $", {LocalizationService.DodgePenalty()}: {_data.DodgePenalty}";
+        $", {LocalizationService.GetLocalization("ArmorType")}: {LocalizationService.ArmorTypeName(_data.ArmorType)}" +
+        $", {LocalizationService.GetLocalization("Armor")}: {_data.ArmorValue}" +
+        $", {LocalizationService.GetLocalization("DodgePenalty")}: {_data.DodgePenalty}";
 
     internal override bool TryUse(Character character)
     {

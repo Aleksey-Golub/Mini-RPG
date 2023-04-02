@@ -40,7 +40,7 @@ public partial class Trader : Form, ITradeView
             ItemButton btn = CreateItemButton(item);
             btn.Click += OnInventoryButtonClicked;
             _flowLayoutPanel_Inventory.Controls.Add(btn);
-            _toolTip_Inventory.SetToolTip(btn, $"{item.Description}, {_localizationService.SellCost()}: {Settings.CalculateItemCostModifier(item.Cost, _player as Player)}");
+            _toolTip_Inventory.SetToolTip(btn, $"{item.Description}, {_localizationService.GetLocalization("SellCost")}: {GameRules.CalculateItemCostModifier(item.Cost, _player as Player)}");
         }
     }
 
@@ -91,8 +91,8 @@ public partial class Trader : Form, ITradeView
 
     private void SetTexts()
     {
-        _button_Close.Text = _localizationService.Button_Close();
+        _button_Close.Text = _localizationService.GetLocalization("GUI_Button_Close");
         _label_Inventory.Text = _player.Character.Name;
-        _label_Trader.Text = _localizationService.Shop();
+        _label_Trader.Text = _localizationService.GetLocalization("Shop");
     }
 }

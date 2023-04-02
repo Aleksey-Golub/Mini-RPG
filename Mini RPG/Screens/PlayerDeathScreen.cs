@@ -31,16 +31,16 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
         StringBuilder playerRes = new StringBuilder();
 
         playerRes.Append($"{character.Name}\n");
-        playerRes.Append($"{_localizationService.Level()}: {character.Level.Value}\n");
+        playerRes.Append($"{_localizationService.GetLocalization("Level")}: {character.Level.Value}\n");
         playerRes.Append($"{character.Level.CurrentExperience} / {character.Level.RequiredForNextLevelExperience}\n\n");
-        playerRes.Append($"{_localizationService.Label_Abilities()}\n");
+        playerRes.Append($"{_localizationService.GetLocalization("GUI_Label_Abilities")}\n");
         playerRes.Append($"" +
-            $"{_localizationService.Label_Strength()}: {character.AllAbilities.Strength.Value}\n" +
-            $"{_localizationService.Label_Dexterity()}: {character.AllAbilities.Dexterity.Value}\n" +
-            $"{_localizationService.Label_Constitution()}: {character.AllAbilities.Constitution.Value}\n" +
-            $"{_localizationService.Label_Perception()}: {character.AllAbilities.Perception.Value}\n" +
-            $"{_localizationService.Label_Charisma()}: {character.AllAbilities.Charisma.Value}\n\n");
-        playerRes.Append($"{_localizationService.Equipment()}\n");
+            $"{_localizationService.GetLocalization("GUI_Label_Strength")}: {character.AllAbilities.Strength.Value}\n" +
+            $"{_localizationService.GetLocalization("GUI_Label_Dexterity")}: {character.AllAbilities.Dexterity.Value}\n" +
+            $"{_localizationService.GetLocalization("GUI_Label_Constitution")}: {character.AllAbilities.Constitution.Value}\n" +
+            $"{_localizationService.GetLocalization("GUI_Label_Perception")}: {character.AllAbilities.Perception.Value}\n" +
+            $"{_localizationService.GetLocalization("GUI_Label_Charisma")}: {character.AllAbilities.Charisma.Value}\n\n");
+        playerRes.Append($"{_localizationService.GetLocalization("Equipment")}\n");
 
         bool wasAdded = false;
         foreach (var item in character.Inventory.EquipmentSlots.Values)
@@ -63,12 +63,12 @@ public partial class PlayerDeathScreen : UserControl, IPlayerDeathView
                 }
             }
 
-        playerRes.Append($"\n{_localizationService.Message_Coins()}: {player.Wallet.Money}");
+        playerRes.Append($"\n{_localizationService.GetLocalization("GUI_Message_Coins")}: {player.Wallet.Money}");
 
         _label_PlayerResult.Text = playerRes.ToString();
     }
 
-    private void SetTexts() => _button_GoToMainMenu.Text = _localizationService.Button_MainMenu();
+    private void SetTexts() => _button_GoToMainMenu.Text = _localizationService.GetLocalization("GUI_Button_MainMenu");
 
     private void Button_GoToMainMenu_Click(object sender, EventArgs e) => _controller.GoToMainMenuAfterDeath();
 }

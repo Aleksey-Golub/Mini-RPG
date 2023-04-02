@@ -20,8 +20,8 @@ public class ShieldItem : ItemBase
     public override ItemType Type => ItemType.Shield;
     public override string Description =>
         base.Description +
-        $", {LocalizationService.MinBlockBonus()}: {_data.MinBlockBonus}" +
-        $", {LocalizationService.MaxBlockBonus()}: {_data.MaxBlockBonus}";
+        $", {LocalizationService.GetLocalization("MinBlockBonus")}: {_data.MinBlockBonus}" +
+        $", {LocalizationService.GetLocalization("MaxBlockBonus")}: {_data.MaxBlockBonus}";
 
     internal override bool TryUse(Character character)
     {

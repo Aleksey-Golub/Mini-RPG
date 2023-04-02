@@ -148,7 +148,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
                 MessageBox.Show(LootAndMoneyAndExperienceMessage(0, loot, experience));
                 break;
             case BattleResult.PlayerEscaped:
-                MessageBox.Show(_localizationService.Message_YouAreEscaped());
+                MessageBox.Show(_localizationService.GetLocalization("GUI_Message_YouAreEscaped"));
                 break;
             case BattleResult.PlayerDied:
                 break;
@@ -168,7 +168,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     {
         string message = (restCost > 0) 
             ? _localizationService.Message_StartRestInTown(restCost) 
-            : _localizationService.Message_StartRestInTownFree();
+            : _localizationService.GetLocalization("GUI_Message_StartRestInTownFree");
 
         var dialogResult = MessageBox.Show($"{message}", string.Empty, MessageBoxButtons.YesNo);
         if (dialogResult == DialogResult.Yes)
@@ -177,11 +177,11 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void ShowSuccessRestInTownMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouRestInTown()}");
+            $"{_localizationService.GetLocalization("GUI_Message_YouRestInTown")}");
 
     public void ShowFailRestInTownMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouHaveNoMoneyToRestInTown()}");
+            $"{_localizationService.GetLocalization("GUI_Message_YouHaveNoMoneyToRestInTown")}");
 
     public void ShowMiniMap(IMap map, int fieldOfView) =>
         _mapView.DrawMap(map, fieldOfView);
@@ -196,47 +196,47 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     public void AddLog(string message) => _log?.AddLog(message);
     public void AddLogImportant(string message) => _log?.AddLogImportant(message);
     public void ShowMapExploredMessage() => MessageBox.Show(
-            $"{_localizationService.Message_MapExplored()}");
+            $"{_localizationService.GetLocalization("GUI_Message_MapExplored")}");
 
     public void ShowBattleStartMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_BattleStart()}");
+            $"{_localizationService.GetLocalization("GUI_Message_BattleStart")}");
 
     public void ShowFindChestMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindLockedChest()}");
+            $"{_localizationService.GetLocalization("GUI_Message_YouFindLockedChest")}");
 
     public void ShowLootCellMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindLoot()}\n" +
+            $"{_localizationService.GetLocalization("GUI_Message_YouFindLoot")}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowSuccessPickLockedChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_PickLockedChestSuccess()}\n" +
+            $"{_localizationService.GetLocalization("GUI_Message_PickLockedChestSuccess")}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowFailPickLockedChestMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_PickLockedChestFail()}");
+            $"{_localizationService.GetLocalization("GUI_Message_PickLockedChestFail")}");
 
     public void ShowSuccessBreakChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_BreakChestSuccess()}\n" +
+            $"{_localizationService.GetLocalization("GUI_Message_BreakChestSuccess")}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowFailBreakChestMessage() =>
         MessageBox.Show(
-            $"{_localizationService.Message_BreakChestFail()}");
+            $"{_localizationService.GetLocalization("GUI_Message_BreakChestFail")}");
 
     public void ShowSuccessFindHiddenLootMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindHiddenLoot()}\n" +
+            $"{_localizationService.GetLocalization("GUI_Message_YouFindHiddenLoot")}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowSuccessFindHiddenChestMessage(int money, IReadOnlyList<ItemBase> loot) =>
         MessageBox.Show(
-            $"{_localizationService.Message_YouFindHiddenChest()}\n" +
+            $"{_localizationService.GetLocalization("GUI_Message_YouFindHiddenChest")}\n" +
             LootAndMoneyAndExperienceMessage(money, loot, 0));
 
     public void ShowSuccessFindTrapMessage(TrapType trapType) =>
@@ -252,16 +252,16 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         StringBuilder sb = new StringBuilder();
         if (money > 0 || loot.Count > 0 || experience > 0)
         {
-            sb.AppendLine(_localizationService.YouGained());
+            sb.AppendLine(_localizationService.GetLocalization("YouGained"));
 
             if (money > 0)
-                sb.Append($"{_localizationService.Message_Coins()}: {money}\n");
+                sb.Append($"{_localizationService.GetLocalization("GUI_Message_Coins")}: {money}\n");
 
             foreach (ItemBase item in loot)
                 sb.Append($"{item.LocalizedName}\n");
 
             if (experience > 0)
-                sb.AppendLine($"{_localizationService.Experience()}: {experience}\n");
+                sb.AppendLine($"{_localizationService.GetLocalization("Experience")}: {experience}\n");
         }
 
         return sb.ToString();
@@ -277,11 +277,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
         _label_PerceptionPoints.Text = allAbilities.Perception.Value.ToString();
         _label_CharismaPoints.Text = allAbilities.Charisma.Value.ToString();
 
-        _label_StrengthPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Strength.Bonus}";
-        _label_DexterityPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Dexterity.Bonus}";
-        _label_ConstitutionPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Constitution.Bonus}";
-        _label_PerceptionPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Perception.Bonus}";
-        _label_CharismaPoints.ToolTipText = $"{_localizationService.Bonus()}: {allAbilities.Charisma.Bonus}";
+        string labelBonus = _localizationService.GetLocalization("Bonus");
+        _label_StrengthPoints.ToolTipText = $"{labelBonus}: {allAbilities.Strength.Bonus}";
+        _label_DexterityPoints.ToolTipText = $"{labelBonus}: {allAbilities.Dexterity.Bonus}";
+        _label_ConstitutionPoints.ToolTipText = $"{labelBonus}: {allAbilities.Constitution.Bonus}";
+        _label_PerceptionPoints.ToolTipText = $"{labelBonus}: {allAbilities.Perception.Bonus}";
+        _label_CharismaPoints.ToolTipText = $"{labelBonus}: {allAbilities.Charisma.Bonus}";
 
         _pictureBox_HasFreeAbilityPoints.Visible = allAbilities.AbilityPoints > 0;
     }
@@ -293,38 +294,38 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     private void SetTexts()
     {
-        _label_Strength.Text = _localizationService.Label_Strength();
-        _label_Dexterity.Text = _localizationService.Label_Dexterity();
-        _label_Constitution.Text = _localizationService.Label_Constitution();
-        _label_Perception.Text = _localizationService.Label_Perception();
-        _label_Charisma.Text = _localizationService.Label_Charisma();
+        _label_Strength.Text = _localizationService.GetLocalization("GUI_Label_Strength");
+        _label_Dexterity.Text = _localizationService.GetLocalization("GUI_Label_Dexterity");
+        _label_Constitution.Text = _localizationService.GetLocalization("GUI_Label_Constitution");
+        _label_Perception.Text = _localizationService.GetLocalization("GUI_Label_Perception");
+        _label_Charisma.Text = _localizationService.GetLocalization("GUI_Label_Charisma");
 
-        _button_Rest.Text = _localizationService.Button_Rest();
+        _button_Rest.Text = _localizationService.GetLocalization("GUI_Button_Rest");
 
-        _button_EnterTown.Text = _localizationService.Button_EnterTown();
+        _button_EnterTown.Text = _localizationService.GetLocalization("GUI_Button_EnterTown");
 
-        _button_Attack.Text = _localizationService.Button_Attack();
-        _button_TryLeaveBattle.Text = _localizationService.Button_TryLeaveBattle();
+        _button_Attack.Text = _localizationService.GetLocalization("GUI_Button_Attack");
+        _button_TryLeaveBattle.Text = _localizationService.GetLocalization("GUI_Button_TryLeaveBattle");
 
-        _button_Trader.Text = _localizationService.Button_Trader();
-        _button_RestInTown.Text = _localizationService.Button_RestInTown();
-        _button_LeaveTown.Text = _localizationService.Button_LeaveTown();
+        _button_Trader.Text = _localizationService.GetLocalization("GUI_Button_Trader");
+        _button_RestInTown.Text = _localizationService.GetLocalization("GUI_Button_RestInTown");
+        _button_LeaveTown.Text = _localizationService.GetLocalization("GUI_Button_LeaveTown");
 
-        _menuItem_Menu.Text = _localizationService.Menu();
-        _menuItem_SaveAndExit.Text = _localizationService.SaveAndExit();
+        _menuItem_Menu.Text = _localizationService.GetLocalization("GUI_Menu");
+        _menuItem_SaveAndExit.Text = _localizationService.GetLocalization("GUI_SaveAndExit");
 
-        _button_SwitchLogSize.Text = _localizationService.Button_Log();
+        _button_SwitchLogSize.Text = _localizationService.GetLocalization("GUI_Button_Log");
 
         SetAllToolTips();
     }
 
     private void SetAllToolTips()
     {
-        _label_Strength.ToolTipText = _localizationService.ToolTip_Strength();
-        _label_Dexterity.ToolTipText = _localizationService.ToolTip_Dexterity();
-        _label_Constitution.ToolTipText = _localizationService.ToolTip_Constitution();
-        _label_Perception.ToolTipText = _localizationService.ToolTip_Perception();
-        _label_Charisma.ToolTipText = _localizationService.ToolTip_Charisma();
+        _label_Strength.ToolTipText = _localizationService.GetLocalization("GUI_ToolTip_Strength");
+        _label_Dexterity.ToolTipText = _localizationService.GetLocalization("GUI_ToolTip_Dexterity");
+        _label_Constitution.ToolTipText = _localizationService.GetLocalization("GUI_ToolTip_Constitution");
+        _label_Perception.ToolTipText = _localizationService.GetLocalization("GUI_ToolTip_Perception");
+        _label_Charisma.ToolTipText = _localizationService.GetLocalization("GUI_ToolTip_Charisma");
     }
 
     #region Controls Handlers

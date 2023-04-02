@@ -70,7 +70,7 @@ internal class WriteTextFileGameProcessView : IGameProcessView
 
         try
         {
-            File.WriteAllText($"{DateTime.Now.Ticks}_chanse_{Settings.CELL_SPAWN_CHANCE}_new.txt", mapSB.ToString());
+            File.WriteAllText($"{DateTime.Now.Ticks}_chanse_{GameRules.CELL_SPAWN_CHANCE}_new.txt", mapSB.ToString());
 
             Console.WriteLine("Map generated and write in file");
         }

@@ -80,7 +80,7 @@ public class CharacterCreationScreenController
         SetStartCharacterStaff(progress);
         SetMainQuest(progress);
 
-        progress.TownTraderData = Settings.GetRandomTownTraderData();
+        progress.TownTraderData = GameRules.GetRandomTownTraderData();
 
         return progress;
     }
@@ -100,9 +100,9 @@ public class CharacterCreationScreenController
 
     private static void SetStartCharacterStaff(PlayerProgress progress)
     {
-        progress.PlayerData.WalletData.Money = Settings.START_MONEY;
-        progress.PlayerData.CharacterData.SatiationData.FoodSatiation = Settings.START_SATIATION;
-        progress.PlayerData.CharacterData.SatiationData.WaterSatiation = Settings.START_SATIATION;
+        progress.PlayerData.WalletData.Money = GameRules.START_MONEY;
+        progress.PlayerData.CharacterData.SatiationData.FoodSatiation = GameRules.START_SATIATION;
+        progress.PlayerData.CharacterData.SatiationData.WaterSatiation = GameRules.START_SATIATION;
 
         progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 40000));  // small health potion
         progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   60000));    // bread

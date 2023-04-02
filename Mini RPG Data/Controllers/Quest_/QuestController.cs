@@ -129,7 +129,7 @@ internal class QuestController
 
     private void OnQuestPhaseComplited(Phase phase)
     {
-        _gameProcessView.ShowQuestMessage(_localizationService.QuestTranslation(phase.PhaseGoalsComplitedMessageKey));
+        _gameProcessView.ShowQuestMessage(_localizationService.GetLocalization(phase.PhaseGoalsComplitedMessageKey));
     }
 
     private void OnQuestCurrentPhaseChanged(Phase phase)
@@ -203,9 +203,9 @@ public class Quest
         }
     }
 
-    public string LocalizedName => _localizationService.QuestTranslation(_data.NameLocalizationKey);
-    public string LocalizedDescription => _localizationService.QuestTranslation(_data.DescriptionLocalizationKey);
-    public string CurrentPhaseLocalizedDescription => _localizationService.QuestTranslation(CurrentPhase.DescriptionLocalizationKey);
+    public string LocalizedName => _localizationService.GetLocalization(_data.NameLocalizationKey);
+    public string LocalizedDescription => _localizationService.GetLocalization(_data.DescriptionLocalizationKey);
+    public string CurrentPhaseLocalizedDescription => _localizationService.GetLocalization(CurrentPhase.DescriptionLocalizationKey);
     public IEnumerable<string> LocalizedDescriptionsOfCurrentPhaseGoals
     {
         get
@@ -213,7 +213,7 @@ public class Quest
             List<string> descriiptions = new List<string>();
             foreach (var goal in CurrentPhase.Goals)
             {
-                string desc = $"{_localizationService.QuestTranslation(goal.DescriptionLocalizationKey)} {goal.CurrentProgress}/{goal.RequaredProgress}";
+                string desc = $"{_localizationService.GetLocalization(goal.DescriptionLocalizationKey)} {goal.CurrentProgress}/{goal.RequaredProgress}";
                 descriiptions.Add(desc);
             }
 

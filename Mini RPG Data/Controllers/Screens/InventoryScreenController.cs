@@ -31,7 +31,7 @@ public class InventoryScreenController
         {
             _invetoryView.ShowInventory();
             _invetoryView.ShowEquipment();
-            _logView.AddLog($"{_localizationService.YouUse()}: {item.LocalizedName}");
+            _logView.AddLog($"{_localizationService.GetLocalization("YouUse")}: {item.LocalizedName}");
 
             _gameProcessScreenController.Tick(PlayerAction.UseItemSuccessfully);
         }

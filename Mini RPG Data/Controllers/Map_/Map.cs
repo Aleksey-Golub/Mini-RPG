@@ -66,7 +66,7 @@ public class Map : IMap
     /// <returns></returns>
     internal static MapData Generate(IRandomService randomService)
     {
-        int cellsCount = randomService.GetIntInclusive(Settings.MIN_MAP_CELL_COUNT, Settings.MAX_MAP_CELL_COUNT);
+        int cellsCount = randomService.GetIntInclusive(GameRules.MIN_MAP_CELL_COUNT, GameRules.MAX_MAP_CELL_COUNT);
 
         if (cellsCount <= 0)
             throw new ArgumentOutOfRangeException(nameof(cellsCount), "CellsCount have to be greate then 0");
@@ -137,13 +137,13 @@ public class Map : IMap
                     continue;
 
                 int cellSpawnValue = randomService.GetIntInclusive(1, 100);
-                if (cellSpawnValue <= Settings.CELL_SPAWN_CHANCE)
+                if (cellSpawnValue <= GameRules.CELL_SPAWN_CHANCE)
                 {
                     int value = randomService.GetIntInclusive(1, 100);
 
-                    CellType cellType = Settings.GetCellTypeBasedOnRandomValue(value);
+                    CellType cellType = GameRules.GetCellTypeBasedOnRandomValue(value);
 
-                    int imageIndex = randomService.GetIntInclusive(0, Settings.FOREST_IMAGE_COUNT - 1);
+                    int imageIndex = randomService.GetIntInclusive(0, GameRules.FOREST_IMAGE_COUNT - 1);
                     MapCell newCell = new MapCell(nP, imageIndex, cellType);
                     mapData.Cells[nP] = newCell;
                     mapData.IncrementCounters(cellType);

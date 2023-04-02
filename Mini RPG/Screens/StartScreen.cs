@@ -20,9 +20,9 @@ public partial class StartScreen : UserControl, IStartScreenView
 
     private void SetTexts()
     {
-        _button_NewGame.Text = _localizationService.Button_NewGame();
-        _button_LoadGame.Text = _localizationService.Button_LoadGame();
-        _button_Exit.Text = _localizationService.Button_Exit();
+        _button_NewGame.Text = _localizationService.GetLocalization("GUI_Button_NewGame");
+        _button_LoadGame.Text = _localizationService.GetLocalization("GUI_Button_LoadGame");
+        _button_Exit.Text = _localizationService.GetLocalization("GUI_Button_Exit");
     }
 
     public void SetActiveState(bool newState) => Visible = newState;

@@ -21,12 +21,12 @@ public abstract class ItemBase
     public int Rating => _data.Rating;
     public float Weight => _data.Weight;
     public string Name => _data.Name;
-    public string LocalizedName => LocalizationService.ItemName(Name);
+    public string LocalizedName => LocalizationService.GetLocalization(Name);
     public int Cost => _data.Cost;
     public string PictureName => _data.PictureName;
     public bool IsStackable => _data.IsStackable;
     public abstract ItemType Type { get; }
-    public virtual string Description => $"{LocalizedName}, {LocalizationService.Cost()}: {Cost}";
+    public virtual string Description => $"{LocalizedName}, {LocalizationService.GetLocalization("Cost")}: {Cost}";
 
     internal abstract bool TryUse(Character character);
 }

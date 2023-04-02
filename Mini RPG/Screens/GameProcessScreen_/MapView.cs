@@ -156,8 +156,14 @@ internal class MapView
 
     private void SetToolTip()
     {
+        string unexploredLocation = _localizationService.GetLocalization("UnexploredLocation");
+        string towm = _localizationService.GetLocalization("Town");
+        string emptyExploredLocation = _localizationService.GetLocalization("EmptyExploredLocation");
+        string enemy = _localizationService.GetLocalization("Enemy");
+        string levelBoarder = _localizationService.GetLocalization("LevelBoarder");
+
         _toolTip.SetToolTip(_label_Map,
-            $"{PLAYER_SYMBOL} - {_characterName}, {UNEXPLORED_SYMBOL} - {_localizationService.UnexploredLocation()}, {TOWN_SYMBOL} - {_localizationService.Town()}\n" +
-            $"{EMPTY_SYMBOL} - {_localizationService.EmptyExploredLocation()}, {ENEMY_SYMBOL} - {_localizationService.Enemy()}, {BOARDER_SYMBOL} - {_localizationService.LevelBoarder()}");
+            $"{PLAYER_SYMBOL} - {_characterName}, {UNEXPLORED_SYMBOL} - {unexploredLocation}, {TOWN_SYMBOL} - {towm}\n" +
+            $"{EMPTY_SYMBOL} - {emptyExploredLocation}, {ENEMY_SYMBOL} - {enemy}, {BOARDER_SYMBOL} - {levelBoarder}");
     }
 }

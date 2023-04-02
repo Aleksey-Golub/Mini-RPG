@@ -26,7 +26,7 @@ public class Ability : IAbility
         }
     }
 
-    public int Bonus => Value - Settings.DEFAULT_ABILITY_VALUE;
+    public int Bonus => Value - GameRules.DEFAULT_ABILITY_VALUE;
 
     public event Action? ValueChanged;
 }

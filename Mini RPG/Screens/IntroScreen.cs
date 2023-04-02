@@ -26,7 +26,7 @@ public partial class IntroScreen : UserControl, IIntroScreenView
 
     private void SetTexts()
     {
-        _button_GoToGame.Text = _localizationService.Button_GoToGame();
-        _label_Intro.Text = _localizationService.Label_Intro();
+        _button_GoToGame.Text = _localizationService.GetLocalization("GUI_Button_GoToGame");
+        _label_Intro.Text = _localizationService.GetLocalization("GUI_Label_Intro");
     }
 }

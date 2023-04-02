@@ -66,8 +66,8 @@ public class Abilities : IAbilities
 
     internal static AbilitiesDatas GetFor(Race race)
     {
-        int defaultAbilityValue = Settings.DEFAULT_ABILITY_VALUE;
-        int defaultAbilityPoints = Settings.DEFAULT_ABILITYPOINTS_COUNT;
+        int defaultAbilityValue = GameRules.DEFAULT_ABILITY_VALUE;
+        int defaultAbilityPoints = GameRules.DEFAULT_ABILITYPOINTS_COUNT;
         var baseAbilitiesDatas = new AbilitiesDatas(
             strength: defaultAbilityValue,
             dexterity: defaultAbilityValue,
@@ -105,7 +105,7 @@ public class Abilities : IAbilities
         if (AllAbilities.ContainsKey(type))
         {
             Ability ability = AllAbilities[type];
-            if (ability.Value > Settings.MIN_ABILITY_VALUE)
+            if (ability.Value > GameRules.MIN_ABILITY_VALUE)
             {
                 AbilityPoints++;
                 ability.Value--;
@@ -118,7 +118,7 @@ public class Abilities : IAbilities
         if (AllAbilities.ContainsKey(type))
         {
             Ability ability = AllAbilities[type];
-            if (AbilityPoints > 0 && ability.Value < Settings.MAX_ABILITY_VALUE)
+            if (AbilityPoints > 0 && ability.Value < GameRules.MAX_ABILITY_VALUE)
             {
                 ability.Value++;
                 AbilityPoints--;

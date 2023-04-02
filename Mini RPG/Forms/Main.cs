@@ -106,7 +106,7 @@ public partial class Main : Form
     {
         _services = AllServices.Container;
 
-        _services.RegisterSingle<ILocalizationService>(new JsonLocalizationService());
+        _services.RegisterSingle<ILocalizationService>(new TxtLocalizationService());
         _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
         _services.RegisterSingle<IRandomService>(new RandomService());
         _services.RegisterSingle<ISaveLoadService>(new JsonFileSaveLoadService(
@@ -122,7 +122,7 @@ public partial class Main : Form
         _services.RegisterSingle<IQuestService>(new JsonQuestService());
         _services.RegisterSingle<IEventService>(new EventService());
 
-        Settings.RandomService = _services.Single<IRandomService>();
-        Settings.ItemFactory = _services.Single<IItemFactory>();
+        GameRules.RandomService = _services.Single<IRandomService>();
+        GameRules.ItemFactory = _services.Single<IItemFactory>();
     }
 }

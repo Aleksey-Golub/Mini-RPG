@@ -14,7 +14,7 @@ namespace Mini_RPG.Screens
         private ICharacter _character = null!;
 
         private readonly ILocalizationService _localizationService;
-        private readonly int _maxNameLength = Settings.MAX_CHARACTER_NAME_LENGTH;
+        private readonly int _maxNameLength = GameRules.MAX_CHARACTER_NAME_LENGTH;
 
         public CharacterCreationScreen(ILocalizationService localizationService)
         {
@@ -51,7 +51,7 @@ namespace Mini_RPG.Screens
             _pictureBox_SelectCharacterAvatar.ImageLocation = character.AvatarPath;
             _textBox_Name.Text = character.Name;
 
-            _pictureBox_SelectCharacterAvatar.ImageLocation = Settings.DefaultAvatarPath;
+            _pictureBox_SelectCharacterAvatar.ImageLocation = GameRules.DefaultAvatarPath;
             
             _comboBox_Race.SelectedIndex = 0;
         }
@@ -81,27 +81,27 @@ namespace Mini_RPG.Screens
 
         private void SetTexts()
         {
-            _button_StartGame.Text = _localizationService.Button_StartGame();
-            _label_AbilityPoints.Text = _localizationService.Label_AbilityPoints();
-            _label_Charisma.Text = _localizationService.Label_Charisma();
-            _label_Constitution.Text = _localizationService.Label_Constitution();
-            _label_Dexterity.Text = _localizationService.Label_Dexterity();
-            _label_Perception.Text = _localizationService.Label_Perception();
-            _label_Race.Text = _localizationService.Label_Race();
-            _label_Strength.Text = _localizationService.Label_Strength();
+            _button_StartGame.Text = _localizationService.GetLocalization("GUI_Button_StartGame");
+            _label_AbilityPoints.Text = _localizationService.GetLocalization("GUI_Label_AbilityPoints");
+            _label_Charisma.Text = _localizationService.GetLocalization("GUI_Label_Charisma");
+            _label_Constitution.Text = _localizationService.GetLocalization("GUI_Label_Constitution");
+            _label_Dexterity.Text = _localizationService.GetLocalization("GUI_Label_Dexterity");
+            _label_Perception.Text = _localizationService.GetLocalization("GUI_Label_Perception");
+            _label_Race.Text = _localizationService.GetLocalization("GUI_Label_Race");
+            _label_Strength.Text = _localizationService.GetLocalization("GUI_Label_Strength");
             
             SetAllToolTips();
         }
 
         private void SetAllToolTips()
         {
-            _toolTip.SetToolTip(_label_Race, _localizationService.ToolTip_Race());
-            _toolTip.SetToolTip(_label_AbilityPoints, _localizationService.ToolTip_AbilityPoints());
-            _toolTip.SetToolTip(_label_Strength, _localizationService.ToolTip_Strength());
-            _toolTip.SetToolTip(_label_Dexterity, _localizationService.ToolTip_Dexterity());
-            _toolTip.SetToolTip(_label_Constitution, _localizationService.ToolTip_Constitution());
-            _toolTip.SetToolTip(_label_Perception, _localizationService.ToolTip_Perception());
-            _toolTip.SetToolTip(_label_Charisma, _localizationService.ToolTip_Charisma());
+            _toolTip.SetToolTip(_label_Race, _localizationService.GetLocalization("GUI_ToolTip_Race"));
+            _toolTip.SetToolTip(_label_AbilityPoints, _localizationService.GetLocalization("GUI_ToolTip_AbilityPoints"));
+            _toolTip.SetToolTip(_label_Strength, _localizationService.GetLocalization("GUI_ToolTip_Strength"));
+            _toolTip.SetToolTip(_label_Dexterity, _localizationService.GetLocalization("GUI_ToolTip_Dexterity"));
+            _toolTip.SetToolTip(_label_Constitution, _localizationService.GetLocalization("GUI_ToolTip_Constitution"));
+            _toolTip.SetToolTip(_label_Perception, _localizationService.GetLocalization("GUI_ToolTip_Perception"));
+            _toolTip.SetToolTip(_label_Charisma, _localizationService.GetLocalization("GUI_ToolTip_Charisma"));
         }
 
         #region Controls Event Handlers

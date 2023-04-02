@@ -29,7 +29,7 @@ internal class Beast : ICharacter
     }
 
     public int Id => _data.CharacterData.Id;
-    public string Name => _localizationService.CharacterName(_data.CharacterData.Name);
+    public string Name => _localizationService.GetLocalization(_data.CharacterData.Name);
     public string AvatarPath => _data.CharacterData.AvatarPath;
     public Race Race => _data.CharacterData.Race;
     public IAbilities AllAbilities { get; }

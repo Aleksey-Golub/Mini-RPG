@@ -8,7 +8,6 @@ using Mini_RPG_Data.Controllers.Inventory_.Items;
 using Mini_RPG_Data.Services.Random_;
 using Mini_RPG_Data.Services.Enemy;
 using Mini_RPG_Data.Controllers.Quest_;
-using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Quest_;
 using Mini_RPG_Data.Services.EventBus;
 
@@ -119,12 +118,12 @@ public partial class GameProcessScreenController
     public void Rest()
     {
         _state.Tick(PlayerAction.Rest);
-        _logView.AddLog(_localizationService.PlayerRest());
+        _logView.AddLog(_localizationService.GetLocalization("PlayerRest"));
     }
 
     public void StartRestInTown()
     {
-        int restCost = _map.IsExplored ? 0 : Settings.REST_IN_TOWN_COST;
+        int restCost = _map.IsExplored ? 0 : GameRules.REST_IN_TOWN_COST;
         _gameProcessView.ShowRestInTownDialog(restCost);
     }
 
@@ -132,7 +131,7 @@ public partial class GameProcessScreenController
     {
         if (_player.Wallet.Money >= restCost)
         {
-            _progressService.Progress.TownTraderData = Settings.GetRandomTownTraderData();
+            _progressService.Progress.TownTraderData = GameRules.GetRandomTownTraderData();
 
             _map.Regenerate(_randomService);
             _gameProcessView.ShowMiniMap(_map, _player.Character.FieldOfView);
@@ -271,8 +270,8 @@ public partial class GameProcessScreenController
 
         internal override void Tick(PlayerAction playerAction)
         {
-            int playerInitiative = Settings.CalculateInitiative(Controller._player.Character);
-            int enemyInitiative = Settings.CalculateInitiative(_enemy);
+            int playerInitiative = GameRules.CalculateInitiative(Controller._player.Character);
+            int enemyInitiative = GameRules.CalculateInitiative(_enemy);
 
             if (playerInitiative >= enemyInitiative)
             {
@@ -303,13 +302,13 @@ public partial class GameProcessScreenController
             switch (playerAction)
             {
                 case PlayerAction.AttackEnemy:
-                    var res = Settings.HandleAttack(Controller._player.Character, _enemy);
+                    var res = GameRules.HandleAttack(Controller._player.Character, _enemy);
                     LogAttackResult(res);
                     break;
                 case PlayerAction.TryLeaveBattle:
-                    _playerEscaped = Settings.HandlePlayerBattleEscape(Controller._player.Character);
+                    _playerEscaped = GameRules.HandlePlayerBattleEscape(Controller._player.Character);
                     if (_playerEscaped == false)
-                        Controller._logView.AddLog($"{Controller._localizationService.Message_YouAreNotEscaped()}");
+                        Controller._logView.AddLog($"{Controller._localizationService.GetLocalization("GUI_Message_YouAreNotEscaped")}");
                     break;
                 case PlayerAction.Rest:
                     break;
@@ -325,7 +324,7 @@ public partial class GameProcessScreenController
 
         private void HandleEnemyAction()
         {
-            var res = Settings.HandleAttack(_enemy, Controller._player.Character);
+            var res = GameRules.HandleAttack(_enemy, Controller._player.Character);
             LogAttackResult(res);
         }
 
@@ -359,7 +358,7 @@ public partial class GameProcessScreenController
 
             if (_playerEscaped)
             {
-                Controller._logView.AddLog($"{Controller._localizationService.Message_YouAreEscaped()}");
+                Controller._logView.AddLog($"{Controller._localizationService.GetLocalization("GUI_Message_YouAreEscaped")}");
                 Controller._gameProcessView.HideBattle(BattleResult.PlayerEscaped, _enemy.Inventory.Items, _enemy.Experience);
                 Controller.TransitionTo<AdventureGameProcessState>();
                 return true;
@@ -478,15 +477,15 @@ public partial class GameProcessScreenController
 
             private void HandleTrapCell()
             {
-                var trapType = Settings.GetTrapType();
-                if (Settings.TryFindTrap(_controller._player))
+                var trapType = GameRules.GetTrapType();
+                if (GameRules.TryFindTrap(_controller._player))
                 {
                     _controller._gameProcessView.ShowSuccessFindTrapMessage(trapType);
                 }
                 else
                 {
                     _controller._gameProcessView.ShowFailFindTrapMessage(trapType);
-                    int damage = Settings.CalculateTrapDamage(trapType, _controller._player);
+                    int damage = GameRules.CalculateTrapDamage(trapType, _controller._player);
                     Character character = _controller._player.Character;
                     character.TakeDamage(damage);
                     _controller._logView.AddLog(_controller._localizationService.Message_FirstHitsSecondWithDamage(_controller._localizationService.TrapTypeName(trapType), character.Name, damage));
@@ -495,10 +494,10 @@ public partial class GameProcessScreenController
 
             private void HandleHiddedLootCell()
             {
-                if (Settings.TryFindHiddenLoot(_controller._player))
+                if (GameRules.TryFindHiddenLoot(_controller._player))
                 {
-                    List<ItemBase> loot = Settings.CalculateFoundedHiddenLoot(_controller._player);
-                    int money = Settings.CalculateFoundedInHiddenLootMoney(_controller._player);
+                    List<ItemBase> loot = GameRules.CalculateFoundedHiddenLoot(_controller._player);
+                    int money = GameRules.CalculateFoundedInHiddenLootMoney(_controller._player);
                     
                     _controller._gameProcessView.ShowSuccessFindHiddenLootMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
@@ -508,10 +507,10 @@ public partial class GameProcessScreenController
 
             private void HandleHiddenChestCell()
             {
-                if (Settings.TryFindHiddenChest(_controller._player))
+                if (GameRules.TryFindHiddenChest(_controller._player))
                 {
-                    List<ItemBase> loot = Settings.CalculateFoundedHiddenChest(_controller._player);
-                    int money = Settings.CalculateFoundedInChestMoney(_controller._player);
+                    List<ItemBase> loot = GameRules.CalculateFoundedHiddenChest(_controller._player);
+                    int money = GameRules.CalculateFoundedInChestMoney(_controller._player);
                     
                     _controller._gameProcessView.ShowSuccessFindHiddenChestMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
@@ -521,8 +520,8 @@ public partial class GameProcessScreenController
 
             private void HandleLootCell()
             {
-                List<ItemBase> loot = Settings.CalculateFoundedLoot(_controller._player);
-                int money = Settings.CalculateFoundedInLootMoney(_controller._player);
+                List<ItemBase> loot = GameRules.CalculateFoundedLoot(_controller._player);
+                int money = GameRules.CalculateFoundedInLootMoney(_controller._player);
 
                 _controller._gameProcessView.ShowLootCellMessage(money, loot);
 
@@ -532,11 +531,11 @@ public partial class GameProcessScreenController
 
             private void HandleLockedChestCell()
             {
-                List<ItemBase> loot = Settings.CalculateFoundedInChestLoot(_controller._player);
-                int money = Settings.CalculateFoundedInChestMoney(_controller._player);
+                List<ItemBase> loot = GameRules.CalculateFoundedInChestLoot(_controller._player);
+                int money = GameRules.CalculateFoundedInChestMoney(_controller._player);
 
                 _controller._gameProcessView.ShowFindChestMessage();
-                if (Settings.TryPickLock(_controller._player))
+                if (GameRules.TryPickLock(_controller._player))
                 {
                     _controller._gameProcessView.ShowSuccessPickLockedChestMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);
@@ -545,7 +544,7 @@ public partial class GameProcessScreenController
                 else
                 {
                     _controller._gameProcessView.ShowFailPickLockedChestMessage();
-                    if (Settings.TryBreakChest(_controller._player))
+                    if (GameRules.TryBreakChest(_controller._player))
                     {
                         _controller._gameProcessView.ShowSuccessBreakChestMessage(money, loot);
                         _controller._player.Wallet.AddMoney(money);

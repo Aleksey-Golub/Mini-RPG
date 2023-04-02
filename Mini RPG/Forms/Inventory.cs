@@ -93,7 +93,7 @@ public partial class Inventory : Form, IInventoryView
         _controller.TryUse(inventoryButton.Item);
     }
 
-    private void SetTexts() => _button_Close.Text = _localizationService.Button_Close();
+    private void SetTexts() => _button_Close.Text = _localizationService.GetLocalization("GUI_Button_Close");
 
     #region Controls Events Handlers
     private void Button_HeadEquippedItem_Click(object sender, EventArgs e) => _controller.UnequipHead();
