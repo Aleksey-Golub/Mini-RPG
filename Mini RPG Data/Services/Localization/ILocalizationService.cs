@@ -2,7 +2,9 @@
 
 public interface ILocalizationService : IService
 {
-    string GetLocalization(string localizationKey);
-    
+    IReadOnlyList<string> AvailableLanguages { get; }
     event Action? LanguageChanged;
+
+    string GetLocalization(string localizationKey);
+    void SetCurrentLanguage(string selectedLanguage);
 }

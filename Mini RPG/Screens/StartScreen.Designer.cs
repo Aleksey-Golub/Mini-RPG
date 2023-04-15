@@ -31,7 +31,7 @@
             this._button_NewGame = new System.Windows.Forms.Button();
             this._button_LoadGame = new System.Windows.Forms.Button();
             this._button_Exit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this._comboBox_Language = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // _button_NewGame
@@ -73,18 +73,15 @@
             this._button_Exit.UseVisualStyleBackColor = false;
             this._button_Exit.Click += new System.EventHandler(this.Button_Exit_Click);
             // 
-            // comboBox1
+            // _comboBox_Language
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ru",
-            "en"});
-            this.comboBox1.Location = new System.Drawing.Point(1664, 924);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(68, 33);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Visible = false;
+            this._comboBox_Language.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._comboBox_Language.FormattingEnabled = true;
+            this._comboBox_Language.Location = new System.Drawing.Point(1653, 870);
+            this._comboBox_Language.Name = "_comboBox_Language";
+            this._comboBox_Language.Size = new System.Drawing.Size(153, 33);
+            this._comboBox_Language.TabIndex = 4;
+            this._comboBox_Language.SelectedIndexChanged += new System.EventHandler(this.СomboBox_Language_SelectedIndexChanged);
             // 
             // StartScreen
             // 
@@ -92,7 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this._comboBox_Language);
             this.Controls.Add(this._button_Exit);
             this.Controls.Add(this._button_LoadGame);
             this.Controls.Add(this._button_NewGame);
@@ -108,6 +105,6 @@
         private Button _button_NewGame;
         private Button _button_LoadGame;
         private Button _button_Exit;
-        private ComboBox comboBox1;
+        private ComboBox _comboBox_Language;
     }
 }

@@ -10,6 +10,7 @@ using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Enemy;
 using Mini_RPG_Data.Services.Quest_;
 using Mini_RPG_Data.Services.EventBus;
+using Mini_RPG_Data.Services.AppSettings;
 
 namespace Mini_RPG;
 
@@ -31,7 +32,7 @@ public partial class Main : Form
         InitializeComponent();
         RegisterServices();
 
-        _startScreen = new StartScreen(_services.Single<ILocalizationService>());
+        _startScreen = new StartScreen(_services.Single<ILocalizationService>(), _services.Single<IAppSettingsService>());
         Controls.Add(_startScreen);
         _startScreen.SetActiveState(false);
 
@@ -106,7 +107,9 @@ public partial class Main : Form
     {
         _services = AllServices.Container;
 
-        _services.RegisterSingle<ILocalizationService>(new TxtLocalizationService());
+        _services.RegisterSingle<IAppSettingsService>(new JsonAppSettingsService());
+        _services.RegisterSingle<ILocalizationService>(new TxtLocalizationService(
+            _services.Single<IAppSettingsService>()));
         _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
         _services.RegisterSingle<IRandomService>(new RandomService());
         _services.RegisterSingle<ISaveLoadService>(new JsonFileSaveLoadService(

@@ -21,18 +21,8 @@ namespace Mini_RPG.Screens
             InitializeComponent();
 
             _localizationService = localizationService;
-            _localizationService.LanguageChanged += SetTexts;
+            _localizationService.LanguageChanged += OnLanguageChanged;
 
-            string[] races = new string[]
-            {
-                // order is very important
-                _localizationService.RaceName(Race.Human),   // 0
-                _localizationService.RaceName(Race.Elf),     // 1
-                _localizationService.RaceName(Race.Dwarf)    // 2
-            };
-            _comboBox_Race.Items.AddRange(races);
-
-            SetTexts();
         }
 
         public void SetActiveState(bool newState) => Visible = newState;
@@ -53,7 +43,7 @@ namespace Mini_RPG.Screens
 
             _pictureBox_SelectCharacterAvatar.ImageLocation = GameRules.DefaultAvatarPath;
             
-            _comboBox_Race.SelectedIndex = 0;
+            OnLanguageChanged();
         }
 
         private void OnCharacterChanged(ICharacter character)
@@ -79,7 +69,28 @@ namespace Mini_RPG.Screens
             }
         }
 
-        private void SetTexts()
+        private void OnLanguageChanged()
+        {
+            ReAssignRaced();
+            SetText();
+            SetAllToolTips();
+        }
+
+        private void ReAssignRaced()
+        {
+            string[] races = new string[]
+                        {
+                // order is very important
+                _localizationService.RaceName(Race.Human),   // 0
+                _localizationService.RaceName(Race.Elf),     // 1
+                _localizationService.RaceName(Race.Dwarf)    // 2
+                        };
+            _comboBox_Race.Items.Clear();
+            _comboBox_Race.Items.AddRange(races);
+            _comboBox_Race.SelectedIndex = 0;
+        }
+
+        private void SetText()
         {
             _button_StartGame.Text = _localizationService.GetLocalization("GUI_Button_StartGame");
             _label_AbilityPoints.Text = _localizationService.GetLocalization("GUI_Label_AbilityPoints");
@@ -89,8 +100,6 @@ namespace Mini_RPG.Screens
             _label_Perception.Text = _localizationService.GetLocalization("GUI_Label_Perception");
             _label_Race.Text = _localizationService.GetLocalization("GUI_Label_Race");
             _label_Strength.Text = _localizationService.GetLocalization("GUI_Label_Strength");
-            
-            SetAllToolTips();
         }
 
         private void SetAllToolTips()

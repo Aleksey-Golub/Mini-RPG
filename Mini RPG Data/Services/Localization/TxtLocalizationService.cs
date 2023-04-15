@@ -1,15 +1,26 @@
-﻿namespace Mini_RPG_Data.Services.Localization;
+﻿using Mini_RPG_Data.Services.AppSettings;
+
+namespace Mini_RPG_Data.Services.Localization;
 
 public class TxtLocalizationService : ILocalizationService
 {
     private const string DIRECTORY = "Localization\\";
     private const string LANGUAGE_KEY = "language";
 
+    private readonly IAppSettingsService _appSettingsService;
     private readonly Dictionary<string, Dictionary<string, string>> _allLocalizations = new Dictionary<string, Dictionary<string, string>>();
-    private readonly Dictionary<string, string> _currentLangageSource = new();
+    private readonly List<string> _availableLanguages = new();
+    
+    private Dictionary<string, string> _currentLanguageSource = new();
 
-    public TxtLocalizationService()
+    public IReadOnlyList<string> AvailableLanguages => _availableLanguages;
+
+    public event Action? LanguageChanged;
+
+    public TxtLocalizationService(IAppSettingsService appSettings)
     {
+        _appSettingsService = appSettings;
+
         try
         {
             string[] languagesDirectories = Directory.GetDirectories(DIRECTORY);
@@ -18,22 +29,43 @@ public class TxtLocalizationService : ILocalizationService
             {
                 string[] localizationFiles = Directory.GetFiles(dir);
                 var localizationSource = new Dictionary<string, string>();
-                FillDictionaryFromFiles(localizationSource, localizationFiles);
-                
+                FillSourceFromFiles(localizationSource, localizationFiles);
+
                 string languageKey = localizationSource.ContainsKey(LANGUAGE_KEY) ? localizationSource[LANGUAGE_KEY] : dir;
 
-                _allLocalizations.TryAdd(languageKey, localizationSource);
+                if (_allLocalizations.TryAdd(languageKey, localizationSource))
+                    _availableLanguages.Add(languageKey);
             }
-            _currentLangageSource = _allLocalizations["Русский"];
+            _currentLanguageSource = GetCurrentLanguageSource();
         }
         catch { }
     }
 
-    public event Action? LanguageChanged;
+    public string GetLocalization(string localizationKey) => _currentLanguageSource.TryGetValue(localizationKey, out var text) ? text : localizationKey;
 
-    public string GetLocalization(string localizationKey) => _currentLangageSource.TryGetValue(localizationKey, out var text) ? text : localizationKey;
+    public void SetCurrentLanguage(string selectedLanguage)
+    {
+        _appSettingsService.SetCurrentLanguage(selectedLanguage);
+        _currentLanguageSource = GetCurrentLanguageSource();
+        LanguageChanged?.Invoke();
 
-    private void FillDictionaryFromFiles(Dictionary<string, string> dictionary, params string[] filePaths)
+        _appSettingsService.SaveAppSettings();
+    }
+
+    private Dictionary<string, string> GetCurrentLanguageSource()
+    {
+        string currentLanguage = _appSettingsService.GetCurrentLauguage();
+        string defaultLanguage = _appSettingsService.GetDefaultLanguage();
+        
+        if (_allLocalizations.ContainsKey(currentLanguage))
+            return _allLocalizations[currentLanguage];
+        else if (_allLocalizations.ContainsKey(defaultLanguage))
+            return _allLocalizations[defaultLanguage];
+        else
+            return _allLocalizations.First().Value;
+    }
+
+    private void FillSourceFromFiles(Dictionary<string, string> dictionary, params string[] filePaths)
     {
         foreach (var filePath in filePaths)
         {
