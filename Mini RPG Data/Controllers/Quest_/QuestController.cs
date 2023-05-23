@@ -165,12 +165,12 @@ internal class QuestController
         }
     }
 
-    private void OnEventHappened(EventType eventType, int index)
+    private void OnEventHappened(EventType eventType, string arg)
     {
         for (int i = 0; i < _currentQuests.Count; i++)
         {
             Quest? quest = _currentQuests[i];
-            if (quest.HandleEvent(eventType, index))
+            if (quest.HandleEvent(eventType, arg))
                 i--;
         }
     }
@@ -228,9 +228,9 @@ public class Quest
     internal event Action<Quest> QuestComplited;
     internal event Action<Quest> CurrentPhaseSwitched;
 
-    internal bool HandleEvent(EventType eventType, int index)
+    internal bool HandleEvent(EventType eventType, string arg)
     {
-        CurrentPhase.HandleEvent(eventType, index);
+        CurrentPhase.HandleEvent(eventType, arg);
         return CheckPhaseOrQuestEnded();
     }
 
@@ -295,10 +295,10 @@ internal class Phase
     internal string PhaseGoalsComplitedMessageKey => _data.PhaseGoalsComplitedMessageKey;
     internal bool IsComplited => _goals.All(x => x.IsComplited == true);
 
-    internal void HandleEvent(EventType eventType, int index)
+    internal void HandleEvent(EventType eventType, string arg)
     {
         foreach (var goal in _goals)
-            if (goal.CorrespondingEventType == eventType && goal.TargetId == index)
+            if (goal.CorrespondingEventType == eventType && goal.TargetId == arg)
                 goal.CurrentProgress++;
     }
 
@@ -335,7 +335,7 @@ internal class Goal
 
     internal QuestPhaseGoalType GoalType => _data.GoalType;
     internal EventType CorrespondingEventType => GetCorrespondingEventType(GoalType);
-    internal int TargetId => _data.TargetId;
+    internal string TargetId => _data.TargetId;
     internal int CurrentProgress { get; set; }
     internal int RequaredProgress => _data.RequaredProgress;
     internal string DescriptionLocalizationKey => _data.DescriptionLocalizationKey;

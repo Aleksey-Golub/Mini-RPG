@@ -17,11 +17,10 @@ public abstract class ItemBase
         _data = data;
     }
 
-    public int Id => _data.Id;
+    public string Id => _data.Id;
     public int Rating => _data.Rating;
     public float Weight => _data.Weight;
-    public string Name => _data.Name;
-    public string LocalizedName => LocalizationService.GetLocalization(Name);
+    public string LocalizedName => LocalizationService.GetLocalization(Id);
     public int Cost => _data.Cost;
     public string PictureName => _data.PictureName;
     public bool IsStackable => _data.IsStackable;

@@ -2,7 +2,7 @@
 
 public interface IEventService : IService
 {
-    void Publish(EventType type, int index);
-    void Subscribe(EventType eventType, Action<EventType, int> callback);
-    void Unsubscribe(EventType type, Action<EventType, int> callback);
+    void Publish(EventType type, string arg);
+    void Subscribe(EventType eventType, Action<EventType, string> callback);
+    void Unsubscribe(EventType type, Action<EventType, string> callback);
 }

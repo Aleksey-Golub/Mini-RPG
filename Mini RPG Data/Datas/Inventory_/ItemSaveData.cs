@@ -3,7 +3,7 @@
 [Serializable]
 public class ItemSaveData
 {
-    public ItemSaveData(ItemType type, int id)
+    public ItemSaveData(ItemType type, string id)
     {
         Type = type;
         Id = id;
@@ -13,5 +13,5 @@ public class ItemSaveData
     /// <summary>
     /// id in Type group
     /// </summary>
-    public int Id { get; set; }
+    public string Id { get; set; }
 }

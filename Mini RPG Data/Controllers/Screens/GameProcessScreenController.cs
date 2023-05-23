@@ -258,7 +258,7 @@ public partial class GameProcessScreenController
             _enemy = Controller._enemyFactory.CreateRandom(Controller._player);
 
             Controller._eventService.Publish(EventType.MeetEnemyWithId, _enemy.Id);
-            Controller._eventService.Publish(EventType.MeetEnemyWithRace, (int)_enemy.Race);
+            Controller._eventService.Publish(EventType.MeetEnemyWithRace, _enemy.Race.ToString());
 
             Controller._gameProcessView.ShowBattle(_enemy);
         }
@@ -347,7 +347,7 @@ public partial class GameProcessScreenController
                 Controller._player.Character.Inventory.AddItems(_enemy.Inventory.Items.ToList());
 
                 Controller._eventService.Publish(EventType.KilledEnemyWithId, _enemy.Id);
-                Controller._eventService.Publish(EventType.KilledEnemyWithRace, (int)_enemy.Race);
+                Controller._eventService.Publish(EventType.KilledEnemyWithRace, _enemy.Race.ToString());
 
                 Controller.TransitionTo<AdventureGameProcessState>();
                 return true;

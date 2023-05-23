@@ -19,13 +19,28 @@ public class JsonItemsService : IItemsService
         {
             string text = File.ReadAllText(DB_PATH);
             _itemsDB = JsonSerializer.Deserialize<ItemsDB>(text, _options);
+
+
+            //foreach (var item in _itemsDB.CommonItems)
+            //    item.Id = item.Name;
+            //foreach (var item in _itemsDB.WeaponItems)
+            //    item.Id = item.Name;
+            //foreach (var item in _itemsDB.ArmorItems)
+            //    item.Id = item.Name;
+            //foreach (var item in _itemsDB.PotionItems)
+            //    item.Id = item.Name;
+            //foreach (var item in _itemsDB.FoodItems)
+            //    item.Id = item.Name;
+            //foreach (var item in _itemsDB.ShieldItems)
+            //    item.Id = item.Name;
+            //string jsonString = JsonSerializer.Serialize(_itemsDB, _options);
+            //File.WriteAllText(DB_PATH, jsonString);
         }
         catch { }
 
         WriteCommentsToFile("Comments_ItemsDB.json");
 
         WriteExamplesToFile("ExampleItemsDB.json");
-        //WriteExamplesToFile(DB_PATH);
     }
 
     public ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData)
@@ -96,15 +111,15 @@ public class JsonItemsService : IItemsService
     private void WriteExamplesToFile(string localFilePath)
     {
         var itemsDB = new ItemsDB();
-        itemsDB.CommonItems.Add(new CommonItemData() { Id = 0, Name = "Example", Cost = 10 });
-        itemsDB.WeaponItems.Add(new WeaponItemData() { Id = 0, Name = "ExampleWeapon1", Cost = 10, MinDamage = 1, MaxDamage = 2, DamageType = DamageType.Piercing, Grip = Grip.SingleHanded });
-        itemsDB.WeaponItems.Add(new WeaponItemData() { Id = 1, Name = "ExampleWeapon2", Cost = 20, MinDamage = 2, MaxDamage = 3, DamageType = DamageType.Bludgeoning, Grip = Grip.TwoHanded & Grip.SingleHanded });
-        itemsDB.ArmorItems.Add(new ArmorItemData() { Id = 0, Name = "ExampleArmor1", Cost = 10, EquipmentSlot = EquipmentSlot.Hands, ArmorValue = 1, ArmorType = ArmorType.Light });
-        itemsDB.ArmorItems.Add(new ArmorItemData() { Id = 1, Name = "ExampleArmor2", Cost = 15, EquipmentSlot = EquipmentSlot.Head, ArmorValue = 1, ArmorType = ArmorType.Light });
-        itemsDB.PotionItems.Add(new PotionItemData() { Id = 0, Name = "ExamplePotion1", Cost = 10, Effects = new List<Effect>() { new Effect() { EffectType = EffectType.ChangeHealth, Value = 10 } } });
-        itemsDB.ShieldItems.Add(new ShieldItemData() { Id = 0, Name = "ExampleShield1", Cost = 12, MinBlockBonus = 1, MaxBlockBonus = 3 });
-        itemsDB.ShieldItems.Add(new ShieldItemData() { Id = 1, Name = "ExampleShield2", Cost = 20, MinBlockBonus = 2, MaxBlockBonus = 4 });
-        itemsDB.FoodItems.Add(new FoodItemData() { Id = 0, Name = "ExampleFood1", Cost = 10, Effects = new List<Effect>() { new Effect() { EffectType = EffectType.ChangeFoodSatiation, Value = 100 } } });
+        itemsDB.CommonItems.Add(new CommonItemData() { Id = "Example", Cost = 10 });
+        itemsDB.WeaponItems.Add(new WeaponItemData() { Id = "ExampleWeapon1", Cost = 10, MinDamage = 1, MaxDamage = 2, DamageType = DamageType.Piercing, Grip = Grip.SingleHanded });
+        itemsDB.WeaponItems.Add(new WeaponItemData() { Id = "ExampleWeapon2", Cost = 20, MinDamage = 2, MaxDamage = 3, DamageType = DamageType.Bludgeoning, Grip = Grip.TwoHanded & Grip.SingleHanded });
+        itemsDB.ArmorItems.Add(new ArmorItemData()   { Id = "ExampleArmor1", Cost = 10, EquipmentSlot = EquipmentSlot.Hands, ArmorValue = 1, ArmorType = ArmorType.Light });
+        itemsDB.ArmorItems.Add(new ArmorItemData()   { Id = "ExampleArmor2", Cost = 15, EquipmentSlot = EquipmentSlot.Head, ArmorValue = 1, ArmorType = ArmorType.Light });
+        itemsDB.PotionItems.Add(new PotionItemData() { Id = "ExamplePotion1", Cost = 10, Effects = new List<Effect>() { new Effect() { EffectType = EffectType.ChangeHealth, Value = 10 } } });
+        itemsDB.ShieldItems.Add(new ShieldItemData() { Id = "ExampleShield1", Cost = 12, MinBlockBonus = 1, MaxBlockBonus = 3 });
+        itemsDB.ShieldItems.Add(new ShieldItemData() { Id = "ExampleShield2", Cost = 20, MinBlockBonus = 2, MaxBlockBonus = 4 });
+        itemsDB.FoodItems.Add(new FoodItemData()     { Id = "ExampleFood1", Cost = 10, Effects = new List<Effect>() { new Effect() { EffectType = EffectType.ChangeFoodSatiation, Value = 100 } } });
         try
         {
             string jsonString = JsonSerializer.Serialize(itemsDB, _options);

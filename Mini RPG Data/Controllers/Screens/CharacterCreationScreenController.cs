@@ -105,11 +105,11 @@ public class CharacterCreationScreenController
         progress.PlayerData.CharacterData.SatiationData.FoodSatiation = GameRules.START_SATIATION;
         progress.PlayerData.CharacterData.SatiationData.WaterSatiation = GameRules.START_SATIATION;
 
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, 40000));  // small health potion
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   60000));    // bread
-        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   60001));    // water flask
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Potion, "SmallHealthPotion"));
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   "Bread"));
+        progress.PlayerData.CharacterData.InventoryData.Items.Add(new ItemSaveData(ItemType.Food,   "WaterFlask"));
 
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor,  30002);   // Thin Leather Jacket
-        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, 20000);  // bronze sword
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[2] = new ItemSaveData(ItemType.Armor, "ThinLeatherArmor");
+        progress.PlayerData.CharacterData.InventoryData.EquippedItems[4] = new ItemSaveData(ItemType.Weapon, "BronzeSword");
     }
 }

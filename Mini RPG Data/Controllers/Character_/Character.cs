@@ -42,7 +42,7 @@ public class Character : ICharacter
         Health.Init();
     }
 
-    public int Id => _data.Id;
+    public string Id => _data.Id;
     public string Name
     {
         get => _localizationService.GetLocalization(_data.Name);

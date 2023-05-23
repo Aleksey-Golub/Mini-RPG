@@ -697,11 +697,11 @@
 				"Items": [
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					},
 					{
 						"Type": 1,
-						"Id": 6
+						"Id": 10006
 					}
 				],
 				"EquippedItems": [
@@ -912,7 +912,7 @@
 				"Items": [
 					{
 						"Type": 5,
-						"Id": 50001
+						"Id": 50002
 					}
 				],
 				"EquippedItems": [

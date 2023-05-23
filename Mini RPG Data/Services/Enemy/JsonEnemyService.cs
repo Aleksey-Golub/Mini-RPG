@@ -20,6 +20,14 @@ public class JsonEnemyService : IEnemyService
         {
             string text = File.ReadAllText(DB_PATH);
             _enemyDB = JsonSerializer.Deserialize<EnemyDB>(text, _options);
+
+
+            foreach (var enemy in _enemyDB.Characters)
+                enemy.Id = enemy.Name;
+            foreach (var enemy in _enemyDB.Beasts)
+                enemy.CharacterData.Id = enemy.CharacterData.Name;
+            string jsonString = JsonSerializer.Serialize(_enemyDB, _options);
+            File.WriteAllText(DB_PATH, jsonString);
         }
         catch { }
 
@@ -53,8 +61,8 @@ public class JsonEnemyService : IEnemyService
     private void WriteExamplesToFile(string localFilePath)
     {
         var enemyDB = new EnemyDB();
-        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, 0), new ItemSaveData(ItemType.Common, 1)} } });
-        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, 0)} } });
+        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "0"), new ItemSaveData(ItemType.Common, "1")} } });
+        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "0")} } });
         enemyDB.Beasts.Add(new BeastEnemyDataBase());
         enemyDB.Beasts.Add(new BeastEnemyDataBase());
         try
