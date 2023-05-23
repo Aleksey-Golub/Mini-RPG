@@ -178,6 +178,7 @@ internal class QuestController
 
 public class Quest
 {
+    private const string CANCELLATION_QUEST_ID = "-1";
     private readonly ILocalizationService _localizationService;
     private readonly QuestData _data;
     private readonly List<Phase> _phases = new List<Phase>();
@@ -221,7 +222,7 @@ public class Quest
         }
     }
 
-    internal int Id => _data.Id;
+    internal string Id => _data.Id;
     internal event Action<Phase> CurrentPhaseChanged;
     internal event Action<Phase> PhaseComplited;
     internal event Action<Quest> QuestComplited;
@@ -251,8 +252,8 @@ public class Quest
         {
             PhaseComplited?.Invoke(CurrentPhase);
 
-            int nextPhaseId = CurrentPhase.NextPhaseId;
-            CurrentPhase = nextPhaseId == -1 ? null : _phases.FirstOrDefault(p => p.Id == nextPhaseId);
+            string nextPhaseId = CurrentPhase.NextPhaseId;
+            CurrentPhase = nextPhaseId == CANCELLATION_QUEST_ID ? null : _phases.FirstOrDefault(p => p.Id == nextPhaseId);
             if (CurrentPhase != null)
                 CurrentPhaseSwitched?.Invoke(this);
         }
@@ -288,9 +289,9 @@ internal class Phase
     }
 
     internal IReadOnlyList<Goal> Goals => _goals;
-    internal int Id => _data.Id;
+    internal string Id => _data.Id;
     internal string DescriptionLocalizationKey => _data.DescriptionLocalizationKey;
-    internal int NextPhaseId => _data.NextPhaseId;
+    internal string NextPhaseId => _data.NextPhaseId;
     internal string PhaseGoalsComplitedMessageKey => _data.PhaseGoalsComplitedMessageKey;
     internal bool IsComplited => _goals.All(x => x.IsComplited == true);
 

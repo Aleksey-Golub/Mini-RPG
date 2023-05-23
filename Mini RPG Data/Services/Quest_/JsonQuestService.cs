@@ -23,10 +23,9 @@ public class JsonQuestService : IQuestService
         WriteCommentsToFile("Comments_QuestDB.json");
 
         WriteExamplesToFile("ExampleQuestDB.json");
-        //WriteExamplesToFile(DB_PATH);
     }
 
-    public QuestData? GetByIdOrNull(int id)
+    public QuestData? GetByIdOrNull(string id)
     {
         foreach (var quest in _questDB.Quests)
             if (quest.Id == id)
@@ -54,7 +53,7 @@ public class JsonQuestService : IQuestService
     private void WriteExamplesToFile(string localFilePath)
     {
         var questDB = new QuestDB();
-        questDB.Quests.Add(new QuestData() { Id = 0, Name = "", Description = "", Phases = new List<QuestPhaseData>() { new QuestPhaseData() { Goals = new List<QuestPhaseGoalData>() { new QuestPhaseGoalData() } } } });
+        questDB.Quests.Add(new QuestData() { Id = "0", Name = "", Description = "", Phases = new List<QuestPhaseData>() { new QuestPhaseData() { Goals = new List<QuestPhaseGoalData>() { new QuestPhaseGoalData() } } } });
 
         try
         {

@@ -15,6 +15,7 @@ namespace Mini_RPG_Data.Controllers.Screens;
 
 public class CharacterCreationScreenController
 {
+    private const string MAIN_QUEST_ID = "Main_Quest";
     private readonly ICharacterCreationScreenView _characterCreationScreen;
     private readonly IIntroScreenView _introScreen;
     private readonly IPersistentProgressService _progressService;
@@ -87,7 +88,7 @@ public class CharacterCreationScreenController
 
     private void SetMainQuest(PlayerProgress progress)
     {
-        QuestData mainQuestData = _questService.GetByIdOrNull(0);
+        QuestData mainQuestData = _questService.GetByIdOrNull(MAIN_QUEST_ID);
         QuestPhaseData firstPhase = mainQuestData.Phases[0];
         List<int> goalsProgresses = new int[firstPhase.Goals.Count].ToList();
         progress.PlayerData.QuestsData.CurrentQuests.Add(

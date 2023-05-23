@@ -3,10 +3,10 @@
 [Serializable]
 public class QuestPhaseData
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
     public string Description { get; set; }
     public string DescriptionLocalizationKey { get; set; }
-    public int NextPhaseId { get; set; }
+    public string NextPhaseId { get; set; }
     public List<QuestPhaseGoalData> Goals { get; set; } = new List<QuestPhaseGoalData>();
     public string PhaseGoalsComplitedMessageKey { get; set; }
 }

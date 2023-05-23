@@ -4,5 +4,5 @@ namespace Mini_RPG_Data.Services.Quest_;
 
 public interface IQuestService : IService
 {
-    QuestData? GetByIdOrNull(int id);
+    QuestData? GetByIdOrNull(string id);
 }
