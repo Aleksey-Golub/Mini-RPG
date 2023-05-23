@@ -1,0 +1,109 @@
+{
+	"Quests": [
+		{
+			"Id": "Main_Quest",
+			"Name": "Main Quest",
+			"NameLocalizationKey": "Quest_0_Name",
+			"Description": "Arrive to Town, find greenskins, reache 10 lvl, kill mainOrcWarlord (Find the source of the local residents' concerns and fix the problem)",
+			"DescriptionLocalizationKey": "Quest_0_Description",
+			"Phases": [
+				{
+					"Id": "Main_Quest_1",
+					"Description": "Meeting with first goblin (Explore the neighborhood)",
+					"DescriptionLocalizationKey": "Quest_0_1_Description",
+					"NextPhaseId": "Main_Quest_10",
+					"Goals": [
+						{
+							"GoalType": 7,
+							"TargetId": 4,
+							"RequaredProgress": 1,
+							"Description": "Meeting first goblin (Explore the neighborhood)",
+							"DescriptionLocalizationKey": "Quest_0_1_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_1_PhaseComplitedMessage"
+				},
+				{
+					"Id": "Main_Quest_10",
+					"Description": "Meeting with first orc (Continue exploring the neighborhood)",
+					"DescriptionLocalizationKey": "Quest_0_10_Description",
+					"NextPhaseId": "Main_Quest_20",
+					"Goals": [
+						{
+							"GoalType": 7,
+							"TargetId": 5,
+							"RequaredProgress": 1,
+							"Description": "Meeting with first orc (Continue exploring the neighborhood)",
+							"DescriptionLocalizationKey": "Quest_0_10_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_10_PhaseComplitedMessage"
+				},
+				{
+					"Id": "Main_Quest_20",
+					"Description": "Reache 8 lvl (prepare to meet the main source of problems)",
+					"DescriptionLocalizationKey": "Quest_0_20_Description",
+					"NextPhaseId": "Main_Quest_30",
+					"Goals": [
+						{
+							"GoalType": 8,
+							"TargetId": 0,
+							"RequaredProgress": 8,
+							"Description": "Reach level 8",
+							"DescriptionLocalizationKey": "Quest_0_20_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_20_PhaseComplitedMessage"
+				},
+				{
+					"Id": "Main_Quest_30",
+					"Description": "Find and Kill OrcWarlord",
+					"DescriptionLocalizationKey": "Quest_0_30_Description",
+					"NextPhaseId": "Main_Quest_-1",
+					"Goals": [
+						{
+							"GoalType": 3,
+							"TargetId": 10013,
+							"RequaredProgress": 1,
+							"Description": "Find and Kill OrcWarlord",
+							"DescriptionLocalizationKey": "Quest_0_30_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_30_PhaseComplitedMessage"
+				},
+				{
+					"Id": "Main_Quest_100",
+					"Description": "Quest ended",
+					"DescriptionLocalizationKey": "Quest_0_100_Description",
+					"NextPhaseId": "Main_Quest_-1",
+					"Goals": [
+						{
+							"GoalType": 2,
+							"TargetId": 0,
+							"RequaredProgress": 0,
+							"Description": "AutoComplited End Goal",
+							"DescriptionLocalizationKey": "Quest_0_100_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_100_PhaseComplitedMessage"
+				},
+				{
+					"Id": "Main_Quest_0",
+					"Description": "Quest started",
+					"DescriptionLocalizationKey": "Quest_0_0_Description",
+					"NextPhaseId": "Main_Quest_1",
+					"Goals": [
+						{
+							"GoalType": 1,
+							"TargetId": 0,
+							"RequaredProgress": 0,
+							"Description": "AutoComplited Start Goal",
+							"DescriptionLocalizationKey": "Quest_0_0_0_GoalDescription"
+						}
+					],
+					"PhaseGoalsComplitedMessageKey": "Quest_0_0_PhaseComplitedMessage"
+				}
+			]
+		}
+	]
+}

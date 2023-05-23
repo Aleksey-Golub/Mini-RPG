@@ -1,0 +1,1924 @@
+{
+	"Characters": [
+		{
+			"Id": 10000,
+			"Race": 4,
+			"Name": "YoungGoblinArcher",
+			"AvatarPath": "Enemies\\GoblinArcher_1.png",
+			"LevelData": {
+				"Value": 3,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 8
+				},
+				"ConstitutionData": {
+					"Value": 7
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10007
+					}
+				],
+				"EquippedItems": [
+					null,
+					null,
+					{
+						"Type": 3,
+						"Id": 30002
+					},
+					null,
+					{
+						"Type": 2,
+						"Id": 20009
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10001,
+			"Race": 4,
+			"Name": "GoblinArcher",
+			"AvatarPath": "Enemies\\GoblinArcher_2.png",
+			"LevelData": {
+				"Value": 5,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 9
+				},
+				"ConstitutionData": {
+					"Value": 8
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10007
+					}
+				],
+				"EquippedItems": [
+					null,
+					{
+						"Type": 3,
+						"Id": 30001
+					},
+					{
+						"Type": 3,
+						"Id": 30006
+					},
+					{
+						"Type": 3,
+						"Id": 30003
+					},
+					{
+						"Type": 2,
+						"Id": 20010
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10002,
+			"Race": 4,
+			"Name": "OldGoblinArcher",
+			"AvatarPath": "Enemies\\GoblinArcher_3.png",
+			"LevelData": {
+				"Value": 7,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 10
+				},
+				"ConstitutionData": {
+					"Value": 8
+				},
+				"PerceptionData": {
+					"Value": 10
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10007
+					},
+					{
+						"Type": 1,
+						"Id": 10007
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30004
+					},
+					{
+						"Type": 3,
+						"Id": 30005
+					},
+					{
+						"Type": 3,
+						"Id": 30006
+					},
+					{
+						"Type": 3,
+						"Id": 30007
+					},
+					{
+						"Type": 2,
+						"Id": 20010
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10003,
+			"Race": 4,
+			"Name": "YoungGoblinWarrior",
+			"AvatarPath": "Enemies\\GoblinWarrior_1.png",
+			"LevelData": {
+				"Value": 4,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 8
+				},
+				"ConstitutionData": {
+					"Value": 8
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 2,
+						"Id": 20000
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30000
+					},
+					{
+						"Type": 3,
+						"Id": 30001
+					},
+					{
+						"Type": 3,
+						"Id": 30002
+					},
+					{
+						"Type": 3,
+						"Id": 30003
+					},
+					{
+						"Type": 2,
+						"Id": 20000
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10004,
+			"Race": 4,
+			"Name": "GoblinWarrior",
+			"AvatarPath": "Enemies\\GoblinWarrior_2.png",
+			"LevelData": {
+				"Value": 6,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 9
+				},
+				"ConstitutionData": {
+					"Value": 9
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 2,
+						"Id": 20001
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30004
+					},
+					{
+						"Type": 3,
+						"Id": 30005
+					},
+					{
+						"Type": 3,
+						"Id": 30006
+					},
+					{
+						"Type": 3,
+						"Id": 30007
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10005,
+			"Race": 4,
+			"Name": "OldGoblinWarrior",
+			"AvatarPath": "Enemies\\GoblinWarrior_3.png",
+			"LevelData": {
+				"Value": 8,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 7
+				},
+				"DexterityData": {
+					"Value": 11
+				},
+				"ConstitutionData": {
+					"Value": 10
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 2,
+						"Id": 20001
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30008
+					},
+					{
+						"Type": 3,
+						"Id": 30005
+					},
+					{
+						"Type": 3,
+						"Id": 30010
+					},
+					{
+						"Type": 3,
+						"Id": 30007
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10006,
+			"Race": 5,
+			"Name": "YoungOrcArcher",
+			"AvatarPath": "Enemies\\OrcArcher_1.png",
+			"LevelData": {
+				"Value": 5,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 8
+				},
+				"DexterityData": {
+					"Value": 9
+				},
+				"ConstitutionData": {
+					"Value": 9
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10006
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30012
+					},
+					{
+						"Type": 3,
+						"Id": 30001
+					},
+					{
+						"Type": 3,
+						"Id": 30014
+					},
+					{
+						"Type": 3,
+						"Id": 30003
+					},
+					{
+						"Type": 2,
+						"Id": 20009
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10007,
+			"Race": 5,
+			"Name": "OrcArcher",
+			"AvatarPath": "Enemies\\OrcArcher_2.png",
+			"LevelData": {
+				"Value": 7,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 8
+				},
+				"DexterityData": {
+					"Value": 10
+				},
+				"ConstitutionData": {
+					"Value": 9
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10006
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30016
+					},
+					{
+						"Type": 3,
+						"Id": 30005
+					},
+					{
+						"Type": 3,
+						"Id": 30018
+					},
+					{
+						"Type": 3,
+						"Id": 30007
+					},
+					{
+						"Type": 2,
+						"Id": 20010
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10008,
+			"Race": 5,
+			"Name": "OldOrcArcher",
+			"AvatarPath": "Enemies\\OrcArcher_3.png",
+			"LevelData": {
+				"Value": 9,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 8
+				},
+				"DexterityData": {
+					"Value": 11
+				},
+				"ConstitutionData": {
+					"Value": 10
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10006
+					},
+					{
+						"Type": 1,
+						"Id": 10006
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30016
+					},
+					{
+						"Type": 3,
+						"Id": 30009
+					},
+					{
+						"Type": 3,
+						"Id": 30018
+					},
+					{
+						"Type": 3,
+						"Id": 30011
+					},
+					{
+						"Type": 2,
+						"Id": 20010
+					},
+					null
+				]
+			}
+		},
+		{
+			"Id": 10009,
+			"Race": 5,
+			"Name": "YoungOrcWarrior",
+			"AvatarPath": "Enemies\\OrcWarrior_1.png",
+			"LevelData": {
+				"Value": 6,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 10
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 9
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 10006
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30012
+					},
+					{
+						"Type": 3,
+						"Id": 30001
+					},
+					{
+						"Type": 3,
+						"Id": 30014
+					},
+					{
+						"Type": 3,
+						"Id": 30003
+					},
+					{
+						"Type": 2,
+						"Id": 20000
+					},
+					{
+						"Type": 5,
+						"Id": 50000
+					}
+				]
+			}
+		},
+		{
+			"Id": 10010,
+			"Race": 5,
+			"Name": "OrcWarrior",
+			"AvatarPath": "Enemies\\OrcWarrior_2.png",
+			"LevelData": {
+				"Value": 8,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 11
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 10
+				},
+				"PerceptionData": {
+					"Value": 9
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 1,
+						"Id": 6
+					},
+					{
+						"Type": 1,
+						"Id": 6
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30016
+					},
+					{
+						"Type": 3,
+						"Id": 30005
+					},
+					{
+						"Type": 3,
+						"Id": 30018
+					},
+					{
+						"Type": 3,
+						"Id": 30007
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					{
+						"Type": 5,
+						"Id": 50002
+					}
+				]
+			}
+		},
+		{
+			"Id": 10011,
+			"Race": 5,
+			"Name": "OldOrcWarrior",
+			"AvatarPath": "Enemies\\OrcWarrior_3.png",
+			"LevelData": {
+				"Value": 10,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 12
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 12
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 6
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 5,
+						"Id": 50002
+					},
+					{
+						"Type": 1,
+						"Id": 10006
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30016
+					},
+					{
+						"Type": 3,
+						"Id": 30009
+					},
+					{
+						"Type": 3,
+						"Id": 30018
+					},
+					{
+						"Type": 3,
+						"Id": 30011
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					{
+						"Type": 5,
+						"Id": 50002
+					}
+				]
+			}
+		},
+		{
+			"Id": 10012,
+			"Race": 5,
+			"Name": "YoungOrcWarlord",
+			"AvatarPath": "Enemies\\OrcWarlord_1.png",
+			"LevelData": {
+				"Value": 7,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 10
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 10
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 5,
+						"Id": 50001
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30024
+					},
+					{
+						"Type": 3,
+						"Id": 30013
+					},
+					{
+						"Type": 3,
+						"Id": 30026
+					},
+					{
+						"Type": 3,
+						"Id": 30015
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					{
+						"Type": 5,
+						"Id": 50001
+					}
+				]
+			}
+		},
+		{
+			"Id": 10013,
+			"Race": 5,
+			"Name": "OrcWarlord",
+			"AvatarPath": "Enemies\\OrcWarlord_2.png",
+			"LevelData": {
+				"Value": 9,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 11
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 11
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 5,
+						"Id": 50001
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30028
+					},
+					{
+						"Type": 3,
+						"Id": 30013
+					},
+					{
+						"Type": 3,
+						"Id": 30030
+					},
+					{
+						"Type": 3,
+						"Id": 30015
+					},
+					{
+						"Type": 2,
+						"Id": 20001
+					},
+					{
+						"Type": 5,
+						"Id": 50002
+					}
+				]
+			}
+		},
+		{
+			"Id": 10014,
+			"Race": 5,
+			"Name": "OldOrcWarlord",
+			"AvatarPath": "Enemies\\OrcWarlord_3.png",
+			"LevelData": {
+				"Value": 11,
+				"CurrentExperience": 0
+			},
+			"HealthData": {
+				"CurrentHealth": 0
+			},
+			"SatiationData": {
+				"FoodSatiation": 500,
+				"WaterSatiation": 500
+			},
+			"AbilitiesDatas": {
+				"AbilityPoints": 0,
+				"StrengthData": {
+					"Value": 12
+				},
+				"DexterityData": {
+					"Value": 7
+				},
+				"ConstitutionData": {
+					"Value": 12
+				},
+				"PerceptionData": {
+					"Value": 8
+				},
+				"CharismaData": {
+					"Value": 7
+				}
+			},
+			"InventoryData": {
+				"Items": [
+					{
+						"Type": 2,
+						"Id": 20002
+					}
+				],
+				"EquippedItems": [
+					{
+						"Type": 3,
+						"Id": 30028
+					},
+					{
+						"Type": 3,
+						"Id": 30017
+					},
+					{
+						"Type": 3,
+						"Id": 30030
+					},
+					{
+						"Type": 3,
+						"Id": 30019
+					},
+					{
+						"Type": 2,
+						"Id": 20002
+					},
+					{
+						"Type": 5,
+						"Id": 50002
+					}
+				]
+			}
+		}
+	],
+	"Beasts": [
+		{
+			"CharacterData": {
+				"Id": 20000,
+				"Race": 6,
+				"Name": "YoungBoar",
+				"AvatarPath": "Enemies\\Boar_1.png",
+				"LevelData": {
+					"Value": 1,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 0
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10003
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 5,
+			"FieldOfView": 2,
+			"Experience": 5,
+			"AttackModifier": -1,
+			"DefenseModifier": -1,
+			"InitiativeModifier": 0,
+			"MinDamage": 2,
+			"MaxDamage": 4,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20001,
+				"Race": 6,
+				"Name": "Boar",
+				"AvatarPath": "Enemies\\Boar_2.png",
+				"LevelData": {
+					"Value": 3,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 10
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10004
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 10,
+			"FieldOfView": 2,
+			"Experience": 20,
+			"AttackModifier": 1,
+			"DefenseModifier": 1,
+			"InitiativeModifier": 1,
+			"MinDamage": 4,
+			"MaxDamage": 6,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 2,
+				"Type": 2
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 2
+			},
+			"BodyArmor": {
+				"Value": 1,
+				"Type": 2
+			},
+			"LegsArmor": {
+				"Value": 1,
+				"Type": 2
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20002,
+				"Race": 6,
+				"Name": "OldBoar",
+				"AvatarPath": "Enemies\\Boar_3.png",
+				"LevelData": {
+					"Value": 5,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 15
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10005
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 15,
+			"FieldOfView": 2,
+			"Experience": 40,
+			"AttackModifier": 2,
+			"DefenseModifier": 2,
+			"InitiativeModifier": 2,
+			"MinDamage": 6,
+			"MaxDamage": 8,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 4,
+				"Type": 2
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 2
+			},
+			"BodyArmor": {
+				"Value": 2,
+				"Type": 2
+			},
+			"LegsArmor": {
+				"Value": 1,
+				"Type": 2
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20003,
+				"Race": 6,
+				"Name": "YoungRat",
+				"AvatarPath": "Enemies\\Rat_1.png",
+				"LevelData": {
+					"Value": 1,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 0
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 4,
+			"FieldOfView": 2,
+			"Experience": 5,
+			"AttackModifier": -1,
+			"DefenseModifier": 1,
+			"InitiativeModifier": -1,
+			"MinDamage": 2,
+			"MaxDamage": 3,
+			"DamageType": 1,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20004,
+				"Race": 6,
+				"Name": "Rat",
+				"AvatarPath": "Enemies\\Rat_2.png",
+				"LevelData": {
+					"Value": 3,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 6
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 6,
+			"FieldOfView": 2,
+			"Experience": 15,
+			"AttackModifier": 0,
+			"DefenseModifier": 2,
+			"InitiativeModifier": 0,
+			"MinDamage": 4,
+			"MaxDamage": 5,
+			"DamageType": 1,
+			"HeadArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20005,
+				"Race": 6,
+				"Name": "OldRat",
+				"AvatarPath": "Enemies\\Rat_3.png",
+				"LevelData": {
+					"Value": 5,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 10
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 10,
+			"FieldOfView": 2,
+			"Experience": 35,
+			"AttackModifier": 2,
+			"DefenseModifier": 3,
+			"InitiativeModifier": 2,
+			"MinDamage": 6,
+			"MaxDamage": 7,
+			"DamageType": 1,
+			"HeadArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 1,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20006,
+				"Race": 6,
+				"Name": "YoungWolf",
+				"AvatarPath": "Enemies\\Wolf_1.png",
+				"LevelData": {
+					"Value": 2,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 7
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10000
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 7,
+			"FieldOfView": 2,
+			"Experience": 10,
+			"AttackModifier": 0,
+			"DefenseModifier": 0,
+			"InitiativeModifier": 0,
+			"MinDamage": 4,
+			"MaxDamage": 6,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20007,
+				"Race": 6,
+				"Name": "Wolf",
+				"AvatarPath": "Enemies\\Wolf_2.png",
+				"LevelData": {
+					"Value": 4,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 10
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10001
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 10,
+			"FieldOfView": 2,
+			"Experience": 20,
+			"AttackModifier": 2,
+			"DefenseModifier": 1,
+			"InitiativeModifier": 1,
+			"MinDamage": 6,
+			"MaxDamage": 8,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 1,
+				"Type": 2
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 1,
+				"Type": 2
+			},
+			"LegsArmor": {
+				"Value": 1,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20008,
+				"Race": 6,
+				"Name": "OldWolf",
+				"AvatarPath": "Enemies\\Wolf_3.png",
+				"LevelData": {
+					"Value": 6,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 13
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [
+						{
+							"Type": 1,
+							"Id": 10002
+						}
+					],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 13,
+			"FieldOfView": 2,
+			"Experience": 35,
+			"AttackModifier": 3,
+			"DefenseModifier": 3,
+			"InitiativeModifier": 3,
+			"MinDamage": 8,
+			"MaxDamage": 10,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 2,
+				"Type": 2
+			},
+			"HandsArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 2,
+				"Type": 2
+			},
+			"LegsArmor": {
+				"Value": 2,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20009,
+				"Race": 6,
+				"Name": "YoungBat",
+				"AvatarPath": "Enemies\\Bat_1.png",
+				"LevelData": {
+					"Value": 2,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 5
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 5,
+			"FieldOfView": 2,
+			"Experience": 10,
+			"AttackModifier": 0,
+			"DefenseModifier": 2,
+			"InitiativeModifier": 2,
+			"MinDamage": 2,
+			"MaxDamage": 4,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 0,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 0,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20010,
+				"Race": 6,
+				"Name": "Bat",
+				"AvatarPath": "Enemies\\Bat_2.png",
+				"LevelData": {
+					"Value": 4,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 7
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 7,
+			"FieldOfView": 2,
+			"Experience": 25,
+			"AttackModifier": 1,
+			"DefenseModifier": 3,
+			"InitiativeModifier": 3,
+			"MinDamage": 4,
+			"MaxDamage": 6,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 1,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 1,
+				"Type": 1
+			}
+		},
+		{
+			"CharacterData": {
+				"Id": 20011,
+				"Race": 6,
+				"Name": "OldBat",
+				"AvatarPath": "Enemies\\Bat_3.png",
+				"LevelData": {
+					"Value": 6,
+					"CurrentExperience": 0
+				},
+				"HealthData": {
+					"CurrentHealth": 10
+				},
+				"SatiationData": {
+					"FoodSatiation": 500,
+					"WaterSatiation": 500
+				},
+				"AbilitiesDatas": {
+					"AbilityPoints": 0,
+					"StrengthData": {
+						"Value": 7
+					},
+					"DexterityData": {
+						"Value": 7
+					},
+					"ConstitutionData": {
+						"Value": 7
+					},
+					"PerceptionData": {
+						"Value": 7
+					},
+					"CharismaData": {
+						"Value": 7
+					}
+				},
+				"InventoryData": {
+					"Items": [],
+					"EquippedItems": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null
+					]
+				}
+			},
+			"MaxHealth": 10,
+			"FieldOfView": 2,
+			"Experience": 35,
+			"AttackModifier": 3,
+			"DefenseModifier": 4,
+			"InitiativeModifier": 4,
+			"MinDamage": 6,
+			"MaxDamage": 8,
+			"DamageType": 2,
+			"HeadArmor": {
+				"Value": 3,
+				"Type": 1
+			},
+			"HandsArmor": {
+				"Value": 2,
+				"Type": 1
+			},
+			"BodyArmor": {
+				"Value": 3,
+				"Type": 1
+			},
+			"LegsArmor": {
+				"Value": 2,
+				"Type": 1
+			}
+		}
+	]
+}
