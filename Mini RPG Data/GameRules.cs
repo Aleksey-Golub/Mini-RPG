@@ -12,8 +12,8 @@ namespace Mini_RPG_Data;
 
 public static class GameRules
 {
-    public static IRandomService RandomService;
-    public static IItemFactory ItemFactory;
+    private static IRandomService _randomService;
+    private static IItemFactory _itemFactory;
 
     public const int MAX_CHARACTER_NAME_LENGTH = 18;
     public const int DEFAULT_FIELD_OF_VIEW = 2;
@@ -45,7 +45,13 @@ public static class GameRules
     public static string AvatarsDirectory => $"Avatars";
     public static string DefaultAvatarPath => $"{AvatarsDirectory}\\Avatar_Human_1.png";
 
-    internal static int CalculateInitiative(ICharacter character) => RandomService.Get1D6() + character.InitiativeModifier;
+    public static void Init(IRandomService randomService, IItemFactory itemFactory)
+    {
+        _randomService = randomService;
+        _itemFactory = itemFactory;
+    }
+
+    internal static int CalculateInitiative(ICharacter character) => _randomService.Get1D6() + character.InitiativeModifier;
     internal static int CalculateStarve(ICharacter character, SatiationData data) => 2;
     internal static HungerLevel CalculateHungerLevel(ICharacter character, SatiationData data)
     {
@@ -149,7 +155,7 @@ public static class GameRules
 
     private static void TryAddRandomItemSaveData(TownTraderData townTraderData, ItemType itemType = ItemType.None, int itemRating = -1)
     {
-        var item = ItemFactory.CreateRandomOrNull(itemType, itemRating);
+        var item = _itemFactory.CreateRandomOrNull(itemType, itemRating);
         if (item != null)
             townTraderData.InventoryData.Items.Add(new ItemSaveData(item.Type, item.Id));
     }
@@ -173,7 +179,7 @@ public static class GameRules
             ? 10
             : 12;
 
-        return RandomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
+        return _randomService.Get1D6(2) + character.AllAbilities.Constitution.Bonus >= value;
     }
 
     internal static int CalculateFoundedInLootMoney(Player player)
@@ -182,7 +188,7 @@ public static class GameRules
         int min = 1;
         int max = 20;
 
-        return RandomService.GetIntInclusive(min, max);
+        return _randomService.GetIntInclusive(min, max);
     }
 
     internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
@@ -198,7 +204,7 @@ public static class GameRules
         // lvl 7,8 - 4
         // lvl 9,10 - 5 if maxLvl == 10
 
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         if (IsCriticalFail(_2D6))
             return false;
@@ -255,9 +261,9 @@ public static class GameRules
 
     private static bool TryAddRandomItem(int chance, List<ItemBase> loot, ItemType itemType, int itemRating = -1)
     {
-        if (RandomService.Get1D100() <= chance)
+        if (_randomService.Get1D100() <= chance)
         {
-            ItemBase? item = ItemFactory.CreateRandomOrNull(itemType, itemRating);
+            ItemBase? item = _itemFactory.CreateRandomOrNull(itemType, itemRating);
             if (item != null)
             {
                 loot.Add(item);
@@ -270,7 +276,7 @@ public static class GameRules
 
     internal static bool TryBreakChest(Player player)
     {
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         if (IsCriticalFail(_2D6))
             return false;
@@ -282,7 +288,7 @@ public static class GameRules
 
     internal static bool TryFindHiddenLoot(Player player)
     {
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         if (IsCriticalFail(_2D6))
             return false;
@@ -299,7 +305,7 @@ public static class GameRules
         if (player.Character.AllAbilities.Perception.Bonus < minNeededPerception)
             return false;
 
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         if (IsCriticalFail(_2D6))
             return false;
@@ -311,7 +317,7 @@ public static class GameRules
 
     internal static bool TryFindTrap(Player player)
     {
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         if (IsCriticalFail(_2D6))
             return false;
@@ -331,8 +337,8 @@ public static class GameRules
 
         return trapType switch
         {
-            TrapType.SpikeTrap => RandomService.Get1D3(multiplier),
-            TrapType.BearTrap => RandomService.Get1D6(multiplier),
+            TrapType.SpikeTrap => _randomService.Get1D3(multiplier),
+            TrapType.BearTrap => _randomService.Get1D6(multiplier),
             TrapType.None => throw new NotImplementedException(),
             _ => throw new NotImplementedException(),
         };
@@ -393,7 +399,7 @@ public static class GameRules
 
     internal static (string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit) HandleAttack(ICharacter attacker, ICharacter defender)
     {
-        int _2D6 = RandomService.Get1D6(2);
+        int _2D6 = _randomService.Get1D6(2);
 
         bool attackSuccess = _2D6 + attacker.AttackModifier >= 7 + defender.DefenseModifier;
         if (IsCriticalFail(_2D6))
@@ -415,7 +421,7 @@ public static class GameRules
     private static (int damage, bool isCrit) CalculateDamage(ICharacter attacker, ICharacter target)
     {
         DamageType damageType = attacker.DamageType;
-        int rawDamage = RandomService.GetIntInclusive(attacker.MinDamage, attacker.MaxDamage) + attacker.AttackModifier;
+        int rawDamage = _randomService.GetIntInclusive(attacker.MinDamage, attacker.MaxDamage) + attacker.AttackModifier;
         BodyPart bodyPart = GetHittedBodyPart();
 
         Armor armor = target.GetArmor(bodyPart);
@@ -470,7 +476,7 @@ public static class GameRules
         return character.Level.Value * 12;
     }
 
-    internal static bool HandlePlayerBattleEscape(Character character) => RandomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 9;
+    internal static bool HandlePlayerBattleEscape(Character character) => _randomService.Get1D100() <= 50 + character.AllAbilities.Perception.Bonus * 9;
 
     private static bool IsCriticalFail(int _2D6) => _2D6 == 2;
     private static bool IsCriticalSuccess(int _2D6) => _2D6 == 12;

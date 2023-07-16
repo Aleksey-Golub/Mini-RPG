@@ -125,7 +125,8 @@ public partial class Main : Form
         _services.RegisterSingle<IQuestService>(new JsonQuestService());
         _services.RegisterSingle<IEventService>(new EventService());
 
-        GameRules.RandomService = _services.Single<IRandomService>();
-        GameRules.ItemFactory = _services.Single<IItemFactory>();
+        GameRules.Init(
+            _services.Single<IRandomService>(), 
+            _services.Single<IItemFactory>());
     }
 }
