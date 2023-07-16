@@ -14,7 +14,7 @@
 					"NextPhaseId": "Main_Quest_10",
 					"Goals": [
 						{
-							"GoalType": 7,
+							"GoalType": "MeetEnemyWithRace",
 							"TargetId": "Goblin",
 							"RequaredProgress": 1,
 							"Description": "Meeting first goblin (Explore the neighborhood)",
@@ -30,7 +30,7 @@
 					"NextPhaseId": "Main_Quest_20",
 					"Goals": [
 						{
-							"GoalType": 7,
+							"GoalType": "MeetEnemyWithRace",
 							"TargetId": "Orc",
 							"RequaredProgress": 1,
 							"Description": "Meeting with first orc (Continue exploring the neighborhood)",
@@ -46,7 +46,7 @@
 					"NextPhaseId": "Main_Quest_30",
 					"Goals": [
 						{
-							"GoalType": 8,
+							"GoalType": "ReacheLevel",
 							"TargetId": "-1",
 							"RequaredProgress": 8,
 							"Description": "Reach level 8",
@@ -62,7 +62,7 @@
 					"NextPhaseId": "-1",
 					"Goals": [
 						{
-							"GoalType": 3,
+							"GoalType": "KillEnemyWithId",
 							"TargetId": "OrcWarlord",
 							"RequaredProgress": 1,
 							"Description": "Find and Kill OrcWarlord",
@@ -78,7 +78,7 @@
 					"NextPhaseId": "-1",
 					"Goals": [
 						{
-							"GoalType": 2,
+							"GoalType": "QuestEnded",
 							"TargetId": "-1",
 							"RequaredProgress": 0,
 							"Description": "AutoComplited End Goal",
@@ -94,7 +94,7 @@
 					"NextPhaseId": "Main_Quest_1",
 					"Goals": [
 						{
-							"GoalType": 1,
+							"GoalType": "QuestStarted",
 							"TargetId": "-1",
 							"RequaredProgress": 0,
 							"Description": "AutoComplited Start Goal",

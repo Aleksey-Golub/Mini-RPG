@@ -1,5 +1,6 @@
 ﻿using Mini_RPG_Data.Datas.Quest_.QuestDB;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Mini_RPG_Data.Services.Quest_;
 
@@ -12,6 +13,7 @@ public class JsonQuestService : IQuestService
     public JsonQuestService()
     {
         _options = new JsonSerializerOptions { IncludeFields = true };
+        _options.Converters.Add(new JsonStringEnumConverter());
 
         try
         {
@@ -20,9 +22,8 @@ public class JsonQuestService : IQuestService
         }
         catch { }
 
-        WriteCommentsToFile("Comments_QuestDB.json");
-
-        WriteExamplesToFile("ExampleQuestDB.json");
+        //WriteCommentsToFile("Comments_QuestDB.json");
+        //WriteExamplesToFile("ExampleQuestDB.json");
     }
 
     public QuestData? GetByIdOrNull(string id)
@@ -53,7 +54,25 @@ public class JsonQuestService : IQuestService
     private void WriteExamplesToFile(string localFilePath)
     {
         var questDB = new QuestDB();
-        questDB.Quests.Add(new QuestData() { Id = "0", Name = "", Description = "", Phases = new List<QuestPhaseData>() { new QuestPhaseData() { Goals = new List<QuestPhaseGoalData>() { new QuestPhaseGoalData() } } } });
+        questDB.Quests.Add(new QuestData() 
+        { 
+            Id = "0", 
+            Name = "", 
+            Description = "", 
+            Phases = new List<QuestPhaseData>() 
+            { 
+                new QuestPhaseData() 
+                { 
+                    Goals = new List<QuestPhaseGoalData>() 
+                    { 
+                        new QuestPhaseGoalData() 
+                        { 
+                            GoalType = QuestPhaseGoalType.CollectItem
+                        }
+                    } 
+                } 
+            } 
+        });
 
         try
         {

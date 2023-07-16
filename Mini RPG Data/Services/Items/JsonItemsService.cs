@@ -2,6 +2,7 @@
 using Mini_RPG_Data.Datas.Inventory_;
 using Mini_RPG_Data.Datas.Inventory_.Items;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Mini_RPG_Data.Services.Items;
 
@@ -14,33 +15,17 @@ public class JsonItemsService : IItemsService
     public JsonItemsService()
     {
         _options = new JsonSerializerOptions { IncludeFields = true };
+        _options.Converters.Add(new JsonStringEnumConverter());
 
         try
         {
             string text = File.ReadAllText(DB_PATH);
             _itemsDB = JsonSerializer.Deserialize<ItemsDB>(text, _options);
-
-
-            //foreach (var item in _itemsDB.CommonItems)
-            //    item.Id = item.Name;
-            //foreach (var item in _itemsDB.WeaponItems)
-            //    item.Id = item.Name;
-            //foreach (var item in _itemsDB.ArmorItems)
-            //    item.Id = item.Name;
-            //foreach (var item in _itemsDB.PotionItems)
-            //    item.Id = item.Name;
-            //foreach (var item in _itemsDB.FoodItems)
-            //    item.Id = item.Name;
-            //foreach (var item in _itemsDB.ShieldItems)
-            //    item.Id = item.Name;
-            //string jsonString = JsonSerializer.Serialize(_itemsDB, _options);
-            //File.WriteAllText(DB_PATH, jsonString);
         }
         catch { }
 
-        WriteCommentsToFile("Comments_ItemsDB.json");
-
-        WriteExamplesToFile("ExampleItemsDB.json");
+        //WriteCommentsToFile("Comments_ItemsDB.json");
+        //WriteExamplesToFile("ExampleItemsDB.json");
     }
 
     public ItemDataBase? GetItemDataOrNull(ItemSaveData itemSaveData)
