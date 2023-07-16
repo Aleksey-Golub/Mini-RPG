@@ -1,1 +1,1 @@
-["QuestPhaseGoalType: None = 0, QuestStarted = 1, QuestEnded = 2, KillEnemyWithId = 3, KillEnemyWithRace = 4, CollectItem = 5, MeetEnemyWithId = 6, MeetEnemyWithRace = 7, ReacheLevel = 8, "]
+["QuestPhaseGoalType","None = 0","QuestStarted = 1","QuestEnded = 2","KillEnemyWithId = 3","KillEnemyWithRace = 4","CollectItem = 5","MeetEnemyWithId = 6","MeetEnemyWithRace = 7","ReacheLevel = 8"]

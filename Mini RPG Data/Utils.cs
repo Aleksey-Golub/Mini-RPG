@@ -1,23 +1,23 @@
 ﻿using Mini_RPG_Data.Services;
 using Mini_RPG_Data.Services.Random_;
-using System.Text;
 
 namespace Mini_RPG_Data;
 
 public static class Utils
 {
-    public static string EnumToString<T>() where T : Enum
+    public static List<string> EnumToStringList<T>() where T : Enum
     {
-        var sbItems = new StringBuilder();
+        List<string> list = new();
+
         string enumToString = typeof(T).ToString();
         string shortName = enumToString.Substring(enumToString.LastIndexOf('.') + 1);
-        sbItems.Append($"{shortName}: ");
+        list.Add(shortName);
 
         string[] items = Enum.GetNames(typeof(T));
         for (int i = 0; i < items.Length; i++)
-            sbItems.Append($"{items[i]} = {i}, ");
+            list.Add($"{items[i]} = {i}");
 
-        return sbItems.ToString();
+        return list;
     }
 
     public static T GetRandomEnumValueExcludeFirst<T>() where T : Enum

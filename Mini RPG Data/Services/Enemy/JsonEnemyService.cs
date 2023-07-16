@@ -42,11 +42,15 @@ public class JsonEnemyService : IEnemyService
     private void WriteCommentsToFile(string localFilePath)
     {
         var comments = new List<string>();
+        string divider = "---------------------------------------------";
 
-        comments.Add(Utils.EnumToString<Race>());
-        comments.Add(Utils.EnumToString<DamageType>());
-        comments.Add(Utils.EnumToString<ArmorType>());
-        comments.Add(Utils.EnumToString<ItemType>());
+        comments.AddRange(Utils.EnumToStringList<Race>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<DamageType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<ArmorType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<ItemType>());
 
         try
         {
@@ -61,8 +65,8 @@ public class JsonEnemyService : IEnemyService
     private void WriteExamplesToFile(string localFilePath)
     {
         var enemyDB = new EnemyDB();
-        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "0"), new ItemSaveData(ItemType.Common, "1")} } });
-        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "0")} } });
+        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "ItemId_1"), new ItemSaveData(ItemType.Common, "ItemId_2") } } });
+        enemyDB.Characters.Add(new CharacterData() { InventoryData = new InventoryData() { Items = new List<ItemSaveData>() { new ItemSaveData(ItemType.Common, "ItemId_3") } } });
         enemyDB.Beasts.Add(new BeastEnemyDataBase());
         enemyDB.Beasts.Add(new BeastEnemyDataBase());
         try

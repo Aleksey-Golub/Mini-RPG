@@ -38,7 +38,7 @@ public class JsonQuestService : IQuestService
     {
         var comments = new List<string>();
 
-        comments.Add(Utils.EnumToString<QuestPhaseGoalType>());
+        comments.AddRange(Utils.EnumToStringList<QuestPhaseGoalType>());
 
         try
         {

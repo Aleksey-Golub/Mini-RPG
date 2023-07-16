@@ -15,7 +15,7 @@
 					"Goals": [
 						{
 							"GoalType": 7,
-							"TargetId": 4,
+							"TargetId": "Goblin",
 							"RequaredProgress": 1,
 							"Description": "Meeting first goblin (Explore the neighborhood)",
 							"DescriptionLocalizationKey": "Quest_0_1_0_GoalDescription"
@@ -31,7 +31,7 @@
 					"Goals": [
 						{
 							"GoalType": 7,
-							"TargetId": 5,
+							"TargetId": "Orc",
 							"RequaredProgress": 1,
 							"Description": "Meeting with first orc (Continue exploring the neighborhood)",
 							"DescriptionLocalizationKey": "Quest_0_10_0_GoalDescription"
@@ -47,7 +47,7 @@
 					"Goals": [
 						{
 							"GoalType": 8,
-							"TargetId": 0,
+							"TargetId": "-1",
 							"RequaredProgress": 8,
 							"Description": "Reach level 8",
 							"DescriptionLocalizationKey": "Quest_0_20_0_GoalDescription"
@@ -63,7 +63,7 @@
 					"Goals": [
 						{
 							"GoalType": 3,
-							"TargetId": 10013,
+							"TargetId": "OrcWarlord",
 							"RequaredProgress": 1,
 							"Description": "Find and Kill OrcWarlord",
 							"DescriptionLocalizationKey": "Quest_0_30_0_GoalDescription"
@@ -79,7 +79,7 @@
 					"Goals": [
 						{
 							"GoalType": 2,
-							"TargetId": 0,
+							"TargetId": "-1",
 							"RequaredProgress": 0,
 							"Description": "AutoComplited End Goal",
 							"DescriptionLocalizationKey": "Quest_0_100_0_GoalDescription"
@@ -95,7 +95,7 @@
 					"Goals": [
 						{
 							"GoalType": 1,
-							"TargetId": 0,
+							"TargetId": "-1",
 							"RequaredProgress": 0,
 							"Description": "AutoComplited Start Goal",
 							"DescriptionLocalizationKey": "Quest_0_0_0_GoalDescription"

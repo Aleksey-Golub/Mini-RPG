@@ -89,14 +89,21 @@ public class JsonItemsService : IItemsService
     private void WriteCommentsToFile(string localFilePath)
     {
         var comments = new List<string>();
+        string divider = "---------------------------------------------";
 
-        comments.Add(Utils.EnumToString<WeaponType>());
-        comments.Add(Utils.EnumToString<DamageType>());
-        comments.Add(Utils.EnumToString<Grip>());
-        comments.Add(Utils.EnumToString<ArmorType>());
-        comments.Add(Utils.EnumToString<EquipmentSlot>());
-        comments.Add(Utils.EnumToString<EffectType>());
-        comments.Add(Utils.EnumToString<ItemType>());
+        comments.AddRange(Utils.EnumToStringList<WeaponType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<DamageType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<Grip>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<ArmorType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<EquipmentSlot>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<EffectType>());
+        comments.Add(divider);
+        comments.AddRange(Utils.EnumToStringList<ItemType>());
 
         try
         {
