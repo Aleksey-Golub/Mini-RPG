@@ -510,7 +510,7 @@ public partial class GameProcessScreenController
                 if (GameRules.TryFindHiddenChest(_controller._player))
                 {
                     List<ItemBase> loot = GameRules.CalculateFoundedHiddenChest(_controller._player);
-                    int money = GameRules.CalculateFoundedInChestMoney(_controller._player);
+                    int money = GameRules.CalculateFoundedInHiddenChestMoney(_controller._player);
                     
                     _controller._gameProcessView.ShowSuccessFindHiddenChestMessage(money, loot);
                     _controller._player.Wallet.AddMoney(money);

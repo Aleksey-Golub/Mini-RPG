@@ -192,6 +192,7 @@ public static class GameRules
     }
 
     internal static int CalculateFoundedInChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
+    internal static int CalculateFoundedInHiddenChestMoney(Player player) => CalculateFoundedInLootMoney(player) * 4;
     internal static int CalculateFoundedInHiddenLootMoney(Player player) => CalculateFoundedInLootMoney(player) * 2;
 
     internal static bool TryPickLock(Player player)

@@ -997,6 +997,22 @@
 			"Weight": 0.1,
 			"IsStackable": true,
 			"StackSize": 100
+		},
+		{
+			"Effects": [
+				{
+					"EffectType": "ChangeAbilityPoint",
+					"Value": 1
+				}
+			],
+			"PictureName": "AbilityPotion",
+			"Cost": 1000,
+			"Id": "AbilityPotion",
+			"Type": "Potion",
+			"Rating": 4,
+			"Weight": 0.1,
+			"IsStackable": true,
+			"StackSize": 100
 		}
 	],
 	"ShieldItems": [
