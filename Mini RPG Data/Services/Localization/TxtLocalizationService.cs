@@ -92,6 +92,6 @@ public class TxtLocalizationService : ILocalizationService
 
     private static string FormatText(string value)
     {
-        return value.Replace("\\n", Environment.NewLine);
+        return value.Replace("@", Environment.NewLine);
     }
 }
