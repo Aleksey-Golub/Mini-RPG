@@ -259,6 +259,7 @@ public partial class GameProcessScreenController
 
             Controller._eventService.Publish(EventType.MeetEnemyWithId, _enemy.Id);
             Controller._eventService.Publish(EventType.MeetEnemyWithRace, _enemy.Race.ToString());
+            Controller._logView.AddLog(Controller._localizationService.Message_MeetingWithEnemy(_enemy.Name));
 
             Controller._gameProcessView.ShowBattle(_enemy);
         }
@@ -328,12 +329,12 @@ public partial class GameProcessScreenController
             LogAttackResult(res);
         }
 
-        private void LogAttackResult((string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit) res)
+        private void LogAttackResult((string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit, BodyPart bodyPart) res)
         {
             if (res.isSuccess && res.isCrit == false)
-                Controller._logView.AddLog(Controller._localizationService.Message_FirstHitsSecondWithDamage(res.attackerName, res.defenderName, res.damage));
+                Controller._logView.AddLog(Controller._localizationService.Message_FirstHitsSecondWithDamage(res.attackerName, res.defenderName, res.damage, res.bodyPart));
             else if (res.isSuccess && res.isCrit)
-                Controller._logView.AddLogImportant(Controller._localizationService.Message_FirstHitsSecondWithCriticalDamage(res.attackerName, res.defenderName, res.damage));
+                Controller._logView.AddLogImportant(Controller._localizationService.Message_FirstHitsSecondWithCriticalDamage(res.attackerName, res.defenderName, res.damage, res.bodyPart));
             else if (res.isSuccess == false)
                 Controller._logView.AddLog(Controller._localizationService.Message_FirstMissedSecond(res.attackerName, res.defenderName));
         }
@@ -488,7 +489,7 @@ public partial class GameProcessScreenController
                     int damage = GameRules.CalculateTrapDamage(trapType, _controller._player);
                     Character character = _controller._player.Character;
                     character.TakeDamage(damage);
-                    _controller._logView.AddLog(_controller._localizationService.Message_FirstHitsSecondWithDamage(_controller._localizationService.TrapTypeName(trapType), character.Name, damage));
+                    _controller._logView.AddLog(_controller._localizationService.Message_FirstHitsSecondWithDamage(_controller._localizationService.TrapTypeName(trapType), character.Name, damage, BodyPart.Body));
                 }
             }
 

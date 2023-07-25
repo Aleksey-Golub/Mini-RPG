@@ -30,12 +30,14 @@ public static class LocalizationExtension
         };
     }
 
+    public static string Message_MeetingWithEnemy(this ILocalizationService localizationService, string enemyName) 
+        => String.Format(localizationService.GetLocalization("GUI_Message_MeetingWithEnemy"), enemyName);
     public static string Message_StartRestInTown(this ILocalizationService localizationService, int restCost) 
         => String.Format(localizationService.GetLocalization("GUI_Message_StartRestInTown"), restCost);
-    public static string Message_FirstHitsSecondWithDamage(this ILocalizationService localizationService, string attackerName, string defenderName, int damage) 
-        => String.Format(localizationService.GetLocalization("GUI_Message_FirstHitsSecondWithDamage"), attackerName, defenderName, damage);
-    public static string Message_FirstHitsSecondWithCriticalDamage(this ILocalizationService localizationService, string attackerName, string defenderName, int damage) 
-        => String.Format(localizationService.GetLocalization("GUI_Message_FirstHitsSecondWithCriticalDamage"), attackerName, defenderName, damage);
+    public static string Message_FirstHitsSecondWithDamage(this ILocalizationService localizationService, string attackerName, string defenderName, int damage, BodyPart bodyPart) 
+        => String.Format(localizationService.GetLocalization("GUI_Message_FirstHitsSecondWithDamage"), attackerName, defenderName, damage, BodyPartName(localizationService, bodyPart));
+    public static string Message_FirstHitsSecondWithCriticalDamage(this ILocalizationService localizationService, string attackerName, string defenderName, int damage, BodyPart bodyPart) 
+        => String.Format(localizationService.GetLocalization("GUI_Message_FirstHitsSecondWithCriticalDamage"), attackerName, defenderName, damage, BodyPartName(localizationService, bodyPart));
     public static string Message_FirstMissedSecond(this ILocalizationService localizationService, string attackerName, string defenderName) 
         => String.Format(localizationService.GetLocalization("GUI_Message_FirstMissedSecond"), attackerName, defenderName);
     public static string Message_QuestComplited(this ILocalizationService localizationService, string questLocalizedName) 
@@ -43,6 +45,21 @@ public static class LocalizationExtension
 
     public static string CharacterGainNewLevel(this ILocalizationService localizationService, string name) 
         => String.Format(localizationService.GetLocalization("CharacterGainNewLevel"), name);
+
+    public static string BodyPartName(this ILocalizationService localizationService, BodyPart bodyPart)
+    {
+        return bodyPart switch
+        {
+            BodyPart.Head => localizationService.GetLocalization("BodyPartName_Head"),
+            BodyPart.RightHand => localizationService.GetLocalization("BodyPartName_RightHand"),
+            BodyPart.LeftHand => localizationService.GetLocalization("BodyPartName_LeftHand"),
+            BodyPart.Body => localizationService.GetLocalization("BodyPartName_Body"),
+            BodyPart.RightLeg => localizationService.GetLocalization("BodyPartName_RightLeg"),
+            BodyPart.LeftLeg => localizationService.GetLocalization("BodyPartName_LeftLeg"),
+            BodyPart.None => throw new NotImplementedException(),
+            _ => throw new NotImplementedException()
+        };
+    }
 
     public static string RaceName(this ILocalizationService localizationService, Race race)
     {

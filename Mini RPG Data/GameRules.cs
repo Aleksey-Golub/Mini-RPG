@@ -303,7 +303,7 @@ public static class GameRules
     {
         int minNeededPerception = 10;
 
-        if (player.Character.AllAbilities.Perception.Bonus < minNeededPerception)
+        if (player.Character.AllAbilities.Perception.Value < minNeededPerception)
             return false;
 
         int _2D6 = _randomService.Get1D6(2);
@@ -398,7 +398,7 @@ public static class GameRules
     internal static DamageType HandToHandDamageType(Character character) => DamageType.Bludgeoning;
     internal static Armor ArmorForNoArmorSlot(Character character) => new Armor(0, ArmorType.Light);
 
-    internal static (string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit) HandleAttack(ICharacter attacker, ICharacter defender)
+    internal static (string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit, BodyPart bodyPart) HandleAttack(ICharacter attacker, ICharacter defender)
     {
         int _2D6 = _randomService.Get1D6(2);
 
@@ -409,17 +409,17 @@ public static class GameRules
             attackSuccess = true;
 
         if (attackSuccess == false)
-            return (attacker.Name, defender.Name, 0, false, false);
+            return (attacker.Name, defender.Name, 0, false, false, BodyPart.None);
 
         
-        (int damage, bool isCrit) res = CalculateDamage(attacker, defender);
+        (int damage, bool isCrit, BodyPart bodyPart) res = CalculateDamage(attacker, defender);
         defender.TakeDamage(res.damage);
 
-        return (attacker.Name, defender.Name, res.damage, true, res.isCrit);
+        return (attacker.Name, defender.Name, res.damage, true, res.isCrit, res.bodyPart);
     }
 
     private static BodyPart GetHittedBodyPart() => Utils.GetRandomEnumValueExcludeFirst<BodyPart>();
-    private static (int damage, bool isCrit) CalculateDamage(ICharacter attacker, ICharacter target)
+    private static (int damage, bool isCrit, BodyPart bodyPart) CalculateDamage(ICharacter attacker, ICharacter target)
     {
         DamageType damageType = attacker.DamageType;
         int rawDamage = _randomService.GetIntInclusive(attacker.MinDamage, attacker.MaxDamage) + attacker.AttackModifier;
@@ -432,7 +432,7 @@ public static class GameRules
 
         int damage = (int)((rawDamage - (armor.Value * vulnerabilityСoefficient)) * critModifier);
         damage = Math.Clamp(damage, 0, int.MaxValue);
-        return (damage, isCrit);
+        return (damage, isCrit, bodyPart);
 
         float CalculateVulnerabilityСoefficientFor(ArmorType armorType, DamageType damageType)
         {

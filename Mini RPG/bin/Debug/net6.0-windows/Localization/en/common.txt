@@ -55,10 +55,11 @@ GUI_Message_YouAreEscaped = You managed to escape
 GUI_Message_YouAreNotEscaped = You failed to escape
 GUI_Message_MapExplored = You have finished exploring this area. You can go back to the city and get some rest
 GUI_Message_StartRestInTown = You find the owner of the hostelry.@He is ready to rent you a room for {0} coins
-GUI_Message_FirstHitsSecondWithDamage = {0} hits for {1} {2} damage
-GUI_Message_FirstHitsSecondWithCriticalDamage = Crit! {0} hits for {1} {2} damage
+GUI_Message_FirstHitsSecondWithDamage = {0} hits for {1} {2} damage, {3}
+GUI_Message_FirstHitsSecondWithCriticalDamage = Crit! {0} hits for {1} {2} damage, {3}
 GUI_Message_FirstMissedSecond = {0} doesn't hit {1}
 GUI_Message_QuestComplited = The quest "{0}" is completed
+GUI_Message_MeetingWithEnemy = {0} attacks you
 	
 CharacterGainNewLevel = {0} reaches a new level!
 YouUse = You used
@@ -87,18 +88,22 @@ Armor = Armor
 DodgePenalty = Dodge penalty
 MinBlockBonus = MinBlockBonus
 MaxBlockBonus = MaxBlockBonus
+
 RaceName_Dwarf = Dwarf
 RaceName_Elf = Elf
 RaceName_Human = Human
 RaceName_Goblin = Goblin
 RaceName_Orc = Orc
 RaceName_Beast = Beast
+
 HungerLevelName_Hungry = Hunger
 HungerLevelName_Neutral = Norm
 HungerLevelName_Satiated = Satiety
+
 ThirstLevelName_Thirsty = Thirst
 ThirstLevelName_Neutral = Norm
 ThirstLevelName_Satiated = Satiety
+
 PlayerMoveSuccessfully_N = You went to the North
 PlayerMoveSuccessfully_S = You went to the South
 PlayerMoveSuccessfully_W = You went to the West
@@ -107,13 +112,24 @@ PlayerMoveUnsuccessfully_N = You can't go to the North
 PlayerMoveUnsuccessfully_S = You can't go to the South
 PlayerMoveUnsuccessfully_W = You can't go to the West
 PlayerMoveUnsuccessfully_E = You can't go to the East
+
 DamageTypeName_Slashing = Slashing
 DamageTypeName_Piercing = Piercing
 DamageTypeName_Bludgeoning = Crushing
+
 GripName_SingleHanded = One-handed
 GripName_TwoHanded = Two-handed
+
 ArmorTypeName_Light = Light
 ArmorTypeName_Medium = Medium
 ArmorTypeName_Heavy = Heavy
+
 TrapTypeName_SpikeTrap = Spike trap
 TrapTypeName_BearTrap = Bear trap
+
+BodyPartName_Head = Head
+BodyPartName_RightHand = RightHand
+BodyPartName_LeftHand = LeftHand
+BodyPartName_Body = Body
+BodyPartName_RightLeg = RightLeg
+BodyPartName_LeftLeg = LeftLeg

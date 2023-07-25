@@ -55,10 +55,11 @@ GUI_Message_YouAreEscaped = Вам удалось сбежать
 GUI_Message_YouAreNotEscaped = Вам не удалось сбежать
 GUI_Message_MapExplored = Вы закончили исследовать эту местность. Можно вернуться в город и отдохнуть
 GUI_Message_StartRestInTown = Вы находите хозяина постоялого двора.@Он готов сдать вам комнату за {0} монет
-GUI_Message_FirstHitsSecondWithDamage = {0} наносит {1} {2} урона
-GUI_Message_FirstHitsSecondWithCriticalDamage = Крит! {0} наносит {1} {2} урона
+GUI_Message_FirstHitsSecondWithDamage = {0} наносит {1} {2} урона, {3}
+GUI_Message_FirstHitsSecondWithCriticalDamage = Крит! {0} наносит {1} {2} урона, {3}
 GUI_Message_FirstMissedSecond = {0} не попадает по {1}
 GUI_Message_QuestComplited = Квест "{0}" завершен
+GUI_Message_MeetingWithEnemy = {0} нападает на вас
 	
 CharacterGainNewLevel = {0} получает новый уровень!
 YouUse = Вы использовали
@@ -87,18 +88,22 @@ Armor = Броня
 DodgePenalty = Штраф уворота
 MinBlockBonus = МинБлокБонус
 MaxBlockBonus = МаксБлокБонус
+
 RaceName_Dwarf = Дварф
 RaceName_Elf = Эльф
 RaceName_Human = Человек
 RaceName_Goblin = Гоблин
 RaceName_Orc = Орк
 RaceName_Beast = Зверь
+
 HungerLevelName_Hungry = Голод
 HungerLevelName_Neutral = Норма
 HungerLevelName_Satiated = Сытость
+
 ThirstLevelName_Thirsty = Жажда
 ThirstLevelName_Neutral = Норма
 ThirstLevelName_Satiated = Сытость
+
 PlayerMoveSuccessfully_N = Вы пошли на Север
 PlayerMoveSuccessfully_S = Вы пошли на Юг
 PlayerMoveSuccessfully_W = Вы пошли на Запад
@@ -107,13 +112,24 @@ PlayerMoveUnsuccessfully_N = Вы не можете пойти на Север
 PlayerMoveUnsuccessfully_S = Вы не можете пойти на Юг
 PlayerMoveUnsuccessfully_W = Вы не можете пойти на Запад
 PlayerMoveUnsuccessfully_E = Вы не можете пойти на Восток
+
 DamageTypeName_Slashing = Рубящий
 DamageTypeName_Piercing = Колющий
 DamageTypeName_Bludgeoning = Дробящий
+
 GripName_SingleHanded = Одноручное
 GripName_TwoHanded = Двуручное
+
 ArmorTypeName_Light = Легкая
 ArmorTypeName_Medium = Средняя
 ArmorTypeName_Heavy = Тяжелая
+
 TrapTypeName_SpikeTrap = Ловушка с шипами
 TrapTypeName_BearTrap = Медвежий капкан
+
+BodyPartName_Head = Голова
+BodyPartName_RightHand = Правая рука
+BodyPartName_LeftHand = Левая рука
+BodyPartName_Body = Тело
+BodyPartName_RightLeg = Правая нога
+BodyPartName_LeftLeg = Левая нога
