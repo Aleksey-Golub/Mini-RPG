@@ -234,12 +234,12 @@ public static class GameRules
         return loot;
     }
 
-    internal static List<ItemBase> CalculateFoundedHiddenChest(Player player)
+    internal static List<ItemBase> CalculateFoundedInHiddenChestLoot(Player player)
     {
         List<ItemBase> loot = new List<ItemBase>();
 
         TryAddRandomItem(50, loot, ItemType.Food);
-        TryAddRandomItem(2, loot, ItemType.Potion, 4);
+        TryAddRandomItem(5, loot, ItemType.Potion, 4);
         TryAddRandomItem(2, loot, ItemType.Weapon, 3);
         TryAddRandomItem(2, loot, ItemType.Shield, 3);
         TryAddRandomItem(2, loot, ItemType.Armor, 3);
