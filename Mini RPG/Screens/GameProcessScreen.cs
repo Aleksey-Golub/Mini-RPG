@@ -196,8 +196,11 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
     public void AddLog(string message) => _log?.AddLog(message);
     public void AddLogImportant(string message) => _log?.AddLogImportant(message);
-    public void ShowMapExploredMessage() => MessageBox.Show(
-            $"{_localizationService.GetLocalization("GUI_Message_MapExplored")}");
+    public void ShowMapExploredMessage()
+    {
+        string message = $"{_localizationService.GetLocalization("GUI_Message_MapExplored")}";
+        MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
 
     public void ShowBattleStartMessage() =>
         MessageBox.Show(

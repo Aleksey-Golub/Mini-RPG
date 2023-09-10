@@ -34,3 +34,21 @@ D:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net
 D:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.pdb
 D:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.genruntimeconfig.cache
 D:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ref\ConsoleApp_TextMapViewer.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.exe
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.deps.json
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.runtimeconfig.json
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\ConsoleApp_TextMapViewer.pdb
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\bin\Debug\net6.0\Mini RPG Data.pdb
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.AssemblyReference.cache
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.AssemblyInfoInputs.cache
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.AssemblyInfo.cs
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.CoreCompileInputs.cache
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.csproj.CopyComplete
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\refint\ConsoleApp_TextMapViewer.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.pdb
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ConsoleApp_TextMapViewer.genruntimeconfig.cache
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\ConsoleMapTest\obj\Debug\net6.0\ref\ConsoleApp_TextMapViewer.dll

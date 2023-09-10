@@ -8,12 +8,11 @@ public class EventService : IEventService
     {
         if (_events.TryGetValue(eventType, out Action<EventType, string> thisEvent))
         {
-            thisEvent += callback;
+            _events[eventType] += callback;
         }
         else
         {
-            thisEvent += callback;
-            _events.Add(eventType, thisEvent);
+            _events.Add(eventType, callback);
         }
     }
 
@@ -21,7 +20,7 @@ public class EventService : IEventService
     {
         if (_events.TryGetValue(type, out Action<EventType, string> thisEvent))
         {
-            thisEvent -= callback;
+            _events[type] -= callback;
         }
     }
 
@@ -41,5 +40,5 @@ public enum EventType
     KilledEnemyWithRace,
     MeetEnemyWithId,
     MeetEnemyWithRace,
-    SpecialEventType,
+    SpecialEventType, // special type are unhandling in regular flow, they have spesial handler-methods
 }
