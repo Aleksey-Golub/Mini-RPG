@@ -63,6 +63,7 @@
             this._menuStrip = new System.Windows.Forms.MenuStrip();
             this._menuItem_Menu = new System.Windows.Forms.ToolStripMenuItem();
             this._menuItem_SaveAndExit = new System.Windows.Forms.ToolStripMenuItem();
+            this._menuItem_Help = new System.Windows.Forms.ToolStripMenuItem();
             this._panel_Location = new System.Windows.Forms.Panel();
             this._panel_Battle = new System.Windows.Forms.Panel();
             this._pictureBox_Enemy = new System.Windows.Forms.PictureBox();
@@ -401,7 +402,8 @@
             // _menuItem_Menu
             // 
             this._menuItem_Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._menuItem_SaveAndExit});
+            this._menuItem_SaveAndExit,
+            this._menuItem_Help});
             this._menuItem_Menu.Name = "_menuItem_Menu";
             this._menuItem_Menu.Size = new System.Drawing.Size(115, 29);
             this._menuItem_Menu.Text = "% меню %";
@@ -412,6 +414,13 @@
             this._menuItem_SaveAndExit.Size = new System.Drawing.Size(307, 34);
             this._menuItem_SaveAndExit.Text = "% сохранить и выйти %";
             this._menuItem_SaveAndExit.Click += new System.EventHandler(this.MenuItem_SaveAndExit_Click);
+            // 
+            // _menuItem_Help
+            // 
+            this._menuItem_Help.Name = "_menuItem_Help";
+            this._menuItem_Help.Size = new System.Drawing.Size(307, 34);
+            this._menuItem_Help.Text = "% помощь %";
+            this._menuItem_Help.Click += new System.EventHandler(this.MenuItem_Help_Click);
             // 
             // _panel_Location
             // 
@@ -652,5 +661,6 @@
         private ToolStripStatusLabel _label_HungerLevel;
         private ToolStripStatusLabel _label_ThirstLevel;
         private Label _label_Quests;
+        private ToolStripMenuItem _menuItem_Help;
     }
 }

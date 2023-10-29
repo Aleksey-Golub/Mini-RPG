@@ -31,6 +31,7 @@ public partial class StartScreen : UserControl, IStartScreenView
         _button_NewGame.Text = _localizationService.GetLocalization("GUI_Button_NewGame");
         _button_LoadGame.Text = _localizationService.GetLocalization("GUI_Button_LoadGame");
         _button_Exit.Text = _localizationService.GetLocalization("GUI_Button_Exit");
+        _button_Help.Text = _localizationService.GetLocalization("GUI_Button_Help");
     }
 
     public void SetActiveState(bool newState) => Visible = newState;
@@ -51,6 +52,13 @@ public partial class StartScreen : UserControl, IStartScreenView
     private void Button_NewGame_Click(object sender, EventArgs e) => _controller.StartNewGame();
     private void Button_LoadGame_Click(object sender, EventArgs e) => _controller.ShowSavedGames();
     private void Button_Exit_Click(object sender, EventArgs e) => Application.Exit();
+
+    private void Button_Help_Click(object sender, EventArgs e)
+    {
+        using var mapForm = new FAQ(_localizationService);
+        if (mapForm.ShowDialog() == DialogResult.OK)
+        { }
+    }
 
     private void СomboBox_Language_SelectedIndexChanged(object sender, EventArgs e)
     {

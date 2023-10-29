@@ -15,7 +15,8 @@ GUI_Button_LeaveTown == Leave the town
 GUI_Button_Log == Log
 GUI_Button_EnterTown == Enter the town
 GUI_Button_Close == Close
-	
+GUI_Button_Help == HELP
+
 GUI_Label_AbilityPoints == Ability points
 GUI_Label_Abilities == Abilities
 GUI_Label_Charisma == Charisma
@@ -61,14 +62,16 @@ GUI_Message_FirstMissedSecond == {0} doesn't hit {1}
 GUI_Message_QuestComplited == The quest "{0}" is completed
 GUI_Message_MeetingWithEnemy == {0} attacks you
 	
+GUI_Menu == Menu
+GUI_SaveAndExit == Save and Exit
+GUI_Help == Help
+
 CharacterGainNewLevel == {0} reaches a new level!
 YouUse == You used
 Shop == Shop
 YouGained == You got:
 DefaultCharacterName == % enter a name %
 Level == Level
-GUI_Menu == Menu
-GUI_SaveAndExit == Save and Exit
 UnexploredLocation == Unexplored location
 EmptyExploredLocation == Empty explored location
 Town == Town

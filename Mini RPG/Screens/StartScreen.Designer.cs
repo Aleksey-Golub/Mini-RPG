@@ -32,6 +32,7 @@
             this._button_LoadGame = new System.Windows.Forms.Button();
             this._button_Exit = new System.Windows.Forms.Button();
             this._comboBox_Language = new System.Windows.Forms.ComboBox();
+            this._button_Help = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // _button_NewGame
@@ -52,7 +53,7 @@
             this._button_LoadGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this._button_LoadGame.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._button_LoadGame.ForeColor = System.Drawing.SystemColors.Control;
-            this._button_LoadGame.Location = new System.Drawing.Point(688, 411);
+            this._button_LoadGame.Location = new System.Drawing.Point(688, 400);
             this._button_LoadGame.Name = "_button_LoadGame";
             this._button_LoadGame.Size = new System.Drawing.Size(544, 110);
             this._button_LoadGame.TabIndex = 1;
@@ -83,12 +84,26 @@
             this._comboBox_Language.TabIndex = 4;
             this._comboBox_Language.SelectedIndexChanged += new System.EventHandler(this.СomboBox_Language_SelectedIndexChanged);
             // 
+            // _button_Help
+            // 
+            this._button_Help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this._button_Help.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._button_Help.ForeColor = System.Drawing.SystemColors.Control;
+            this._button_Help.Location = new System.Drawing.Point(688, 580);
+            this._button_Help.Name = "_button_Help";
+            this._button_Help.Size = new System.Drawing.Size(544, 110);
+            this._button_Help.TabIndex = 5;
+            this._button_Help.Text = "% помощь %";
+            this._button_Help.UseVisualStyleBackColor = false;
+            this._button_Help.Click += new System.EventHandler(this.Button_Help_Click);
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this._button_Help);
             this.Controls.Add(this._comboBox_Language);
             this.Controls.Add(this._button_Exit);
             this.Controls.Add(this._button_LoadGame);
@@ -106,5 +121,6 @@
         private Button _button_LoadGame;
         private Button _button_Exit;
         private ComboBox _comboBox_Language;
+        private Button _button_Help;
     }
 }

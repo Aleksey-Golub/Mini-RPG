@@ -116,3 +116,4 @@ E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\Mini RPG\obj\Debug\net6.0-wi
 E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.pdb
 E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini RPG.genruntimeconfig.cache
 E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\ref\Mini RPG.dll
+E:\Programming\Not Unity Projects\Mini-RPG\Mini-RPG\Mini RPG\obj\Debug\net6.0-windows\Mini_RPG.FAQ.resources

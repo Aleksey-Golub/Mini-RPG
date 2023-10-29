@@ -15,7 +15,8 @@ GUI_Button_LeaveTown == Покинуть город
 GUI_Button_Log == Лог
 GUI_Button_EnterTown == Войти в город
 GUI_Button_Close == Закрыть
-	
+GUI_Button_Help == ПОМОЩЬ
+
 GUI_Label_AbilityPoints == Очки характеристик
 GUI_Label_Abilities == Характеристики
 GUI_Label_Charisma == Харизма
@@ -60,15 +61,17 @@ GUI_Message_FirstHitsSecondWithCriticalDamage == Крит! {0} наносит {1
 GUI_Message_FirstMissedSecond == {0} не попадает по {1}
 GUI_Message_QuestComplited == Квест "{0}" завершен
 GUI_Message_MeetingWithEnemy == {0} нападает на вас
-	
+
+GUI_Menu == Меню
+GUI_SaveAndExit == Сохранить и выйти
+GUI_Help == Помощь
+
 CharacterGainNewLevel == {0} получает новый уровень!
 YouUse == Вы использовали
 Shop == Магазин
 YouGained == Вы получили:
 DefaultCharacterName == % Введите имя %
 Level == Уровень
-GUI_Menu == Меню
-GUI_SaveAndExit == Сохранить и выйти
 UnexploredLocation == Неисследованная локация
 EmptyExploredLocation == Пустая исследованная локация
 Town == Город

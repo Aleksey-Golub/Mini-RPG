@@ -317,6 +317,7 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
 
         _menuItem_Menu.Text = _localizationService.GetLocalization("GUI_Menu");
         _menuItem_SaveAndExit.Text = _localizationService.GetLocalization("GUI_SaveAndExit");
+        _menuItem_Help.Text = _localizationService.GetLocalization("GUI_Help");
 
         _button_SwitchLogSize.Text = _localizationService.GetLocalization("GUI_Button_Log");
 
@@ -357,7 +358,12 @@ public partial class GameProcessScreen : UserControl, IGameProcessView, ILogView
     private void Button_RestInTown_Click(object sender, EventArgs e) => _controller.StartRestInTown();
     private void Label_Map_Click(object sender, EventArgs e) => _controller.ShowMap();
     private void MenuItem_SaveAndExit_Click(object sender, EventArgs e) => _controller.SaveGameAndExitMainMenu();
-
+    private void MenuItem_Help_Click(object sender, EventArgs e)
+    {
+        using var mapForm = new FAQ(_localizationService);
+        if (mapForm.ShowDialog() == DialogResult.OK)
+        { }
+    }
     private void Button_EnterTown_Click(object sender, EventArgs e) => _controller.EnterTown();
     private void Button_LeaveTown_Click(object sender, EventArgs e) => _controller.ExitTown();
 

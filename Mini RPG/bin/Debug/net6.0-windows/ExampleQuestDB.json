@@ -1,1 +1,0 @@
-{"Quests":[{"Id":"0","Name":"","NameLocalizationKey":null,"Description":"","DescriptionLocalizationKey":null,"Phases":[{"Id":null,"Description":null,"DescriptionLocalizationKey":null,"NextPhaseId":null,"Goals":[{"GoalType":"CollectItem","TargetId":null,"RequaredProgress":0,"Description":null,"DescriptionLocalizationKey":null}],"PhaseGoalsComplitedMessageKey":null}]}]}
