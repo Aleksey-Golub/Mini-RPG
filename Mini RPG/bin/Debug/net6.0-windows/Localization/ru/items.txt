@@ -1,93 +1,93 @@
-ThinWolfPelt = Тонкая Волчья шкура
-WolfPelt = Волчья шкура
-ThickWolfPelt = Толстая Волчья шкура
-ThinBoarPelt = Тонкая Шкура кабана
-BoarPelt = Шкура кабана
-ThickBoarPelt = Толстая Шкура кабана
-IronOre = Железная руда
-LeatherScrap = Обрезки кожи
+ThinWolfPelt == Тонкая Волчья шкура
+WolfPelt == Волчья шкура
+ThickWolfPelt == Толстая Волчья шкура
+ThinBoarPelt == Тонкая Шкура кабана
+BoarPelt == Шкура кабана
+ThickBoarPelt == Толстая Шкура кабана
+IronOre == Железная руда
+LeatherScrap == Обрезки кожи
 
-BronzeSword = Бронзовый меч
-IronSword = Железный меч
-SteelSword = Стальной меч
-BronzeTwoHandedAxe = Бронзовый двуручный топор
-IronTwoHandedAxe = Железный двуручный топор
-SteelTwoHandedAxe = Стальной двуручный топор
-BronzeHammer = Бронзовый молот
-IronHammer = Железный молот
-SteelHammer = Стальной молот
-ShortBow = Короткий лук
-LongBow = Длинный лук
-CompositeBow = Композитный лук
-BronzeAxe = Бронзовый топор
-IronAxe = Железный топор
-SteelAxe = Стальной топор
-BronzeMace = Бронзовая булава
-IronMace = Железная булава
-SteelMace = Стальная булава
-BronzeSpear = Бронзовое копье
-IronSpear = Железное копье
-SteelSpear = Стальное копье
-BronzeDagger = Бронзовый кинжал
-IronDagger = Железный кинжал
-SteelDagger = Стальной кинжал
+BronzeSword == Бронзовый меч
+IronSword == Железный меч
+SteelSword == Стальной меч
+BronzeTwoHandedAxe == Бронзовый двуручный топор
+IronTwoHandedAxe == Железный двуручный топор
+SteelTwoHandedAxe == Стальной двуручный топор
+BronzeHammer == Бронзовый молот
+IronHammer == Железный молот
+SteelHammer == Стальной молот
+ShortBow == Короткий лук
+LongBow == Длинный лук
+CompositeBow == Композитный лук
+BronzeAxe == Бронзовый топор
+IronAxe == Железный топор
+SteelAxe == Стальной топор
+BronzeMace == Бронзовая булава
+IronMace == Железная булава
+SteelMace == Стальная булава
+BronzeSpear == Бронзовое копье
+IronSpear == Железное копье
+SteelSpear == Стальное копье
+BronzeDagger == Бронзовый кинжал
+IronDagger == Железный кинжал
+SteelDagger == Стальной кинжал
 
-ThinLeatherHelmet = Шлем из тонкой кожи
-ThinLeatherGloves = Перчатки из тонкой кожи
-ThinLeatherArmor = Куртка из тонкой кожи
-ThinLeatherLegs = Поножи из тонкой кожи
-LeatherHelmet = Кожаный Шлем
-LeatherGloves = Кожаные Перчатки
-LeatherArmor = Кожаная Куртка
-LeatherLegs = Кожаные Поножи
-ThickLeatherHelmet = Шлем из толстой кожи
-ThickLeatherGloves = Перчатки из толстой кожи
-ThickLeatherArmor = Куртка из толстой кожи
-ThickLeatherLegs = Поножи из толстой кожи
+ThinLeatherHelmet == Шлем из тонкой кожи
+ThinLeatherGloves == Перчатки из тонкой кожи
+ThinLeatherArmor == Куртка из тонкой кожи
+ThinLeatherLegs == Поножи из тонкой кожи
+LeatherHelmet == Кожаный Шлем
+LeatherGloves == Кожаные Перчатки
+LeatherArmor == Кожаная Куртка
+LeatherLegs == Кожаные Поножи
+ThickLeatherHelmet == Шлем из толстой кожи
+ThickLeatherGloves == Перчатки из толстой кожи
+ThickLeatherArmor == Куртка из толстой кожи
+ThickLeatherLegs == Поножи из толстой кожи
 
-BronzeChainHelmet = Бронзовый кольчужный Шлем
-BronzeChainGloves = Бронзовые кольчужные Перчатки
-BronzeChainArmor = Бронзовая Кольчуга
-BronzeChainLegs = Бронзовые кольчужные Поножи
-IronChainHelmet = Железный кольчужный Шлем
-IronChainGloves = Железные кольчужные Перчатки
-IronChainArmor = Железная Кольчуга
-IronChainLegs = Железные кольчужные Поножи
-SteelChainHelmet = Стальной кольчужный Шлем
-SteelChainGloves = Стальные кольчужные Перчатки
-SteelChainArmor = Стальная Кольчуга
-SteelChainLegs = Стальные кольчужные Поножи
+BronzeChainHelmet == Бронзовый кольчужный Шлем
+BronzeChainGloves == Бронзовые кольчужные Перчатки
+BronzeChainArmor == Бронзовая Кольчуга
+BronzeChainLegs == Бронзовые кольчужные Поножи
+IronChainHelmet == Железный кольчужный Шлем
+IronChainGloves == Железные кольчужные Перчатки
+IronChainArmor == Железная Кольчуга
+IronChainLegs == Железные кольчужные Поножи
+SteelChainHelmet == Стальной кольчужный Шлем
+SteelChainGloves == Стальные кольчужные Перчатки
+SteelChainArmor == Стальная Кольчуга
+SteelChainLegs == Стальные кольчужные Поножи
 
-BronzePlateHelmet = Бронзовый латный Шлем
-BronzePlateGloves = Бронзовые латные Перчатки
-BronzePlateArmor = Бронзовая латная Броня
-BronzePlateLegs = Бронзовые латные Поножи
-IronPlateHelmet = Железный латный Шлем
-IronPlateGloves = Железные латные Перчатки
-IronPlateArmor = Железная латная Броня
-IronPlateLegs = Железные латные Поножи
-SteelPlateHelmet = Стальной латный Шлем
-SteelPlateGloves = Стальные латные Перчатки
-SteelPlateArmor = Стальная латная Броня
-SteelPlateLegs = Стальные латные Поножи
+BronzePlateHelmet == Бронзовый латный Шлем
+BronzePlateGloves == Бронзовые латные Перчатки
+BronzePlateArmor == Бронзовая латная Броня
+BronzePlateLegs == Бронзовые латные Поножи
+IronPlateHelmet == Железный латный Шлем
+IronPlateGloves == Железные латные Перчатки
+IronPlateArmor == Железная латная Броня
+IronPlateLegs == Железные латные Поножи
+SteelPlateHelmet == Стальной латный Шлем
+SteelPlateGloves == Стальные латные Перчатки
+SteelPlateArmor == Стальная латная Броня
+SteelPlateLegs == Стальные латные Поножи
 
-SmallHealthPotion = Малое Зелье здоровья
-HealthPotion = Зелье здоровья
-BigHealthPotion = Большое Зелье здоровья
-AbilityPotion = Зелье характеристик
+SmallHealthPotion == Малое Зелье здоровья
+HealthPotion == Зелье здоровья
+BigHealthPotion == Большое Зелье здоровья
+AbilityPotion == Зелье характеристик
 
-Bread = Хлеб
-WaterFlask = Фляга с водой
-DeathCap = Бледная поганка
-RedCapBolete = Обабок
-Boletus = Белый гриб
-Blueberry = Голубика
-Blackberry = Ежевика
-RedCurrant = Красная смородина
-BlackCurrant = Черная смородина
-Cheese = Сыр
-BigWaterFlask = Большая фляга с водой
+Bread == Хлеб
+WaterFlask == Фляга с водой
+DeathCap == Бледная поганка
+RedCapBolete == Обабок
+Boletus == Белый гриб
+Blueberry == Голубика
+Blackberry == Ежевика
+RedCurrant == Красная смородина
+BlackCurrant == Черная смородина
+Cheese == Сыр
+BigWaterFlask == Большая фляга с водой
 
-SmallShield = Малый Щит
-MediumShield = Средний Щит
-BigShield = Большой Щит
+SmallShield == Малый Щит
+MediumShield == Средний Щит
+BigShield == Большой Щит

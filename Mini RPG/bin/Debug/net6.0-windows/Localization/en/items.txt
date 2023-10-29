@@ -1,93 +1,93 @@
-ThinWolfPelt = Thin Wolf pelt
-WolfPelt = Wolf pelt
-ThickWolfPelt = Thick Wolf pelt
-ThinBoarPelt = Thin Boar pelt
-BoarPelt = Boar pelt
-ThickBoarPelt = Thick Boar pelt
-IronOre = Iron ore
-LeatherScrap = Leather scrapings
+ThinWolfPelt == Thin Wolf pelt
+WolfPelt == Wolf pelt
+ThickWolfPelt == Thick Wolf pelt
+ThinBoarPelt == Thin Boar pelt
+BoarPelt == Boar pelt
+ThickBoarPelt == Thick Boar pelt
+IronOre == Iron ore
+LeatherScrap == Leather scrapings
 
-BronzeSword = Bronze sword
-IronSword = Iron sword
-SteelSword = Steel sword
-BronzeTwoHandedAxe = Bronze two-handed axe
-IronTwoHandedAxe = Iron two-handed axe
-SteelTwoHandedAxe = Steel two-handed axe
-BronzeHammer = Bronze hammer
-IronHammer = Iron hammer
-SteelHammer = Steel hammer
-ShortBow = Short bow
-LongBow = Long bow
-CompositeBow = Composite bow
-BronzeAxe = Bronze axe
-IronAxe = Iron axe
-SteelAxe = Steel axe
-BronzeMace = Bronze mace
-IronMace = Iron mace
-SteelMace = Steel mace
-BronzeSpear = Bronze spear
-IronSpear = Iron spear
-SteelSpear = Steel spear
-BronzeDagger = Bronze dagger
-IronDagger = Iron dagger
-SteelDagger = Steel dagger
+BronzeSword == Bronze sword
+IronSword == Iron sword
+SteelSword == Steel sword
+BronzeTwoHandedAxe == Bronze two-handed axe
+IronTwoHandedAxe == Iron two-handed axe
+SteelTwoHandedAxe == Steel two-handed axe
+BronzeHammer == Bronze hammer
+IronHammer == Iron hammer
+SteelHammer == Steel hammer
+ShortBow == Short bow
+LongBow == Long bow
+CompositeBow == Composite bow
+BronzeAxe == Bronze axe
+IronAxe == Iron axe
+SteelAxe == Steel axe
+BronzeMace == Bronze mace
+IronMace == Iron mace
+SteelMace == Steel mace
+BronzeSpear == Bronze spear
+IronSpear == Iron spear
+SteelSpear == Steel spear
+BronzeDagger == Bronze dagger
+IronDagger == Iron dagger
+SteelDagger == Steel dagger
 
-ThinLeatherHelmet = Thin leather Helmet
-ThinLeatherGloves = Thin leather Gloves
-ThinLeatherArmor = Thin leather Jacket
-ThinLeatherLegs = Thin leather Greaves
-LeatherHelmet = Leather Helmet
-LeatherGloves = Leather Gloves
-LeatherArmor = Leather Jacket
-LeatherLegs = Leather Greaves
-ThickLeatherHelmet = Thick leather Helmet
-ThickLeatherGloves = Thick leather Gloves
-ThickLeatherArmor = Thick leather Jacket
-ThickLeatherLegs = Thick leather Greaves
+ThinLeatherHelmet == Thin leather Helmet
+ThinLeatherGloves == Thin leather Gloves
+ThinLeatherArmor == Thin leather Jacket
+ThinLeatherLegs == Thin leather Greaves
+LeatherHelmet == Leather Helmet
+LeatherGloves == Leather Gloves
+LeatherArmor == Leather Jacket
+LeatherLegs == Leather Greaves
+ThickLeatherHelmet == Thick leather Helmet
+ThickLeatherGloves == Thick leather Gloves
+ThickLeatherArmor == Thick leather Jacket
+ThickLeatherLegs == Thick leather Greaves
 
-BronzeChainHelmet = Bronze chainmail Helmet
-BronzeChainGloves = Bronze chainmail Gloves
-BronzeChainArmor = Bronze chainmail
-BronzeChainLegs = Bronze chainmail Greaves
-IronChainHelmet = Iron chainmail Helmet
-IronChainGloves = Iron chainmail Gloves
-IronChainArmor = Iron chainmail
-IronChainLegs = Iron chainmail Greaves
-SteelChainHelmet = Steel chainmail Helmet
-SteelChainGloves = Steel chainmail Gloves
-SteelChainArmor = Steel chainmail
-SteelChainLegs = Steel chainmail Greaves
+BronzeChainHelmet == Bronze chainmail Helmet
+BronzeChainGloves == Bronze chainmail Gloves
+BronzeChainArmor == Bronze chainmail
+BronzeChainLegs == Bronze chainmail Greaves
+IronChainHelmet == Iron chainmail Helmet
+IronChainGloves == Iron chainmail Gloves
+IronChainArmor == Iron chainmail
+IronChainLegs == Iron chainmail Greaves
+SteelChainHelmet == Steel chainmail Helmet
+SteelChainGloves == Steel chainmail Gloves
+SteelChainArmor == Steel chainmail
+SteelChainLegs == Steel chainmail Greaves
 
-BronzePlateHelmet = Bronze plate Helmet
-BronzePlateGloves = Bronze plate Gloves
-BronzePlateArmor = Bronze plate Armor
-BronzePlateLegs = Bronze plate Greaves
-IronPlateHelmet = Iron plate Helmet
-IronPlateGloves = Iron plate Gloves
-IronPlateArmor = Iron plate Armor
-IronPlateLegs = Iron plate Greaves
-SteelPlateHelmet = Steel plate Helmet
-SteelPlateGloves = Steel plate Gloves
-SteelPlateArmor = Steel plate Armor
-SteelPlateLegs = Steel plate Greaves
+BronzePlateHelmet == Bronze plate Helmet
+BronzePlateGloves == Bronze plate Gloves
+BronzePlateArmor == Bronze plate Armor
+BronzePlateLegs == Bronze plate Greaves
+IronPlateHelmet == Iron plate Helmet
+IronPlateGloves == Iron plate Gloves
+IronPlateArmor == Iron plate Armor
+IronPlateLegs == Iron plate Greaves
+SteelPlateHelmet == Steel plate Helmet
+SteelPlateGloves == Steel plate Gloves
+SteelPlateArmor == Steel plate Armor
+SteelPlateLegs == Steel plate Greaves
 
-SmallHealthPotion = Small health potion
-HealthPotion = Health potion
-BigHealthPotion = Big health potion
-AbilityPotion = Ability Potion
+SmallHealthPotion == Small health potion
+HealthPotion == Health potion
+BigHealthPotion == Big health potion
+AbilityPotion == Ability Potion
 
-Bread = Bread
-WaterFlask = Water flask
-DeathCap = Pale toadstool
-RedCapBolete = Birch boletus
-Boletus = Cep
-Blueberry = Blueberry
-Blackberry = Blackberry
-RedCurrant = Red currant
-BlackCurrant = Black currant
-Cheese = Cheese
-BigWaterFlask = Big water flask
+Bread == Bread
+WaterFlask == Water flask
+DeathCap == Pale toadstool
+RedCapBolete == Birch boletus
+Boletus == Cep
+Blueberry == Blueberry
+Blackberry == Blackberry
+RedCurrant == Red currant
+BlackCurrant == Black currant
+Cheese == Cheese
+BigWaterFlask == Big water flask
 
-SmallShield = Small shield
-MediumShield = Medium shield
-BigShield = Big shield
+SmallShield == Small shield
+MediumShield == Medium shield
+BigShield == Big shield

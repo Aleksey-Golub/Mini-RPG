@@ -73,21 +73,54 @@ public class TxtLocalizationService : ILocalizationService
             {
                 string[] strs = File.Exists(filePath) ? File.ReadAllLines(filePath) : new string[] {"000"};
 
-                foreach (var str in strs)
+                for (int i = 0; i < strs.Length; i++)
                 {
-                    // string like "key = value"
-                    int index = str.IndexOf("=");
+                    string? str = strs[i];
+
+                    str = RemoveComments(str);
+
+                    string key;
+                    string value;
+
+                    // string like "key == value"
+                    int index = str.IndexOf(" == ");
                     if (index != -1)
                     {
-                        string key = str.Substring(0, index - 1);
-                        string value = str.Substring(index + 2);
-                        value = FormatText(value);
-                        dictionary[key] = value;
+                        key = str.Substring(0, index);
+                        value = str.Substring(index + 4);
+
+                        // skip empty or null Key and Value
+                        if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(value))
+                            continue;
                     }
+                    // if not empty string and not first string
+                    else if (string.IsNullOrEmpty(str) == false && i != 0)
+                    {
+                        key = dictionary.Keys.Last();
+                        value = dictionary[key] + $"{Environment.NewLine}{str}";
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                    dictionary[key] = FormatText(value);
                 }
             }
             catch { }
         }
+    }
+
+    private static string RemoveComments(string str)
+    {
+        // remove comments like "// some comment"
+        int commentSignIndex = str.IndexOf("//");
+        if (commentSignIndex != -1)
+        {
+            str = str.Substring(0, commentSignIndex);
+        }
+
+        return str;
     }
 
     private static string FormatText(string value)

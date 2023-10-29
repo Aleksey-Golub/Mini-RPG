@@ -1,135 +1,135 @@
-language = English
+language == English
 
-GUI_Button_Exit = EXIT
-GUI_Button_LoadGame = LOAD GAME
-GUI_Button_NewGame = NEW GAME
-GUI_Button_StartGame = START
-GUI_Button_MainMenu = TO THE MAIN MENU
-GUI_Button_GoToGame = START
-GUI_Button_Rest = Rest
-GUI_Button_Attack = Attack
-GUI_Button_TryLeaveBattle = Try to leave battle
-GUI_Button_Trader = Merchant
-GUI_Button_RestInTown = Rest in the town
-GUI_Button_LeaveTown = Leave the town
-GUI_Button_Log = Log
-GUI_Button_EnterTown = Enter the town
-GUI_Button_Close = Close
+GUI_Button_Exit == EXIT
+GUI_Button_LoadGame == LOAD GAME
+GUI_Button_NewGame == NEW GAME
+GUI_Button_StartGame == START
+GUI_Button_MainMenu == TO THE MAIN MENU
+GUI_Button_GoToGame == START
+GUI_Button_Rest == Rest
+GUI_Button_Attack == Attack
+GUI_Button_TryLeaveBattle == Try to leave battle
+GUI_Button_Trader == Merchant
+GUI_Button_RestInTown == Rest in the town
+GUI_Button_LeaveTown == Leave the town
+GUI_Button_Log == Log
+GUI_Button_EnterTown == Enter the town
+GUI_Button_Close == Close
 	
-GUI_Label_AbilityPoints = Ability points
-GUI_Label_Abilities = Abilities
-GUI_Label_Charisma = Charisma
-GUI_Label_Constitution = Constitution
-GUI_Label_Dexterity = Dexterity
-GUI_Label_Perception = Perception
-GUI_Label_Race = Race
-GUI_Label_Strength = Strength
-GUI_Label_Intro = ""Chistovodie" is a small provincial town, lost in the woods, located on an old trading road near the river. It is quiet and peaceful. It has lost its former appeal because of construction of new road and is gradually empties. Rare travelers and traders are now a big deal here in town. The local inhabitants are hunters, fishermen and peasants. There are some buildings - shop with all necessities, hostelry, town hall, and private households."@@Once again, you have finished re-reading the fact sheet you have received from the garrison clerk.@And you were sent to this godsforsaken place by the garrison commander: "To investigate the cause of the local residents' anxiety".@But it's only a couple of hunters lost in the woods and a mushroom picker was killed by wolves. It's quite a common situation for such a backwoods location. The peasants have always been prone to excessive drama, what can you expect of them?
+GUI_Label_AbilityPoints == Ability points
+GUI_Label_Abilities == Abilities
+GUI_Label_Charisma == Charisma
+GUI_Label_Constitution == Constitution
+GUI_Label_Dexterity == Dexterity
+GUI_Label_Perception == Perception
+GUI_Label_Race == Race
+GUI_Label_Strength == Strength
+GUI_Label_Intro == ""Chistovodie" is a small provincial town, lost in the woods, located on an old trading road near the river. It is quiet and peaceful. It has lost its former appeal because of construction of new road and is gradually empties. Rare travelers and traders are now a big deal here in town. The local inhabitants are hunters, fishermen and peasants. There are some buildings - shop with all necessities, hostelry, town hall, and private households."@@Once again, you have finished re-reading the fact sheet you have received from the garrison clerk.@And you were sent to this godsforsaken place by the garrison commander: "To investigate the cause of the local residents' anxiety".@But it's only a couple of hunters lost in the woods and a mushroom picker was killed by wolves. It's quite a common situation for such a backwoods location. The peasants have always been prone to excessive drama, what can you expect of them?
 	
-GUI_ToolTip_AbilityPoints = Ability points available for using
-GUI_ToolTip_Strength = Strength (STR) - Strength bonus applies to melee to-hit rolls,@melee damage rolls, block bonus, break checks.
-GUI_ToolTip_Dexterity = Dexterity (DEX) - Dexterity bonus applies to ranged to-hit rolls,@ ranged damage rolls, melee to-hit and damage rolls with one-handed weapons with free off-hand,@ dodge bonus, disarm trap checks, pick lock checks.
-GUI_ToolTip_Constitution = Constitution (CON) - Constitution bonus applies to health regeneration checks,@ health points.
-GUI_ToolTip_Perception = Perception (PER) - Perception bonus applies to search checks (hidden cache, traps etc.),@ initiative check, field of view, chanse to leave battle
-GUI_ToolTip_Charisma = Charisma (CHA) - Charisma bonus applies to merchant prices.
-GUI_ToolTip_Race = Humans - confident and charismatic, make up the majority of the Kingdom's population.@Elves - refined and graceful centenarians, not so numerous as other populations@Dwarves - stocky, hardy beards who love gold, drinking, and the heat of the forge.@Evil tongues say that Dwarf women do not exist or that they wear beards like men and cannot be distinguished from them.
+GUI_ToolTip_AbilityPoints == Ability points available for using
+GUI_ToolTip_Strength == Strength (STR) - Strength bonus applies to melee to-hit rolls,@melee damage rolls, block bonus, break checks.
+GUI_ToolTip_Dexterity == Dexterity (DEX) - Dexterity bonus applies to ranged to-hit rolls,@ ranged damage rolls, melee to-hit and damage rolls with one-handed weapons with free off-hand,@ dodge bonus, disarm trap checks, pick lock checks.
+GUI_ToolTip_Constitution == Constitution (CON) - Constitution bonus applies to health regeneration checks,@ health points.
+GUI_ToolTip_Perception == Perception (PER) - Perception bonus applies to search checks (hidden cache, traps etc.),@ initiative check, field of view, chance to leave battle.
+GUI_ToolTip_Charisma == Charisma (CHA) - Charisma bonus applies to merchant prices.
+GUI_ToolTip_Race == Humans - confident and charismatic, make up the majority of the Kingdom's population.@Elves - refined and graceful centenarians, not so numerous as other populations@Dwarves - stocky, hardy beards who love gold, drinking, and the heat of the forge.@Evil tongues say that Dwarf women do not exist or that they wear beards like men and cannot be distinguished from them.
 	
-GUI_Message_YouFindLoot = On your way you come across a bundle of things. After examining it, you take away everything of value.@@
-GUI_Message_Coins = Coins
-GUI_Message_YouFindLockedChest = You found a locked chest
-GUI_Message_PickLockedChestSuccess = The attempt to pick the lock proved successful.@@
-GUI_Message_PickLockedChestFail = The attempt to pick the lock proved unsuccessful.@The lock is permanently jammed and now it can't be opened even with a key.
-GUI_Message_BreakChestSuccess = However, expecting to get its valuable content, you hit it with a few precise punches and break its lid.@@
-GUI_Message_BreakChestFail = You decide to break the chest by force expecting to get its valuable content. However, you clearly overestimated your abilities!@@After a long time trying finally you sit on the ground, exhausted, to get some rest and try again.@@You closed your eyes for a moment and when you opened them there was no chest. You saw only a blurry silhouette in the shadows.@@You understand that there is no chance to catch up the thief, so you pick up your belongings and continue your journey.
-GUI_Message_YouFindHiddenLoot = You stop to catch your breath and fix your equipment. Suddenly your attention is attracted by barely visible footprints on the ground.@After walking a few dozen steps, you stumble upon a cache.@After carefully examining its contents, you take away all valuables.@@
-GUI_Message_YouFindHiddenChest = You stop to catch your breath and fix your equipment. Suddenly your attention is attracted by barely visible footprints on the ground.@After walking a few dozen steps, you stumble upon a chest.@After carefully examining its contents, you take away all valuables.@@
-GUI_Message_FindSpikeTrapSuccess = Your attentiveness did not fail you. You notice a disguised pressure plate on the ground.@Carefully sidestepping it, you continue on your way.
-GUI_Message_FindBearTrapSuccess = You notice a bear trap a few meters in front of you.@Carefully sidestepping it, you continue on your way.
-GUI_Message_FindSpikeTrapFail = You hear a quiet snap and several metal spikes bite into your leg.
-GUI_Message_FindBearTrapFail = The tight pressure plate gives under your weight. Belatedly you realize that you are in a bear trap.
-GUI_Message_StartRestInTownFree = You find the owner of the hostelry.@This time, he can let you stay for free because of your help to the local residents
-GUI_Message_YouRestInTown = You rent a room for a few days.@During this time your wounds will be healed and the merchant will renew his goods.
-GUI_Message_YouHaveNoMoneyToRestInTown = You leave after realizing you don't have enough money
-GUI_Message_BattleStart = There is the enemy up ahead. To fight!
-GUI_Message_YouAreEscaped = You managed to escape
-GUI_Message_YouAreNotEscaped = You failed to escape
-GUI_Message_MapExplored = You have finished exploring this area. You can go back to the city and get some rest
-GUI_Message_StartRestInTown = You find the owner of the hostelry.@He is ready to rent you a room for {0} coins
-GUI_Message_FirstHitsSecondWithDamage = {0} hits for {1} {2} damage, {3}
-GUI_Message_FirstHitsSecondWithCriticalDamage = Crit! {0} hits for {1} {2} damage, {3}
-GUI_Message_FirstMissedSecond = {0} doesn't hit {1}
-GUI_Message_QuestComplited = The quest "{0}" is completed
-GUI_Message_MeetingWithEnemy = {0} attacks you
+GUI_Message_YouFindLoot == On your way you come across a bundle of things. After examining it, you take away everything of value.@@
+GUI_Message_Coins == Coins
+GUI_Message_YouFindLockedChest == You found a locked chest
+GUI_Message_PickLockedChestSuccess == The attempt to pick the lock proved successful.@@
+GUI_Message_PickLockedChestFail == The attempt to pick the lock proved unsuccessful.@The lock is permanently jammed and now it can't be opened even with a key.
+GUI_Message_BreakChestSuccess == However, expecting to get its valuable content, you hit it with a few precise punches and break its lid.@@
+GUI_Message_BreakChestFail == You decide to break the chest by force expecting to get its valuable content. However, you clearly overestimated your abilities!@@After a long time trying finally you sit on the ground, exhausted, to get some rest and try again.@@You closed your eyes for a moment and when you opened them there was no chest. You saw only a blurry silhouette in the shadows.@@You understand that there is no chance to catch up the thief, so you pick up your belongings and continue your journey.
+GUI_Message_YouFindHiddenLoot == You stop to catch your breath and fix your equipment. Suddenly your attention is attracted by barely visible footprints on the ground.@After walking a few dozen steps, you stumble upon a cache.@After carefully examining its contents, you take away all valuables.@@
+GUI_Message_YouFindHiddenChest == You stop to catch your breath and fix your equipment. Suddenly your attention is attracted by barely visible footprints on the ground.@After walking a few dozen steps, you stumble upon a chest.@After carefully examining its contents, you take away all valuables.@@
+GUI_Message_FindSpikeTrapSuccess == Your attentiveness did not fail you. You notice a disguised pressure plate on the ground.@Carefully sidestepping it, you continue on your way.
+GUI_Message_FindBearTrapSuccess == You notice a bear trap a few meters in front of you.@Carefully sidestepping it, you continue on your way.
+GUI_Message_FindSpikeTrapFail == You hear a quiet snap and several metal spikes bite into your leg.
+GUI_Message_FindBearTrapFail == The tight pressure plate gives under your weight. Belatedly you realize that you are in a bear trap.
+GUI_Message_StartRestInTownFree == You find the owner of the hostelry.@This time, he can let you stay for free because of your help to the local residents
+GUI_Message_YouRestInTown == You rent a room for a few days.@During this time your wounds will be healed and the merchant will renew his goods.
+GUI_Message_YouHaveNoMoneyToRestInTown == You leave after realizing you don't have enough money
+GUI_Message_BattleStart == There is the enemy up ahead. To fight!
+GUI_Message_YouAreEscaped == You managed to escape
+GUI_Message_YouAreNotEscaped == You failed to escape
+GUI_Message_MapExplored == You have finished exploring this area. You can go back to the city and get some rest
+GUI_Message_StartRestInTown == You find the owner of the inn.@He is ready to rent you a room for {0} coins
+GUI_Message_FirstHitsSecondWithDamage == {0} hits for {1} {2} damage, {3}
+GUI_Message_FirstHitsSecondWithCriticalDamage == Crit! {0} hits for {1} {2} damage, {3}
+GUI_Message_FirstMissedSecond == {0} doesn't hit {1}
+GUI_Message_QuestComplited == The quest "{0}" is completed
+GUI_Message_MeetingWithEnemy == {0} attacks you
 	
-CharacterGainNewLevel = {0} reaches a new level!
-YouUse = You used
-Shop = Shop
-YouGained = You got:
-DefaultCharacterName = % enter a name %
-Level = Level
-GUI_Menu = Menu
-GUI_SaveAndExit = Save and Exit
-UnexploredLocation = Unexplored location
-EmptyExploredLocation = Empty explored location
-Town = Town
-Enemy = Enemy
-LevelBoarder = Level boarder
-PlayerRest = You are having rest
-Bonus = Bonus
-Equipment = Equipment
-Cost = Cost
-Experience = Experience
-SellCost = Selling price
-DamageType = Damage type
-Grip = Grip
-Damage = Damage
-ArmorType = Armor type
-Armor = Armor
-DodgePenalty = Dodge penalty
-MinBlockBonus = MinBlockBonus
-MaxBlockBonus = MaxBlockBonus
+CharacterGainNewLevel == {0} reaches a new level!
+YouUse == You used
+Shop == Shop
+YouGained == You got:
+DefaultCharacterName == % enter a name %
+Level == Level
+GUI_Menu == Menu
+GUI_SaveAndExit == Save and Exit
+UnexploredLocation == Unexplored location
+EmptyExploredLocation == Empty explored location
+Town == Town
+Enemy == Enemy
+LevelBoarder == Level boarder
+PlayerRest == You are having rest
+Bonus == Bonus
+Equipment == Equipment
+Cost == Cost
+Experience == Experience
+SellCost == Selling price
+DamageType == Damage type
+Grip == Grip
+Damage == Damage
+ArmorType == Armor type
+Armor == Armor
+DodgePenalty == Dodge penalty
+MinBlockBonus == MinBlockBonus
+MaxBlockBonus == MaxBlockBonus
 
-RaceName_Dwarf = Dwarf
-RaceName_Elf = Elf
-RaceName_Human = Human
-RaceName_Goblin = Goblin
-RaceName_Orc = Orc
-RaceName_Beast = Beast
+RaceName_Dwarf == Dwarf
+RaceName_Elf == Elf
+RaceName_Human == Human
+RaceName_Goblin == Goblin
+RaceName_Orc == Orc
+RaceName_Beast == Beast
 
-HungerLevelName_Hungry = Hunger
-HungerLevelName_Neutral = Norm
-HungerLevelName_Satiated = Satiety
+HungerLevelName_Hungry == Hunger
+HungerLevelName_Neutral == Norm
+HungerLevelName_Satiated == Satiety
 
-ThirstLevelName_Thirsty = Thirst
-ThirstLevelName_Neutral = Norm
-ThirstLevelName_Satiated = Satiety
+ThirstLevelName_Thirsty == Thirst
+ThirstLevelName_Neutral == Norm
+ThirstLevelName_Satiated == Satiety
 
-PlayerMoveSuccessfully_N = You went to the North
-PlayerMoveSuccessfully_S = You went to the South
-PlayerMoveSuccessfully_W = You went to the West
-PlayerMoveSuccessfully_E = You went to the East
-PlayerMoveUnsuccessfully_N = You can't go to the North
-PlayerMoveUnsuccessfully_S = You can't go to the South
-PlayerMoveUnsuccessfully_W = You can't go to the West
-PlayerMoveUnsuccessfully_E = You can't go to the East
+PlayerMoveSuccessfully_N == You went to the North
+PlayerMoveSuccessfully_S == You went to the South
+PlayerMoveSuccessfully_W == You went to the West
+PlayerMoveSuccessfully_E == You went to the East
+PlayerMoveUnsuccessfully_N == You can't go to the North
+PlayerMoveUnsuccessfully_S == You can't go to the South
+PlayerMoveUnsuccessfully_W == You can't go to the West
+PlayerMoveUnsuccessfully_E == You can't go to the East
 
-DamageTypeName_Slashing = Slashing
-DamageTypeName_Piercing = Piercing
-DamageTypeName_Bludgeoning = Crushing
+DamageTypeName_Slashing == Slashing
+DamageTypeName_Piercing == Piercing
+DamageTypeName_Bludgeoning == Crushing
 
-GripName_SingleHanded = One-handed
-GripName_TwoHanded = Two-handed
+GripName_SingleHanded == One-handed
+GripName_TwoHanded == Two-handed
 
-ArmorTypeName_Light = Light
-ArmorTypeName_Medium = Medium
-ArmorTypeName_Heavy = Heavy
+ArmorTypeName_Light == Light
+ArmorTypeName_Medium == Medium
+ArmorTypeName_Heavy == Heavy
 
-TrapTypeName_SpikeTrap = Spike trap
-TrapTypeName_BearTrap = Bear trap
+TrapTypeName_SpikeTrap == Spike trap
+TrapTypeName_BearTrap == Bear trap
 
-BodyPartName_Head = Head
-BodyPartName_RightHand = RightHand
-BodyPartName_LeftHand = LeftHand
-BodyPartName_Body = Body
-BodyPartName_RightLeg = RightLeg
-BodyPartName_LeftLeg = LeftLeg
+BodyPartName_Head == Head
+BodyPartName_RightHand == RightHand
+BodyPartName_LeftHand == LeftHand
+BodyPartName_Body == Body
+BodyPartName_RightLeg == RightLeg
+BodyPartName_LeftLeg == LeftLeg

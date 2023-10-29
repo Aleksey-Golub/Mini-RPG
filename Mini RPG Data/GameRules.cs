@@ -15,6 +15,8 @@ public static class GameRules
     private static IRandomService _randomService;
     private static IItemFactory _itemFactory;
 
+    private static Armor DefaultHumanNoArmorSlot => new Armor(0, ArmorType.Light);
+
     public const int MAX_CHARACTER_NAME_LENGTH = 18;
     public const int DEFAULT_FIELD_OF_VIEW = 2;
     public const int EXPERIENCE_DEFAULT_VALUE = 30;
@@ -396,8 +398,7 @@ public static class GameRules
     internal static int MinHandToHandDamage(Character character) => 1;
     internal static int MaxHandToHandDamage(Character character) => 1;
     internal static DamageType HandToHandDamageType(Character character) => DamageType.Bludgeoning;
-    internal static Armor ArmorForNoArmorSlot(Character character) => new Armor(0, ArmorType.Light);
-
+    internal static Armor ArmorForNoArmorSlot(Character character) => DefaultHumanNoArmorSlot;
     internal static (string attackerName, string defenderName, int damage, bool isSuccess, bool isCrit, BodyPart bodyPart) HandleAttack(ICharacter attacker, ICharacter defender)
     {
         int _2D6 = _randomService.Get1D6(2);

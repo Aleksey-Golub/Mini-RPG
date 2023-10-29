@@ -1,0 +1,85 @@
+FAQ_Controls == Controls
+Navigation buttons or NumPad (2, 4, 6, 8, Enter) to move around the world.
+Minimap to open the full map.
+Character portrait and inventory button - for character development and inventory management.
+Clicking on an item in the inventory will equip it in the corresponding slot and remove the item there, or make the character use it. During combat, it is considered an action.
+In the city: "Merchant" to open the trade menu, "Rest in the town" to rest at the inn.
+Clicking on an item in inventory in the merchant menu sells/buys the item if enough money is available.
+In combat: "Attack" to attack an enemy and "Try to leave battle" to try to escape from combat.
+
+FAQ_DiceSystem == The 2D6 и D100 systems
+The game uses a rule system where all actions and their results are solved by rolling two six-sided dice (2D6) and comparing the result against a target difﬁculty. The result of the roll is often modified by bonus or penalty modiﬁers which are simply added to the roll before comparing the ﬁnal result against the target difﬁculty. If the ﬁnal modiﬁed result equals or exceeds the target difﬁculty, the action succeeds. If the result is lower than the target difﬁculty, the action fails. If the result of both dice are 1's, the action critically fails even if the modiﬁed result would otherwise succeed. If the result from both dice are 6's and the action is capable of succeeding critically and the action succeeds even if the modiﬁed result would otherwise fail.
+The 100-sided dice roll (D100) is mainly used to determine the probability of finding items and enemies.
+
+FAQ_AbilityModifiers == Ability Modifiers
+Ability modifiers are applied to ability checks when a creature attempts to do something related to that ability. Ability modiﬁers are also used to modify damage rolls and various other instances and events that may or may not be directly related to the creature. 
+A positive modifier is called a bonus, and a negative modifier is called a penalty. 
+Ability modifiers range from -5 to +8 on a linear scale where an ability value of 2 grants -5 modiﬁer, a value of 7 grants +0 modiﬁer, and a value of 12 grants +5 modiﬁer. Character`s abilities can not exceed 12 and modiﬁers can not go beyond +5 but in some cases some enemies may have more. 
+
+FAQ_AbilityChecks == Ability Checks
+Every action requires an ability check of some sort. Ability checks receive a modiﬁer to the check from one of the abilities. The difﬁculty of an ability check varies depending on the situation.
+The default difﬁculty level for an ability check is 7, which means that the check is successful if the sum of a 2D6 roll and any applicable modiﬁers equals or exceeds 7.
+
+FAQ_Abilities == Abilities
+Each creature has five abilities that affect its actions. These abilities are Strength, Agility, Stamina, Perception and Charisma.
+@Strength (STR)
+Strength bonus applies to melee to-hit rolls, melee damage rolls, block bonus, break checks.
+@Dexterity (DEX)
+Dexterity bonus applies to ranged to-hit rolls, ranged damage rolls, melee to-hit and damage rolls with one-handed weapons with free off-hand, dodge bonus, disarm trap checks, pick lock checks.
+@Constitution (CON)
+Constitution bonus applies to health regeneration checks, health points.
+@Perception (PER)
+Perception bonus applies to search checks (hidden cache, traps etc.), initiative check, field of view, chance to leave battle.
+@Charisma (CHA)
+Charisma bonus applies to merchant prices.
+
+FAQ_Races == Races
+Different creatures belong to different races: humans, elves, dwarves, orcs, goblins, and others. Different races may have different advantages and disadvantages.
+
+FAQ_Health == Health
+Health measures how many points of damage a creature may take before it is killed.
+A creature's health value depends on Constitution and Level, enemies health may be calculated based on different rules.
+For example, a 4th level character with a base Constitution value of 8 has 11 health (8 + 2 + 1 = 11) (CON + CON-bonus + Level Modifier) (Level Modifier = Level / 2 with rounding upwards).
+There are several ways to regain health, including but not limited to overnight stay in an inn, potions, and resting. The most affordable way to regain health is to eat and drink until satiated, and rest. In order to regain health by resting, a creature must have one or both of hunger and thirst states as satiety, while the other is either not hunger, or not thirst, and then rest. The following formula is used to determine whether a creature gains health when resting and the criteria above is met:
+2D6 + Stamina Modiﬁer >= 12 (or 10 if both satiated).
+
+FAQ_HungerAndThirst == Hunger and Thirst
+Hunger and Thirst affect the ability and chance to regain health when resting and can be eliminated with food and drink.
+Different foods and drinks have different effectiveness and some may have additional effects.
+
+FAQ_ToHitCheck == To-Hit Check
+Each time the creature attacks another creature, a hit check is made using the following formula:
+2D6 + Offensive Modifier >= 7 + Defensive Modifier
+@A 2D6 roll can give a 1:1 is a guaranteed miss or a 6:6 is a guaranteed hit.
+
+FAQ_OffensiveAndDefensiveModifiers == Offensive And Defensive Modifiers
+Usually the Offensive Modifier is equal to the bonus of the ability associated with the weapon type: ranged weapon use Dexterity, one-handed melee weapon with a shield and two-handed weapon use Strength, melee and one-handed melee weapons with a free second hand use either Strength or Dexterity depending on the bonus size.
+The Defensive modifier is equal to the Block modifier when equipped with a shield, and to the Dodge modifier when not equipped with a shield.
+The Block Modifier is equal to the Strength bonus, but not less than the minimum shield block bonus and not more than the maximum shield block bonus.
+Dodge Modifier is equal to the Dexterity bonus minus the Dodge Penalty of the most "inconvenient" part of the armor (and may be negative).
+
+FAQ_BodyParts == Body parts
+Most creatures have two arms, two legs, a body, and a head. Each of the six body parts has an equal chance to take damage. A hit to the head is critical for most creatures and deals one and a half times as much damage.
+
+FAQ_Damage == Damage
+The resulting damage depends on weapon damage, damage type, armor type, armor value, and critical damage fact and is calculated by the following formula:
+Damage = (Weapon Damage + Offensive Modifier - (Armor Value * Vulnerability Coefficient)) * Critical Damage Modifier
+Vulnerability Coefficient - each type of armor is vulnerable to a certain type of damage (Light to Slashing, Medium to Piercing, Heavy to Crushing).
+Critical Damage Modifier - equals 1 for non-critical hits and usually equals 1.5 for critical.
+
+FAQ_Traps == Traps
+A character with a lack of Perception will definitely fall into a trap. Different types of traps deal different amounts of damage and become stronger as the character level increases.
+
+FAQ_Potions == Potions
+Consumable items that can be bought from a merchant or found during adventures. They have various, usually useful, effects.
+
+FAQ_FoodAndDrink == Food and Drink
+Consumable items that can be bought from a merchant or found during adventures. They reduce hunger and thirst and can have various additional effects that are not always useful.
+
+FAQ_Weapons == Weapons
+Equippable items that can be purchased from a merchant or found during adventures. Use Strength or Dexterity to calculate hit chance and damage depending on grip type, damage type, attack range, and material of construction.
+An unarmed character fights with his bare hands, this "weapon" has a 1 damage, crushing damage type and uses Strength or Dexterity.
+
+FAQ_Armor == Armor
+Equippable items that can be purchased from a merchant or found during adventures. They differ in armor type and damage blocking value.
+The part of the body without equipped armor has an armor value of 0 of type Light.
