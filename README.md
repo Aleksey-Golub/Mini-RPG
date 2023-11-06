@@ -1,5 +1,5 @@
 # Mini-RPG
-MiniRPG is a mini role-playing game on Windows Forms and .Net 6.0, created as a pet-project for fun.
+MiniRPG is a mini role-playing game on Windows Forms and .Net 6.0, created as a pet-project for fun with simple "placeholder" graphic.
 
 Loot, Monsters and Quest waiting for you, Adventurer!!!
 
